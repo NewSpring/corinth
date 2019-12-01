@@ -1,16 +1,8 @@
 coverage:
   status:
-    project:
-      api:
-        paths:
-          - packages/apollos-church-api/*
-          - packages/apollos-data-*/*
-          - packages/apollos-config/*
-          - packages/apollos-server-core/*
-      mobile:
-        paths:
-          - packages/newspringchurchapp/*
-          - packages/ui-kit/*
+    project: yes
+    patch: yes
+    changes: no
 comment:
   layout: "reach, diff, files"
   behavior: once

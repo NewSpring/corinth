@@ -11,7 +11,8 @@ install:
   - yarn
 stages:
   - name: Test
-    if: (type IN (pull_request)) OR (type IN (push) AND branch = master)
+    if: (type IN (pull_request)) OR (type IN (push) AND (branch = develop OR branch = staging OR branch = master))
+
 jobs:
   include:
     - stage: Test
