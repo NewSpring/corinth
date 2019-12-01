@@ -1,0 +1,117 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.newspringchurchapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".MainApplication"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:allowBackup="false"
+        android:theme="@style/AppTheme"
+        android:networkSecurityConfig="@xml/network_security_config">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GOOGLE_MAPS_API_KEY" />
+
+        <activity
+            android:name=".LaunchActivity"
+            android:theme="@style/LaunchTheme"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="newspringchurchapp"
+                    android:host="AppStackNavigator" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="AppStackNavigator" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="newspring.cc"
+                    android:pathPrefix="/articles" />
+                <data
+                    android:scheme="https"
+                    android:host="newspring.cc"
+                    android:pathPrefix="/devotionals" />
+                <data
+                    android:scheme="https"
+                    android:host="newspring.cc"
+                    android:pathPrefix="/sermons" />
+                <data
+                    android:scheme="https"
+                    android:host="newspring.cc"
+                    android:pathPrefix="/stories" />
+                <data
+                    android:scheme="https"
+                    android:host="newspring.cc"
+                    android:pathPrefix="/news" />
+                <data
+                    android:scheme="https"
+                    android:host="newspring.cc"
+                    android:pathPrefix="/staff/news" />
+                <data
+                    android:scheme="https"
+                    android:host="ns.link"
+                    android:pathPrefix="/articles" />
+                <data
+                    android:scheme="https"
+                    android:host="ns.link"
+                    android:pathPrefix="/devotionals" />
+                <data
+                    android:scheme="https"
+                    android:host="ns.link"
+                    android:pathPrefix="/sermons" />
+                <data
+                    android:scheme="https"
+                    android:host="ns.link"
+                    android:pathPrefix="/stories" />
+                <data
+                    android:scheme="https"
+                    android:host="ns.link"
+                    android:pathPrefix="/news" />
+                <data
+                    android:scheme="https"
+                    android:host="ns.link"
+                    android:pathPrefix="/staff/news" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+    </application>
+
+</manifest>

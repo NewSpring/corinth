@@ -1,0 +1,156 @@
+{
+  "name": "newspringchurchapp",
+  "version": "7.5.10",
+  "private": true,
+  "devDependencies": {
+    "@storybook/addon-actions": "4.1.16",
+    "@storybook/addon-links": "4.1.16",
+    "@storybook/addons": "4.1.16",
+    "@storybook/react-native": "4.1.1",
+    "codecov": "3.0.2",
+    "get-dev-paths": "^0.1.0",
+    "jest": "^24.8.0",
+    "jest-react-native": "18.0.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "nodemon": "1.18.7",
+    "prettier": "1.14.2",
+    "prop-types": "15.6.1",
+    "react-dom": "16.6.3",
+    "react-native-storybook-loader": "1.8.0",
+    "react-native-version": "2.6.2",
+    "react-test-renderer": "16.8.6",
+    "standard-version": "^6.0.1",
+    "waait": "1.0.2",
+    "graphql-import": "^0.7.1",
+    "jetifier": "^1.6.4"
+  },
+  "engines": {
+    "node": ">=8.11.x"
+  },
+  "files": [
+    "src"
+  ],
+  "workspaces": {
+    "nohoist": [
+      "**/**"
+    ]
+  },
+  "scripts": {
+    "android": "SIM=\"$($HOME/Library/Android/sdk/emulator/emulator -list-avds | sed -n 1p)\" && $HOME/Library/Android/sdk/emulator/emulator -avd \"${SIM}\" & react-native run-android --appId cc.newspring.newspringapp --main-activity LaunchActivity",
+    "codecov": "cat ./coverage/lcov.info | codecov",
+    "fixlint": "eslint ./src --fix",
+    "ios": "react-native run-ios --simulator=\"iPhone 11\"",
+    "lint": "eslint ./src --ext .js",
+    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
+    "prestart": "lerna run generate-stories & node ./scripts/get-introspection-data.js",
+    "start": "react-native start",
+    "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
+    "test": "TZ=UTC jest",
+    "bump": "standard-version",
+    "storybook:enable": "sed -i '' 's/STORYBOOK=false/STORYBOOK=true/g' .env",
+    "storybook:disable": "sed -i '' 's/STORYBOOK=true/STORYBOOK=false/g' .env",
+    "postinstall": "jetify",
+    "pods": "./scripts/install_pods.sh",
+    "generate-stories": "rnstl --searchDir ./src --pattern **/*.stories.js"
+  },
+  "jest": {
+    "preset": "react-native",
+    "collectCoverage": true,
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|rn-*|react-clone-referenced-element|react-navigation|@react-navigation|@apollosproject))"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/?(*.)(test|tests).{js,jsx,mjs}"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "modulePathIgnorePatterns": [
+      "node_modules/.*/node_modules/react-native"
+    ],
+    "setupFiles": [
+      "./jest.setup.js"
+    ]
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'"
+    }
+  },
+  "dependencies": {
+    "@apollosproject/ui-analytics": "^1.2.4",
+    "@apollosproject/ui-auth": "^1.2.4",
+    "@apollosproject/ui-htmlview": "^1.2.4",
+    "@apollosproject/ui-kit": "^1.2.4",
+    "@apollosproject/ui-media-player": "^1.2.4",
+    "@apollosproject/ui-notifications": "^1.2.4",
+    "@apollosproject/ui-onboarding": "^1.2.4",
+    "@apollosproject/ui-passes": "^1.2.4",
+    "@apollosproject/ui-scripture": "^1.2.4",
+    "@apollosproject/ui-storybook": "^1.2.4",
+    "@react-native-community/async-storage": "^1.5.1",
+    "apollo-cache-inmemory": "1.5.1",
+    "apollo-cache-persist": "0.1.1",
+    "apollo-client": "2.5.1",
+    "apollo-link": "1.2.8",
+    "apollo-link-error": "^1.1.10",
+    "apollo-link-http": "1.5.11",
+    "apollo-link-schema": "1.1.6",
+    "apollo-upload-client": "9.0.0",
+    "bugsnag-react-native": "^2.17.1",
+    "color": "3.0.0",
+    "dotenv": "^6.2.0",
+    "events": "^3.0.0",
+    "formik": "^1.5.2",
+    "graphql": "0.13.2",
+    "graphql-tag": "2.9.2",
+    "graphql-tools": "3.1.1",
+    "lodash": "^4.17.11",
+    "memoize-one": "4.0.0",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "moment": "2.22.2",
+    "node-fetch": "2.2.0",
+    "react": "16.8.6",
+    "react-apollo": "2.5.5",
+    "react-native": "0.60.5",
+    "react-native-actionsheet": "^2.4.2",
+    "react-native-amplitude-analytics": "^0.2.7",
+    "react-native-config": "^0.11.7",
+    "react-native-device-info": "^4.0.1",
+    "react-native-emoji": "^1.8.0",
+    "react-native-geolocation-service": "^3.0.0",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-native-image-picker": "0.28.0",
+    "react-native-linear-gradient": "^2.5.4",
+    "react-native-maps": "0.25.0",
+    "react-native-music-control": "0.10.5",
+    "react-native-onesignal": "3.3.2",
+    "react-native-passkit-wallet": "^0.1.4",
+    "react-native-reanimated": "^1.0.1",
+    "react-native-safari-view": "2.1.0",
+    "react-native-safe-area-view": "0.13.1",
+    "react-native-screens": "^1.0.0-alpha.23",
+    "react-native-splash-screen": "3.2.0",
+    "react-native-svg": "^9.4.0",
+    "react-native-swiper": "^1.5.14",
+    "react-native-tab-view": "^2.5.0",
+    "react-native-video": "^5.0.0",
+    "react-native-video-controls": "2.2.3",
+    "react-native-webview": "^5.2.0",
+    "react-navigation": "^3.11.0",
+    "react-navigation-tabs": "0.6.0",
+    "recompose": "^0.30.0",
+    "rn-fetch-blob": "^0.10.16",
+    "stream": "^0.0.2",
+    "yup": "0.26.6",
+    "@apollosproject/react-native-airplay-btn": "0.2.0",
+    "@react-native-community/geolocation": "^2.0.2",
+    "react-native-inappbrowser-reborn": "^3.0.0",
+    "react-native-safe-area-context": "^0.3.6"
+  },
+  "rnpm": {
+    "assets": [
+      "assets/fonts"
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the PrayerHeader component renders an anonymous prayer header 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "marginBottom": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 80,
+          "justifyContent": "flex-end",
+          "width": 80,
+        }
+      }
+      themeSize={80}
+    >
+      <View
+        animate={null}
+        customAnimate={null}
+        onReady={false}
+        style={
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#dddddd",
+            "borderRadius": 40,
+            "bottom": 0,
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": "100%",
+          }
+        }
+      >
+        <Image
+          onLoad={[Function]}
+          size="medium"
+          source={
+            Array [
+              Object {
+                "cache": "force-cache",
+                "uri": "https://fillmurray.com/400/600",
+              },
+            ]
+          }
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "borderRadius": 40,
+              "bottom": 0,
+              "height": "100%",
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": "100%",
+            }
+          }
+          themeSize={80}
+        />
+      </View>
+    </View>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#303030",
+        "fontFamily": "Colfax-Black",
+        "fontSize": 24,
+        "lineHeight": 27.6,
+      }
+    }
+  >
+    Request
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#858585",
+        "fontFamily": "Colfax-Bold",
+        "fontSize": 12,
+        "lineHeight": 17.28,
+        "marginTop": 8,
+      }
+    }
+  >
+    Anderson
+  </Text>
+</View>
+`;
+
+exports[`the PrayerHeader component renders the prayer header 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "marginBottom": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 80,
+          "justifyContent": "flex-end",
+          "width": 80,
+        }
+      }
+      themeSize={80}
+    >
+      <View
+        animate={null}
+        customAnimate={null}
+        onReady={false}
+        style={
+          Object {
+            "aspectRatio": 1,
+            "backgroundColor": "#dddddd",
+            "borderRadius": 40,
+            "bottom": 0,
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": "100%",
+          }
+        }
+      >
+        <Image
+          onLoad={[Function]}
+          size="medium"
+          source={
+            Array [
+              Object {
+                "cache": "force-cache",
+                "uri": "https://fillmurray.com/400/600",
+              },
+            ]
+          }
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "borderRadius": 40,
+              "bottom": 0,
+              "height": "100%",
+              "left": 0,
+              "opacity": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": "100%",
+            }
+          }
+          themeSize={80}
+        />
+      </View>
+    </View>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#303030",
+        "fontFamily": "Colfax-Black",
+        "fontSize": 24,
+        "lineHeight": 27.6,
+      }
+    }
+  >
+    Request
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#858585",
+        "fontFamily": "Colfax-Bold",
+        "fontSize": 12,
+        "lineHeight": 17.28,
+        "marginTop": 8,
+      }
+    }
+  >
+    Anderson
+  </Text>
+</View>
+`;

@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the PrayerMenuCard component renders a prayer menu card 1`] = `
+<View
+  style={
+    Object {
+      "marginHorizontal": -12,
+      "transform": Array [
+        Object {
+          "scaleX": 0.95,
+        },
+        Object {
+          "scaleY": 1,
+        },
+      ],
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 16,
+        "height": 150,
+        "marginHorizontal": 16,
+        "marginVertical": 12,
+        "shadowColor": "rgba(8, 0, 20, 0.25)",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 6,
+        "width": 150,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderRadius": 16,
+          "overflow": "hidden",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#dddddd",
+            "overflow": "hidden",
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          animate={null}
+          customAnimate={null}
+          forceRatio={1}
+          onReady={false}
+          style={
+            Object {
+              "aspectRatio": 1,
+              "backgroundColor": "#dddddd",
+              "resizeMode": "cover",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            maxAspectRatio={1}
+            minAspectRatio={1}
+            onLoad={[Function]}
+            source={
+              Array [
+                Object {
+                  "cache": "force-cache",
+                  "uri": "https://picsum.photos/600/400/?random",
+                },
+              ]
+            }
+            style={
+              Object {
+                "backgroundColor": "#dddddd",
+                "opacity": 0,
+                "resizeMode": "cover",
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+        <BVLinearGradient
+          colors={
+            Array [
+              3865816131,
+              3865816131,
+            ]
+          }
+          endPoint={
+            Object {
+              "x": 0,
+              "y": 1,
+            }
+          }
+          locations={
+            Array [
+              0,
+              1,
+            ]
+          }
+          overlayColor="#6bac43"
+          overlayType="high"
+          startPoint={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          style={
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "bottom": 0,
+            "paddingBottom": 24,
+            "paddingHorizontal": 16,
+            "paddingVertical": 16,
+            "position": "absolute",
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "bottom": 16,
+              "left": 16,
+              "position": "absolute",
+              "right": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 16,
+                "lineHeight": 23.04,
+              }
+            }
+          >
+            A Card Title
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

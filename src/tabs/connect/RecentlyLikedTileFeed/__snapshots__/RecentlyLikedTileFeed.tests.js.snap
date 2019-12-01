@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecentlyLikedTileFeed renders a RecentlyLikedTileFeed 1`] = `
+<View
+  horizontal={false}
+  style={
+    Object {
+      "paddingHorizontal": 0,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingLeft": 16,
+        "paddingTop": 8,
+        "zIndex": 2,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexGrow": 2,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Medium",
+            "fontSize": 14,
+            "lineHeight": 20.16,
+          }
+        }
+      >
+        Liked Content
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "flex-end",
+            "padding": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#505050",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 12,
+              "lineHeight": 17.28,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#6bac43",
+              }
+            }
+          >
+            View All
+          </Text>
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    contentContainerStyle={
+      Object {
+        "padding": 8,
+        "paddingBottom": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "__typename": "UniversalContentItem",
+          "coverImage": Object {
+            "sources": Array [
+              Object {
+                "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=55be1fd5-d8eb-43a6-aa70-f8e27bb63d31",
+              },
+            ],
+          },
+          "id": "UniversalContentItem:4148aeb9482181025e9cad42826e676a",
+          "sharing": Object {
+            "message": "",
+            "title": "Making Prayer a Spiritual Habit",
+            "url": "https://apollosrock.newspring.cc/",
+          },
+          "title": "Making Prayer a Spiritual Habit",
+        },
+        Object {
+          "__typename": "UniversalContentItem",
+          "coverImage": Object {
+            "sources": Array [
+              Object {
+                "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=993efb47-47ec-4dec-a3d3-47bcacfbd58e",
+              },
+            ],
+          },
+          "id": "UniversalContentItem:9dbdc4e565dcaa3c9b17eb5ae42de96e",
+          "sharing": Object {
+            "message": "",
+            "title": "Vacations and Your Budget",
+            "url": "https://apollosrock.newspring.cc/",
+          },
+          "title": "Vacations and Your Budget",
+        },
+      ]
+    }
+    decelerationRate="fast"
+    horizontal={true}
+    initialScrollIndex={0}
+    keyExtractor={[Function]}
+    loadingStateObject={
+      Object {
+        "coverImage": Array [],
+        "id": "fake_id",
+        "title": "",
+      }
+    }
+    refreshing={false}
+    renderItem={[Function]}
+    showsHorizontalScrollIndicator={false}
+    snapToAlignment="start"
+    snapToInterval={256}
+    style={
+      Object {
+        "marginTop": -20,
+        "zIndex": 1,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`RecentlyLikedTileFeed renders a loading state 1`] = `
+<View
+  horizontal={false}
+  style={
+    Object {
+      "paddingHorizontal": 0,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingLeft": 16,
+        "paddingTop": 8,
+        "zIndex": 2,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexGrow": 2,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#dddddd",
+            "borderRadius": 16,
+            "height": 14,
+            "marginVertical": 3.08,
+            "width": "60%",
+          }
+        }
+      />
+    </View>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "flex-end",
+            "padding": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignSelf": "stretch",
+              "backgroundColor": "#dddddd",
+              "borderRadius": 16,
+              "height": 12,
+              "marginVertical": 2.6400000000000006,
+              "width": "50%",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    contentContainerStyle={
+      Object {
+        "padding": 8,
+        "paddingBottom": 0,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "coverImage": Object {
+            "sources": Array [
+              Object {
+                "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=55be1fd5-d8eb-43a6-aa70-f8e27bb63d31",
+              },
+            ],
+          },
+          "id": "UniversalContentItem:4148aeb9482181025e9cad42826e676a",
+          "sharing": Object {
+            "message": "",
+            "title": "Making Prayer a Spiritual Habit",
+            "url": "https://apollosrock.newspring.cc/",
+          },
+          "title": "Making Prayer a Spiritual Habit",
+        },
+        Object {
+          "coverImage": Object {
+            "sources": Array [
+              Object {
+                "uri": "https://apollosrock.newspring.cc/GetImage.ashx?guid=993efb47-47ec-4dec-a3d3-47bcacfbd58e",
+              },
+            ],
+          },
+          "id": "UniversalContentItem:9dbdc4e565dcaa3c9b17eb5ae42de96e",
+          "sharing": Object {
+            "message": "",
+            "title": "Vacations and Your Budget",
+            "url": "https://apollosrock.newspring.cc/",
+          },
+          "title": "Vacations and Your Budget",
+        },
+      ]
+    }
+    decelerationRate="fast"
+    horizontal={true}
+    initialScrollIndex={0}
+    keyExtractor={[Function]}
+    loadingStateObject={
+      Object {
+        "coverImage": Array [],
+        "id": "fake_id",
+        "title": "",
+      }
+    }
+    refreshing={true}
+    renderItem={[Function]}
+    showsHorizontalScrollIndicator={false}
+    snapToAlignment="start"
+    snapToInterval={256}
+    style={
+      Object {
+        "marginTop": -20,
+        "zIndex": 1,
+      }
+    }
+  />
+</View>
+`;
