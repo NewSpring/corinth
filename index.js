@@ -1,17 +1,7 @@
-//import './polyfill'; // this can be removed when we upgrade to react-native 59
 import { AppRegistry, YellowBox } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
-import Config from 'react-native-config';
-import Storybook from './storybook';
-import MainApp from './src';
-
-const useStorybook = Config.STORYBOOK === 'true';
-
-let App = MainApp;
-if (useStorybook) {
-  App = Storybook;
-}
+import App from './src';
 
 // If there's an error before the splash screen goes away, you never see that error.
 // This tries to hide the splash screen so you can see the error.
