@@ -2,39 +2,12 @@
   "name": "newspringchurchapp",
   "version": "7.5.10",
   "private": true,
-  "devDependencies": {
-    "@storybook/addon-actions": "4.1.16",
-    "@storybook/addon-links": "4.1.16",
-    "@storybook/addons": "4.1.16",
-    "@storybook/react-native": "4.1.1",
-    "codecov": "3.0.2",
-    "get-dev-paths": "^0.1.0",
-    "jest": "^24.8.0",
-    "jest-react-native": "18.0.0",
-    "metro-react-native-babel-preset": "^0.56.0",
-    "nodemon": "1.18.7",
-    "prettier": "1.14.2",
-    "prop-types": "15.6.1",
-    "react-dom": "16.6.3",
-    "react-native-storybook-loader": "1.8.0",
-    "react-native-version": "2.6.2",
-    "react-test-renderer": "16.8.6",
-    "standard-version": "^6.0.1",
-    "waait": "1.0.2",
-    "graphql-import": "^0.7.1",
-    "jetifier": "^1.6.4"
-  },
   "engines": {
     "node": ">=8.11.x"
   },
   "files": [
     "src"
   ],
-  "workspaces": {
-    "nohoist": [
-      "**/**"
-    ]
-  },
   "scripts": {
     "android": "SIM=\"$($HOME/Library/Android/sdk/emulator/emulator -list-avds | sed -n 1p)\" && $HOME/Library/Android/sdk/emulator/emulator -avd \"${SIM}\" & react-native run-android --appId cc.newspring.newspringapp --main-activity LaunchActivity",
     "codecov": "cat ./coverage/lcov.info | codecov",
@@ -42,13 +15,11 @@
     "ios": "react-native run-ios --simulator=\"iPhone 11\"",
     "lint": "eslint ./src --ext .js",
     "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
-    "prestart": "lerna run generate-stories & node ./scripts/get-introspection-data.js",
+    "prestart": "yarn generate-stories & node ./scripts/get-introspection-data.js",
     "start": "react-native start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
     "test": "TZ=UTC jest",
     "bump": "standard-version",
-    "storybook:enable": "sed -i '' 's/STORYBOOK=false/STORYBOOK=true/g' .env",
-    "storybook:disable": "sed -i '' 's/STORYBOOK=true/STORYBOOK=false/g' .env",
     "postinstall": "jetify",
     "pods": "./scripts/install_pods.sh",
     "generate-stories": "rnstl --searchDir ./src --pattern **/*.stories.js"
@@ -77,7 +48,11 @@
       "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'"
     }
   },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
   "dependencies": {
+    "@apollosproject/react-native-airplay-btn": "0.2.0",
     "@apollosproject/ui-analytics": "^1.2.4",
     "@apollosproject/ui-auth": "^1.2.4",
     "@apollosproject/ui-htmlview": "^1.2.4",
@@ -89,6 +64,7 @@
     "@apollosproject/ui-scripture": "^1.2.4",
     "@apollosproject/ui-storybook": "^1.2.4",
     "@react-native-community/async-storage": "^1.5.1",
+    "@react-native-community/geolocation": "^2.0.2",
     "apollo-cache-inmemory": "1.5.1",
     "apollo-cache-persist": "0.1.1",
     "apollo-client": "2.5.1",
@@ -121,6 +97,7 @@
     "react-native-geolocation-service": "^3.0.0",
     "react-native-gesture-handler": "^1.3.0",
     "react-native-image-picker": "0.28.0",
+    "react-native-inappbrowser-reborn": "^3.0.0",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-maps": "0.25.0",
     "react-native-music-control": "0.10.5",
@@ -128,6 +105,7 @@
     "react-native-passkit-wallet": "^0.1.4",
     "react-native-reanimated": "^1.0.1",
     "react-native-safari-view": "2.1.0",
+    "react-native-safe-area-context": "^0.3.6",
     "react-native-safe-area-view": "0.13.1",
     "react-native-screens": "^1.0.0-alpha.23",
     "react-native-splash-screen": "3.2.0",
@@ -142,11 +120,36 @@
     "recompose": "^0.30.0",
     "rn-fetch-blob": "^0.10.16",
     "stream": "^0.0.2",
-    "yup": "0.26.6",
-    "@apollosproject/react-native-airplay-btn": "0.2.0",
-    "@react-native-community/geolocation": "^2.0.2",
-    "react-native-inappbrowser-reborn": "^3.0.0",
-    "react-native-safe-area-context": "^0.3.6"
+    "yup": "0.26.6"
+  },
+  "devDependencies": {
+    "@apollosproject/apollo-server-env-mock": "^1.2.4",
+    "@apollosproject/babel-preset-apollos": "^1.2.4",
+    "@babel/cli": "7.1.5",
+    "@babel/core": "7.1.6",
+    "@babel/node": "7.0.0",
+    "@babel/parser": "7.1.6",
+    "@babel/runtime": "7.1.5",
+    "@storybook/addon-actions": "4.1.16",
+    "@storybook/addon-links": "4.1.16",
+    "@storybook/addons": "4.1.16",
+    "@storybook/react-native": "4.1.1",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "codecov": "3.0.2",
+    "get-dev-paths": "^0.1.0",
+    "graphql-import": "^0.7.1",
+    "jest": "^24.8.0",
+    "jest-react-native": "18.0.0",
+    "jetifier": "^1.6.4",
+    "nodemon": "1.18.7",
+    "prettier": "1.14.2",
+    "prop-types": "15.6.1",
+    "react-dom": "16.6.3",
+    "react-native-storybook-loader": "1.8.0",
+    "react-native-version": "2.6.2",
+    "react-test-renderer": "16.8.6",
+    "standard-version": "^6.0.1",
+    "waait": "1.0.2"
   },
   "rnpm": {
     "assets": [
