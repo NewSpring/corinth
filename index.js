@@ -1,4 +1,4 @@
-import './polyfill'; // this can be removed when we upgrade to react-native 59
+//import './polyfill'; // this can be removed when we upgrade to react-native 59
 import { AppRegistry, YellowBox } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
