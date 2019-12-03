@@ -13,7 +13,7 @@ import {
   MediaThumbnailItem,
   H6,
 } from '@apollosproject/ui-kit';
-import { WebBrowserConsumer } from 'newspringchurchapp/src/ui/WebBrowser';
+import { WebBrowserConsumer } from '../../ui/WebBrowser';
 import { LiveConsumer } from '../../live';
 import GET_CONTENT_MEDIA from './getContentMedia';
 

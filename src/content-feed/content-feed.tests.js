@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Providers from 'newspringchurchapp/src/Providers';
+import Providers from '../Providers';
 
 import { renderWithApolloData } from '../utils/testUtils';
 import GET_CONTENT_FEED from './getContentFeed';

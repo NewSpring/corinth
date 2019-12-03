@@ -1,7 +1,7 @@
 import React from 'react';
-import Providers from 'newspringchurchapp/src/Providers';
-import { renderWithApolloData } from 'newspringchurchapp/src/utils/testUtils';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import Providers from '../../Providers';
+import { renderWithApolloData } from '../../utils/testUtils';
 import GET_CONTENT_ITEM_CONTENT from '../HTMLContent/getContentItemContent';
 import GET_SCRIPTURE from './getScripture';
 import Devotional from '.';

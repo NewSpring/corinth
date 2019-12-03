@@ -1,7 +1,7 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
-import getUserProfile from 'newspringchurchapp/src/tabs/connect/getUserProfile';
-import GET_USER_PRAYERS from 'newspringchurchapp/src/prayer/data/queries/getUserPrayers';
+import getUserProfile from '../../../tabs/connect/getUserProfile';
+import GET_USER_PRAYERS from '../../data/queries/getUserPrayers';
 import ADD_PRAYER from '../../data/mutations/addPrayer';
 import AddPrayerForm from './AddPrayerForm';
 
