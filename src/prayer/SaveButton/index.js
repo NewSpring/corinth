@@ -4,8 +4,18 @@ import { Mutation } from 'react-apollo';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import SAVE_PRAYER from '../data/mutations/savePrayer';
 import UNSAVE_PRAYER from '../data/mutations/unSavePrayer';
+import GET_PRAYERS from '../data/queries/getPrayers';
 import GET_SAVED_PRAYERS from '../data/queries/getSavedPrayers';
+import GET_GROUP_PRAYERS from '../data/queries/getGroupPrayers';
+import GET_CAMPUS_PRAYERS from '../data/queries/getCampusPrayers';
 import SaveButton from './SaveButton';
+
+const prayerQueries = [
+  { query: GET_PRAYERS },
+  { query: GET_SAVED_PRAYERS },
+  { query: GET_GROUP_PRAYERS },
+  { query: GET_CAMPUS_PRAYERS },
+];
 
 const SaveButtonConnected = memo(({ prayerID, saved, toggleSavedState }) => (
   <Mutation mutation={SAVE_PRAYER}>
@@ -21,12 +31,12 @@ const SaveButtonConnected = memo(({ prayerID, saved, toggleSavedState }) => (
                   if (saved)
                     unSave({
                       variables: { nodeId: prayerID },
-                      refetchQueries: [{ query: GET_SAVED_PRAYERS }],
+                      refetchQueries: prayerQueries,
                     });
                   else
                     save({
                       variables: { nodeId: prayerID },
-                      refetchQueries: [{ query: GET_SAVED_PRAYERS }],
+                      refetchQueries: prayerQueries,
                     });
                   track({
                     eventName: saved ? 'Unsaved Prayer' : 'Saved Prayer',
