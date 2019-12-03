@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 
-import ShareContentButton from 'newspringchurchapp/src/ui/ShareContentButton';
+import ShareContentButton from '../ShareContentButton';
 
 import GET_SHARE_CONTENT from './getShareContent';
 

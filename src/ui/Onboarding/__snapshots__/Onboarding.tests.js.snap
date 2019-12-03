@@ -143,6 +143,7 @@ exports[`the Onboarding component should render Onboarding 1`] = `
                       align="xMidYMid"
                       bbHeight={48}
                       bbWidth={48}
+                      focusable={false}
                       height={48}
                       icon={true}
                       meetOrSlice={0}
@@ -155,7 +156,9 @@ exports[`the Onboarding component should render Onboarding 1`] = `
                             "borderWidth": 0,
                           },
                           undefined,
-                          null,
+                          Object {
+                            "opacity": 1,
+                          },
                           Object {
                             "flex": 0,
                             "height": 48,

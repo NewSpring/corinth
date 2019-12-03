@@ -131,6 +131,7 @@ exports[`the UserPrayerList component renders a list of prayers 1`] = `
       bbHeight={32}
       bbWidth={32}
       fill="#303030"
+      focusable={false}
       height={32}
       meetOrSlice={0}
       minX={0}
@@ -142,7 +143,9 @@ exports[`the UserPrayerList component renders a list of prayers 1`] = `
             "borderWidth": 0,
           },
           undefined,
-          null,
+          Object {
+            "opacity": 1,
+          },
           Object {
             "flex": 0,
             "height": 32,
@@ -239,6 +242,7 @@ exports[`the UserPrayerList component renders a list of prayers 1`] = `
           align="xMidYMid"
           bbHeight={16}
           bbWidth={16}
+          focusable={false}
           height={16}
           meetOrSlice={0}
           minX={0}
@@ -489,6 +493,7 @@ exports[`the UserPrayerList component renders no prayer text 1`] = `
       bbHeight={32}
       bbWidth={32}
       fill="#303030"
+      focusable={false}
       height={32}
       meetOrSlice={0}
       minX={0}
@@ -500,7 +505,9 @@ exports[`the UserPrayerList component renders no prayer text 1`] = `
             "borderWidth": 0,
           },
           undefined,
-          null,
+          Object {
+            "opacity": 1,
+          },
           Object {
             "flex": 0,
             "height": 32,
@@ -597,6 +604,7 @@ exports[`the UserPrayerList component renders no prayer text 1`] = `
           align="xMidYMid"
           bbHeight={16}
           bbWidth={16}
+          focusable={false}
           height={16}
           meetOrSlice={0}
           minX={0}

@@ -158,8 +158,9 @@ const SermonNotes = ({ contentItem, features }) => {
         {/*  - Date */}
       </H5>
       {speakers[0] != null
-        ? speakers.map((speaker) =>
-            speaker !== '' ? <H5 key={speaker}>{speaker}</H5> : null
+        ? speakers.map(
+            (speaker) =>
+              speaker !== '' ? <H5 key={speaker}>{speaker}</H5> : null
           )
         : null}
 

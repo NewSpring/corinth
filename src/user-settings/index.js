@@ -16,9 +16,9 @@ import {
   Touchable,
   ActivityIndicator,
 } from '@apollosproject/ui-kit';
-import { WebBrowserConsumer } from 'newspringchurchapp/src/ui/WebBrowser';
-
 import { GET_LOGIN_STATE, LOGOUT } from '@apollosproject/ui-auth';
+import { WebBrowserConsumer } from '../ui/WebBrowser';
+
 import ChangeAvatar from './ChangeAvatar';
 
 class UserSettings extends PureComponent {
@@ -142,9 +142,9 @@ class UserSettings extends PureComponent {
                       <TableView>
                         <Cell>
                           <CellText>
-                            {`App Version: ${getVersion()}.${getBuildNumber()}${
+                            {`App Version: ${getVersion()}${
                               Config.EXPERIMENTAL === 'true'
-                                ? ' (Experimental)'
+                                ? `.${getBuildNumber()} (Experimental)`
                                 : ''
                             }`}
                           </CellText>

@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
 
@@ -17,9 +18,7 @@ const feedItemLoadingState = {
   isLoading: true,
 };
 
-const renderItem = (
-  { item } // eslint-disable-line react/prop-types
-) => (
+const renderItem = ({ item }) => (
   <TileContentFeed
     id={item.id}
     name={item.name.split(' - ').pop()}
@@ -30,6 +29,14 @@ const renderItem = (
     loadingStateObject={childContentItemLoadingState}
   />
 );
+
+renderItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    isLoading: PropTypes.bool,
+  }),
+};
 
 const DiscoverFeed = memo(() => (
   <Query query={GET_CONTENT_CHANNELS} fetchPolicy="cache-and-network">

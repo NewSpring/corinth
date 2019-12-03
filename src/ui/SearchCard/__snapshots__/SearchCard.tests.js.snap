@@ -190,6 +190,7 @@ exports[`The SearchCard component should render 1`] = `
         align="xMidYMid"
         bbHeight={24}
         bbWidth={24}
+        focusable={false}
         height={24}
         iconPadding={24}
         isLiked={false}
@@ -203,7 +204,9 @@ exports[`The SearchCard component should render 1`] = `
               "borderWidth": 0,
             },
             undefined,
-            null,
+            Object {
+              "opacity": 1,
+            },
             Object {
               "flex": 0,
               "height": 24,

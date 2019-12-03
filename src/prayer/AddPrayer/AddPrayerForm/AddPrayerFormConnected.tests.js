@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Providers from 'newspringchurchapp/src/Providers';
-import { renderWithApolloData } from 'newspringchurchapp/src/utils/testUtils';
-import getUserProfile from 'newspringchurchapp/src/tabs/connect/getUserProfile';
+import Providers from '../../../Providers';
+import { renderWithApolloData } from '../../../utils/testUtils';
+import getUserProfile from '../../../tabs/connect/getUserProfile';
 import AddPrayerFormConnected from './AddPrayerFormConnected';
 
 const mocks = [

@@ -13,6 +13,13 @@ import GET_SAVED_PRAYERS from '../data/queries/getSavedPrayers';
 import PrayerTab from './PrayerTab';
 
 class PrayerTabView extends PureComponent {
+  queries = {
+    'my-church': GET_PRAYERS,
+    'my-campus': GET_CAMPUS_PRAYERS,
+    'my-community': GET_GROUP_PRAYERS,
+    'my-saved-prayers': GET_SAVED_PRAYERS,
+  };
+
   static propTypes = {
     categories: PropTypes.arrayOf(
       PropTypes.shape({
@@ -38,13 +45,6 @@ class PrayerTabView extends PureComponent {
       description: category.description,
     })),
     itemSelected: 1,
-  };
-
-  queries = {
-    'my-church': GET_PRAYERS,
-    'my-campus': GET_CAMPUS_PRAYERS,
-    'my-community': GET_GROUP_PRAYERS,
-    'my-saved-prayers': GET_SAVED_PRAYERS,
   };
 
   render() {

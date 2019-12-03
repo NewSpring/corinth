@@ -34,7 +34,7 @@ class ActionComponent extends React.Component {
 }
 
 ActionComponent.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.shape({})),
+  options: PropTypes.arrayOf(PropTypes.shape({ method: PropTypes.func })),
   component: PropTypes.element,
 };
 

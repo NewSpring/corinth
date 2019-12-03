@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 
 import { ActionCard, BodyText, H4 } from '@apollosproject/ui-kit';
-import ShareContentButtonConnected from 'newspringchurchapp/src/ui/ShareContentButtonConnected';
+import ShareContentButtonConnected from '../../ui/ShareContentButtonConnected';
 
 const TextFeature = ({
   body,

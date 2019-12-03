@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import wait from 'waait';
 
-import Providers from 'newspringchurchapp/src/Providers';
+import Providers from '../Providers';
 
 import getScripture from './getScripture';
 import ScriptureConnected from '.';

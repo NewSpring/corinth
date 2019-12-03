@@ -91,7 +91,19 @@ PrayerSingle.propTypes = {
   showHeader: PropTypes.bool,
   showDate: PropTypes.bool,
   avatarSize: PropTypes.string,
-  prayer: PropTypes.shape({}), // TODO: fill this out
+  prayer: PropTypes.shape({
+    startTime: PropTypes.string,
+    isAnonymous: PropTypes.bool,
+    requestor: PropTypes.shape({
+      nickName: PropTypes.string,
+      firstName: PropTypes.string,
+      photo: PropTypes.shape({
+        source: PropTypes.shape({ uri: PropTypes.string }),
+      }),
+    }),
+    campus: PropTypes.shape({ name: PropTypes.string }),
+    text: PropTypes.string,
+  }),
   action: PropTypes.element,
 };
 

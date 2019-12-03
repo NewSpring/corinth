@@ -19,5 +19,5 @@ jobs:
       script:
         - yarn lint
     - script:
-        - travis_wait yarn ci-test
+        - travis_wait yarn test
         - travis_wait yarn codecov
