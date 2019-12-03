@@ -17,7 +17,7 @@
     "prestart": "yarn get-schema && node ./scripts/get-introspection-data.js",
     "start": "react-native start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
-    "test": "TZ=UTC jest",
+    "test": "TZ=UTC jest --forceExit",
     "bump": "standard-version",
     "postinstall": "jetify",
     "pods": "./scripts/install_pods.sh",
