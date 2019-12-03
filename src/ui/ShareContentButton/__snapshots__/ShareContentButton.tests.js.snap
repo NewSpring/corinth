@@ -22,6 +22,7 @@ exports[`the Share component should render 1`] = `
     align="xMidYMid"
     bbHeight={32}
     bbWidth={32}
+    focusable={false}
     height={32}
     meetOrSlice={0}
     minX={0}
@@ -33,7 +34,9 @@ exports[`the Share component should render 1`] = `
           "borderWidth": 0,
         },
         undefined,
-        null,
+        Object {
+          "opacity": 1,
+        },
         Object {
           "flex": 0,
           "height": 32,
