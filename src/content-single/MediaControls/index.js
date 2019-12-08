@@ -13,6 +13,7 @@ import {
   MediaThumbnailItem,
   H6,
 } from '@apollosproject/ui-kit';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import { WebBrowserConsumer } from '../../ui/WebBrowser';
 import { LiveConsumer } from '../../live';
 import GET_CONTENT_MEDIA from './getContentMedia';
@@ -72,23 +73,28 @@ class MediaControls extends PureComponent {
   );
 
   renderWebView = ({ webViewUrl, coverImageSources }) => (
-    <WebBrowserConsumer>
-      {(openUrl) =>
-        this.renderPlayButton({
-          action: () => openUrl(webViewUrl),
-          coverImageSources,
-        })
-      }
-    </WebBrowserConsumer>
+    <AnalyticsConsumer>
+      {(track) => (
+        <WebBrowserConsumer>
+          {(openUrl) =>
+            this.renderPlayButton({
+              action: () => {
+                openUrl(webViewUrl);
+                track({ eventName: 'Clicked Play Button (Live Video)' });
+              },
+              coverImageSources,
+            })
+          }
+        </WebBrowserConsumer>
+      )}
+    </AnalyticsConsumer>
   );
 
   renderControls = ({
     liveStream,
     loading,
     error,
-    data: {
-      node: { videos, title, parentChannel = {}, coverImage = {} } = {},
-    } = {},
+    data: { node: { videos, title, parentChannel = {}, coverImage = {} } } = {},
   }) => {
     if (loading || error) return null;
     const isLive = !!liveStream;
