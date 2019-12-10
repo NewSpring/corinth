@@ -127,6 +127,8 @@
     "@apollosproject/babel-preset-apollos": "^1.2.4",
     "@babel/cli": "7.1.5",
     "@babel/core": "7.1.6",
+    "@jimp/custom": "^0.9.3",
+    "@jimp/plugin-circle": "^0.9.3",
     "babel-eslint": "10.0.1",
     "babel-jest": "23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",

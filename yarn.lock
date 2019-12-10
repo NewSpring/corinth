@@ -1578,6 +1578,15 @@
     "@jimp/utils" "^0.9.3"
     core-js "^3.4.1"
 
+"@jimp/plugin-circle@^0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@jimp/plugin-circle/-/plugin-circle-0.9.3.tgz#fcfd45e28672bd2bd21658372f6f2a0cbb6c77f9"
+  integrity sha512-9yqOyFVw1qTzBz/7v9icNBtIf8L96fM+0o2+AVP0MF3pLaG4Efl/vg7vCdMnPynB8NLeIg7TpZDjOCjf9zx91Q==
+  dependencies:
+    "@babel/runtime" "^7.7.2"
+    "@jimp/utils" "^0.9.3"
+    core-js "^3.4.1"
+
 "@jimp/plugin-color@^0.9.3":
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/@jimp/plugin-color/-/plugin-color-0.9.3.tgz#4a5ad28f68901355878f5330186c260f4f87f944"
