@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.5.12](https://github.com/NewSpring/corinth/compare/v7.5.11...v7.5.12) (2019-12-02)
+
+
+
+### 7.5.11 (2019-12-02)
+
+
+
 ### [7.5.10](https://github.com/NewSpring/ApollosProject/compare/v7.5.9...v7.5.10) (2019-11-25)
 
 

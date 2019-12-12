@@ -29,8 +29,6 @@ class ExternalLinkProvider extends Component {
     }).isRequired,
   };
 
-  static navigationOptions = {};
-
   componentDidMount() {
     Linking.addEventListener('url', this._handleOpenURL);
     Linking.getInitialURL().then((url) => {
@@ -68,6 +66,8 @@ class ExternalLinkProvider extends Component {
       this.navigate(newUrl);
     }
   };
+
+  static navigationOptions = {};
 
   render() {
     return this.props.children;

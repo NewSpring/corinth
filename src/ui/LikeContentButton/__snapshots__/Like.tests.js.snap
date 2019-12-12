@@ -5,6 +5,7 @@ exports[`the LikeContentButton component should render a Like 1`] = `
   align="xMidYMid"
   bbHeight={32}
   bbWidth={32}
+  focusable={false}
   height={32}
   isLiked={false}
   itemId="abc"
@@ -18,7 +19,9 @@ exports[`the LikeContentButton component should render a Like 1`] = `
         "borderWidth": 0,
       },
       undefined,
-      null,
+      Object {
+        "opacity": 1,
+      },
       Object {
         "flex": 0,
         "height": 32,
@@ -125,6 +128,7 @@ exports[`the LikeContentButton component should render a UnLike 1`] = `
   align="xMidYMid"
   bbHeight={32}
   bbWidth={32}
+  focusable={false}
   height={32}
   isLiked={true}
   itemId="abc"
@@ -138,7 +142,9 @@ exports[`the LikeContentButton component should render a UnLike 1`] = `
         "borderWidth": 0,
       },
       undefined,
-      null,
+      Object {
+        "opacity": 1,
+      },
       Object {
         "flex": 0,
         "height": 32,

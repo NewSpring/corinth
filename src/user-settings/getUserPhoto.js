@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import CampusParts from 'newspringchurchapp/src/user-settings/Locations/campusFragment';
+import CampusParts from './Locations/campusFragment';
 
 export default gql`
   query getCurrentUserProfile {

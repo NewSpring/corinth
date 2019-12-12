@@ -42,6 +42,10 @@ const StyledCampusCard = styled(({ theme }) => ({
 }))(CampusCard);
 
 class MapView extends Component {
+  scrollView = null;
+
+  animation = new Animated.Value(0);
+
   static propTypes = {
     campuses: PropTypes.arrayOf(
       PropTypes.shape({
@@ -73,10 +77,6 @@ class MapView extends Component {
       goBack: PropTypes.func,
     }),
   };
-
-  animation = new Animated.Value(0);
-
-  scrollView = null;
 
   componentDidMount() {
     this.animation.addListener(debounce(this.updateCoordinates));

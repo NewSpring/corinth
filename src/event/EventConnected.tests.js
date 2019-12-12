@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Providers from 'newspringchurchapp/src/Providers';
-
 import moment from 'moment';
+import Providers from '../Providers';
+
 import { renderWithApolloData } from '../utils/testUtils';
 import getEvent from './getEvent';
 import EventConnected from './EventConnected';

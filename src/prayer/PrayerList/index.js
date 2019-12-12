@@ -15,7 +15,7 @@ import {
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
-import PrayerSingle from 'newspringchurchapp/src/prayer/PrayerSingle';
+import PrayerSingle from '../PrayerSingle';
 import SaveButton from '../SaveButton';
 import ActionComponent from '../ActionComponent';
 import FLAG_PRAYER from '../data/mutations/flagPrayer';
@@ -60,10 +60,6 @@ const Footer = styled(({ theme }) => ({
 }))(FlexedView);
 
 class PrayerList extends PureComponent {
-  static navigationOptions = {
-    header: null,
-  };
-
   state = {
     prayers: [],
     prayerIndex: 0,
@@ -86,6 +82,10 @@ class PrayerList extends PureComponent {
       };
     });
   }
+
+  static navigationOptions = {
+    header: null,
+  };
 
   render() {
     const prayer = this.state.prayers[this.state.prayerIndex];
