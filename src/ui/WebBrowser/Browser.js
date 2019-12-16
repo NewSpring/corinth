@@ -2,6 +2,7 @@ import { Linking } from 'react-native';
 import InAppBrowser from 'react-native-inappbrowser-reborn';
 import gql from 'graphql-tag';
 import { client } from '../../client';
+import bugsnag from '../../bugsnag';
 
 export const GET_ROCK_AUTH_DETAILS = gql`
   query RockAuthDetails {
@@ -36,16 +37,30 @@ const Browser = {
       ? url.toString().slice(0, -1)
       : url.toString();
 
-    const { authCookie, authToken } = await getRockAuthDetails();
     let headers = {};
-    if (auth.useRockCookie && authCookie) {
-      console.warn(
-        "iOS doesn't support headers, you may want to use src/user-web-view"
-      );
-      headers = { Cookie: authCookie };
-    }
-    if (auth.useRockToken && authToken) {
-      url.searchParams.append('rckipid', authToken);
+    try {
+      const { authCookie, authToken } = await getRockAuthDetails();
+      if (auth.useRockCookie && authCookie) {
+        bugsnag.notify(new Error('iOS does not support headers'), (report) => {
+          // eslint-disable-next-line
+          report.metaData = {
+            metaData: { url: url.toString() },
+            severity: 'warning',
+          };
+        });
+        headers = { Cookie: authCookie };
+      }
+      if (auth.useRockToken && authToken) {
+        url.searchParams.append('rckipid', authToken);
+      }
+    } catch (e) {
+      bugsnag.notify(new Error('Getting auth token failed'), (report) => {
+        // eslint-disable-next-line
+          report.metaData = {
+          metaData: { url: url.toString() },
+          severity: 'warning',
+        };
+      });
     }
     // hide nav bar for links to newspring's site
     if (url.toString().includes('newspring.cc'))
@@ -58,7 +73,13 @@ const Browser = {
         });
       } else Linking.openURL(url.toString());
     } catch (e) {
-      console.error(e);
+      bugsnag.notify(new Error('Opening link failed'), (report) => {
+        // eslint-disable-next-line
+          report.metaData = {
+          metaData: { url: url.toString() },
+          severity: 'warning',
+        };
+      });
     }
   },
 };
