@@ -67,6 +67,21 @@ const ActionTable = ({ isGroupLeader }) => (
                 <CellIcon name="arrow-next" />
               </Cell>
             </Touchable>
+            <Divider />
+            <Touchable
+              onPress={() =>
+                openUrl(
+                  'https://newspring.cc/missions',
+                  {},
+                  { useRockToken: true }
+                )
+              }
+            >
+              <Cell>
+                <CellText>Go on a mission trip</CellText>
+                <CellIcon name="arrow-next" />
+              </Cell>
+            </Touchable>
             {isGroupLeader ? (
               <>
                 <Divider />
