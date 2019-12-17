@@ -167,6 +167,7 @@ jest.mock('NativeEventEmitter');
 jest.mock('react-native-maps');
 jest.mock('DatePickerIOS', () => 'DatePicker');
 jest.mock('./src/client/index');
+jest.mock('bugsnag-react-native');
 
 NativeModules.RNGestureHandlerModule = {
   attachGestureHandler: jest.fn(),
