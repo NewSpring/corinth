@@ -90,6 +90,20 @@ const ActionTable = ({ isGroupLeader }) => (
             <Touchable
               onPress={() =>
                 openUrl(
+                  'https://open.spotify.com/artist/1wUcqswHv80fp5nMF2hVwM',
+                  { externalBrowser: true }
+                )
+              }
+            >
+              <Cell>
+                <CellText>Listen to NewSpring Worship</CellText>
+                <CellIcon name="arrow-next" />
+              </Cell>
+            </Touchable>
+            <Divider />
+            <Touchable
+              onPress={() =>
+                openUrl(
                   `https://newspring.cc/workflows/530?Source=3`,
                   {},
                   { useRockToken: true }
@@ -97,8 +111,8 @@ const ActionTable = ({ isGroupLeader }) => (
               }
             >
               <Cell>
-                <CellIcon name="settings" />
-                <CellText>Bug Report!</CellText>
+                <CellText>Report a bug</CellText>
+                <CellIcon name="arrow-next" />
               </Cell>
             </Touchable>
             <Divider />
