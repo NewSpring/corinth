@@ -403,6 +403,7 @@ type Prayer implements Node {
   requestor: Person
   isAnonymous: Boolean
   isSaved: Boolean
+  isPrayedFor: Boolean
 }
 
 type PrayerMenuCategory implements Node {
