@@ -1,6 +1,6 @@
 import React from 'react';
 import wait from 'waait';
-import Providers from 'newspringchurchapp/src/Providers';
+import Providers from '../../../Providers';
 
 import { renderWithApolloData } from '../../../utils/testUtils';
 

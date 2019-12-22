@@ -137,6 +137,7 @@ exports[`The SermonNotes component should render 1`] = `
             align="xMidYMid"
             bbHeight={24}
             bbWidth={24}
+            focusable={false}
             height={24}
             meetOrSlice={0}
             minX={0}
@@ -148,7 +149,9 @@ exports[`The SermonNotes component should render 1`] = `
                   "borderWidth": 0,
                 },
                 undefined,
-                null,
+                Object {
+                  "opacity": 1,
+                },
                 Object {
                   "flex": 0,
                   "height": 24,
@@ -404,6 +407,7 @@ exports[`The SermonNotes component should render with a title, series, and one s
             align="xMidYMid"
             bbHeight={24}
             bbWidth={24}
+            focusable={false}
             height={24}
             meetOrSlice={0}
             minX={0}
@@ -415,7 +419,9 @@ exports[`The SermonNotes component should render with a title, series, and one s
                   "borderWidth": 0,
                 },
                 undefined,
-                null,
+                Object {
+                  "opacity": 1,
+                },
                 Object {
                   "flex": 0,
                   "height": 24,

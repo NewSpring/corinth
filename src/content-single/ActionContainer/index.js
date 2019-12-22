@@ -1,11 +1,11 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
 import PropTypes from 'prop-types';
-import ShareContentButtonConnected from 'newspringchurchapp/src/ui/ShareContentButtonConnected';
-
 import { SideBySideView, styled } from '@apollosproject/ui-kit';
-import LikeContentButtonConnected from 'newspringchurchapp/src/ui/LikeContentButtonConnected';
 import { MediaPlayerSpacer } from '@apollosproject/ui-media-player';
+import ShareContentButtonConnected from '../../ui/ShareContentButtonConnected';
+
+import LikeContentButtonConnected from '../../ui/LikeContentButtonConnected';
 
 const PositioningView = styled(({ theme }) => ({
   justifyContent: 'space-around',

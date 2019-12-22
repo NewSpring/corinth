@@ -10,7 +10,7 @@ import {
   styled,
   Touchable,
 } from '@apollosproject/ui-kit';
-import ShareContentButtonConnected from 'newspringchurchapp/src/ui/ShareContentButtonConnected';
+import ShareContentButtonConnected from '../../ui/ShareContentButtonConnected';
 
 const StyledTextInput = styled(({ theme }) => ({
   borderWidth: 0.5,

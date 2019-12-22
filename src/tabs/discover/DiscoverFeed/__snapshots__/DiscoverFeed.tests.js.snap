@@ -1528,7 +1528,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
         <View
           style={
             Object {
-              "backgroundColor": "#FFF",
+              "backgroundColor": "#fff",
               "transform": Array [
                 Object {
                   "translateX": 0,
@@ -1542,8 +1542,8 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
             pointerEvents="box-none"
             style={
               Object {
-                "backgroundColor": "#FFF",
-                "borderBottomColor": "#A7A7AA",
+                "backgroundColor": "#fff",
+                "borderBottomColor": "#a7a7aa",
                 "borderBottomWidth": 0.5,
                 "height": 64,
                 "paddingBottom": 0,
@@ -1596,7 +1596,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
                     onLayout={[Function]}
                     style={
                       Object {
-                        "color": "rgba(0, 0, 0, .9)",
+                        "color": "rgba(0, 0, 0, 0.9)",
                         "fontSize": 17,
                         "fontWeight": "600",
                         "marginHorizontal": 16,
@@ -3179,7 +3179,7 @@ exports[`The DiscoverFeed component should render a loading state 1`] = `
         <View
           style={
             Object {
-              "backgroundColor": "#FFF",
+              "backgroundColor": "#fff",
               "transform": Array [
                 Object {
                   "translateX": 0,
@@ -3193,8 +3193,8 @@ exports[`The DiscoverFeed component should render a loading state 1`] = `
             pointerEvents="box-none"
             style={
               Object {
-                "backgroundColor": "#FFF",
-                "borderBottomColor": "#A7A7AA",
+                "backgroundColor": "#fff",
+                "borderBottomColor": "#a7a7aa",
                 "borderBottomWidth": 0.5,
                 "height": 64,
                 "paddingBottom": 0,
@@ -3247,7 +3247,7 @@ exports[`The DiscoverFeed component should render a loading state 1`] = `
                     onLayout={[Function]}
                     style={
                       Object {
-                        "color": "rgba(0, 0, 0, .9)",
+                        "color": "rgba(0, 0, 0, 0.9)",
                         "fontSize": 17,
                         "fontWeight": "600",
                         "marginHorizontal": 16,

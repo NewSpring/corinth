@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { TableView } from '@apollosproject/ui-kit';
-import { UserWebBrowserConsumer } from 'newspringchurchapp/src/user-web-browser';
-import { WebBrowserConsumer } from 'newspringchurchapp/src/ui/WebBrowser';
+import { UserWebBrowserConsumer } from '../user-web-browser';
+import { WebBrowserConsumer } from '../ui/WebBrowser';
 import TouchableCell from './TouchableCell';
 
 export default class TestingControlPanel extends PureComponent {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { renderWithApolloData } from 'newspringchurchapp/src/utils/testUtils';
+import { renderWithApolloData } from '../../utils/testUtils';
 
-import Providers from 'newspringchurchapp/src/Providers';
+import Providers from '../../Providers';
 import GET_CAMPUS_LOCATIONS from './getCampusLocations';
 import Location from './index';
 

@@ -3,7 +3,7 @@ import Config from 'react-native-config';
 import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
-import { WebBrowserConsumer } from 'newspringchurchapp/src/ui/WebBrowser';
+import { WebBrowserConsumer } from '../../ui/WebBrowser';
 
 const Toolbar = ({ navigation }) => (
   <WebBrowserConsumer>
@@ -12,9 +12,9 @@ const Toolbar = ({ navigation }) => (
         <ActionBarItem
           onPress={() =>
             openUrl(
-              'https://newspring.cc/give/now',
+              'https://my.newspring.cc/give/now',
               { externalBrowser: true },
-              { useRockToken: true }
+              { useRockToken: false }
             )
           }
           icon="give"

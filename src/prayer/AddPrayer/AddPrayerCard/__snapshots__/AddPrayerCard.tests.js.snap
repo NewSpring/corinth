@@ -72,6 +72,7 @@ exports[`The AddPrayerCard component should render 1`] = `
               align="xMidYMid"
               bbHeight={19.2}
               bbWidth={19.2}
+              focusable={false}
               height={19.2}
               meetOrSlice={0}
               minX={0}
@@ -83,7 +84,9 @@ exports[`The AddPrayerCard component should render 1`] = `
                     "borderWidth": 0,
                   },
                   undefined,
-                  null,
+                  Object {
+                    "opacity": 1,
+                  },
                   Object {
                     "flex": 0,
                     "height": 19,
@@ -360,6 +363,7 @@ exports[`The AddPrayerCard component should render a custom title 1`] = `
               align="xMidYMid"
               bbHeight={19.2}
               bbWidth={19.2}
+              focusable={false}
               height={19.2}
               meetOrSlice={0}
               minX={0}
@@ -371,7 +375,9 @@ exports[`The AddPrayerCard component should render a custom title 1`] = `
                     "borderWidth": 0,
                   },
                   undefined,
-                  null,
+                  Object {
+                    "opacity": 1,
+                  },
                   Object {
                     "flex": 0,
                     "height": 19,

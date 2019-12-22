@@ -1,6 +1,6 @@
 import React from 'react';
-import Providers from 'newspringchurchapp/src/Providers';
-import { renderWithApolloData } from 'newspringchurchapp/src/utils/testUtils';
+import Providers from '../../Providers';
+import { renderWithApolloData } from '../../utils/testUtils';
 import getUserPrayers from '../data/queries/getUserPrayers';
 import UserPrayerList from '.';
 

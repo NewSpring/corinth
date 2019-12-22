@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, pure } from 'recompose';
-import share from 'newspringchurchapp/src/utils/content/share';
 import { Touchable, Icon, withTheme } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import share from '../../utils/content/share';
 
 const enhance = compose(
   pure,

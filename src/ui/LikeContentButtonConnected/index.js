@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import { Query, Mutation } from 'react-apollo';
 
-import LikeContentButton from 'newspringchurchapp/src/ui/LikeContentButton';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import LikeContentButton from '../LikeContentButton';
 
 import UPDATE_LIKE_ENTITY from './updateLikeEntity';
 import GET_LIKED_CONTENT_ITEM from './getLikedContentItem';

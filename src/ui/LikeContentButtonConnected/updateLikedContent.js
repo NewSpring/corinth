@@ -1,5 +1,5 @@
-import GET_ALL_LIKED_CONTENT from 'newspringchurchapp/src/tabs/connect/getLikedContent';
-import { BASE_CARD_FRAGMENT } from 'newspringchurchapp/src/ui/ContentCardConnected';
+import GET_ALL_LIKED_CONTENT from '../../tabs/connect/getLikedContent';
+import { BASE_CARD_FRAGMENT } from '../ContentCardConnected';
 
 const addItemToLikedContentList = ({ cache, item, variables }) => {
   try {

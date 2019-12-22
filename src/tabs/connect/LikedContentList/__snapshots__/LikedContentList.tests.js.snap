@@ -241,6 +241,7 @@ fragment themeFragment on ContentItem {
                 align="xMidYMid"
                 bbHeight={19.2}
                 bbWidth={19.2}
+                focusable={false}
                 height={19.2}
                 meetOrSlice={0}
                 minX={0}
@@ -252,7 +253,9 @@ fragment themeFragment on ContentItem {
                       "borderWidth": 0,
                     },
                     undefined,
-                    null,
+                    Object {
+                      "opacity": 1,
+                    },
                     Object {
                       "flex": 0,
                       "height": 19,

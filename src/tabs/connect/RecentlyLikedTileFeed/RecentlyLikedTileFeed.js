@@ -16,7 +16,7 @@ import {
   withIsLoading,
 } from '@apollosproject/ui-kit';
 
-import HorizontalContentCardConnected from 'newspringchurchapp/src/ui/HorizontalContentCardConnected';
+import HorizontalContentCardConnected from '../../../ui/HorizontalContentCardConnected';
 
 const RowHeader = styled(({ theme }) => ({
   flexDirection: 'row',
@@ -49,6 +49,12 @@ const StyledHorizontalTileFeed = styled(({ theme }) => ({
 }))(HorizontalTileFeed);
 
 class RecentlyLikedTileFeed extends Component {
+  loadingStateObject = {
+    id: 'fake_id',
+    title: '',
+    coverImage: [],
+  };
+
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func,
@@ -58,12 +64,6 @@ class RecentlyLikedTileFeed extends Component {
     content: PropTypes.arrayOf(
       PropTypes.any // this component doesn't care about the shape of `node`, just that it exists
     ),
-  };
-
-  loadingStateObject = {
-    id: 'fake_id',
-    title: '',
-    coverImage: [],
   };
 
   titleImageItem = ({ item }) => (
