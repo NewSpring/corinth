@@ -6,10 +6,8 @@ grep -o '\$.*' .env.production | sed 's/\$\(.*\)/\1/' | xargs -I {} sh -c "sed -
 # Make sure ReactNativeConfig picks up values from prod env file.
 cp .env.production .env
 
-# overwrites android version code with current date and time
-if [ "$BUGSNAG_STAGE" != $"production" ]; then
-	./scripts/bump-date.sh
-fi
+# bump code
+./scripts/bump-date.sh
 
 echo "Uninstalling all CocoaPods versions"
 sudo gem uninstall cocoapods --all --executables
