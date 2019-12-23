@@ -13,7 +13,7 @@
     "codecov": "cat ./coverage/lcov.info | codecov",
     "ios": "react-native run-ios --simulator=\"iPhone 11\"",
     "lint": "eslint ./src --ext .js",
-    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
+    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/ && ./scripts/bump-date",
     "prestart": "yarn get-schema && node ./scripts/get-introspection-data.js",
     "start": "react-native start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",

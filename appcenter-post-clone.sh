@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-set -ex
-brew uninstall node@6
-NODE_VERSION="8.11.3"
-curl "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.pkg" > "$HOME/Downloads/node-installer.pkg"
-sudo installer -store -pkg "$HOME/Downloads/node-installer.pkg" -target "/"
 
 # Swaps out all placeholder env variables w/ their real values
 # Placeholders look like "$ONE_SIGNAL_KEY"
@@ -12,7 +7,9 @@ grep -o '\$.*' .env.production | sed 's/\$\(.*\)/\1/' | xargs -I {} sh -c "sed -
 cp .env.production .env
 
 # overwrites android version code with current date and time
-sed -i "" -E "s/versionCode [0-9]+/versionCode $(date -u +"%y%m%d%H%M")/g" android/app/build.gradle
+if [ "$BUGSNAG_STAGE" != $"production" ]; then
+	./scripts/bump-date.sh
+fi
 
 echo "Uninstalling all CocoaPods versions"
 sudo gem uninstall cocoapods --all --executables
