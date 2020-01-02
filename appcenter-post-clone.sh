@@ -7,7 +7,7 @@ grep -o '\$.*' .env.production | sed 's/\$\(.*\)/\1/' | xargs -I {} sh -c "sed -
 cp .env.production .env
 
 # bump code
-./scripts/bump-date.sh
+./scripts/bump-version-code.sh
 
 echo "Uninstalling all CocoaPods versions"
 sudo gem uninstall cocoapods --all --executables
