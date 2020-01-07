@@ -1,6 +1,6 @@
 {
   "name": "newspringchurchapp",
-  "version": "7.5.13",
+  "version": "7.5.14",
   "private": true,
   "engines": {
     "node": ">=8.11.x"
@@ -100,7 +100,7 @@
     "react-native-inappbrowser-reborn": "^3.0.0",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-maps": "0.25.0",
-    "react-native-music-control": "0.10.5",
+    "react-native-music-control": "0.10.6",
     "react-native-onesignal": "3.3.2",
     "react-native-passkit-wallet": "^0.1.4",
     "react-native-reanimated": "^1.0.1",
