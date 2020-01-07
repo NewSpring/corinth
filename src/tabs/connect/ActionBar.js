@@ -12,7 +12,7 @@ const Toolbar = ({ navigation }) => (
         <ActionBarItem
           onPress={() =>
             openUrl(
-              'https://newspring.cc/give/now',
+              'https://my.newspring.cc/give/now',
               { externalBrowser: true },
               { useRockToken: false }
             )
