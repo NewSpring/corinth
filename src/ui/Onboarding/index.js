@@ -40,7 +40,7 @@ function Onboarding({ navigation }) {
           />
           <FeaturesConnected
             description={
-              'You’re almost done. By answering a few questions, we can personalize your experience so you see: \n\n\u2022 news specific to your campus \n\u2022 articles related to your age and stage of life \n\u2022 prayer requests for your campus and your small group'
+              'You’re almost done. By answering a few questions, we can personalize your experience so you see: \n\n\u2022 News specific to your campus \n\u2022 Articles related to your age and stage of life \n\u2022 Prayer requests for your campus and your small group'
             }
             onPressPrimary={swipeForward}
             BackgroundComponent={
