@@ -1,6 +1,6 @@
 {
   "name": "newspringchurchapp",
-  "version": "7.5.12",
+  "version": "7.5.14",
   "private": true,
   "engines": {
     "node": ">=8.11.x"
@@ -13,7 +13,7 @@
     "codecov": "cat ./coverage/lcov.info | codecov",
     "ios": "react-native run-ios --simulator=\"iPhone 11\"",
     "lint": "eslint ./src --ext .js",
-    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
+    "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/ && ./scripts/bump-version-code.sh",
     "prestart": "yarn get-schema && node ./scripts/get-introspection-data.js",
     "start": "react-native start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
@@ -21,6 +21,7 @@
     "bump": "standard-version",
     "postinstall": "jetify",
     "pods": "./scripts/install_pods.sh",
+    "icons": "node ./scripts/generate-icons.js",
     "get-schema": "eval $(grep ^APP_DATA_URL .env) && get-graphql-schema $APP_DATA_URL > schema.graphql"
   },
   "jest": {
@@ -99,7 +100,7 @@
     "react-native-inappbrowser-reborn": "^3.0.0",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-maps": "0.25.0",
-    "react-native-music-control": "0.10.5",
+    "react-native-music-control": "0.10.6",
     "react-native-onesignal": "3.3.2",
     "react-native-passkit-wallet": "^0.1.4",
     "react-native-reanimated": "^1.0.1",
@@ -126,6 +127,8 @@
     "@apollosproject/babel-preset-apollos": "^1.2.4",
     "@babel/cli": "7.1.5",
     "@babel/core": "7.1.6",
+    "@jimp/custom": "^0.9.3",
+    "@jimp/plugin-circle": "^0.9.3",
     "babel-eslint": "10.0.1",
     "babel-jest": "23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
@@ -144,9 +147,11 @@
     "eslint-plugin-react-native": "^3.2.1",
     "get-dev-paths": "^0.1.0",
     "get-graphql-schema": "^2.1.2",
+    "image-size": "^0.8.3",
     "jest": "^24.8.0",
     "jest-react-native": "18.0.0",
     "jetifier": "^1.6.4",
+    "jimp": "^0.9.3",
     "nodemon": "1.18.7",
     "prettier": "1.14.2",
     "prop-types": "15.6.1",

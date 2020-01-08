@@ -815,9 +815,9 @@ exports[`the Onboarding component should render Onboarding 1`] = `
                 >
                   You’re almost done. By answering a few questions, we can personalize your experience so you see: 
 
-• news specific to your campus 
-• articles related to your age and stage of life 
-• prayer requests for your campus and your small group
+• News specific to your campus 
+• Articles related to your age and stage of life 
+• Prayer requests for your campus and your small group
                 </Text>
               </View>
             </RCTSafeAreaView>

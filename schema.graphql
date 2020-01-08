@@ -313,12 +313,12 @@ type Mutation {
   updateProfileField(input: UpdateProfileInput!): Person
   updateProfileFields(input: [UpdateProfileInput]!): Person
   uploadProfileImage(file: Upload!, size: Int!): Person
-  addPrayer(text: String!, isAnonymous: Boolean): PrayerRequest
-  deletePrayer(nodeId: String!): PrayerRequest
-  incrementPrayerCount(nodeId: String!): PrayerRequest
-  flagPrayer(nodeId: String!): PrayerRequest
-  savePrayer(nodeId: String!): PrayerRequest
-  unSavePrayer(nodeId: String!): PrayerRequest
+  addPrayer(text: String!, isAnonymous: Boolean): Prayer
+  deletePrayer(nodeId: String!): Prayer
+  incrementPrayerCount(nodeId: String!): Prayer
+  flagPrayer(nodeId: String!): Prayer
+  savePrayer(nodeId: String!): Prayer
+  unSavePrayer(nodeId: String!): Prayer
 }
 
 interface Node {
@@ -386,6 +386,26 @@ type Person implements Node {
   isStaff: Boolean
 }
 
+type Prayer implements Node {
+  id: ID!
+  firstName: String @deprecated(reason: "Use requestor.firstName")
+  lastName: String @deprecated(reason: "Use requestor.lastName.")
+  text: String!
+  enteredDateTime: String! @deprecated(reason: "Use startTime")
+  startTime: String!
+  flagCount: Int
+  prayerCount: Int
+  categoryId: Int @deprecated(reason: "Not supported")
+  campus: Campus @deprecated(reason: "Use requestor.campus")
+  createdByPersonAliasId: Int @deprecated(reason: "Use requestor")
+  requestedByPersonAliasId: Int @deprecated(reason: "Use requestor")
+  person: Person @deprecated(reason: "Use requestor")
+  requestor: Person
+  isAnonymous: Boolean
+  isSaved: Boolean
+  isPrayedFor: Boolean
+}
+
 type PrayerMenuCategory implements Node {
   id: ID!
   key: String!
@@ -393,25 +413,6 @@ type PrayerMenuCategory implements Node {
   subtitle: String
   imageURL: String
   overlayColor: String @deprecated(reason: "Never changes")
-}
-
-type PrayerRequest implements Node {
-  id: ID!
-  firstName: String @deprecated(reason: "Not supported. Use requestor.firstName")
-  lastName: String @deprecated(reason: "Not supported. Use requestor.lastName.")
-  text: String!
-  enteredDateTime: String! @deprecated(reason: "Not supported. Use startTime.")
-  startTime: String!
-  flagCount: Int
-  prayerCount: Int
-  categoryId: Int @deprecated(reason: "Not supported")
-  campus: Campus @deprecated(reason: "Not supported")
-  createdByPersonAliasId: Int @deprecated(reason: "Not supported")
-  requestedByPersonAliasId: Int @deprecated(reason: "Not supported")
-  person: Person @deprecated(reason: "Not supported. Use requestor.")
-  requestor: Person
-  isAnonymous: Boolean
-  isSaved: Boolean
 }
 
 enum PrayerType {
@@ -445,12 +446,12 @@ type Query {
   campuses(location: CampusLocationInput): [Campus]
   userFeedFeatures: [Feature]
   forgotPasswordURL: String
-  prayers(type: PrayerType): [PrayerRequest]
-  campusPrayers: [PrayerRequest]
-  userPrayers: [PrayerRequest]
-  groupPrayers: [PrayerRequest]
-  savedPrayers: [PrayerRequest]
+  prayers(type: PrayerType): [Prayer]
   prayerMenuCategories: [PrayerMenuCategory]
+  campusPrayers: [Prayer] @deprecated(reason: "Use prayers(type:SAVED)")
+  userPrayers: [Prayer] @deprecated(reason: "Use prayers(type:USER)")
+  groupPrayers: [Prayer] @deprecated(reason: "Use prayers(type:GROUP)")
+  savedPrayers: [Prayer] @deprecated(reason: "Use prayers(type:CAMPUS)")
 }
 
 type RockPersonDetails {
