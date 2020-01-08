@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.5.14](https://github.com/NewSpring/corinth/compare/v7.5.13...v7.5.14) (2020-01-07)
+
+
+### Bug Fixes
+
+* Fixes Videos on iOS ([#12](https://github.com/NewSpring/corinth/issues/12)) ([0984985](https://github.com/NewSpring/corinth/commit/0984985))
+
+
+
+### [7.5.13](https://github.com/NewSpring/corinth/compare/v7.5.12...v7.5.13) (2019-12-23)
+
+
+
 ### [7.5.12](https://github.com/NewSpring/corinth/compare/v7.5.11...v7.5.12) (2019-12-02)
 
 
