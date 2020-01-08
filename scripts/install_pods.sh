@@ -1,4 +1,4 @@
-cd ios
+cd ios || exit 1
 # check cocoapods version
 MY_VERSION=$(pod --version)
 PODFILE_TEXT=$(sed -n /COCOAPODS/p Podfile.lock)
