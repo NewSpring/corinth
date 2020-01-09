@@ -4,7 +4,7 @@ import { get } from 'lodash';
 // import PropTypes from 'prop-types';
 
 import { styled, ActionListCard, H3, H6 } from '@apollosproject/ui-kit';
-// import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import GET_FEED_FEATURES from './getFeedFeatures';
 
@@ -93,44 +93,51 @@ const Features = memo(({ navigation }) => (
         get(features, 'userFeedFeatures', []).map(
           ({ title, subtitle, actions, id }) =>
             actions.length ? (
-              <ActionListCard
-                isLoading={loading}
-                key={id}
-                header={
-                  <>
-                    <StyledH6 numberOfLines={1}>{title}</StyledH6>
-                    <H3 numberOfLines={3}>{subtitle}</H3>
-                  </>
-                }
-                actions={actions}
-                onPressActionItem={({ action, relatedNode }) => {
-                  // TODO: Come back and make sure these work correctly.
-                  // track({
-                  //   eventName: `Clicked Home Feed Feature`,
-                  //   properties: [
-                  //     { field: 'Node ID', value: relatedNode.id },
-                  //   ],
-                  // });
-                  if (action === 'READ_CONTENT') {
-                    navigation.navigate('ContentSingle', {
-                      itemId: relatedNode.id,
-                      transitionKey: 2,
-                    });
-                  }
-                  if (action === 'READ_EVENT') {
-                    navigation.navigate('Event', {
-                      eventId: relatedNode.id,
-                      transitionKey: 2,
-                    });
-                  }
-                }}
-                onPressCardActionButton={() =>
-                  navigation.navigate('ContentFeed', {
-                    itemId: id,
-                    itemTitle: title,
-                  })
-                }
-              />
+              <AnalyticsConsumer>
+                {(track) => (
+                  <ActionListCard
+                    isLoading={loading}
+                    key={id}
+                    header={
+                      <>
+                        <StyledH6 numberOfLines={1}>{title}</StyledH6>
+                        <H3 numberOfLines={3}>{subtitle}</H3>
+                      </>
+                    }
+                    actions={actions}
+                    onPressActionItem={({ action, relatedNode }) => {
+                      if (action === 'READ_CONTENT') {
+                        navigation.navigate('ContentSingle', {
+                          itemId: relatedNode.id,
+                          transitionKey: 2,
+                        });
+                      }
+                      if (action === 'READ_EVENT') {
+                        navigation.navigate('Event', {
+                          eventId: relatedNode.id,
+                          transitionKey: 2,
+                        });
+                      }
+                      // TODO: This isn't working - need to fix
+                      track({
+                        eventName: `Clicked Home Feed Feature`,
+                        properties: [
+                          {
+                            field: 'Node ID',
+                            value: relatedNode.id,
+                          },
+                        ],
+                      });
+                    }}
+                    onPressCardActionButton={() =>
+                      navigation.navigate('ContentFeed', {
+                        itemId: id,
+                        itemTitle: title,
+                      })
+                    }
+                  />
+                )}
+              </AnalyticsConsumer>
             ) : null
         )
       )

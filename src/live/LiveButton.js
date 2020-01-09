@@ -8,7 +8,7 @@ import {
   ChannelLabel,
   UIText,
 } from '@apollosproject/ui-kit';
-// import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import { WebBrowserConsumer } from '../ui/WebBrowser';
 
 import { LiveConsumer } from '.';
@@ -23,35 +23,39 @@ const LiveNowButton = () => (
       const isLive = !!liveStreams.length;
 
       return isLive ? (
-        <WebBrowserConsumer>
-          {(openUrl) => (
-            <TouchableScale
-              onPress={() => {
-                openUrl(
-                  'https://live.newspring.cc/',
-                  {},
-                  { useRockToken: true }
-                );
-                // TODO: Come back and make sure these work correctly.
-                // track({ eventName: 'Clicked Live Bar' });
-              }}
-            >
-              <LiveCard>
-                <CardContent>
-                  <ChannelLabel
-                    icon="video"
-                    label={
-                      <UIText>
-                        <UIText bold>{`We're live.`} </UIText>
-                        Watch now!
-                      </UIText>
-                    }
-                  />
-                </CardContent>
-              </LiveCard>
-            </TouchableScale>
+        <AnalyticsConsumer>
+          {(track) => (
+            <WebBrowserConsumer>
+              {(openUrl) => (
+                <TouchableScale
+                  onPress={() => {
+                    openUrl(
+                      'https://live.newspring.cc/',
+                      {},
+                      { useRockToken: true }
+                    );
+                    //TODO: This isn't working - need to fix.
+                    track({ eventName: 'Clicked Live Bar' });
+                  }}
+                >
+                  <LiveCard>
+                    <CardContent>
+                      <ChannelLabel
+                        icon="video"
+                        label={
+                          <UIText>
+                            <UIText bold>{`We're live.`} </UIText>
+                            Watch now!
+                          </UIText>
+                        }
+                      />
+                    </CardContent>
+                  </LiveCard>
+                </TouchableScale>
+              )}
+            </WebBrowserConsumer>
           )}
-        </WebBrowserConsumer>
+        </AnalyticsConsumer>
       ) : null;
     }}
   </LiveConsumer>
