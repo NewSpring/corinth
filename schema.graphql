@@ -404,6 +404,9 @@ type Prayer implements Node {
   isAnonymous: Boolean
   isSaved: Boolean
   isPrayedFor: Boolean
+  isLiked: Boolean
+  likedCount: Int
+  sharing: SharableContentItem
 }
 
 type PrayerMenuCategory implements Node {
