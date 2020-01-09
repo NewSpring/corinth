@@ -106,12 +106,6 @@ const Features = memo(({ navigation }) => (
                     }
                     actions={actions}
                     onPressActionItem={({ action, relatedNode }) => {
-                      track({
-                        eventName: `Clicked Home Feed Feature`,
-                        properties: [
-                          { field: 'Node ID', value: relatedNode.id },
-                        ],
-                      });
                       if (action === 'READ_CONTENT') {
                         navigation.navigate('ContentSingle', {
                           itemId: relatedNode.id,
@@ -124,6 +118,16 @@ const Features = memo(({ navigation }) => (
                           transitionKey: 2,
                         });
                       }
+                      // TODO: This isn't working - need to fix
+                      track({
+                        eventName: `Clicked Home Feed Feature`,
+                        properties: [
+                          {
+                            field: 'Node ID',
+                            value: relatedNode.id,
+                          },
+                        ],
+                      });
                     }}
                     onPressCardActionButton={() =>
                       navigation.navigate('ContentFeed', {
