@@ -14,7 +14,7 @@ const Toolbar = ({ navigation }) => (
             openUrl(
               'https://newspring.cc/give/now',
               { externalBrowser: true },
-              { useRockToken: false }
+              { useRockToken: true }
             )
           }
           icon="give"
