@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.5.15](https://github.com/NewSpring/corinth/compare/v7.5.14...v7.5.15) (2020-01-09)
+
+
+
 ### [7.5.14](https://github.com/NewSpring/corinth/compare/v7.5.13...v7.5.14) (2020-01-07)
 
 
