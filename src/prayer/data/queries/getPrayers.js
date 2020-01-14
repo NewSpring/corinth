@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  query Prayers {
-    prayers {
+  query Prayers($type: PrayerType) {
+    prayers(type: $type) {
       id
       isAnonymous
       text
