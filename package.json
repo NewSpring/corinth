@@ -1,6 +1,6 @@
 {
   "name": "newspringchurchapp",
-  "version": "7.5.15",
+  "version": "7.5.16",
   "private": true,
   "engines": {
     "node": ">=8.11.x"
