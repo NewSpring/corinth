@@ -5,6 +5,7 @@ export default gql`
     prayers(type: $type) {
       id
       isAnonymous
+      isSaved
       text
       flagCount
       campus {
