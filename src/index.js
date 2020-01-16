@@ -122,14 +122,13 @@ const App = () => (
             ref={(navigatorRef) => {
               NavigationService.setTopLevelNavigator(navigatorRef);
             }}
-            onNavigationStateChange={(prevState, currentState, action) => {
+            onNavigationStateChange={(prevState, currentState) => {
               const currentScreen = getActiveRouteName(currentState);
               const prevScreen = getActiveRouteName(prevState);
 
               if (prevScreen !== currentScreen) {
                 track({
                   eventName: `Viewed ${currentScreen}`,
-                  properties: { params: action.params },
                 });
                 Analytics.trackEvent(`Viewed ${currentScreen}`);
               }

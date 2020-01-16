@@ -3,17 +3,12 @@ import { ScrollView, SafeAreaView } from 'react-native';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 
-import { BackgroundView, styled } from '@apollosproject/ui-kit';
+import { BackgroundView } from '@apollosproject/ui-kit';
 import ActionTable from './ActionTable';
 import ActionBar from './ActionBar';
 import UserAvatarHeader from './UserAvatarHeader';
 import { RecentlyLikedTileFeedConnected } from './RecentlyLikedTileFeed';
 import GET_USER_PROFILE from './getUserProfile';
-
-const ScrollViewWithPadding = styled(({ theme }) => ({
-  height: '100%',
-  marginTop: theme.sizing.baseUnit * 2,
-}))(ScrollView);
 
 class Connect extends PureComponent {
   static navigationOptions = () => ({
@@ -32,7 +27,7 @@ class Connect extends PureComponent {
     return (
       <BackgroundView>
         <SafeAreaView>
-          <ScrollViewWithPadding>
+          <ScrollView>
             <UserAvatarHeader key="UserAvatarHeaderConnected" />
             <ActionBar />
             <RecentlyLikedTileFeedConnected />
@@ -43,7 +38,7 @@ class Connect extends PureComponent {
                 } = {},
               }) => <ActionTable isGroupLeader={isGroupLeader} />}
             </Query>
-          </ScrollViewWithPadding>
+          </ScrollView>
         </SafeAreaView>
       </BackgroundView>
     );
