@@ -9,6 +9,11 @@ cp .env.production .env
 # bump code
 ./scripts/bump-version-code.sh
 
+# set AppCenter secret
+sed -i "" -E "s/fake-secret-123/$APPCENTER_SECRET/g" ios/AppCenter-Config.plist
+sed -i "" -E "s/fake-secret-123/$APPCENTER_SECRET/g" android/app/src/main/assets/appcenter-config.json
+
+# install cocoapods
 echo "Uninstalling all CocoaPods versions"
 sudo gem uninstall cocoapods --all --executables
 

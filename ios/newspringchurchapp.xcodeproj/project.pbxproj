@@ -5,9 +5,12 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* newspringchurchappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* newspringchurchappTests.m */; };
+		0110CCBB9EA9412CBA3059CD /* Colfax-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 956BFEFDA52B4890B8A8F50F /* Colfax-MediumItalic.otf */; };
 		01F091B02048490A8F9EF4FE /* Inter-UI-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63F6EE53A9B44B4388B5F1C2 /* Inter-UI-Italic.otf */; };
+		03133F42E8F247FD83C3A52B /* Colfax-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5119094D5404EAACE72BE /* Colfax-Black.otf */; };
 		08CE105F17284254AD54AF84 /* DroidSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
@@ -20,6 +23,8 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* newspringchurchappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* newspringchurchappTests.m */; };
+		2E0FEB73A9EF43CDB9450DE5 /* Colfax-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58A6E44DC7F54FE3B9DDF48B /* Colfax-BoldItalic.otf */; };
+		503559F8DA20406E8BBAD76D /* Colfax-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C2FBCFF5D4428967F5A58 /* Colfax-BlackItalic.otf */; };
 		578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */; };
 		68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC21254B449443F99016EBFD /* Inter-UI-Black.otf */; };
 		7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */; };
@@ -28,20 +33,17 @@
 		8EA9BDE542E09F685A47D9BE /* libPods-newspringchurchapp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B9762ACA099D28C28DBB31 /* libPods-newspringchurchapp-tvOS.a */; };
 		90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */; };
 		93A2B0A9328A46A4B7DD5EFA /* DroidSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E007B33EDD74B82AEF02C24 /* DroidSerif-Regular.ttf */; };
+		961C9BE9F6EA483681C5A7E7 /* Colfax-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A5A320EC7DC45128A9C3DB4 /* Colfax-Bold.otf */; };
+		AA5088777CF243C6AF77E111 /* Colfax-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 732CE8A34B66479CACCE3AE3 /* Colfax-Regular.otf */; };
+		AAA589424AE949AA86C5FD75 /* Colfax-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0728B69771C14A2FAEBF311A /* Colfax-RegularItalic.otf */; };
 		AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */; };
 		B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */; };
+		DC35B39123CE48FD0014765B /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC35B39023CE48FC0014765B /* AppCenter-Config.plist */; };
+		DCFA9E476AC7452CBB55B65F /* Colfax-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC548C57446F8A1D5CFCD /* Colfax-Medium.otf */; };
 		E875558F3FB8FA2024EF7DC2 /* libPods-newspringchurchapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6B5B7B6A0D1ECB68CF0DD /* libPods-newspringchurchapp.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		FCB3069DB5DD4170B2CAEFC4 /* Inter-UI-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */; };
-		03133F42E8F247FD83C3A52B /* Colfax-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA5119094D5404EAACE72BE /* Colfax-Black.otf */; };
-		503559F8DA20406E8BBAD76D /* Colfax-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C2FBCFF5D4428967F5A58 /* Colfax-BlackItalic.otf */; };
-		961C9BE9F6EA483681C5A7E7 /* Colfax-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A5A320EC7DC45128A9C3DB4 /* Colfax-Bold.otf */; };
-		2E0FEB73A9EF43CDB9450DE5 /* Colfax-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58A6E44DC7F54FE3B9DDF48B /* Colfax-BoldItalic.otf */; };
-		DCFA9E476AC7452CBB55B65F /* Colfax-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC548C57446F8A1D5CFCD /* Colfax-Medium.otf */; };
-		0110CCBB9EA9412CBA3059CD /* Colfax-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 956BFEFDA52B4890B8A8F50F /* Colfax-MediumItalic.otf */; };
-		AA5088777CF243C6AF77E111 /* Colfax-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 732CE8A34B66479CACCE3AE3 /* Colfax-Regular.otf */; };
-		AAA589424AE949AA86C5FD75 /* Colfax-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0728B69771C14A2FAEBF311A /* Colfax-RegularItalic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		00E356EE1AD99517003FC87E /* newspringchurchappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newspringchurchappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* newspringchurchappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newspringchurchappTests.m; sourceTree = "<group>"; };
+		0728B69771C14A2FAEBF311A /* Colfax-RegularItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-RegularItalic.otf"; path = "../assets/fonts/Colfax-RegularItalic.otf"; sourceTree = "<group>"; };
 		0D480D95FC7F4569B8B934E3 /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* newspringchurchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newspringchurchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = newspringchurchapp/AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = newspringchurchapp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = newspringchurchapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = newspringchurchapp/main.m; sourceTree = "<group>"; };
+		1A5A320EC7DC45128A9C3DB4 /* Colfax-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Bold.otf"; path = "../assets/fonts/Colfax-Bold.otf"; sourceTree = "<group>"; };
 		1F8F5BC4745C8F22C695573D /* Pods-newspringchurchapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp.release.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp/Pods-newspringchurchapp.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* newspringchurchapp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "newspringchurchapp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* newspringchurchapp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "newspringchurchapp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,9 +88,15 @@
 		4F64CCA987A0419EB9C02236 /* libPods-newspringchurchapp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newspringchurchapp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F271B8EB67A4997A2C7D96 /* Pods-newspringchurchapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp.debug.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp/Pods-newspringchurchapp.debug.xcconfig"; sourceTree = "<group>"; };
 		560CBCD50AE7D282715D134E /* libPods-newspringchurchappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newspringchurchappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58A6E44DC7F54FE3B9DDF48B /* Colfax-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-BoldItalic.otf"; path = "../assets/fonts/Colfax-BoldItalic.otf"; sourceTree = "<group>"; };
 		5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BlackItalic.otf"; path = "../assets/fonts/Inter-UI-BlackItalic.otf"; sourceTree = "<group>"; };
 		63F6EE53A9B44B4388B5F1C2 /* Inter-UI-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Italic.otf"; path = "../assets/fonts/Inter-UI-Italic.otf"; sourceTree = "<group>"; };
+		6AA5119094D5404EAACE72BE /* Colfax-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Black.otf"; path = "../assets/fonts/Colfax-Black.otf"; sourceTree = "<group>"; };
+		732CE8A34B66479CACCE3AE3 /* Colfax-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Regular.otf"; path = "../assets/fonts/Colfax-Regular.otf"; sourceTree = "<group>"; };
 		745C835CA2F1E1EC2425152A /* Pods-newspringchurchapp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-tvOS/Pods-newspringchurchapp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8FFBC548C57446F8A1D5CFCD /* Colfax-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Medium.otf"; path = "../assets/fonts/Colfax-Medium.otf"; sourceTree = "<group>"; };
+		956BFEFDA52B4890B8A8F50F /* Colfax-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-MediumItalic.otf"; path = "../assets/fonts/Colfax-MediumItalic.otf"; sourceTree = "<group>"; };
+		9C9C2FBCFF5D4428967F5A58 /* Colfax-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-BlackItalic.otf"; path = "../assets/fonts/Colfax-BlackItalic.otf"; sourceTree = "<group>"; };
 		A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-MediumItalic.otf"; path = "../assets/fonts/Inter-UI-MediumItalic.otf"; sourceTree = "<group>"; };
 		A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Regular.otf"; path = "../assets/fonts/Inter-UI-Regular.otf"; sourceTree = "<group>"; };
 		A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -96,6 +106,7 @@
 		D394E3064D75710E81C51EB0 /* Pods-newspringchurchapp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-tvOSTests/Pods-newspringchurchapp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Bold.otf"; path = "../assets/fonts/Inter-UI-Bold.otf"; sourceTree = "<group>"; };
 		DA9745795726553C6FA9E7A8 /* Pods-newspringchurchapp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-tvOSTests/Pods-newspringchurchapp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		DC35B39023CE48FC0014765B /* AppCenter-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 		DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Medium.otf"; path = "../assets/fonts/Inter-UI-Medium.otf"; sourceTree = "<group>"; };
 		DDB6B5B7B6A0D1ECB68CF0DD /* libPods-newspringchurchapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newspringchurchapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B8A0AC5A6B4FABB3BDF6CB /* DroidSerif-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Bold.ttf"; path = "../assets/fonts/DroidSerif-Bold.ttf"; sourceTree = "<group>"; };
@@ -103,14 +114,6 @@
 		EC21254B449443F99016EBFD /* Inter-UI-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Black.otf"; path = "../assets/fonts/Inter-UI-Black.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		6AA5119094D5404EAACE72BE /* Colfax-Black.otf */ = {isa = PBXFileReference; name = "Colfax-Black.otf"; path = "../assets/fonts/Colfax-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9C9C2FBCFF5D4428967F5A58 /* Colfax-BlackItalic.otf */ = {isa = PBXFileReference; name = "Colfax-BlackItalic.otf"; path = "../assets/fonts/Colfax-BlackItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1A5A320EC7DC45128A9C3DB4 /* Colfax-Bold.otf */ = {isa = PBXFileReference; name = "Colfax-Bold.otf"; path = "../assets/fonts/Colfax-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		58A6E44DC7F54FE3B9DDF48B /* Colfax-BoldItalic.otf */ = {isa = PBXFileReference; name = "Colfax-BoldItalic.otf"; path = "../assets/fonts/Colfax-BoldItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8FFBC548C57446F8A1D5CFCD /* Colfax-Medium.otf */ = {isa = PBXFileReference; name = "Colfax-Medium.otf"; path = "../assets/fonts/Colfax-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		956BFEFDA52B4890B8A8F50F /* Colfax-MediumItalic.otf */ = {isa = PBXFileReference; name = "Colfax-MediumItalic.otf"; path = "../assets/fonts/Colfax-MediumItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		732CE8A34B66479CACCE3AE3 /* Colfax-Regular.otf */ = {isa = PBXFileReference; name = "Colfax-Regular.otf"; path = "../assets/fonts/Colfax-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0728B69771C14A2FAEBF311A /* Colfax-RegularItalic.otf */ = {isa = PBXFileReference; name = "Colfax-RegularItalic.otf"; path = "../assets/fonts/Colfax-RegularItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,7 @@
 		13B07FAE1A68108700A75B9A /* newspringchurchapp */ = {
 			isa = PBXGroup;
 			children = (
+				DC35B39023CE48FC0014765B /* AppCenter-Config.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -453,6 +457,7 @@
 				FCB3069DB5DD4170B2CAEFC4 /* Inter-UI-MediumItalic.otf in Resources */,
 				AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */,
 				03133F42E8F247FD83C3A52B /* Colfax-Black.otf in Resources */,
+				DC35B39123CE48FD0014765B /* AppCenter-Config.plist in Resources */,
 				503559F8DA20406E8BBAD76D /* Colfax-BlackItalic.otf in Resources */,
 				961C9BE9F6EA483681C5A7E7 /* Colfax-Bold.otf in Resources */,
 				2E0FEB73A9EF43CDB9450DE5 /* Colfax-BoldItalic.otf in Resources */,
