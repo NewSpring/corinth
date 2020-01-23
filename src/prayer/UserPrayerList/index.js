@@ -52,7 +52,7 @@ class UserPrayerList extends React.Component {
               variables={{ type: 'USER' }}
               fetchPolicy="cache-and-network"
             >
-              {({ loading, data: { userPrayers = [] } = {} }) => {
+              {({ loading, data: { prayers = [] } = {} }) => {
                 if (loading) return <ActivityIndicator />;
                 return (
                   <>
@@ -68,20 +68,20 @@ class UserPrayerList extends React.Component {
                           variables: { type: 'USER' },
                         });
                         const { id } = deletePrayer;
-                        const updatedPrayers = data.userPrayers.filter(
+                        const updatedPrayers = data.prayers.filter(
                           (prayer) => prayer.id !== id
                         );
                         cache.writeQuery({
                           query: GET_PRAYERS,
                           variables: { type: 'USER' },
-                          data: { userPrayers: updatedPrayers },
+                          data: { prayers: updatedPrayers },
                         });
                       }}
                     >
                       {(deletePrayer) => (
                         <StyledView>
-                          {userPrayers && userPrayers.length > 0 ? (
-                            userPrayers.map((prayer) => (
+                          {prayers && prayers.length > 0 ? (
+                            prayers.map((prayer) => (
                               <Card key={prayer.id}>
                                 <CardContent>
                                   <PrayerSingle
