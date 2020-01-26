@@ -418,6 +418,17 @@ type PrayerMenuCategory implements Node {
   overlayColor: String @deprecated(reason: "Never changes")
 }
 
+type PrayersConnection {
+  edges: [PrayersConnectionEdge]
+  totalCount: Int
+  pageInfo: PaginationInfo
+}
+
+type PrayersConnectionEdge {
+  node: Prayer
+  cursor: String
+}
+
 enum PrayerType {
   CAMPUS
   USER
@@ -450,6 +461,7 @@ type Query {
   userFeedFeatures: [Feature]
   forgotPasswordURL: String
   prayers(type: PrayerType): [Prayer]
+  prayerFeed(first: Int, after: String, type: PrayerType): PrayersConnection
   prayerMenuCategories: [PrayerMenuCategory]
   campusPrayers: [Prayer] @deprecated(reason: "Use prayers(type:SAVED)")
   userPrayers: [Prayer] @deprecated(reason: "Use prayers(type:USER)")
