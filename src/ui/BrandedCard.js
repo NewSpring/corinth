@@ -2,39 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 
-import { FeaturedCard, CardLabel, withTheme } from '@apollosproject/ui-kit';
+import { FeaturedCard, CardLabel, styled } from '@apollosproject/ui-kit';
 
-const LiveAwareLabel = withTheme(
-  ({ customTheme, isLive, title, type, theme }) => ({
-    ...(isLive
-      ? {
-          title: 'Live',
-          type: 'secondary',
-          icon: 'live-dot',
-          iconSize: theme.helpers.rem(0.4375), // using our typographic size unit based on fontSize so that the icon scales correctly with font size changes.
-        }
-      : {
-          title,
-          type: !customTheme ? 'secondary' : type,
-        }),
-    style: { marginBottom: theme.sizing.baseUnit },
-  })
-)(CardLabel);
+const StyledCardLabel = styled(({ theme }) => ({
+  marginBottom: theme.sizing.baseUnit,
+}))(CardLabel);
 
-const BrandedCard = ({ theme = {}, isLive, labelText, ...otherProps }) => (
+const getTheme = (theme) => {
+  return get(theme, 'type') === 'LIGHT' ? 'darkOverlay' : undefined;
+};
+
+const BrandedCard = ({
+  theme = {},
+  isLive,
+  labelText,
+  hasAction,
+  campaign,
+  ...otherProps
+}) => (
   <FeaturedCard
     LabelComponent={
-      labelText ? (
-        <LiveAwareLabel
-          type={get(theme, 'type') === 'LIGHT' ? 'darkOverlay' : undefined}
-          customTheme={theme}
-          isLive={isLive}
-          title={labelText}
-        />
-      ) : null
+      campaign && isLive ? (
+        <StyledCardLabel title={'Sermon Notes'} />
+      ) : (
+        labelText && (
+          <StyledCardLabel
+            title={labelText}
+            type={theme ? getTheme(theme) : 'secondary'}
+          />
+        )
+      )
     }
     theme={theme}
     isLive={isLive}
+    hasAction={campaign && isLive ? false : hasAction}
     {...otherProps}
   />
 );
@@ -45,6 +46,8 @@ BrandedCard.propTypes = {
   }),
   isLive: PropTypes.bool,
   labelText: PropTypes.string,
+  hasAction: PropTypes.bool,
+  campaign: PropTypes.bool,
 };
 
 export default BrandedCard;
