@@ -8,9 +8,8 @@ const StyledCardLabel = styled(({ theme }) => ({
   marginBottom: theme.sizing.baseUnit,
 }))(CardLabel);
 
-const getTheme = (theme) => {
-  return get(theme, 'type') === 'LIGHT' ? 'darkOverlay' : undefined;
-};
+const getTheme = (theme) =>
+  get(theme, 'type') === 'LIGHT' ? 'darkOverlay' : undefined;
 
 const BrandedCard = ({
   theme = {},
