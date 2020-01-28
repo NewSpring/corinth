@@ -1,8 +1,7 @@
 import gql from 'graphql-tag';
-import CampusParts from './Locations/campusFragment';
 
 export default gql`
-  query getCurrentUserProfile {
+  query CurrentUserPhoto {
     currentUser {
       id
       profile {
@@ -13,5 +12,4 @@ export default gql`
       }
     }
   }
-  ${CampusParts}
 `;
