@@ -1,4 +1,4 @@
-import { NavigationActions } from 'react-navigation';
+import { StackActions, NavigationActions } from 'react-navigation';
 
 let _navigator;
 
@@ -11,6 +11,23 @@ const navigate = (routeName, params) => {
     NavigationActions.navigate({
       routeName,
       params,
+    })
+  );
+};
+
+const resetToAuth = () => {
+  _navigator.dispatch(
+    StackActions.reset({
+      index: 0,
+      key: null,
+      actions: [
+        NavigationActions.navigate({
+          routeName: 'Auth',
+          action: NavigationActions.navigate({
+            routeName: 'AuthSMSPhoneEntryConnected',
+          }),
+        }),
+      ],
     })
   );
 };
@@ -28,4 +45,5 @@ export default {
   setTopLevelNavigator,
   navigate,
   goBack,
+  resetToAuth,
 };
