@@ -53,15 +53,15 @@
   },
   "dependencies": {
     "@apollosproject/react-native-airplay-btn": "0.2.0",
-    "@apollosproject/ui-analytics": "^1.2.4",
-    "@apollosproject/ui-auth": "^1.2.4",
-    "@apollosproject/ui-htmlview": "^1.2.4",
-    "@apollosproject/ui-kit": "^1.2.4",
-    "@apollosproject/ui-media-player": "^1.2.4",
-    "@apollosproject/ui-notifications": "^1.2.4",
-    "@apollosproject/ui-onboarding": "^1.2.4",
-    "@apollosproject/ui-passes": "^1.2.4",
-    "@apollosproject/ui-scripture": "^1.2.4",
+    "@apollosproject/ui-analytics": "^1.2.5",
+    "@apollosproject/ui-auth": "^1.2.5",
+    "@apollosproject/ui-htmlview": "^1.2.5",
+    "@apollosproject/ui-kit": "^1.2.5",
+    "@apollosproject/ui-media-player": "^1.2.5",
+    "@apollosproject/ui-notifications": "^1.2.5",
+    "@apollosproject/ui-onboarding": "^1.2.5",
+    "@apollosproject/ui-passes": "^1.2.5",
+    "@apollosproject/ui-scripture": "^1.2.5",
     "@react-native-community/async-storage": "^1.5.1",
     "@react-native-community/geolocation": "^2.0.2",
     "apollo-cache-inmemory": "1.5.1",
@@ -123,7 +123,9 @@
     "recompose": "^0.30.0",
     "rn-fetch-blob": "^0.10.16",
     "stream": "^0.0.2",
-    "yup": "0.26.6"
+    "yup": "0.26.6",
+    "react-native-modal-datetime-picker": "7.6.0",
+    "react-native-permissions": "^2.0.5"
   },
   "devDependencies": {
     "@apollosproject/apollo-server-env-mock": "^1.2.4",
@@ -162,7 +164,9 @@
     "react-native-version": "2.6.2",
     "react-test-renderer": "16.8.6",
     "standard-version": "^6.0.1",
-    "waait": "1.0.2"
+    "waait": "1.0.2",
+    "graphql-import": "^0.7.1",
+    "metro-react-native-babel-preset": "^0.56.0"
   },
   "rnpm": {
     "assets": [
