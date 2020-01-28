@@ -6,7 +6,7 @@ import { FeaturedCard, CardLabel, styled } from '@apollosproject/ui-kit';
 
 // If we decide to go back to what we had before:
 // * Uncomment the LiveAwareLabel code below
-// * Remove hasAction & campaign from props and propTypes
+// * Remove hasAction, campaign, and summary from props and propTypes
 // * Remove the StyledCardLabel & getTheme functions
 // * Change LabelComponent to be:
 // LabelComponent={
@@ -49,12 +49,13 @@ const BrandedCard = ({
   labelText,
   hasAction,
   campaign,
+  summary,
   ...otherProps
 }) => (
   <FeaturedCard
     LabelComponent={
       campaign && isLive ? (
-        <StyledCardLabel title={'Sermon Notes'} />
+        <StyledCardLabel title={"Today's Sermon"} />
       ) : (
         labelText && (
           <StyledCardLabel
@@ -67,6 +68,7 @@ const BrandedCard = ({
     theme={theme}
     isLive={isLive}
     hasAction={campaign && isLive ? false : hasAction}
+    summary={campaign && isLive ? 'Tap for sermon notes and more' : summary}
     {...otherProps}
   />
 );
@@ -79,6 +81,7 @@ BrandedCard.propTypes = {
   labelText: PropTypes.string,
   hasAction: PropTypes.bool,
   campaign: PropTypes.bool,
+  summary: PropTypes.string,
 };
 
 export default BrandedCard;
