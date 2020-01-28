@@ -103,7 +103,7 @@
     "react-native-inappbrowser-reborn": "^3.0.0",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-maps": "0.25.0",
-    "react-native-music-control": "0.10.5",
+    "react-native-music-control": "0.10.6",
     "react-native-onesignal": "3.3.2",
     "react-native-passkit-wallet": "^0.1.4",
     "react-native-reanimated": "^1.0.1",
@@ -138,7 +138,7 @@
     "babel-jest": "23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "buffer": "^5.4.3",
-    "codecov": "3.0.2",
+    "codecov": "^3.6.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -166,8 +166,7 @@
     "standard-version": "^6.0.1",
     "waait": "1.0.2",
     "graphql-import": "^0.7.1",
-    "metro-react-native-babel-preset": "^0.56.0",
-    "react-native-storybook-loader": "1.8.0"
+    "metro-react-native-babel-preset": "^0.56.0"
   },
   "rnpm": {
     "assets": [
