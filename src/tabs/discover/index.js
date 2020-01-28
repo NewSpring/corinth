@@ -7,7 +7,7 @@ import tabBarIcon from '../tabBarIcon';
 
 import Discover from './Discover';
 
-export const DiscoverNavigator = createStackNavigator(
+const DiscoverNavigator = createStackNavigator(
   {
     Discover,
     ContentFeed,

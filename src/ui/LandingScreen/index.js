@@ -27,7 +27,7 @@ const BrandIcon = withTheme(({ theme, color }) => ({
 }))(Icon);
 
 const Title = styled(({ theme, color }) => ({
-  marginBottom: theme.sizing.baseUnit * 2,
+  marginBottom: theme.sizing.baseUnit,
   ...(color ? { color } : {}),
 }))(H1);
 

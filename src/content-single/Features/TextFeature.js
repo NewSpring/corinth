@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
 
 import { ActionCard, BodyText, H4 } from '@apollosproject/ui-kit';
-import ShareContentButtonConnected from '../../ui/ShareContentButtonConnected';
+import { ShareButtonConnected } from '@apollosproject/ui-connected';
 
 const TextFeature = ({
   body,
@@ -33,7 +33,7 @@ const TextFeature = ({
         <ActionCard
           icon={'play'}
           action={
-            <ShareContentButtonConnected message={message} itemId={contentId} />
+            <ShareButtonConnected message={message} itemId={contentId} />
           }
         >
           <FillInTheBlank />
@@ -57,15 +57,5 @@ TextFeature.defaultProps = {
   header: false,
   card: true,
 };
-
-export const TEXT_FEATURE_FRAGMENT = `
-fragment TextFeatureFragment on TextFeature {
-  body
-  id
-  sharing {
-    message
-  }
-}
-`;
 
 export default TextFeature;

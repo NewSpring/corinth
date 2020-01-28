@@ -1,12 +1,19 @@
 import React from 'react';
 import { NativeModules } from 'react-native';
-// We ran into an issue where SafeAreaView would break jest tests.
+import ApollosConfig from '@apollosproject/config';
+import FRAGMENTS from '@apollosproject/ui-fragments';
 
-jest.mock('react-native-safe-area-context', () => ({
-  SafeAreaConsumer: ({ children }) =>
-    children({ top: 0, bottom: 0, left: 0, right: 0 }),
-  SafeAreaProvider: ({ children }) => children,
-}));
+ApollosConfig.loadJs({ FRAGMENTS });
+
+// We ran into an issue where SafeAreaView would break jest tests.
+jest.mock(
+  '../apollos-ui-kit/node_modules/react-native-safe-area-context/',
+  () => ({
+    SafeAreaConsumer: ({ children }) =>
+      children({ top: 0, bottom: 0, left: 0, right: 0 }),
+    SafeAreaProvider: ({ children }) => children,
+  })
+);
 
 jest.mock('react-navigation', () => {
   const ActualNavigation = require.requireActual('react-navigation');
@@ -25,7 +32,7 @@ jest.mock('react-native-music-control', () => ({
   STATE_PAUSED: true,
 }));
 
-jest.mock('react-native-config', () => ({
+ApollosConfig.loadJs({
   ONE_SIGNAL_KEY: 'doesntmatter',
 }));
 
@@ -64,6 +71,10 @@ jest.mock('react-native-device-info', () => ({
 }));
 
 jest.mock('rn-fetch-blob', () => 'Fetch');
+jest.mock(
+  '@apollosproject/ui-passes/node_modules/rn-fetch-blob',
+  () => 'Fetch'
+);
 
 jest.mock('@apollosproject/ui-analytics', () => ({
   track: () => '',
@@ -76,6 +87,8 @@ jest.mock('@apollosproject/ui-analytics', () => ({
 jest.mock('@apollosproject/ui-notifications', () => ({
   NotificationsProvider: ({ children }) => children,
 }));
+
+jest.mock('@apollosproject/ui-mapview', () => 'MapView');
 
 jest.mock('@apollosproject/ui-media-player', () => ({
   MediaPlayerSpacer: ({ children }) => children,
@@ -164,10 +177,9 @@ jest.mock('react-native-video', () => 'Video');
 
 jest.mock('NativeEventEmitter');
 
-jest.mock('react-native-maps');
+jest.mock('bugsnag-react-native');
 jest.mock('DatePickerIOS', () => 'DatePicker');
 jest.mock('./src/client/index');
-jest.mock('bugsnag-react-native');
 
 NativeModules.RNGestureHandlerModule = {
   attachGestureHandler: jest.fn(),

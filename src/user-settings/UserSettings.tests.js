@@ -2,9 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import wait from 'waait';
 
+import { GET_LOGIN_STATE } from '@apollosproject/ui-auth';
 import Providers from '../Providers';
 
-import GET_LOGIN_STATE from '../tabs/connect/getLoginState';
 import UserSettings from '.';
 
 describe('UserSettings component', () => {

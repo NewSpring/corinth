@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
 import { Query } from 'react-apollo';
 
+<<<<<<< ours
 import {
   HorizontalTileFeed,
   TouchableScale,
@@ -11,7 +12,7 @@ import {
   H5,
 } from '@apollosproject/ui-kit';
 
-import HorizontalContentCardConnected from '../../ui/HorizontalContentCardConnected';
+import { HorizontalContentCardConnected } from '@apollosproject/ui-connected';
 
 import GET_HORIZONTAL_CONTENT from './getHorizontalContent';
 

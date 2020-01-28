@@ -1,9 +1,16 @@
 import React from 'react';
-import { Image, View } from 'react-native';
-import { ApolloConsumer, Mutation } from 'react-apollo';
+import {
+  checkNotifications,
+  openSettings,
+  requestNotifications,
+  RESULTS,
+} from 'react-native-permissions';
 
-import { styled } from '@apollosproject/ui-kit';
-
+import {
+  GradientOverlayImage,
+  styled,
+  BackgroundView,
+} from '@apollosproject/ui-kit';
 import {
   AskNotificationsConnected,
   AskNameConnected,
@@ -12,8 +19,6 @@ import {
   LocationFinderConnected,
   OnboardingSwiper,
 } from '@apollosproject/ui-onboarding';
-
-import { requestPushPermissions } from '@apollosproject/ui-notifications';
 
 import CHANGE_CAMPUS from '../../user-settings/Locations/campusChange';
 import CustomLocationFinder from './CustomLocationFinder';
@@ -29,8 +34,16 @@ const StyledImage = styled({
   width: '100%',
 })(Image);
 
+const FullscreenBackgroundView = styled({
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+})(BackgroundView);
+
 function Onboarding({ navigation }) {
   return (
+    <>
+      <FullscreenBackgroundView />
     <OnboardingSwiper>
       {({ swipeForward }) => (
         <>
@@ -91,16 +104,24 @@ function Onboarding({ navigation }) {
               </Mutation>
             )}
           />
-          <ApolloConsumer>
-            {(client) => (
               <AskNotificationsConnected
                 description={
                   'Get updates when people pray for you, and receive reminders and announcements from your NewSpring family.'
                 }
                 onPressPrimary={() => navigation.replace('Tabs')}
-                onRequestPushPermissions={() =>
-                  requestPushPermissions({ client })
-                }
+              onRequestPushPermissions={(update) => {
+                checkNotifications().then((checkRes) => {
+                  if (checkRes.status === RESULTS.DENIED) {
+                    requestNotifications(['alert', 'badge', 'sound']).then(
+                      () => {
+                        update();
+                      }
+                    );
+                  } else {
+                    openSettings();
+                  }
+                });
+              }}
                 primaryNavText={'Finish'}
                 BackgroundComponent={
                   <ImageContainer>
@@ -108,13 +129,12 @@ function Onboarding({ navigation }) {
                   </ImageContainer>
                 }
               />
-            )}
-          </ApolloConsumer>
-        </>
-      )}
     </OnboardingSwiper>
+    </FullscreenBackgroundView>
+    </>
   );
 }
+
 Onboarding.navigationOptions = {
   title: 'Onboarding',
   header: null,

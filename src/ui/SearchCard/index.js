@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 
-import { contentCardComponentMapper } from '../ContentCardConnected';
+import { contentCardComponentMapper } from '@apollosproject/ui-connected';
 
 const SearchCard = memo(
   ({

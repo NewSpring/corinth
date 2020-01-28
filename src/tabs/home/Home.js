@@ -6,6 +6,10 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import {
+  ContentCardConnected,
+  fetchMoreResolver,
+} from '@apollosproject/ui-connected';
+import {
   styled,
   FeedView,
   BackgroundView,
@@ -13,10 +17,6 @@ import {
 } from '@apollosproject/ui-kit';
 
 import BrandedCard from '../../ui/BrandedCard';
-
-import fetchMoreResolver from '../../utils/fetchMoreResolver';
-import ContentCardConnected from '../../ui/ContentCardConnected';
-
 import { LiveButton } from '../../live';
 
 import Features from './Features';

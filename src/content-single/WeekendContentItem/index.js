@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { Animated, Dimensions } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
@@ -14,17 +14,17 @@ import {
   CardLabel,
   withTheme,
 } from '@apollosproject/ui-kit';
+import { LiveConsumer } from '@apollosproject/ui-connected';
+
 import MediaControls from '../MediaControls';
 import HTMLContent from '../HTMLContent';
 import HorizontalContentFeed from '../HorizontalContentFeed';
 import Features from '../Features';
-import { LiveConsumer } from '../../live';
-import CustomAvoidingScrollView from './CustomAvoidingScrollView';
 
-const FlexedScrollView = styled({ flex: 1 })(CustomAvoidingScrollView);
+const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
 const Header = styled(({ hasMedia, theme }) => ({
-  paddingTop: Dimensions.get('window').width * 0.8, // for some reason % based padding still is buggy
+  paddingTop: Dimensions.get('window').width * 0.5, // for some reason % based padding still is buggy
   alignItems: 'flex-start',
   paddingBottom: hasMedia ? theme.sizing.baseUnit : theme.sizing.baseUnit * 2,
   // backgroundColor: theme.colors.primary,
@@ -45,34 +45,25 @@ const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
 
 const WeekendContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
-
   return (
-    <ThemeConsumer>
-      {(theme) => {
-        const overlayColor =
-          get(content, 'theme.colors.primary') ||
-          (loading ? theme.colors.lightTertiary : theme.colors.primary);
-        return (
+    <ThemeMixin mixin={content.theme || {}}>
+      <ThemeConsumer>
+        {(theme) => (
           <BackgroundView>
             <StretchyView>
               {({ Stretchy, ...scrollViewProps }) => (
                 <FlexedScrollView {...scrollViewProps}>
                   <Header hasMedia={content.videos && content.videos.sources}>
-                    <ThemeMixin
-                      mixin={{
-                        type: (
-                          get(content, 'theme.type') || 'dark'
-                        ).toLowerCase(),
-                      }}
-                    >
+                    <ThemeMixin mixin={{ type: 'dark' }}>
                       {coverImageSources.length || loading ? (
                         <Stretchy
                           background
-                          style={{ backgroundColor: overlayColor }}
+                          style={{ backgroundColor: theme.colors.primary }}
                         >
                           <GradientOverlayImage
                             isLoading={!coverImageSources.length && loading}
-                            overlayColor={overlayColor}
+                            overlayColor={theme.colors.primary}
+                            overlayType="featured"
                             source={coverImageSources}
                           />
                         </Stretchy>
@@ -80,15 +71,10 @@ const WeekendContentItem = ({ content, loading }) => {
                       <LiveConsumer contentId={content.id}>
                         {(liveStream) => (
                           <LiveAwareLabel
-                            type={
-                              get(content, 'theme.type') === 'LIGHT'
-                                ? 'darkOverlay'
-                                : undefined
-                            }
                             isLive={!!liveStream}
                             title={
                               content.parentChannel &&
-                              content.parentChannel.name.split(' - ').pop()
+                              content.parentChannel.name
                             }
                           />
                         )}
@@ -107,10 +93,9 @@ const WeekendContentItem = ({ content, loading }) => {
               )}
             </StretchyView>
           </BackgroundView>
-        );
-      }}
-    </ThemeConsumer>
-  );
+        )}
+      </ThemeConsumer>
+    </ThemeMixin>
 };
 
 WeekendContentItem.propTypes = {
@@ -121,11 +106,6 @@ WeekendContentItem.propTypes = {
     }),
     id: PropTypes.string,
     title: PropTypes.string,
-    videos: PropTypes.arrayOf(
-      PropTypes.shape({
-        sources: PropTypes.arrayOf(PropTypes.shape({ uri: PropTypes.string })),
-      })
-    ),
   }),
   loading: PropTypes.bool,
 };
