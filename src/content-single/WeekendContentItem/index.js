@@ -74,7 +74,7 @@ const WeekendContentItem = ({ content, loading }) => {
                             isLive={!!liveStream}
                             title={
                               content.parentChannel &&
-                              content.parentChannel.name
+                              content.parentChannel.name.split(' - ').pop()
                             }
                           />
                         )}
