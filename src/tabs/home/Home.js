@@ -79,7 +79,6 @@ class Home extends PureComponent {
                 ListHeaderComponent={
                   <>
                     <LogoTitle source={require('./wordmark.png')} />
-                    <LiveButton />
                     <Query
                       query={GET_CAMPAIGN_CONTENT_ITEM}
                       fetchPolicy="cache-and-network"
@@ -98,17 +97,20 @@ class Home extends PureComponent {
                         );
 
                         return (
-                          <TouchableScale
-                            onPress={() =>
-                              this.handleOnPress({ id: featuredItem.id })
-                            }
-                          >
-                            <ContentCardConnected
-                              Component={BrandedCard}
-                              contentId={featuredItem.id}
-                              isLoading={isFeaturedLoading}
-                            />
-                          </TouchableScale>
+                          <>
+                            <LiveButton contentId={featuredItem.id} />
+                            <TouchableScale
+                              onPress={() =>
+                                this.handleOnPress({ id: featuredItem.id })
+                              }
+                            >
+                              <ContentCardConnected
+                                Component={BrandedCard}
+                                contentId={featuredItem.id}
+                                isLoading={isFeaturedLoading}
+                              />
+                            </TouchableScale>
+                          </>
                         );
                       }}
                     </Query>
