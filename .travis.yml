@@ -28,8 +28,7 @@ jobs:
       script:
         - git config user.email ${GH_EMAIL}
         - git config user.name ${GH_USER}
-        - git clone git://${GH_REPO}
         - git remote
         - git checkout develop
         - yarn bump --dry-run
-        #- git push --follow-tags "https://${GH_TOKEN}@${GH_REPO}" develop
+        #- git push --follow-tags "https://${GH_TOKEN}@${GH_REPO}" origin develop
