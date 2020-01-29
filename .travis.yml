@@ -31,6 +31,5 @@ jobs:
         - git clone git://${GH_REPO}
         - git remote
         - git checkout develop
-        - yarn bump
-        - git push --follow-tags "https://${GH_TOKEN}@${GH_REPO}" develop
-        - yarn gh-release --yes
+        - yarn bump --dry-run
+        #- git push --follow-tags "https://${GH_TOKEN}@${GH_REPO}" develop
