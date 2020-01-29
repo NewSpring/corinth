@@ -9,6 +9,7 @@ exports[`ScriptureConnected component renders without errors 1`] = `
         "fontFamily": "Colfax-Bold",
         "fontSize": 16,
         "lineHeight": 23.04,
+        "paddingBottom": 11.52,
       }
     }
   >
