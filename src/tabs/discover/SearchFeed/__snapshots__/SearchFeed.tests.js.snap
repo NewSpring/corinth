@@ -75,28 +75,107 @@ exports[`The SearchFeed component should render 1`] = `
               data={
                 Array [
                   Object {
-                    "__typename": "DevotionalContentItem",
-                    "id": "DevotionalContentItem:561dfb7dbd8a5c093fd8385c7edaadbc",
+                    "__typename": "SearchResult",
+                    "coverImage": Object {
+                      "__typename": "ImageMedia",
+                      "name": null,
+                      "sources": Array [
+                        Object {
+                          "__typename": "ImageMediaSource",
+                          "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                        },
+                      ],
+                    },
+                    "cursor": "b487224762b030f470967f45d7205823",
+                    "node": Object {
+                      "__typename": "DevotionalContentItem",
+                      "id": "DevotionalContentItem:561dfb7dbd8a5c093fd8385c7edaadbc",
+                    },
+                    "summary": "Love compels a mother to lose all dignity in public as she screams the name of her lost child.",
+                    "title": "How to lead people to Jesus",
                   },
                   Object {
-                    "__typename": "UniversalContentItem",
-                    "id": "UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae",
+                    "__typename": "SearchResult",
+                    "coverImage": null,
+                    "cursor": "4affc1122ad80d4edcf6c5bc9d88ae99",
+                    "node": Object {
+                      "__typename": "UniversalContentItem",
+                      "id": "UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae",
+                    },
+                    "summary": "Get in the Groove
+Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you go — with this playlist of NewSpring Worship's favorite songs of the summer.",
+                    "title": "Live for Freedom Toolkit",
                   },
                   Object {
-                    "__typename": "UniversalContentItem",
-                    "id": "UniversalContentItem:895738f70482712adb3ab45a08c30456",
+                    "__typename": "SearchResult",
+                    "coverImage": Object {
+                      "__typename": "ImageMedia",
+                      "name": null,
+                      "sources": Array [
+                        Object {
+                          "__typename": "ImageMediaSource",
+                          "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Db08e4d69-0acf-40ff-920a-4517de086175",
+                        },
+                      ],
+                    },
+                    "cursor": "659a26257a49fb2bf1446bb747bf7dd3",
+                    "node": Object {
+                      "__typename": "UniversalContentItem",
+                      "id": "UniversalContentItem:895738f70482712adb3ab45a08c30456",
+                    },
+                    "summary": "Daughter: “Mom, can I bring some friends from college over for dinner Sunday?",
+                    "title": "Should your 20-something live at home?",
                   },
                   Object {
-                    "__typename": "UniversalContentItem",
-                    "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
+                    "__typename": "SearchResult",
+                    "coverImage": Object {
+                      "__typename": "ImageMedia",
+                      "name": null,
+                      "sources": Array [
+                        Object {
+                          "__typename": "ImageMediaSource",
+                          "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3D58c037fa-cc7f-4d72-9571-a0cc0558e346",
+                        },
+                      ],
+                    },
+                    "cursor": "c8d2fe738629909c33010432432f21c8",
+                    "node": Object {
+                      "__typename": "UniversalContentItem",
+                      "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
+                    },
+                    "summary": "A time to connect with other guys who live nearby.",
+                    "title": "Guys Night!",
                   },
                   Object {
-                    "__typename": "UniversalContentItem",
-                    "id": "UniversalContentItem:c495ff18cd998ed516a798b6218907cd",
+                    "__typename": "SearchResult",
+                    "coverImage": null,
+                    "cursor": "ba47485fbc61945a38a4147fe7ff3703",
+                    "node": Object {
+                      "__typename": "UniversalContentItem",
+                      "id": "UniversalContentItem:c495ff18cd998ed516a798b6218907cd",
+                    },
+                    "summary": "1. Be slow What would it look like to live your life at half-speed?",
+                    "title": "10 ways to refresh your spirit every day",
                   },
                   Object {
-                    "__typename": "DevotionalContentItem",
-                    "id": "DevotionalContentItem:4dd74ceca9e09b5276e93cbf53821bd6",
+                    "__typename": "SearchResult",
+                    "coverImage": Object {
+                      "__typename": "ImageMedia",
+                      "name": null,
+                      "sources": Array [
+                        Object {
+                          "__typename": "ImageMediaSource",
+                          "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                        },
+                      ],
+                    },
+                    "cursor": "9456eef87e314dcf19f013384a29fd22",
+                    "node": Object {
+                      "__typename": "DevotionalContentItem",
+                      "id": "DevotionalContentItem:4dd74ceca9e09b5276e93cbf53821bd6",
+                    },
+                    "summary": "We all like to know that our boss or the authority over us is pleased, and it means even more when they take the time to share that in front of other people.",
+                    "title": "Why leadership isn’t all about the title",
                   },
                 ]
               }
@@ -194,20 +273,42 @@ exports[`The SearchFeed component should render 1`] = `
                             }
                           }
                         >
-                          <Image
-                            maxAspectRatio={1.2}
-                            minAspectRatio={0.75}
-                            onLoad={[Function]}
-                            source={Array []}
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
                             style={
                               Object {
+                                "aspectRatio": 1,
                                 "backgroundColor": "#858585",
-                                "opacity": 1,
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
-                          />
+                          >
+                            <Image
+                              maxAspectRatio={1.2}
+                              minAspectRatio={0.75}
+                              onLoad={[Function]}
+                              source={
+                                Array [
+                                  Object {
+                                    "__typename": "ImageMediaSource",
+                                    "cache": "force-cache",
+                                    "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                                  },
+                                ]
+                              }
+                              style={
+                                Object {
+                                  "backgroundColor": "#858585",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
                           <BVLinearGradient
                             colors={
                               Array [
@@ -259,11 +360,24 @@ exports[`The SearchFeed component should render 1`] = `
                             }
                           }
                         >
-                          <View
-                            hasSummary={false}
+                          <Text
+                            numberOfLines={3}
                             style={
                               Object {
-                                "alignItems": "flex-end",
+                                "color": "#ffffff",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 24,
+                                "lineHeight": 27.6,
+                              }
+                            }
+                          >
+                            How to lead people to Jesus
+                          </Text>
+                          <View
+                            hasSummary={true}
+                            style={
+                              Object {
+                                "alignItems": "center",
                                 "flexDirection": "row",
                                 "paddingTop": 16,
                               }
@@ -278,16 +392,20 @@ exports[`The SearchFeed component should render 1`] = `
                               }
                             >
                               <Text
-                                numberOfLines={4}
+                                bold={false}
+                                italic={false}
+                                numberOfLines={2}
                                 style={
                                   Object {
                                     "color": "#ffffff",
-                                    "fontFamily": "Colfax-Black",
-                                    "fontSize": 24,
-                                    "lineHeight": 27.6,
+                                    "fontFamily": "Colfax-Regular",
+                                    "fontSize": 16,
+                                    "lineHeight": 26,
                                   }
                                 }
-                              />
+                              >
+                                Love compels a mother to lose all dignity in public as she screams the name of her lost child.
+                              </Text>
                             </View>
                           </View>
                         </View>
@@ -414,7 +532,390 @@ exports[`The SearchFeed component should render 1`] = `
                               "paddingVertical": 16,
                             }
                           }
-                        />
+                        >
+                          <Text
+                            numberOfLines={2}
+                            style={
+                              Object {
+                                "color": "#303030",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 24,
+                                "lineHeight": 27.6,
+                              }
+                            }
+                          >
+                            Live for Freedom Toolkit
+                          </Text>
+                          <Text
+                            bold={false}
+                            italic={false}
+                            numberOfLines={2}
+                            style={
+                              Object {
+                                "color": "#303030",
+                                "fontFamily": "Colfax-Regular",
+                                "fontSize": 16,
+                                "lineHeight": 26,
+                                "paddingTop": 16,
+                              }
+                            }
+                          >
+                            Get in the Groove
+Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you go — with this playlist of NewSpring Worship's favorite songs of the summer.
+                          </Text>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={null}
+                >
+                  <View
+                    accessible={true}
+                    clickable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "transform": Array [
+                          Object {
+                            "scale": 1,
+                          },
+                        ],
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 16,
+                          "marginHorizontal": 16,
+                          "marginVertical": 12,
+                          "shadowColor": "rgba(8, 0, 20, 0.25)",
+                          "shadowOffset": Object {
+                            "height": 1,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 1,
+                          "shadowRadius": 6,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "borderRadius": 16,
+                            "overflow": "hidden",
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#dddddd",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#dddddd",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1.78}
+                              minAspectRatio={1.2}
+                              onLoad={[Function]}
+                              source={
+                                Array [
+                                  Object {
+                                    "__typename": "ImageMediaSource",
+                                    "cache": "force-cache",
+                                    "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Db08e4d69-0acf-40ff-920a-4517de086175",
+                                  },
+                                ]
+                              }
+                              style={
+                                Object {
+                                  "backgroundColor": "#dddddd",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                2147483648,
+                                0,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                1,
+                              ]
+                            }
+                            overlayColor="#000000"
+                            overlayType="gradient-top"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
+                              "paddingVertical": 16,
+                            }
+                          }
+                        >
+                          <Text
+                            numberOfLines={2}
+                            style={
+                              Object {
+                                "color": "#303030",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 24,
+                                "lineHeight": 27.6,
+                              }
+                            }
+                          >
+                            Should your 20-something live at home?
+                          </Text>
+                          <Text
+                            bold={false}
+                            italic={false}
+                            numberOfLines={2}
+                            style={
+                              Object {
+                                "color": "#303030",
+                                "fontFamily": "Colfax-Regular",
+                                "fontSize": 16,
+                                "lineHeight": 26,
+                                "paddingTop": 16,
+                              }
+                            }
+                          >
+                            Daughter: “Mom, can I bring some friends from college over for dinner Sunday?
+                          </Text>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={null}
+                >
+                  <View
+                    accessible={true}
+                    clickable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "transform": Array [
+                          Object {
+                            "scale": 1,
+                          },
+                        ],
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderRadius": 16,
+                          "marginHorizontal": 16,
+                          "marginVertical": 12,
+                          "shadowColor": "rgba(8, 0, 20, 0.25)",
+                          "shadowOffset": Object {
+                            "height": 1,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 1,
+                          "shadowRadius": 6,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "borderRadius": 16,
+                            "overflow": "hidden",
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#dddddd",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#dddddd",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1.78}
+                              minAspectRatio={1.2}
+                              onLoad={[Function]}
+                              source={
+                                Array [
+                                  Object {
+                                    "__typename": "ImageMediaSource",
+                                    "cache": "force-cache",
+                                    "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3D58c037fa-cc7f-4d72-9571-a0cc0558e346",
+                                  },
+                                ]
+                              }
+                              style={
+                                Object {
+                                  "backgroundColor": "#dddddd",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                2147483648,
+                                0,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                1,
+                              ]
+                            }
+                            overlayColor="#000000"
+                            overlayType="gradient-top"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
+                              "paddingVertical": 16,
+                            }
+                          }
+                        >
+                          <Text
+                            numberOfLines={2}
+                            style={
+                              Object {
+                                "color": "#303030",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 24,
+                                "lineHeight": 27.6,
+                              }
+                            }
+                          >
+                            Guys Night!
+                          </Text>
+                          <Text
+                            bold={false}
+                            italic={false}
+                            numberOfLines={2}
+                            style={
+                              Object {
+                                "color": "#303030",
+                                "fontFamily": "Colfax-Regular",
+                                "fontSize": 16,
+                                "lineHeight": 26,
+                                "paddingTop": 16,
+                              }
+                            }
+                          >
+                            A time to connect with other guys who live nearby.
+                          </Text>
+                        </View>
                       </View>
                     </View>
                   </View>
@@ -538,255 +1039,37 @@ exports[`The SearchFeed component should render 1`] = `
                               "paddingVertical": 16,
                             }
                           }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-                <View
-                  onLayout={[Function]}
-                  style={null}
-                >
-                  <View
-                    accessible={true}
-                    clickable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "transform": Array [
-                          Object {
-                            "scale": 1,
-                          },
-                        ],
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 16,
-                          "marginHorizontal": 16,
-                          "marginVertical": 12,
-                          "shadowColor": "rgba(8, 0, 20, 0.25)",
-                          "shadowOffset": Object {
-                            "height": 1,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 1,
-                          "shadowRadius": 6,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "borderRadius": 16,
-                            "overflow": "hidden",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#dddddd",
-                              "overflow": "hidden",
-                              "width": "100%",
-                            }
-                          }
                         >
-                          <Image
-                            maxAspectRatio={1.78}
-                            minAspectRatio={1.2}
-                            onLoad={[Function]}
-                            source={Array []}
+                          <Text
+                            numberOfLines={2}
                             style={
                               Object {
-                                "backgroundColor": "#dddddd",
-                                "opacity": 1,
-                                "resizeMode": "cover",
-                                "width": "100%",
+                                "color": "#303030",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 24,
+                                "lineHeight": 27.6,
                               }
                             }
-                          />
-                          <BVLinearGradient
-                            colors={
-                              Array [
-                                2147483648,
-                                0,
-                              ]
-                            }
-                            endPoint={
-                              Object {
-                                "x": 0,
-                                "y": 1,
-                              }
-                            }
-                            locations={
-                              Array [
-                                0,
-                                1,
-                              ]
-                            }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
-                            startPoint={
-                              Object {
-                                "x": 0,
-                                "y": 0,
-                              }
-                            }
+                          >
+                            10 ways to refresh your spirit every day
+                          </Text>
+                          <Text
+                            bold={false}
+                            italic={false}
+                            numberOfLines={2}
                             style={
                               Object {
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
+                                "color": "#303030",
+                                "fontFamily": "Colfax-Regular",
+                                "fontSize": 16,
+                                "lineHeight": 26,
+                                "paddingTop": 16,
                               }
                             }
-                          />
+                          >
+                            1. Be slow What would it look like to live your life at half-speed?
+                          </Text>
                         </View>
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "flex-start",
-                              "paddingBottom": 32,
-                              "paddingHorizontal": 24,
-                              "paddingVertical": 16,
-                            }
-                          }
-                        />
-                      </View>
-                    </View>
-                  </View>
-                </View>
-                <View
-                  onLayout={[Function]}
-                  style={null}
-                >
-                  <View
-                    accessible={true}
-                    clickable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "transform": Array [
-                          Object {
-                            "scale": 1,
-                          },
-                        ],
-                      }
-                    }
-                  >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 16,
-                          "marginHorizontal": 16,
-                          "marginVertical": 12,
-                          "shadowColor": "rgba(8, 0, 20, 0.25)",
-                          "shadowOffset": Object {
-                            "height": 1,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 1,
-                          "shadowRadius": 6,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "borderRadius": 16,
-                            "overflow": "hidden",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#dddddd",
-                              "overflow": "hidden",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <Image
-                            maxAspectRatio={1.78}
-                            minAspectRatio={1.2}
-                            onLoad={[Function]}
-                            source={Array []}
-                            style={
-                              Object {
-                                "backgroundColor": "#dddddd",
-                                "opacity": 1,
-                                "resizeMode": "cover",
-                                "width": "100%",
-                              }
-                            }
-                          />
-                          <BVLinearGradient
-                            colors={
-                              Array [
-                                2147483648,
-                                0,
-                              ]
-                            }
-                            endPoint={
-                              Object {
-                                "x": 0,
-                                "y": 1,
-                              }
-                            }
-                            locations={
-                              Array [
-                                0,
-                                1,
-                              ]
-                            }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
-                            startPoint={
-                              Object {
-                                "x": 0,
-                                "y": 0,
-                              }
-                            }
-                            style={
-                              Object {
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "flex-start",
-                              "paddingBottom": 32,
-                              "paddingHorizontal": 24,
-                              "paddingVertical": 16,
-                            }
-                          }
-                        />
                       </View>
                     </View>
                   </View>
@@ -850,20 +1133,42 @@ exports[`The SearchFeed component should render 1`] = `
                             }
                           }
                         >
-                          <Image
-                            maxAspectRatio={1.2}
-                            minAspectRatio={0.75}
-                            onLoad={[Function]}
-                            source={Array []}
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
                             style={
                               Object {
+                                "aspectRatio": 1,
                                 "backgroundColor": "#858585",
-                                "opacity": 1,
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
-                          />
+                          >
+                            <Image
+                              maxAspectRatio={1.2}
+                              minAspectRatio={0.75}
+                              onLoad={[Function]}
+                              source={
+                                Array [
+                                  Object {
+                                    "__typename": "ImageMediaSource",
+                                    "cache": "force-cache",
+                                    "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                                  },
+                                ]
+                              }
+                              style={
+                                Object {
+                                  "backgroundColor": "#858585",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
                           <BVLinearGradient
                             colors={
                               Array [
@@ -915,11 +1220,24 @@ exports[`The SearchFeed component should render 1`] = `
                             }
                           }
                         >
-                          <View
-                            hasSummary={false}
+                          <Text
+                            numberOfLines={3}
                             style={
                               Object {
-                                "alignItems": "flex-end",
+                                "color": "#ffffff",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 24,
+                                "lineHeight": 27.6,
+                              }
+                            }
+                          >
+                            Why leadership isn’t all about the title
+                          </Text>
+                          <View
+                            hasSummary={true}
+                            style={
+                              Object {
+                                "alignItems": "center",
                                 "flexDirection": "row",
                                 "paddingTop": 16,
                               }
@@ -934,16 +1252,20 @@ exports[`The SearchFeed component should render 1`] = `
                               }
                             >
                               <Text
-                                numberOfLines={4}
+                                bold={false}
+                                italic={false}
+                                numberOfLines={2}
                                 style={
                                   Object {
                                     "color": "#ffffff",
-                                    "fontFamily": "Colfax-Black",
-                                    "fontSize": 24,
-                                    "lineHeight": 27.6,
+                                    "fontFamily": "Colfax-Regular",
+                                    "fontSize": 16,
+                                    "lineHeight": 26,
                                   }
                                 }
-                              />
+                              >
+                                We all like to know that our boss or the authority over us is pleased, and it means even more when they take the time to share that in front of other people.
+                              </Text>
                             </View>
                           </View>
                         </View>
