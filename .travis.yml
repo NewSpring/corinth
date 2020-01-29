@@ -12,8 +12,8 @@ install:
 stages:
   - name: Test
     if: (type IN (pull_request))
-  - name: Bump Version
-    if: (type IN (push) AND branch = master)
+  #- name: Bump Version
+    #if: (type IN (push) AND branch = master)
 
 
 jobs:
@@ -33,3 +33,4 @@ jobs:
         - git checkout develop
         - yarn bump
         - git push --follow-tags "https://${GH_TOKEN}@${GH_REPO}" develop
+        - yarn gh-release --yes
