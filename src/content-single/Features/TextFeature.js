@@ -32,9 +32,7 @@ const TextFeature = ({
       {card ? (
         <ActionCard
           icon={'play'}
-          action={
-            <ShareButtonConnected message={message} itemId={contentId} />
-          }
+          action={<ShareButtonConnected message={message} itemId={contentId} />}
         >
           <FillInTheBlank />
         </ActionCard>

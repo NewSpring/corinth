@@ -12,7 +12,21 @@ import {
   BodyText,
 } from '@apollosproject/ui-kit';
 import { LegalText } from '@apollosproject/ui-scripture';
-import share from '../../../utils/content/share';
+// TODO: use the one from core once it makes it in a release
+// import {share} from '@apollosproject/ui-connected';
+import { Platform, Share } from 'react-native';
+
+const share = ({ title, url, message }) => {
+  Share.share({
+    title,
+    message:
+      // url isn't used on Android so we want to include that in the message if available
+      Platform.OS === 'android'
+        ? [message, url].filter((s) => !!s).join('\n')
+        : message,
+    url,
+  });
+};
 
 const ExportWrapper = styled({
   flexDirection: 'row',

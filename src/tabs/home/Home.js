@@ -17,7 +17,7 @@ import {
 } from '@apollosproject/ui-kit';
 
 import BrandedCard from '../../ui/BrandedCard';
-import { LiveButton } from '../../live';
+import LiveButton from '../../ui/LiveButton';
 
 import Features from './Features';
 import GET_USER_FEED from './getUserFeed';

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
 import { Query } from 'react-apollo';
 
-<<<<<<< ours
 import {
   HorizontalTileFeed,
   TouchableScale,

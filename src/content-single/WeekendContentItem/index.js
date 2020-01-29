@@ -96,6 +96,7 @@ const WeekendContentItem = ({ content, loading }) => {
         )}
       </ThemeConsumer>
     </ThemeMixin>
+  );
 };
 
 WeekendContentItem.propTypes = {
@@ -106,6 +107,10 @@ WeekendContentItem.propTypes = {
     }),
     id: PropTypes.string,
     title: PropTypes.string,
+    theme: PropTypes.shape({}),
+    videos: PropTypes.shape({
+      sources: PropTypes.arrayOf(PropTypes.shape({ uri: PropTypes.string })),
+    }),
   }),
   loading: PropTypes.bool,
 };

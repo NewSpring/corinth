@@ -27,9 +27,7 @@ const ScriptureFeature = ({
   return card ? (
     <ActionCard
       icon={'text'}
-      action={
-        <ShareButtonConnected message={message} itemId={contentId} />
-      }
+      action={<ShareButtonConnected message={message} itemId={contentId} />}
     >
       {scriptureItems}
     </ActionCard>

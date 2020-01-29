@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import { FeedView } from '@apollosproject/ui-kit';
 
-import ContentCardConnected from '../../../ui/ContentCardConnected';
+import SearchCard from '../../../ui/SearchCard';
 
 import GET_SEARCH_RESULTS from './getSearchResults';
 import NoResults from './NoResults';
@@ -25,6 +25,8 @@ const handleOnPress = ({ navigation, item }) =>
     transitionKey: item.transitionKey,
   });
 
+const keyExtractor = (item) => item && get(item, 'node.id', null);
+
 const SearchFeed = withNavigation(({ navigation, searchText }) => (
   <Query
     query={GET_SEARCH_RESULTS}
@@ -33,7 +35,7 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
   >
     {({ loading, error, data, refetch }) => (
       <StyledFeedView
-        ListItemComponent={ContentCardConnected}
+        ListItemComponent={SearchCard}
         content={get(data, 'search.edges', []).map((edge) => edge.node)}
         ListEmptyComponent={() => <NoResults searchText={searchText} />}
         hasContent={get(data, 'search.edges', []).length}
@@ -41,6 +43,7 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
         error={error}
         refetch={refetch}
         onPressItem={(item) => handleOnPress({ navigation, item })}
+        keyExtractor={keyExtractor}
       />
     )}
   </Query>

@@ -12,6 +12,16 @@ import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
 
 class Location extends PureComponent {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Location',
+    headerLeft: null,
+    headerRight: (
+      <PaddedView vertical={false}>
+        <ButtonLink onPress={() => navigation.goBack()}>Back</ButtonLink>
+      </PaddedView>
+    ),
+  });
+
   static propTypes = {
     navigation: PropTypes.shape({
       getParam: PropTypes.func,
@@ -35,16 +45,6 @@ class Location extends PureComponent {
         (5 * Dimensions.get('window').width) / Dimensions.get('window').height,
     },
   };
-
-  static navigationOptions = ({ navigation }) => ({
-    title: 'Location',
-    headerLeft: null,
-    headerRight: (
-      <PaddedView vertical={false}>
-        <ButtonLink onPress={() => navigation.goBack()}>Back</ButtonLink>
-      </PaddedView>
-    ),
-  });
 
   state = {
     userLocation: {
