@@ -36,7 +36,7 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
     {({ loading, error, data, refetch }) => (
       <StyledFeedView
         ListItemComponent={SearchCard}
-        content={get(data, 'search.edges', []).map((edge) => edge.node)}
+        content={get(data, 'search.edges', [])}
         ListEmptyComponent={() => <NoResults searchText={searchText} />}
         hasContent={get(data, 'search.edges', []).length}
         isLoading={loading}
