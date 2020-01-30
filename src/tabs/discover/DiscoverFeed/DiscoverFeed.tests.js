@@ -29,6 +29,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'UniversalContentItem:00bb7b364911281c97fc50f2a0d17b11',
                       title: 'Anderson Family Cookout!',
+                      hyphenatedTitle: 'Anderson Family Cookout!',
                       isLiked: false,
                       likedCount: 0,
                       summary: 'Come join us!',
@@ -60,6 +61,8 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'UniversalContentItem:7db601b238aa4345a818654300f83dd2',
                       title: 'Robert Madu is Coming to Christ Fellowship',
+                      hyphenatedTitle:
+                        'Robert Madu is Coming to Christ Fellowship',
                       isLiked: false,
                       likedCount: 5,
                       summary:
@@ -92,6 +95,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'UniversalContentItem:296373ecb53580855cadffa0375ebe18',
                       title: 'Guys Night!',
+                      hyphenatedTitle: 'Guys Night!',
                       isLiked: false,
                       likedCount: 0,
                       summary:
@@ -134,6 +138,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'UniversalContentItem:604a4a763a5fc0edfe386684ca6b3515',
                       title: 'Test Article',
+                      hyphenatedTitle: 'Test Article',
                       isLiked: false,
                       likedCount: 0,
                       summary: 'Test article...',
@@ -155,6 +160,8 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'UniversalContentItem:c495ff18cd998ed516a798b6218907cd',
                       title: '10 ways to refresh your spirit every day',
+                      hyphenatedTitle:
+                        '10 ways to refresh your spirit every day',
                       isLiked: false,
                       likedCount: 2,
                       summary:
@@ -177,6 +184,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae',
                       title: 'Live for Freedom Toolkit',
+                      hyphenatedTitle: 'Live for Freedom Toolkit',
                       isLiked: false,
                       likedCount: 1,
                       summary:
@@ -209,6 +217,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'ContentSeriesContentItem:6d8dc8e4bad017f815ae0cac8bf692bb',
                       title: 'The New Weekend Experience',
+                      hyphenatedTitle: 'The New Weekend Experience',
                       isLiked: false,
                       likedCount: 1,
                       summary:
@@ -244,6 +253,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'ContentSeriesContentItem:08449058d438ebeaffe9adb7a8e633cc',
                       title: 'Gathering',
+                      hyphenatedTitle: 'Gathering',
                       isLiked: false,
                       likedCount: 0,
                       summary: '',
@@ -278,6 +288,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'ContentSeriesContentItem:b74c2d295a0cf1340232ffa8be856c00',
                       title: 'Gauntlet 2018',
+                      hyphenatedTitle: 'Gauntlet 2018',
                       isLiked: false,
                       likedCount: 0,
                       summary: '',
@@ -322,6 +333,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'ContentSeriesContentItem:b085ec27d53006e9e6b95f3ac57da581',
                       title: 'Jeremiah: A 33-Day Devotional',
+                      hyphenatedTitle: 'Jeremiah: A 33-Day Devotional',
                       isLiked: true,
                       likedCount: 6,
                       summary: 'Have you ever had to deliver difficult news?',
@@ -353,6 +365,8 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'ContentSeriesContentItem:71bfdac0b98ea1b72a63ff4ea64e3c5a',
                       title: 'How To Be A Better Leader: A 7-Day Devotional',
+                      hyphenatedTitle:
+                        'How To Be A Better Leader: A 7-Day Devotional',
                       isLiked: false,
                       likedCount: 0,
                       summary: '',
@@ -384,6 +398,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'ContentSeriesContentItem:44fd3b82373ea8f197bd1e1e77c4bed0',
                       title: '2 Thessalonians: A 5-Day Devotional',
+                      hyphenatedTitle: '2 Thessalonians: A 5-Day Devotional',
                       isLiked: false,
                       likedCount: 0,
                       summary: '',
@@ -426,6 +441,8 @@ describe('The DiscoverFeed component', () => {
                         'UniversalContentItem:cf8fa657f23af88a2d63f7e4a2237db8',
                       title:
                         'The surprising journey that changed me and my dad',
+                      hyphenatedTitle:
+                        'The surprising journey that changed me and my dad',
                       isLiked: false,
                       likedCount: 6,
                       summary:
@@ -458,6 +475,8 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'UniversalContentItem:2e17f5a66407d114ab9f2392b03ebccd',
                       title: 'When I lost hope, my church family had my back',
+                      hyphenatedTitle:
+                        'When I lost hope, my church family had my back',
                       isLiked: true,
                       likedCount: 5,
                       summary:
@@ -490,6 +509,7 @@ describe('The DiscoverFeed component', () => {
                       id:
                         'UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db',
                       title: 'A Place to Worship Free of Fear',
+                      hyphenatedTitle: 'A Place to Worship Free of Fear',
                       isLiked: false,
                       likedCount: 1,
                       summary:
