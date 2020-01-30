@@ -1,5 +1,6 @@
 {
   "name": "newspringchurchapp",
+  "repository": "github:newspring/corinth",
   "version": "7.5.16",
   "private": true,
   "engines": {
@@ -46,7 +47,9 @@
   },
   "standard-version": {
     "scripts": {
-      "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'"
+      "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'",
+      "postchangelog": "sed -i '' 's/### [/## [/g' CHANGELOG.md",
+      "posttag": "yarn gh-release --yes"
     }
   },
   "resolutions": {
@@ -104,9 +107,11 @@
     "react-native-inappbrowser-reborn": "^3.0.0",
     "react-native-linear-gradient": "^2.5.4",
     "react-native-maps": "0.25.0",
+    "react-native-modal-datetime-picker": "7.6.0",
     "react-native-music-control": "0.10.6",
     "react-native-onesignal": "3.3.2",
     "react-native-passkit-wallet": "^0.1.4",
+    "react-native-permissions": "^2.0.5",
     "react-native-reanimated": "^1.0.1",
     "react-native-safari-view": "2.1.0",
     "react-native-safe-area-context": "^0.3.6",
@@ -124,9 +129,7 @@
     "recompose": "^0.30.0",
     "rn-fetch-blob": "^0.10.16",
     "stream": "^0.0.2",
-    "yup": "0.26.6",
-    "react-native-modal-datetime-picker": "7.6.0",
-    "react-native-permissions": "^2.0.5"
+    "yup": "0.26.6"
   },
   "devDependencies": {
     "@apollosproject/apollo-server-env-mock": "^1.2.4",
@@ -153,11 +156,14 @@
     "eslint-plugin-react-native": "^3.2.1",
     "get-dev-paths": "^0.1.0",
     "get-graphql-schema": "^2.1.2",
+    "gh-release": "^3.5.0",
+    "graphql-import": "^0.7.1",
     "image-size": "^0.8.3",
     "jest": "^24.8.0",
     "jest-react-native": "18.0.0",
     "jetifier": "^1.6.4",
     "jimp": "^0.9.3",
+    "metro-react-native-babel-preset": "^0.56.0",
     "nodemon": "1.18.7",
     "prettier": "1.14.2",
     "prop-types": "15.6.1",
@@ -165,9 +171,7 @@
     "react-native-version": "2.6.2",
     "react-test-renderer": "16.8.6",
     "standard-version": "^6.0.1",
-    "waait": "1.0.2",
-    "graphql-import": "^0.7.1",
-    "metro-react-native-babel-preset": "^0.56.0"
+    "waait": "1.0.2"
   },
   "rnpm": {
     "assets": [
