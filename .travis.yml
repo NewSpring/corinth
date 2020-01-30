@@ -24,11 +24,11 @@ jobs:
     - script:
         - travis_wait yarn test
         - travis_wait yarn codecov
-    - stage: Bump Version
-      script:
-        - git config user.email ${GH_EMAIL}
-        - git config user.name ${GH_USER}
-        - git remote
-        - git checkout develop
-        - yarn bump
+    #- stage: Bump Version
+      #script:
+        #- git config user.email ${GH_EMAIL}
+        #- git config user.name ${GH_USER}
+        #- git remote
+        #- git checkout develop
+        #- yarn bump
         #- git push --follow-tags "https://${GH_TOKEN}@${GH_REPO}" origin develop
