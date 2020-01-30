@@ -14,6 +14,7 @@ import {
   FeedView,
   BackgroundView,
   TouchableScale,
+  DefaultCard,
 } from '@apollosproject/ui-kit';
 
 import BrandedCard from '../../ui/BrandedCard';
@@ -49,21 +50,28 @@ class Home extends PureComponent {
       transitionKey: item.transitionKey,
     });
 
+  getComponent = (item) => {
+    switch (get(item, '__typename')) {
+      case 'WeekendContentItem':
+      case 'ContentSeriesContentItem':
+      case 'DevotionalContentItem':
+        return BrandedCard;
+      default:
+        return DefaultCard;
+    }
+  };
+
   render() {
     return (
       <BackgroundView>
         <SafeAreaView>
           <Query
             query={GET_USER_FEED}
-            variables={{
-              first: 10,
-              after: null,
-            }}
+            variables={{ first: 10, after: null }}
             fetchPolicy="cache-and-network"
           >
             {({ loading, error, data, refetch, fetchMore, variables }) => (
               <FeedView
-                ListItemComponent={ContentCardConnected}
                 content={get(data, 'userFeed.edges', []).map(
                   (edge) => edge.node
                 )}
@@ -101,13 +109,21 @@ class Home extends PureComponent {
                             <LiveButton contentId={featuredItem.id} />
                             <TouchableScale
                               onPress={() =>
-                                this.handleOnPress({ id: featuredItem.id })
+                                this.handleOnPress({
+                                  id: featuredItem.id,
+                                })
                               }
                             >
                               <ContentCardConnected
                                 Component={BrandedCard}
                                 contentId={featuredItem.id}
                                 isLoading={isFeaturedLoading}
+                                labelText={
+                                  featuredItem.parentChannel &&
+                                  featuredItem.parentChannel.name
+                                    .split(' - ')
+                                    .pop()
+                                }
                               />
                             </TouchableScale>
                           </>
@@ -118,6 +134,21 @@ class Home extends PureComponent {
                   </>
                 }
                 onPressItem={this.handleOnPress}
+                renderItem={({ item }) => (
+                  <TouchableScale
+                    onPress={() => this.handleOnPress({ id: item.id })}
+                  >
+                    <ContentCardConnected
+                      Component={this.getComponent(item)}
+                      contentId={item.id}
+                      isLoading={loading}
+                      labelText={
+                        item.parentChannel &&
+                        item.parentChannel.name.split(' - ').pop()
+                      }
+                    />
+                  </TouchableScale>
+                )}
               />
             )}
           </Query>
