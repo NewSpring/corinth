@@ -30,7 +30,9 @@ import LandingScreen from './LandingScreen';
 import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
 
-// need to initialize bugsnag at the entrypoint
+// need to initialize error tracking at the entrypoint
+// eslint-disable-next-line
+import Crashes from 'appcenter-crashes';
 // eslint-disable-next-line
 import bugsnag from './bugsnag';
 

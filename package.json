@@ -1,5 +1,6 @@
 {
   "name": "newspringchurchapp",
+  "repository": "github:newspring/corinth",
   "version": "7.5.16",
   "private": true,
   "engines": {
@@ -16,6 +17,7 @@
     "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/ && ./scripts/bump-version-code.sh",
     "prestart": "yarn get-schema && node ./scripts/get-introspection-data.js",
     "start": "react-native start",
+    "restart": "yarn && yarn pods && yarn start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
     "test": "TZ=UTC jest --forceExit",
     "bump": "standard-version",
@@ -45,7 +47,9 @@
   },
   "standard-version": {
     "scripts": {
-      "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'"
+      "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'",
+      "postchangelog": "sed -i '' 's/### [/## [/g' CHANGELOG.md",
+      "posttag": "yarn gh-release --yes"
     }
   },
   "resolutions": {
@@ -156,6 +160,7 @@
     "eslint-plugin-react-native": "^3.2.1",
     "get-dev-paths": "^0.1.0",
     "get-graphql-schema": "^2.1.2",
+    "gh-release": "^3.5.0",
     "graphql-import": "^0.7.1",
     "image-size": "^0.8.3",
     "jest": "^24.8.0",
