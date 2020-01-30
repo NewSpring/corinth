@@ -1,7 +1,11 @@
+import { Platform } from 'react-native';
+
+import { ReactNativeFile } from 'apollo-upload-client';
 import gql from 'graphql-tag';
 import ImagePicker from 'react-native-image-picker';
-import { ReactNativeFile } from 'apollo-upload-client';
-import GET_USER_PROFILE from './getUserPhoto';
+import { check, PERMISSIONS, request, RESULTS } from 'react-native-permissions';
+
+import GET_USER_PHOTO from './getUserPhoto';
 
 const options = {
   title: 'Select Profile Image',
@@ -14,7 +18,23 @@ const options = {
   },
 };
 
-function showImagePicker() {
+async function handleIOSPermissions() {
+  let cameraPermissionStatus = await check(PERMISSIONS.IOS.PHOTO_LIBRARY);
+  let hasPermission = cameraPermissionStatus === RESULTS.GRANTED;
+  if (!hasPermission) {
+    cameraPermissionStatus = await request(PERMISSIONS.IOS.PHOTO_LIBRARY);
+    hasPermission = cameraPermissionStatus === RESULTS.GRANTED;
+    if (!hasPermission) {
+      return false;
+    }
+  }
+  return true;
+}
+
+async function showImagePicker() {
+  if (Platform.OS === 'ios' && !(await handleIOSPermissions())) {
+    return null;
+  }
   return new Promise((resolve, reject) => {
     ImagePicker.showImagePicker(options, (response) => {
       if (response.didCancel) {
@@ -59,10 +79,10 @@ export default async ({ client, onUpload = () => ({}) }) => {
           },
         }
       ) => {
-        const data = cache.readQuery({ query: GET_USER_PROFILE });
+        const data = cache.readQuery({ query: GET_USER_PHOTO });
 
         cache.writeQuery({
-          query: GET_USER_PROFILE,
+          query: GET_USER_PHOTO,
           data: {
             currentUser: {
               ...data.currentUser,

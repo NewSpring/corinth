@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import CampusParts from '../../user-settings/Locations/campusFragment';
 
 export default gql`
-  query getCurrentUserProfile {
+  query CurrentUserProfile {
     currentUser {
       id
       profile {
