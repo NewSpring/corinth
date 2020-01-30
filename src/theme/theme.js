@@ -89,6 +89,9 @@ const typography = {
       italic: 'Colfax-BlackItalic',
     },
   },
+  ui: {
+    regular: 'Colfax-Regular',
+  },
 };
 
 export const buttons = ({ colors: themeColors, alpha: themeAlpha }) => ({

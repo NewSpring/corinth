@@ -273,7 +273,7 @@ exports[`The Discover tab component Should retrieve the Content Channel Feeds 1`
                         style={
                           Object {
                             "flexGrow": 1,
-                            "fontFamily": "System",
+                            "fontFamily": "Colfax-Regular",
                             "fontSize": 14,
                             "height": 40,
                             "paddingLeft": 8,
@@ -475,7 +475,7 @@ exports[`The Discover tab component Should retrieve the Content Channel Feeds 1`
                           style={
                             Object {
                               "color": "#6bac43",
-                              "fontFamily": "System",
+                              "fontFamily": "Colfax-Regular",
                               "fontSize": 14,
                               "fontStyle": null,
                               "fontWeight": null,
