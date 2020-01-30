@@ -12,7 +12,7 @@ const Toolbar = ({ navigation }) => (
         <ActionBarItem
           onPress={() =>
             openUrl(
-              'https://newspring.cc/give/now',
+              'https://newspring.cc/give/now/?hidenav=true',
               { externalBrowser: true },
               { useRockToken: true }
             )
@@ -22,7 +22,11 @@ const Toolbar = ({ navigation }) => (
         />
         <ActionBarItem
           onPress={() =>
-            openUrl('https://newspring.cc/groups', {}, { useRockToken: true })
+            openUrl(
+              'https://newspring.cc/groups/?hidenav=true',
+              {},
+              { useRockToken: true }
+            )
           }
           icon="group"
           label="Join Group"

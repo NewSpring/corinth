@@ -40,7 +40,7 @@ const ActionTable = ({ isGroupLeader }) => (
           <Touchable
             onPress={() =>
               openUrl(
-                'https://newspring.cc/connect',
+                'https://newspring.cc/connect/?hidenav=true',
                 {},
                 { useRockToken: true }
               )
@@ -55,7 +55,7 @@ const ActionTable = ({ isGroupLeader }) => (
           <Touchable
             onPress={() =>
               openUrl(
-                'https://newspring.cc/serving',
+                'https://newspring.cc/serving/?hidenav=true',
                 {},
                 { useRockToken: true }
               )
@@ -70,7 +70,7 @@ const ActionTable = ({ isGroupLeader }) => (
           <Touchable
             onPress={() =>
               openUrl(
-                'https://newspring.cc/missions',
+                'https://newspring.cc/missions/?hidenav=true',
                 {},
                 { useRockToken: true }
               )
@@ -87,7 +87,7 @@ const ActionTable = ({ isGroupLeader }) => (
               <Touchable
                 onPress={() =>
                   openUrl(
-                    'https://newspring.cc/groups/leader',
+                    'https://newspring.cc/groups/leader/?hidenav=true',
                     {},
                     { useRockToken: true }
                   )
@@ -118,7 +118,7 @@ const ActionTable = ({ isGroupLeader }) => (
           <Touchable
             onPress={() =>
               openUrl(
-                `https://newspring.cc/workflows/530?Source=3`,
+                `https://newspring.cc/workflows/530?Source=3&hidenav=true`,
                 {},
                 { useRockToken: true }
               )
