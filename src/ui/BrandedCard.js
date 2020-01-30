@@ -2,39 +2,73 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
 
-import { FeaturedCard, CardLabel, withTheme } from '@apollosproject/ui-kit';
+import { FeaturedCard, CardLabel, styled } from '@apollosproject/ui-kit';
 
-const LiveAwareLabel = withTheme(
-  ({ customTheme, isLive, title, type, theme }) => ({
-    ...(isLive
-      ? {
-          title: 'Live',
-          type: 'secondary',
-          icon: 'live-dot',
-          iconSize: theme.helpers.rem(0.4375), // using our typographic size unit based on fontSize so that the icon scales correctly with font size changes.
-        }
-      : {
-          title,
-          type: !customTheme ? 'secondary' : type,
-        }),
-    style: { marginBottom: theme.sizing.baseUnit },
-  })
-)(CardLabel);
+// If we decide to go back to what we had before:
+// * Uncomment the LiveAwareLabel code below
+// * Remove hasAction, campaign, and summary from props and propTypes
+// * Remove the StyledCardLabel & getTheme functions
+// * Change LabelComponent to be:
+// LabelComponent={
+//    labelText ? (
+//      <LiveAwareLabel
+//        type={get(theme, 'type') === 'LIGHT' ? 'darkOverlay' : undefined}
+//        customTheme={theme}
+//        isLive={isLive}
+//        title={labelText}
+//      />
+//    ) : null
 
-const BrandedCard = ({ theme = {}, isLive, labelText, ...otherProps }) => (
+// const LiveAwareLabel = withTheme(	const StyledCardLabel = styled(({ theme }) => ({
+//   ({ customTheme, isLive, title, type, theme }) => ({	  marginBottom: theme.sizing.baseUnit,
+//     ...(isLive	}))(CardLabel);
+//       ? {
+//           title: 'Live',
+//           type: 'secondary',
+//           icon: 'live-dot',
+//           iconSize: theme.helpers.rem(0.4375), // using our typographic size unit based on fontSize so that the icon scales correctly with font size changes.
+//         }
+//       : {
+//           title,
+//           type: !customTheme ? 'secondary' : type,
+//         }),
+//     style: { marginBottom: theme.sizing.baseUnit },
+//   })
+// )(CardLabel);
+
+const StyledCardLabel = styled(({ theme }) => ({
+  marginBottom: theme.sizing.baseUnit,
+}))(CardLabel);
+
+const getTheme = (theme) =>
+  get(theme, 'type') === 'LIGHT' ? 'darkOverlay' : undefined;
+
+const BrandedCard = ({
+  theme = {},
+  isLive,
+  labelText,
+  hasAction,
+  campaign,
+  summary,
+  ...otherProps
+}) => (
   <FeaturedCard
     LabelComponent={
-      labelText ? (
-        <LiveAwareLabel
-          type={get(theme, 'type') === 'LIGHT' ? 'darkOverlay' : undefined}
-          customTheme={theme}
-          isLive={isLive}
-          title={labelText}
-        />
-      ) : null
+      campaign && isLive ? (
+        <StyledCardLabel title={"Today's Sermon"} />
+      ) : (
+        labelText && (
+          <StyledCardLabel
+            title={labelText}
+            type={theme ? getTheme(theme) : 'secondary'}
+          />
+        )
+      )
     }
     theme={theme}
     isLive={isLive}
+    hasAction={campaign && isLive ? false : hasAction}
+    summary={campaign && isLive ? 'Tap for sermon notes and more' : summary}
     {...otherProps}
   />
 );
@@ -45,6 +79,9 @@ BrandedCard.propTypes = {
   }),
   isLive: PropTypes.bool,
   labelText: PropTypes.string,
+  hasAction: PropTypes.bool,
+  campaign: PropTypes.bool,
+  summary: PropTypes.string,
 };
 
 export default BrandedCard;
