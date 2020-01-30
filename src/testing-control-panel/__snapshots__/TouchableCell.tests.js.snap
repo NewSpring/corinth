@@ -157,7 +157,7 @@ exports[`touchable cell renders the cell, icon, and text 1`] = `
           "color": "#303030",
           "flexGrow": 1,
           "flexShrink": 1,
-          "fontFamily": "Colfax-Regular",
+          "fontFamily": "Colfax-Medium",
           "fontSize": 14,
           "fontStyle": null,
           "fontWeight": null,

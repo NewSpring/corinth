@@ -182,7 +182,7 @@ exports[`The Onboarding LandingScreen component should be stylable 1`] = `
           style={
             Object {
               "flexGrow": 1,
-              "fontFamily": "Colfax-Regular",
+              "fontFamily": "Colfax-Medium",
               "fontSize": 14,
               "height": 40,
               "paddingLeft": 8,
@@ -384,7 +384,7 @@ exports[`The Onboarding LandingScreen component should be stylable 1`] = `
             style={
               Object {
                 "color": "#6bac43",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Medium",
                 "fontSize": 14,
                 "fontStyle": null,
                 "fontWeight": null,
@@ -580,7 +580,7 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
           style={
             Object {
               "flexGrow": 1,
-              "fontFamily": "Colfax-Regular",
+              "fontFamily": "Colfax-Medium",
               "fontSize": 14,
               "height": 40,
               "paddingLeft": 8,
@@ -782,7 +782,7 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
             style={
               Object {
                 "color": "#6bac43",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Medium",
                 "fontSize": 14,
                 "fontStyle": null,
                 "fontWeight": null,
@@ -978,7 +978,7 @@ exports[`The Onboarding LandingScreen component should render pass props to Sear
           style={
             Object {
               "flexGrow": 1,
-              "fontFamily": "Colfax-Regular",
+              "fontFamily": "Colfax-Medium",
               "fontSize": 14,
               "height": 40,
               "paddingLeft": 8,
@@ -1180,7 +1180,7 @@ exports[`The Onboarding LandingScreen component should render pass props to Sear
             style={
               Object {
                 "color": "#6bac43",
-                "fontFamily": "Colfax-Regular",
+                "fontFamily": "Colfax-Medium",
                 "fontSize": 14,
                 "fontStyle": null,
                 "fontWeight": null,

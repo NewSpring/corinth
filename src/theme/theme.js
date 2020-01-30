@@ -90,7 +90,7 @@ const typography = {
     },
   },
   ui: {
-    regular: 'Colfax-Regular',
+    regular: 'Colfax-Medium',
   },
 };
 
