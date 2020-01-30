@@ -303,9 +303,10 @@ type Mutation {
   updateLikeEntity(input: LikeEntityInput!): ContentItem
   authenticate(identity: String!, password: String!): Authentication
   changePassword(password: String!): Authentication
-  registerPerson(email: String!, password: String!): Authentication
+  registerPerson(email: String!, password: String!, userProfile: [UpdateProfileInput]): Authentication
   requestSmsLoginPin(phoneNumber: String!): SmsPinResult
   authenticateWithSms(phoneNumber: String!, pin: String!): Authentication
+  registerWithSms(phoneNumber: String!, pin: String!, userProfile: [UpdateProfileInput]): Authentication
   identifySelf(input: AnalyticsIdentifyInput!): AnalyticsResult
   trackEvent(input: AnalyticsTrackInput!): AnalyticsResult
   updateUserPushSettings(input: PushSettingsInput!): Person
@@ -451,6 +452,7 @@ type Query {
   personaFeed(first: Int, after: String): ContentItemsConnection
   contentItemFromSlug(slug: String!): ContentItem
   currentUser: AuthenticatedUser
+  userExists(identity: String): USER_AUTH_STATUS
   liveStream: LiveStream @deprecated(reason: "Use liveStreams, there may be multiple.")
   liveStreams: [LiveStream]
   scripture(query: String!, version: VERSION): Scripture @deprecated(reason: "Use 'scriptures' instead.")
@@ -528,6 +530,7 @@ type SharableFeature implements Sharable {
 
 type SmsPinResult {
   success: Boolean
+  userAuthStatus: USER_AUTH_STATUS
 }
 
 type TextFeature implements Feature & Node {
@@ -589,6 +592,12 @@ input UpdateProfileInput {
 
 """The `Upload` scalar type represents a file upload."""
 scalar Upload
+
+enum USER_AUTH_STATUS {
+  NONE
+  NEW_APP_USER
+  EXISTING_APP_USER
+}
 
 enum VERSION {
   WEB
