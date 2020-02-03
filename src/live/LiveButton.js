@@ -9,6 +9,7 @@ import {
   UIText,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import Analytics from 'appcenter-analytics';
 import { WebBrowserConsumer } from '../ui/WebBrowser';
 
 import { LiveConsumer } from '.';
@@ -36,6 +37,7 @@ const LiveNowButton = () => (
                     );
                     // TODO: This isn't working - need to fix.
                     track({ eventName: 'Clicked Live Bar' });
+                    Analytics.trackEvent('Clicked Live Bar');
                   }}
                 >
                   <LiveCard>

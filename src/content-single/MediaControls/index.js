@@ -14,6 +14,7 @@ import {
   H6,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import Analytics from 'appcenter-analytics';
 import { WebBrowserConsumer } from '../../ui/WebBrowser';
 import { LiveConsumer } from '../../live';
 import GET_CONTENT_MEDIA from './getContentMedia';
@@ -81,6 +82,7 @@ class MediaControls extends PureComponent {
               action: () => {
                 openUrl(webViewUrl);
                 track({ eventName: 'Clicked Play Button (Live Video)' });
+                Analytics.trackEvent('Clicked Play Button (Live Video)');
               },
               coverImageSources,
             })
