@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import ApollosConfig from '@apollosproject/config';
 
 export default gql`
   query getScripture($itemId: ID!) {
@@ -7,13 +8,10 @@ export default gql`
       id
       ... on DevotionalContentItem {
         scriptures {
-          id
-          html
-          reference
-          copyright
-          version
+          ...ScriptureFragment
         }
       }
     }
   }
+  ${ApollosConfig.FRAGMENTS.SCRIPTURE_FRAGMENT}
 `;

@@ -1,6 +1,5 @@
 import gql from 'graphql-tag';
-
-import { BASE_CARD_FRAGMENT } from '../../../ui/ContentCardConnected';
+import ApollosConfig from '@apollosproject/config';
 
 export default gql`
   query getContentChannels {
@@ -11,11 +10,11 @@ export default gql`
         edges {
           node {
             id
-            ...baseCardFragment
+            ...contentCardFragment
           }
         }
       }
     }
   }
-  ${BASE_CARD_FRAGMENT}
+  ${ApollosConfig.FRAGMENTS.CONTENT_CARD_FRAGMENT}
 `;

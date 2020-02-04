@@ -375,8 +375,8 @@ exports[`the Devotional component renders a devotional 1`] = `
                                       "fontFamily": "Colfax-Black",
                                       "fontSize": 36,
                                       "lineHeight": 41.4,
-                                      "paddingBottom": 20,
-                                      "paddingTop": 24,
+                                      "paddingBottom": 19.22,
+                                      "paddingTop": 23.04,
                                     }
                                   }
                                 >
@@ -542,6 +542,7 @@ exports[`the Devotional component renders a devotional 1`] = `
                                         "fontFamily": "Colfax-Bold",
                                         "fontSize": 16,
                                         "lineHeight": 23.04,
+                                        "paddingBottom": 11.52,
                                       }
                                     }
                                   >
@@ -657,6 +658,7 @@ exports[`the Devotional component renders a devotional 1`] = `
                                         "fontFamily": "Colfax-Bold",
                                         "fontSize": 16,
                                         "lineHeight": 23.04,
+                                        "paddingBottom": 11.52,
                                       }
                                     }
                                   >

@@ -75,28 +75,216 @@ exports[`The SearchFeed component should render 1`] = `
               data={
                 Array [
                   Object {
-                    "__typename": "DevotionalContentItem",
-                    "id": "DevotionalContentItem:561dfb7dbd8a5c093fd8385c7edaadbc",
+                    "__typename": "SearchResult",
+                    "coverImage": Object {
+                      "__typename": "ImageMedia",
+                      "name": null,
+                      "sources": Array [
+                        Object {
+                          "__typename": "ImageMediaSource",
+                          "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                        },
+                      ],
+                    },
+                    "cursor": "b487224762b030f470967f45d7205823",
+                    "node": Object {
+                      "__typename": "DevotionalContentItem",
+                      "coverImage": Object {
+                        "__typename": "ImageMedia",
+                        "sources": Array [
+                          Object {
+                            "__typename": "ImageMediaSource",
+                            "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                          },
+                        ],
+                      },
+                      "hyphenatedTitle": "-",
+                      "id": "DevotionalContentItem:561dfb7dbd8a5c093fd8385c7edaadbc",
+                      "parentChannel": Object {
+                        "__typename": "ContentChannel",
+                        "id": "ContentChannel:559b23fd0aa90e81b1c023e72e230fa1",
+                        "name": "Devotional",
+                      },
+                      "summary": "Love compels a mother to lose all dignity in public as she screams the name of her lost child.",
+                      "theme": null,
+                      "title": "How to lead people to Jesus",
+                      "videos": Array [
+                        Object {
+                          "__typename": "VideoMedia",
+                          "sources": Array [],
+                        },
+                      ],
+                    },
+                    "summary": "Love compels a mother to lose all dignity in public as she screams the name of her lost child.",
+                    "title": "How to lead people to Jesus",
                   },
                   Object {
-                    "__typename": "UniversalContentItem",
-                    "id": "UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae",
+                    "__typename": "SearchResult",
+                    "coverImage": null,
+                    "cursor": "4affc1122ad80d4edcf6c5bc9d88ae99",
+                    "node": Object {
+                      "__typename": "UniversalContentItem",
+                      "coverImage": null,
+                      "hyphenatedTitle": "-",
+                      "id": "UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae",
+                      "parentChannel": Object {
+                        "__typename": "ContentChannel",
+                        "id": "ContentChannel:4f68015ba18662a7409d1219a4ce013e",
+                        "name": "Articles",
+                      },
+                      "summary": "Get in the Groove
+Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you go — with this playlist of NewSpring Worship's favorite songs of the summer.",
+                      "theme": null,
+                      "title": "Live for Freedom Toolkit",
+                      "videos": Array [],
+                    },
+                    "summary": "Get in the Groove
+Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you go — with this playlist of NewSpring Worship's favorite songs of the summer.",
+                    "title": "Live for Freedom Toolkit",
                   },
                   Object {
-                    "__typename": "UniversalContentItem",
-                    "id": "UniversalContentItem:895738f70482712adb3ab45a08c30456",
+                    "__typename": "SearchResult",
+                    "coverImage": Object {
+                      "__typename": "ImageMedia",
+                      "name": null,
+                      "sources": Array [
+                        Object {
+                          "__typename": "ImageMediaSource",
+                          "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Db08e4d69-0acf-40ff-920a-4517de086175",
+                        },
+                      ],
+                    },
+                    "cursor": "659a26257a49fb2bf1446bb747bf7dd3",
+                    "node": Object {
+                      "__typename": "UniversalContentItem",
+                      "coverImage": Object {
+                        "__typename": "ImageMedia",
+                        "sources": Array [
+                          Object {
+                            "__typename": "ImageMediaSource",
+                            "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Db08e4d69-0acf-40ff-920a-4517de086175",
+                          },
+                        ],
+                      },
+                      "hyphenatedTitle": "-",
+                      "id": "UniversalContentItem:895738f70482712adb3ab45a08c30456",
+                      "parentChannel": Object {
+                        "__typename": "ContentChannel",
+                        "id": "ContentChannel:4f68015ba18662a7409d1219a4ce013e",
+                        "name": "Articles",
+                      },
+                      "summary": "Daughter: “Mom, can I bring some friends from college over for dinner Sunday?",
+                      "theme": null,
+                      "title": "Should your 20-something live at home?",
+                      "videos": Array [],
+                    },
+                    "summary": "Daughter: “Mom, can I bring some friends from college over for dinner Sunday?",
+                    "title": "Should your 20-something live at home?",
                   },
                   Object {
-                    "__typename": "UniversalContentItem",
-                    "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
+                    "__typename": "SearchResult",
+                    "coverImage": Object {
+                      "__typename": "ImageMedia",
+                      "name": null,
+                      "sources": Array [
+                        Object {
+                          "__typename": "ImageMediaSource",
+                          "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3D58c037fa-cc7f-4d72-9571-a0cc0558e346",
+                        },
+                      ],
+                    },
+                    "cursor": "c8d2fe738629909c33010432432f21c8",
+                    "node": Object {
+                      "__typename": "UniversalContentItem",
+                      "coverImage": Object {
+                        "__typename": "ImageMedia",
+                        "sources": Array [
+                          Object {
+                            "__typename": "ImageMediaSource",
+                            "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3D58c037fa-cc7f-4d72-9571-a0cc0558e346",
+                          },
+                        ],
+                      },
+                      "hyphenatedTitle": "-",
+                      "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
+                      "parentChannel": Object {
+                        "__typename": "ContentChannel",
+                        "id": "ContentChannel:965b6e6d7046a885bea4e300b5c0400d",
+                        "name": "News",
+                      },
+                      "summary": "A time to connect with other guys who live nearby.",
+                      "theme": null,
+                      "title": "Guys Night!",
+                      "videos": Array [],
+                    },
+                    "summary": "A time to connect with other guys who live nearby.",
+                    "title": "Guys Night!",
                   },
                   Object {
-                    "__typename": "UniversalContentItem",
-                    "id": "UniversalContentItem:c495ff18cd998ed516a798b6218907cd",
+                    "__typename": "SearchResult",
+                    "coverImage": null,
+                    "cursor": "ba47485fbc61945a38a4147fe7ff3703",
+                    "node": Object {
+                      "__typename": "UniversalContentItem",
+                      "coverImage": null,
+                      "hyphenatedTitle": "-",
+                      "id": "UniversalContentItem:c495ff18cd998ed516a798b6218907cd",
+                      "parentChannel": Object {
+                        "__typename": "ContentChannel",
+                        "id": "ContentChannel:4f68015ba18662a7409d1219a4ce013e",
+                        "name": "Articles",
+                      },
+                      "summary": "1. Be slow What would it look like to live your life at half-speed?",
+                      "theme": null,
+                      "title": "10 ways to refresh your spirit every day",
+                      "videos": Array [],
+                    },
+                    "summary": "1. Be slow What would it look like to live your life at half-speed?",
+                    "title": "10 ways to refresh your spirit every day",
                   },
                   Object {
-                    "__typename": "DevotionalContentItem",
-                    "id": "DevotionalContentItem:4dd74ceca9e09b5276e93cbf53821bd6",
+                    "__typename": "SearchResult",
+                    "coverImage": Object {
+                      "__typename": "ImageMedia",
+                      "name": null,
+                      "sources": Array [
+                        Object {
+                          "__typename": "ImageMediaSource",
+                          "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                        },
+                      ],
+                    },
+                    "cursor": "9456eef87e314dcf19f013384a29fd22",
+                    "node": Object {
+                      "__typename": "DevotionalContentItem",
+                      "coverImage": Object {
+                        "__typename": "ImageMedia",
+                        "sources": Array [
+                          Object {
+                            "__typename": "ImageMediaSource",
+                            "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                          },
+                        ],
+                      },
+                      "hyphenatedTitle": "-",
+                      "id": "DevotionalContentItem:4dd74ceca9e09b5276e93cbf53821bd6",
+                      "parentChannel": Object {
+                        "__typename": "ContentChannel",
+                        "id": "ContentChannel:559b23fd0aa90e81b1c023e72e230fa1",
+                        "name": "Devotional",
+                      },
+                      "summary": "We all like to know that our boss or the authority over us is pleased, and it means even more when they take the time to share that in front of other people.",
+                      "theme": null,
+                      "title": "Why leadership isn’t all about the title",
+                      "videos": Array [
+                        Object {
+                          "__typename": "VideoMedia",
+                          "sources": Array [],
+                        },
+                      ],
+                    },
+                    "summary": "We all like to know that our boss or the authority over us is pleased, and it means even more when they take the time to share that in front of other people.",
+                    "title": "Why leadership isn’t all about the title",
                   },
                 ]
               }
@@ -113,7 +301,6 @@ exports[`The SearchFeed component should render 1`] = `
               onEndReachedThreshold={0.7}
               onLayout={[Function]}
               onMomentumScrollEnd={[Function]}
-              onPressItem={[Function]}
               onRefresh={[Function]}
               onScroll={[Function]}
               onScrollBeginDrag={[Function]}
@@ -160,9 +347,11 @@ exports[`The SearchFeed component should render 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
+                      isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -187,187 +376,149 @@ exports[`The SearchFeed component should render 1`] = `
                         <View
                           style={
                             Object {
-                              "paddingHorizontal": 16,
+                              "backgroundColor": "#858585",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#858585",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
+                              onLoad={[Function]}
+                              source={Array []}
+                              style={
+                                Object {
+                                  "aspectRatio": 1,
+                                  "backgroundColor": "#858585",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                1727526903,
+                                4294440951,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                0.8,
+                              ]
+                            }
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "marginTop": "-40%",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
                               "paddingVertical": 16,
                             }
                           }
                         >
                           <View
-                            flexed={false}
                             style={
                               Object {
                                 "alignItems": "center",
-                                "flex": null,
-                                "flexDirection": "row",
-                                "tintColor": "#2a4930",
-                              }
-                            }
-                          >
-                            <RNSVGSvgView
-                              align="xMidYMid"
-                              bbHeight={19.2}
-                              bbWidth={19.2}
-                              focusable={false}
-                              height={19.2}
-                              meetOrSlice={0}
-                              minX={0}
-                              minY={0}
-                              style={
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "borderWidth": 0,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "opacity": 1,
-                                  },
-                                  Object {
-                                    "flex": 0,
-                                    "height": 19,
-                                    "width": 19,
-                                  },
-                                ]
-                              }
-                              vbHeight={24}
-                              vbWidth={24}
-                              width={19.2}
-                            >
-                              <RNSVGGroup
-                                fill={
-                                  Array [
-                                    0,
-                                    4278190080,
-                                  ]
-                                }
-                                fillOpacity={1}
-                                fillRule={1}
-                                font={Object {}}
-                                matrix={
-                                  Array [
-                                    1,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                  ]
-                                }
-                                opacity={1}
-                                originX={0}
-                                originY={0}
-                                propList={Array []}
-                                rotation={0}
-                                scaleX={1}
-                                scaleY={1}
-                                skewX={0}
-                                skewY={0}
-                                stroke={null}
-                                strokeDasharray={null}
-                                strokeDashoffset={null}
-                                strokeLinecap={0}
-                                strokeLinejoin={0}
-                                strokeMiterlimit={4}
-                                strokeOpacity={1}
-                                strokeWidth={1}
-                                vectorEffect={0}
-                                x={0}
-                                y={0}
-                              >
-                                <RNSVGPath
-                                  d="M21.8955 19.741l-9.091-16.3178c-.3145-.5643-1.2945-.5643-1.609 0L2.1045 19.741c-.148.2662-.138.5865.0255.8433.1655.2585.46.4157.779.4157h18.182c.319 0 .6136-.1572.778-.4148.1647-.2577.1747-.578.0265-.8442zM12 18.4235c-.5018 0-.909-.3847-.909-.8588 0-.474.4072-.8588.909-.8588.502 0 .909.3845.909.8586 0 .474-.407.8588-.909.8588zm.909-3.4353h-1.818V8.9764h1.818v6.0118z"
-                                  fill={
-                                    Array [
-                                      0,
-                                      4286940549,
-                                    ]
-                                  }
-                                  fillOpacity={1}
-                                  fillRule={1}
-                                  matrix={
-                                    Array [
-                                      1,
-                                      0,
-                                      0,
-                                      1,
-                                      0,
-                                      0,
-                                    ]
-                                  }
-                                  opacity={1}
-                                  originX={0}
-                                  originY={0}
-                                  propList={
-                                    Array [
-                                      "fill",
-                                    ]
-                                  }
-                                  rotation={0}
-                                  scaleX={1}
-                                  scaleY={1}
-                                  skewX={0}
-                                  skewY={0}
-                                  stroke={null}
-                                  strokeDasharray={null}
-                                  strokeDashoffset={null}
-                                  strokeLinecap={0}
-                                  strokeLinejoin={0}
-                                  strokeMiterlimit={4}
-                                  strokeOpacity={1}
-                                  strokeWidth={1}
-                                  vectorEffect={0}
-                                  x={0}
-                                  y={0}
-                                />
-                              </RNSVGGroup>
-                            </RNSVGSvgView>
-                            <View
-                              style={
-                                Object {
-                                  "paddingHorizontal": 4,
-                                }
-                              }
-                              withIcon="warning"
-                            >
-                              <Text
-                                style={
-                                  Object {
-                                    "color": "#858585",
-                                    "fontFamily": "Colfax-Bold",
-                                    "fontSize": 12,
-                                    "lineHeight": 17.28,
-                                  }
-                                }
-                                tint="#858585"
-                              >
-                                Something went wrong
-                              </Text>
-                            </View>
-                          </View>
-                          <Text
-                            style={
-                              Object {
-                                "color": "#505050",
-                                "fontFamily": "Colfax-Bold",
-                                "fontSize": 12,
-                                "lineHeight": 17.28,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "borderWidth": 0,
+                                "height": 32,
+                                "marginBottom": 16,
+                                "paddingHorizontal": 12,
+                                "width": 64,
                               }
                             }
                           />
-                          <Text
-                            bold={false}
-                            italic={false}
+                          <View
                             style={
                               Object {
-                                "color": "#303030",
-                                "fontFamily": "Colfax-Regular",
-                                "fontSize": 16,
-                                "lineHeight": 26,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#858585",
+                                "borderRadius": 16,
+                                "height": 36,
+                                "marginVertical": 2.6999999999999993,
+                                "width": "100%",
+                              }
+                            }
+                          />
+                          <View
+                            hasSummary={true}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
-                            Oh no! We're sorry! We logged your error and notified our team directly. In the mean time, please try again.
-                          </Text>
+                            <View
+                              style={
+                                Object {
+                                  "flex": 1,
+                                  "marginRight": 16,
+                                }
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 16,
+                                    "marginVertical": 5,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
                         </View>
                       </View>
                     </View>
@@ -398,6 +549,7 @@ exports[`The SearchFeed component should render 1`] = `
                     }
                   >
                     <View
+                      isLoading={true}
                       style={
                         Object {
                           "backgroundColor": "#ffffff",
@@ -425,187 +577,137 @@ exports[`The SearchFeed component should render 1`] = `
                         <View
                           style={
                             Object {
-                              "paddingHorizontal": 16,
+                              "backgroundColor": "#dddddd",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#dddddd",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1.78}
+                              minAspectRatio={1.2}
+                              onLoad={[Function]}
+                              source={Array []}
+                              style={
+                                Object {
+                                  "aspectRatio": 1,
+                                  "backgroundColor": "#dddddd",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                2147483648,
+                                0,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                1,
+                              ]
+                            }
+                            overlayColor="#000000"
+                            overlayType="gradient-top"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
                               "paddingVertical": 16,
                             }
                           }
                         >
                           <View
-                            flexed={false}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "flex": null,
-                                "flexDirection": "row",
-                                "tintColor": "#2a4930",
+                                "marginBottom": 16,
+                                "marginTop": -32,
                               }
                             }
                           >
-                            <RNSVGSvgView
-                              align="xMidYMid"
-                              bbHeight={19.2}
-                              bbWidth={19.2}
-                              focusable={false}
-                              height={19.2}
-                              meetOrSlice={0}
-                              minX={0}
-                              minY={0}
-                              style={
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "borderWidth": 0,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "opacity": 1,
-                                  },
-                                  Object {
-                                    "flex": 0,
-                                    "height": 19,
-                                    "width": 19,
-                                  },
-                                ]
-                              }
-                              vbHeight={24}
-                              vbWidth={24}
-                              width={19.2}
-                            >
-                              <RNSVGGroup
-                                fill={
-                                  Array [
-                                    0,
-                                    4278190080,
-                                  ]
-                                }
-                                fillOpacity={1}
-                                fillRule={1}
-                                font={Object {}}
-                                matrix={
-                                  Array [
-                                    1,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                  ]
-                                }
-                                opacity={1}
-                                originX={0}
-                                originY={0}
-                                propList={Array []}
-                                rotation={0}
-                                scaleX={1}
-                                scaleY={1}
-                                skewX={0}
-                                skewY={0}
-                                stroke={null}
-                                strokeDasharray={null}
-                                strokeDashoffset={null}
-                                strokeLinecap={0}
-                                strokeLinejoin={0}
-                                strokeMiterlimit={4}
-                                strokeOpacity={1}
-                                strokeWidth={1}
-                                vectorEffect={0}
-                                x={0}
-                                y={0}
-                              >
-                                <RNSVGPath
-                                  d="M21.8955 19.741l-9.091-16.3178c-.3145-.5643-1.2945-.5643-1.609 0L2.1045 19.741c-.148.2662-.138.5865.0255.8433.1655.2585.46.4157.779.4157h18.182c.319 0 .6136-.1572.778-.4148.1647-.2577.1747-.578.0265-.8442zM12 18.4235c-.5018 0-.909-.3847-.909-.8588 0-.474.4072-.8588.909-.8588.502 0 .909.3845.909.8586 0 .474-.407.8588-.909.8588zm.909-3.4353h-1.818V8.9764h1.818v6.0118z"
-                                  fill={
-                                    Array [
-                                      0,
-                                      4286940549,
-                                    ]
-                                  }
-                                  fillOpacity={1}
-                                  fillRule={1}
-                                  matrix={
-                                    Array [
-                                      1,
-                                      0,
-                                      0,
-                                      1,
-                                      0,
-                                      0,
-                                    ]
-                                  }
-                                  opacity={1}
-                                  originX={0}
-                                  originY={0}
-                                  propList={
-                                    Array [
-                                      "fill",
-                                    ]
-                                  }
-                                  rotation={0}
-                                  scaleX={1}
-                                  scaleY={1}
-                                  skewX={0}
-                                  skewY={0}
-                                  stroke={null}
-                                  strokeDasharray={null}
-                                  strokeDashoffset={null}
-                                  strokeLinecap={0}
-                                  strokeLinejoin={0}
-                                  strokeMiterlimit={4}
-                                  strokeOpacity={1}
-                                  strokeWidth={1}
-                                  vectorEffect={0}
-                                  x={0}
-                                  y={0}
-                                />
-                              </RNSVGGroup>
-                            </RNSVGSvgView>
                             <View
                               style={
                                 Object {
-                                  "paddingHorizontal": 4,
+                                  "alignItems": "center",
+                                  "alignSelf": "stretch",
+                                  "backgroundColor": "#dddddd",
+                                  "borderRadius": 16,
+                                  "borderWidth": 0,
+                                  "height": 32,
+                                  "paddingHorizontal": 12,
+                                  "width": 64,
                                 }
                               }
-                              withIcon="warning"
-                            >
-                              <Text
-                                style={
-                                  Object {
-                                    "color": "#858585",
-                                    "fontFamily": "Colfax-Bold",
-                                    "fontSize": 12,
-                                    "lineHeight": 17.28,
-                                  }
-                                }
-                                tint="#858585"
-                              >
-                                Something went wrong
-                              </Text>
-                            </View>
+                            />
                           </View>
-                          <Text
+                          <View
                             style={
                               Object {
-                                "color": "#505050",
-                                "fontFamily": "Colfax-Bold",
-                                "fontSize": 12,
-                                "lineHeight": 17.28,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "height": 24,
+                                "marginVertical": 1.8000000000000007,
+                                "width": "100%",
                               }
                             }
                           />
-                          <Text
-                            bold={false}
-                            italic={false}
+                          <View
                             style={
                               Object {
-                                "color": "#303030",
-                                "fontFamily": "Colfax-Regular",
-                                "fontSize": 16,
-                                "lineHeight": 26,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "height": 16,
+                                "marginTop": 16,
+                                "marginVertical": 5,
+                                "width": "100%",
                               }
                             }
-                          >
-                            Oh no! We're sorry! We logged your error and notified our team directly. In the mean time, please try again.
-                          </Text>
+                          />
                         </View>
                       </View>
                     </View>
@@ -636,6 +738,7 @@ exports[`The SearchFeed component should render 1`] = `
                     }
                   >
                     <View
+                      isLoading={true}
                       style={
                         Object {
                           "backgroundColor": "#ffffff",
@@ -663,187 +766,137 @@ exports[`The SearchFeed component should render 1`] = `
                         <View
                           style={
                             Object {
-                              "paddingHorizontal": 16,
+                              "backgroundColor": "#dddddd",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#dddddd",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1.78}
+                              minAspectRatio={1.2}
+                              onLoad={[Function]}
+                              source={Array []}
+                              style={
+                                Object {
+                                  "aspectRatio": 1,
+                                  "backgroundColor": "#dddddd",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                2147483648,
+                                0,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                1,
+                              ]
+                            }
+                            overlayColor="#000000"
+                            overlayType="gradient-top"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
                               "paddingVertical": 16,
                             }
                           }
                         >
                           <View
-                            flexed={false}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "flex": null,
-                                "flexDirection": "row",
-                                "tintColor": "#2a4930",
+                                "marginBottom": 16,
+                                "marginTop": -32,
                               }
                             }
                           >
-                            <RNSVGSvgView
-                              align="xMidYMid"
-                              bbHeight={19.2}
-                              bbWidth={19.2}
-                              focusable={false}
-                              height={19.2}
-                              meetOrSlice={0}
-                              minX={0}
-                              minY={0}
-                              style={
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "borderWidth": 0,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "opacity": 1,
-                                  },
-                                  Object {
-                                    "flex": 0,
-                                    "height": 19,
-                                    "width": 19,
-                                  },
-                                ]
-                              }
-                              vbHeight={24}
-                              vbWidth={24}
-                              width={19.2}
-                            >
-                              <RNSVGGroup
-                                fill={
-                                  Array [
-                                    0,
-                                    4278190080,
-                                  ]
-                                }
-                                fillOpacity={1}
-                                fillRule={1}
-                                font={Object {}}
-                                matrix={
-                                  Array [
-                                    1,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                  ]
-                                }
-                                opacity={1}
-                                originX={0}
-                                originY={0}
-                                propList={Array []}
-                                rotation={0}
-                                scaleX={1}
-                                scaleY={1}
-                                skewX={0}
-                                skewY={0}
-                                stroke={null}
-                                strokeDasharray={null}
-                                strokeDashoffset={null}
-                                strokeLinecap={0}
-                                strokeLinejoin={0}
-                                strokeMiterlimit={4}
-                                strokeOpacity={1}
-                                strokeWidth={1}
-                                vectorEffect={0}
-                                x={0}
-                                y={0}
-                              >
-                                <RNSVGPath
-                                  d="M21.8955 19.741l-9.091-16.3178c-.3145-.5643-1.2945-.5643-1.609 0L2.1045 19.741c-.148.2662-.138.5865.0255.8433.1655.2585.46.4157.779.4157h18.182c.319 0 .6136-.1572.778-.4148.1647-.2577.1747-.578.0265-.8442zM12 18.4235c-.5018 0-.909-.3847-.909-.8588 0-.474.4072-.8588.909-.8588.502 0 .909.3845.909.8586 0 .474-.407.8588-.909.8588zm.909-3.4353h-1.818V8.9764h1.818v6.0118z"
-                                  fill={
-                                    Array [
-                                      0,
-                                      4286940549,
-                                    ]
-                                  }
-                                  fillOpacity={1}
-                                  fillRule={1}
-                                  matrix={
-                                    Array [
-                                      1,
-                                      0,
-                                      0,
-                                      1,
-                                      0,
-                                      0,
-                                    ]
-                                  }
-                                  opacity={1}
-                                  originX={0}
-                                  originY={0}
-                                  propList={
-                                    Array [
-                                      "fill",
-                                    ]
-                                  }
-                                  rotation={0}
-                                  scaleX={1}
-                                  scaleY={1}
-                                  skewX={0}
-                                  skewY={0}
-                                  stroke={null}
-                                  strokeDasharray={null}
-                                  strokeDashoffset={null}
-                                  strokeLinecap={0}
-                                  strokeLinejoin={0}
-                                  strokeMiterlimit={4}
-                                  strokeOpacity={1}
-                                  strokeWidth={1}
-                                  vectorEffect={0}
-                                  x={0}
-                                  y={0}
-                                />
-                              </RNSVGGroup>
-                            </RNSVGSvgView>
                             <View
                               style={
                                 Object {
-                                  "paddingHorizontal": 4,
+                                  "alignItems": "center",
+                                  "alignSelf": "stretch",
+                                  "backgroundColor": "#dddddd",
+                                  "borderRadius": 16,
+                                  "borderWidth": 0,
+                                  "height": 32,
+                                  "paddingHorizontal": 12,
+                                  "width": 64,
                                 }
                               }
-                              withIcon="warning"
-                            >
-                              <Text
-                                style={
-                                  Object {
-                                    "color": "#858585",
-                                    "fontFamily": "Colfax-Bold",
-                                    "fontSize": 12,
-                                    "lineHeight": 17.28,
-                                  }
-                                }
-                                tint="#858585"
-                              >
-                                Something went wrong
-                              </Text>
-                            </View>
+                            />
                           </View>
-                          <Text
+                          <View
                             style={
                               Object {
-                                "color": "#505050",
-                                "fontFamily": "Colfax-Bold",
-                                "fontSize": 12,
-                                "lineHeight": 17.28,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "height": 24,
+                                "marginVertical": 1.8000000000000007,
+                                "width": "100%",
                               }
                             }
                           />
-                          <Text
-                            bold={false}
-                            italic={false}
+                          <View
                             style={
                               Object {
-                                "color": "#303030",
-                                "fontFamily": "Colfax-Regular",
-                                "fontSize": 16,
-                                "lineHeight": 26,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "height": 16,
+                                "marginTop": 16,
+                                "marginVertical": 5,
+                                "width": "100%",
                               }
                             }
-                          >
-                            Oh no! We're sorry! We logged your error and notified our team directly. In the mean time, please try again.
-                          </Text>
+                          />
                         </View>
                       </View>
                     </View>
@@ -874,6 +927,7 @@ exports[`The SearchFeed component should render 1`] = `
                     }
                   >
                     <View
+                      isLoading={true}
                       style={
                         Object {
                           "backgroundColor": "#ffffff",
@@ -901,187 +955,137 @@ exports[`The SearchFeed component should render 1`] = `
                         <View
                           style={
                             Object {
-                              "paddingHorizontal": 16,
+                              "backgroundColor": "#dddddd",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#dddddd",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1.78}
+                              minAspectRatio={1.2}
+                              onLoad={[Function]}
+                              source={Array []}
+                              style={
+                                Object {
+                                  "aspectRatio": 1,
+                                  "backgroundColor": "#dddddd",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                2147483648,
+                                0,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                1,
+                              ]
+                            }
+                            overlayColor="#000000"
+                            overlayType="gradient-top"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
                               "paddingVertical": 16,
                             }
                           }
                         >
                           <View
-                            flexed={false}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "flex": null,
-                                "flexDirection": "row",
-                                "tintColor": "#2a4930",
+                                "marginBottom": 16,
+                                "marginTop": -32,
                               }
                             }
                           >
-                            <RNSVGSvgView
-                              align="xMidYMid"
-                              bbHeight={19.2}
-                              bbWidth={19.2}
-                              focusable={false}
-                              height={19.2}
-                              meetOrSlice={0}
-                              minX={0}
-                              minY={0}
-                              style={
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "borderWidth": 0,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "opacity": 1,
-                                  },
-                                  Object {
-                                    "flex": 0,
-                                    "height": 19,
-                                    "width": 19,
-                                  },
-                                ]
-                              }
-                              vbHeight={24}
-                              vbWidth={24}
-                              width={19.2}
-                            >
-                              <RNSVGGroup
-                                fill={
-                                  Array [
-                                    0,
-                                    4278190080,
-                                  ]
-                                }
-                                fillOpacity={1}
-                                fillRule={1}
-                                font={Object {}}
-                                matrix={
-                                  Array [
-                                    1,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                  ]
-                                }
-                                opacity={1}
-                                originX={0}
-                                originY={0}
-                                propList={Array []}
-                                rotation={0}
-                                scaleX={1}
-                                scaleY={1}
-                                skewX={0}
-                                skewY={0}
-                                stroke={null}
-                                strokeDasharray={null}
-                                strokeDashoffset={null}
-                                strokeLinecap={0}
-                                strokeLinejoin={0}
-                                strokeMiterlimit={4}
-                                strokeOpacity={1}
-                                strokeWidth={1}
-                                vectorEffect={0}
-                                x={0}
-                                y={0}
-                              >
-                                <RNSVGPath
-                                  d="M21.8955 19.741l-9.091-16.3178c-.3145-.5643-1.2945-.5643-1.609 0L2.1045 19.741c-.148.2662-.138.5865.0255.8433.1655.2585.46.4157.779.4157h18.182c.319 0 .6136-.1572.778-.4148.1647-.2577.1747-.578.0265-.8442zM12 18.4235c-.5018 0-.909-.3847-.909-.8588 0-.474.4072-.8588.909-.8588.502 0 .909.3845.909.8586 0 .474-.407.8588-.909.8588zm.909-3.4353h-1.818V8.9764h1.818v6.0118z"
-                                  fill={
-                                    Array [
-                                      0,
-                                      4286940549,
-                                    ]
-                                  }
-                                  fillOpacity={1}
-                                  fillRule={1}
-                                  matrix={
-                                    Array [
-                                      1,
-                                      0,
-                                      0,
-                                      1,
-                                      0,
-                                      0,
-                                    ]
-                                  }
-                                  opacity={1}
-                                  originX={0}
-                                  originY={0}
-                                  propList={
-                                    Array [
-                                      "fill",
-                                    ]
-                                  }
-                                  rotation={0}
-                                  scaleX={1}
-                                  scaleY={1}
-                                  skewX={0}
-                                  skewY={0}
-                                  stroke={null}
-                                  strokeDasharray={null}
-                                  strokeDashoffset={null}
-                                  strokeLinecap={0}
-                                  strokeLinejoin={0}
-                                  strokeMiterlimit={4}
-                                  strokeOpacity={1}
-                                  strokeWidth={1}
-                                  vectorEffect={0}
-                                  x={0}
-                                  y={0}
-                                />
-                              </RNSVGGroup>
-                            </RNSVGSvgView>
                             <View
                               style={
                                 Object {
-                                  "paddingHorizontal": 4,
+                                  "alignItems": "center",
+                                  "alignSelf": "stretch",
+                                  "backgroundColor": "#dddddd",
+                                  "borderRadius": 16,
+                                  "borderWidth": 0,
+                                  "height": 32,
+                                  "paddingHorizontal": 12,
+                                  "width": 64,
                                 }
                               }
-                              withIcon="warning"
-                            >
-                              <Text
-                                style={
-                                  Object {
-                                    "color": "#858585",
-                                    "fontFamily": "Colfax-Bold",
-                                    "fontSize": 12,
-                                    "lineHeight": 17.28,
-                                  }
-                                }
-                                tint="#858585"
-                              >
-                                Something went wrong
-                              </Text>
-                            </View>
+                            />
                           </View>
-                          <Text
+                          <View
                             style={
                               Object {
-                                "color": "#505050",
-                                "fontFamily": "Colfax-Bold",
-                                "fontSize": 12,
-                                "lineHeight": 17.28,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "height": 24,
+                                "marginVertical": 1.8000000000000007,
+                                "width": "100%",
                               }
                             }
                           />
-                          <Text
-                            bold={false}
-                            italic={false}
+                          <View
                             style={
                               Object {
-                                "color": "#303030",
-                                "fontFamily": "Colfax-Regular",
-                                "fontSize": 16,
-                                "lineHeight": 26,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "height": 16,
+                                "marginTop": 16,
+                                "marginVertical": 5,
+                                "width": "100%",
                               }
                             }
-                          >
-                            Oh no! We're sorry! We logged your error and notified our team directly. In the mean time, please try again.
-                          </Text>
+                          />
                         </View>
                       </View>
                     </View>
@@ -1112,6 +1116,7 @@ exports[`The SearchFeed component should render 1`] = `
                     }
                   >
                     <View
+                      isLoading={true}
                       style={
                         Object {
                           "backgroundColor": "#ffffff",
@@ -1139,187 +1144,137 @@ exports[`The SearchFeed component should render 1`] = `
                         <View
                           style={
                             Object {
-                              "paddingHorizontal": 16,
+                              "backgroundColor": "#dddddd",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#dddddd",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1.78}
+                              minAspectRatio={1.2}
+                              onLoad={[Function]}
+                              source={Array []}
+                              style={
+                                Object {
+                                  "aspectRatio": 1,
+                                  "backgroundColor": "#dddddd",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                2147483648,
+                                0,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                1,
+                              ]
+                            }
+                            overlayColor="#000000"
+                            overlayType="gradient-top"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
                               "paddingVertical": 16,
                             }
                           }
                         >
                           <View
-                            flexed={false}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "flex": null,
-                                "flexDirection": "row",
-                                "tintColor": "#2a4930",
+                                "marginBottom": 16,
+                                "marginTop": -32,
                               }
                             }
                           >
-                            <RNSVGSvgView
-                              align="xMidYMid"
-                              bbHeight={19.2}
-                              bbWidth={19.2}
-                              focusable={false}
-                              height={19.2}
-                              meetOrSlice={0}
-                              minX={0}
-                              minY={0}
-                              style={
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "borderWidth": 0,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "opacity": 1,
-                                  },
-                                  Object {
-                                    "flex": 0,
-                                    "height": 19,
-                                    "width": 19,
-                                  },
-                                ]
-                              }
-                              vbHeight={24}
-                              vbWidth={24}
-                              width={19.2}
-                            >
-                              <RNSVGGroup
-                                fill={
-                                  Array [
-                                    0,
-                                    4278190080,
-                                  ]
-                                }
-                                fillOpacity={1}
-                                fillRule={1}
-                                font={Object {}}
-                                matrix={
-                                  Array [
-                                    1,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                  ]
-                                }
-                                opacity={1}
-                                originX={0}
-                                originY={0}
-                                propList={Array []}
-                                rotation={0}
-                                scaleX={1}
-                                scaleY={1}
-                                skewX={0}
-                                skewY={0}
-                                stroke={null}
-                                strokeDasharray={null}
-                                strokeDashoffset={null}
-                                strokeLinecap={0}
-                                strokeLinejoin={0}
-                                strokeMiterlimit={4}
-                                strokeOpacity={1}
-                                strokeWidth={1}
-                                vectorEffect={0}
-                                x={0}
-                                y={0}
-                              >
-                                <RNSVGPath
-                                  d="M21.8955 19.741l-9.091-16.3178c-.3145-.5643-1.2945-.5643-1.609 0L2.1045 19.741c-.148.2662-.138.5865.0255.8433.1655.2585.46.4157.779.4157h18.182c.319 0 .6136-.1572.778-.4148.1647-.2577.1747-.578.0265-.8442zM12 18.4235c-.5018 0-.909-.3847-.909-.8588 0-.474.4072-.8588.909-.8588.502 0 .909.3845.909.8586 0 .474-.407.8588-.909.8588zm.909-3.4353h-1.818V8.9764h1.818v6.0118z"
-                                  fill={
-                                    Array [
-                                      0,
-                                      4286940549,
-                                    ]
-                                  }
-                                  fillOpacity={1}
-                                  fillRule={1}
-                                  matrix={
-                                    Array [
-                                      1,
-                                      0,
-                                      0,
-                                      1,
-                                      0,
-                                      0,
-                                    ]
-                                  }
-                                  opacity={1}
-                                  originX={0}
-                                  originY={0}
-                                  propList={
-                                    Array [
-                                      "fill",
-                                    ]
-                                  }
-                                  rotation={0}
-                                  scaleX={1}
-                                  scaleY={1}
-                                  skewX={0}
-                                  skewY={0}
-                                  stroke={null}
-                                  strokeDasharray={null}
-                                  strokeDashoffset={null}
-                                  strokeLinecap={0}
-                                  strokeLinejoin={0}
-                                  strokeMiterlimit={4}
-                                  strokeOpacity={1}
-                                  strokeWidth={1}
-                                  vectorEffect={0}
-                                  x={0}
-                                  y={0}
-                                />
-                              </RNSVGGroup>
-                            </RNSVGSvgView>
                             <View
                               style={
                                 Object {
-                                  "paddingHorizontal": 4,
+                                  "alignItems": "center",
+                                  "alignSelf": "stretch",
+                                  "backgroundColor": "#dddddd",
+                                  "borderRadius": 16,
+                                  "borderWidth": 0,
+                                  "height": 32,
+                                  "paddingHorizontal": 12,
+                                  "width": 64,
                                 }
                               }
-                              withIcon="warning"
-                            >
-                              <Text
-                                style={
-                                  Object {
-                                    "color": "#858585",
-                                    "fontFamily": "Colfax-Bold",
-                                    "fontSize": 12,
-                                    "lineHeight": 17.28,
-                                  }
-                                }
-                                tint="#858585"
-                              >
-                                Something went wrong
-                              </Text>
-                            </View>
+                            />
                           </View>
-                          <Text
+                          <View
                             style={
                               Object {
-                                "color": "#505050",
-                                "fontFamily": "Colfax-Bold",
-                                "fontSize": 12,
-                                "lineHeight": 17.28,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "height": 24,
+                                "marginVertical": 1.8000000000000007,
+                                "width": "100%",
                               }
                             }
                           />
-                          <Text
-                            bold={false}
-                            italic={false}
+                          <View
                             style={
                               Object {
-                                "color": "#303030",
-                                "fontFamily": "Colfax-Regular",
-                                "fontSize": 16,
-                                "lineHeight": 26,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "height": 16,
+                                "marginTop": 16,
+                                "marginVertical": 5,
+                                "width": "100%",
                               }
                             }
-                          >
-                            Oh no! We're sorry! We logged your error and notified our team directly. In the mean time, please try again.
-                          </Text>
+                          />
                         </View>
                       </View>
                     </View>
@@ -1350,9 +1305,11 @@ exports[`The SearchFeed component should render 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
+                      isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -1377,187 +1334,149 @@ exports[`The SearchFeed component should render 1`] = `
                         <View
                           style={
                             Object {
-                              "paddingHorizontal": 16,
+                              "backgroundColor": "#858585",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#858585",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
+                              onLoad={[Function]}
+                              source={Array []}
+                              style={
+                                Object {
+                                  "aspectRatio": 1,
+                                  "backgroundColor": "#858585",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                1727526903,
+                                4294440951,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                0.8,
+                              ]
+                            }
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "marginTop": "-40%",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
                               "paddingVertical": 16,
                             }
                           }
                         >
                           <View
-                            flexed={false}
                             style={
                               Object {
                                 "alignItems": "center",
-                                "flex": null,
-                                "flexDirection": "row",
-                                "tintColor": "#2a4930",
-                              }
-                            }
-                          >
-                            <RNSVGSvgView
-                              align="xMidYMid"
-                              bbHeight={19.2}
-                              bbWidth={19.2}
-                              focusable={false}
-                              height={19.2}
-                              meetOrSlice={0}
-                              minX={0}
-                              minY={0}
-                              style={
-                                Array [
-                                  Object {
-                                    "backgroundColor": "transparent",
-                                    "borderWidth": 0,
-                                  },
-                                  undefined,
-                                  Object {
-                                    "opacity": 1,
-                                  },
-                                  Object {
-                                    "flex": 0,
-                                    "height": 19,
-                                    "width": 19,
-                                  },
-                                ]
-                              }
-                              vbHeight={24}
-                              vbWidth={24}
-                              width={19.2}
-                            >
-                              <RNSVGGroup
-                                fill={
-                                  Array [
-                                    0,
-                                    4278190080,
-                                  ]
-                                }
-                                fillOpacity={1}
-                                fillRule={1}
-                                font={Object {}}
-                                matrix={
-                                  Array [
-                                    1,
-                                    0,
-                                    0,
-                                    1,
-                                    0,
-                                    0,
-                                  ]
-                                }
-                                opacity={1}
-                                originX={0}
-                                originY={0}
-                                propList={Array []}
-                                rotation={0}
-                                scaleX={1}
-                                scaleY={1}
-                                skewX={0}
-                                skewY={0}
-                                stroke={null}
-                                strokeDasharray={null}
-                                strokeDashoffset={null}
-                                strokeLinecap={0}
-                                strokeLinejoin={0}
-                                strokeMiterlimit={4}
-                                strokeOpacity={1}
-                                strokeWidth={1}
-                                vectorEffect={0}
-                                x={0}
-                                y={0}
-                              >
-                                <RNSVGPath
-                                  d="M21.8955 19.741l-9.091-16.3178c-.3145-.5643-1.2945-.5643-1.609 0L2.1045 19.741c-.148.2662-.138.5865.0255.8433.1655.2585.46.4157.779.4157h18.182c.319 0 .6136-.1572.778-.4148.1647-.2577.1747-.578.0265-.8442zM12 18.4235c-.5018 0-.909-.3847-.909-.8588 0-.474.4072-.8588.909-.8588.502 0 .909.3845.909.8586 0 .474-.407.8588-.909.8588zm.909-3.4353h-1.818V8.9764h1.818v6.0118z"
-                                  fill={
-                                    Array [
-                                      0,
-                                      4286940549,
-                                    ]
-                                  }
-                                  fillOpacity={1}
-                                  fillRule={1}
-                                  matrix={
-                                    Array [
-                                      1,
-                                      0,
-                                      0,
-                                      1,
-                                      0,
-                                      0,
-                                    ]
-                                  }
-                                  opacity={1}
-                                  originX={0}
-                                  originY={0}
-                                  propList={
-                                    Array [
-                                      "fill",
-                                    ]
-                                  }
-                                  rotation={0}
-                                  scaleX={1}
-                                  scaleY={1}
-                                  skewX={0}
-                                  skewY={0}
-                                  stroke={null}
-                                  strokeDasharray={null}
-                                  strokeDashoffset={null}
-                                  strokeLinecap={0}
-                                  strokeLinejoin={0}
-                                  strokeMiterlimit={4}
-                                  strokeOpacity={1}
-                                  strokeWidth={1}
-                                  vectorEffect={0}
-                                  x={0}
-                                  y={0}
-                                />
-                              </RNSVGGroup>
-                            </RNSVGSvgView>
-                            <View
-                              style={
-                                Object {
-                                  "paddingHorizontal": 4,
-                                }
-                              }
-                              withIcon="warning"
-                            >
-                              <Text
-                                style={
-                                  Object {
-                                    "color": "#858585",
-                                    "fontFamily": "Colfax-Bold",
-                                    "fontSize": 12,
-                                    "lineHeight": 17.28,
-                                  }
-                                }
-                                tint="#858585"
-                              >
-                                Something went wrong
-                              </Text>
-                            </View>
-                          </View>
-                          <Text
-                            style={
-                              Object {
-                                "color": "#505050",
-                                "fontFamily": "Colfax-Bold",
-                                "fontSize": 12,
-                                "lineHeight": 17.28,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#dddddd",
+                                "borderRadius": 16,
+                                "borderWidth": 0,
+                                "height": 32,
+                                "marginBottom": 16,
+                                "paddingHorizontal": 12,
+                                "width": 64,
                               }
                             }
                           />
-                          <Text
-                            bold={false}
-                            italic={false}
+                          <View
                             style={
                               Object {
-                                "color": "#303030",
-                                "fontFamily": "Colfax-Regular",
-                                "fontSize": 16,
-                                "lineHeight": 26,
+                                "alignSelf": "stretch",
+                                "backgroundColor": "#858585",
+                                "borderRadius": 16,
+                                "height": 36,
+                                "marginVertical": 2.6999999999999993,
+                                "width": "100%",
+                              }
+                            }
+                          />
+                          <View
+                            hasSummary={true}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
-                            Oh no! We're sorry! We logged your error and notified our team directly. In the mean time, please try again.
-                          </Text>
+                            <View
+                              style={
+                                Object {
+                                  "flex": 1,
+                                  "marginRight": 16,
+                                }
+                              }
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 16,
+                                    "marginVertical": 5,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
+                          </View>
                         </View>
                       </View>
                     </View>
@@ -1874,7 +1793,6 @@ exports[`The SearchFeed component should render a loading state 1`] = `
               onEndReachedThreshold={0.7}
               onLayout={[Function]}
               onMomentumScrollEnd={[Function]}
-              onPressItem={[Function]}
               onRefresh={[Function]}
               onScroll={[Function]}
               onScrollBeginDrag={[Function]}
@@ -3733,7 +3651,6 @@ exports[`The SearchFeed component should render an empty state 1`] = `
               onEndReachedThreshold={0.7}
               onLayout={[Function]}
               onMomentumScrollEnd={[Function]}
-              onPressItem={[Function]}
               onRefresh={[Function]}
               onScroll={[Function]}
               onScrollBeginDrag={[Function]}
@@ -3928,8 +3845,8 @@ exports[`The SearchFeed component should render an empty state 1`] = `
                         Object {
                           "color": "#858585",
                           "fontFamily": "Colfax-Regular",
-                          "fontSize": 14,
-                          "lineHeight": 20,
+                          "fontSize": 12,
+                          "lineHeight": 17.28,
                           "textAlign": "center",
                         }
                       }
@@ -3942,8 +3859,8 @@ exports[`The SearchFeed component should render an empty state 1`] = `
                           Object {
                             "color": "#858585",
                             "fontFamily": "Colfax-Bold",
-                            "fontSize": 14,
-                            "lineHeight": 20,
+                            "fontSize": 12,
+                            "lineHeight": 17.28,
                             "textAlign": "center",
                           }
                         }

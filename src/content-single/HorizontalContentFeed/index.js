@@ -11,7 +11,7 @@ import {
   H5,
 } from '@apollosproject/ui-kit';
 
-import HorizontalContentCardConnected from '../../ui/HorizontalContentCardConnected';
+import { HorizontalContentCardConnected } from '@apollosproject/ui-connected';
 
 import GET_HORIZONTAL_CONTENT from './getHorizontalContent';
 

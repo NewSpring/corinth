@@ -120,8 +120,8 @@ exports[`The Event component should render 1`] = `
                 "fontFamily": "Colfax-Black",
                 "fontSize": 36,
                 "lineHeight": 41.4,
-                "paddingBottom": 20,
-                "paddingTop": 24,
+                "paddingBottom": 19.22,
+                "paddingTop": 23.04,
               }
             }
           />

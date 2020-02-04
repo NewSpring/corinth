@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react';
-import { ScrollView, SafeAreaView } from 'react-native';
 import { Query } from 'react-apollo';
+import { ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
 
+import { HorizontalLikedContentFeedConnected } from '@apollosproject/ui-connected';
 import { BackgroundView } from '@apollosproject/ui-kit';
 import ActionTable from './ActionTable';
 import ActionBar from './ActionBar';
 import UserAvatarHeader from './UserAvatarHeader';
-import { RecentlyLikedTileFeedConnected } from './RecentlyLikedTileFeed';
 import GET_USER_PROFILE from './getUserProfile';
 
 class Connect extends PureComponent {
@@ -28,9 +29,9 @@ class Connect extends PureComponent {
       <BackgroundView>
         <SafeAreaView>
           <ScrollView>
-            <UserAvatarHeader key="UserAvatarHeaderConnected" />
+            <UserAvatarHeader />
             <ActionBar />
-            <RecentlyLikedTileFeedConnected />
+            <HorizontalLikedContentFeedConnected />
             <Query query={GET_USER_PROFILE}>
               {({
                 data: {

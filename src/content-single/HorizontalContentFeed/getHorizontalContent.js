@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import { BASE_CARD_FRAGMENT } from '../../ui/ContentCardConnected/query';
+import ApollosConfig from '@apollosproject/config';
 
 export default gql`
   query getHorizontalContent($itemId: ID!, $cursor: String) {
@@ -10,7 +10,7 @@ export default gql`
           edges {
             cursor
             node {
-              ...baseCardFragment
+              ...contentCardFragment
             }
           }
         }
@@ -18,12 +18,12 @@ export default gql`
           edges {
             cursor
             node {
-              ...baseCardFragment
+              ...contentCardFragment
             }
           }
         }
       }
     }
   }
-  ${BASE_CARD_FRAGMENT}
+  ${ApollosConfig.FRAGMENTS.CONTENT_CARD_FRAGMENT}
 `;

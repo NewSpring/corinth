@@ -2,10 +2,10 @@ import React from 'react';
 import { flatMap } from 'lodash';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
+import { GET_CONTENT_CARD } from '@apollosproject/ui-connected';
 import Providers from '../../Providers';
 
 import { renderWithApolloData } from '../../utils/testUtils';
-import GET_CONTENT_CARD from '../../ui/ContentCardConnected/query';
 
 import Discover from './Discover';
 import GET_CONTENT_CHANNELS from './DiscoverFeed/getContentChannels';

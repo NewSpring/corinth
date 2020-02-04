@@ -3,16 +3,16 @@ import Config from 'react-native-config';
 import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
-import { WebBrowserConsumer } from '../../ui/WebBrowser';
+import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
 const Toolbar = ({ navigation }) => (
-  <WebBrowserConsumer>
+  <RockAuthedWebBrowser>
     {(openUrl) => (
       <ActionBar>
         <ActionBarItem
           onPress={() =>
             openUrl(
-              'https://newspring.cc/give/now',
+              'https://newspring.cc/give/now/?hidenav=true',
               { externalBrowser: true },
               { useRockToken: true }
             )
@@ -22,7 +22,11 @@ const Toolbar = ({ navigation }) => (
         />
         <ActionBarItem
           onPress={() =>
-            openUrl('https://newspring.cc/groups', {}, { useRockToken: true })
+            openUrl(
+              'https://newspring.cc/groups/?hidenav=true',
+              {},
+              { useRockToken: true }
+            )
           }
           icon="group"
           label="Join Group"
@@ -36,7 +40,7 @@ const Toolbar = ({ navigation }) => (
         ) : null}
       </ActionBar>
     )}
-  </WebBrowserConsumer>
+  </RockAuthedWebBrowser>
 );
 
 Toolbar.propTypes = {
