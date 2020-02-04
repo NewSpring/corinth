@@ -20,8 +20,6 @@
     "restart": "yarn && yarn pods && yarn start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
     "test": "TZ=UTC jest --forceExit",
-    "version": "standard-version --skip.changelog --skip.commit --skip.tag",
-    "release": "standard-version --skip.bump",
     "postinstall": "jetify",
     "pods": "./scripts/install_pods.sh",
     "icons": "node ./scripts/generate-icons.js",
