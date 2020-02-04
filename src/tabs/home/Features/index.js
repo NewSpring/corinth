@@ -94,7 +94,7 @@ const Features = memo(({ navigation }) => (
           ({ title, subtitle, actions, id }) =>
             actions.length ? (
               <AnalyticsConsumer>
-                {(track) => (
+                {({ track }) => (
                   <ActionListCard
                     isLoading={loading}
                     key={id}
@@ -118,7 +118,6 @@ const Features = memo(({ navigation }) => (
                           transitionKey: 2,
                         });
                       }
-                      // TODO: This isn't working - need to fix
                       track({
                         eventName: `Clicked Home Feed Feature`,
                         properties: [

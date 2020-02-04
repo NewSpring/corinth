@@ -75,7 +75,7 @@ class MediaControls extends PureComponent {
 
   renderWebView = ({ webViewUrl, coverImageSources }) => (
     <AnalyticsConsumer>
-      {(track) => (
+      {({ track }) => (
         <WebBrowserConsumer>
           {(openUrl) =>
             this.renderPlayButton({

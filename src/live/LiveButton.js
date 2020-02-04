@@ -25,7 +25,7 @@ const LiveNowButton = () => (
 
       return isLive ? (
         <AnalyticsConsumer>
-          {(track) => (
+          {({ track }) => (
             <WebBrowserConsumer>
               {(openUrl) => (
                 <TouchableScale
