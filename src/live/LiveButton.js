@@ -35,7 +35,6 @@ const LiveNowButton = () => (
                       {},
                       { useRockToken: true }
                     );
-                    // TODO: This isn't working - need to fix.
                     track({ eventName: 'Clicked Live Bar' });
                     Analytics.trackEvent('Clicked Live Bar');
                   }}
