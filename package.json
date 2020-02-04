@@ -20,7 +20,8 @@
     "restart": "yarn && yarn pods && yarn start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
     "test": "TZ=UTC jest --forceExit",
-    "bump": "standard-version",
+    "version": "standard-version --skip.changelog --skip.commit --skip.tag",
+    "release": "standard-version --skip.bump",
     "postinstall": "jetify",
     "pods": "./scripts/install_pods.sh",
     "icons": "node ./scripts/generate-icons.js",
@@ -48,8 +49,7 @@
   "standard-version": {
     "scripts": {
       "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'",
-      "postchangelog": "sed -i '' 's/### \\[/## \\[/g' CHANGELOG.md",
-      "posttag": "yarn gh-release --yes"
+      "postchangelog": "sed -i '' 's/### \\[/## \\[/g' CHANGELOG.md"
     }
   },
   "resolutions": {
