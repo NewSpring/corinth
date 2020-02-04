@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import {
@@ -53,6 +54,18 @@ const loadingStateObject = {
   coverImage: [],
 };
 
+const getTitle = (item) => {
+  console.log('item = ', item.__typename);
+  switch (get(item, '__typename')) {
+    case 'WeekendContentItem':
+    case 'ContentSeriesContentItem':
+    case 'DevotionalContentItem':
+      return '';
+    default:
+      return item.hyphenatedTitle;
+  }
+};
+
 const TileContentFeed = ({ isLoading, id, name, navigation, content = [] }) => (
   <>
     <RowHeader>
@@ -87,6 +100,8 @@ const TileContentFeed = ({ isLoading, id, name, navigation, content = [] }) => (
           <HorizontalContentCardConnected
             contentId={item.id}
             isLoading={isLoading}
+            labelText={''}
+            hyphenatedTitle={getTitle(item)}
           />
         </TouchableScale>
       )}

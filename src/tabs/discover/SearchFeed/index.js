@@ -5,9 +5,11 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { FeedView } from '@apollosproject/ui-kit';
+import { DefaultCard, FeedView, TouchableScale } from '@apollosproject/ui-kit';
 
-import SearchCard from '../../../ui/SearchCard';
+import { ContentCardConnected } from '@apollosproject/ui-connected';
+
+import BrandedCard from '../../../ui/BrandedCard';
 
 import GET_SEARCH_RESULTS from './getSearchResults';
 import NoResults from './NoResults';
@@ -21,11 +23,22 @@ const StyledFeedView = withProps(({ hasContent }) => ({
 
 const handleOnPress = ({ navigation, item }) =>
   navigation.navigate('ContentSingle', {
-    itemId: item.id,
+    itemId: item.node.id,
     transitionKey: item.transitionKey,
   });
 
 const keyExtractor = (item) => item && get(item, 'node.id', null);
+
+const getComponent = (item) => {
+  switch (get(item.node, '__typename')) {
+    case 'WeekendContentItem':
+    case 'ContentSeriesContentItem':
+    case 'DevotionalContentItem':
+      return BrandedCard;
+    default:
+      return DefaultCard;
+  }
+};
 
 const SearchFeed = withNavigation(({ navigation, searchText }) => (
   <Query
@@ -35,15 +48,31 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
   >
     {({ loading, error, data, refetch }) => (
       <StyledFeedView
-        ListItemComponent={SearchCard}
         content={get(data, 'search.edges', [])}
         ListEmptyComponent={() => <NoResults searchText={searchText} />}
         hasContent={get(data, 'search.edges', []).length}
         isLoading={loading}
         error={error}
         refetch={refetch}
-        onPressItem={(item) => handleOnPress({ navigation, item })}
         keyExtractor={keyExtractor}
+        renderItem={({ item }) => (
+          <TouchableScale
+            onPress={() => {
+              handleOnPress({ navigation, item });
+            }}
+          >
+            <ContentCardConnected
+              Component={getComponent(item)}
+              contentId={item.isLoading ? null : get(item, 'node.id')}
+              labelText={
+                item.node &&
+                item.node.parentChannel &&
+                item.node.parentChannel.name.split(' - ').pop()
+              }
+              {...item}
+            />
+          </TouchableScale>
+        )}
       />
     )}
   </Query>
