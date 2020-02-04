@@ -5,7 +5,7 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { FeedView, TouchableScale } from '@apollosproject/ui-kit';
+import { DefaultCard, FeedView, TouchableScale } from '@apollosproject/ui-kit';
 
 import { ContentCardConnected } from '@apollosproject/ui-connected';
 
@@ -29,6 +29,17 @@ const handleOnPress = ({ navigation, item }) =>
 
 const keyExtractor = (item) => item && get(item, 'node.id', null);
 
+const getComponent = (item) => {
+  switch (get(item.node, '__typename')) {
+    case 'WeekendContentItem':
+    case 'ContentSeriesContentItem':
+    case 'DevotionalContentItem':
+      return BrandedCard;
+    default:
+      return DefaultCard;
+  }
+};
+
 const SearchFeed = withNavigation(({ navigation, searchText }) => (
   <Query
     query={GET_SEARCH_RESULTS}
@@ -51,8 +62,12 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
             }}
           >
             <ContentCardConnected
-              Component={BrandedCard}
+              Component={getComponent(item)}
               contentId={item.node.id}
+              labelText={
+                item.node.parentChannel &&
+                item.node.parentChannel.name.split(' - ').pop()
+              }
             />
           </TouchableScale>
         )}
