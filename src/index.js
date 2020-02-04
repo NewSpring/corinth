@@ -30,6 +30,12 @@ import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
 import { WebBrowserConsumer } from './ui/WebBrowser';
 
+// need to initialize error tracking at the entrypoint
+// eslint-disable-next-line
+import Crashes from 'appcenter-crashes';
+// eslint-disable-next-line
+import bugsnag from './bugsnag';
+
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: 'dark-content',
   backgroundColor: theme.colors.paper,
