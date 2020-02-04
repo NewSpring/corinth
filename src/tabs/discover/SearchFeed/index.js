@@ -63,11 +63,13 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
           >
             <ContentCardConnected
               Component={getComponent(item)}
-              contentId={item.node.id}
+              contentId={item.isLoading ? null : get(item, 'node.id')}
               labelText={
+                item.node &&
                 item.node.parentChannel &&
                 item.node.parentChannel.name.split(' - ').pop()
               }
+              {...item}
             />
           </TouchableScale>
         )}
