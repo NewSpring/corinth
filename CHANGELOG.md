@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.5.16](https://github.com/newspring/corinth/compare/v7.5.15...v7.5.16) (2020-02-04)
+
+
+### Bug Fixes
+
+* Fixes Analytics mutations ([#22](https://github.com/newspring/corinth/issues/22)) ([3987d3d](https://github.com/newspring/corinth/commit/3987d3d))
+* Fixes auth reset thrashing ([#34](https://github.com/newspring/corinth/issues/34)) ([f449493](https://github.com/newspring/corinth/commit/f449493))
+* Fixes saving inconsistencies ([#21](https://github.com/newspring/corinth/issues/21)) ([f12949f](https://github.com/newspring/corinth/commit/f12949f))
+* Removed Tracking to Correct Links ([#19](https://github.com/newspring/corinth/issues/19)) ([0383088](https://github.com/newspring/corinth/commit/0383088))
+
+
+
 ## [7.5.15](https://github.com/NewSpring/corinth/compare/v7.5.14...v7.5.15) (2020-01-09)
 
 ## [7.5.14](https://github.com/NewSpring/corinth/compare/v7.5.13...v7.5.14) (2020-01-07)
