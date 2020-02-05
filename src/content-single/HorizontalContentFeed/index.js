@@ -40,8 +40,15 @@ class HorizontalContentFeed extends Component {
         disabled={disabled}
       >
         <HorizontalContentCardConnected
+          Component={({ coverImage, ...props }) => (
+            <HorizontalContentCardConnected.defaultProps.Component
+              coverImage={null}
+              {...props}
+            />
+          )}
           contentId={itemId}
           disabled={disabled}
+          labelText={''}
         />
       </TouchableScale>
     );
