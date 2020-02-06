@@ -40,8 +40,31 @@ class HorizontalContentFeed extends Component {
         disabled={disabled}
       >
         <HorizontalContentCardConnected
+          Component={({ coverImage, ...props }) => {
+            switch (get(item, '__typename')) {
+              case 'WeekendContentItem':
+                return (
+                  <HorizontalContentCardConnected.defaultProps.Component
+                    coverImage={
+                      item.videos.length
+                        ? item.videos[0].thumbnail.sources
+                        : null
+                    }
+                    {...props}
+                  />
+                );
+              default:
+                return (
+                  <HorizontalContentCardConnected.defaultProps.Component
+                    coverImage={null}
+                    {...props}
+                  />
+                );
+            }
+          }}
           contentId={itemId}
           disabled={disabled}
+          labelText={''}
         />
       </TouchableScale>
     );
