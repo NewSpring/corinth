@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import ApollosConfig from '@apollosproject/config';
 
 export default gql`
   query searchResults($searchText: String!) {
@@ -14,12 +15,10 @@ export default gql`
         }
         cursor
         node {
-          ... on ContentItem {
-            id
-            __typename
-          }
+          ...contentCardFragment
         }
       }
     }
   }
+  ${ApollosConfig.FRAGMENTS.CONTENT_CARD_FRAGMENT}
 `;

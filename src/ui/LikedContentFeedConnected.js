@@ -1,12 +1,7 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
-import PropTypes from 'prop-types';
-
-import {
-  ContentCardConnected,
-  fetchMoreResolver,
-} from '@apollosproject/ui-connected';
 
 import {
   BackgroundView,
@@ -14,23 +9,26 @@ import {
   TouchableScale,
   DefaultCard,
 } from '@apollosproject/ui-kit';
+import {
+  fetchMoreResolver,
+  ContentCardConnected,
+  GET_LIKED_CONTENT,
+} from '@apollosproject/ui-connected';
+import BrandedCard from './BrandedCard';
 
-import BrandedCard from '../ui/BrandedCard';
-import GET_CONTENT_FEED from './getContentFeed';
-/**
- * This is where the component description lives
- * A FeedView wrapped in a query to pull content data.
- */
-class ContentFeed extends PureComponent {
+/** A FeedView wrapped in a query to pull content data. */
+class LikedContentFeedConnected extends PureComponent {
   /** Function for React Navigation to set information in the header. */
-  static navigationOptions = ({ navigation }) => {
-    const itemTitle = navigation.getParam('itemTitle', 'Content Channel');
-    return {
-      title: itemTitle,
-    };
-  };
+  static navigationOptions = () => ({
+    title: 'Your Likes',
+  });
 
   static propTypes = {
+    Component: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.func,
+      PropTypes.object, // type check for React fragments
+    ]),
     /** Functions passed down from React Navigation to use in navigating to/from
      * items in the feed.
      */
@@ -40,15 +38,29 @@ class ContentFeed extends PureComponent {
     }),
   };
 
+  static defaultProps = {
+    Component: FeedView,
+  };
+
   /** Function that is called when a card in the feed is pressed.
    * Takes the user to the ContentSingle
    */
-  handleOnPress = (item) => {
+  handleOnPress = (item) =>
     this.props.navigation.navigate('ContentSingle', {
-      itemId: item.id,
-      sharing: item.sharing,
+      itemId: item.item.id,
+      sharing: item.item.sharing,
     });
-  };
+
+  getContent = (data) =>
+    get(data, 'likedContent.edges', []).map((edge) => edge.node);
+
+  fetchMore = (data, fetchMore, variables) =>
+    fetchMoreResolver({
+      collectionName: 'likedContent',
+      fetchMore,
+      variables,
+      data,
+    });
 
   getComponent = (item) => {
     switch (get(item, '__typename')) {
@@ -62,44 +74,33 @@ class ContentFeed extends PureComponent {
   };
 
   render() {
-    const { navigation } = this.props;
-    const itemId = navigation.getParam('itemId', []);
+    const { Component } = this.props;
+
     return (
       <BackgroundView>
         <Query
-          query={GET_CONTENT_FEED}
-          variables={{ itemId }}
+          query={GET_LIKED_CONTENT}
           fetchPolicy="cache-and-network"
+          variables={{ first: 20 }}
         >
           {({ loading, error, data, refetch, fetchMore, variables }) => (
-            <FeedView
-              content={get(
-                data,
-                'node.childContentItemsConnection.edges',
-                []
-              ).map((edge) => edge.node)}
-              fetchMore={fetchMoreResolver({
-                collectionName: 'node.childContentItemsConnection',
-                fetchMore,
-                variables,
-                data,
-              })}
+            <Component
+              content={this.getContent(data)}
               isLoading={loading}
               error={error}
               refetch={refetch}
+              onPressItem={this.handleOnPress}
+              fetchMore={this.fetchMore(data, fetchMore, variables)}
               renderItem={({ item }) => (
                 <TouchableScale
                   onPress={() => {
-                    this.handleOnPress(item);
+                    this.handleOnPress({ item });
                   }}
                 >
                   <ContentCardConnected
                     Component={this.getComponent(item)}
-                    contentId={item.isLoading ? null : get(item, 'id')}
-                    labelText={
-                      item.parentChannel &&
-                      item.parentChannel.name.split(' - ').pop()
-                    }
+                    contentId={get(item, 'id')}
+                    labelText={''}
                   />
                 </TouchableScale>
               )}
@@ -111,4 +112,4 @@ class ContentFeed extends PureComponent {
   }
 }
 
-export default ContentFeed;
+export default LikedContentFeedConnected;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { ActionCard } from '@apollosproject/ui-kit';
 import { ScriptureItem } from '@apollosproject/ui-scripture';
-import ShareContentButtonConnected from '../../ui/ShareContentButtonConnected';
+import { ShareButtonConnected } from '@apollosproject/ui-connected';
 
 const ScriptureFeature = ({
   scriptures,
@@ -27,9 +27,7 @@ const ScriptureFeature = ({
   return card ? (
     <ActionCard
       icon={'text'}
-      action={
-        <ShareContentButtonConnected message={message} itemId={contentId} />
-      }
+      action={<ShareButtonConnected message={message} itemId={contentId} />}
     >
       {scriptureItems}
     </ActionCard>
@@ -57,20 +55,5 @@ ScriptureFeature.propTypes = {
 ScriptureFeature.defaultProps = {
   card: true,
 };
-
-export const SCRIPTURE_FEATURE_FRAGMENT = `
-fragment ScriptureFeatureFragment on ScriptureFeature {
-  sharing {
-    message
-  }
-  scriptures {
-    id
-    html
-    reference
-    copyright
-    version
-  }
-}
-`;
 
 export default ScriptureFeature;

@@ -1,42 +1,5 @@
 import gql from 'graphql-tag';
-
-export const CONTENT_ITEM_FRAGMENT = gql`
-  fragment contentItemFragment on ContentItem {
-    id
-    title
-    summary
-    htmlContent
-    coverImage {
-      name
-      sources {
-        uri
-      }
-    }
-    theme {
-      type
-      colors {
-        primary
-        secondary
-        screen
-        paper
-      }
-    }
-    parentChannel {
-      id
-      name
-    }
-    videos {
-      sources {
-        uri
-      }
-    }
-    audios {
-      sources {
-        uri
-      }
-    }
-  }
-`;
+import ApollosConfig from '@apollosproject/config';
 
 export default gql`
   query getContentItem($itemId: ID!) {
@@ -47,5 +10,5 @@ export default gql`
       }
     }
   }
-  ${CONTENT_ITEM_FRAGMENT}
+  ${ApollosConfig.FRAGMENTS.CONTENT_ITEM_FRAGMENT}
 `;

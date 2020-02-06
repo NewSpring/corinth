@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Card,
@@ -9,23 +10,22 @@ import {
   UIText,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
-import { WebBrowserConsumer } from '../ui/WebBrowser';
-
-import { LiveConsumer } from '.';
+import {
+  RockAuthedWebBrowser,
+  LiveConsumer,
+} from '@apollosproject/ui-connected';
 
 const LiveCard = styled(({ theme }) => ({
   backgroundColor: theme.colors.lightSecondary,
 }))(Card);
 
-const LiveNowButton = () => (
-  <LiveConsumer>
-    {(liveStreams) => {
-      const isLive = !!liveStreams.length;
-
-      return isLive ? (
+const LiveNowButton = ({ contentId }) => (
+  <LiveConsumer contentId={contentId}>
+    {(liveStream) =>
+      liveStream ? (
         <AnalyticsConsumer>
           {(track) => (
-            <WebBrowserConsumer>
+            <RockAuthedWebBrowser>
               {(openUrl) => (
                 <TouchableScale
                   onPress={() => {
@@ -53,12 +53,14 @@ const LiveNowButton = () => (
                   </LiveCard>
                 </TouchableScale>
               )}
-            </WebBrowserConsumer>
+            </RockAuthedWebBrowser>
           )}
         </AnalyticsConsumer>
-      ) : null;
-    }}
+      ) : null
+    }
   </LiveConsumer>
 );
+
+LiveNowButton.propTypes = { contentId: PropTypes.string };
 
 export default LiveNowButton;

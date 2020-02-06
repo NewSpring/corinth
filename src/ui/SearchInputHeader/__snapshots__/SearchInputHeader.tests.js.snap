@@ -187,6 +187,7 @@ exports[`The Onboarding LandingScreen component should be stylable 1`] = `
               "height": 40,
               "paddingLeft": 8,
               "paddingRight": 0,
+              "paddingTop": 1,
               "paddingVertical": 0,
             }
           }
@@ -222,6 +223,8 @@ exports[`The Onboarding LandingScreen component should be stylable 1`] = `
               Object {
                 "backgroundColor": "#F8F7F4",
                 "borderBottomRightRadius": 16,
+                "borderColor": "#F8F7F4",
+                "borderRightWidth": 1,
                 "borderTopRightRadius": 16,
                 "overflow": "hidden",
               }
@@ -381,7 +384,7 @@ exports[`The Onboarding LandingScreen component should be stylable 1`] = `
             style={
               Object {
                 "color": "#6bac43",
-                "fontFamily": "System",
+                "fontFamily": "Colfax-Medium",
                 "fontSize": 14,
                 "fontStyle": null,
                 "fontWeight": null,
@@ -582,6 +585,7 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
               "height": 40,
               "paddingLeft": 8,
               "paddingRight": 0,
+              "paddingTop": 1,
               "paddingVertical": 0,
             }
           }
@@ -617,6 +621,8 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
               Object {
                 "backgroundColor": "#F8F7F4",
                 "borderBottomRightRadius": 16,
+                "borderColor": "#F8F7F4",
+                "borderRightWidth": 1,
                 "borderTopRightRadius": 16,
                 "overflow": "hidden",
               }
@@ -776,7 +782,7 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
             style={
               Object {
                 "color": "#6bac43",
-                "fontFamily": "System",
+                "fontFamily": "Colfax-Medium",
                 "fontSize": 14,
                 "fontStyle": null,
                 "fontWeight": null,
@@ -977,6 +983,7 @@ exports[`The Onboarding LandingScreen component should render pass props to Sear
               "height": 40,
               "paddingLeft": 8,
               "paddingRight": 0,
+              "paddingTop": 1,
               "paddingVertical": 0,
             }
           }
@@ -1012,6 +1019,8 @@ exports[`The Onboarding LandingScreen component should render pass props to Sear
               Object {
                 "backgroundColor": "#F8F7F4",
                 "borderBottomRightRadius": 16,
+                "borderColor": "#F8F7F4",
+                "borderRightWidth": 1,
                 "borderTopRightRadius": 16,
                 "overflow": "hidden",
               }
@@ -1171,7 +1180,7 @@ exports[`The Onboarding LandingScreen component should render pass props to Sear
             style={
               Object {
                 "color": "#6bac43",
-                "fontFamily": "System",
+                "fontFamily": "Colfax-Medium",
                 "fontSize": 14,
                 "fontStyle": null,
                 "fontWeight": null,

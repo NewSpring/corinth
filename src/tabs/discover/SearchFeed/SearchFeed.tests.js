@@ -3,9 +3,9 @@ import { flatMap } from 'lodash';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import renderer from 'react-test-renderer';
 
+import { GET_CONTENT_CARD } from '@apollosproject/ui-connected';
 import Providers from '../../../Providers';
 import { renderWithApolloData } from '../../../utils/testUtils';
-import GET_CONTENT_CARD from '../../../ui/ContentCardConnected/query';
 
 import GET_SEARCH_RESULTS from './getSearchResults';
 import SearchFeed from '.';
@@ -40,6 +40,7 @@ describe('The SearchFeed component', () => {
                 node: {
                   id: 'DevotionalContentItem:561dfb7dbd8a5c093fd8385c7edaadbc',
                   title: 'How to lead people to Jesus',
+                  hyphenatedTitle: '-',
                   isLiked: false,
                   likedCount: 0,
                   summary:
@@ -76,6 +77,7 @@ describe('The SearchFeed component', () => {
                 node: {
                   id: 'UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae',
                   title: 'Live for Freedom Toolkit',
+                  hyphenatedTitle: '-',
                   isLiked: false,
                   likedCount: 1,
                   summary:
@@ -112,6 +114,7 @@ describe('The SearchFeed component', () => {
                 node: {
                   id: 'UniversalContentItem:895738f70482712adb3ab45a08c30456',
                   title: 'Should your 20-something live at home?',
+                  hyphenatedTitle: '-',
                   isLiked: false,
                   likedCount: 0,
                   summary:
@@ -157,6 +160,7 @@ describe('The SearchFeed component', () => {
                 node: {
                   id: 'UniversalContentItem:296373ecb53580855cadffa0375ebe18',
                   title: 'Guys Night!',
+                  hyphenatedTitle: '-',
                   isLiked: false,
                   likedCount: 0,
                   summary: 'A time to connect with other guys who live nearby.',
@@ -192,6 +196,7 @@ describe('The SearchFeed component', () => {
                 node: {
                   id: 'UniversalContentItem:c495ff18cd998ed516a798b6218907cd',
                   title: '10 ways to refresh your spirit every day',
+                  hyphenatedTitle: '-',
                   isLiked: false,
                   likedCount: 2,
                   summary:
@@ -228,6 +233,7 @@ describe('The SearchFeed component', () => {
                 node: {
                   id: 'DevotionalContentItem:4dd74ceca9e09b5276e93cbf53821bd6',
                   title: 'Why leadership isn’t all about the title',
+                  hyphenatedTitle: '-',
                   isLiked: false,
                   likedCount: 0,
                   summary:
@@ -267,7 +273,7 @@ describe('The SearchFeed component', () => {
       (node) => ({
         request: {
           query: GET_CONTENT_CARD,
-          variables: { contentId: node.id },
+          variables: { contentId: node.node.id },
         },
         result: {
           data: {
