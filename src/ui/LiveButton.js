@@ -10,6 +10,7 @@ import {
   UIText,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import Analytics from 'appcenter-analytics';
 import {
   RockAuthedWebBrowser,
   LiveConsumer,
@@ -24,7 +25,7 @@ const LiveNowButton = ({ contentId }) => (
     {(liveStream) =>
       liveStream ? (
         <AnalyticsConsumer>
-          {(track) => (
+          {({ track }) => (
             <RockAuthedWebBrowser>
               {(openUrl) => (
                 <TouchableScale
@@ -34,8 +35,8 @@ const LiveNowButton = ({ contentId }) => (
                       {},
                       { useRockToken: true }
                     );
-                    // TODO: This isn't working - need to fix.
                     track({ eventName: 'Clicked Live Bar' });
+                    Analytics.trackEvent('Clicked Live Bar');
                   }}
                 >
                   <LiveCard>
