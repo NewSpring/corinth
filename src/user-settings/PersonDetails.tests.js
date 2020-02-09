@@ -1,10 +1,9 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import wait from 'waait';
 
 import Providers from '../Providers';
 
 import GET_USER_PROFILE from '../tabs/connect/getUserProfile';
+import { renderWithApolloData } from '../utils/testUtils';
 import PersonalDetails from './PersonalDetails';
 
 describe('PersonalDetails component', () => {
@@ -16,11 +15,19 @@ describe('PersonalDetails component', () => {
       result: {
         data: {
           currentUser: {
+            __typename: 'AuthenticatedUser',
+            id: 'AuthenticatedUser:123',
             profile: {
+              __typename: 'Person',
+              id: 'Profile:123',
               firstName: 'Isaac',
               lastName: 'Hardy',
               nickName: 'Ike',
               email: 'isaac.hardy@newspring.cc',
+              birthDate: '2019-09-12T21:01:06.026Z',
+              gender: 'Male',
+              campus: null,
+              photo: null,
             },
           },
         },
@@ -31,12 +38,12 @@ describe('PersonalDetails component', () => {
       getParam: jest.fn(),
       goBack: jest.fn(),
     };
-    const tree = renderer.create(
+    const tree = await renderWithApolloData(
       <Providers mocks={[mock]}>
         <PersonalDetails navigation={navigation} />
       </Providers>
     );
-    await wait(0); // wait for response from graphql
+
     expect(tree).toMatchSnapshot();
   });
 });

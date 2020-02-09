@@ -1,9 +1,8 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import wait from 'waait';
 
 import Providers from '../Providers';
 
+import { renderWithApolloData } from '../utils/testUtils';
 import getScripture from './getScripture';
 import ScriptureConnected from '.';
 
@@ -15,6 +14,7 @@ const mocks = {
   result: {
     data: {
       scripture: {
+        __typename: 'Scripture',
         id: 'GEN.1.1',
         reference: 'Genesis 1:1',
         copyright: 'PUBLIC DOMAIN',
@@ -28,12 +28,12 @@ const mocks = {
 
 describe('ScriptureConnected component', () => {
   it('renders without errors', async () => {
-    const tree = renderer.create(
-      <Providers mocks={[mocks]} addTypename={false}>
+    const tree = await renderWithApolloData(
+      <Providers mocks={[mocks]}>
         <ScriptureConnected references={['Genesis 1:1']} />
       </Providers>
     );
-    await wait(0); // wait for response from graphql
+
     expect(tree).toMatchSnapshot();
   });
 });

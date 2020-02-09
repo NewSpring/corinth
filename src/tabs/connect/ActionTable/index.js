@@ -13,7 +13,7 @@ import {
   PaddedView,
   H4,
 } from '@apollosproject/ui-kit';
-import { WebBrowserConsumer } from '../../../ui/WebBrowser';
+import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import NavigationActions from '../../../NavigationService';
 
 const RowHeader = styled(({ theme }) => ({
@@ -28,126 +28,122 @@ const Name = styled({
 })(View);
 
 const ActionTable = ({ isGroupLeader }) => (
-  <View>
-    <RowHeader>
-      <Name>
-        <H4>{'Connect with NewSpring'}</H4>
-      </Name>
-    </RowHeader>
-    <TableView>
-      <WebBrowserConsumer>
-        {(openUrl) => (
-          <View>
-            <Touchable
-              onPress={() =>
-                openUrl(
-                  'https://newspring.cc/connect',
-                  {},
-                  { useRockToken: true }
-                )
-              }
-            >
-              <Cell>
-                <CellText>Sign up for Connect</CellText>
-                <CellIcon name="arrow-next" />
-              </Cell>
-            </Touchable>
-            <Divider />
-            <Touchable
-              onPress={() =>
-                openUrl(
-                  'https://newspring.cc/serving',
-                  {},
-                  { useRockToken: true }
-                )
-              }
-            >
-              <Cell>
-                <CellText>Find a serving opportunity</CellText>
-                <CellIcon name="arrow-next" />
-              </Cell>
-            </Touchable>
-            <Divider />
-            <Touchable
-              onPress={() =>
-                openUrl(
-                  'https://newspring.cc/missions',
-                  {},
-                  { useRockToken: true }
-                )
-              }
-            >
-              <Cell>
-                <CellText>Go on a mission trip</CellText>
-                <CellIcon name="arrow-next" />
-              </Cell>
-            </Touchable>
-            {isGroupLeader ? (
-              <>
-                <Divider />
-                <Touchable
-                  onPress={() =>
-                    openUrl(
-                      'https://newspring.cc/groups/leader',
-                      {},
-                      { useRockToken: true }
-                    )
-                  }
-                >
-                  <Cell>
-                    <CellText>Manage your group</CellText>
-                    <CellIcon name="arrow-next" />
-                  </Cell>
-                </Touchable>
-              </>
-            ) : null}
-            <Divider />
-            <Touchable
-              onPress={() =>
-                openUrl(
-                  'https://open.spotify.com/artist/1wUcqswHv80fp5nMF2hVwM',
-                  { externalBrowser: true }
-                )
-              }
-            >
-              <Cell>
-                <CellText>Listen to NewSpring Worship</CellText>
-                <CellIcon name="arrow-next" />
-              </Cell>
-            </Touchable>
-            <Divider />
-            <Touchable
-              onPress={() =>
-                openUrl(
-                  `https://newspring.cc/workflows/530?Source=3`,
-                  {},
-                  { useRockToken: true }
-                )
-              }
-            >
-              <Cell>
-                <CellText>Report a bug</CellText>
-                <CellIcon name="arrow-next" />
-              </Cell>
-            </Touchable>
-            <Divider />
-            {process.env.NODE_ENV !== 'production' ? (
+  <RockAuthedWebBrowser>
+    {(openUrl) => (
+      <View>
+        <RowHeader>
+          <Name>
+            <H4>{'Connect with NewSpring'}</H4>
+          </Name>
+        </RowHeader>
+        <TableView>
+          <Touchable
+            onPress={() =>
+              openUrl(
+                'https://newspring.cc/connect/?hidenav=true',
+                {},
+                { useRockToken: true }
+              )
+            }
+          >
+            <Cell>
+              <CellText>Sign up for Connect</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+          <Touchable
+            onPress={() =>
+              openUrl(
+                'https://newspring.cc/serving/?hidenav=true',
+                {},
+                { useRockToken: true }
+              )
+            }
+          >
+            <Cell>
+              <CellText>Find a serving opportunity</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+          <Touchable
+            onPress={() =>
+              openUrl(
+                'https://newspring.cc/missions/?hidenav=true',
+                {},
+                { useRockToken: true }
+              )
+            }
+          >
+            <Cell>
+              <CellText>Go on a mission trip</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          {isGroupLeader ? (
+            <>
+              <Divider />
               <Touchable
                 onPress={() =>
-                  NavigationActions.navigate('TestingControlPanel')
+                  openUrl(
+                    'https://newspring.cc/groups/leader/?hidenav=true',
+                    {},
+                    { useRockToken: true }
+                  )
                 }
               >
                 <Cell>
-                  <CellIcon name="settings" />
-                  <CellText>Open Testing Panel</CellText>
+                  <CellText>Manage your group</CellText>
+                  <CellIcon name="arrow-next" />
                 </Cell>
               </Touchable>
-            ) : null}
-          </View>
-        )}
-      </WebBrowserConsumer>
-    </TableView>
-  </View>
+            </>
+          ) : null}
+          <Divider />
+          <Touchable
+            onPress={() =>
+              openUrl(
+                'https://open.spotify.com/artist/1wUcqswHv80fp5nMF2hVwM',
+                { externalBrowser: true }
+              )
+            }
+          >
+            <Cell>
+              <CellText>Listen to NewSpring Worship</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+          <Touchable
+            onPress={() =>
+              openUrl(
+                `https://newspring.cc/workflows/530?Source=3&hidenav=true`,
+                {},
+                { useRockToken: true }
+              )
+            }
+          >
+            <Cell>
+              <CellText>Report a bug</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+          {process.env.NODE_ENV !== 'production' ? (
+            <Touchable
+              onPress={() => NavigationActions.navigate('TestingControlPanel')}
+            >
+              <Cell>
+                <CellIcon name="settings" />
+                <CellText>Open Testing Panel</CellText>
+              </Cell>
+            </Touchable>
+          ) : null}
+        </TableView>
+      </View>
+    )}
+  </RockAuthedWebBrowser>
 );
 
 ActionTable.propTypes = {

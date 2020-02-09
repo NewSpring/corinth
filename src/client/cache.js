@@ -5,7 +5,7 @@ import {
 import AsyncStorage from '@react-native-community/async-storage';
 import { CachePersistor } from 'apollo-cache-persist';
 import gql from 'graphql-tag';
-import Config from 'react-native-config';
+import ApollosConfig from '@apollosproject/config';
 import introspectionQueryResultData from './fragmentTypes.json';
 
 export const CACHE_LOADED = gql`
@@ -23,7 +23,7 @@ export const MARK_CACHE_LOADED = gql`
 // We reset our apollo cache based an env value and static number.
 // In the future, we should also look at resetting the app when an error occurs related to Apollo.
 // You can also increment this number to force a manual reset of the cache.
-const SCHEMA_VERSION = `${Config.SCHEMA_VERSION}-1`; // Must be a string.
+const SCHEMA_VERSION = `${ApollosConfig.SCHEMA_VERSION}-1`; // Must be a string.
 const SCHEMA_VERSION_KEY = 'apollo-schema-version';
 
 const nodeCacheRedirect = (_, { id }, { getCacheKey }) =>

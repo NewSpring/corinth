@@ -2,10 +2,11 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 
-import GET_LIKED_CONTENT from '../getLikedContent';
-import RecentlyLikedTileFeed from './RecentlyLikedTileFeed';
+import { GET_LIKED_CONTENT } from '@apollosproject/ui-connected';
 
-const RecentlyLikedTileFeedConnected = ({ navigation }) => (
+import HorizontalLikedContentFeed from './HorizontalLikedContentFeed';
+
+const HorizontalLikedContentFeedConnected = ({ Component, navigation }) => (
   <Query
     query={GET_LIKED_CONTENT}
     fetchPolicy="cache-and-network"
@@ -17,7 +18,7 @@ const RecentlyLikedTileFeedConnected = ({ navigation }) => (
     }) => {
       if (!edges.length) return null;
       return (
-        <RecentlyLikedTileFeed
+        <Component
           id={'liked'}
           name={'Recently Liked'}
           content={edges.map((e) => e.node)}
@@ -33,11 +34,20 @@ const RecentlyLikedTileFeedConnected = ({ navigation }) => (
   </Query>
 );
 
-RecentlyLikedTileFeedConnected.propTypes = {
+HorizontalLikedContentFeedConnected.propTypes = {
+  Component: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func,
+    PropTypes.object, // type check for React fragments
+  ]),
   navigation: PropTypes.shape({
     getParam: PropTypes.func,
     navigate: PropTypes.func,
   }),
 };
 
-export default RecentlyLikedTileFeedConnected;
+HorizontalLikedContentFeedConnected.defaultProps = {
+  Component: HorizontalLikedContentFeed,
+};
+
+export default HorizontalLikedContentFeedConnected;

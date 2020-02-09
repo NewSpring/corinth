@@ -15,8 +15,10 @@ import {
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import Analytics from 'appcenter-analytics';
-import { WebBrowserConsumer } from '../../ui/WebBrowser';
-import { LiveConsumer } from '../../live';
+import {
+  LiveConsumer,
+  RockAuthedWebBrowser,
+} from '@apollosproject/ui-connected';
 import GET_CONTENT_MEDIA from './getContentMedia';
 
 const Container = styled(({ theme }) => ({
@@ -76,7 +78,7 @@ class MediaControls extends PureComponent {
   renderWebView = ({ webViewUrl, coverImageSources }) => (
     <AnalyticsConsumer>
       {({ track }) => (
-        <WebBrowserConsumer>
+        <RockAuthedWebBrowser>
           {(openUrl) =>
             this.renderPlayButton({
               action: () => {
@@ -87,7 +89,7 @@ class MediaControls extends PureComponent {
               coverImageSources,
             })
           }
-        </WebBrowserConsumer>
+        </RockAuthedWebBrowser>
       )}
     </AnalyticsConsumer>
   );
@@ -96,7 +98,9 @@ class MediaControls extends PureComponent {
     liveStream,
     loading,
     error,
-    data: { node: { videos, title, parentChannel = {}, coverImage = {} } } = {},
+    data: {
+      node: { videos, title, parentChannel = {}, coverImage = {} } = {},
+    } = {},
   }) => {
     if (loading || error) return null;
     const isLive = !!liveStream;

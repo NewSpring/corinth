@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { get } from 'lodash';
 import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
@@ -16,7 +17,7 @@ import {
   withIsLoading,
 } from '@apollosproject/ui-kit';
 
-import HorizontalContentCardConnected from '../../../ui/HorizontalContentCardConnected';
+import { HorizontalContentCardConnected } from '@apollosproject/ui-connected';
 
 const RowHeader = styled(({ theme }) => ({
   flexDirection: 'row',
@@ -48,7 +49,7 @@ const StyledHorizontalTileFeed = styled(({ theme }) => ({
   zIndex: 1,
 }))(HorizontalTileFeed);
 
-class RecentlyLikedTileFeed extends Component {
+class HorizontalLikedContentFeed extends Component {
   loadingStateObject = {
     id: 'fake_id',
     title: '',
@@ -75,6 +76,27 @@ class RecentlyLikedTileFeed extends Component {
       }}
     >
       <HorizontalContentCardConnected
+        Component={({ coverImage, ...props }) => {
+          switch (get(item, '__typename')) {
+            case 'WeekendContentItem':
+              return (
+                <HorizontalContentCardConnected.defaultProps.Component
+                  coverImage={
+                    item.videos.length ? item.videos[0].thumbnail.sources : null
+                  }
+                  {...props}
+                />
+              );
+            default:
+              return (
+                <HorizontalContentCardConnected.defaultProps.Component
+                  coverImage={null}
+                  {...props}
+                />
+              );
+          }
+        }}
+        labelText={''}
         isLoading={item.isLoading}
         contentId={item.id}
       />
@@ -93,7 +115,7 @@ class RecentlyLikedTileFeed extends Component {
 
           <AndroidTouchableFix
             onPress={() => {
-              navigation.navigate('LikedContentList');
+              navigation.navigate('LikedContentFeedConnected');
             }}
           >
             <ButtonLinkSpacing>
@@ -115,4 +137,4 @@ class RecentlyLikedTileFeed extends Component {
   }
 }
 
-export default withNavigation(withIsLoading(RecentlyLikedTileFeed));
+export default withNavigation(withIsLoading(HorizontalLikedContentFeed));

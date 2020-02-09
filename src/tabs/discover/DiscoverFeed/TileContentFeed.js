@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
 import {
@@ -15,7 +16,7 @@ import {
   withIsLoading,
 } from '@apollosproject/ui-kit';
 
-import HorizontalContentCardConnected from '../../../ui/HorizontalContentCardConnected';
+import { HorizontalContentCardConnected } from '@apollosproject/ui-connected';
 
 const RowHeader = styled(({ theme }) => ({
   flexDirection: 'row',
@@ -53,6 +54,17 @@ const loadingStateObject = {
   coverImage: [],
 };
 
+const getTitle = (item) => {
+  switch (get(item, '__typename')) {
+    case 'WeekendContentItem':
+    case 'ContentSeriesContentItem':
+    case 'DevotionalContentItem':
+      return '';
+    default:
+      return item.hyphenatedTitle;
+  }
+};
+
 const TileContentFeed = ({ isLoading, id, name, navigation, content = [] }) => (
   <>
     <RowHeader>
@@ -87,6 +99,8 @@ const TileContentFeed = ({ isLoading, id, name, navigation, content = [] }) => (
           <HorizontalContentCardConnected
             contentId={item.id}
             isLoading={isLoading}
+            labelText={''}
+            hyphenatedTitle={getTitle(item)}
           />
         </TouchableScale>
       )}
