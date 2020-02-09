@@ -55,7 +55,6 @@ const loadingStateObject = {
 };
 
 const getTitle = (item) => {
-  console.log('item = ', item.__typename);
   switch (get(item, '__typename')) {
     case 'WeekendContentItem':
     case 'ContentSeriesContentItem':
