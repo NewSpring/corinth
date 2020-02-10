@@ -19,10 +19,6 @@ const ContentView = styled(({ theme }) => ({
   marginBottom: theme.sizing.baseUnit * 2,
 }))(FlexedView);
 
-const StyledButton = styled({
-  width: '100%',
-})(Button);
-
 const PrayerTab = memo(
   ({ prayers, type, title, description, loading, ...props }) => (
     <ContentView>
@@ -37,7 +33,7 @@ const PrayerTab = memo(
             <VerticalPaddedView>
               <BodyText placeholder={'Loading Prayers'}>{description}</BodyText>
             </VerticalPaddedView>
-            <StyledButton
+            <Button
               title="Start praying"
               onPress={() =>
                 props.navigation.navigate('PrayerList', {
