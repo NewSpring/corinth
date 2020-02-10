@@ -1,7 +1,7 @@
 import React from 'react';
 import Providers from '../../Providers';
 import { renderWithApolloData } from '../../utils/testUtils';
-import getUserPrayers from '../data/queries/getUserPrayers';
+import GET_PRAYERS from '../data/queries/getPrayers';
 import UserPrayerList from '.';
 
 const prayers = [
@@ -36,7 +36,10 @@ const prayers = [
 ];
 
 const mocks = [
-  { request: { query: getUserPrayers }, response: { data: { prayers } } },
+  {
+    request: { query: GET_PRAYERS, variables: { type: 'USER' } },
+    response: { data: { prayers } },
+  },
 ];
 
 describe('the UserPrayerList component', () => {
@@ -55,7 +58,7 @@ describe('the UserPrayerList component', () => {
       <Providers
         mocks={[
           {
-            request: { query: getUserPrayers },
+            request: { query: GET_PRAYERS, variables: { type: 'USER' } },
             response: { data: {} },
           },
         ]}
