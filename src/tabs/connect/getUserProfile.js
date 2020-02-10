@@ -6,6 +6,7 @@ export default gql`
     currentUser {
       id
       profile {
+        isGroupLeader
         ...UserProfileParts
         campus {
           ...CampusParts
