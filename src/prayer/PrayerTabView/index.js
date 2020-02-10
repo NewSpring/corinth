@@ -6,18 +6,15 @@ import { TabView } from 'react-native-tab-view';
 import { HorizontalTileFeed, TouchableScale } from '@apollosproject/ui-kit';
 import PrayerMenuCard from '../PrayerMenuCard';
 
-import GET_GROUP_PRAYERS from '../data/queries/getGroupPrayers';
 import GET_PRAYERS from '../data/queries/getPrayers';
-import GET_CAMPUS_PRAYERS from '../data/queries/getCampusPrayers';
-import GET_SAVED_PRAYERS from '../data/queries/getSavedPrayers';
 import PrayerTab from './PrayerTab';
 
 class PrayerTabView extends PureComponent {
-  queries = {
-    'my-church': GET_PRAYERS,
-    'my-campus': GET_CAMPUS_PRAYERS,
-    'my-community': GET_GROUP_PRAYERS,
-    'my-saved-prayers': GET_SAVED_PRAYERS,
+  types = {
+    'my-church': '',
+    'my-campus': 'CAMPUS',
+    'my-community': 'GROUP',
+    'my-saved-prayers': 'SAVED',
   };
 
   static propTypes = {
@@ -55,22 +52,23 @@ class PrayerTabView extends PureComponent {
           width: Dimensions.get('window').width,
         }}
         navigationState={{ ...this.state }}
-        renderScene={({ route }) => (
+        renderScene={({ route: category }) => (
           <Query
-            query={this.queries[route.key]}
+            query={GET_PRAYERS}
+            variables={
+              category.key !== 'my-church'
+                ? { type: this.types[category.key] }
+                : null
+            }
             fetchPolicy="cache-and-network"
           >
-            {({ data, loading: prayersLoading }) => (
+            {({ data: { prayers } = {}, loading: prayersLoading }) => (
               <PrayerTab
                 loading={prayersLoading}
-                prayers={
-                  data && Object.values(data).length > 0
-                    ? Object.values(data)[0]
-                    : []
-                }
-                description={route.description}
-                title={route.title}
-                type={route.key.split('-')[1]}
+                prayers={prayers || []}
+                description={category.description}
+                title={category.title}
+                type={category.key.split('-')[1]}
                 {...this.props}
               />
             )}
