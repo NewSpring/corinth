@@ -1,4 +1,5 @@
-import GET_PRAYERS from '../queries/getPrayers';
+// TODO don't think we'll need this file at all
+import GET_PRAYERS from '../queries/getPrayerFeed';
 
 export default (cache, id) => {
   const types = ['', 'SAVED', 'CAMPUS', 'GROUP'];

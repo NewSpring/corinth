@@ -15,7 +15,7 @@ import {
   withTheme,
 } from '@apollosproject/ui-kit';
 import PrayerSingle from '../PrayerSingle';
-import GET_PRAYERS from '../data/queries/getPrayers';
+import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import DELETE_PRAYER from '../data/mutations/deletePrayer';
 import ActionComponent from '../ActionComponent';
 
@@ -48,11 +48,11 @@ class UserPrayerList extends React.Component {
         <FlexedSafeAreaView forceInset={{ top: 'always' }}>
           <ScrollView>
             <Query
-              query={GET_PRAYERS}
+              query={GET_PRAYER_FEED}
               variables={{ type: 'USER' }}
               fetchPolicy="cache-and-network"
             >
-              {({ loading, data: { prayers = [] } = {} }) => {
+              {({ loading, data: { edges = [] } = {} }) => {
                 if (loading) return <ActivityIndicator />;
                 return (
                   <>
@@ -64,24 +64,27 @@ class UserPrayerList extends React.Component {
                       mutation={DELETE_PRAYER}
                       update={(cache, { data: { deletePrayer } }) => {
                         const data = cache.readQuery({
-                          query: GET_PRAYERS,
+                          query: GET_PRAYER_FEED,
                           variables: { type: 'USER' },
                         });
+                        const oldPrayers = data.prayerFeed.edges.map(
+                          (edge) => edge.node
+                        );
                         const { id } = deletePrayer;
-                        const updatedPrayers = data.prayers.filter(
+                        const newPrayers = oldPrayers.filter(
                           (prayer) => prayer.id !== id
                         );
                         cache.writeQuery({
-                          query: GET_PRAYERS,
+                          query: GET_PRAYER_FEED,
                           variables: { type: 'USER' },
-                          data: { prayers: updatedPrayers },
+                          data: { prayers: newPrayers },
                         });
                       }}
                     >
                       {(deletePrayer) => (
                         <StyledView>
-                          {prayers && prayers.length > 0 ? (
-                            prayers.map((prayer) => (
+                          {edges.length > 0 ? (
+                            edges.map(({ node: prayer }) => (
                               <Card key={prayer.id}>
                                 <CardContent>
                                   <PrayerSingle

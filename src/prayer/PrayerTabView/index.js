@@ -3,10 +3,14 @@ import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { Dimensions } from 'react-native';
 import { TabView } from 'react-native-tab-view';
-import { HorizontalTileFeed, TouchableScale } from '@apollosproject/ui-kit';
+import {
+  HorizontalTileFeed,
+  TouchableScale,
+  ErrorCard,
+} from '@apollosproject/ui-kit';
 import PrayerMenuCard from '../PrayerMenuCard';
 
-import GET_PRAYERS from '../data/queries/getPrayers';
+import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import PrayerTab from './PrayerTab';
 
 class PrayerTabView extends PureComponent {
@@ -54,24 +58,34 @@ class PrayerTabView extends PureComponent {
         navigationState={{ ...this.state }}
         renderScene={({ route: category }) => (
           <Query
-            query={GET_PRAYERS}
-            variables={
-              category.key !== 'my-church'
-                ? { type: this.types[category.key] }
-                : null
-            }
+            query={GET_PRAYER_FEED}
+            variables={{
+              type:
+                category.key !== 'my-church' ? this.types[category.key] : null,
+              first: 1,
+            }}
             fetchPolicy="cache-and-network"
           >
-            {({ data: { prayers } = {}, loading: prayersLoading }) => (
-              <PrayerTab
-                loading={prayersLoading}
-                prayers={prayers || []}
-                description={category.description}
-                title={category.title}
-                type={category.key.split('-')[1]}
-                {...this.props}
-              />
-            )}
+            {({
+              data: { prayerFeed: { edges } } = {},
+              loading: prayersLoading,
+              error,
+            }) => {
+              if (error) return <ErrorCard error={error} />;
+              return (
+                <PrayerTab
+                  loading={prayersLoading}
+                  hasPrayers={edges && edges.length > 0}
+                  // TODO: won't need to pass this
+                  // prayers should be loaded in the PrayerList individually
+                  prayers={edges && edges.map((edge) => edge.node)}
+                  description={category.description}
+                  title={category.title}
+                  type={category.key.split('-')[1]}
+                  {...this.props}
+                />
+              );
+            }}
           </Query>
         )}
         renderTabBar={(props) => (

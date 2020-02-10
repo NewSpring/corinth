@@ -19,10 +19,9 @@ import PrayerSingle from '../PrayerSingle';
 import SaveButton from '../SaveButton';
 import ActionComponent from '../ActionComponent';
 import FLAG_PRAYER from '../data/mutations/flagPrayer';
-import GET_PRAYERS from '../data/queries/getPrayers';
 import INCREMENT_PRAYER_COUNT from '../data/mutations/incrementPrayerCount';
-import flagPrayerUpdateAll from '../data/updates/flagPrayerUpdateAll';
-import cache from '../../client/cache';
+// import flagPrayerUpdateAll from '../data/updates/flagPrayerUpdateAll';
+// import cache from '../../client/cache';
 
 const FlexedSafeAreaView = styled({
   flex: 1,
@@ -71,10 +70,7 @@ class PrayerList extends PureComponent {
 
   componentDidMount() {
     this.setState(() => {
-      const prayers = this.props.navigation.getParam(
-        'prayers',
-        cache.readQuery({ query: GET_PRAYERS }).prayers
-      );
+      const prayers = this.props.navigation.getParam('prayers', []);
 
       return {
         prayers,
@@ -92,6 +88,7 @@ class PrayerList extends PureComponent {
     const isLastPrayer =
       this.state.prayerIndex + 1 === this.state.prayers.length;
 
+    // this can simply be a navigate.replace
     const advancePrayer = (prayed = false) =>
       !isLastPrayer
         ? this.setState((prevState) => ({
@@ -106,7 +103,9 @@ class PrayerList extends PureComponent {
         <FlexedSafeAreaView>
           <Mutation
             mutation={FLAG_PRAYER}
-            update={() => flagPrayerUpdateAll(cache, prayer.id)}
+            // TODO: we probably won't need this
+            // since we're going to pull one prayer at a time
+            // update={() => flagPrayerUpdateAll(cache, prayer.id)}
           >
             {(flagPrayer) => (
               <Mutation mutation={INCREMENT_PRAYER_COUNT}>
