@@ -28,7 +28,10 @@ const BrandedCard = ({
   <FeaturedCard
     LabelComponent={
       campaign && isLive ? (
-        <StyledCardLabel title={"Today's Sermon"} />
+        <StyledCardLabel
+          isLoading={otherProps.isLoading}
+          title={"Today's Sermon"}
+        />
       ) : (
         labelText && (
           <StyledCardLabel
