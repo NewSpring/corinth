@@ -15,7 +15,6 @@ import PrayerTab from './PrayerTab';
 
 class PrayerTabView extends PureComponent {
   types = {
-    'my-church': '',
     'my-campus': 'CAMPUS',
     'my-community': 'GROUP',
     'my-saved-prayers': 'SAVED',
@@ -82,6 +81,11 @@ class PrayerTabView extends PureComponent {
                   description={category.description}
                   title={category.title}
                   type={category.key.split('-')[1]}
+                  feedType={
+                    category.key !== 'my-church'
+                      ? this.types[category.key]
+                      : null
+                  }
                   {...this.props}
                 />
               );
