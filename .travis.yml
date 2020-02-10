@@ -13,7 +13,7 @@ stages:
   - name: Test
     if: (type IN (pull_request))
   - name: Release and Version
-    #if: (type IN (push) AND branch = master)
+    if: (type IN (push) AND branch = master)
 
 
 jobs:
@@ -25,7 +25,7 @@ jobs:
         - travis_wait yarn test
         - travis_wait yarn codecov
     - stage: Release and Version
-      #script:
+      script:
         - git config user.email ${GH_EMAIL}
         - git config user.name ${GH_USER}
         - git remote
