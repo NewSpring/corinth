@@ -20,16 +20,7 @@ const ContentView = styled(({ theme }) => ({
 }))(FlexedView);
 
 const PrayerTab = memo(
-  ({
-    prayers,
-    type,
-    title,
-    description,
-    loading,
-    hasPrayers,
-    feedType,
-    ...props
-  }) => (
+  ({ type, title, description, loading, hasPrayers, feedType, ...props }) => (
     <ContentView>
       <Placeholder.Paragraph
         lineNumber={2}
@@ -46,7 +37,6 @@ const PrayerTab = memo(
               title="Start praying"
               onPress={() =>
                 props.navigation.navigate('PrayerList', {
-                  prayers,
                   title,
                   type: feedType,
                 })
@@ -76,9 +66,6 @@ PrayerTab.propTypes = {
   type: PropTypes.string,
   feedType: PropTypes.string,
   hasPrayers: PropTypes.bool,
-  prayers: PropTypes.arrayOf(
-    PropTypes.shape({}) // TODO fill this out
-  ),
   loading: PropTypes.bool,
 };
 

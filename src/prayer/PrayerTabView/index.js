@@ -75,9 +75,6 @@ class PrayerTabView extends PureComponent {
                 <PrayerTab
                   loading={prayersLoading}
                   hasPrayers={edges && edges.length > 0}
-                  // TODO: won't need to pass this
-                  // prayers should be loaded in the PrayerList individually
-                  prayers={edges && edges.map((edge) => edge.node)}
                   description={category.description}
                   title={category.title}
                   type={category.key.split('-')[1]}
