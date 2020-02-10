@@ -62,7 +62,7 @@ const Footer = styled(({ theme }) => ({
 class PrayerList extends PureComponent {
   state = {
     prayed: false,
-    saved: false,
+    // saved: false,
   };
 
   static navigationOptions = {
@@ -84,9 +84,9 @@ class PrayerList extends PureComponent {
           {({ data, loading, error }) => {
             if (loading) return <ActivityIndicator />;
             if (error) return <ErrorCard />;
-
             if (data.prayerFeed.edges.length === 0)
               this.props.navigation.popToTop();
+
             const newCursor = data.prayerFeed.cursor;
             const prayer = data.prayerFeed.edges[0].node;
             return (
