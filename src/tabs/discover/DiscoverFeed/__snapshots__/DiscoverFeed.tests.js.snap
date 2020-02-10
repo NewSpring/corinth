@@ -90,6 +90,7 @@ exports[`The DiscoverFeed component should render 1`] = `
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "Anderson Family Cookout!",
                             "id": "UniversalContentItem:00bb7b364911281c97fc50f2a0d17b11",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -115,6 +116,7 @@ exports[`The DiscoverFeed component should render 1`] = `
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "Robert Madu is Coming to Christ Fellowship",
                             "id": "UniversalContentItem:7db601b238aa4345a818654300f83dd2",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -140,6 +142,7 @@ exports[`The DiscoverFeed component should render 1`] = `
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "Guys Night!",
                             "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -167,6 +170,7 @@ exports[`The DiscoverFeed component should render 1`] = `
                           "node": Object {
                             "__typename": "UniversalContentItem",
                             "coverImage": null,
+                            "hyphenatedTitle": "Test Article",
                             "id": "UniversalContentItem:604a4a763a5fc0edfe386684ca6b3515",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -184,6 +188,7 @@ exports[`The DiscoverFeed component should render 1`] = `
                           "node": Object {
                             "__typename": "UniversalContentItem",
                             "coverImage": null,
+                            "hyphenatedTitle": "10 ways to refresh your spirit every day",
                             "id": "UniversalContentItem:c495ff18cd998ed516a798b6218907cd",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -201,6 +206,7 @@ exports[`The DiscoverFeed component should render 1`] = `
                           "node": Object {
                             "__typename": "UniversalContentItem",
                             "coverImage": null,
+                            "hyphenatedTitle": "Live for Freedom Toolkit",
                             "id": "UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -237,6 +243,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "The New Weekend Experience",
                             "id": "ContentSeriesContentItem:6d8dc8e4bad017f815ae0cac8bf692bb",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -271,6 +278,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "Gathering",
                             "id": "ContentSeriesContentItem:08449058d438ebeaffe9adb7a8e633cc",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -305,6 +313,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "Gauntlet 2018",
                             "id": "ContentSeriesContentItem:b74c2d295a0cf1340232ffa8be856c00",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -349,6 +358,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "Jeremiah: A 33-Day Devotional",
                             "id": "ContentSeriesContentItem:b085ec27d53006e9e6b95f3ac57da581",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -379,6 +389,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "How To Be A Better Leader: A 7-Day Devotional",
                             "id": "ContentSeriesContentItem:71bfdac0b98ea1b72a63ff4ea64e3c5a",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -409,6 +420,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "2 Thessalonians: A 5-Day Devotional",
                             "id": "ContentSeriesContentItem:44fd3b82373ea8f197bd1e1e77c4bed0",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -449,6 +461,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "The surprising journey that changed me and my dad",
                             "id": "UniversalContentItem:cf8fa657f23af88a2d63f7e4a2237db8",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -474,6 +487,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "When I lost hope, my church family had my back",
                             "id": "UniversalContentItem:2e17f5a66407d114ab9f2392b03ebccd",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -499,6 +513,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 },
                               ],
                             },
+                            "hyphenatedTitle": "A Place to Worship Free of Fear",
                             "id": "UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db",
                             "parentChannel": Object {
                               "__typename": "ContentChannel",
@@ -662,6 +677,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
                               },
                             ],
                           },
+                          "hyphenatedTitle": "Anderson Family Cookout!",
                           "id": "UniversalContentItem:00bb7b364911281c97fc50f2a0d17b11",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -684,6 +700,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
                               },
                             ],
                           },
+                          "hyphenatedTitle": "Robert Madu is Coming to Christ Fellowship",
                           "id": "UniversalContentItem:7db601b238aa4345a818654300f83dd2",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -706,6 +723,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
                               },
                             ],
                           },
+                          "hyphenatedTitle": "Guys Night!",
                           "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -840,6 +858,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
                         Object {
                           "__typename": "UniversalContentItem",
                           "coverImage": null,
+                          "hyphenatedTitle": "Test Article",
                           "id": "UniversalContentItem:604a4a763a5fc0edfe386684ca6b3515",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -854,6 +873,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
                         Object {
                           "__typename": "UniversalContentItem",
                           "coverImage": null,
+                          "hyphenatedTitle": "10 ways to refresh your spirit every day",
                           "id": "UniversalContentItem:c495ff18cd998ed516a798b6218907cd",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -868,6 +888,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
                         Object {
                           "__typename": "UniversalContentItem",
                           "coverImage": null,
+                          "hyphenatedTitle": "Live for Freedom Toolkit",
                           "id": "UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1011,6 +1032,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "The New Weekend Experience",
                           "id": "ContentSeriesContentItem:6d8dc8e4bad017f815ae0cac8bf692bb",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1042,6 +1064,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "Gathering",
                           "id": "ContentSeriesContentItem:08449058d438ebeaffe9adb7a8e633cc",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1073,6 +1096,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "Gauntlet 2018",
                           "id": "ContentSeriesContentItem:b74c2d295a0cf1340232ffa8be856c00",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1224,6 +1248,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "Jeremiah: A 33-Day Devotional",
                           "id": "ContentSeriesContentItem:b085ec27d53006e9e6b95f3ac57da581",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1251,6 +1276,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "How To Be A Better Leader: A 7-Day Devotional",
                           "id": "ContentSeriesContentItem:71bfdac0b98ea1b72a63ff4ea64e3c5a",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1278,6 +1304,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "2 Thessalonians: A 5-Day Devotional",
                           "id": "ContentSeriesContentItem:44fd3b82373ea8f197bd1e1e77c4bed0",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1425,6 +1452,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "The surprising journey that changed me and my dad",
                           "id": "UniversalContentItem:cf8fa657f23af88a2d63f7e4a2237db8",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1447,6 +1475,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "When I lost hope, my church family had my back",
                           "id": "UniversalContentItem:2e17f5a66407d114ab9f2392b03ebccd",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",
@@ -1469,6 +1498,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               },
                             ],
                           },
+                          "hyphenatedTitle": "A Place to Worship Free of Fear",
                           "id": "UniversalContentItem:ae8ec75906ba7437c49ad2534b5024db",
                           "parentChannel": Object {
                             "__typename": "ContentChannel",

@@ -11,7 +11,7 @@ import {
   H5,
 } from '@apollosproject/ui-kit';
 
-import HorizontalContentCardConnected from '../../ui/HorizontalContentCardConnected';
+import { HorizontalContentCardConnected } from '@apollosproject/ui-connected';
 
 import GET_HORIZONTAL_CONTENT from './getHorizontalContent';
 
@@ -40,8 +40,31 @@ class HorizontalContentFeed extends Component {
         disabled={disabled}
       >
         <HorizontalContentCardConnected
+          Component={({ coverImage, ...props }) => {
+            switch (get(item, '__typename')) {
+              case 'WeekendContentItem':
+                return (
+                  <HorizontalContentCardConnected.defaultProps.Component
+                    coverImage={
+                      item.videos.length
+                        ? item.videos[0].thumbnail.sources
+                        : null
+                    }
+                    {...props}
+                  />
+                );
+              default:
+                return (
+                  <HorizontalContentCardConnected.defaultProps.Component
+                    coverImage={null}
+                    {...props}
+                  />
+                );
+            }
+          }}
           contentId={itemId}
           disabled={disabled}
+          labelText={''}
         />
       </TouchableScale>
     );

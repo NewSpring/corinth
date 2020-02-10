@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { Query, Mutation } from 'react-apollo';
 import { Dimensions } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
+import MapView from '@apollosproject/ui-mapview';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
 import { get } from 'lodash';
 
 import GET_PRAYERS from '../../prayer/data/queries/getPrayers';
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
-import MapView from './MapView';
 
 class Location extends PureComponent {
   static navigationOptions = ({ navigation }) => ({

@@ -10,7 +10,7 @@ import {
   styled,
   Touchable,
 } from '@apollosproject/ui-kit';
-import ShareContentButtonConnected from '../../ui/ShareContentButtonConnected';
+import ShareButtonConnected from '@apollosproject/ui-connected';
 
 const StyledTextInput = styled(({ theme }) => ({
   borderWidth: 0.5,
@@ -67,9 +67,7 @@ const NoteFeature = ({ contentId, card, ...noteProps }) => {
   return card ? (
     <ActionCard
       icon={'play'}
-      action={
-        <ShareContentButtonConnected message={sharedMsg} itemId={contentId} />
-      }
+      action={<ShareButtonConnected message={sharedMsg} itemId={contentId} />}
     >
       <KeyboardAvoidingView>
         <Note {...noteProps} onNoteChange={(text) => setSharedMsg(text)} />

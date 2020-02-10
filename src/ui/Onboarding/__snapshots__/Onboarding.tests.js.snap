@@ -1,121 +1,802 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`the Onboarding component should render Onboarding 1`] = `
-<View
-  onLayout={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "transparent",
-        "flex": 1,
-        "position": "relative",
-      },
-      undefined,
-    ]
-  }
->
-  <RCTScrollView
-    activeDot={
-      <ForwardRef(_SafeAreaView)
-        forceInset={
-          Object {
-            "bottom": "always",
-          }
-        }
-      >
-        <mapProps(getContext(mapProps(withPropsOnChange(mapProps(View))))) />
-      </ForwardRef(_SafeAreaView)>
+Array [
+  <BVLinearGradient
+    colors={
+      Array [
+        4294967295,
+        4294506484,
+      ]
     }
-    automaticallyAdjustContentInsets={false}
-    autoplay={false}
-    autoplayDirection={true}
-    autoplayTimeout={2.5}
-    bounces={false}
-    contentContainerStyle={
+    endPoint={
+      Object {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={null}
+    startPoint={
+      Object {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      Object {
+        "flex": 1,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />,
+  <View
+    onLayout={[Function]}
+    style={
       Array [
         Object {
           "backgroundColor": "transparent",
+          "flex": 1,
+          "position": "relative",
         },
         undefined,
       ]
     }
-    contentOffset={
-      Object {
-        "x": 0,
-      }
-    }
-    disableNextButton={false}
-    dot={
-      <ForwardRef(_SafeAreaView)
-        forceInset={
-          Object {
-            "bottom": "always",
-          }
-        }
-      >
-        <mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))
+  >
+    <RCTScrollView
+      activeDot={
+        <ForwardRef(_SafeAreaView)
           forceInset={
             Object {
               "bottom": "always",
             }
           }
-        />
-      </ForwardRef(_SafeAreaView)>
-    }
-    horizontal={true}
-    index={0}
-    loadMinimal={true}
-    loadMinimalSize={1}
-    loop={false}
-    onIndexChanged={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    pagingEnabled={true}
-    removeClippedSubviews={true}
-    scrollsToTop={false}
-    showsButtons={false}
-    showsHorizontalScrollIndicator={false}
-    showsPagination={true}
-    showsVerticalScrollIndicator={false}
-  >
-    <View>
-      <View
-        style={
-          Array [
-            Object {
-              "height": 1334,
-              "width": 750,
-            },
-            Object {
-              "backgroundColor": "transparent",
-            },
-          ]
+        >
+          <mapProps(getContext(mapProps(withPropsOnChange(mapProps(View))))) />
+        </ForwardRef(_SafeAreaView)>
+      }
+      automaticallyAdjustContentInsets={false}
+      autoplay={false}
+      autoplayDirection={true}
+      autoplayTimeout={2.5}
+      bounces={false}
+      contentContainerStyle={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          undefined,
+        ]
+      }
+      contentOffset={
+        Object {
+          "x": 0,
         }
-      >
-        <RCTScrollView
-          contentContainerStyle={
+      }
+      disableNextButton={false}
+      dot={
+        <ForwardRef(_SafeAreaView)
+          forceInset={
             Object {
-              "minHeight": "100%",
-            }
-          }
-          overScrollMode="auto"
-          style={
-            Object {
-              "flex": 1,
+              "bottom": "always",
             }
           }
         >
-          <View>
+          <mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))
+            forceInset={
+              Object {
+                "bottom": "always",
+              }
+            }
+          />
+        </ForwardRef(_SafeAreaView)>
+      }
+      horizontal={true}
+      index={0}
+      loadMinimal={true}
+      loadMinimalSize={1}
+      loop={false}
+      onIndexChanged={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      pagingEnabled={true}
+      removeClippedSubviews={true}
+      scrollsToTop={false}
+      showsButtons={false}
+      showsHorizontalScrollIndicator={false}
+      showsPagination={true}
+      showsVerticalScrollIndicator={false}
+    >
+      <View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 1334,
+                "width": 750,
+              },
+              Object {
+                "backgroundColor": "transparent",
+              },
+            ]
+          }
+        >
+          <RCTScrollView
+            contentContainerStyle={
+              Object {
+                "minHeight": "100%",
+              }
+            }
+            overScrollMode="auto"
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <View>
+              <RCTSafeAreaView
+                emulateUnlessSupported={true}
+                forceInset={
+                  Object {
+                    "bottom": "always",
+                    "top": "always",
+                  }
+                }
+              >
+                <RCTSafeAreaView
+                  emulateUnlessSupported={true}
+                  forceInset={
+                    Object {
+                      "bottom": "always",
+                    }
+                  }
+                  style={
+                    Object {
+                      "marginBottom": 48,
+                      "paddingHorizontal": 16,
+                      "paddingTop": 16,
+                    }
+                  }
+                >
+                  <View>
+                    <View
+                      style={
+                        Object {
+                          "paddingBottom": 16,
+                        }
+                      }
+                    >
+                      <RNSVGSvgView
+                        align="xMidYMid"
+                        bbHeight={48}
+                        bbWidth={48}
+                        focusable={false}
+                        height={48}
+                        icon={true}
+                        meetOrSlice={0}
+                        minX={0}
+                        minY={0}
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "borderWidth": 0,
+                            },
+                            undefined,
+                            Object {
+                              "opacity": 1,
+                            },
+                            Object {
+                              "flex": 0,
+                              "height": 48,
+                              "width": 48,
+                            },
+                          ]
+                        }
+                        vbHeight={24}
+                        vbWidth={24}
+                        width={48}
+                      >
+                        <RNSVGGroup
+                          fill={
+                            Array [
+                              0,
+                              4278190080,
+                            ]
+                          }
+                          fillOpacity={1}
+                          fillRule={1}
+                          font={Object {}}
+                          matrix={
+                            Array [
+                              1,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                            ]
+                          }
+                          opacity={1}
+                          originX={0}
+                          originY={0}
+                          propList={Array []}
+                          rotation={0}
+                          scaleX={1}
+                          scaleY={1}
+                          skewX={0}
+                          skewY={0}
+                          stroke={null}
+                          strokeDasharray={null}
+                          strokeDashoffset={null}
+                          strokeLinecap={0}
+                          strokeLinejoin={0}
+                          strokeMiterlimit={4}
+                          strokeOpacity={1}
+                          strokeWidth={1}
+                          vectorEffect={0}
+                          x={0}
+                          y={0}
+                        >
+                          <RNSVGPath
+                            d="M12 22C5.2 22 2 17.52 2 12S6.48 2 12 2s10 3.33 10 10v10H12zM7.84 8v9.08h3.12V12.3c0-1.14.6-1.8 1.63-1.8.53 0 1.03.27 1.23.68.17.33.2.5.2 1.4v4.5h3.1v-5.65c0-1.2-.2-1.82-.8-2.45C15.7 8.33 14.86 8 13.8 8H7.84z"
+                            fill={
+                              Array [
+                                0,
+                                4285246531,
+                              ]
+                            }
+                            fillOpacity={1}
+                            fillRule={1}
+                            matrix={
+                              Array [
+                                1,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                              ]
+                            }
+                            opacity={1}
+                            originX={0}
+                            originY={0}
+                            propList={
+                              Array [
+                                "fill",
+                              ]
+                            }
+                            rotation={0}
+                            scaleX={1}
+                            scaleY={1}
+                            skewX={0}
+                            skewY={0}
+                            stroke={null}
+                            strokeDasharray={null}
+                            strokeDashoffset={null}
+                            strokeLinecap={0}
+                            strokeLinejoin={0}
+                            strokeMiterlimit={4}
+                            strokeOpacity={1}
+                            strokeWidth={1}
+                            vectorEffect={0}
+                            x={0}
+                            y={0}
+                          />
+                        </RNSVGGroup>
+                      </RNSVGSvgView>
+                    </View>
+                    <View
+                      style={
+                        Object {
+                          "paddingBottom": 8,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          Object {
+                            "color": "#6bac43",
+                            "fontFamily": "Colfax-Black",
+                            "fontSize": 36,
+                            "lineHeight": 41.4,
+                          }
+                        }
+                      >
+                        What's your name?
+                      </Text>
+                    </View>
+                    <Text
+                      style={
+                        Object {
+                          "color": "#505050",
+                          "fontFamily": "Colfax-Medium",
+                          "fontSize": 14,
+                          "lineHeight": 20.16,
+                        }
+                      }
+                    >
+                      Every relationship starts with a name. What's yours?
+                    </Text>
+                  </View>
+                  <View
+                    horizontal={false}
+                    style={
+                      Object {
+                        "paddingHorizontal": 0,
+                        "paddingVertical": 16,
+                      }
+                    }
+                  >
+                    <View
+                      disabled={true}
+                      style={
+                        Object {
+                          "marginVertical": 16,
+                          "opacity": 0.5,
+                        }
+                      }
+                    >
+                      <View>
+                        <View
+                          style={
+                            Object {
+                              "flexDirection": "row",
+                              "justifyContent": "center",
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Object {
+                                "alignSelf": "flex-end",
+                                "flex": 1,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "opacity": 0,
+                                }
+                              }
+                            >
+                              <TextInput
+                                allowFontScaling={true}
+                                editable={false}
+                                enablesReturnKeyAutomatically={true}
+                                onBlur={[Function]}
+                                onChangeText={[Function]}
+                                onFocus={[Function]}
+                                onSubmitEditing={[Function]}
+                                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                                rejectResponderTermination={true}
+                                returnKeyType="next"
+                                style={
+                                  Object {
+                                    "color": "#303030",
+                                    "fontFamily": "Colfax-Bold",
+                                    "fontSize": 14,
+                                    "height": 38,
+                                    "paddingVertical": 0,
+                                  }
+                                }
+                                textContentType="givenName"
+                                type="text"
+                                underlineColorAndroid="transparent"
+                              />
+                            </View>
+                            <View
+                              onLayout={[Function]}
+                              pointerEvents="none"
+                              style={
+                                Object {
+                                  "bottom": 0,
+                                  "justifyContent": "center",
+                                  "opacity": 1,
+                                  "position": "absolute",
+                                  "top": 0,
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 1,
+                                    },
+                                    Object {
+                                      "translateX": 0,
+                                    },
+                                    Object {
+                                      "translateY": 0,
+                                    },
+                                  ],
+                                }
+                              }
+                            >
+                              <Text
+                                style={
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#505050",
+                                    "fontFamily": "Colfax-Bold",
+                                    "fontSize": 12,
+                                    "lineHeight": 17.28,
+                                    "paddingVertical": 4,
+                                  }
+                                }
+                              >
+                                First Name
+                              </Text>
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "bottom": 0,
+                              "left": 0,
+                              "right": 0,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#dddddd",
+                                "bottom": -0.5,
+                                "height": 0.5,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "right": 0,
+                                "transform": Array [
+                                  Object {
+                                    "scaleX": 0.0001,
+                                  },
+                                ],
+                              }
+                            }
+                          >
+                            <View
+                              hasError={false}
+                              style={
+                                Object {
+                                  "backgroundColor": "#6bac43",
+                                  "bottom": 0,
+                                  "height": 0.5,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                    <View
+                      disabled={true}
+                      style={
+                        Object {
+                          "marginVertical": 16,
+                          "opacity": 0.5,
+                        }
+                      }
+                    >
+                      <View>
+                        <View
+                          style={
+                            Object {
+                              "flexDirection": "row",
+                              "justifyContent": "center",
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Object {
+                                "alignSelf": "flex-end",
+                                "flex": 1,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "opacity": 0,
+                                }
+                              }
+                            >
+                              <TextInput
+                                allowFontScaling={true}
+                                editable={false}
+                                enablesReturnKeyAutomatically={true}
+                                onBlur={[Function]}
+                                onChangeText={[Function]}
+                                onFocus={[Function]}
+                                onSubmitEditing={[Function]}
+                                placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                                rejectResponderTermination={true}
+                                returnKeyType="next"
+                                style={
+                                  Object {
+                                    "color": "#303030",
+                                    "fontFamily": "Colfax-Bold",
+                                    "fontSize": 14,
+                                    "height": 38,
+                                    "paddingVertical": 0,
+                                  }
+                                }
+                                textContentType="familyName"
+                                type="text"
+                                underlineColorAndroid="transparent"
+                              />
+                            </View>
+                            <View
+                              onLayout={[Function]}
+                              pointerEvents="none"
+                              style={
+                                Object {
+                                  "bottom": 0,
+                                  "justifyContent": "center",
+                                  "opacity": 1,
+                                  "position": "absolute",
+                                  "top": 0,
+                                  "transform": Array [
+                                    Object {
+                                      "scale": 1,
+                                    },
+                                    Object {
+                                      "translateX": 0,
+                                    },
+                                    Object {
+                                      "translateY": 0,
+                                    },
+                                  ],
+                                }
+                              }
+                            >
+                              <Text
+                                style={
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "color": "#505050",
+                                    "fontFamily": "Colfax-Bold",
+                                    "fontSize": 12,
+                                    "lineHeight": 17.28,
+                                    "paddingVertical": 4,
+                                  }
+                                }
+                              >
+                                Last Name
+                              </Text>
+                            </View>
+                          </View>
+                          <View
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "bottom": 0,
+                              "left": 0,
+                              "right": 0,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "backgroundColor": "#dddddd",
+                                "bottom": -0.5,
+                                "height": 0.5,
+                              }
+                            }
+                          />
+                          <View
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "right": 0,
+                                "transform": Array [
+                                  Object {
+                                    "scaleX": 0.0001,
+                                  },
+                                ],
+                              }
+                            }
+                          >
+                            <View
+                              hasError={false}
+                              style={
+                                Object {
+                                  "backgroundColor": "#6bac43",
+                                  "bottom": 0,
+                                  "height": 0.5,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </RCTSafeAreaView>
+              </RCTSafeAreaView>
+            </View>
+          </RCTScrollView>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "flexDirection": "row-reverse",
+                "justifyContent": "space-between",
+                "left": 0,
+                "marginVertical": 8,
+                "paddingHorizontal": 16,
+                "paddingVertical": 0,
+                "position": "absolute",
+                "right": 0,
+              }
+            }
+            vertical={false}
+          >
             <RCTSafeAreaView
               emulateUnlessSupported={true}
               forceInset={
                 Object {
                   "bottom": "always",
-                  "top": "always",
+                  "top": "never",
                 }
               }
             >
+              <View
+                accessible={true}
+                clickable={true}
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  bordered={false}
+                  disabled={false}
+                  pill={true}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#6bac43",
+                      "borderColor": "#6bac43",
+                      "borderRadius": 48,
+                      "borderWidth": 2,
+                      "elevation": 2,
+                      "flexDirection": "row",
+                      "height": 48,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "paddingHorizontal": 16,
+                    }
+                  }
+                >
+                  <ActivityIndicator
+                    animating={true}
+                    color="#ffffff"
+                    hidesWhenStopped={true}
+                    size="small"
+                  />
+                </View>
+              </View>
+              <Text
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#858585",
+                    "marginLeft": -16,
+                    "paddingHorizontal": 16,
+                    "paddingVertical": 15,
+                  }
+                }
+                trackEventName="Ask Name Skipped"
+              >
+                Skip
+              </Text>
+            </RCTSafeAreaView>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "height": 1334,
+                "width": 750,
+              },
+              Object {
+                "backgroundColor": "transparent",
+              },
+            ]
+          }
+        >
+          <RCTScrollView
+            contentContainerStyle={
+              Object {
+                "minHeight": "100%",
+              }
+            }
+            overScrollMode="auto"
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <View>
+              <View
+                style={
+                  Object {
+                    "height": "40%",
+                    "justifyContent": "flex-end",
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/ui/Onboarding/img/screen1.png",
+                    }
+                  }
+                  style={
+                    Object {
+                      "height": "100%",
+                      "resizeMode": "contain",
+                      "width": "100%",
+                    }
+                  }
+                />
+              </View>
               <RCTSafeAreaView
                 emulateUnlessSupported={true}
                 forceInset={
@@ -135,133 +816,6 @@ exports[`the Onboarding component should render Onboarding 1`] = `
                   <View
                     style={
                       Object {
-                        "paddingBottom": 16,
-                      }
-                    }
-                  >
-                    <RNSVGSvgView
-                      align="xMidYMid"
-                      bbHeight={48}
-                      bbWidth={48}
-                      focusable={false}
-                      height={48}
-                      icon={true}
-                      meetOrSlice={0}
-                      minX={0}
-                      minY={0}
-                      style={
-                        Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "borderWidth": 0,
-                          },
-                          undefined,
-                          Object {
-                            "opacity": 1,
-                          },
-                          Object {
-                            "flex": 0,
-                            "height": 48,
-                            "width": 48,
-                          },
-                        ]
-                      }
-                      vbHeight={24}
-                      vbWidth={24}
-                      width={48}
-                    >
-                      <RNSVGGroup
-                        fill={
-                          Array [
-                            0,
-                            4278190080,
-                          ]
-                        }
-                        fillOpacity={1}
-                        fillRule={1}
-                        font={Object {}}
-                        matrix={
-                          Array [
-                            1,
-                            0,
-                            0,
-                            1,
-                            0,
-                            0,
-                          ]
-                        }
-                        opacity={1}
-                        originX={0}
-                        originY={0}
-                        propList={Array []}
-                        rotation={0}
-                        scaleX={1}
-                        scaleY={1}
-                        skewX={0}
-                        skewY={0}
-                        stroke={null}
-                        strokeDasharray={null}
-                        strokeDashoffset={null}
-                        strokeLinecap={0}
-                        strokeLinejoin={0}
-                        strokeMiterlimit={4}
-                        strokeOpacity={1}
-                        strokeWidth={1}
-                        vectorEffect={0}
-                        x={0}
-                        y={0}
-                      >
-                        <RNSVGPath
-                          d="M12 22C5.2 22 2 17.52 2 12S6.48 2 12 2s10 3.33 10 10v10H12zM7.84 8v9.08h3.12V12.3c0-1.14.6-1.8 1.63-1.8.53 0 1.03.27 1.23.68.17.33.2.5.2 1.4v4.5h3.1v-5.65c0-1.2-.2-1.82-.8-2.45C15.7 8.33 14.86 8 13.8 8H7.84z"
-                          fill={
-                            Array [
-                              0,
-                              4285246531,
-                            ]
-                          }
-                          fillOpacity={1}
-                          fillRule={1}
-                          matrix={
-                            Array [
-                              1,
-                              0,
-                              0,
-                              1,
-                              0,
-                              0,
-                            ]
-                          }
-                          opacity={1}
-                          originX={0}
-                          originY={0}
-                          propList={
-                            Array [
-                              "fill",
-                            ]
-                          }
-                          rotation={0}
-                          scaleX={1}
-                          scaleY={1}
-                          skewX={0}
-                          skewY={0}
-                          stroke={null}
-                          strokeDasharray={null}
-                          strokeDashoffset={null}
-                          strokeLinecap={0}
-                          strokeLinejoin={0}
-                          strokeMiterlimit={4}
-                          strokeOpacity={1}
-                          strokeWidth={1}
-                          vectorEffect={0}
-                          x={0}
-                          y={0}
-                        />
-                      </RNSVGGroup>
-                    </RNSVGSvgView>
-                  </View>
-                  <View
-                    style={
-                      Object {
                         "paddingBottom": 8,
                       }
                     }
@@ -276,7 +830,7 @@ exports[`the Onboarding component should render Onboarding 1`] = `
                         }
                       }
                     >
-                      What's your name?
+                      Hey friend!
                     </Text>
                   </View>
                   <Text
@@ -289,810 +843,287 @@ exports[`the Onboarding component should render Onboarding 1`] = `
                       }
                     }
                   >
-                    Every relationship starts with a name. What's yours?
+                    You’re almost done. By answering a few questions, we can personalize your experience so you see: 
+
+• News specific to your campus 
+• Articles related to your age and stage of life 
+• Prayer requests for your campus and your small group
                   </Text>
                 </View>
-                <View
-                  horizontal={false}
-                  style={
-                    Object {
-                      "paddingHorizontal": 0,
-                      "paddingVertical": 16,
-                    }
-                  }
-                >
-                  <View
-                    disabled={true}
-                    style={
-                      Object {
-                        "marginVertical": 16,
-                        "opacity": 0.5,
-                      }
-                    }
-                  >
-                    <View>
-                      <View
-                        style={
-                          Object {
-                            "flexDirection": "row",
-                            "justifyContent": "center",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                            }
-                          }
-                        />
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "flex-end",
-                              "flex": 1,
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Object {
-                                "opacity": 0,
-                              }
-                            }
-                          >
-                            <TextInput
-                              allowFontScaling={true}
-                              editable={false}
-                              enablesReturnKeyAutomatically={true}
-                              onBlur={[Function]}
-                              onChangeText={[Function]}
-                              onFocus={[Function]}
-                              onSubmitEditing={[Function]}
-                              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-                              rejectResponderTermination={true}
-                              returnKeyType="next"
-                              style={
-                                Object {
-                                  "color": "#303030",
-                                  "fontFamily": "Colfax-Bold",
-                                  "fontSize": 14,
-                                  "height": 38,
-                                  "paddingVertical": 0,
-                                }
-                              }
-                              textContentType="givenName"
-                              type="text"
-                              underlineColorAndroid="transparent"
-                            />
-                          </View>
-                          <View
-                            onLayout={[Function]}
-                            pointerEvents="none"
-                            style={
-                              Object {
-                                "bottom": 0,
-                                "justifyContent": "center",
-                                "opacity": 1,
-                                "position": "absolute",
-                                "top": 0,
-                                "transform": Array [
-                                  Object {
-                                    "scale": 1,
-                                  },
-                                  Object {
-                                    "translateX": 0,
-                                  },
-                                  Object {
-                                    "translateY": 0,
-                                  },
-                                ],
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "#505050",
-                                  "fontFamily": "Colfax-Bold",
-                                  "fontSize": 12,
-                                  "lineHeight": 17.28,
-                                  "paddingVertical": 4,
-                                }
-                              }
-                            >
-                              First Name
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                            }
-                          }
-                        />
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "bottom": 0,
-                            "left": 0,
-                            "right": 0,
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#dddddd",
-                              "bottom": -0.5,
-                              "height": 0.5,
-                            }
-                          }
-                        />
-                        <View
-                          style={
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "right": 0,
-                              "transform": Array [
-                                Object {
-                                  "scaleX": 0.0001,
-                                },
-                              ],
-                            }
-                          }
-                        >
-                          <View
-                            hasError={false}
-                            style={
-                              Object {
-                                "backgroundColor": "#6bac43",
-                                "bottom": 0,
-                                "height": 0.5,
-                              }
-                            }
-                          />
-                        </View>
-                      </View>
-                    </View>
-                  </View>
-                  <View
-                    disabled={true}
-                    style={
-                      Object {
-                        "marginVertical": 16,
-                        "opacity": 0.5,
-                      }
-                    }
-                  >
-                    <View>
-                      <View
-                        style={
-                          Object {
-                            "flexDirection": "row",
-                            "justifyContent": "center",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                            }
-                          }
-                        />
-                        <View
-                          style={
-                            Object {
-                              "alignSelf": "flex-end",
-                              "flex": 1,
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Object {
-                                "opacity": 0,
-                              }
-                            }
-                          >
-                            <TextInput
-                              allowFontScaling={true}
-                              editable={false}
-                              enablesReturnKeyAutomatically={true}
-                              onBlur={[Function]}
-                              onChangeText={[Function]}
-                              onFocus={[Function]}
-                              onSubmitEditing={[Function]}
-                              placeholderTextColor="rgba(48, 48, 48, 0.6)"
-                              rejectResponderTermination={true}
-                              returnKeyType="next"
-                              style={
-                                Object {
-                                  "color": "#303030",
-                                  "fontFamily": "Colfax-Bold",
-                                  "fontSize": 14,
-                                  "height": 38,
-                                  "paddingVertical": 0,
-                                }
-                              }
-                              textContentType="familyName"
-                              type="text"
-                              underlineColorAndroid="transparent"
-                            />
-                          </View>
-                          <View
-                            onLayout={[Function]}
-                            pointerEvents="none"
-                            style={
-                              Object {
-                                "bottom": 0,
-                                "justifyContent": "center",
-                                "opacity": 1,
-                                "position": "absolute",
-                                "top": 0,
-                                "transform": Array [
-                                  Object {
-                                    "scale": 1,
-                                  },
-                                  Object {
-                                    "translateX": 0,
-                                  },
-                                  Object {
-                                    "translateY": 0,
-                                  },
-                                ],
-                              }
-                            }
-                          >
-                            <Text
-                              style={
-                                Object {
-                                  "backgroundColor": "transparent",
-                                  "color": "#505050",
-                                  "fontFamily": "Colfax-Bold",
-                                  "fontSize": 12,
-                                  "lineHeight": 17.28,
-                                  "paddingVertical": 4,
-                                }
-                              }
-                            >
-                              Last Name
-                            </Text>
-                          </View>
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "justifyContent": "center",
-                            }
-                          }
-                        />
-                      </View>
-                      <View
-                        style={
-                          Object {
-                            "bottom": 0,
-                            "left": 0,
-                            "right": 0,
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#dddddd",
-                              "bottom": -0.5,
-                              "height": 0.5,
-                            }
-                          }
-                        />
-                        <View
-                          style={
-                            Object {
-                              "bottom": 0,
-                              "left": 0,
-                              "right": 0,
-                              "transform": Array [
-                                Object {
-                                  "scaleX": 0.0001,
-                                },
-                              ],
-                            }
-                          }
-                        >
-                          <View
-                            hasError={false}
-                            style={
-                              Object {
-                                "backgroundColor": "#6bac43",
-                                "bottom": 0,
-                                "height": 0.5,
-                              }
-                            }
-                          />
-                        </View>
-                      </View>
-                    </View>
-                  </View>
-                </View>
               </RCTSafeAreaView>
-            </RCTSafeAreaView>
-          </View>
-        </RCTScrollView>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "bottom": 0,
-              "flexDirection": "row-reverse",
-              "justifyContent": "space-between",
-              "left": 0,
-              "marginVertical": 8,
-              "paddingHorizontal": 16,
-              "paddingVertical": 0,
-              "position": "absolute",
-              "right": 0,
-            }
-          }
-          vertical={false}
-        >
-          <RCTSafeAreaView
-            emulateUnlessSupported={true}
-            forceInset={
+            </View>
+          </RCTScrollView>
+          <View
+            style={
               Object {
-                "bottom": "always",
-                "top": "never",
+                "alignItems": "center",
+                "bottom": 0,
+                "flexDirection": "row-reverse",
+                "justifyContent": "space-between",
+                "left": 0,
+                "marginVertical": 8,
+                "paddingHorizontal": 16,
+                "paddingVertical": 0,
+                "position": "absolute",
+                "right": 0,
               }
             }
+            vertical={false}
           >
-            <View
-              accessible={true}
-              clickable={true}
-              isTVSelectable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
-            >
-              <View
-                bordered={false}
-                disabled={false}
-                pill={true}
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#6bac43",
-                    "borderColor": "#6bac43",
-                    "borderRadius": 48,
-                    "borderWidth": 2,
-                    "elevation": 2,
-                    "flexDirection": "row",
-                    "height": 48,
-                    "justifyContent": "center",
-                    "opacity": 1,
-                    "overflow": "hidden",
-                    "paddingHorizontal": 16,
-                  }
-                }
-              >
-                <ActivityIndicator
-                  animating={true}
-                  color="#ffffff"
-                  hidesWhenStopped={true}
-                  size="small"
-                />
-              </View>
-            </View>
-            <Text
-              onPress={[Function]}
-              style={
-                Object {
-                  "color": "#858585",
-                  "marginLeft": -16,
-                  "paddingHorizontal": 16,
-                  "paddingVertical": 15,
-                }
-              }
-              trackEventName="Ask Name Skipped"
-            >
-              Skip
-            </Text>
-          </RCTSafeAreaView>
-        </View>
-      </View>
-      <View
-        style={
-          Array [
-            Object {
-              "height": 1334,
-              "width": 750,
-            },
-            Object {
-              "backgroundColor": "transparent",
-            },
-          ]
-        }
-      >
-        <RCTScrollView
-          contentContainerStyle={
-            Object {
-              "minHeight": "100%",
-            }
-          }
-          overScrollMode="auto"
-          style={
-            Object {
-              "flex": 1,
-            }
-          }
-        >
-          <View>
-            <View
-              style={
-                Object {
-                  "height": "40%",
-                  "justifyContent": "flex-end",
-                }
-              }
-            >
-              <Image
-                source={
-                  Object {
-                    "testUri": "../../../src/ui/Onboarding/img/screen1.png",
-                  }
-                }
-                style={
-                  Object {
-                    "height": "100%",
-                    "resizeMode": "contain",
-                    "width": "100%",
-                  }
-                }
-              />
-            </View>
             <RCTSafeAreaView
               emulateUnlessSupported={true}
               forceInset={
                 Object {
                   "bottom": "always",
-                }
-              }
-              style={
-                Object {
-                  "marginBottom": 48,
-                  "paddingHorizontal": 16,
-                  "paddingTop": 16,
-                }
-              }
-            >
-              <View>
-                <View
-                  style={
-                    Object {
-                      "paddingBottom": 8,
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      Object {
-                        "color": "#6bac43",
-                        "fontFamily": "Colfax-Black",
-                        "fontSize": 36,
-                        "lineHeight": 41.4,
-                      }
-                    }
-                  >
-                    Hey friend!
-                  </Text>
-                </View>
-                <Text
-                  style={
-                    Object {
-                      "color": "#505050",
-                      "fontFamily": "Colfax-Medium",
-                      "fontSize": 14,
-                      "lineHeight": 20.16,
-                    }
-                  }
-                >
-                  You’re almost done. By answering a few questions, we can personalize your experience so you see: 
-
-• News specific to your campus 
-• Articles related to your age and stage of life 
-• Prayer requests for your campus and your small group
-                </Text>
-              </View>
-            </RCTSafeAreaView>
-          </View>
-        </RCTScrollView>
-        <View
-          style={
-            Object {
-              "alignItems": "center",
-              "bottom": 0,
-              "flexDirection": "row-reverse",
-              "justifyContent": "space-between",
-              "left": 0,
-              "marginVertical": 8,
-              "paddingHorizontal": 16,
-              "paddingVertical": 0,
-              "position": "absolute",
-              "right": 0,
-            }
-          }
-          vertical={false}
-        >
-          <RCTSafeAreaView
-            emulateUnlessSupported={true}
-            forceInset={
-              Object {
-                "bottom": "always",
-                "top": "never",
-              }
-            }
-          >
-            <View
-              accessible={true}
-              clickable={true}
-              isTVSelectable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
+                  "top": "never",
                 }
               }
             >
               <View
-                bordered={false}
-                disabled={false}
-                pill={true}
+                accessible={true}
+                clickable={true}
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#6bac43",
-                    "borderColor": "#6bac43",
-                    "borderRadius": 48,
-                    "borderWidth": 2,
-                    "elevation": 2,
-                    "flexDirection": "row",
-                    "height": 48,
-                    "justifyContent": "center",
                     "opacity": 1,
-                    "overflow": "hidden",
-                    "paddingHorizontal": 16,
                   }
                 }
               >
-                <ActivityIndicator
-                  animating={true}
-                  color="#ffffff"
-                  hidesWhenStopped={true}
-                  size="small"
-                />
+                <View
+                  bordered={false}
+                  disabled={false}
+                  pill={true}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#6bac43",
+                      "borderColor": "#6bac43",
+                      "borderRadius": 48,
+                      "borderWidth": 2,
+                      "elevation": 2,
+                      "flexDirection": "row",
+                      "height": 48,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "paddingHorizontal": 16,
+                    }
+                  }
+                >
+                  <ActivityIndicator
+                    animating={true}
+                    color="#ffffff"
+                    hidesWhenStopped={true}
+                    size="small"
+                  />
+                </View>
               </View>
-            </View>
-          </RCTSafeAreaView>
+            </RCTSafeAreaView>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "height": 1334,
+              "justifyContent": "center",
+              "width": 750,
+            }
+          }
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#999999"
+            hidesWhenStopped={true}
+            size="small"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "height": 1334,
+              "justifyContent": "center",
+              "width": 750,
+            }
+          }
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#999999"
+            hidesWhenStopped={true}
+            size="small"
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "height": 1334,
+              "justifyContent": "center",
+              "width": 750,
+            }
+          }
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#999999"
+            hidesWhenStopped={true}
+            size="small"
+          />
         </View>
       </View>
-      <View
-        style={
+    </RCTScrollView>
+    <View
+      pointerEvents="none"
+      style={
+        Array [
           Object {
             "alignItems": "center",
+            "backgroundColor": "transparent",
+            "bottom": 25,
             "flex": 1,
-            "height": 1334,
+            "flexDirection": "row",
             "justifyContent": "center",
-            "width": 750,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+          },
+          undefined,
+        ]
+      }
+    >
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+        forceInset={
+          Object {
+            "bottom": "always",
           }
         }
       >
-        <ActivityIndicator
-          animating={true}
-          color="#999999"
-          hidesWhenStopped={true}
-          size="small"
+        <View
+          style={
+            Object {
+              "backgroundColor": "#6bac43",
+              "borderRadius": 4,
+              "height": 8,
+              "margin": 4,
+              "width": 8,
+            }
+          }
         />
-      </View>
-      <View
-        style={
+      </RCTSafeAreaView>
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+        forceInset={
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "height": 1334,
-            "justifyContent": "center",
-            "width": 750,
+            "bottom": "always",
           }
         }
       >
-        <ActivityIndicator
-          animating={true}
-          color="#999999"
-          hidesWhenStopped={true}
-          size="small"
+        <View
+          forceInset={
+            Object {
+              "bottom": "always",
+            }
+          }
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "borderRadius": 4,
+              "height": 8,
+              "margin": 4,
+              "width": 8,
+            }
+          }
         />
-      </View>
-      <View
-        style={
+      </RCTSafeAreaView>
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+        forceInset={
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "height": 1334,
-            "justifyContent": "center",
-            "width": 750,
+            "bottom": "always",
           }
         }
       >
-        <ActivityIndicator
-          animating={true}
-          color="#999999"
-          hidesWhenStopped={true}
-          size="small"
+        <View
+          forceInset={
+            Object {
+              "bottom": "always",
+            }
+          }
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "borderRadius": 4,
+              "height": 8,
+              "margin": 4,
+              "width": 8,
+            }
+          }
         />
-      </View>
+      </RCTSafeAreaView>
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+        forceInset={
+          Object {
+            "bottom": "always",
+          }
+        }
+      >
+        <View
+          forceInset={
+            Object {
+              "bottom": "always",
+            }
+          }
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "borderRadius": 4,
+              "height": 8,
+              "margin": 4,
+              "width": 8,
+            }
+          }
+        />
+      </RCTSafeAreaView>
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+        forceInset={
+          Object {
+            "bottom": "always",
+          }
+        }
+      >
+        <View
+          forceInset={
+            Object {
+              "bottom": "always",
+            }
+          }
+          style={
+            Object {
+              "backgroundColor": "#dddddd",
+              "borderRadius": 4,
+              "height": 8,
+              "margin": 4,
+              "width": 8,
+            }
+          }
+        />
+      </RCTSafeAreaView>
     </View>
-  </RCTScrollView>
-  <View
-    pointerEvents="none"
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "bottom": 25,
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-        },
-        undefined,
-      ]
-    }
-  >
-    <RCTSafeAreaView
-      emulateUnlessSupported={true}
-      forceInset={
-        Object {
-          "bottom": "always",
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#6bac43",
-            "borderRadius": 4,
-            "height": 8,
-            "margin": 4,
-            "width": 8,
-          }
-        }
-      />
-    </RCTSafeAreaView>
-    <RCTSafeAreaView
-      emulateUnlessSupported={true}
-      forceInset={
-        Object {
-          "bottom": "always",
-        }
-      }
-    >
-      <View
-        forceInset={
-          Object {
-            "bottom": "always",
-          }
-        }
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "borderRadius": 4,
-            "height": 8,
-            "margin": 4,
-            "width": 8,
-          }
-        }
-      />
-    </RCTSafeAreaView>
-    <RCTSafeAreaView
-      emulateUnlessSupported={true}
-      forceInset={
-        Object {
-          "bottom": "always",
-        }
-      }
-    >
-      <View
-        forceInset={
-          Object {
-            "bottom": "always",
-          }
-        }
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "borderRadius": 4,
-            "height": 8,
-            "margin": 4,
-            "width": 8,
-          }
-        }
-      />
-    </RCTSafeAreaView>
-    <RCTSafeAreaView
-      emulateUnlessSupported={true}
-      forceInset={
-        Object {
-          "bottom": "always",
-        }
-      }
-    >
-      <View
-        forceInset={
-          Object {
-            "bottom": "always",
-          }
-        }
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "borderRadius": 4,
-            "height": 8,
-            "margin": 4,
-            "width": 8,
-          }
-        }
-      />
-    </RCTSafeAreaView>
-    <RCTSafeAreaView
-      emulateUnlessSupported={true}
-      forceInset={
-        Object {
-          "bottom": "always",
-        }
-      }
-    >
-      <View
-        forceInset={
-          Object {
-            "bottom": "always",
-          }
-        }
-        style={
-          Object {
-            "backgroundColor": "#dddddd",
-            "borderRadius": 4,
-            "height": 8,
-            "margin": 4,
-            "width": 8,
-          }
-        }
-      />
-    </RCTSafeAreaView>
-  </View>
-</View>
+  </View>,
+]
 `;

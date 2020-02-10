@@ -3,11 +3,19 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 
-import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
+import {
+  ContentCardConnected,
+  fetchMoreResolver,
+} from '@apollosproject/ui-connected';
 
-import ContentCardConnected from '../ui/ContentCardConnected';
-import fetchMoreResolver from '../utils/fetchMoreResolver';
+import {
+  BackgroundView,
+  FeedView,
+  TouchableScale,
+  DefaultCard,
+} from '@apollosproject/ui-kit';
 
+import BrandedCard from '../ui/BrandedCard';
 import GET_CONTENT_FEED from './getContentFeed';
 /**
  * This is where the component description lives
@@ -35,11 +43,23 @@ class ContentFeed extends PureComponent {
   /** Function that is called when a card in the feed is pressed.
    * Takes the user to the ContentSingle
    */
-  handleOnPress = (item) =>
+  handleOnPress = (item) => {
     this.props.navigation.navigate('ContentSingle', {
       itemId: item.id,
       sharing: item.sharing,
     });
+  };
+
+  getComponent = (item) => {
+    switch (get(item, '__typename')) {
+      case 'WeekendContentItem':
+      case 'ContentSeriesContentItem':
+      case 'DevotionalContentItem':
+        return BrandedCard;
+      default:
+        return DefaultCard;
+    }
+  };
 
   render() {
     const { navigation } = this.props;
@@ -53,7 +73,6 @@ class ContentFeed extends PureComponent {
         >
           {({ loading, error, data, refetch, fetchMore, variables }) => (
             <FeedView
-              ListItemComponent={ContentCardConnected}
               content={get(
                 data,
                 'node.childContentItemsConnection.edges',
@@ -68,7 +87,22 @@ class ContentFeed extends PureComponent {
               isLoading={loading}
               error={error}
               refetch={refetch}
-              onPressItem={this.handleOnPress}
+              renderItem={({ item }) => (
+                <TouchableScale
+                  onPress={() => {
+                    this.handleOnPress(item);
+                  }}
+                >
+                  <ContentCardConnected
+                    Component={this.getComponent(item)}
+                    contentId={item.isLoading ? null : get(item, 'id')}
+                    labelText={
+                      item.parentChannel &&
+                      item.parentChannel.name.split(' - ').pop()
+                    }
+                  />
+                </TouchableScale>
+              )}
             />
           )}
         </Query>

@@ -1,10 +1,14 @@
 import gql from 'graphql-tag';
-import { TEXT_FEATURE_FRAGMENT } from './TextFeature';
-import { SCRIPTURE_FEATURE_FRAGMENT } from './ScriptureFeature';
+import ApollosConfig from '@apollosproject/config';
 import { HEADER_FEATURE_FRAGMENT } from './HeaderFeature';
 import { NOTE_FEATURE_FRAGMENT } from './NoteFeature';
 
-const FEATURES_FRAGMENT = `
+const {
+  TEXT_FEATURE_FRAGMENT,
+  SCRIPTURE_FEATURE_FRAGMENT,
+} = ApollosConfig.FRAGMENTS;
+
+const FEATURES_FRAGMENT = gql`
   fragment FeaturesFragment on Feature {
     id
     ...TextFeatureFragment
