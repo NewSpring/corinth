@@ -24,7 +24,7 @@ const Toolbar = ({ navigation }) => (
           onPress={() =>
             openUrl(
               'https://newspring.cc/groups/?hidenav=true',
-              {},
+              { dismissButtonStyle: 'close' },
               { useRockToken: true }
             )
           }
