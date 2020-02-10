@@ -18,7 +18,7 @@ import {
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import PrayerSingle from '../PrayerSingle';
-import SaveButton from '../SaveButton';
+// import SaveButton from '../SaveButton';
 import ActionComponent from '../ActionComponent';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import FLAG_PRAYER from '../data/mutations/flagPrayer';
