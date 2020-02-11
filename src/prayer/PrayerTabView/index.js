@@ -62,11 +62,12 @@ class PrayerTabView extends PureComponent {
               type:
                 category.key !== 'my-church' ? this.types[category.key] : null,
               first: 1,
+              after: null,
             }}
             fetchPolicy="cache-and-network"
           >
             {({
-              data: { prayerFeed: { edges } } = {},
+              data: { prayerFeed: { edges } = { edges: [] } },
               loading: prayersLoading,
               error,
             }) => {

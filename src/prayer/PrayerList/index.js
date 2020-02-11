@@ -18,7 +18,7 @@ import {
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import PrayerSingle from '../PrayerSingle';
-// import SaveButton from '../SaveButton';
+import SaveButtonConnected from '../SaveButton';
 import ActionComponent from '../ActionComponent';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import FLAG_PRAYER from '../data/mutations/flagPrayer';
@@ -62,7 +62,6 @@ const Footer = styled(({ theme }) => ({
 class PrayerList extends PureComponent {
   state = {
     prayed: false,
-    // saved: false,
   };
 
   static navigationOptions = {
@@ -84,11 +83,14 @@ class PrayerList extends PureComponent {
           {({ data, loading, error }) => {
             if (loading) return <ActivityIndicator />;
             if (error) return <ErrorCard />;
-            if (data.prayerFeed.edges.length === 0)
+            if (data.prayerFeed.edges.length === 0) {
               this.props.navigation.popToTop();
+              return null;
+            }
 
-            const newCursor = data.prayerFeed.cursor;
+            const newCursor = data.prayerFeed.edges[0].cursor;
             const prayer = data.prayerFeed.edges[0].node;
+
             return (
               <FlexedSafeAreaView>
                 <Mutation mutation={FLAG_PRAYER}>
@@ -109,17 +111,9 @@ class PrayerList extends PureComponent {
                                     navigation={this.props.navigation}
                                     prayer={prayer}
                                     action={
-                                      null
-                                      // TODO figure this out
-                                      // <SaveButton
-                                      // toggleSavedState={() =>
-                                      // this.setState((prevState) => ({
-                                      // saved: !prevState.saved,
-                                      // }))
-                                      // }
-                                      // saved={this.state.saved}
-                                      // prayerID={prayer.id}
-                                      // />
+                                      <SaveButtonConnected
+                                        prayerID={prayer.id}
+                                      />
                                     }
                                     showHelp
                                     showHeader

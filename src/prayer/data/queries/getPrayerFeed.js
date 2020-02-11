@@ -1,33 +1,16 @@
 import gql from 'graphql-tag';
+import prayerFragment from '../fragments/prayerFragment';
 
 export default gql`
-  query PrayerFeed($type: PrayerType, $first: Int) {
-    prayerFeed(type: $type, first: $first) {
+  query PrayerFeed($type: PrayerType, $first: Int, $after: String) {
+    prayerFeed(type: $type, first: $first, after: $after) {
       edges {
+        cursor
         node {
-          __typename
-          id
-          ... on Prayer {
-            isAnonymous
-            isSaved
-            text
-            flagCount
-            campus {
-              id
-              name
-            }
-            startTime
-            requestor {
-              photo {
-                uri
-              }
-              firstName
-              nickName
-              lastName
-            }
-          }
+          ...prayerFragment
         }
       }
     }
   }
+  ${prayerFragment}
 `;
