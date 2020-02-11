@@ -2,30 +2,29 @@ import React from 'react';
 import { Mutation, Query } from 'react-apollo';
 import { View, ScrollView, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
+import { get } from 'lodash';
 import {
   Card,
   CardContent,
   BodyText,
+  FeedView,
   H4,
   H6,
+  Icon,
   ModalView,
   PaddedView,
   styled,
-  Icon,
   withTheme,
 } from '@apollosproject/ui-kit';
+import { fetchMoreResolver } from '@apollosproject/ui-connected';
 import PrayerSingle from '../PrayerSingle';
-import GET_PRAYERS from '../data/queries/getPrayers';
+import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import DELETE_PRAYER from '../data/mutations/deletePrayer';
 import ActionComponent from '../ActionComponent';
 
 const FlexedSafeAreaView = styled({
   flex: 1,
 })(SafeAreaView);
-
-const StyledView = styled(({ theme }) => ({
-  marginBottom: theme.sizing.baseUnit * 4,
-}))(View);
 
 const GreenH4 = styled(({ theme }) => ({
   color: theme.colors.primary,
@@ -48,11 +47,11 @@ class UserPrayerList extends React.Component {
         <FlexedSafeAreaView forceInset={{ top: 'always' }}>
           <ScrollView>
             <Query
-              query={GET_PRAYERS}
-              variables={{ type: 'USER' }}
+              query={GET_PRAYER_FEED}
+              variables={{ type: 'USER', first: 10, after: null }}
               fetchPolicy="cache-and-network"
             >
-              {({ loading, data: { prayers = [] } = {} }) => {
+              {({ loading, data, refetch, fetchMore, variables }) => {
                 if (loading) return <ActivityIndicator />;
                 return (
                   <>
@@ -63,66 +62,82 @@ class UserPrayerList extends React.Component {
                     <Mutation
                       mutation={DELETE_PRAYER}
                       update={(cache, { data: { deletePrayer } }) => {
-                        const data = cache.readQuery({
-                          query: GET_PRAYERS,
+                        const prayerData = cache.readQuery({
+                          query: GET_PRAYER_FEED,
                           variables: { type: 'USER' },
                         });
                         const { id } = deletePrayer;
-                        const updatedPrayers = data.prayers.filter(
-                          (prayer) => prayer.id !== id
+                        const updatedPrayers = prayerData.prayerFeed.edges.filter(
+                          (prayer) => prayer.node.id !== id
                         );
                         cache.writeQuery({
-                          query: GET_PRAYERS,
+                          query: GET_PRAYER_FEED,
                           variables: { type: 'USER' },
-                          data: { prayers: updatedPrayers },
+                          data: { prayerFeed: updatedPrayers },
                         });
                       }}
                     >
                       {(deletePrayer) => (
-                        <StyledView>
-                          {prayers && prayers.length > 0 ? (
-                            prayers.map((prayer) => (
-                              <Card key={prayer.id}>
-                                <CardContent>
-                                  <PrayerSingle
-                                    prayer={prayer}
-                                    showDate
-                                    action={
-                                      <ActionComponent
-                                        component={<DeleteIcon />}
-                                        options={[
-                                          {
-                                            title: 'Delete Prayer',
-                                            method: async () => {
-                                              await deletePrayer({
-                                                variables: {
-                                                  parsedId: prayer.id,
-                                                },
-                                              });
-                                            },
-                                            destructive: true,
-                                          },
-                                          {
-                                            title: 'Cancel',
-                                            method: null,
-                                            destructive: false,
-                                          },
-                                        ]}
-                                      />
-                                    }
-                                  />
-                                </CardContent>
-                              </Card>
-                            ))
-                          ) : (
-                            <PaddedView>
-                              <BodyText>
-                                You have not submitted any prayers. Go back and
-                                add one!
-                              </BodyText>
-                            </PaddedView>
+                        <FeedView
+                          content={get(data, 'prayerFeed.edges', []).map(
+                            (prayer) => {
+                              console.log('prayer.node = ', prayer.node);
+                              return prayer.node;
+                            }
                           )}
-                        </StyledView>
+                          fetchMore={fetchMoreResolver({
+                            collectionName: 'prayerFeed',
+                            fetchMore,
+                            variables,
+                            data,
+                          })}
+                          isLoading={loading}
+                          refetch={refetch}
+                          renderItem={({ item }) =>
+                            item ? (
+                              <View>
+                                <Card key={item.id}>
+                                  <CardContent>
+                                    <PrayerSingle
+                                      prayer={item}
+                                      showDate
+                                      action={
+                                        <ActionComponent
+                                          component={<DeleteIcon />}
+                                          options={[
+                                            {
+                                              title: 'Delete Prayer',
+                                              method: async () => {
+                                                await deletePrayer({
+                                                  variables: {
+                                                    parsedId: item.id,
+                                                  },
+                                                });
+                                              },
+                                              destructive: true,
+                                            },
+                                            {
+                                              title: 'Cancel',
+                                              method: null,
+                                              destructive: false,
+                                            },
+                                          ]}
+                                        />
+                                      }
+                                    />
+                                  </CardContent>
+                                </Card>
+                              </View>
+                            ) : (
+                              <PaddedView>
+                                <BodyText>
+                                  You have not submitted any prayers. Go back
+                                  and add one!
+                                </BodyText>
+                              </PaddedView>
+                            )
+                          }
+                        />
                       )}
                     </Mutation>
                   </>

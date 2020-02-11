@@ -462,7 +462,7 @@ type Query {
   campuses(location: CampusLocationInput): [Campus]
   userFeedFeatures: [Feature]
   forgotPasswordURL: String
-  prayers(type: PrayerType): [Prayer]
+  prayers(type: PrayerType): [Prayer] @deprecated(reason: "Use paginated version: prayerFeed")
   prayerFeed(first: Int, after: String, type: PrayerType): PrayersConnection
   prayerMenuCategories: [PrayerMenuCategory]
   campusPrayers: [Prayer] @deprecated(reason: "Use prayers(type:SAVED)")
