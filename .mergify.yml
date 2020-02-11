@@ -4,7 +4,7 @@ pull_request_rules:
       - base=develop
       - label=merge
       - label!=blocked
-      - title~=^[fix|feat|chore].*
+      - title~=^[fix|feat|chore|perf].*
     actions:
       merge:
         method: squash
