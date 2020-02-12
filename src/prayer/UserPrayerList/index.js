@@ -91,14 +91,14 @@ class UserPrayerList extends React.Component {
                           <GreenH4>My Prayers</GreenH4>
                         </PaddedView>
                       }
-                      ListEmptyComponent={
+                      ListEmptyComponent={() => (
                         <PaddedView>
                           <BodyText>
                             You have not submitted any prayers. Go back and add
                             one!
                           </BodyText>
                         </PaddedView>
-                      }
+                      )}
                       renderItem={({ item }) => (
                         <View>
                           <Card key={item.id}>
