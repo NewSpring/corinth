@@ -91,50 +91,49 @@ class UserPrayerList extends React.Component {
                           <GreenH4>My Prayers</GreenH4>
                         </PaddedView>
                       }
-                      renderItem={({ item }) =>
-                        item ? (
-                          <View>
-                            <Card key={item.id}>
-                              <CardContent>
-                                <PrayerSingle
-                                  prayer={item}
-                                  showDate
-                                  action={
-                                    <ActionComponent
-                                      component={<DeleteIcon />}
-                                      options={[
-                                        {
-                                          title: 'Delete Prayer',
-                                          method: async () => {
-                                            await deletePrayer({
-                                              variables: {
-                                                parsedId: item.id,
-                                              },
-                                            });
-                                          },
-                                          destructive: true,
-                                        },
-                                        {
-                                          title: 'Cancel',
-                                          method: null,
-                                          destructive: false,
-                                        },
-                                      ]}
-                                    />
-                                  }
-                                />
-                              </CardContent>
-                            </Card>
-                          </View>
-                        ) : (
-                          <PaddedView>
-                            <BodyText>
-                              You have not submitted any prayers. Go back and
-                              add one!
-                            </BodyText>
-                          </PaddedView>
-                        )
+                      ListEmptyComponent={
+                        <PaddedView>
+                          <BodyText>
+                            You have not submitted any prayers. Go back and add
+                            one!
+                          </BodyText>
+                        </PaddedView>
                       }
+                      renderItem={({ item }) => (
+                        <View>
+                          <Card key={item.id}>
+                            <CardContent>
+                              <PrayerSingle
+                                prayer={item}
+                                showDate
+                                action={
+                                  <ActionComponent
+                                    component={<DeleteIcon />}
+                                    options={[
+                                      {
+                                        title: 'Delete Prayer',
+                                        method: async () => {
+                                          await deletePrayer({
+                                            variables: {
+                                              parsedId: item.id,
+                                            },
+                                          });
+                                        },
+                                        destructive: true,
+                                      },
+                                      {
+                                        title: 'Cancel',
+                                        method: null,
+                                        destructive: false,
+                                      },
+                                    ]}
+                                  />
+                                }
+                              />
+                            </CardContent>
+                          </Card>
+                        </View>
+                      )}
                     />
                   )}
                 </Mutation>
