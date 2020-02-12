@@ -57,16 +57,17 @@ class UserPrayerList extends React.Component {
                   update={(cache, { data: { deletePrayer } }) => {
                     const prayerData = cache.readQuery({
                       query: GET_PRAYER_FEED,
-                      variables: { type: 'USER' },
+                      variables: { type: 'USER', first: 10, after: null },
                     });
                     const { id } = deletePrayer;
-                    const updatedPrayers = prayerData.prayerFeed.edges.filter(
-                      (prayer) => prayer.node.id !== id
+                    const theIndex = prayerData.prayerFeed.edges.findIndex(
+                      (prayer) => prayer.node.id === id
                     );
+                    prayerData.prayerFeed.edges.splice(theIndex, 1);
                     cache.writeQuery({
                       query: GET_PRAYER_FEED,
-                      variables: { type: 'USER' },
-                      data: { prayerFeed: updatedPrayers },
+                      variables: { type: 'USER', first: 10, after: null },
+                      data: { prayerFeed: prayerData.prayerFeed },
                     });
                   }}
                 >
