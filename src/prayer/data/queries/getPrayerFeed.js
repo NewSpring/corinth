@@ -4,7 +4,9 @@ export default gql`
   query PrayerFeed($type: PrayerType, $first: Int, $after: String) {
     prayerFeed(type: $type, first: $first, after: $after) {
       edges {
+        cursor
         node {
+          __typename
           id
           isAnonymous
           isSaved

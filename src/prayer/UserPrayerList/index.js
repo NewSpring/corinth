@@ -16,11 +16,11 @@ import {
   styled,
   withTheme,
 } from '@apollosproject/ui-kit';
-import { fetchMoreResolver } from '@apollosproject/ui-connected';
 import PrayerSingle from '../PrayerSingle';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import DELETE_PRAYER from '../data/mutations/deletePrayer';
 import ActionComponent from '../ActionComponent';
+import fetchMoreResolver from './fetchMoreResolver';
 
 const FlexedSafeAreaView = styled({
   flex: 1,
@@ -51,7 +51,7 @@ class UserPrayerList extends React.Component {
               variables={{ type: 'USER', first: 10, after: null }}
               fetchPolicy="cache-and-network"
             >
-              {({ loading, data, refetch, fetchMore, variables }) => {
+              {({ loading, error, data, refetch, fetchMore, variables }) => {
                 if (loading) return <ActivityIndicator />;
                 return (
                   <>
@@ -80,9 +80,9 @@ class UserPrayerList extends React.Component {
                       {(deletePrayer) => (
                         <FeedView
                           content={get(data, 'prayerFeed.edges', []).map(
-                            (prayer) => {
-                              console.log('prayer.node = ', prayer.node);
-                              return prayer.node;
+                            (edge) => {
+                              console.log('edge.node = ', edge.node);
+                              return edge.node;
                             }
                           )}
                           fetchMore={fetchMoreResolver({
@@ -92,6 +92,7 @@ class UserPrayerList extends React.Component {
                             data,
                           })}
                           isLoading={loading}
+                          error={error}
                           refetch={refetch}
                           renderItem={({ item }) =>
                             item ? (
