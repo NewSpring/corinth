@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
+import Analytics from 'appcenter-analytics';
 
 import { ActionCard, BodyText, H4 } from '@apollosproject/ui-kit';
 import { ShareButtonConnected } from '@apollosproject/ui-connected';
@@ -26,7 +27,10 @@ const TextFeature = ({
 
   return (
     <TouchableOpacity
-      onPress={() => press(true)}
+      onPress={() => {
+        press(true);
+        Analytics.trackEvent('Clicked Fill-in-the-blank');
+      }}
       disabled={isPressed || !hasBlanks}
     >
       {card ? (

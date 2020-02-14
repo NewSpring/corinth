@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, View } from 'react-native';
 import PropTypes from 'prop-types';
+import Analytics from 'appcenter-analytics';
 
 import {
   ActionCard,
@@ -47,7 +48,12 @@ const Note = ({ id: featureId, placeholder, onNotesChange, onNoteChange }) => {
       }}
     />
   ) : (
-    <Touchable onPress={() => showBox(true)}>
+    <Touchable
+      onPress={() => {
+        showBox(true);
+        Analytics.trackEvent('Added Custom Note');
+      }}
+    >
       <StyledAddNoteView>
         <Icon name={'add'} size={24} />
         <PaddedText>Add a Note</PaddedText>
