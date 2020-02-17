@@ -36,10 +36,11 @@ const PrayerSingle = memo(
     avatarSize,
     prayer,
     action,
+    isLoading,
     ...props
   }) => (
     <View>
-      <AbsolutePositionedView>{action}</AbsolutePositionedView>
+      {!isLoading && <AbsolutePositionedView>{action}</AbsolutePositionedView>}
       {showDate ? (
         <GreyH5>
           {prayer.startTime ? moment(prayer.startTime).fromNow() : ''}
@@ -105,6 +106,7 @@ PrayerSingle.propTypes = {
     text: PropTypes.string,
   }),
   action: PropTypes.element,
+  isLoading: PropTypes.bool,
 };
 
 PrayerSingle.defaultProps = {
