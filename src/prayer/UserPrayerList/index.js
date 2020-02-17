@@ -51,7 +51,11 @@ class UserPrayerList extends React.Component {
             fetchPolicy="cache-and-network"
           >
             {({ loading, error, data, refetch, fetchMore, variables }) => {
-              if (loading) return <ActivityIndicator />;
+              if (
+                loading &&
+                (data.prayerFeed && data.prayerFeed.edges.length === 0)
+              )
+                return <ActivityIndicator />;
               return (
                 <>
                   <Mutation
