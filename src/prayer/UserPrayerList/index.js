@@ -106,6 +106,7 @@ class UserPrayerList extends React.Component {
                               <PrayerSingle
                                 prayer={item}
                                 showDate
+                                isLoading={loading}
                                 action={
                                   <ActionComponent
                                     component={<DeleteIcon />}
