@@ -15,10 +15,8 @@ import {
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import Analytics from 'appcenter-analytics';
-import {
-  LiveConsumer,
-  RockAuthedWebBrowser,
-} from '@apollosproject/ui-connected';
+import { LiveConsumer } from '@apollosproject/ui-connected';
+import RockAuthedWebBrowser from '../../ui/RockAuthedWebBrowser';
 import GET_CONTENT_MEDIA from './getContentMedia';
 
 const Container = styled(({ theme }) => ({

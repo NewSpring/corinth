@@ -17,7 +17,7 @@ import {
 } from '@apollosproject/ui-kit';
 
 import { GET_LOGIN_STATE, LOGOUT } from '@apollosproject/ui-auth';
-import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
+import RockAuthedWebBrowser from '../ui/RockAuthedWebBrowser';
 import NavigationService from '../NavigationService';
 
 import ChangeAvatar from './ChangeAvatar';

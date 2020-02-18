@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { TableView } from '@apollosproject/ui-kit';
-import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
+import RockAuthedWebBrowser from '../ui/RockAuthedWebBrowser';
 import { UserWebBrowserConsumer } from '../user-web-browser';
 import TouchableCell from './TouchableCell';
 
