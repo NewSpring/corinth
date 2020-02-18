@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { get } from 'lodash';
 import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
@@ -76,26 +75,6 @@ class HorizontalLikedContentFeed extends Component {
       }}
     >
       <HorizontalContentCardConnected
-        Component={({ coverImage, ...props }) => {
-          switch (get(item, '__typename')) {
-            case 'WeekendContentItem':
-              return (
-                <HorizontalContentCardConnected.defaultProps.Component
-                  coverImage={
-                    item.videos.length ? item.videos[0].thumbnail.sources : null
-                  }
-                  {...props}
-                />
-              );
-            default:
-              return (
-                <HorizontalContentCardConnected.defaultProps.Component
-                  coverImage={null}
-                  {...props}
-                />
-              );
-          }
-        }}
         labelText={''}
         isLoading={item.isLoading}
         contentId={item.id}
