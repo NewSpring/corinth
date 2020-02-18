@@ -3,7 +3,7 @@ import Config from 'react-native-config';
 import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
-import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
+import RockAuthedWebBrowser from '../../ui/RockAuthedWebBrowser';
 
 const Toolbar = ({ navigation }) => (
   <RockAuthedWebBrowser>
@@ -24,7 +24,7 @@ const Toolbar = ({ navigation }) => (
           onPress={() =>
             openUrl(
               'https://newspring.cc/groups/?hidenav=true',
-              { dismissButtonStyle: 'close' },
+              {},
               { useRockToken: true }
             )
           }
