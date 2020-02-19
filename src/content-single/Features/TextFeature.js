@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
+import Analytics from 'appcenter-analytics';
 
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import { ActionCard, BodyText, H4 } from '@apollosproject/ui-kit';
 import { ShareButtonConnected } from '@apollosproject/ui-connected';
 
@@ -25,21 +27,31 @@ const TextFeature = ({
   );
 
   return (
-    <TouchableOpacity
-      onPress={() => press(true)}
-      disabled={isPressed || !hasBlanks}
-    >
-      {card ? (
-        <ActionCard
-          icon={'play'}
-          action={<ShareButtonConnected message={message} itemId={contentId} />}
+    <AnalyticsConsumer>
+      {({ track }) => (
+        <TouchableOpacity
+          onPress={() => {
+            press(true);
+            Analytics.trackEvent('Clicked Fill-in-the-blank');
+            track({ eventName: 'Clicked Fill-in-the-blank' });
+          }}
+          disabled={isPressed || !hasBlanks}
         >
-          <FillInTheBlank />
-        </ActionCard>
-      ) : (
-        <FillInTheBlank />
+          {card ? (
+            <ActionCard
+              icon={'play'}
+              action={
+                <ShareButtonConnected message={message} itemId={contentId} />
+              }
+            >
+              <FillInTheBlank />
+            </ActionCard>
+          ) : (
+            <FillInTheBlank />
+          )}
+        </TouchableOpacity>
       )}
-    </TouchableOpacity>
+    </AnalyticsConsumer>
   );
 };
 
