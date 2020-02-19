@@ -3,6 +3,7 @@ import { KeyboardAvoidingView, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Analytics from 'appcenter-analytics';
 
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import {
   ActionCard,
   Icon,
@@ -48,17 +49,22 @@ const Note = ({ id: featureId, placeholder, onNotesChange, onNoteChange }) => {
       }}
     />
   ) : (
-    <Touchable
-      onPress={() => {
-        showBox(true);
-        Analytics.trackEvent('Added Custom Note');
-      }}
-    >
-      <StyledAddNoteView>
-        <Icon name={'add'} size={24} />
-        <PaddedText>Add a Note</PaddedText>
-      </StyledAddNoteView>
-    </Touchable>
+    <AnalyticsConsumer>
+      {({ track }) => (
+        <Touchable
+          onPress={() => {
+            showBox(true);
+            Analytics.trackEvent('Added Custom Note');
+            track('Added Custom Note');
+          }}
+        >
+          <StyledAddNoteView>
+            <Icon name={'add'} size={24} />
+            <PaddedText>Add a Note</PaddedText>
+          </StyledAddNoteView>
+        </Touchable>
+      )}
+    </AnalyticsConsumer>
   );
 };
 Note.propTypes = {
