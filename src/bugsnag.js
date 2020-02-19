@@ -2,14 +2,8 @@ import { Client, Configuration } from 'bugsnag-react-native';
 import gql from 'graphql-tag';
 import Config from 'react-native-config';
 import { onError } from 'apollo-link-error';
-import { client } from './client';
 
-const configuration = new Configuration();
-configuration.apiKey = Config.BUGSNAG_API_KEY;
-configuration.releaseStage = Config.BUGSNAG_STAGE || 'development';
-const bugsnag = new Client(configuration);
-
-const getUser = async () => {
+const getUser = async (client) => {
   let user;
   try {
     const {
@@ -25,15 +19,25 @@ const getUser = async () => {
     });
     user = { id };
   } catch (e) {
-    user = null;
+    user = { id: null };
   }
   return user;
 };
 
+const configuration = new Configuration();
+configuration.apiKey = Config.BUGSNAG_API_KEY;
+configuration.releaseStage = Config.BUGSNAG_STAGE || 'development';
+const bugsnag = new Client(configuration);
+
+// set the user
+const setUser = async (client) => {
+  const user = await getUser(client);
+  bugsnag.setUser(user.id);
+};
+
 const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
   if (graphQLErrors) {
-    graphQLErrors.forEach(async ({ message, locations, path }) => {
-      const user = await getUser();
+    graphQLErrors.forEach(({ message, locations, path }) => {
       bugsnag.notify(new Error(message), (report) => {
         if (operation.variables && operation.variables.password) {
           // eslint-disable-next-line
@@ -48,19 +52,11 @@ const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
           path,
           locations,
           operation,
-          user,
         };
       });
     });
   }
-  if (networkError)
-    (async () => {
-      const user = await getUser();
-      bugsnag.notify(networkError, (report) => {
-        // eslint-disable-next-line
-        report.metadata = { user };
-      });
-    })();
+  if (networkError) bugsnag.notify(networkError);
 });
 
-export { bugsnag as default, bugsnagLink };
+export { bugsnag as default, bugsnagLink, setUser };
