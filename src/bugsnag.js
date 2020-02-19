@@ -41,14 +41,14 @@ const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
       bugsnag.notify(new Error(message), (report) => {
         if (operation.variables && operation.variables.password) {
           // eslint-disable-next-line
-            delete operation.variables.password;
+          delete operation.variables.password;
         }
         if (path) {
           // eslint-disable-next-line
-            report.context = path.join('/');
+          report.context = path.join('/');
         }
         // eslint-disable-next-line
-          report.metadata = {
+        report.metadata = {
           path,
           locations,
           operation,
