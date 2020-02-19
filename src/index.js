@@ -14,6 +14,7 @@ import { MediaPlayer } from '@apollosproject/ui-media-player';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
 import Providers from './Providers';
 import NavigationService from './NavigationService';
@@ -28,7 +29,6 @@ import Prayer from './prayer';
 import LandingScreen from './LandingScreen';
 import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
-import { WebBrowserConsumer } from './ui/WebBrowser';
 
 // need to initialize error tracking at the entrypoint
 // eslint-disable-next-line
@@ -48,7 +48,7 @@ const ProtectedRouteWithSplashScreen = (props) => {
 };
 
 const EnhancedAuth = (props) => (
-  <WebBrowserConsumer>
+  <RockAuthedWebBrowser>
     {(openUrl) => (
       <Query
         query={gql`
@@ -76,7 +76,7 @@ const EnhancedAuth = (props) => (
         )}
       </Query>
     )}
-  </WebBrowserConsumer>
+  </RockAuthedWebBrowser>
 );
 // 😑
 hoistNonReactStatic(EnhancedAuth, Auth);

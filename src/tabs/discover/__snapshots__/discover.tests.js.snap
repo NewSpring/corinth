@@ -278,6 +278,7 @@ exports[`The Discover tab component Should retrieve the Content Channel Feeds 1`
                             "height": 40,
                             "paddingLeft": 8,
                             "paddingRight": 0,
+                            "paddingTop": 1,
                             "paddingVertical": 0,
                           }
                         }
@@ -313,6 +314,8 @@ exports[`The Discover tab component Should retrieve the Content Channel Feeds 1`
                             Object {
                               "backgroundColor": "#F8F7F4",
                               "borderBottomRightRadius": 16,
+                              "borderColor": "#F8F7F4",
+                              "borderRightWidth": 1,
                               "borderTopRightRadius": 16,
                               "overflow": "hidden",
                             }
@@ -472,7 +475,7 @@ exports[`The Discover tab component Should retrieve the Content Channel Feeds 1`
                           style={
                             Object {
                               "color": "#6bac43",
-                              "fontFamily": "System",
+                              "fontFamily": "Colfax-Medium",
                               "fontSize": 14,
                               "fontStyle": null,
                               "fontWeight": null,

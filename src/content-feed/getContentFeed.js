@@ -1,6 +1,5 @@
 import gql from 'graphql-tag';
-
-import { BASE_CARD_FRAGMENT } from '../ui/ContentCardConnected';
+import ApollosConfig from '@apollosproject/config';
 
 export default gql`
   query getContentFeed($itemId: ID!, $after: String, $first: Int) {
@@ -12,12 +11,12 @@ export default gql`
           }
           edges {
             node {
-              ...baseCardFragment
+              ...contentCardFragment
             }
           }
         }
       }
     }
   }
-  ${BASE_CARD_FRAGMENT}
+  ${ApollosConfig.FRAGMENTS.CONTENT_CARD_FRAGMENT}
 `;

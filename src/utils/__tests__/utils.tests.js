@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text } from 'react-native';
-import fetchMoreResolver from '../fetchMoreResolver';
+
+import { fetchMoreResolver } from '@apollosproject/ui-connected';
+
 import { renderWithApolloData } from '../testUtils';
 
 describe('the fetchMoreResolver function', () => {
