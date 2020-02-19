@@ -158,7 +158,10 @@ const SermonNotes = ({ contentItem, features }) => {
                 );
                 share({ message });
                 Analytics.trackEvent('Exported Sermon Notes', { title });
-                track('Exported Sermon Notes', { title });
+                track({
+                  eventName: 'Exported Sermon Notes',
+                  properties: { title },
+                });
               }}
             >
               <ExportWrapper>

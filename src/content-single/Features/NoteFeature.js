@@ -55,7 +55,7 @@ const Note = ({ id: featureId, placeholder, onNotesChange, onNoteChange }) => {
           onPress={() => {
             showBox(true);
             Analytics.trackEvent('Added Custom Note');
-            track('Added Custom Note');
+            track({ eventName: 'Added Custom Note' });
           }}
         >
           <StyledAddNoteView>

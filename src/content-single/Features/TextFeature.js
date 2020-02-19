@@ -33,7 +33,7 @@ const TextFeature = ({
           onPress={() => {
             press(true);
             Analytics.trackEvent('Clicked Fill-in-the-blank');
-            track('Clicked Fill-in-the-blank');
+            track({ eventName: 'Clicked Fill-in-the-blank' });
           }}
           disabled={isPressed || !hasBlanks}
         >
