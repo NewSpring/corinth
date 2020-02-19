@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import {
   H3,
   PaddedView,
@@ -12,6 +13,7 @@ import {
   BodyText,
 } from '@apollosproject/ui-kit';
 import { LegalText } from '@apollosproject/ui-scripture';
+import Analytics from 'appcenter-analytics';
 // TODO: use the one from core once it makes it in a release
 // import {share} from '@apollosproject/ui-connected';
 import { Platform, Share } from 'react-native';
@@ -145,21 +147,30 @@ const SermonNotes = ({ contentItem, features }) => {
         // icon={'play'}
         // itemId={contentId}
         // />
-        <Touchable
-          onPress={() => {
-            console.log(contentItem.id); // left in the prop for the to do item above
-            const message = sharedMsg.replace(
-              /\w+Feature:\w+{{(.*?)}}\n\n/gs,
-              (match, p1) => (p1 === '' ? p1 : `${p1}\n\n`)
-            );
-            share({ message });
-          }}
-        >
-          <ExportWrapper>
-            <PaddedText>Export</PaddedText>
-            <Icon name={'export'} size={24} />
-          </ExportWrapper>
-        </Touchable>
+        <AnalyticsConsumer>
+          {({ track }) => (
+            <Touchable
+              onPress={() => {
+                console.log(contentItem.id); // left in the prop for the to do item above
+                const message = sharedMsg.replace(
+                  /\w+Feature:\w+{{(.*?)}}\n\n/gs,
+                  (match, p1) => (p1 === '' ? p1 : `${p1}\n\n`)
+                );
+                share({ message });
+                Analytics.trackEvent('Exported Sermon Notes', { title });
+                track({
+                  eventName: 'Exported Sermon Notes',
+                  properties: { title },
+                });
+              }}
+            >
+              <ExportWrapper>
+                <PaddedText>Export</PaddedText>
+                <Icon name={'export'} size={24} />
+              </ExportWrapper>
+            </Touchable>
+          )}
+        </AnalyticsConsumer>
       }
     >
       <H3>Sermon Notes</H3>
