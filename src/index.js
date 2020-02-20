@@ -9,7 +9,6 @@ import Analytics from 'appcenter-analytics';
 
 import { BackgroundView, withTheme } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
-import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import { MediaPlayer } from '@apollosproject/ui-media-player';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 
@@ -28,6 +27,7 @@ import Prayer from './prayer';
 import LandingScreen from './LandingScreen';
 import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
+import Location from './ui/Locations';
 
 // need to initialize error tracking at the entrypoint
 // eslint-disable-next-line
