@@ -1,10 +1,10 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
-import { ContentHTMLViewConnected } from '@apollosproject/ui-connected';
 import { PaddedView, H2, styled, withIsLoading } from '@apollosproject/ui-kit';
 import { ScriptureList } from '@apollosproject/ui-scripture';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
+import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 
 const ContentContainer = withIsLoading(
   styled({ paddingVertical: 0 })(PaddedView)

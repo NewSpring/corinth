@@ -12,11 +12,9 @@ import {
   ThemeConsumer,
   H2,
 } from '@apollosproject/ui-kit';
-import {
-  ContentHTMLViewConnected,
-  MediaControlsConnected,
-} from '@apollosproject/ui-connected';
+import { MediaControlsConnected } from '@apollosproject/ui-connected';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
+import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 
 const FlexedScrollView = styled({ flex: 1 })(ScrollView);
 

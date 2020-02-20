@@ -16,12 +16,12 @@ import {
 } from '@apollosproject/ui-kit';
 import {
   LiveConsumer,
-  ContentHTMLViewConnected,
   MediaControlsConnected,
 } from '@apollosproject/ui-connected';
 
 import Features from '../Features';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
+import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 

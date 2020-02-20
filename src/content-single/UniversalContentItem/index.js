@@ -2,10 +2,7 @@ import React from 'react';
 import { Animated } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
-import {
-  ContentHTMLViewConnected,
-  MediaControlsConnected,
-} from '@apollosproject/ui-connected';
+import { MediaControlsConnected } from '@apollosproject/ui-connected';
 import {
   styled,
   GradientOverlayImage,
@@ -17,6 +14,7 @@ import {
 
 import Features from '../Features';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
+import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
