@@ -24,7 +24,7 @@ jobs:
         - travis_wait yarn codecov
     - stage: release
       script:
-        - GH_RELEASE_GITHUB_API_TOKEN=${GH_TOKEN}
+        - export GH_RELEASE_GITHUB_API_TOKEN=${GH_TOKEN}
         - git config user.email ${GH_EMAIL}
         - git config user.name ${GH_USER}
         - git remote add repo https://github.com/${GH_REPO}
