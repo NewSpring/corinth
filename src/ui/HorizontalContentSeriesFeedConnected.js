@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
 import { Query } from 'react-apollo';
 
-import { HorizontalTileFeed, TouchableScale } from '@apollosproject/ui-kit';
+import {
+  HorizontalTileFeed,
+  TouchableScale,
+  PaddedView,
+  H5,
+} from '@apollosproject/ui-kit';
 
 import {
   HorizontalContentCardConnected,
@@ -109,41 +114,47 @@ class HorizontalContentSeriesFeedConnected extends Component {
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
 
     return (
-      <this.props.Component
-        isLoading={loading}
-        content={content}
-        loadingStateObject={loadingStateObject}
-        renderItem={this.props.renderItem || this.renderItem}
-        initialScrollIndex={initialScrollIndex}
-        getItemLayout={(itemData, index) => ({
-          // We need to pass this function so that initialScrollIndex will work.
-          length: 240,
-          offset: 240 * index,
-          index,
-        })}
-        onEndReached={() =>
-          fetchMore({
-            query: GET_CONTENT_SERIES,
-            variables: { cursor, itemId: this.props.contentId },
-            updateQuery: (previousResult, { fetchMoreResult }) => {
-              const connection = isParent
-                ? 'childContentItemsConnection'
-                : 'siblingContentItemsConnection';
-              const newEdges = get(fetchMoreResult.node, connection, []).edges;
+      <PaddedView horizontal={false}>
+        <PaddedView vertical={false}>
+          <H5>In this series</H5>
+        </PaddedView>
+        <this.props.Component
+          isLoading={loading}
+          content={content}
+          loadingStateObject={loadingStateObject}
+          renderItem={this.props.renderItem || this.renderItem}
+          initialScrollIndex={initialScrollIndex}
+          getItemLayout={(itemData, index) => ({
+            // We need to pass this function so that initialScrollIndex will work.
+            length: 240,
+            offset: 240 * index,
+            index,
+          })}
+          onEndReached={() =>
+            fetchMore({
+              query: GET_CONTENT_SERIES,
+              variables: { cursor, itemId: this.props.contentId },
+              updateQuery: (previousResult, { fetchMoreResult }) => {
+                const connection = isParent
+                  ? 'childContentItemsConnection'
+                  : 'siblingContentItemsConnection';
+                const newEdges = get(fetchMoreResult.node, connection, [])
+                  .edges;
 
-              return {
-                node: {
-                  ...previousResult.node,
-                  [connection]: {
-                    ...previousResult.node[connection],
-                    edges: [...edges, ...newEdges],
+                return {
+                  node: {
+                    ...previousResult.node,
+                    [connection]: {
+                      ...previousResult.node[connection],
+                      edges: [...edges, ...newEdges],
+                    },
                   },
-                },
-              };
-            },
-          })
-        }
-      />
+                };
+              },
+            })
+          }
+        />
+      </PaddedView>
     );
   };
 
