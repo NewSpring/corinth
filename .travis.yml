@@ -31,7 +31,7 @@ jobs:
         #- git fetch repo
         - git checkout develop
         - yarn standard-version --skip.bump
-        - git push --follow-tags "https://${GH_TOKEN}@${GH_REPO}" repo develop
-        - yarn gh-release --yes --dry-run
+        - git push --follow-tags "https://${GH_TOKEN}@${GH_REPO}" develop
+        - yarn gh-release --yes
         - yarn standard-version --skip.changelog --skip.commit --skip.tag
-        - git push "https://${GH_TOKEN}@${GH_REPO}" repo develop
+        - git push "https://${GH_TOKEN}@${GH_REPO}" develop
