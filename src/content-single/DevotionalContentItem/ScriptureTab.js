@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { PaddedView } from '@apollosproject/ui-kit';
 import ScriptureItem from '@apollosproject/ui-scripture';
-import { HorizontalContentSeriesFeedConnected } from '@apollosproject/ui-connected';
+import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalLikedContentFeedConnected';
 
 /**
  * This is the Scripture side of the Devotional tabbed component.

@@ -14,9 +14,9 @@ import {
 } from '@apollosproject/ui-kit';
 import {
   ContentHTMLViewConnected,
-  HorizontalContentSeriesFeedConnected,
   MediaControlsConnected,
 } from '@apollosproject/ui-connected';
+import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 
 const FlexedScrollView = styled({ flex: 1 })(ScrollView);
 

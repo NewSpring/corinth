@@ -4,7 +4,6 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
   ContentHTMLViewConnected,
-  HorizontalContentSeriesFeedConnected,
   MediaControlsConnected,
 } from '@apollosproject/ui-connected';
 import {
@@ -17,6 +16,7 @@ import {
 } from '@apollosproject/ui-kit';
 
 import Features from '../Features';
+import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
