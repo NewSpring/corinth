@@ -27,8 +27,8 @@ jobs:
         - export GH_RELEASE_GITHUB_API_TOKEN=${GH_TOKEN}
         - git config user.email ${GH_EMAIL}
         - git config user.name ${GH_USER}
-        - git remote add repo https://github.com/${GH_REPO}
-        - git fetch repo
+        #- git remote add repo https://github.com/${GH_REPO}
+        #- git fetch repo
         - git checkout develop
         - yarn standard-version --skip.bump
         - sh -c "sed -i '' 's/### \[/## \[/g' CHANGELOG.md"
