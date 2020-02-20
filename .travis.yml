@@ -16,12 +16,12 @@ stages:
     #if: type = push AND branch = master
 jobs:
   include:
-    - stage: test
-      script:
-        - yarn lint
-    - script:
-        - travis_wait yarn test
-        - travis_wait yarn codecov
+    #- stage: test
+      #script:
+        #- yarn lint
+    #- script:
+        #- travis_wait yarn test
+        #- travis_wait yarn codecov
     - stage: release
       script:
         - export GH_RELEASE_GITHUB_API_TOKEN=${GH_TOKEN}
