@@ -47,7 +47,7 @@
   "standard-version": {
     "scripts": {
       "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'",
-      "postchangelog": "sed -i 's/### \\[/## \\[/g' CHANGELOG.md"
+      "postchangelog": "sed -i.bak \"s/### \\[/## \\[/g\" CHANGELOG.md"
     }
   },
   "resolutions": {
