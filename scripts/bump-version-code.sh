@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # overwrites android version code
-VERSION_CODE=$(sed -n -e '/versionCode/s/.* //p' android/app/build.gradle | sed -n 1p)
+VERSION_CODE=$(sed -n -e "/versionCode/s/.* //p" android/app/build.gradle | sed -n 1p)
 if [ "$BUGSNAG_STAGE" = "production" ]; then
 	# production track - increments by one (has to be less than test track)
 	sed -i "" -E "s/versionCode [0-9]+/versionCode $((VERSION_CODE - 1))/g" android/app/build.gradle
