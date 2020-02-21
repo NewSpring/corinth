@@ -19,8 +19,6 @@ const customRenderer = (contentId) => (node, ...otherArgs) => {
   if (node.name === 'img' && isLocalImg(node.attribs.src)) {
     bugsnag.notify(new Error(`Bad image URL`), (report) => {
       // eslint-disable-next-line
-      report.severity = "warning";
-      // eslint-disable-next-line
       report.metadata = { content: { url: node.attribs.src, contentId } };
     });
     return null;
