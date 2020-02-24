@@ -12,9 +12,9 @@ import {
   ThemeConsumer,
   H2,
 } from '@apollosproject/ui-kit';
-import { MediaControlsConnected } from '@apollosproject/ui-connected';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
+import MediaControls from '../../ui/MediaControls';
 
 const FlexedScrollView = styled({ flex: 1 })(ScrollView);
 
@@ -53,7 +53,7 @@ const ContentSeriesContentItem = ({ content, loading }) => {
                           />
                         </Stretchy>
                       ) : null}
-                      <MediaControlsConnected contentId={content.id} />
+                      <MediaControls contentId={content.id} />
 
                       <PaddedView>
                         <H2 padded isLoading={!content.title && loading}>
