@@ -15,7 +15,7 @@ import {
   withTheme,
 } from '@apollosproject/ui-kit';
 import PrayerSingle from '../PrayerSingle';
-import GET_USER_PRAYERS from '../data/queries/getUserPrayers';
+import GET_PRAYERS from '../data/queries/getPrayers';
 import DELETE_PRAYER from '../data/mutations/deletePrayer';
 import ActionComponent from '../ActionComponent';
 
@@ -47,8 +47,12 @@ class UserPrayerList extends React.Component {
       <ModalView {...this.props} onClose={() => this.props.navigation.pop()}>
         <FlexedSafeAreaView forceInset={{ top: 'always' }}>
           <ScrollView>
-            <Query query={GET_USER_PRAYERS} fetchPolicy="cache-and-network">
-              {({ loading, data: { userPrayers = [] } = {} }) => {
+            <Query
+              query={GET_PRAYERS}
+              variables={{ type: 'USER' }}
+              fetchPolicy="cache-and-network"
+            >
+              {({ loading, data: { prayers = [] } = {} }) => {
                 if (loading) return <ActivityIndicator />;
                 return (
                   <>
@@ -60,22 +64,24 @@ class UserPrayerList extends React.Component {
                       mutation={DELETE_PRAYER}
                       update={(cache, { data: { deletePrayer } }) => {
                         const data = cache.readQuery({
-                          query: GET_USER_PRAYERS,
+                          query: GET_PRAYERS,
+                          variables: { type: 'USER' },
                         });
                         const { id } = deletePrayer;
-                        const updatedPrayers = data.userPrayers.filter(
+                        const updatedPrayers = data.prayers.filter(
                           (prayer) => prayer.id !== id
                         );
                         cache.writeQuery({
-                          query: GET_USER_PRAYERS,
-                          data: { userPrayers: updatedPrayers },
+                          query: GET_PRAYERS,
+                          variables: { type: 'USER' },
+                          data: { prayers: updatedPrayers },
                         });
                       }}
                     >
                       {(deletePrayer) => (
                         <StyledView>
-                          {userPrayers && userPrayers.length > 0 ? (
-                            userPrayers.map((prayer) => (
+                          {prayers && prayers.length > 0 ? (
+                            prayers.map((prayer) => (
                               <Card key={prayer.id}>
                                 <CardContent>
                                   <PrayerSingle

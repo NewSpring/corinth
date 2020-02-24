@@ -1,22 +1,43 @@
 import { Client, Configuration } from 'bugsnag-react-native';
+import gql from 'graphql-tag';
 import Config from 'react-native-config';
 import { onError } from 'apollo-link-error';
-import AsyncStorage from '@react-native-community/async-storage';
+
+const getUser = async (client) => {
+  let user;
+  try {
+    const {
+      currentUser: { id },
+    } = await client.readQuery({
+      query: gql`
+        {
+          currentUser {
+            id
+          }
+        }
+      `,
+    });
+    user = { id };
+  } catch (e) {
+    user = { id: null };
+  }
+  return user;
+};
 
 const configuration = new Configuration();
 configuration.apiKey = Config.BUGSNAG_API_KEY;
 configuration.releaseStage = Config.BUGSNAG_STAGE || 'development';
 const bugsnag = new Client(configuration);
 
-const getStore = async () => {
-  const keys = await AsyncStorage.getAllKeys();
-  return AsyncStorage.multiGet(keys);
+// set the user
+const setUser = async (client) => {
+  const user = await getUser(client);
+  bugsnag.setUser(user.id);
 };
 
 const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
   if (graphQLErrors) {
-    graphQLErrors.map(async ({ message, locations, path }) => {
-      const store = await getStore();
+    graphQLErrors.forEach(({ message, locations, path }) => {
       bugsnag.notify(new Error(message), (report) => {
         if (operation.variables && operation.variables.password) {
           // eslint-disable-next-line
@@ -31,7 +52,6 @@ const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
           path,
           locations,
           operation,
-          store,
         };
       });
     });
@@ -39,4 +59,4 @@ const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
   if (networkError) bugsnag.notify(networkError);
 });
 
-export { bugsnag as default, bugsnagLink };
+export { bugsnag as default, bugsnagLink, setUser };
