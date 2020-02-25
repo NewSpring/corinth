@@ -18,10 +18,10 @@ import {
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
 import PrayerSingle from '../PrayerSingle';
-import SaveButtonConnected from '../SaveButton';
+import SaveButton from '../SaveButton';
 import ActionComponent from '../ActionComponent';
-import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import FLAG_PRAYER from '../data/mutations/flagPrayer';
+import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import INCREMENT_PRAYER_COUNT from '../data/mutations/incrementPrayerCount';
 
 const FlexedSafeAreaView = styled({
@@ -61,7 +61,10 @@ const Footer = styled(({ theme }) => ({
 
 class PrayerList extends PureComponent {
   state = {
+    prayerIndex: 0,
     prayed: false,
+    saved: false,
+    saveButtonTouched: false,
   };
 
   static navigationOptions = {
@@ -70,29 +73,36 @@ class PrayerList extends PureComponent {
 
   render() {
     const title = this.props.navigation.getParam('title', 'My Church');
-    const cursor = this.props.navigation.getParam('cursor', null);
     const type = this.props.navigation.getParam('type', null);
+    const isLastPrayer =
+      this.state.prayerIndex + 1 === this.state.prayers.length;
+
+    const advancePrayer = (prayed = false) =>
+      !isLastPrayer
+        ? this.setState((prevState) => ({
+            prayerIndex: prevState.prayerIndex + 1,
+            prayed: prayed ? false : prevState.prayed,
+            saved: prevState.prayers[prevState.prayerIndex + 1].isSaved,
+          }))
+        : this.props.navigation.popToTop();
 
     return (
       <ModalView onClose={() => this.props.navigation.popToTop()}>
-        <Query
-          query={GET_PRAYER_FEED}
-          variables={{ type, after: cursor, first: 1 }}
-          fetchPolicy={'cache-and-network'}
-        >
-          {({ data, loading, error }) => {
-            if (loading) return <ActivityIndicator />;
-            if (error) return <ErrorCard />;
-            if (data.prayerFeed.edges.length === 0) {
-              this.props.navigation.popToTop();
-              return null;
-            }
-
-            const newCursor = data.prayerFeed.edges[0].cursor;
-            const prayer = data.prayerFeed.edges[0].node;
-
-            return (
-              <FlexedSafeAreaView>
+        <FlexedSafeAreaView>
+          <Query
+            query={GET_PRAYER_FEED}
+            variables={{ type, first: 20 }}
+            fetchPolicy={'cache-and-network'}
+          >
+            {({ data, loading, error }) => {
+              if (loading) return <ActivityIndicator />;
+              if (error) return <ErrorCard />;
+              // if (data.prayerFeed.edges.length === 0) {
+              // this.props.navigation.popToTop();
+              // return null;
+              // }
+              const prayer = data.prayerFeed.edges[this.state.prayerIndex];
+              return (
                 <Mutation mutation={FLAG_PRAYER}>
                   {(flagPrayer) => (
                     <Mutation mutation={INCREMENT_PRAYER_COUNT}>
@@ -105,20 +115,31 @@ class PrayerList extends PureComponent {
                                 <GreenH4>{title}</GreenH4>
                               </Header>
                               <StyledPrayerView>
-                                {prayer ? (
-                                  <PrayerSingle
-                                    avatarSize={'medium'}
-                                    navigation={this.props.navigation}
-                                    prayer={prayer}
-                                    action={
-                                      <SaveButtonConnected
-                                        prayerID={prayer.id}
-                                      />
-                                    }
-                                    showHelp
-                                    showHeader
-                                  />
-                                ) : null}
+                                <PrayerSingle
+                                  avatarSize={'medium'}
+                                  navigation={this.props.navigation}
+                                  prayer={prayer}
+                                  action={
+                                    <SaveButton
+                                      toggleSavedState={() =>
+                                        this.setState((prevState) => ({
+                                          saved: prevState.saveButtonTouched
+                                            ? !prevState.saved
+                                            : !prayer.isSaved,
+                                          saveButtonTouched: true,
+                                        }))
+                                      }
+                                      saved={
+                                        this.state.saveButtonTouched
+                                          ? this.state.saved
+                                          : prayer.isSaved
+                                      }
+                                      prayerID={prayer.id}
+                                    />
+                                  }
+                                  showHelp
+                                  showHeader
+                                />
                               </StyledPrayerView>
                             </ScrollView>
                           </ScrollArea>
@@ -155,14 +176,7 @@ class PrayerList extends PureComponent {
                                               parsedId: prayer.id,
                                             },
                                           });
-                                          this.props.navigation.replace(
-                                            'PrayerList',
-                                            {
-                                              title,
-                                              type,
-                                              cursor: newCursor,
-                                            }
-                                          );
+                                          await advancePrayer();
                                         },
                                         destructive: true,
                                       },
@@ -183,18 +197,8 @@ class PrayerList extends PureComponent {
                                   </FooterText>
                                 </FooterAltOption>
                                 <Button
-                                  // TODO this should say "Done" on last prayer
-                                  title={'Next'}
-                                  onPress={() =>
-                                    this.props.navigation.replace(
-                                      'PrayerList',
-                                      {
-                                        title,
-                                        type,
-                                        cursor: newCursor,
-                                      }
-                                    )
-                                  }
+                                  title={!isLastPrayer ? 'Next' : 'Done'}
+                                  onPress={() => advancePrayer(true)}
                                 />
                               </View>
                             )}
@@ -204,10 +208,10 @@ class PrayerList extends PureComponent {
                     </Mutation>
                   )}
                 </Mutation>
-              </FlexedSafeAreaView>
-            );
-          }}
-        </Query>
+              );
+            }}
+          </Query>
+        </FlexedSafeAreaView>
       </ModalView>
     );
   }
