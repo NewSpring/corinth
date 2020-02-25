@@ -74,17 +74,6 @@ class PrayerList extends PureComponent {
   render() {
     const title = this.props.navigation.getParam('title', 'My Church');
     const type = this.props.navigation.getParam('type', null);
-    const isLastPrayer =
-      this.state.prayerIndex + 1 === this.state.prayers.length;
-
-    const advancePrayer = (prayed = false) =>
-      !isLastPrayer
-        ? this.setState((prevState) => ({
-            prayerIndex: prevState.prayerIndex + 1,
-            prayed: prayed ? false : prevState.prayed,
-            saved: prevState.prayers[prevState.prayerIndex + 1].isSaved,
-          }))
-        : this.props.navigation.popToTop();
 
     return (
       <ModalView onClose={() => this.props.navigation.popToTop()}>
@@ -97,11 +86,21 @@ class PrayerList extends PureComponent {
             {({ data, loading, error }) => {
               if (loading) return <ActivityIndicator />;
               if (error) return <ErrorCard />;
-              // if (data.prayerFeed.edges.length === 0) {
-              // this.props.navigation.popToTop();
-              // return null;
-              // }
-              const prayer = data.prayerFeed.edges[this.state.prayerIndex];
+              const prayers = data.prayerFeed.edges.map((edge) => edge.node);
+              const isLastPrayer =
+                this.state.prayerIndex + 1 === prayers.length;
+
+              const advancePrayer = (prayed = false) =>
+                !isLastPrayer
+                  ? this.setState((prevState) => ({
+                      prayerIndex: prevState.prayerIndex + 1,
+                      prayed: prayed ? false : prevState.prayed,
+                      saved: prayers[prevState.prayerIndex + 1].isSaved,
+                      saveButtonTouched: false,
+                    }))
+                  : this.props.navigation.popToTop();
+
+              const prayer = prayers[this.state.prayerIndex];
               return (
                 <Mutation mutation={FLAG_PRAYER}>
                   {(flagPrayer) => (

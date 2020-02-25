@@ -73,7 +73,7 @@ class PrayerTabView extends PureComponent {
               return (
                 <PrayerTab
                   loading={prayersLoading}
-                  hasPrayers={totalCount.length}
+                  hasPrayers={totalCount > 0}
                   description={category.description}
                   title={category.title}
                   type={category.key.split('-')[1]}
