@@ -10,7 +10,7 @@ import {
 } from '@apollosproject/ui-kit';
 import PrayerMenuCard from '../PrayerMenuCard';
 
-import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
+import GET_PRAYER_COUNT from '../data/queries/getPrayerCount';
 import PrayerTab from './PrayerTab';
 
 class PrayerTabView extends PureComponent {
@@ -57,17 +57,15 @@ class PrayerTabView extends PureComponent {
         navigationState={{ ...this.state }}
         renderScene={({ route: category }) => (
           <Query
-            query={GET_PRAYER_FEED}
+            query={GET_PRAYER_COUNT}
             variables={{
               type:
                 category.key !== 'my-church' ? this.types[category.key] : null,
-              first: 1,
-              after: null,
             }}
             fetchPolicy="cache-and-network"
           >
             {({
-              data: { prayerFeed: { edges } = { edges: [] } },
+              data: { prayerFeed: { totalCount } = { totalCount: 0 } },
               loading: prayersLoading,
               error,
             }) => {
@@ -75,7 +73,7 @@ class PrayerTabView extends PureComponent {
               return (
                 <PrayerTab
                   loading={prayersLoading}
-                  hasPrayers={edges && edges.length > 0}
+                  hasPrayers={totalCount.length}
                   description={category.description}
                   title={category.title}
                   type={category.key.split('-')[1]}

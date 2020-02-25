@@ -7,7 +7,7 @@ import MapView from '@apollosproject/ui-mapview';
 import { PaddedView, ButtonLink } from '@apollosproject/ui-kit';
 import { get } from 'lodash';
 
-import GET_PRAYER_FEED from '../../prayer/data/queries/getPrayerFeed';
+import GET_PRAYER_COUNT from '../../prayer/data/queries/getPrayerCount';
 import GET_CAMPUSES from './getCampusLocations';
 import CHANGE_CAMPUS from './campusChange';
 
@@ -103,8 +103,8 @@ class Location extends PureComponent {
                     },
                     refetchQueries: [
                       {
-                        query: GET_PRAYER_FEED,
-                        variables: { type: 'CAMPUS', first: 1 },
+                        query: GET_PRAYER_COUNT,
+                        variables: { type: 'CAMPUS' },
                       },
                     ],
                   });

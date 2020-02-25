@@ -1,7 +1,7 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import getUserProfile from '../../../tabs/connect/getUserProfile';
-import GET_PRAYER_FEED from '../../data/queries/getPrayerFeed';
+import GET_PRAYER_COUNT from '../../data/queries/getPrayerCount';
 import ADD_PRAYER from '../../data/mutations/addPrayer';
 import AddPrayerForm from './AddPrayerForm';
 
@@ -30,7 +30,7 @@ class AddPrayerFormConnected extends React.Component {
                       isAnonymous: values.anonymous,
                     },
                     refetchQueries: () => [
-                      { query: GET_PRAYER_FEED, variables: { type: 'USER' } },
+                      { query: GET_PRAYER_COUNT, variables: { type: 'USER' } },
                     ],
                   });
                   this.props.navigation.navigate('WithYou');
