@@ -18,8 +18,8 @@ import Analytics from 'appcenter-analytics';
 import {
   LiveConsumer,
   RockAuthedWebBrowser,
+  GET_CONTENT_MEDIA,
 } from '@apollosproject/ui-connected';
-import GET_CONTENT_MEDIA from './getContentMedia';
 
 const Container = styled(({ theme }) => ({
   flexDirection: 'row',

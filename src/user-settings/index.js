@@ -17,10 +17,11 @@ import {
 } from '@apollosproject/ui-kit';
 
 import { GET_LOGIN_STATE, LOGOUT } from '@apollosproject/ui-auth';
-import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
+import {
+  RockAuthedWebBrowser,
+  UserAvatarUpdate,
+} from '@apollosproject/ui-connected';
 import NavigationService from '../NavigationService';
-
-import ChangeAvatar from './ChangeAvatar';
 
 class UserSettings extends PureComponent {
   static navigationOptions = () => ({
@@ -43,7 +44,7 @@ class UserSettings extends PureComponent {
           return (
             <BackgroundView>
               <ScrollView>
-                <ChangeAvatar />
+                <UserAvatarUpdate />
 
                 <RockAuthedWebBrowser>
                   {(openUrl) => (
