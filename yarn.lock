@@ -65,10 +65,10 @@
     graphql-tag "2.9.2"
     yup "^0.27.0"
 
-"@apollosproject/ui-connected@^1.3.0-beta.6":
-  version "1.3.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-connected/-/ui-connected-1.3.0-beta.6.tgz#28dcecb0db1deaebff11ed24bfbedbda0f0678df"
-  integrity sha512-7XnYsFxGygnE9v3v6CqfwqvQhRQKqnllMtlOGk2JKiYoCQP84+18pmKrknAsV9IEnnFYRbz2a3X91/5t5LXNsA==
+"@apollosproject/ui-connected@^1.3.0-alpha.9":
+  version "1.3.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-connected/-/ui-connected-1.3.0-alpha.9.tgz#495c4cbc59d859426a368ac7386d81b247b698a0"
+  integrity sha512-ObPT4PZLn56BJwtcWPEEeszdYoGFuOR2WKJYuBxRDqwPjFWcOcioDcoNx4XKmMqYJW6iRpBmoPsyyCliuUasEg==
   dependencies:
     graphql-tag "2.9.2"
     lodash "^4.17.11"
