@@ -8,8 +8,7 @@ import { BackgroundView } from '@apollosproject/ui-kit';
 import HorizontalLikedContentFeedConnected from '../../ui/HorizontalLikedContentFeedConnected';
 import ActionTable from './ActionTable';
 import ActionBar from './ActionBar';
-import UserAvatarHeader from './UserAvatarHeader';
-import GET_USER_PROFILE from './getUserProfile';
+import UserAvatarHeader, { GET_USER_PROFILE } from './UserAvatarHeader';
 
 class Connect extends PureComponent {
   static navigationOptions = () => ({

@@ -1,8 +1,8 @@
 import React from 'react';
+import { GET_USER_PROFILE } from '../tabs/connect/UserAvatarHeader';
 
 import Providers from '../Providers';
 
-import GET_USER_PROFILE from '../tabs/connect/getUserProfile';
 import { renderWithApolloData } from '../utils/testUtils';
 import PersonalDetails from './PersonalDetails';
 

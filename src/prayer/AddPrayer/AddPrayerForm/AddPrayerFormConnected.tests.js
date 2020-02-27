@@ -2,7 +2,7 @@ import React from 'react';
 
 import Providers from '../../../Providers';
 import { renderWithApolloData } from '../../../utils/testUtils';
-import getUserProfile from '../../../tabs/connect/getUserProfile';
+import getUserProfile from '../../../tabs/connect/UserAvatarHeader/getUserProfile';
 import AddPrayerFormConnected from './AddPrayerFormConnected';
 
 const mocks = [

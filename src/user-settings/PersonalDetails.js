@@ -20,7 +20,7 @@ import {
   styled,
 } from '@apollosproject/ui-kit';
 
-import GET_USER_PROFILE from '../tabs/connect/getUserProfile';
+import { GET_USER_PROFILE } from '../tabs/connect/UserAvatarHeader';
 import UPDATE_CURRENT_USER from './updateCurrentUser';
 
 const Footer = styled({

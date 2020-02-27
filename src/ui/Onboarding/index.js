@@ -18,7 +18,7 @@ import {
   OnboardingSwiper,
 } from '@apollosproject/ui-onboarding';
 
-import CHANGE_CAMPUS from '../../user-settings/Locations/campusChange';
+import CHANGE_CAMPUS from '../Locations/campusChange';
 import CustomLocationFinder from './CustomLocationFinder';
 
 const ImageContainer = styled({
