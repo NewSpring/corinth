@@ -8,6 +8,7 @@ import {
   styled,
   Touchable,
   ChannelLabel,
+  PaddedView,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import PrayerHeader from '../PrayerHeader';
@@ -17,9 +18,9 @@ const GreyH5 = styled(({ theme }) => ({
   marginBottom: theme.sizing.baseUnit * 0.5,
 }))(H5);
 
-const PrayerText = styled(({ theme }) => ({
+const PrayerTextView = styled(({ theme }) => ({
   marginVertical: theme.sizing.baseUnit,
-}))(BodyText);
+}))(PaddedView);
 
 const AbsolutePositionedView = styled(() => ({
   position: 'absolute',
@@ -57,7 +58,9 @@ const PrayerSingle = memo(
           source={prayer.campus.name !== 'Web' ? prayer.campus.name : null}
         />
       ) : null}
-      <PrayerText>{prayer.text}</PrayerText>
+      <PrayerTextView>
+        <BodyText>{prayer.text}</BodyText>
+      </PrayerTextView>
       {showHelp ? (
         <AnalyticsConsumer>
           {({ track }) => (
