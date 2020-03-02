@@ -51,94 +51,97 @@ class UserPrayerList extends React.Component {
             fetchPolicy="cache-and-network"
           >
             {({ loading, error, data, refetch, fetchMore, variables }) => (
-              <>
-                <Mutation
-                  mutation={DELETE_PRAYER}
-                  update={(cache, { data: { deletePrayer } }) => {
-                    const prayerData = cache.readQuery({
-                      query: GET_PRAYER_FEED,
-                      variables: { type: 'USER', first: 10, after: null },
-                    });
-                    const { id } = deletePrayer;
-                    const theIndex = prayerData.prayerFeed.edges.findIndex(
-                      (prayer) => prayer.node.id === id
-                    );
-                    prayerData.prayerFeed.edges.splice(theIndex, 1);
-                    cache.writeQuery({
-                      query: GET_PRAYER_FEED,
-                      variables: { type: 'USER', first: 10, after: null },
-                      data: { prayerFeed: prayerData.prayerFeed },
-                    });
-                  }}
-                >
-                  {(deletePrayer) => (
-                    <FeedView
-                      content={get(data, 'prayerFeed.edges', []).map(
-                        (edge) => edge.node
-                      )}
-                      fetchMore={fetchMoreResolver({
-                        collectionName: 'prayerFeed',
-                        fetchMore,
-                        variables,
-                        data,
-                      })}
-                      isLoading={loading}
-                      error={error}
-                      refetch={refetch}
-                      ListHeaderComponent={
-                        <PaddedView>
-                          <H6>Viewing</H6>
-                          <GreenH4>My Prayers</GreenH4>
-                        </PaddedView>
-                      }
-                      ListEmptyComponent={() => (
-                        <PaddedView>
-                          <BodyText>
-                            You have not submitted any prayers. Go back and add
-                            one!
-                          </BodyText>
-                        </PaddedView>
-                      )}
-                      renderItem={({ item }) => (
-                        <View>
-                          <Card key={item.id} isLoading={loading}>
-                            <CardContent>
-                              <PrayerSingle
-                                prayer={item}
-                                showDate
-                                isLoading={loading}
-                                action={
-                                  <ActionComponent
-                                    component={<DeleteIcon />}
-                                    options={[
-                                      {
-                                        title: 'Delete Prayer',
-                                        method: async () => {
-                                          await deletePrayer({
-                                            variables: {
-                                              parsedId: item.id,
-                                            },
-                                          });
-                                        },
-                                        destructive: true,
+              <Mutation
+                mutation={DELETE_PRAYER}
+                update={(cache, { data: { deletePrayer } }) => {
+                  const { prayerFeed } = cache.readQuery({
+                    query: GET_PRAYER_FEED,
+                    variables: { type: 'USER', first: 10, after: null },
+                  });
+                  const { id } = deletePrayer;
+                  const oldPrayers = prayerFeed.edges((edge) => edge.node);
+                  const newPrayers = oldPrayers.filter(
+                    (prayer) => prayer.id !== id
+                  );
+                  const { endCursor } = newPrayers[
+                    newPrayers.length - 1
+                  ].pageInfo;
+                  cache.writeQuery({
+                    query: GET_PRAYER_FEED,
+                    variables: { type: 'USER', first: 10, after: null },
+                    data: {
+                      prayerFeed: { pageInfo: endCursor, edges: newPrayers },
+                    },
+                  });
+                }}
+              >
+                {(deletePrayer) => (
+                  <FeedView
+                    content={get(data, 'prayerFeed.edges', []).map(
+                      (edge) => edge.node
+                    )}
+                    fetchMore={fetchMoreResolver({
+                      collectionName: 'prayerFeed',
+                      fetchMore,
+                      variables,
+                      data,
+                    })}
+                    isLoading={loading}
+                    error={error}
+                    refetch={refetch}
+                    ListHeaderComponent={
+                      <PaddedView>
+                        <H6>Viewing</H6>
+                        <GreenH4>My Prayers</GreenH4>
+                      </PaddedView>
+                    }
+                    ListEmptyComponent={() => (
+                      <PaddedView>
+                        <BodyText>
+                          You have not submitted any prayers. Go back and add
+                          one!
+                        </BodyText>
+                      </PaddedView>
+                    )}
+                    renderItem={({ item }) => (
+                      <View>
+                        <Card key={item.id} isLoading={loading}>
+                          <CardContent>
+                            <PrayerSingle
+                              prayer={item}
+                              showDate
+                              isLoading={loading}
+                              action={
+                                <ActionComponent
+                                  component={<DeleteIcon />}
+                                  options={[
+                                    {
+                                      title: 'Delete Prayer',
+                                      method: async () => {
+                                        await deletePrayer({
+                                          variables: {
+                                            parsedId: item.id,
+                                          },
+                                        });
                                       },
-                                      {
-                                        title: 'Cancel',
-                                        method: null,
-                                        destructive: false,
-                                      },
-                                    ]}
-                                  />
-                                }
-                              />
-                            </CardContent>
-                          </Card>
-                        </View>
-                      )}
-                    />
-                  )}
-                </Mutation>
-              </>
+                                      destructive: true,
+                                    },
+                                    {
+                                      title: 'Cancel',
+                                      method: null,
+                                      destructive: false,
+                                    },
+                                  ]}
+                                />
+                              }
+                            />
+                          </CardContent>
+                        </Card>
+                      </View>
+                    )}
+                  />
+                )}
+              </Mutation>
             )}
           </Query>
         </FlexedSafeAreaView>

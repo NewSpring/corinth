@@ -4,7 +4,7 @@ import { Mutation } from 'react-apollo';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import SAVE_PRAYER from '../data/mutations/savePrayer';
 import UNSAVE_PRAYER from '../data/mutations/unSavePrayer';
-import GET_PRAYERS from '../data/queries/getPrayers';
+import GET_PRAYER_COUNT from '../data/queries/getPrayerCount';
 import SaveButton from './SaveButton';
 
 const SaveButtonConnected = memo(({ prayerID, saved, toggleSavedState }) => (
@@ -22,14 +22,20 @@ const SaveButtonConnected = memo(({ prayerID, saved, toggleSavedState }) => (
                     unSave({
                       variables: { nodeId: prayerID },
                       refetchQueries: [
-                        { query: GET_PRAYERS, variables: { type: 'SAVED' } },
+                        {
+                          query: GET_PRAYER_COUNT,
+                          variables: { type: 'SAVED' },
+                        },
                       ],
                     });
                   else
                     save({
                       variables: { nodeId: prayerID },
                       refetchQueries: [
-                        { query: GET_PRAYERS, variables: { type: 'SAVED' } },
+                        {
+                          query: GET_PRAYER_COUNT,
+                          variables: { type: 'SAVED' },
+                        },
                       ],
                     });
                   track({

@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import prayerFragment from '../fragments/prayerFragment';
 
 export default gql`
   query PrayerFeed($type: PrayerType, $first: Int, $after: String) {
@@ -9,27 +10,10 @@ export default gql`
       edges {
         cursor
         node {
-          __typename
-          id
-          isAnonymous
-          isSaved
-          text
-          flagCount
-          startTime
-          requestor {
-            photo {
-              uri
-            }
-            firstName
-            nickName
-            lastName
-            campus {
-              id
-              name
-            }
-          }
+          ...prayerFragment
         }
       }
     }
   }
+  ${prayerFragment}
 `;
