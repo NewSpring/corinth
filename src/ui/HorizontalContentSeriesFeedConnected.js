@@ -11,33 +11,52 @@ import {
   H5,
 } from '@apollosproject/ui-kit';
 
-import { HorizontalContentCardConnected } from '@apollosproject/ui-connected';
-
-import GET_HORIZONTAL_CONTENT from './getHorizontalContent';
+import {
+  HorizontalContentCardConnected,
+  GET_CONTENT_SERIES,
+} from '@apollosproject/ui-connected';
 
 const loadingStateObject = {
   node: {
     id: 'fakeId0',
     title: '',
+    coverImage: '',
     isLoading: true,
+    parentChannel: {
+      name: '',
+    },
+    // We need to assume a typename so HorizontalContentCardConnected knows what "type" to render
+    __typename: 'MediaContentItem',
   },
 };
 
-class HorizontalContentFeed extends Component {
+class HorizontalContentSeriesFeedConnected extends Component {
   static propTypes = {
+    // eslint-disable-next-line react/no-unused-prop-types
+    Component: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.func,
+      PropTypes.object, // type check for React fragments
+    ]),
     contentId: PropTypes.string,
     navigation: PropTypes.shape({
       push: PropTypes.func,
     }),
+    renderItem: PropTypes.func,
+  };
+
+  static defaultProps = {
+    Component: HorizontalTileFeed,
   };
 
   renderItem = ({ item }) => {
-    const itemId = get(item, 'id', '');
     const disabled = get(item, 'id', '') === this.props.contentId;
+    const isLoading = get(item.node, 'isLoading');
+
     return (
       <TouchableScale
         onPress={() => this.handleOnPressItem(item)}
-        disabled={disabled}
+        disabled={isLoading || disabled}
       >
         <HorizontalContentCardConnected
           Component={({ coverImage, ...props }) => {
@@ -62,9 +81,11 @@ class HorizontalContentFeed extends Component {
                 );
             }
           }}
-          contentId={itemId}
-          disabled={disabled}
           labelText={''}
+          contentId={get(item, 'id', '')}
+          disabled={disabled}
+          isLoading={isLoading}
+          __typename={get(item, '__typename')}
         />
       </TouchableScale>
     );
@@ -91,15 +112,17 @@ class HorizontalContentFeed extends Component {
       ({ id }) => id === this.props.contentId
     );
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
+
     return content && content.length ? (
       <PaddedView horizontal={false}>
         <PaddedView vertical={false}>
           <H5>In this series</H5>
         </PaddedView>
-        <HorizontalTileFeed
+        <this.props.Component
+          isLoading={loading}
           content={content}
           loadingStateObject={loadingStateObject}
-          renderItem={this.renderItem}
+          renderItem={this.props.renderItem || this.renderItem}
           initialScrollIndex={initialScrollIndex}
           getItemLayout={(itemData, index) => ({
             // We need to pass this function so that initialScrollIndex will work.
@@ -109,7 +132,7 @@ class HorizontalContentFeed extends Component {
           })}
           onEndReached={() =>
             fetchMore({
-              query: GET_HORIZONTAL_CONTENT,
+              query: GET_CONTENT_SERIES,
               variables: { cursor, itemId: this.props.contentId },
               updateQuery: (previousResult, { fetchMoreResult }) => {
                 const connection = isParent
@@ -140,7 +163,7 @@ class HorizontalContentFeed extends Component {
 
     return (
       <Query
-        query={GET_HORIZONTAL_CONTENT}
+        query={GET_CONTENT_SERIES}
         variables={{ itemId: this.props.contentId }}
       >
         {this.renderFeed}
@@ -149,4 +172,4 @@ class HorizontalContentFeed extends Component {
   }
 }
 
-export default withNavigation(HorizontalContentFeed);
+export default withNavigation(HorizontalContentSeriesFeedConnected);

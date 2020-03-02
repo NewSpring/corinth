@@ -7,7 +7,7 @@ import { getVersion, getApplicationName } from 'react-native-device-info';
 
 import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
 import { resolvers, schema, defaults } from '../store';
-import { bugsnagLink } from '../bugsnag';
+import { bugsnagLink, setUser } from '../bugsnag';
 
 import NavigationService from '../NavigationService';
 import httpLink from './httpLink';
@@ -68,6 +68,7 @@ class ClientProvider extends PureComponent {
       throw e;
     } finally {
       client.mutate({ mutation: MARK_CACHE_LOADED });
+      setUser(client);
     }
   }
 

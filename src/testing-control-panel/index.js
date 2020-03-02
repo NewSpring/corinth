@@ -28,13 +28,24 @@ export default class TestingControlPanel extends PureComponent {
         </UserWebBrowserConsumer>
         <RockAuthedWebBrowser>
           {(openUrl) => (
-            <TouchableCell
-              handlePress={() =>
-                openUrl('https://rock.newspring.cc', {}, { useRockToken: true })
-              }
-              iconName="share"
-              cellText={`Open InAppBrowser With Rock Token`}
-            />
+            <>
+              <TouchableCell
+                handlePress={() =>
+                  openUrl(
+                    'https://rock.newspring.cc',
+                    {},
+                    { useRockToken: true }
+                  )
+                }
+                iconName="share"
+                cellText={`Open InAppBrowser With Rock Token`}
+              />
+              <TouchableCell
+                handlePress={() => openUrl('mailto:fake@apollosproject.com')}
+                iconName="share"
+                cellText={`Open Email link`}
+              />
+            </>
           )}
         </RockAuthedWebBrowser>
         <TouchableCell

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
-import getUserProfile from '../../../tabs/connect/getUserProfile';
+import getUserProfile from '../../../tabs/connect/UserAvatarHeader/getUserProfile';
 import GET_PRAYER_COUNT from '../../data/queries/getPrayerCount';
 import ADD_PRAYER from '../../data/mutations/addPrayer';
 import AddPrayerForm from './AddPrayerForm';
