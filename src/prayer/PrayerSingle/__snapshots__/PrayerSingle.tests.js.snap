@@ -15,8 +15,7 @@ exports[`the PrayerSingle component renders a prayer card 1`] = `
   <View
     style={
       Object {
-        "paddingHorizontal": 16,
-        "paddingVertical": 16,
+        "paddingRight": 16,
       }
     }
   >
