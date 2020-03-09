@@ -12,9 +12,9 @@ import {
   ThemeConsumer,
   H2,
 } from '@apollosproject/ui-kit';
-import MediaControls from '../MediaControls';
-import HTMLContent from '../HTMLContent';
-import HorizontalContentFeed from '../HorizontalContentFeed';
+import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
+import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
+import MediaControls from '../../ui/MediaControls';
 
 const FlexedScrollView = styled({ flex: 1 })(ScrollView);
 
@@ -59,10 +59,12 @@ const ContentSeriesContentItem = ({ content, loading }) => {
                         <H2 padded isLoading={!content.title && loading}>
                           {content.title}
                         </H2>
-                        <HTMLContent contentId={content.id} />
+                        <ContentHTMLViewConnected contentId={content.id} />
                       </PaddedView>
 
-                      <HorizontalContentFeed contentId={content.id} />
+                      <HorizontalContentSeriesFeedConnected
+                        contentId={content.id}
+                      />
                     </ThemeMixin>
                   </Content>
                 </FlexedScrollView>

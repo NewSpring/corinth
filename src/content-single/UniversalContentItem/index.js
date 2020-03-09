@@ -10,12 +10,17 @@ import {
   H2,
   StretchyView,
 } from '@apollosproject/ui-kit';
-import MediaControls from '../MediaControls';
-import HTMLContent from '../HTMLContent';
-import HorizontalContentFeed from '../HorizontalContentFeed';
+
 import Features from '../Features';
+import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
+import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
+import MediaControls from '../../ui/MediaControls';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
+
+const StyledMediaControls = styled(({ theme }) => ({
+  marginTop: -(theme.sizing.baseUnit * 2.5),
+}))(MediaControls);
 
 const UniversalContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
@@ -32,16 +37,16 @@ const UniversalContentItem = ({ content, loading }) => {
                 />
               </Stretchy>
             ) : null}
-            <MediaControls contentId={content.id} />
+            <StyledMediaControls contentId={content.id} />
             {/* fixes text/navigation spacing by adding vertical padding if we dont have an image */}
             <PaddedView vertical={!coverImageSources.length}>
               <H2 padded isLoading={!content.title && loading}>
                 {content.title}
               </H2>
-              <HTMLContent contentId={content.id} />
+              <ContentHTMLViewConnected contentId={content.id} />
             </PaddedView>
             <Features contentId={content.id} />
-            <HorizontalContentFeed contentId={content.id} />
+            <HorizontalContentSeriesFeedConnected contentId={content.id} />
           </FlexedScrollView>
         )}
       </StretchyView>

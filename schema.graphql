@@ -1,3 +1,5 @@
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
+
 enum ACTION_FEATURE_ACTION {
   READ_CONTENT
   READ_EVENT
@@ -100,8 +102,8 @@ type Campus implements Node {
 }
 
 input CampusLocationInput {
-  latitude: Float!
-  longitude: Float!
+  latitude: Float
+  longitude: Float
 }
 
 """A rgb color string"""
@@ -462,7 +464,7 @@ type Query {
   campuses(location: CampusLocationInput): [Campus]
   userFeedFeatures: [Feature]
   forgotPasswordURL: String
-  prayers(type: PrayerType): [Prayer]
+  prayers(type: PrayerType): [Prayer] @deprecated(reason: "Use paginated version: prayerFeed")
   prayerFeed(first: Int, after: String, type: PrayerType): PrayersConnection
   prayerMenuCategories: [PrayerMenuCategory]
   campusPrayers: [Prayer] @deprecated(reason: "Use prayers(type:SAVED)")

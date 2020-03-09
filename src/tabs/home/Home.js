@@ -118,6 +118,7 @@ class Home extends PureComponent {
                                 Component={BrandedCard}
                                 contentId={featuredItem.id}
                                 isLoading={isFeaturedLoading}
+                                campaign
                                 labelText={
                                   featuredItem.parentChannel &&
                                   featuredItem.parentChannel.name

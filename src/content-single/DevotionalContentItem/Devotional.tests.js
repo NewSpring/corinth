@@ -1,8 +1,9 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+
 import Providers from '../../Providers';
 import { renderWithApolloData } from '../../utils/testUtils';
-import GET_CONTENT_ITEM_CONTENT from '../HTMLContent/getContentItemContent';
+import GET_CONTENT_ITEM_CONTENT from '../../ui/getContentItemContent';
 import GET_SCRIPTURE from './getScripture';
 import Devotional from '.';
 
@@ -61,9 +62,13 @@ const mocks = [contentScriptureMock, contentHTMLMock];
 
 describe('the Devotional component', () => {
   it('renders a devotional', async () => {
+    /* eslint-disable */
     const DevotionalStack = createStackNavigator({
-      Devotional: () => <Devotional id="1" content={{ title: 'Title' }} />, //eslint-disable-line
+      Devotional: (props) => (
+        <Devotional id="1" content={{ title: 'Title' }} {...props} />
+      ),
     });
+    /* eslint-enable */
     const DevotionalWithNavigation = createAppContainer(DevotionalStack);
     const tree = await renderWithApolloData(
       <Providers mocks={mocks}>

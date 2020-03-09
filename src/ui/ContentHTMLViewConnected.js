@@ -5,13 +5,10 @@ import InAppBrowser from 'react-native-inappbrowser-reborn';
 
 import HTMLView, { defaultRenderer } from '@apollosproject/ui-htmlview';
 import { ErrorCard } from '@apollosproject/ui-kit';
-
-import bugsnag from '../../bugsnag';
+import bugsnag from '../bugsnag';
 import GET_CONTENT_ITEM_CONTENT from './getContentItemContent';
 
-function handlePressAnchor(url) {
-  return InAppBrowser.open(url);
-}
+const handleOnPressAnchor = (url) => InAppBrowser.open(url);
 
 const isLocalImg = (src) => src.startsWith('/');
 
@@ -19,22 +16,20 @@ const customRenderer = (contentId) => (node, ...otherArgs) => {
   if (node.name === 'img' && isLocalImg(node.attribs.src)) {
     bugsnag.notify(new Error(`Bad image URL`), (report) => {
       // eslint-disable-next-line
-      report.metaData = {
-        metaData: { url: node.attribs.src, contentId },
-        severity: 'warning',
-      };
+      report.metadata = { content: { url: node.attribs.src, contentId } };
     });
     return null;
   }
   return defaultRenderer(node, ...otherArgs);
 };
+
 const CustomHTMLView = (props) => (
   <HTMLView renderer={customRenderer(props.contentId)} {...props} />
 );
 
 CustomHTMLView.propTypes = { contentId: PropTypes.string };
 
-const HTMLContent = ({ contentId }) => {
+const ContentHTMLViewConnected = ({ Component, contentId }) => {
   if (!contentId) return <HTMLView isLoading />;
 
   return (
@@ -50,21 +45,30 @@ const HTMLContent = ({ contentId }) => {
       }) => {
         if (!htmlContent && error) return <ErrorCard error={error} />;
         return (
-          <CustomHTMLView
+          <Component
             contentId={id}
             isLoading={!htmlContent && !summary && loading}
-            onPressAnchor={handlePressAnchor}
+            onPressAnchor={handleOnPressAnchor}
           >
             {htmlContent || summary}
-          </CustomHTMLView>
+          </Component>
         );
       }}
     </Query>
   );
 };
 
-HTMLContent.propTypes = {
-  contentId: PropTypes.string,
+ContentHTMLViewConnected.propTypes = {
+  contentId: PropTypes.string.isRequired,
+  Component: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func,
+    PropTypes.object, // type check for React fragments
+  ]),
 };
 
-export default HTMLContent;
+ContentHTMLViewConnected.defaultProps = {
+  Component: CustomHTMLView,
+};
+
+export default ContentHTMLViewConnected;
