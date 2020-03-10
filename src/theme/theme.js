@@ -119,4 +119,3 @@ export default {
   buttons,
   overrides,
 };
->>>>>>> theirs
