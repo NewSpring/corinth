@@ -11,13 +11,13 @@ PODS:
     - AppCenter/Crashes
     - AppCenterReactNativeShared
     - React
-  - AppCenter/Analytics (2.5.3):
+  - AppCenter/Analytics (3.0.0):
     - AppCenter/Core
-  - AppCenter/Core (2.5.3)
-  - AppCenter/Crashes (2.5.3):
+  - AppCenter/Core (3.0.0)
+  - AppCenter/Crashes (3.0.0):
     - AppCenter/Core
-  - AppCenterReactNativeShared (2.6.1):
-    - AppCenter/Core (= 2.5.3)
+  - AppCenterReactNativeShared (3.0.0):
+    - AppCenter/Core (= 3.0.0)
   - boost-for-react-native (1.63.0)
   - BugsnagReactNative (2.23.5):
     - BugsnagReactNative/Core (= 2.23.5)
@@ -330,11 +330,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Amplitude-iOS: df355e2be58972041acde9576a2ae97c217bf941
-  AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
+  AppCenter: 7a0bbe928d07467ac8b2d7f6f2a675872a6471d8
   appcenter: f2e241f931e0865a74b3af3928066a1190814be0
   appcenter-analytics: 42e368870a904af67fd93f043f3efa75ffa772a2
   appcenter-crashes: bfc5c03a6ddcfa158fcf4217d1724fd52f45d12c
-  AppCenterReactNativeShared: d90c7165b03171aff31ecbe1424a04b34f64d609
+  AppCenterReactNativeShared: 48a905fe90071696748e3def60199546167cdb86
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BugsnagReactNative: 249cb5d0620321c93f5f4cf1ca9fdd0a2f10415b
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
