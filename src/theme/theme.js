@@ -101,10 +101,10 @@ const typography = {
  * }
  * ```
  */
- const overrides = {
-   ...styleOverrides,
-   ...propOverrides,
- };
+const overrides = {
+  ...styleOverrides,
+  ...propOverrides,
+};
 
 export const buttons = ({ colors: themeColors, alpha: themeAlpha }) => ({
   darkOverlay: {
