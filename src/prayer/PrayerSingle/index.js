@@ -17,9 +17,9 @@ const GreyH5 = styled(({ theme }) => ({
   marginBottom: theme.sizing.baseUnit * 0.5,
 }))(H5);
 
-const PrayerText = styled(({ theme }) => ({
-  marginVertical: theme.sizing.baseUnit,
-}))(BodyText);
+const PrayerView = styled(({ theme }) => ({
+  paddingRight: theme.sizing.baseUnit,
+}))(View);
 
 const AbsolutePositionedView = styled(() => ({
   position: 'absolute',
@@ -57,7 +57,9 @@ const PrayerSingle = memo(
           source={prayer.campus.name !== 'Web' ? prayer.campus.name : null}
         />
       ) : null}
-      <PrayerText>{prayer.text}</PrayerText>
+      <PrayerView>
+        <BodyText>{prayer.text}</BodyText>
+      </PrayerView>
       {showHelp ? (
         <AnalyticsConsumer>
           {({ track }) => (
