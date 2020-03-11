@@ -52,12 +52,14 @@ class ExternalLinkProvider extends Component {
 
   _handleOpenURL = async (rawUrl) => {
     const urlArray = rawUrl.url.split(/[\s/]+/);
-    const urlSlug = urlArray[urlArray.length - 1];
+    const path = urlArray[urlArray.length - 1];
+    const slug = path.split('?')[0];
+
     const {
       data: { contentItemFromSlug } = {},
     } = await this.props.client.query({
       query: GET_CONTENT_ITEM_BY_SLUG,
-      variables: { slug: urlSlug },
+      variables: { slug },
     });
     if (contentItemFromSlug) {
       const newUrl = `newspringchurchapp://AppStackNavigator/ContentSingle?itemId=${
