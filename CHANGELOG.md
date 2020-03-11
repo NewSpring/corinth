@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.5.17](https://github.com/newspring/corinth/compare/v7.5.16...v7.5.17) (2020-03-09)
+
+
+### Bug Fixes
+
+* Fixes Android Icon ([#48](https://github.com/newspring/corinth/issues/48)) ([acb3e9f](https://github.com/newspring/corinth/commit/acb3e9f))
+* Fixes Campaign Loading State ([#49](https://github.com/newspring/corinth/issues/49)) ([071078b](https://github.com/newspring/corinth/commit/071078b))
+* Fixes Group Leader Link ([#54](https://github.com/newspring/corinth/issues/54)) ([c0ebc10](https://github.com/newspring/corinth/commit/c0ebc10))
+* Fixes Links from mass emails ([#69](https://github.com/newspring/corinth/issues/69)) ([3376510](https://github.com/newspring/corinth/commit/3376510))
+* Fixes Videos...Again ([#51](https://github.com/newspring/corinth/issues/51)) ([6ab762d](https://github.com/newspring/corinth/commit/6ab762d))
+* Upgrades to Apollos 1.3.0-beta.2 ([#37](https://github.com/newspring/corinth/issues/37)) ([f19a338](https://github.com/newspring/corinth/commit/f19a338)), closes [#42](https://github.com/newspring/corinth/issues/42)
+
+
+
 ## [7.5.16](https://github.com/newspring/corinth/compare/v7.5.15...v7.5.16) (2020-02-04)
 
 
