@@ -69,20 +69,9 @@ exports[`EventConnected component renders without errors 1`] = `
           >
             <Image
               onLoad={[Function]}
-              source={
-                Array [
-                  Object {
-                    "__typename": "ImageMediaSource",
-                    "cache": "force-cache",
-                    "height": 240,
-                    "uri": "https://url.com/image.jpg",
-                    "width": 320,
-                  },
-                ]
-              }
+              source={Array []}
               style={
                 Object {
-                  "aspectRatio": 1.3333333333333333,
                   "backgroundColor": "#dddddd",
                   "opacity": 0,
                   "resizeMode": "cover",
