@@ -22,7 +22,6 @@
     "test": "TZ=UTC jest --forceExit",
     "postinstall": "jetify",
     "pods": "./scripts/install_pods.sh",
-    "icons": "node ./scripts/generate-icons.js",
     "get-schema": "eval $(grep ^APP_DATA_URL .env) && get-graphql-schema $APP_DATA_URL > schema.graphql"
   },
   "jest": {
