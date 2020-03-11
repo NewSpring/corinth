@@ -43,6 +43,19 @@
       "./jest.setup.js"
     ]
   },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/newspringchurchapp.app",
+        "build": "xcodebuild -workspace ios/newspringchurchapp.xcworkspace -scheme newspringchurchapp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "device": {
+          "type": "iPhone 11"
+        }
+      }
+    },
+    "test-runner": "jest"
+  },
   "standard-version": {
     "scripts": {
       "postbump": "yarn postversion && git add . && git commit -m 'chore(release): Update native files'",
@@ -144,11 +157,13 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "buffer": "^5.4.3",
     "codecov": "3.0.2",
+    "detox": "^15.4.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-import-resolver-babel-module": "^5.0.0-beta.0",
     "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-detox": "^1.0.0",
     "eslint-plugin-import": "^2.12.2",
     "eslint-plugin-jest": "^21.15.2",
     "eslint-plugin-jsx-a11y": "^6.0.3",
