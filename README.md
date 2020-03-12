@@ -4,6 +4,21 @@
 
 ## Development
 
+Install tools necessary
+
+- XCode
+- Android Studio
+- Cocoapods
+- Yarn
+
+Set environment variables
+
+```
+# .env file
+APP_DATA_URL=https://someapiurl.com
+AMPLITUDE_API_KEY=doesntmatter
+```
+
 Install node modules, install cocoapods, start the bundler
 
 ```
