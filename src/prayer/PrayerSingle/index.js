@@ -18,6 +18,7 @@ const GreyH5 = styled(({ theme }) => ({
 }))(H5);
 
 const PrayerView = styled(({ theme }) => ({
+  marginVertical: theme.sizing.baseUnit,
   paddingRight: theme.sizing.baseUnit,
 }))(View);
 
