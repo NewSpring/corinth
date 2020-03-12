@@ -1,3 +1,28 @@
 # NewSpring Mobile App
 
-[![codecov](https://codecov.io/gh/NewSpring/corinth/branch/develop/graph/badge.svg)](https://codecov.io/gh/NewSpring/corinth) [![Build status](https://build.appcenter.ms/v0.1/apps/83e7bd98-b6e4-4834-802b-7a95900198c3/branches/develop/badge)](https://appcenter.ms) [![Build status](https://build.appcenter.ms/v0.1/apps/689d36b3-0ee1-4cd6-8e43-5997a53a7240/branches/develop/badge)](https://appcenter.ms)
+[![codecov](https://codecov.io/gh/NewSpring/corinth/branch/develop/graph/badge.svg)](https://codecov.io/gh/NewSpring/corinth)
+
+## Development
+
+Install node modules, install cocoapods, start the bundler
+
+```
+yarn restart
+```
+
+Start the sims *in separate tabs*
+
+```
+yarn ios
+yarn android
+```
+
+## Release
+
+Run these commands to bump the version numbers and post a Github release.
+
+```
+yarn standard-version
+git push --follow-tags
+yarn gh-release --yes
+```
