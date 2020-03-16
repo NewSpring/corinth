@@ -39,6 +39,7 @@ class Connect extends PureComponent {
               Component={({ ...props }) => (
                 <HorizontalLikedContentFeed
                   // TODO this isn't supported on core yet...
+                  // https://github.com/ApollosProject/apollos-apps/pull/1391
                   Component={() => (
                     <HorizontalContentCardConnected labelText={''} />
                   )}
