@@ -10,7 +10,6 @@ import {
   UIText,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
-import Analytics from 'appcenter-analytics';
 import {
   RockAuthedWebBrowser,
   LiveConsumer,
@@ -36,7 +35,6 @@ const LiveNowButton = ({ contentId }) => (
                       { useRockToken: true }
                     );
                     track({ eventName: 'Clicked Live Bar' });
-                    Analytics.trackEvent('Clicked Live Bar');
                   }}
                 >
                   <LiveCard>

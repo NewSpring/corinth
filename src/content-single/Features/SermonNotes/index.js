@@ -13,7 +13,6 @@ import {
   BodyText,
 } from '@apollosproject/ui-kit';
 import { LegalText } from '@apollosproject/ui-scripture';
-import Analytics from 'appcenter-analytics';
 // TODO: use the one from core once it makes it in a release
 // import {share} from '@apollosproject/ui-connected';
 import { Platform, Share } from 'react-native';
@@ -157,7 +156,6 @@ const SermonNotes = ({ contentItem, features }) => {
                   (match, p1) => (p1 === '' ? p1 : `${p1}\n\n`)
                 );
                 share({ message });
-                Analytics.trackEvent('Exported Sermon Notes', { title });
                 track({
                   eventName: 'Exported Sermon Notes',
                   properties: { title },

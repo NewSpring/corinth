@@ -5,7 +5,6 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import SplashScreen from 'react-native-splash-screen';
-import Analytics from 'appcenter-analytics';
 
 import { BackgroundView, withTheme } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
@@ -135,7 +134,6 @@ const App = () => (
                 track({
                   eventName: `Viewed ${currentScreen}`,
                 });
-                Analytics.trackEvent(`Viewed ${currentScreen}`);
               }
             }}
           />
