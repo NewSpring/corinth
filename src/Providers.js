@@ -10,7 +10,7 @@ import { LiveProvider } from '@apollosproject/ui-connected';
 import NavigationService from './NavigationService';
 import ClientProvider from './client';
 import ExternalLinkProvider from './linking/Provider';
-import { track } from './analytics';
+import track from './analytics';
 import customTheme, { customIcons } from './theme';
 
 const AppProviders = (props) => (
