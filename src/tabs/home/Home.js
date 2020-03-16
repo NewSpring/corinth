@@ -15,6 +15,9 @@ import {
   BackgroundView,
   TouchableScale,
   DefaultCard,
+  FeaturedCard,
+  withTheme,
+  CardLabel,
 } from '@apollosproject/ui-kit';
 
 import BrandedCard from '../../ui/BrandedCard';
@@ -30,6 +33,21 @@ const LogoTitle = styled(({ theme }) => ({
   alignSelf: 'center',
   resizeMode: 'contain',
 }))(Image);
+
+const CampaignLabel = withTheme(({ isLive, title, theme }) => ({
+  title: isLive ? 'Live' : title,
+  style: {
+    marginBottom: theme.sizing.baseUnit,
+  },
+}))(CardLabel);
+
+const CampaignCard = ({ isLive, hasAction, summary, ...props }) => (
+  <FeaturedCard
+    {...props}
+    hasAction={isLive ? false : hasAction}
+    summary={isLive ? 'Tap for sermon notes and more' : summary}
+  />
+);
 
 class Home extends PureComponent {
   static navigationOptions = () => ({
@@ -115,16 +133,20 @@ class Home extends PureComponent {
                               }
                             >
                               <ContentCardConnected
-                                Component={BrandedCard}
+                                Component={CampaignCard}
                                 contentId={featuredItem.id}
                                 isLoading={isFeaturedLoading}
-                                campaign
-                                labelText={
-                                  featuredItem.parentChannel &&
-                                  featuredItem.parentChannel.name
-                                    .split(' - ')
-                                    .pop()
+                                LabelComponent={
+                                  <CampaignLabel
+                                    title={
+                                      featuredItem.parentChannel &&
+                                      featuredItem.parentChannel.name
+                                        .split(' - ')
+                                        .pop()
+                                    }
+                                  />
                                 }
+                                // LabelComponent={<CardLabel title="text" />}
                               />
                             </TouchableScale>
                           </>
