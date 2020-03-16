@@ -6,12 +6,10 @@ import PropTypes from 'prop-types';
 
 import {
   HorizontalLikedContentFeedConnected,
+  HorizontalLikedContentFeed,
   HorizontalContentCardConnected,
 } from '@apollosproject/ui-connected';
-import {
-  BackgroundView,
-  HorizontalLikedContentFeed,
-} from '@apollosproject/ui-kit';
+import { BackgroundView } from '@apollosproject/ui-kit';
 // import HorizontalLikedContentFeedConnected from '../../ui/HorizontalLikedContentFeedConnected';
 import ActionTable from './ActionTable';
 import ActionBar from './ActionBar';
@@ -38,7 +36,15 @@ class Connect extends PureComponent {
             <UserAvatarHeader />
             <ActionBar />
             <HorizontalLikedContentFeedConnected
-              Component={() => <HorizontalLikedContentFeed />}
+              Component={({ ...props }) => (
+                <HorizontalLikedContentFeed
+                  // TODO this isn't supported on core yet...
+                  Component={() => (
+                    <HorizontalContentCardConnected labelText={''} />
+                  )}
+                  {...props}
+                />
+              )}
             />
             <Query query={GET_USER_PROFILE}>
               {({

@@ -7,7 +7,10 @@ import PropTypes from 'prop-types';
 
 import { DefaultCard, FeedView, TouchableScale } from '@apollosproject/ui-kit';
 
-import { ContentCardConnected } from '@apollosproject/ui-connected';
+import {
+  ContentCardConnected,
+  SearchCardConnected,
+} from '@apollosproject/ui-connected';
 
 import BrandedCard from '../../../ui/BrandedCard';
 
@@ -48,31 +51,34 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
   >
     {({ loading, error, data, refetch }) => (
       <StyledFeedView
+        // TODO images aren't showing up here, probably core issue
+        ListItemComponent={SearchCardConnected}
         content={get(data, 'search.edges', [])}
         ListEmptyComponent={() => <NoResults searchText={searchText} />}
         hasContent={get(data, 'search.edges', []).length}
         isLoading={loading}
         error={error}
         refetch={refetch}
+        onPressItem={(item) => handleOnPress({ navigation, item })}
         keyExtractor={keyExtractor}
-        renderItem={({ item }) => (
-          <TouchableScale
-            onPress={() => {
-              handleOnPress({ navigation, item });
-            }}
-          >
-            <ContentCardConnected
-              Component={getComponent(item)}
-              contentId={item.isLoading ? null : get(item, 'node.id')}
-              labelText={
-                item.node &&
-                item.node.parentChannel &&
-                item.node.parentChannel.name.split(' - ').pop()
-              }
-              {...item}
-            />
-          </TouchableScale>
-        )}
+        // renderItem={({ item }) => (
+        // <TouchableScale
+        // onPress={() => {
+        // handleOnPress({ navigation, item });
+        // }}
+        // >
+        // <ContentCardConnected
+        // Component={getComponent(item)}
+        // contentId={item.isLoading ? null : get(item, 'node.id')}
+        // labelText={
+        // item.node &&
+        // item.node.parentChannel &&
+        // item.node.parentChannel.name.split(' - ').pop()
+        // }
+        // {...item}
+        // />
+        // </TouchableScale>
+        // )}
       />
     )}
   </Query>
