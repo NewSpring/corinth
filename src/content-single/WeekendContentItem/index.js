@@ -27,16 +27,16 @@ const Header = styled(({ hasMedia, theme }) => ({
   paddingTop: Dimensions.get('window').width * 0.5, // for some reason % based padding still is buggy
   alignItems: 'flex-start',
   paddingBottom: hasMedia ? theme.sizing.baseUnit : theme.sizing.baseUnit * 2,
-  // backgroundColor: theme.colors.primary,
 }))(PaddedView);
 
 const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
   ...(isLive
     ? {
         title: 'Live',
-        type: 'secondary',
         icon: 'live-dot',
         iconSize: theme.helpers.rem(0.4375), // using our typographic size unit based on fontSize so that the icon scales correctly with font size changes.
+        // TODO not supported yet
+        iconFill: 'red',
       }
     : {
         title,
