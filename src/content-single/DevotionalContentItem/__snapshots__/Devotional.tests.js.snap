@@ -401,6 +401,7 @@ exports[`the Devotional component renders a devotional 1`] = `
                                     style={
                                       Object {
                                         "color": "#6bac43",
+                                        "fontWeight": "600",
                                       }
                                     }
                                   >
