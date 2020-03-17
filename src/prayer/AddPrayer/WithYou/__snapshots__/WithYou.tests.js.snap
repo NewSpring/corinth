@@ -297,6 +297,7 @@ exports[`The WithYou component should render 1`] = `
           style={
             Object {
               "color": "#6bac43",
+              "fontWeight": "600",
             }
           }
         >

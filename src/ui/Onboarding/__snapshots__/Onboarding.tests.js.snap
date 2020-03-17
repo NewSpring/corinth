@@ -735,6 +735,7 @@ Array [
                 style={
                   Object {
                     "color": "#858585",
+                    "fontWeight": "600",
                     "marginLeft": -16,
                     "paddingHorizontal": 16,
                     "paddingVertical": 15,
