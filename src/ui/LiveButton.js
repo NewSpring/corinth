@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Mutation } from 'react-apollo';
 import {
   Card,
   CardContent,
@@ -10,10 +10,8 @@ import {
   UIText,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
-import {
-  RockAuthedWebBrowser,
-  LiveConsumer,
-} from '@apollosproject/ui-connected';
+import { PLAY_VIDEO } from '@apollosproject/ui-media-player';
+import { LiveConsumer } from '@apollosproject/ui-connected';
 
 const LiveCard = styled(({ theme }) => ({
   backgroundColor: theme.colors.lightSecondary,
@@ -25,15 +23,16 @@ const LiveNowButton = ({ contentId }) => (
       liveStream ? (
         <AnalyticsConsumer>
           {({ track }) => (
-            <RockAuthedWebBrowser>
-              {(openUrl) => (
+            <Mutation mutation={PLAY_VIDEO}>
+              {(play) => (
                 <TouchableScale
                   onPress={() => {
-                    openUrl(
-                      'https://live.newspring.cc/',
-                      {},
-                      { useRockToken: true }
-                    );
+                    play({
+                      variables: {
+                        mediaSource: liveStream.media.sources[0],
+                        isVideo: true,
+                      },
+                    });
                     track({ eventName: 'Clicked Live Bar' });
                   }}
                 >
@@ -52,7 +51,7 @@ const LiveNowButton = ({ contentId }) => (
                   </LiveCard>
                 </TouchableScale>
               )}
-            </RockAuthedWebBrowser>
+            </Mutation>
           )}
         </AnalyticsConsumer>
       ) : null
