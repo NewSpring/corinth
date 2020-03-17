@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import {
   ContentCardConnected,
   fetchMoreResolver,
+  LiveConsumer,
 } from '@apollosproject/ui-connected';
 import {
   styled,
@@ -36,6 +37,10 @@ const LogoTitle = styled(({ theme }) => ({
 
 const CampaignLabel = withTheme(({ isLive, title, theme }) => ({
   title: isLive ? 'Live' : title,
+  icon: isLive ? 'live-dot' : null,
+  iconSize: theme.helpers.rem(0.4375),
+  // TODO not supported yet
+  iconColor: 'red',
   style: {
     marginBottom: theme.sizing.baseUnit,
   },
@@ -90,6 +95,9 @@ class Home extends PureComponent {
           >
             {({ loading, error, data, refetch, fetchMore, variables }) => (
               <FeedView
+                ListItemComponent={({ ...props }) => (
+                  <ContentCardConnected labelText="hello" {...props} />
+                )}
                 content={get(data, 'userFeed.edges', []).map(
                   (edge) => edge.node
                 )}
@@ -137,16 +145,20 @@ class Home extends PureComponent {
                                 contentId={featuredItem.id}
                                 isLoading={isFeaturedLoading}
                                 LabelComponent={
-                                  <CampaignLabel
-                                    title={
-                                      featuredItem.parentChannel &&
-                                      featuredItem.parentChannel.name
-                                        .split(' - ')
-                                        .pop()
-                                    }
-                                  />
+                                  <LiveConsumer contentId={featuredItem.id}>
+                                    {(liveStream) => (
+                                      <CampaignLabel
+                                        title={
+                                          featuredItem.parentChannel &&
+                                          featuredItem.parentChannel.name
+                                            .split(' - ')
+                                            .pop()
+                                        }
+                                        isLive={!!liveStream}
+                                      />
+                                    )}
+                                  </LiveConsumer>
                                 }
-                                // LabelComponent={<CardLabel title="text" />}
                               />
                             </TouchableScale>
                           </>
@@ -157,21 +169,21 @@ class Home extends PureComponent {
                   </>
                 }
                 onPressItem={this.handleOnPress}
-                renderItem={({ item }) => (
-                  <TouchableScale
-                    onPress={() => this.handleOnPress({ id: item.id })}
-                  >
-                    <ContentCardConnected
-                      Component={this.getComponent(item)}
-                      contentId={item.id}
-                      isLoading={loading}
-                      labelText={
-                        item.parentChannel &&
-                        item.parentChannel.name.split(' - ').pop()
-                      }
-                    />
-                  </TouchableScale>
-                )}
+                // renderItem={({ item }) => (
+                // <TouchableScale
+                // onPress={() => this.handleOnPress({ id: item.id })}
+                // >
+                // <ContentCardConnected
+                // Component={this.getComponent(item)}
+                // contentId={item.id}
+                // isLoading={loading}
+                // labelText={
+                // item.parentChannel &&
+                // item.parentChannel.name.split(' - ').pop()
+                // }
+                // />
+                // </TouchableScale>
+                // )}
               />
             )}
           </Query>
