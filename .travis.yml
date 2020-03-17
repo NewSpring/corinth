@@ -18,5 +18,5 @@ jobs:
       script:
         - yarn lint
     - script:
-        - travis_wait yarn test
+        - travis_wait yarn test --forceExit
         - travis_wait yarn codecov
