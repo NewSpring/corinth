@@ -1,3 +1,5 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
 # Logs
 logs
 *.log
@@ -34,6 +36,9 @@ coverage
 # node-waf configuration
 .lock-wscript
 
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -43,6 +48,13 @@ typings/
 
 # Optional npm cache directory
 .npm
+
+# Optional terraform
+.terraform
+source-*.tar.gz
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
 
 # Optional eslint cache
 .eslintcache
@@ -58,8 +70,53 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.storybook
 
-# ios
+# next.js build output
+.next
+
+# xcode
+build/
+
+# storybook
+storyLoader.js
+*.xcworkspacedata
+
+# sublime text settings
+*.sublime-project
+*.sublime-workspace
+
+# compiled code
+
+**/lib
+
+.watchmanconfig
+
+# generated markdown docs
+packages/**/docs/generated/*
+
+# expo
+.expo/
+
+# dependencies
+/node_modules
+
+# storybook
+storyLoader.js
+
+# Android studio
+*.apk
+*.ap_
+build/
+.idea
+.gradle
+keystore.properties
+# TODO: rename apolloskeystoreupload
+apolloskeystoreupload.keystore
+local.properties
+*.iml
+
+# Xcode
 build/
 *.pbxuser
 !default.pbxuser
@@ -77,19 +134,12 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-ios/Pods/
 
-# storybook
-storyLoader.js
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-.watchmanconfig
-
-# android
-*.apk
-*.ap_
-build/
-.idea
-android/.gradle
-keystore.properties
-local.properties
-*.iml
+# CocoaPods
+/ios/Pods/
