@@ -80,7 +80,7 @@ const LiveNowButton = ({ contentId }) => (
       liveStream ? (
         <AnalyticsConsumer>
           {({ track }) =>
-            liveStream && get(liveStream, 'media.sources[0].uri')
+            get(liveStream, 'media.sources[0].uri')
               ? renderMedia(liveStream, track)
               : renderWebView(liveStream, track)
           }
