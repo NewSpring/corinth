@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Mutation } from 'react-apollo';
+import { get } from 'lodash';
 import {
   Card,
   CardContent,
@@ -78,11 +79,11 @@ const LiveNowButton = ({ contentId }) => (
     {(liveStream) =>
       liveStream ? (
         <AnalyticsConsumer>
-          {({ track }) => {
-            return liveStream
+          {({ track }) =>
+            liveStream && get(liveStream, 'media.sources[0].uri')
               ? renderMedia(liveStream, track)
-              : renderWebView(liveStream, track);
-          }}
+              : renderWebView(liveStream, track)
+          }
         </AnalyticsConsumer>
       ) : null
     }
