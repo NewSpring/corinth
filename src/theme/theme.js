@@ -113,6 +113,11 @@ export const buttons = ({ colors: themeColors, alpha: themeAlpha }) => ({
   },
 });
 
+export const overrides = {
+  'ui-kit.CardLabel': { borderWidth: 0 },
+  'Button.Link': { fontWeight: '600' },
+};
+
 export default {
   colors,
   typography,

@@ -17,6 +17,7 @@ Set environment variables
 # .env file
 APP_DATA_URL=https://apollos-ns-production-herokuapp-com.global.ssl.fastly.net
 AMPLITUDE_API_KEY=doesntmatter
+BUGSNAG_API_KEY=doesntmatter
 ```
 
 Install node modules, install cocoapods, start the bundler
