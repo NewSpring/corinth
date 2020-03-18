@@ -21,7 +21,7 @@ const LiveCard = styled(({ theme }) => ({
   backgroundColor: theme.colors.lightSecondary,
 }))(Card);
 
-const renderLiveButton = ({ action }) => (
+const renderLiveButton = (action) => (
   <TouchableScale onPress={action}>
     <LiveCard>
       <CardContent>
@@ -39,23 +39,17 @@ const renderLiveButton = ({ action }) => (
   </TouchableScale>
 );
 
-renderLiveButton.propTypes = {
-  action: PropTypes.func,
-};
-
 const renderMedia = (liveStream, track) => (
   <Mutation mutation={PLAY_VIDEO}>
     {(play) =>
-      renderLiveButton({
-        action: () => {
-          play({
-            variables: {
-              mediaSource: liveStream.media.sources[0],
-              isVideo: true,
-            },
-          });
-          track({ eventName: 'Clicked Live Bar' });
-        },
+      renderLiveButton(() => {
+        play({
+          variables: {
+            mediaSource: liveStream.media.sources[0],
+            isVideo: true,
+          },
+        });
+        track({ eventName: 'Clicked Live Bar' });
       })
     }
   </Mutation>
@@ -64,11 +58,9 @@ const renderMedia = (liveStream, track) => (
 const renderWebView = (liveStream, track) => (
   <RockAuthedWebBrowser>
     {(openUrl) =>
-      renderLiveButton({
-        action: () => {
-          openUrl(liveStream.webViewUrl);
-          track({ eventName: 'Clicked Live Bar' });
-        },
+      renderLiveButton(() => {
+        openUrl(liveStream.webViewUrl);
+        track({ eventName: 'Clicked Live Bar' });
       })
     }
   </RockAuthedWebBrowser>
