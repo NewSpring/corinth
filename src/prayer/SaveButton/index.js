@@ -10,13 +10,9 @@ import SaveButton from './SaveButton';
 
 const GetPrayerSaveState = ({ children, prayerID }) => (
   <Query query={GET_PRAYER_SAVE_STATE} variables={{ nodeId: prayerID }}>
-    {({
-      data: {
-        node: { isSaved },
-      },
-      loading,
-      error,
-    }) => children({ isSaved: loading || error ? false : isSaved })}
+    {({ data: { node: { isSaved } = { isSaved: false } }, loading, error }) =>
+      children({ isSaved: loading || error ? false : isSaved })
+    }
   </Query>
 );
 
