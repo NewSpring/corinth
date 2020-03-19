@@ -63,8 +63,6 @@ class PrayerList extends PureComponent {
   state = {
     prayerIndex: 0,
     prayed: false,
-    saved: false,
-    saveButtonTouched: false,
   };
 
   static navigationOptions = {
@@ -95,8 +93,6 @@ class PrayerList extends PureComponent {
                   ? this.setState((prevState) => ({
                       prayerIndex: prevState.prayerIndex + 1,
                       prayed: prayed ? false : prevState.prayed,
-                      saved: prayers[prevState.prayerIndex + 1].isSaved,
-                      saveButtonTouched: false,
                     }))
                   : this.props.navigation.popToTop();
 
@@ -118,24 +114,7 @@ class PrayerList extends PureComponent {
                                   avatarSize={'medium'}
                                   navigation={this.props.navigation}
                                   prayer={prayer}
-                                  action={
-                                    <SaveButton
-                                      toggleSavedState={() =>
-                                        this.setState((prevState) => ({
-                                          saved: prevState.saveButtonTouched
-                                            ? !prevState.saved
-                                            : !prayer.isSaved,
-                                          saveButtonTouched: true,
-                                        }))
-                                      }
-                                      saved={
-                                        this.state.saveButtonTouched
-                                          ? this.state.saved
-                                          : prayer.isSaved
-                                      }
-                                      prayerID={prayer.id}
-                                    />
-                                  }
+                                  action={<SaveButton prayerID={prayer.id} />}
                                   showHelp
                                   showHeader
                                 />
