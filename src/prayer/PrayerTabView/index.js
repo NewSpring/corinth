@@ -65,8 +65,8 @@ class PrayerTabView extends PureComponent {
             fetchPolicy="cache-and-network"
           >
             {({
-              data: { prayerFeed = { totalCount: 0 } } = {
-                prayerFeed: { totalCount: 0 },
+              data: {
+                prayerFeed: { totalCount },
               },
               loading: prayersLoading,
               error,
@@ -75,7 +75,7 @@ class PrayerTabView extends PureComponent {
               return (
                 <PrayerTab
                   loading={prayersLoading}
-                  hasPrayers={prayerFeed.totalCount > 0}
+                  hasPrayers={!prayersLoading && totalCount > 0}
                   description={category.description}
                   title={category.title}
                   type={category.key.split('-')[1]}
