@@ -212,17 +212,16 @@ exports[`the SaveButton component renders a saved SaveButton 1`] = `
   }
 >
   <View
-    bordered={false}
+    bordered={true}
     disabled={false}
     pill={true}
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#6bac43",
+        "backgroundColor": "transparent",
         "borderColor": "#6bac43",
         "borderRadius": 48,
         "borderWidth": 2,
-        "elevation": 2,
         "flexDirection": "row",
         "height": 48,
         "justifyContent": "center",
@@ -318,7 +317,7 @@ exports[`the SaveButton component renders a saved SaveButton 1`] = `
             fill={
               Array [
                 0,
-                4294967295,
+                4285246531,
               ]
             }
             fillOpacity={1}
@@ -371,13 +370,13 @@ exports[`the SaveButton component renders a saved SaveButton 1`] = `
         <Text
           style={
             Object {
-              "color": "#ffffff",
+              "color": "#6bac43",
               "fontFamily": "Colfax-Bold",
               "fontSize": 12,
               "lineHeight": 17.28,
             }
           }
-          tint="#ffffff"
+          tint="#6bac43"
         >
           Saved
         </Text>
