@@ -26,40 +26,33 @@ GetPrayerSaveState.propTypes = {
 };
 
 const handlePress = (prayerID, isSaved, save, unSave, track) => {
-  if (isSaved)
-    unSave({
-      variables: { nodeId: prayerID },
-      update: (cache) => {
-        cache.writeQuery({
-          query: GET_PRAYER_SAVE_STATE,
-          variables: { nodeId: prayerID },
-          data: { node: { __typename: 'Prayer', isSaved: false } },
-        });
-      },
-      refetchQueries: [
-        {
-          query: GET_PRAYER_COUNT,
-          variables: { type: 'SAVED' },
+  const getUpdateArgs = (saved) => ({
+    variables: { nodeId: prayerID },
+    update: async (cache) => {
+      const { node } = await cache.readQuery({
+        query: GET_PRAYER_SAVE_STATE,
+        variables: { nodeId: prayerID },
+      });
+      cache.writeQuery({
+        query: GET_PRAYER_SAVE_STATE,
+        variables: { nodeId: prayerID },
+        data: {
+          node: { __typename: 'Prayer', id: prayerID, isSaved: node.isSaved },
         },
-      ],
-    });
-  else
-    save({
-      variables: { nodeId: prayerID },
-      update: (cache) => {
-        cache.writeQuery({
-          query: GET_PRAYER_SAVE_STATE,
-          variables: { nodeId: prayerID },
-          data: { node: { __typename: 'Prayer', isSaved: true } },
-        });
+      });
+    },
+    optimisticResponse: {
+      unSavePrayer: { __typename: 'Prayer', id: prayerID, isSaved: saved },
+    },
+    refetchQueries: [
+      {
+        query: GET_PRAYER_COUNT,
+        variables: { type: 'SAVED' },
       },
-      refetchQueries: [
-        {
-          query: GET_PRAYER_COUNT,
-          variables: { type: 'SAVED' },
-        },
-      ],
-    });
+    ],
+  });
+  if (isSaved) unSave(getUpdateArgs(false));
+  else save(getUpdateArgs(true));
   track({
     eventName: isSaved ? 'Unsaved Prayer' : 'Saved Prayer',
   });
