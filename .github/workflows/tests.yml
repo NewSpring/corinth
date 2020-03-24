@@ -20,24 +20,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+      name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
 
     - name: Install Dependencies
-    - run: npm install
+      run: npm install
 
     - name: Lint
-    - run: npm run lint
+      run: npm run lint
 
     - name: Unit Tests
-    - run: npm run test
+      run: npm run test
 
     - name: Generate Codecov
-    - run: npm run codecov
+      run: npm run codecov
 
     - name: Upload to Codecov
-    - uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
