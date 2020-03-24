@@ -41,6 +41,17 @@ export default class TestingControlPanel extends PureComponent {
                 cellText={`Open InAppBrowser With Rock Token`}
               />
               <TouchableCell
+                handlePress={() =>
+                  openUrl(
+                    'https://apollosrock.newspring.cc',
+                    { externalBrowser: true },
+                    { useRockToken: true }
+                  )
+                }
+                iconName="share"
+                cellText={`Open Safari With Rock Token`}
+              />
+              <TouchableCell
                 handlePress={() => openUrl('mailto:fake@apollosproject.com')}
                 iconName="share"
                 cellText={`Open Email link`}

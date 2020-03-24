@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.5.20](https://github.com/newspring/corinth/compare/v7.5.19...v7.5.20) (2020-03-23)
+
+
+
+## [7.5.19](https://github.com/newspring/corinth/compare/v7.5.17...v7.5.19) (2020-03-16)
+
+
+### Bug Fixes
+
+* Fixes scroll bar overlapping prayer ([#80](https://github.com/newspring/corinth/issues/80)) ([f7064a3](https://github.com/newspring/corinth/commit/f7064a3))
+
+
+
 ## [7.5.17](https://github.com/newspring/corinth/compare/v7.5.16...v7.5.17) (2020-03-09)
 
 

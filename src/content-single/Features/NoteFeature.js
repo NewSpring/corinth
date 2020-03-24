@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, View } from 'react-native';
 import PropTypes from 'prop-types';
-import Analytics from 'appcenter-analytics';
 
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import {
@@ -54,7 +53,6 @@ const Note = ({ id: featureId, placeholder, onNotesChange, onNoteChange }) => {
         <Touchable
           onPress={() => {
             showBox(true);
-            Analytics.trackEvent('Added Custom Note');
             track({ eventName: 'Added Custom Note' });
           }}
         >
