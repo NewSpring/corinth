@@ -35,9 +35,9 @@ jobs:
       run: npm run test
 
     - name: Generate Codecov
-      run: npm run codecov
+      run: npm run codecov -t :${{ secrets.CODECOV_TOKEN }}
 
-    - name: Upload to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+    #- name: Upload to Codecov
+      #uses: codecov/codecov-action@v1
+      #with:
+        #token: ${{ secrets.CODECOV_TOKEN }}
