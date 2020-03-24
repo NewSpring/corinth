@@ -32,7 +32,7 @@ jobs:
       run: npm run lint
 
     - name: Unit Tests
-      run: npm run test
+      run: npm run test --forceExit
 
     - name: Generate Codecov
       run: npm run codecov
