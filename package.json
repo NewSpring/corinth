@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "android": "SIM=\"$($HOME/Library/Android/sdk/emulator/emulator -list-avds | sed -n 1p)\" && $HOME/Library/Android/sdk/emulator/emulator -avd \"${SIM}\" & react-native run-android --appId cc.newspring.newspringapp --main-activity LaunchActivity",
-    "codecov": "cat ./coverage/lcov.info | codecov -t $CODECOV_TOKEN",
+    "codecov": "cat ./coverage/lcov.info | codecov",
     "ios": "react-native run-ios --simulator=\"iPhone 11\"",
     "lint": "eslint ./src --ext .js",
     "postversion": "react-native-version --never-amend --android android/app/build.gradle --ios ios/",
