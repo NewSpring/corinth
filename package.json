@@ -19,7 +19,7 @@
     "start": "react-native start",
     "restart": "yarn && yarn pods && yarn start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
-    "test": "TZ=UTC jest",
+    "test": "TZ=UTC jest --forceExit",
     "postinstall": "jetify",
     "pods": "./scripts/install_pods.sh",
     "get-schema": "eval $(grep ^APP_DATA_URL .env) && get-graphql-schema $APP_DATA_URL > schema.graphql"
