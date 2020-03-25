@@ -65,9 +65,7 @@ class PrayerTabView extends PureComponent {
             fetchPolicy="cache-and-network"
           >
             {({
-              data: {
-                prayerFeed: { totalCount },
-              },
+              data: { prayerFeed: { totalCount } = {} } = {},
               loading: prayersLoading,
               error,
             }) => {
