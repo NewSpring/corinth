@@ -38,7 +38,11 @@ const handlePress = (prayerID, isSaved, save, unSave, track) => {
       });
     },
     optimisticResponse: {
-      unSavePrayer: { __typename: 'Prayer', id: prayerID, isSaved: saved },
+      [saved ? 'savePrayer' : 'unSavePrayer']: {
+        __typename: 'Prayer',
+        id: prayerID,
+        isSaved: saved,
+      },
     },
     refetchQueries: [
       {
