@@ -52,6 +52,8 @@ class HorizontalContentSeriesFeedConnected extends Component {
   renderItem = ({ item }) => {
     const disabled = get(item, 'id', '') === this.props.contentId;
     const isLoading = get(item.node, 'isLoading');
+    console.log('isLoading = ', isLoading);
+    console.log('item = ', item);
 
     return (
       <TouchableScale
@@ -99,7 +101,6 @@ class HorizontalContentSeriesFeedConnected extends Component {
 
   renderFeed = ({ data, loading, error, fetchMore }) => {
     if (error) return null;
-    if (loading) return null;
 
     const children = get(data, 'node.childContentItemsConnection.edges', []);
     const siblings = get(data, 'node.siblingContentItemsConnection.edges', []);
@@ -113,7 +114,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
     );
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
 
-    return content && content.length ? (
+    return (
       <PaddedView horizontal={false}>
         <PaddedView vertical={false}>
           <H5>In this series</H5>
@@ -155,10 +156,11 @@ class HorizontalContentSeriesFeedConnected extends Component {
           }
         />
       </PaddedView>
-    ) : null;
+    );
   };
 
   render() {
+    console.log('this.props.contentId = ', this.props.contentId);
     if (!this.props.contentId) return this.renderFeed({ loading: true });
 
     return (
