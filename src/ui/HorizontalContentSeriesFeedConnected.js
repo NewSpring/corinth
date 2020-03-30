@@ -52,8 +52,6 @@ class HorizontalContentSeriesFeedConnected extends Component {
   renderItem = ({ item }) => {
     const disabled = get(item, 'id', '') === this.props.contentId;
     const isLoading = get(item.node, 'isLoading');
-    console.log('isLoading = ', isLoading);
-    console.log('item = ', item);
 
     return (
       <TouchableScale
@@ -160,7 +158,6 @@ class HorizontalContentSeriesFeedConnected extends Component {
   };
 
   render() {
-    console.log('this.props.contentId = ', this.props.contentId);
     if (!this.props.contentId) return this.renderFeed({ loading: true });
 
     return (
