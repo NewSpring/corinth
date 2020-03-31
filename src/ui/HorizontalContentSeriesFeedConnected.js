@@ -113,7 +113,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
     );
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
 
-    return content && content.length ? (
+    return (
       <PaddedView horizontal={false}>
         <PaddedView vertical={false}>
           <H5>In this series</H5>
@@ -155,7 +155,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
           }
         />
       </PaddedView>
-    ) : null;
+    );
   };
 
   render() {
