@@ -130,6 +130,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
             index,
           })}
           onEndReached={() =>
+            !loading &&
             fetchMore({
               query: GET_CONTENT_SERIES,
               variables: { cursor, itemId: this.props.contentId },
@@ -137,8 +138,8 @@ class HorizontalContentSeriesFeedConnected extends Component {
                 const connection = isParent
                   ? 'childContentItemsConnection'
                   : 'siblingContentItemsConnection';
-                const newEdges = get(fetchMoreResult.node, connection, [])
-                  .edges;
+                const newEdges =
+                  get(fetchMoreResult, `node.${connection}.edges`) || [];
 
                 return {
                   node: {
