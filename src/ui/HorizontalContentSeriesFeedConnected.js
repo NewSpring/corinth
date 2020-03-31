@@ -98,6 +98,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
   };
 
   renderFeed = ({ data, loading, error, fetchMore }) => {
+    console.log('render feed');
     if (error) return null;
     if (loading) return null;
 
