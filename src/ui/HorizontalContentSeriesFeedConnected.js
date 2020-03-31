@@ -98,9 +98,8 @@ class HorizontalContentSeriesFeedConnected extends Component {
   };
 
   renderFeed = ({ data, loading, error, fetchMore }) => {
-    console.log('render feed');
     if (error) return null;
-    if (loading) return null;
+    // if (loading) return null;
 
     const children = get(data, 'node.childContentItemsConnection.edges', []);
     const siblings = get(data, 'node.siblingContentItemsConnection.edges', []);
