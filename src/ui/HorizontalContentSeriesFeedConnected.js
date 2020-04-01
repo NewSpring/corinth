@@ -112,50 +112,49 @@ class HorizontalContentSeriesFeedConnected extends Component {
       ({ id }) => id === this.props.contentId
     );
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
+    console.log('this.props = ', this.props);
 
     return (
       <PaddedView horizontal={false}>
         <PaddedView vertical={false}>
           <H5>In this series</H5>
         </PaddedView>
-        {content && content.length ? (
-          <this.props.Component
-            isLoading={loading}
-            content={content}
-            loadingStateObject={loadingStateObject}
-            renderItem={this.props.renderItem || this.renderItem}
-            initialScrollIndex={initialScrollIndex}
-            getItemLayout={(itemData, index) => ({
-              // We need to pass this function so that initialScrollIndex will work.
-              length: 240,
-              offset: 240 * index,
-              index,
-            })}
-            onEndReached={() =>
-              fetchMore({
-                query: GET_CONTENT_SERIES,
-                variables: { cursor, itemId: this.props.contentId },
-                updateQuery: (previousResult, { fetchMoreResult }) => {
-                  const connection = isParent
-                    ? 'childContentItemsConnection'
-                    : 'siblingContentItemsConnection';
-                  const newEdges =
-                    get(fetchMoreResult, `node.${connection}.edges`) || [];
+        <this.props.Component
+          isLoading={loading}
+          content={content}
+          loadingStateObject={loadingStateObject}
+          renderItem={this.props.renderItem || this.renderItem}
+          initialScrollIndex={initialScrollIndex}
+          getItemLayout={(itemData, index) => ({
+            // We need to pass this function so that initialScrollIndex will work.
+            length: 240,
+            offset: 240 * index,
+            index,
+          })}
+          onEndReached={() =>
+            fetchMore({
+              query: GET_CONTENT_SERIES,
+              variables: { cursor, itemId: this.props.contentId },
+              updateQuery: (previousResult, { fetchMoreResult }) => {
+                const connection = isParent
+                  ? 'childContentItemsConnection'
+                  : 'siblingContentItemsConnection';
+                const newEdges =
+                  get(fetchMoreResult, `node.${connection}.edges`) || [];
 
-                  return {
-                    node: {
-                      ...previousResult.node,
-                      [connection]: {
-                        ...previousResult.node[connection],
-                        edges: [...edges, ...newEdges],
-                      },
+                return {
+                  node: {
+                    ...previousResult.node,
+                    [connection]: {
+                      ...previousResult.node[connection],
+                      edges: [...edges, ...newEdges],
                     },
-                  };
-                },
-              })
-            }
-          />
-        ) : null}
+                  },
+                };
+              },
+            })
+          }
+        />
       </PaddedView>
     );
   };
