@@ -146,8 +146,8 @@ android {
         applicationId "cc.newspring.newspringapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2020069580
-        versionName "7.5.19"
+        versionCode 2020069581
+        versionName "7.5.20"
         ndk {
             abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
