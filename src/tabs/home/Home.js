@@ -15,13 +15,11 @@ import {
   FeedView,
   BackgroundView,
   TouchableScale,
-  DefaultCard,
   FeaturedCard,
   withTheme,
   CardLabel,
 } from '@apollosproject/ui-kit';
 
-import BrandedCard from '../../ui/BrandedCard';
 import LiveButton from '../../ui/LiveButton';
 
 import Features from './Features';
@@ -78,17 +76,6 @@ class Home extends PureComponent {
       itemId: item.id,
       transitionKey: item.transitionKey,
     });
-
-  getComponent = (item) => {
-    switch (get(item, '__typename')) {
-      case 'WeekendContentItem':
-      case 'ContentSeriesContentItem':
-      case 'DevotionalContentItem':
-        return BrandedCard;
-      default:
-        return DefaultCard;
-    }
-  };
 
   render() {
     return (
@@ -175,21 +162,6 @@ class Home extends PureComponent {
                   </>
                 }
                 onPressItem={this.handleOnPress}
-                // renderItem={({ item }) => (
-                // <TouchableScale
-                // onPress={() => this.handleOnPress({ id: item.id })}
-                // >
-                // <ContentCardConnected
-                // Component={this.getComponent(item)}
-                // contentId={item.id}
-                // isLoading={loading}
-                // labelText={
-                // item.parentChannel &&
-                // item.parentChannel.name.split(' - ').pop()
-                // }
-                // />
-                // </TouchableScale>
-                // )}
               />
             )}
           </Query>
