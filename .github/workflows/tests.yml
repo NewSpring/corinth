@@ -24,15 +24,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm install -g yarn
 
     - name: Install Dependencies
-      run: npm install --ignore-scripts
+      run: yarn --ignore-scripts
 
     - name: Lint
-      run: npm run lint
+      run: yarn lint
 
     - name: Jest
-      run: npm run test
+      run: yarn test
 
     - name: Codecov
       uses: codecov/codecov-action@v1
