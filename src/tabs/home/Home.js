@@ -54,6 +54,12 @@ const CampaignCard = ({ isLive, hasAction, summary, ...props }) => (
   />
 );
 
+CampaignCard.propTypes = {
+  isLive: PropTypes.bool,
+  hasAction: PropTypes.bool,
+  summary: PropTypes.string,
+};
+
 class Home extends PureComponent {
   static navigationOptions = () => ({
     header: null,
