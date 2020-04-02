@@ -20,6 +20,8 @@ const loadingStateObject = {
   node: {
     id: 'fakeId0',
     title: '',
+    hasAction: true,
+    actionIcon: 'play',
     coverImage: '',
     isLoading: true,
     parentChannel: {
@@ -49,6 +51,16 @@ class HorizontalContentSeriesFeedConnected extends Component {
     Component: HorizontalTileFeed,
   };
 
+  getCoverImage = (typename, videos) => {
+    let image;
+    if (typename === 'WeekendContentItem') {
+      image = videos.length ? videos[0].thumbnail.sources : '';
+    } else {
+      image = '';
+    }
+    return image;
+  };
+
   renderItem = ({ item }) => {
     const disabled = get(item, 'id', '') === this.props.contentId;
     const isLoading = get(item.node, 'isLoading');
@@ -58,34 +70,13 @@ class HorizontalContentSeriesFeedConnected extends Component {
         onPress={() => this.handleOnPressItem(item)}
         disabled={isLoading || disabled}
       >
-        <HorizontalContentCardConnected
-          Component={({ coverImage, ...props }) => {
-            switch (get(item, '__typename')) {
-              case 'WeekendContentItem':
-                return (
-                  <HorizontalContentCardConnected.defaultProps.Component
-                    coverImage={
-                      item.videos.length
-                        ? item.videos[0].thumbnail.sources
-                        : null
-                    }
-                    {...props}
-                  />
-                );
-              default:
-                return (
-                  <HorizontalContentCardConnected.defaultProps.Component
-                    coverImage={null}
-                    {...props}
-                  />
-                );
-            }
-          }}
+        <HorizontalContentCardConnected.defaultProps.Component
+          {...item}
           labelText={''}
           contentId={get(item, 'id', '')}
-          disabled={disabled}
+          hasAction={!!get(item, 'videos.[0].sources[0]', null)}
           isLoading={isLoading}
-          __typename={get(item, '__typename')}
+          coverImage={this.getCoverImage(get(item, '__typename'), item.videos)}
         />
       </TouchableScale>
     );
