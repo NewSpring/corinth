@@ -65,20 +65,20 @@
     graphql-tag "2.9.2"
     yup "^0.27.0"
 
-"@apollosproject/ui-connected@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-connected/-/ui-connected-1.3.0.tgz#5e911dd6aff45668d99865c079fad27699b62a16"
-  integrity sha512-8uXS0C3oVp6fwO+Zew4rxJw6/qrMNTiczXRqzoSMediztwW3cp0THIkRObN/WpatYLz74B42KkirsjBJJ96eiw==
+"@apollosproject/ui-connected@^1.3.0-alpha.37":
+  version "1.3.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-connected/-/ui-connected-1.3.0-alpha.37.tgz#29f3e9b5975bc995732b72a5920857c843b1c80a"
+  integrity sha512-kx0HlgFaK7wP+487wggY+2+XmKZSZqAMGhRPHAnS29FbkmRbqgY5NJSVzuad2osUddJj47kWZYPx/M/VNKj6VQ==
   dependencies:
     apollo-upload-client "9.0.0"
     graphql-tag "2.9.2"
     lodash "^4.17.11"
     react-apollo "2.5.5"
 
-"@apollosproject/ui-fragments@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-fragments/-/ui-fragments-1.3.0.tgz#5009d7777721f5407c67a6e4f180c88c7e0cfd55"
-  integrity sha512-WCogtGugRyn2vFep23jAV8Tg1z6eRAAfB5Y/vX0nvm0W39MNp5aWrCOvl4wsL9sYz9g8VtE2xh5iyILwPKlI7A==
+"@apollosproject/ui-fragments@^1.3.0-alpha.34":
+  version "1.3.0-alpha.34"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-fragments/-/ui-fragments-1.3.0-alpha.34.tgz#aa8ba89e149140e519b70d1d40215b359d997ad3"
+  integrity sha512-6ZhDomgWokTukwJKIqLf4wX5y2mSZbBEn9fpVNKisKmz3H/dd5QIqomnTsyJDLY4WIS4KwhM4KtfKCz8rbMnxw==
   dependencies:
     graphql-tag "2.9.2"
 
@@ -96,6 +96,21 @@
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.3.0.tgz#0cb0da4b200513ebb88f661d2e73de383ac7af40"
   integrity sha512-D+edp0qtAVB9J38TGa4Qg/4IgrIyYo872omAgp/LnyMtozworu2IOvUno3S/9JNzT4EYg744GhtPsuzN9cvLng==
+  dependencies:
+    color "^3.1.0"
+    lodash "^4.17.11"
+    moment "^2.24.0"
+    numeral "^2.0.6"
+    react-native-modal-datetime-picker "7.6.0"
+    react-native-safe-area-context "^0.3.6"
+    react-native-tab-view "1.0.2"
+    recompose "^0.30.0"
+    rn-placeholder "1.2.0"
+
+"@apollosproject/ui-kit@^1.3.0-alpha.40":
+  version "1.3.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.3.0-alpha.40.tgz#1c80d7b6a7c6173baff88d0b8d480b011e260556"
+  integrity sha512-G0pDINfDi/8HROn5veVkN8zhLiPvFMCKzPpo9DWQoeM0ilxTyvyvwh0qbsOr9yDXbMypiTV8rEjUIuYG9wHizw==
   dependencies:
     color "^3.1.0"
     lodash "^4.17.11"
