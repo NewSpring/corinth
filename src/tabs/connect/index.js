@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation';
+import { LikedContentFeedConnected } from '@apollosproject/ui-connected';
 import { withTheme } from '@apollosproject/ui-kit';
-import LikedContentFeedConnected from '../../ui/LikedContentFeedConnected';
 
 import UserSettings from '../../user-settings';
 import TestingControlPanel from '../../testing-control-panel';
