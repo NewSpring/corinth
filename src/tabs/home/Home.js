@@ -88,8 +88,14 @@ class Home extends PureComponent {
           >
             {({ loading, error, data, refetch, fetchMore, variables }) => (
               <FeedView
-                ListItemComponent={({ ...props }) => (
-                  <ContentCardConnected labelText="hello" {...props} />
+                ListItemComponent={({ ...item }) => (
+                  <ContentCardConnected
+                    labelText={
+                      item.parentChannel &&
+                      item.parentChannel.name.split(' - ').pop()
+                    }
+                    {...item}
+                  />
                 )}
                 content={get(data, 'userFeed.edges', []).map(
                   (edge) => edge.node
