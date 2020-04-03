@@ -20,6 +20,8 @@ const loadingStateObject = {
   node: {
     id: 'fakeId0',
     title: '',
+    hasAction: true,
+    actionIcon: 'play',
     coverImage: '',
     isLoading: true,
     parentChannel: {
@@ -49,6 +51,16 @@ class HorizontalContentSeriesFeedConnected extends Component {
     Component: HorizontalTileFeed,
   };
 
+  getCoverImage = (typename, videos) => {
+    let image;
+    if (typename === 'WeekendContentItem') {
+      image = videos.length ? videos[0].thumbnail.sources : '';
+    } else {
+      image = '';
+    }
+    return image;
+  };
+
   renderItem = ({ item }) => {
     const disabled = get(item, 'id', '') === this.props.contentId;
     const isLoading = get(item.node, 'isLoading');
@@ -58,34 +70,13 @@ class HorizontalContentSeriesFeedConnected extends Component {
         onPress={() => this.handleOnPressItem(item)}
         disabled={isLoading || disabled}
       >
-        <HorizontalContentCardConnected
-          Component={({ coverImage, ...props }) => {
-            switch (get(item, '__typename')) {
-              case 'WeekendContentItem':
-                return (
-                  <HorizontalContentCardConnected.defaultProps.Component
-                    coverImage={
-                      item.videos.length
-                        ? item.videos[0].thumbnail.sources
-                        : null
-                    }
-                    {...props}
-                  />
-                );
-              default:
-                return (
-                  <HorizontalContentCardConnected.defaultProps.Component
-                    coverImage={null}
-                    {...props}
-                  />
-                );
-            }
-          }}
+        <HorizontalContentCardConnected.defaultProps.Component
+          {...item}
           labelText={''}
           contentId={get(item, 'id', '')}
-          disabled={disabled}
+          hasAction={!!get(item, 'videos.[0].sources[0]', null)}
           isLoading={isLoading}
-          __typename={get(item, '__typename')}
+          coverImage={this.getCoverImage(get(item, '__typename'), item.videos)}
         />
       </TouchableScale>
     );
@@ -99,7 +90,6 @@ class HorizontalContentSeriesFeedConnected extends Component {
 
   renderFeed = ({ data, loading, error, fetchMore }) => {
     if (error) return null;
-    if (loading) return null;
 
     const children = get(data, 'node.childContentItemsConnection.edges', []);
     const siblings = get(data, 'node.siblingContentItemsConnection.edges', []);
@@ -113,7 +103,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
     );
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
 
-    return content && content.length ? (
+    return (
       <PaddedView horizontal={false}>
         <PaddedView vertical={false}>
           <H5>In this series</H5>
@@ -131,6 +121,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
             index,
           })}
           onEndReached={() =>
+            !loading &&
             fetchMore({
               query: GET_CONTENT_SERIES,
               variables: { cursor, itemId: this.props.contentId },
@@ -138,8 +129,8 @@ class HorizontalContentSeriesFeedConnected extends Component {
                 const connection = isParent
                   ? 'childContentItemsConnection'
                   : 'siblingContentItemsConnection';
-                const newEdges = get(fetchMoreResult.node, connection, [])
-                  .edges;
+                const newEdges =
+                  get(fetchMoreResult, `node.${connection}.edges`) || [];
 
                 return {
                   node: {
@@ -155,7 +146,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
           }
         />
       </PaddedView>
-    ) : null;
+    );
   };
 
   render() {
