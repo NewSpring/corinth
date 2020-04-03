@@ -16,11 +16,10 @@ const CustomLikedFeed = () => (
   <LikedContentFeedConnected
     Component={({ ...feedProps }) => (
       <FeedView
-        ListItemComponent={({ ...cardProps }) => (
-          // TODO currently doesn't work
-          <ContentCardConnected labelText={''} {...cardProps} />
-        )}
         {...feedProps}
+        ListItemComponent={({ ...connectedCardProps }) => (
+          <ContentCardConnected {...connectedCardProps} labelText={''} />
+        )}
       />
     )}
   />
