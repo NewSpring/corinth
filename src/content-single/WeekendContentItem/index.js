@@ -12,7 +12,6 @@ import {
   ThemeMixin,
   ThemeConsumer,
   CardLabel,
-  withTheme,
 } from '@apollosproject/ui-kit';
 import { LiveConsumer } from '@apollosproject/ui-connected';
 
@@ -20,6 +19,7 @@ import Features from '../Features';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 import MediaControls from '../../ui/MediaControls';
+import LiveIcon from '../../ui/LiveIcon';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
@@ -28,20 +28,6 @@ const Header = styled(({ hasMedia, theme }) => ({
   alignItems: 'flex-start',
   paddingBottom: hasMedia ? theme.sizing.baseUnit : theme.sizing.baseUnit * 2,
 }))(PaddedView);
-
-const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
-  ...(isLive
-    ? {
-        title: 'Live',
-        icon: 'live-dot',
-        iconSize: theme.helpers.rem(0.4375), // using our typographic size unit based on fontSize so that the icon scales correctly with font size changes.
-        // TODO not supported yet
-        iconFill: 'red',
-      }
-    : {
-        title,
-      }),
-}))(CardLabel);
 
 const WeekendContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
@@ -69,12 +55,15 @@ const WeekendContentItem = ({ content, loading }) => {
                     ) : null}
                     <LiveConsumer contentId={content.id}>
                       {(liveStream) => (
-                        <LiveAwareLabel
+                        <CardLabel
                           isLive={!!liveStream}
                           title={
-                            content.parentChannel &&
-                            content.parentChannel.name.split(' - ').pop()
+                            liveStream
+                              ? 'Live'
+                              : content.parentChannel &&
+                                content.parentChannel.name.split(' - ').pop()
                           }
+                          IconComponent={liveStream ? LiveIcon : null}
                         />
                       )}
                     </LiveConsumer>

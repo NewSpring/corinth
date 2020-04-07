@@ -107,10 +107,10 @@
     recompose "^0.30.0"
     rn-placeholder "1.2.0"
 
-"@apollosproject/ui-kit@^1.3.0-alpha.40":
-  version "1.3.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.3.0-alpha.40.tgz#1c80d7b6a7c6173baff88d0b8d480b011e260556"
-  integrity sha512-G0pDINfDi/8HROn5veVkN8zhLiPvFMCKzPpo9DWQoeM0ilxTyvyvwh0qbsOr9yDXbMypiTV8rEjUIuYG9wHizw==
+"@apollosproject/ui-kit@^1.3.0-alpha.44":
+  version "1.3.0-alpha.44"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-1.3.0-alpha.44.tgz#60e64428388a62607857ee1f7073ed458a74115f"
+  integrity sha512-UcMp7sYGcc3XC3GIjFqf93gamhMV5h3LA3pPERTE3MKheD/+jTEFcolmSnpJQf+Bw+flXNc/5dxBNMAZRbOO4g==
   dependencies:
     color "^3.1.0"
     lodash "^4.17.11"

@@ -21,6 +21,7 @@ import {
 } from '@apollosproject/ui-kit';
 
 import LiveButton from '../../ui/LiveButton';
+import LiveIcon from '../../ui/LiveIcon';
 
 import Features from './Features';
 import GET_USER_FEED from './getUserFeed';
@@ -35,10 +36,7 @@ const LogoTitle = styled(({ theme }) => ({
 
 const CampaignLabel = withTheme(({ isLive, title, theme }) => ({
   title: isLive ? 'Live' : title,
-  icon: isLive ? 'live-dot' : null,
-  iconSize: theme.helpers.rem(0.4375),
-  // TODO not supported yet
-  iconColor: 'red',
+  IconComponent: isLive ? LiveIcon : null,
   style: {
     marginBottom: theme.sizing.baseUnit,
   },
