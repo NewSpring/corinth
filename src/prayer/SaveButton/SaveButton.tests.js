@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import Providers from '../../Providers';
 
-import SaveButton from '.';
+import SaveButton from './SaveButton';
 
 describe('the SaveButton component', () => {
   it('renders a SaveButton', () => {
