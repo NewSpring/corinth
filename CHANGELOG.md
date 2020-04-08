@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.5.21](https://github.com/newspring/corinth/compare/v7.5.20...v7.5.21) (2020-04-06)
+
+
+### Bug Fixes
+
+* Better Loading States ([#111](https://github.com/newspring/corinth/issues/111)) ([d1946b3](https://github.com/newspring/corinth/commit/d1946b3))
+
+
+
 ## [7.5.20](https://github.com/newspring/corinth/compare/v7.5.19...v7.5.20) (2020-03-23)
 
 

@@ -3,15 +3,18 @@ import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { Dimensions } from 'react-native';
 import { TabView } from 'react-native-tab-view';
-import { HorizontalTileFeed, TouchableScale } from '@apollosproject/ui-kit';
+import {
+  HorizontalTileFeed,
+  TouchableScale,
+  ErrorCard,
+} from '@apollosproject/ui-kit';
 import PrayerMenuCard from '../PrayerMenuCard';
 
-import GET_PRAYERS from '../data/queries/getPrayers';
+import GET_PRAYER_COUNT from '../data/queries/getPrayerCount';
 import PrayerTab from './PrayerTab';
 
 class PrayerTabView extends PureComponent {
   types = {
-    'my-church': '',
     'my-campus': 'CAMPUS',
     'my-community': 'GROUP',
     'my-saved-prayers': 'SAVED',
@@ -54,24 +57,35 @@ class PrayerTabView extends PureComponent {
         navigationState={{ ...this.state }}
         renderScene={({ route: category }) => (
           <Query
-            query={GET_PRAYERS}
-            variables={
-              category.key !== 'my-church'
-                ? { type: this.types[category.key] }
-                : null
-            }
+            query={GET_PRAYER_COUNT}
+            variables={{
+              type:
+                category.key !== 'my-church' ? this.types[category.key] : null,
+            }}
             fetchPolicy="cache-and-network"
           >
-            {({ data: { prayers } = {}, loading: prayersLoading }) => (
-              <PrayerTab
-                loading={prayersLoading}
-                prayers={prayers || []}
-                description={category.description}
-                title={category.title}
-                type={category.key.split('-')[1]}
-                {...this.props}
-              />
-            )}
+            {({
+              data: { prayerFeed: { totalCount } = {} } = {},
+              loading: prayersLoading,
+              error,
+            }) => {
+              if (error) return <ErrorCard error={error} />;
+              return (
+                <PrayerTab
+                  loading={prayersLoading}
+                  hasPrayers={!prayersLoading && totalCount > 0}
+                  description={category.description}
+                  title={category.title}
+                  type={category.key.split('-')[1]}
+                  feedType={
+                    category.key !== 'my-church'
+                      ? this.types[category.key]
+                      : null
+                  }
+                  {...this.props}
+                />
+              );
+            }}
           </Query>
         )}
         renderTabBar={(props) => (
