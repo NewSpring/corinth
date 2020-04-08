@@ -318,11 +318,12 @@ type Mutation {
   updateProfileFields(input: [UpdateProfileInput]!): Person
   uploadProfileImage(file: Upload!, size: Int!): Person
   addPrayer(text: String!, isAnonymous: Boolean): Prayer
-  deletePrayer(nodeId: String!): Prayer
-  incrementPrayerCount(nodeId: String!): Prayer
-  flagPrayer(nodeId: String!): Prayer
-  savePrayer(nodeId: String!): Prayer
-  unSavePrayer(nodeId: String!): Prayer
+  interactWithPrayer(id: ID!, action: PrayerAction!): Prayer
+  deletePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:DELETE)")
+  incrementPrayerCount(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:INCREMENT)")
+  flagPrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:FLAG)")
+  savePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:SAVE)")
+  unSavePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:UNSAVE)")
 }
 
 interface Node {
@@ -412,6 +413,14 @@ type Prayer implements Node {
   isLiked: Boolean
   likedCount: Int
   sharing: SharableContentItem
+}
+
+enum PrayerAction {
+  DELETE
+  INCREMENT
+  FLAG
+  SAVE
+  UNSAVE
 }
 
 type PrayerMenuCategory implements Node {
