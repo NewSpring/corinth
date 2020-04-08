@@ -43,47 +43,55 @@ exports[`the UserPrayerList component renders a list of prayers 1`] = `
       }
     }
   >
-    <RCTScrollView>
+    <RCTScrollView
+      ListEmptyComponent={[Function]}
+      ListHeaderComponent={
+        <mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))>
+          <H6>
+            Viewing
+          </H6>
+          <mapProps(getContext(mapProps(withPropsOnChange(mapProps(H4)))))>
+            My Prayers
+          </mapProps(getContext(mapProps(withPropsOnChange(mapProps(H4)))))>
+        </mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))>
+      }
+      data={Array []}
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReached={[Function]}
+      onEndReachedThreshold={0.7}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onRefresh={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      refreshControl={
+        <RefreshControlMock
+          onRefresh={[Function]}
+          refreshing={false}
+        />
+      }
+      refreshing={false}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <RCTRefreshControl />
       <View>
         <View
-          style={
-            Object {
-              "paddingHorizontal": 16,
-              "paddingVertical": 16,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 12,
-                "lineHeight": 17.28,
-              }
-            }
-          >
-            Viewing
-          </Text>
-          <Text
-            style={
-              Object {
-                "color": "#6bac43",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 16,
-                "lineHeight": 23.04,
-              }
-            }
-          >
-            My Prayers
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "marginBottom": 64,
-            }
-          }
+          onLayout={[Function]}
         >
           <View
             style={
@@ -94,20 +102,53 @@ exports[`the UserPrayerList component renders a list of prayers 1`] = `
             }
           >
             <Text
-              bold={false}
-              italic={false}
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 16,
-                  "lineHeight": 26,
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 12,
+                  "lineHeight": 17.28,
                 }
               }
             >
-              You have not submitted any prayers. Go back and add one!
+              Viewing
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "#6bac43",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 16,
+                  "lineHeight": 23.04,
+                }
+              }
+            >
+              My Prayers
             </Text>
           </View>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 16,
+              "paddingVertical": 16,
+            }
+          }
+        >
+          <Text
+            bold={false}
+            italic={false}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "Colfax-Regular",
+                "fontSize": 16,
+                "lineHeight": 26,
+              }
+            }
+          >
+            You have not submitted any prayers. Go back and add one!
+          </Text>
         </View>
       </View>
     </RCTScrollView>
@@ -405,47 +446,55 @@ exports[`the UserPrayerList component renders no prayer text 1`] = `
       }
     }
   >
-    <RCTScrollView>
+    <RCTScrollView
+      ListEmptyComponent={[Function]}
+      ListHeaderComponent={
+        <mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))>
+          <H6>
+            Viewing
+          </H6>
+          <mapProps(getContext(mapProps(withPropsOnChange(mapProps(H4)))))>
+            My Prayers
+          </mapProps(getContext(mapProps(withPropsOnChange(mapProps(H4)))))>
+        </mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))>
+      }
+      data={Array []}
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReached={[Function]}
+      onEndReachedThreshold={0.7}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onRefresh={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      refreshControl={
+        <RefreshControlMock
+          onRefresh={[Function]}
+          refreshing={false}
+        />
+      }
+      refreshing={false}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <RCTRefreshControl />
       <View>
         <View
-          style={
-            Object {
-              "paddingHorizontal": 16,
-              "paddingVertical": 16,
-            }
-          }
-        >
-          <Text
-            style={
-              Object {
-                "color": "#505050",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 12,
-                "lineHeight": 17.28,
-              }
-            }
-          >
-            Viewing
-          </Text>
-          <Text
-            style={
-              Object {
-                "color": "#6bac43",
-                "fontFamily": "Colfax-Bold",
-                "fontSize": 16,
-                "lineHeight": 23.04,
-              }
-            }
-          >
-            My Prayers
-          </Text>
-        </View>
-        <View
-          style={
-            Object {
-              "marginBottom": 64,
-            }
-          }
+          onLayout={[Function]}
         >
           <View
             style={
@@ -456,20 +505,53 @@ exports[`the UserPrayerList component renders no prayer text 1`] = `
             }
           >
             <Text
-              bold={false}
-              italic={false}
               style={
                 Object {
-                  "color": "#303030",
-                  "fontFamily": "Colfax-Regular",
-                  "fontSize": 16,
-                  "lineHeight": 26,
+                  "color": "#505050",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 12,
+                  "lineHeight": 17.28,
                 }
               }
             >
-              You have not submitted any prayers. Go back and add one!
+              Viewing
+            </Text>
+            <Text
+              style={
+                Object {
+                  "color": "#6bac43",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 16,
+                  "lineHeight": 23.04,
+                }
+              }
+            >
+              My Prayers
             </Text>
           </View>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingHorizontal": 16,
+              "paddingVertical": 16,
+            }
+          }
+        >
+          <Text
+            bold={false}
+            italic={false}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "Colfax-Regular",
+                "fontSize": 16,
+                "lineHeight": 26,
+              }
+            }
+          >
+            You have not submitted any prayers. Go back and add one!
+          </Text>
         </View>
       </View>
     </RCTScrollView>
