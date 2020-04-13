@@ -89,31 +89,8 @@ exports[`The SearchFeed component should render 1`] = `
                     "cursor": "b487224762b030f470967f45d7205823",
                     "node": Object {
                       "__typename": "DevotionalContentItem",
-                      "coverImage": Object {
-                        "__typename": "ImageMedia",
-                        "sources": Array [
-                          Object {
-                            "__typename": "ImageMediaSource",
-                            "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
-                          },
-                        ],
-                      },
-                      "hyphenatedTitle": "-",
                       "id": "DevotionalContentItem:561dfb7dbd8a5c093fd8385c7edaadbc",
-                      "parentChannel": Object {
-                        "__typename": "ContentChannel",
-                        "id": "ContentChannel:559b23fd0aa90e81b1c023e72e230fa1",
-                        "name": "Devotional",
-                      },
-                      "summary": "Love compels a mother to lose all dignity in public as she screams the name of her lost child.",
                       "theme": null,
-                      "title": "How to lead people to Jesus",
-                      "videos": Array [
-                        Object {
-                          "__typename": "VideoMedia",
-                          "sources": Array [],
-                        },
-                      ],
                     },
                     "summary": "Love compels a mother to lose all dignity in public as she screams the name of her lost child.",
                     "title": "How to lead people to Jesus",
@@ -124,19 +101,8 @@ exports[`The SearchFeed component should render 1`] = `
                     "cursor": "4affc1122ad80d4edcf6c5bc9d88ae99",
                     "node": Object {
                       "__typename": "UniversalContentItem",
-                      "coverImage": null,
-                      "hyphenatedTitle": "-",
                       "id": "UniversalContentItem:95ff79f60a028b1b506aaeedf8b4c6ae",
-                      "parentChannel": Object {
-                        "__typename": "ContentChannel",
-                        "id": "ContentChannel:4f68015ba18662a7409d1219a4ce013e",
-                        "name": "Articles",
-                      },
-                      "summary": "Get in the Groove
-Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you go — with this playlist of NewSpring Worship's favorite songs of the summer.",
                       "theme": null,
-                      "title": "Live for Freedom Toolkit",
-                      "videos": Array [],
                     },
                     "summary": "Get in the Groove
 Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you go — with this playlist of NewSpring Worship's favorite songs of the summer.",
@@ -157,26 +123,8 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                     "cursor": "659a26257a49fb2bf1446bb747bf7dd3",
                     "node": Object {
                       "__typename": "UniversalContentItem",
-                      "coverImage": Object {
-                        "__typename": "ImageMedia",
-                        "sources": Array [
-                          Object {
-                            "__typename": "ImageMediaSource",
-                            "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Db08e4d69-0acf-40ff-920a-4517de086175",
-                          },
-                        ],
-                      },
-                      "hyphenatedTitle": "-",
                       "id": "UniversalContentItem:895738f70482712adb3ab45a08c30456",
-                      "parentChannel": Object {
-                        "__typename": "ContentChannel",
-                        "id": "ContentChannel:4f68015ba18662a7409d1219a4ce013e",
-                        "name": "Articles",
-                      },
-                      "summary": "Daughter: “Mom, can I bring some friends from college over for dinner Sunday?",
                       "theme": null,
-                      "title": "Should your 20-something live at home?",
-                      "videos": Array [],
                     },
                     "summary": "Daughter: “Mom, can I bring some friends from college over for dinner Sunday?",
                     "title": "Should your 20-something live at home?",
@@ -196,26 +144,8 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                     "cursor": "c8d2fe738629909c33010432432f21c8",
                     "node": Object {
                       "__typename": "UniversalContentItem",
-                      "coverImage": Object {
-                        "__typename": "ImageMedia",
-                        "sources": Array [
-                          Object {
-                            "__typename": "ImageMediaSource",
-                            "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3D58c037fa-cc7f-4d72-9571-a0cc0558e346",
-                          },
-                        ],
-                      },
-                      "hyphenatedTitle": "-",
                       "id": "UniversalContentItem:296373ecb53580855cadffa0375ebe18",
-                      "parentChannel": Object {
-                        "__typename": "ContentChannel",
-                        "id": "ContentChannel:965b6e6d7046a885bea4e300b5c0400d",
-                        "name": "News",
-                      },
-                      "summary": "A time to connect with other guys who live nearby.",
                       "theme": null,
-                      "title": "Guys Night!",
-                      "videos": Array [],
                     },
                     "summary": "A time to connect with other guys who live nearby.",
                     "title": "Guys Night!",
@@ -226,18 +156,8 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                     "cursor": "ba47485fbc61945a38a4147fe7ff3703",
                     "node": Object {
                       "__typename": "UniversalContentItem",
-                      "coverImage": null,
-                      "hyphenatedTitle": "-",
                       "id": "UniversalContentItem:c495ff18cd998ed516a798b6218907cd",
-                      "parentChannel": Object {
-                        "__typename": "ContentChannel",
-                        "id": "ContentChannel:4f68015ba18662a7409d1219a4ce013e",
-                        "name": "Articles",
-                      },
-                      "summary": "1. Be slow What would it look like to live your life at half-speed?",
                       "theme": null,
-                      "title": "10 ways to refresh your spirit every day",
-                      "videos": Array [],
                     },
                     "summary": "1. Be slow What would it look like to live your life at half-speed?",
                     "title": "10 ways to refresh your spirit every day",
@@ -257,31 +177,8 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                     "cursor": "9456eef87e314dcf19f013384a29fd22",
                     "node": Object {
                       "__typename": "DevotionalContentItem",
-                      "coverImage": Object {
-                        "__typename": "ImageMedia",
-                        "sources": Array [
-                          Object {
-                            "__typename": "ImageMediaSource",
-                            "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
-                          },
-                        ],
-                      },
-                      "hyphenatedTitle": "-",
                       "id": "DevotionalContentItem:4dd74ceca9e09b5276e93cbf53821bd6",
-                      "parentChannel": Object {
-                        "__typename": "ContentChannel",
-                        "id": "ContentChannel:559b23fd0aa90e81b1c023e72e230fa1",
-                        "name": "Devotional",
-                      },
-                      "summary": "We all like to know that our boss or the authority over us is pleased, and it means even more when they take the time to share that in front of other people.",
                       "theme": null,
-                      "title": "Why leadership isn’t all about the title",
-                      "videos": Array [
-                        Object {
-                          "__typename": "VideoMedia",
-                          "sources": Array [],
-                        },
-                      ],
                     },
                     "summary": "We all like to know that our boss or the authority over us is pleased, and it means even more when they take the time to share that in front of other people.",
                     "title": "Why leadership isn’t all about the title",
@@ -301,6 +198,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
               onEndReachedThreshold={0.7}
               onLayout={[Function]}
               onMomentumScrollEnd={[Function]}
+              onPressItem={[Function]}
               onRefresh={[Function]}
               onScroll={[Function]}
               onScrollBeginDrag={[Function]}
@@ -348,7 +246,6 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                   >
                     <View
                       cardColor="#6bac43"
-                      isLoading={true}
                       style={
                         Object {
                           "backgroundColor": "#6bac43",
@@ -399,10 +296,17 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               maxAspectRatio={1}
                               minAspectRatio={1}
                               onLoad={[Function]}
-                              source={Array []}
+                              source={
+                                Array [
+                                  Object {
+                                    "__typename": "ImageMediaSource",
+                                    "cache": "force-cache",
+                                    "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                                  },
+                                ]
+                              }
                               style={
                                 Object {
-                                  "aspectRatio": 1,
                                   "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
@@ -414,8 +318,8 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           <BVLinearGradient
                             colors={
                               Array [
-                                1727526903,
-                                4294440951,
+                                1718332483,
+                                4285246531,
                               ]
                             }
                             endPoint={
@@ -430,7 +334,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 0.8,
                               ]
                             }
-                            overlayColor="#f7f7f7"
+                            overlayColor="#6bac43"
                             overlayType="featured"
                             startPoint={
                               Object {
@@ -460,32 +364,19 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                             }
                           }
                         >
-                          <View
+                          <Text
+                            numberOfLines={3}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "borderWidth": 0,
-                                "height": 32,
-                                "paddingHorizontal": 12,
-                                "width": 64,
+                                "color": "#ffffff",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 36,
+                                "lineHeight": 41.4,
                               }
                             }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#858585",
-                                "borderRadius": 16,
-                                "height": 36,
-                                "marginVertical": 2.6999999999999993,
-                                "width": "100%",
-                              }
-                            }
-                          />
+                          >
+                            How to lead people to Jesus
+                          </Text>
                           <View
                             hasSummary={true}
                             style={
@@ -504,18 +395,21 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 }
                               }
                             >
-                              <View
+                              <Text
+                                bold={false}
+                                italic={false}
+                                numberOfLines={2}
                                 style={
                                   Object {
-                                    "alignSelf": "stretch",
-                                    "backgroundColor": "#858585",
-                                    "borderRadius": 16,
-                                    "height": 16,
-                                    "marginVertical": 5,
-                                    "width": "100%",
+                                    "color": "#ffffff",
+                                    "fontFamily": "Colfax-Regular",
+                                    "fontSize": 16,
+                                    "lineHeight": 26,
                                   }
                                 }
-                              />
+                              >
+                                Love compels a mother to lose all dignity in public as she screams the name of her lost child.
+                              </Text>
                             </View>
                           </View>
                         </View>
@@ -548,10 +442,10 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                     }
                   >
                     <View
-                      isLoading={true}
+                      cardColor="#6bac43"
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -576,46 +470,31 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
                           }
                         >
-                          <View
-                            animate={null}
-                            customAnimate={null}
-                            onReady={false}
+                          <Image
+                            maxAspectRatio={1}
+                            minAspectRatio={1}
+                            onLoad={[Function]}
+                            source={Array []}
                             style={
                               Object {
-                                "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
+                                "opacity": 1,
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
-                          >
-                            <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
-                              onLoad={[Function]}
-                              source={Array []}
-                              style={
-                                Object {
-                                  "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
-                                  "opacity": 0,
-                                  "resizeMode": "cover",
-                                  "width": "100%",
-                                }
-                              }
-                            />
-                          </View>
+                          />
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1718332483,
+                                4285246531,
                               ]
                             }
                             endPoint={
@@ -627,11 +506,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#6bac43"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -653,627 +532,62 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
                             }
                           }
                         >
-                          <View
+                          <Text
+                            numberOfLines={3}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "color": "#ffffff",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 36,
+                                "lineHeight": 41.4,
+                              }
+                            }
+                          >
+                            Live for Freedom Toolkit
+                          </Text>
+                          <View
+                            hasSummary={true}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
-                          </View>
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "height": 24,
-                                "marginVertical": 1.8000000000000007,
-                                "width": "100%",
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "height": 16,
-                                "marginTop": 16,
-                                "marginVertical": 5,
-                                "width": "100%",
-                              }
-                            }
-                          />
-                        </View>
-                      </View>
-                    </View>
-                  </View>
-                </View>
-                <View
-                  onLayout={[Function]}
-                  style={null}
-                >
-                  <View
-                    accessible={true}
-                    clickable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "transform": Array [
-                          Object {
-                            "scale": 1,
-                          },
-                        ],
-                      }
-                    }
-                  >
-                    <View
-                      isLoading={true}
-                      style={
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 16,
-                          "marginHorizontal": 16,
-                          "marginVertical": 12,
-                          "shadowColor": "rgba(8, 0, 20, 0.25)",
-                          "shadowOffset": Object {
-                            "height": 1,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 1,
-                          "shadowRadius": 6,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "borderRadius": 16,
-                            "overflow": "hidden",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#dddddd",
-                              "overflow": "hidden",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <View
-                            animate={null}
-                            customAnimate={null}
-                            onReady={false}
-                            style={
-                              Object {
-                                "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
-                                "resizeMode": "cover",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
-                              onLoad={[Function]}
-                              source={Array []}
-                              style={
-                                Object {
-                                  "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
-                                  "opacity": 0,
-                                  "resizeMode": "cover",
-                                  "width": "100%",
+                            >
+                              <Text
+                                bold={false}
+                                italic={false}
+                                numberOfLines={2}
+                                style={
+                                  Object {
+                                    "color": "#ffffff",
+                                    "fontFamily": "Colfax-Regular",
+                                    "fontSize": 16,
+                                    "lineHeight": 26,
+                                  }
                                 }
-                              }
-                            />
+                              >
+                                Get in the Groove
+Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you go — with this playlist of NewSpring Worship's favorite songs of the summer.
+                              </Text>
+                            </View>
                           </View>
-                          <BVLinearGradient
-                            colors={
-                              Array [
-                                2147483648,
-                                0,
-                              ]
-                            }
-                            endPoint={
-                              Object {
-                                "x": 0,
-                                "y": 1,
-                              }
-                            }
-                            locations={
-                              Array [
-                                0,
-                                1,
-                              ]
-                            }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
-                            startPoint={
-                              Object {
-                                "x": 0,
-                                "y": 0,
-                              }
-                            }
-                            style={
-                              Object {
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "flex-start",
-                              "paddingBottom": 32,
-                              "paddingHorizontal": 24,
-                              "paddingVertical": 16,
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
-                              }
-                            }
-                          >
-                            <View
-                              style={
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
-                                }
-                              }
-                            />
-                          </View>
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "height": 24,
-                                "marginVertical": 1.8000000000000007,
-                                "width": "100%",
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "height": 16,
-                                "marginTop": 16,
-                                "marginVertical": 5,
-                                "width": "100%",
-                              }
-                            }
-                          />
-                        </View>
-                      </View>
-                    </View>
-                  </View>
-                </View>
-                <View
-                  onLayout={[Function]}
-                  style={null}
-                >
-                  <View
-                    accessible={true}
-                    clickable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "transform": Array [
-                          Object {
-                            "scale": 1,
-                          },
-                        ],
-                      }
-                    }
-                  >
-                    <View
-                      isLoading={true}
-                      style={
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 16,
-                          "marginHorizontal": 16,
-                          "marginVertical": 12,
-                          "shadowColor": "rgba(8, 0, 20, 0.25)",
-                          "shadowOffset": Object {
-                            "height": 1,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 1,
-                          "shadowRadius": 6,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "borderRadius": 16,
-                            "overflow": "hidden",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#dddddd",
-                              "overflow": "hidden",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <View
-                            animate={null}
-                            customAnimate={null}
-                            onReady={false}
-                            style={
-                              Object {
-                                "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
-                                "resizeMode": "cover",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
-                              onLoad={[Function]}
-                              source={Array []}
-                              style={
-                                Object {
-                                  "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
-                                  "opacity": 0,
-                                  "resizeMode": "cover",
-                                  "width": "100%",
-                                }
-                              }
-                            />
-                          </View>
-                          <BVLinearGradient
-                            colors={
-                              Array [
-                                2147483648,
-                                0,
-                              ]
-                            }
-                            endPoint={
-                              Object {
-                                "x": 0,
-                                "y": 1,
-                              }
-                            }
-                            locations={
-                              Array [
-                                0,
-                                1,
-                              ]
-                            }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
-                            startPoint={
-                              Object {
-                                "x": 0,
-                                "y": 0,
-                              }
-                            }
-                            style={
-                              Object {
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "flex-start",
-                              "paddingBottom": 32,
-                              "paddingHorizontal": 24,
-                              "paddingVertical": 16,
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
-                              }
-                            }
-                          >
-                            <View
-                              style={
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
-                                }
-                              }
-                            />
-                          </View>
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "height": 24,
-                                "marginVertical": 1.8000000000000007,
-                                "width": "100%",
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "height": 16,
-                                "marginTop": 16,
-                                "marginVertical": 5,
-                                "width": "100%",
-                              }
-                            }
-                          />
-                        </View>
-                      </View>
-                    </View>
-                  </View>
-                </View>
-                <View
-                  onLayout={[Function]}
-                  style={null}
-                >
-                  <View
-                    accessible={true}
-                    clickable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      Object {
-                        "transform": Array [
-                          Object {
-                            "scale": 1,
-                          },
-                        ],
-                      }
-                    }
-                  >
-                    <View
-                      isLoading={true}
-                      style={
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderRadius": 16,
-                          "marginHorizontal": 16,
-                          "marginVertical": 12,
-                          "shadowColor": "rgba(8, 0, 20, 0.25)",
-                          "shadowOffset": Object {
-                            "height": 1,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 1,
-                          "shadowRadius": 6,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "borderRadius": 16,
-                            "overflow": "hidden",
-                          }
-                        }
-                      >
-                        <View
-                          style={
-                            Object {
-                              "backgroundColor": "#dddddd",
-                              "overflow": "hidden",
-                              "width": "100%",
-                            }
-                          }
-                        >
-                          <View
-                            animate={null}
-                            customAnimate={null}
-                            onReady={false}
-                            style={
-                              Object {
-                                "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
-                                "resizeMode": "cover",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
-                              onLoad={[Function]}
-                              source={Array []}
-                              style={
-                                Object {
-                                  "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
-                                  "opacity": 0,
-                                  "resizeMode": "cover",
-                                  "width": "100%",
-                                }
-                              }
-                            />
-                          </View>
-                          <BVLinearGradient
-                            colors={
-                              Array [
-                                2147483648,
-                                0,
-                              ]
-                            }
-                            endPoint={
-                              Object {
-                                "x": 0,
-                                "y": 1,
-                              }
-                            }
-                            locations={
-                              Array [
-                                0,
-                                1,
-                              ]
-                            }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
-                            startPoint={
-                              Object {
-                                "x": 0,
-                                "y": 0,
-                              }
-                            }
-                            style={
-                              Object {
-                                "bottom": 0,
-                                "left": 0,
-                                "position": "absolute",
-                                "right": 0,
-                                "top": 0,
-                              }
-                            }
-                          />
-                        </View>
-                        <View
-                          style={
-                            Object {
-                              "alignItems": "flex-start",
-                              "paddingBottom": 32,
-                              "paddingHorizontal": 24,
-                              "paddingVertical": 16,
-                            }
-                          }
-                        >
-                          <View
-                            style={
-                              Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
-                              }
-                            }
-                          >
-                            <View
-                              style={
-                                Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
-                                }
-                              }
-                            />
-                          </View>
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "height": 24,
-                                "marginVertical": 1.8000000000000007,
-                                "width": "100%",
-                              }
-                            }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "height": 16,
-                                "marginTop": 16,
-                                "marginVertical": 5,
-                                "width": "100%",
-                              }
-                            }
-                          />
                         </View>
                       </View>
                     </View>
@@ -1305,7 +619,6 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                   >
                     <View
                       cardColor="#6bac43"
-                      isLoading={true}
                       style={
                         Object {
                           "backgroundColor": "#6bac43",
@@ -1356,10 +669,17 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                               maxAspectRatio={1}
                               minAspectRatio={1}
                               onLoad={[Function]}
-                              source={Array []}
+                              source={
+                                Array [
+                                  Object {
+                                    "__typename": "ImageMediaSource",
+                                    "cache": "force-cache",
+                                    "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Db08e4d69-0acf-40ff-920a-4517de086175",
+                                  },
+                                ]
+                              }
                               style={
                                 Object {
-                                  "aspectRatio": 1,
                                   "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
@@ -1371,8 +691,8 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           <BVLinearGradient
                             colors={
                               Array [
-                                1727526903,
-                                4294440951,
+                                1718332483,
+                                4285246531,
                               ]
                             }
                             endPoint={
@@ -1387,7 +707,7 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 0.8,
                               ]
                             }
-                            overlayColor="#f7f7f7"
+                            overlayColor="#6bac43"
                             overlayType="featured"
                             startPoint={
                               Object {
@@ -1417,32 +737,19 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                             }
                           }
                         >
-                          <View
+                          <Text
+                            numberOfLines={3}
                             style={
                               Object {
-                                "alignItems": "center",
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#dddddd",
-                                "borderRadius": 16,
-                                "borderWidth": 0,
-                                "height": 32,
-                                "paddingHorizontal": 12,
-                                "width": 64,
+                                "color": "#ffffff",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 36,
+                                "lineHeight": 41.4,
                               }
                             }
-                          />
-                          <View
-                            style={
-                              Object {
-                                "alignSelf": "stretch",
-                                "backgroundColor": "#858585",
-                                "borderRadius": 16,
-                                "height": 36,
-                                "marginVertical": 2.6999999999999993,
-                                "width": "100%",
-                              }
-                            }
-                          />
+                          >
+                            Should your 20-something live at home?
+                          </Text>
                           <View
                             hasSummary={true}
                             style={
@@ -1461,18 +768,590 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                                 }
                               }
                             >
-                              <View
+                              <Text
+                                bold={false}
+                                italic={false}
+                                numberOfLines={2}
                                 style={
                                   Object {
-                                    "alignSelf": "stretch",
-                                    "backgroundColor": "#858585",
-                                    "borderRadius": 16,
-                                    "height": 16,
-                                    "marginVertical": 5,
-                                    "width": "100%",
+                                    "color": "#ffffff",
+                                    "fontFamily": "Colfax-Regular",
+                                    "fontSize": 16,
+                                    "lineHeight": 26,
                                   }
                                 }
-                              />
+                              >
+                                Daughter: “Mom, can I bring some friends from college over for dinner Sunday?
+                              </Text>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={null}
+                >
+                  <View
+                    accessible={true}
+                    clickable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "transform": Array [
+                          Object {
+                            "scale": 1,
+                          },
+                        ],
+                      }
+                    }
+                  >
+                    <View
+                      cardColor="#6bac43"
+                      style={
+                        Object {
+                          "backgroundColor": "#6bac43",
+                          "borderRadius": 16,
+                          "marginHorizontal": 16,
+                          "marginVertical": 12,
+                          "shadowColor": "rgba(8, 0, 20, 0.25)",
+                          "shadowOffset": Object {
+                            "height": 1,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 1,
+                          "shadowRadius": 6,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "borderRadius": 16,
+                            "overflow": "hidden",
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#858585",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#858585",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
+                              onLoad={[Function]}
+                              source={
+                                Array [
+                                  Object {
+                                    "__typename": "ImageMediaSource",
+                                    "cache": "force-cache",
+                                    "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3D58c037fa-cc7f-4d72-9571-a0cc0558e346",
+                                  },
+                                ]
+                              }
+                              style={
+                                Object {
+                                  "backgroundColor": "#858585",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                1718332483,
+                                4285246531,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                0.8,
+                              ]
+                            }
+                            overlayColor="#6bac43"
+                            overlayType="featured"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "marginTop": "-40%",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
+                              "paddingVertical": 16,
+                            }
+                          }
+                        >
+                          <Text
+                            numberOfLines={3}
+                            style={
+                              Object {
+                                "color": "#ffffff",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 36,
+                                "lineHeight": 41.4,
+                              }
+                            }
+                          >
+                            Guys Night!
+                          </Text>
+                          <View
+                            hasSummary={true}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "flex": 1,
+                                  "marginRight": 16,
+                                }
+                              }
+                            >
+                              <Text
+                                bold={false}
+                                italic={false}
+                                numberOfLines={2}
+                                style={
+                                  Object {
+                                    "color": "#ffffff",
+                                    "fontFamily": "Colfax-Regular",
+                                    "fontSize": 16,
+                                    "lineHeight": 26,
+                                  }
+                                }
+                              >
+                                A time to connect with other guys who live nearby.
+                              </Text>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={null}
+                >
+                  <View
+                    accessible={true}
+                    clickable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "transform": Array [
+                          Object {
+                            "scale": 1,
+                          },
+                        ],
+                      }
+                    }
+                  >
+                    <View
+                      cardColor="#6bac43"
+                      style={
+                        Object {
+                          "backgroundColor": "#6bac43",
+                          "borderRadius": 16,
+                          "marginHorizontal": 16,
+                          "marginVertical": 12,
+                          "shadowColor": "rgba(8, 0, 20, 0.25)",
+                          "shadowOffset": Object {
+                            "height": 1,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 1,
+                          "shadowRadius": 6,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "borderRadius": 16,
+                            "overflow": "hidden",
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#858585",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <Image
+                            maxAspectRatio={1}
+                            minAspectRatio={1}
+                            onLoad={[Function]}
+                            source={Array []}
+                            style={
+                              Object {
+                                "backgroundColor": "#858585",
+                                "opacity": 1,
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          />
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                1718332483,
+                                4285246531,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                0.8,
+                              ]
+                            }
+                            overlayColor="#6bac43"
+                            overlayType="featured"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "marginTop": "-40%",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
+                              "paddingVertical": 16,
+                            }
+                          }
+                        >
+                          <Text
+                            numberOfLines={3}
+                            style={
+                              Object {
+                                "color": "#ffffff",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 36,
+                                "lineHeight": 41.4,
+                              }
+                            }
+                          >
+                            10 ways to refresh your spirit every day
+                          </Text>
+                          <View
+                            hasSummary={true}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "flex": 1,
+                                  "marginRight": 16,
+                                }
+                              }
+                            >
+                              <Text
+                                bold={false}
+                                italic={false}
+                                numberOfLines={2}
+                                style={
+                                  Object {
+                                    "color": "#ffffff",
+                                    "fontFamily": "Colfax-Regular",
+                                    "fontSize": 16,
+                                    "lineHeight": 26,
+                                  }
+                                }
+                              >
+                                1. Be slow What would it look like to live your life at half-speed?
+                              </Text>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={null}
+                >
+                  <View
+                    accessible={true}
+                    clickable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "transform": Array [
+                          Object {
+                            "scale": 1,
+                          },
+                        ],
+                      }
+                    }
+                  >
+                    <View
+                      cardColor="#6bac43"
+                      style={
+                        Object {
+                          "backgroundColor": "#6bac43",
+                          "borderRadius": 16,
+                          "marginHorizontal": 16,
+                          "marginVertical": 12,
+                          "shadowColor": "rgba(8, 0, 20, 0.25)",
+                          "shadowOffset": Object {
+                            "height": 1,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 1,
+                          "shadowRadius": 6,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "borderRadius": 16,
+                            "overflow": "hidden",
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "backgroundColor": "#858585",
+                              "overflow": "hidden",
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <View
+                            animate={null}
+                            customAnimate={null}
+                            onReady={false}
+                            style={
+                              Object {
+                                "aspectRatio": 1,
+                                "backgroundColor": "#858585",
+                                "resizeMode": "cover",
+                                "width": "100%",
+                              }
+                            }
+                          >
+                            <Image
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
+                              onLoad={[Function]}
+                              source={
+                                Array [
+                                  Object {
+                                    "__typename": "ImageMediaSource",
+                                    "cache": "force-cache",
+                                    "uri": "https://res.cloudinary.com/apollos/image/fetch/c_limit,f_auto,w_1600/https://apollosrock.newspring.cc/GetImage.ashx%3Fguid%3Dd3a96243-2558-4c04-bf41-3aadcf41771f",
+                                  },
+                                ]
+                              }
+                              style={
+                                Object {
+                                  "backgroundColor": "#858585",
+                                  "opacity": 0,
+                                  "resizeMode": "cover",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                          </View>
+                          <BVLinearGradient
+                            colors={
+                              Array [
+                                1718332483,
+                                4285246531,
+                              ]
+                            }
+                            endPoint={
+                              Object {
+                                "x": 0,
+                                "y": 1,
+                              }
+                            }
+                            locations={
+                              Array [
+                                0,
+                                0.8,
+                              ]
+                            }
+                            overlayColor="#6bac43"
+                            overlayType="featured"
+                            startPoint={
+                              Object {
+                                "x": 0,
+                                "y": 0,
+                              }
+                            }
+                            style={
+                              Object {
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                              }
+                            }
+                          />
+                        </View>
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "flex-start",
+                              "marginTop": "-40%",
+                              "paddingBottom": 32,
+                              "paddingHorizontal": 24,
+                              "paddingVertical": 16,
+                            }
+                          }
+                        >
+                          <Text
+                            numberOfLines={3}
+                            style={
+                              Object {
+                                "color": "#ffffff",
+                                "fontFamily": "Colfax-Black",
+                                "fontSize": 36,
+                                "lineHeight": 41.4,
+                              }
+                            }
+                          >
+                            Why leadership isn’t all about the title
+                          </Text>
+                          <View
+                            hasSummary={true}
+                            style={
+                              Object {
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
+                              }
+                            }
+                          >
+                            <View
+                              style={
+                                Object {
+                                  "flex": 1,
+                                  "marginRight": 16,
+                                }
+                              }
+                            >
+                              <Text
+                                bold={false}
+                                italic={false}
+                                numberOfLines={2}
+                                style={
+                                  Object {
+                                    "color": "#ffffff",
+                                    "fontFamily": "Colfax-Regular",
+                                    "fontSize": 16,
+                                    "lineHeight": 26,
+                                  }
+                                }
+                              >
+                                We all like to know that our boss or the authority over us is pleased, and it means even more when they take the time to share that in front of other people.
+                              </Text>
                             </View>
                           </View>
                         </View>
@@ -1791,6 +1670,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
               onEndReachedThreshold={0.7}
               onLayout={[Function]}
               onMomentumScrollEnd={[Function]}
+              onPressItem={[Function]}
               onRefresh={[Function]}
               onScroll={[Function]}
               onScrollBeginDrag={[Function]}
@@ -1837,10 +1717,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -1865,7 +1746,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -1878,21 +1759,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -1903,8 +1784,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -1916,11 +1797,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -1942,6 +1823,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -1949,27 +1831,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -2001,10 +1892,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -2029,7 +1921,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -2042,21 +1934,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -2067,8 +1959,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -2080,11 +1972,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -2106,6 +1998,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -2113,27 +2006,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -2165,10 +2067,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -2193,7 +2096,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -2206,21 +2109,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -2231,8 +2134,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -2244,11 +2147,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -2270,6 +2173,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -2277,27 +2181,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -2329,10 +2242,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -2357,7 +2271,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -2370,21 +2284,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -2395,8 +2309,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -2408,11 +2322,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -2434,6 +2348,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -2441,27 +2356,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -2493,10 +2417,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -2521,7 +2446,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -2534,21 +2459,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -2559,8 +2484,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -2572,11 +2497,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -2598,6 +2523,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -2605,27 +2531,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -2657,10 +2592,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -2685,7 +2621,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -2698,21 +2634,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -2723,8 +2659,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -2736,11 +2672,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -2762,6 +2698,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -2769,27 +2706,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -2821,10 +2767,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -2849,7 +2796,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -2862,21 +2809,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -2887,8 +2834,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -2900,11 +2847,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -2926,6 +2873,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -2933,27 +2881,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -2985,10 +2942,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -3013,7 +2971,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -3026,21 +2984,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -3051,8 +3009,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -3064,11 +3022,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -3090,6 +3048,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -3097,27 +3056,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -3149,10 +3117,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -3177,7 +3146,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -3190,21 +3159,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -3215,8 +3184,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -3228,11 +3197,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -3254,6 +3223,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -3261,27 +3231,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -3313,10 +3292,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                     }
                   >
                     <View
+                      cardColor="#6bac43"
                       isLoading={true}
                       style={
                         Object {
-                          "backgroundColor": "#ffffff",
+                          "backgroundColor": "#6bac43",
                           "borderRadius": 16,
                           "marginHorizontal": 16,
                           "marginVertical": 12,
@@ -3341,7 +3321,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                         <View
                           style={
                             Object {
-                              "backgroundColor": "#dddddd",
+                              "backgroundColor": "#858585",
                               "overflow": "hidden",
                               "width": "100%",
                             }
@@ -3354,21 +3334,21 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             style={
                               Object {
                                 "aspectRatio": 1,
-                                "backgroundColor": "#dddddd",
+                                "backgroundColor": "#858585",
                                 "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
                           >
                             <Image
-                              maxAspectRatio={1.78}
-                              minAspectRatio={1.2}
+                              maxAspectRatio={1}
+                              minAspectRatio={1}
                               onLoad={[Function]}
                               source={Array []}
                               style={
                                 Object {
                                   "aspectRatio": 1,
-                                  "backgroundColor": "#dddddd",
+                                  "backgroundColor": "#858585",
                                   "opacity": 0,
                                   "resizeMode": "cover",
                                   "width": "100%",
@@ -3379,8 +3359,8 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           <BVLinearGradient
                             colors={
                               Array [
-                                2147483648,
-                                0,
+                                1727526903,
+                                4294440951,
                               ]
                             }
                             endPoint={
@@ -3392,11 +3372,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                             locations={
                               Array [
                                 0,
-                                1,
+                                0.8,
                               ]
                             }
-                            overlayColor="#000000"
-                            overlayType="gradient-top"
+                            overlayColor="#f7f7f7"
+                            overlayType="featured"
                             startPoint={
                               Object {
                                 "x": 0,
@@ -3418,6 +3398,7 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           style={
                             Object {
                               "alignItems": "flex-start",
+                              "marginTop": "-40%",
                               "paddingBottom": 32,
                               "paddingHorizontal": 24,
                               "paddingVertical": 16,
@@ -3425,27 +3406,36 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           }
                         >
                           <View
+                            hasSummary={false}
                             style={
                               Object {
-                                "marginBottom": 16,
-                                "marginTop": -32,
+                                "alignItems": "flex-end",
+                                "flexDirection": "row",
+                                "paddingTop": 16,
                               }
                             }
                           >
                             <View
                               style={
                                 Object {
-                                  "alignItems": "center",
-                                  "alignSelf": "stretch",
-                                  "backgroundColor": "#dddddd",
-                                  "borderRadius": 16,
-                                  "borderWidth": 0,
-                                  "height": 32,
-                                  "paddingHorizontal": 12,
-                                  "width": 64,
+                                  "flex": 1,
+                                  "marginRight": 16,
                                 }
                               }
-                            />
+                            >
+                              <View
+                                style={
+                                  Object {
+                                    "alignSelf": "stretch",
+                                    "backgroundColor": "#858585",
+                                    "borderRadius": 16,
+                                    "height": 36,
+                                    "marginVertical": 2.6999999999999993,
+                                    "width": "100%",
+                                  }
+                                }
+                              />
+                            </View>
                           </View>
                         </View>
                       </View>
@@ -3649,6 +3639,7 @@ exports[`The SearchFeed component should render an empty state 1`] = `
               onEndReachedThreshold={0.7}
               onLayout={[Function]}
               onMomentumScrollEnd={[Function]}
+              onPressItem={[Function]}
               onRefresh={[Function]}
               onScroll={[Function]}
               onScrollBeginDrag={[Function]}
