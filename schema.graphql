@@ -409,9 +409,6 @@ type Prayer implements Node {
   isAnonymous: Boolean
   isSaved: Boolean
   isPrayedFor: Boolean
-  isLiked: Boolean
-  likedCount: Int
-  sharing: SharableContentItem
 }
 
 type PrayerMenuCategory implements Node {
@@ -495,6 +492,12 @@ type ScriptureFeature implements Feature & Node {
   sharing: SharableFeature
 }
 
+type ScriptureNote implements SermonNote {
+  id: ID!
+  allowsCustomNote: Boolean
+  scripture: Scripture
+}
+
 type SearchResult {
   cursor: String
   title: String
@@ -512,6 +515,11 @@ type SeriesConnection {
   series: ContentItem
   itemCount: Int
   itemIndex(id: String): Int
+}
+
+interface SermonNote {
+  id: ID!
+  allowsCustomNote: Boolean
 }
 
 interface Sharable {
@@ -542,6 +550,13 @@ type TextFeature implements Feature & Node {
   order: Int
   body: String
   sharing: SharableFeature
+}
+
+type TextNote implements SermonNote {
+  id: ID!
+  allowsCustomNote: Boolean
+  text: String
+  isHeader: Boolean
 }
 
 type Theme {
@@ -641,6 +656,7 @@ type WeekendContentItem implements ContentItem & Node {
   sermonDate: String
   series: ContentItem @deprecated(reason: "Use seriesConnection")
   seriesConnection: SeriesConnection
+  sermonNotes: [SermonNote]
   liveStream: LiveStream
   sharing: SharableContentItem
   features: [Feature]
