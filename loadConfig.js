@@ -59,6 +59,12 @@ ApollosConfig.loadJs({
             name
           }
         }
+        ... on UniversalContentItem {
+          parentChannel {
+            id
+            name
+          }
+        }
       }
     `,
   },
