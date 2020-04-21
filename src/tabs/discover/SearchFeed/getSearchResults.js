@@ -26,6 +26,10 @@ export default gql`
                 paper
               }
             }
+            parentChannel {
+              id
+              name
+            }
           }
         }
       }

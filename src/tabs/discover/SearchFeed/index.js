@@ -37,7 +37,14 @@ const SearchFeed = withNavigation(({ navigation, searchText }) => (
   >
     {({ loading, error, data, refetch }) => (
       <StyledFeedView
-        ListItemComponent={SearchCardConnected}
+        ListItemComponent={({ ...props }) => (
+          <SearchCardConnected
+            labelText={get(props, 'node.parentChannel.name', '')
+              .split(' - ')
+              .pop()}
+            {...props}
+          />
+        )}
         content={get(data, 'search.edges', [])}
         ListEmptyComponent={() => <NoResults searchText={searchText} />}
         hasContent={get(data, 'search.edges', []).length}

@@ -9,7 +9,10 @@ import {
   HorizontalLikedContentFeed,
   HorizontalContentCardConnected,
 } from '@apollosproject/ui-connected';
-import { BackgroundView } from '@apollosproject/ui-kit';
+import {
+  BackgroundView,
+  HorizontalHighlightCard,
+} from '@apollosproject/ui-kit';
 import ActionTable from './ActionTable';
 import ActionBar from './ActionBar';
 import UserAvatarHeader, { GET_USER_PROFILE } from './UserAvatarHeader';
@@ -39,6 +42,7 @@ class Connect extends PureComponent {
                 <HorizontalLikedContentFeed
                   Component={({ ...cardProps }) => (
                     <HorizontalContentCardConnected
+                      Component={HorizontalHighlightCard}
                       labelText={''}
                       {...cardProps}
                     />
