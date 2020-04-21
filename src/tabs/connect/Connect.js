@@ -4,8 +4,15 @@ import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
 
-import { BackgroundView } from '@apollosproject/ui-kit';
-import HorizontalLikedContentFeedConnected from '../../ui/HorizontalLikedContentFeedConnected';
+import {
+  HorizontalLikedContentFeedConnected,
+  HorizontalLikedContentFeed,
+  HorizontalContentCardConnected,
+} from '@apollosproject/ui-connected';
+import {
+  BackgroundView,
+  HorizontalHighlightCard,
+} from '@apollosproject/ui-kit';
 import ActionTable from './ActionTable';
 import ActionBar from './ActionBar';
 import UserAvatarHeader, { GET_USER_PROFILE } from './UserAvatarHeader';
@@ -30,7 +37,20 @@ class Connect extends PureComponent {
           <ScrollView>
             <UserAvatarHeader />
             <ActionBar />
-            <HorizontalLikedContentFeedConnected />
+            <HorizontalLikedContentFeedConnected
+              Component={({ ...feedProps }) => (
+                <HorizontalLikedContentFeed
+                  Component={({ ...cardProps }) => (
+                    <HorizontalContentCardConnected
+                      Component={HorizontalHighlightCard}
+                      labelText={''}
+                      {...cardProps}
+                    />
+                  )}
+                  {...feedProps}
+                />
+              )}
+            />
             <Query query={GET_USER_PROFILE}>
               {({
                 data: {

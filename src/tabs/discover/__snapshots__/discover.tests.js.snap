@@ -261,6 +261,7 @@ exports[`The Discover tab component Should retrieve the Content Channel Feeds 1`
                       <TextInput
                         allowFontScaling={true}
                         cancelButtonOffset={1000}
+                        color="#303030"
                         editable={true}
                         isFocused={false}
                         onChangeText={[Function]}

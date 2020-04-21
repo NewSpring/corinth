@@ -949,6 +949,21 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   }
                 >
                   <View
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "alignSelf": "stretch",
+                        "backgroundColor": "#dddddd",
+                        "borderRadius": 16,
+                        "borderWidth": 0,
+                        "height": 32,
+                        "marginBottom": 16,
+                        "paddingHorizontal": 12,
+                        "width": 64,
+                      }
+                    }
+                  />
+                  <View
                     hasSummary={false}
                     style={
                       Object {

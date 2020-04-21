@@ -1,6 +1,10 @@
+import React from 'react';
 import { createStackNavigator } from 'react-navigation';
-import { withTheme } from '@apollosproject/ui-kit';
-import LikedContentFeedConnected from '../../ui/LikedContentFeedConnected';
+import {
+  LikedContentFeedConnected,
+  ContentCardConnected,
+} from '@apollosproject/ui-connected';
+import { withTheme, FeedView } from '@apollosproject/ui-kit';
 
 import UserSettings from '../../user-settings';
 import TestingControlPanel from '../../testing-control-panel';
@@ -8,12 +12,25 @@ import TestingControlPanel from '../../testing-control-panel';
 import tabBarIcon from '../tabBarIcon';
 import Connect from './Connect';
 
+const CustomLikedFeed = () => (
+  <LikedContentFeedConnected
+    Component={({ ...feedProps }) => (
+      <FeedView
+        {...feedProps}
+        ListItemComponent={({ ...connectedCardProps }) => (
+          <ContentCardConnected {...connectedCardProps} labelText={''} />
+        )}
+      />
+    )}
+  />
+);
+
 const ConnectNavigator = createStackNavigator(
   {
     Connect,
     TestingControlPanel,
     UserSettings,
-    LikedContentFeedConnected,
+    LikedContentFeedConnected: CustomLikedFeed,
   },
   {
     initialRouteName: 'Connect',

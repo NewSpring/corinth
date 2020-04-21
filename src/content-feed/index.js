@@ -8,14 +8,8 @@ import {
   fetchMoreResolver,
 } from '@apollosproject/ui-connected';
 
-import {
-  BackgroundView,
-  FeedView,
-  TouchableScale,
-  DefaultCard,
-} from '@apollosproject/ui-kit';
+import { BackgroundView, FeedView, FeaturedCard } from '@apollosproject/ui-kit';
 
-import BrandedCard from '../ui/BrandedCard';
 import GET_CONTENT_FEED from './getContentFeed';
 /**
  * This is where the component description lives
@@ -50,17 +44,6 @@ class ContentFeed extends PureComponent {
     });
   };
 
-  getComponent = (item) => {
-    switch (get(item, '__typename')) {
-      case 'WeekendContentItem':
-      case 'ContentSeriesContentItem':
-      case 'DevotionalContentItem':
-        return BrandedCard;
-      default:
-        return DefaultCard;
-    }
-  };
-
   render() {
     const { navigation } = this.props;
     const itemId = navigation.getParam('itemId', []);
@@ -73,6 +56,9 @@ class ContentFeed extends PureComponent {
         >
           {({ loading, error, data, refetch, fetchMore, variables }) => (
             <FeedView
+              ListItemComponent={({ ...props }) => (
+                <ContentCardConnected Component={FeaturedCard} {...props} />
+              )}
               content={get(
                 data,
                 'node.childContentItemsConnection.edges',
@@ -87,22 +73,7 @@ class ContentFeed extends PureComponent {
               isLoading={loading}
               error={error}
               refetch={refetch}
-              renderItem={({ item }) => (
-                <TouchableScale
-                  onPress={() => {
-                    this.handleOnPress(item);
-                  }}
-                >
-                  <ContentCardConnected
-                    Component={this.getComponent(item)}
-                    contentId={item.isLoading ? null : get(item, 'id')}
-                    labelText={
-                      item.parentChannel &&
-                      item.parentChannel.name.split(' - ').pop()
-                    }
-                  />
-                </TouchableScale>
-              )}
+              onPressItem={this.handleOnPress}
             />
           )}
         </Query>

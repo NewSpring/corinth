@@ -8,17 +8,20 @@ import PropTypes from 'prop-types';
 import {
   ContentCardConnected,
   fetchMoreResolver,
+  LiveConsumer,
 } from '@apollosproject/ui-connected';
 import {
   styled,
   FeedView,
   BackgroundView,
   TouchableScale,
-  DefaultCard,
+  FeaturedCard,
+  withTheme,
+  CardLabel,
 } from '@apollosproject/ui-kit';
 
-import BrandedCard from '../../ui/BrandedCard';
 import LiveButton from '../../ui/LiveButton';
+import LiveIcon from '../../ui/LiveIcon';
 
 import Features from './Features';
 import GET_USER_FEED from './getUserFeed';
@@ -30,6 +33,28 @@ const LogoTitle = styled(({ theme }) => ({
   alignSelf: 'center',
   resizeMode: 'contain',
 }))(Image);
+
+const CampaignLabel = withTheme(({ isLive, title, theme }) => ({
+  title: isLive ? 'Live' : title,
+  IconComponent: isLive ? LiveIcon : null,
+  style: {
+    marginBottom: theme.sizing.baseUnit,
+  },
+}))(CardLabel);
+
+const CampaignCard = ({ isLive, hasAction, summary, ...props }) => (
+  <FeaturedCard
+    {...props}
+    hasAction={isLive ? false : hasAction}
+    summary={isLive ? 'Tap for sermon notes and more' : summary}
+  />
+);
+
+CampaignCard.propTypes = {
+  isLive: PropTypes.bool,
+  hasAction: PropTypes.bool,
+  summary: PropTypes.string,
+};
 
 class Home extends PureComponent {
   static navigationOptions = () => ({
@@ -50,17 +75,6 @@ class Home extends PureComponent {
       transitionKey: item.transitionKey,
     });
 
-  getComponent = (item) => {
-    switch (get(item, '__typename')) {
-      case 'WeekendContentItem':
-      case 'ContentSeriesContentItem':
-      case 'DevotionalContentItem':
-        return BrandedCard;
-      default:
-        return DefaultCard;
-    }
-  };
-
   render() {
     return (
       <BackgroundView>
@@ -72,6 +86,15 @@ class Home extends PureComponent {
           >
             {({ loading, error, data, refetch, fetchMore, variables }) => (
               <FeedView
+                ListItemComponent={({ ...item }) => (
+                  <ContentCardConnected
+                    labelText={
+                      item.parentChannel &&
+                      item.parentChannel.name.split(' - ').pop()
+                    }
+                    {...item}
+                  />
+                )}
                 content={get(data, 'userFeed.edges', []).map(
                   (edge) => edge.node
                 )}
@@ -115,15 +138,23 @@ class Home extends PureComponent {
                               }
                             >
                               <ContentCardConnected
-                                Component={BrandedCard}
+                                Component={CampaignCard}
                                 contentId={featuredItem.id}
                                 isLoading={isFeaturedLoading}
-                                campaign
-                                labelText={
-                                  featuredItem.parentChannel &&
-                                  featuredItem.parentChannel.name
-                                    .split(' - ')
-                                    .pop()
+                                LabelComponent={
+                                  <LiveConsumer contentId={featuredItem.id}>
+                                    {(liveStream) => (
+                                      <CampaignLabel
+                                        title={
+                                          featuredItem.parentChannel &&
+                                          featuredItem.parentChannel.name
+                                            .split(' - ')
+                                            .pop()
+                                        }
+                                        isLive={!!liveStream}
+                                      />
+                                    )}
+                                  </LiveConsumer>
                                 }
                               />
                             </TouchableScale>
@@ -135,21 +166,6 @@ class Home extends PureComponent {
                   </>
                 }
                 onPressItem={this.handleOnPress}
-                renderItem={({ item }) => (
-                  <TouchableScale
-                    onPress={() => this.handleOnPress({ id: item.id })}
-                  >
-                    <ContentCardConnected
-                      Component={this.getComponent(item)}
-                      contentId={item.id}
-                      isLoading={loading}
-                      labelText={
-                        item.parentChannel &&
-                        item.parentChannel.name.split(' - ').pop()
-                      }
-                    />
-                  </TouchableScale>
-                )}
               />
             )}
           </Query>
