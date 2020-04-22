@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { ErrorCard, ThemeMixin } from '@apollosproject/ui-kit';
 
 import { TrackEventWhenLoaded } from '@apollosproject/ui-analytics';
+import { InteractWhenLoadedConnected } from '@apollosproject/ui-connected';
 
 import ActionContainer from './ActionContainer';
 import GET_CONTENT_ITEM from './getContentItem';
@@ -92,28 +93,22 @@ class ContentSingle extends PureComponent {
     const content = data.node || {};
 
     const { theme = {}, id } = content;
-    const colors = get(theme, 'colors') || {};
-    const { primary, secondary, screen, paper } = colors;
 
     return (
       <ThemeMixin
-        mixin={
-          content.theme
-            ? {
-                type: 'light',
-                colors: {
-                  ...(primary ? { primary, tertiary: primary } : {}),
-                  ...(secondary ? { secondary } : {}),
-                  ...(screen ? { screen } : {}),
-                  ...(paper ? { paper } : {}),
-                },
-              }
-            : {}
-        }
+        mixin={{
+          type: get(theme, 'type'),
+          colors: get(theme, 'colors'),
+        }}
       >
+        <InteractWhenLoadedConnected
+          isLoading={loading}
+          nodeId={this.itemId}
+          action={'COMPLETE'}
+        />
         <TrackEventWhenLoaded
-          loaded={!!(!loading && content.title)}
-          eventName={'View Contentx'}
+          isLoading={loading}
+          eventName={'View Content'}
           properties={{
             title: content.title,
             itemId: this.itemId,

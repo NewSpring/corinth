@@ -3,11 +3,10 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import ApolloClient from 'apollo-client';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 import { SchemaLink } from 'apollo-link-schema';
-
 import { importSchema } from 'graphql-import';
 
-import cache from '../cache';
 import { resolvers, schema, defaults } from '../../store';
+import cache from './cache';
 
 // eslint-disable-next-line
 export default (props) => {

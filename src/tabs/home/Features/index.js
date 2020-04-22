@@ -3,142 +3,218 @@ import { Query } from 'react-apollo';
 import { get } from 'lodash';
 // import PropTypes from 'prop-types';
 
-import { styled, ActionListCard, H3, H6 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
+import ActionListFeature from './ActionListFeature';
+import CampaignItemListFeature from './CampaignItemListFeature';
+import HorizontalCardListFeature from './HorizontalCardListFeature';
+import VerticalCardListFeature from './VerticalCardListFeature';
 
 import GET_FEED_FEATURES from './getFeedFeatures';
 
-const StyledH6 = styled(({ theme }) => ({
-  color: theme.colors.text.tertiary,
-}))(H6);
+const handleOnPressActionItem = ({
+  action,
+  navigation,
+  relatedNode,
+  track,
+}) => {
+  if (action === 'READ_CONTENT') {
+    navigation.navigate('ContentSingle', {
+      itemId: relatedNode.id,
+      transitionKey: 2,
+    });
+  }
+  if (action === 'READ_EVENT') {
+    navigation.navigate('Event', {
+      eventId: relatedNode.id,
+      transitionKey: 2,
+    });
+  }
+  track({
+    eventName: `Clicked Home Feed Feature`,
+    properties: [
+      {
+        field: 'Node ID',
+        value: relatedNode.id,
+      },
+    ],
+  });
+};
 
-// const handleOnPressActionItem = (id) =>
-//   this.props.navigation.navigate('ContentSingle', {
+// const handleOnPressCardActionButton = ({ id, navigation, title }) =>
+//   navigation.navigate('ContentFeed', {
 //     itemId: id,
-//     transitionKey: 2,
+//     itemTitle: title,
 //   });
+
+const actionListLoadingStateData = [
+  {
+    id: 'fakeId1',
+    title: '',
+    subtitle: '',
+    parentChannel: {
+      id: '',
+      name: '',
+    },
+    image: {
+      sources: [
+        {
+          uri: '',
+        },
+      ],
+    },
+  },
+  {
+    id: 'fakeId2',
+    title: '',
+    subtitle: '',
+    parentChannel: {
+      id: '',
+      name: '',
+    },
+    image: {
+      sources: [
+        {
+          uri: '',
+        },
+      ],
+    },
+  },
+  {
+    id: 'fakeId3',
+    title: '',
+    subtitle: '',
+    parentChannel: {
+      id: '',
+      name: '',
+    },
+    image: {
+      sources: [
+        {
+          uri: '',
+        },
+      ],
+    },
+  },
+  {
+    id: 'fakeId4',
+    title: '',
+    subtitle: '',
+    parentChannel: {
+      id: '',
+      name: '',
+    },
+    image: {
+      sources: [
+        {
+          uri: '',
+        },
+      ],
+    },
+  },
+];
 
 const Features = memo(({ navigation }) => (
   <Query query={GET_FEED_FEATURES} fetchPolicy="cache-and-network">
     {({ data: features, loading }) =>
-      loading ? (
-        <ActionListCard
-          isLoading
-          header={
-            <>
-              <StyledH6 isLoading />
-              <H3 isLoading />
-            </>
-          }
-          actions={[
-            {
-              id: 'fakeId1',
-              title: '',
-              subtitle: '',
-              parentChannel: {
-                id: '',
-                name: '',
-              },
-              coverImage: {
-                sources: {
-                  uri: '',
-                },
-              },
-            },
-            {
-              id: 'fakeId2',
-              title: '',
-              subtitle: '',
-              parentChannel: {
-                id: '',
-                name: '',
-              },
-              coverImage: {
-                sources: {
-                  uri: '',
-                },
-              },
-            },
-            {
-              id: 'fakeId3',
-              title: '',
-              subtitle: '',
-              parentChannel: {
-                id: '',
-                name: '',
-              },
-              coverImage: {
-                sources: {
-                  uri: '',
-                },
-              },
-            },
-            {
-              id: 'fakeId4',
-              title: '',
-              subtitle: '',
-              parentChannel: {
-                id: '',
-                name: '',
-              },
-              coverImage: {
-                sources: {
-                  uri: '',
-                },
-              },
-            },
-          ]}
-        />
-      ) : (
-        get(features, 'userFeedFeatures', []).map(
-          ({ title, subtitle, actions, id }) =>
-            actions.length ? (
-              <AnalyticsConsumer>
-                {({ track }) => (
-                  <ActionListCard
-                    isLoading={loading}
-                    key={id}
-                    header={
-                      <>
-                        <StyledH6 numberOfLines={1}>{title}</StyledH6>
-                        <H3 numberOfLines={3}>{subtitle}</H3>
-                      </>
-                    }
-                    actions={actions}
-                    onPressActionItem={({ action, relatedNode }) => {
-                      if (action === 'READ_CONTENT') {
-                        navigation.navigate('ContentSingle', {
-                          itemId: relatedNode.id,
-                          transitionKey: 2,
-                        });
+      get(features, 'userFeedFeatures', []).map(
+        ({
+          actions,
+          cards,
+          id,
+          isFeatured,
+          subtitle,
+          title,
+          __typename,
+          ...props
+        }) => {
+          <AnalyticsConsumer>
+            {({ track }) => {
+              switch (__typename) {
+                case 'ActionListFeature':
+                  return (
+                    <ActionListFeature
+                      // TODO: How can we better handle generating a loading state.
+                      actions={loading ? actionListLoadingStateData : actions}
+                      isLoading={loading}
+                      onPressActionItem={({ action, relatedNode }) =>
+                        handleOnPressActionItem({
+                          action,
+                          navigation,
+                          relatedNode,
+                          track,
+                        })
                       }
-                      if (action === 'READ_EVENT') {
-                        navigation.navigate('Event', {
-                          eventId: relatedNode.id,
-                          transitionKey: 2,
-                        });
+                      // onPressActionListButton={() =>
+                      //   handleOnPressCardActionButton({
+                      //     id,
+                      //     navigation,
+                      //     title,
+                      //   })
+                      // }
+                      subtitle={subtitle}
+                      title={title}
+                      {...props}
+                    />
+                  );
+                case 'HorizontalCardListFeature':
+                  return (
+                    <HorizontalCardListFeature
+                      cards={cards.map(({ actionIcon, ...card }) => ({
+                        ...card,
+                        ...(actionIcon != null
+                          ? { actionIcon: card.actionIcon }
+                          : {}),
+                        coverImage: get(card, 'coverImage.sources', undefined),
+                        __typename: card.relatedNode.__typename,
+                        id: card.relatedNode.id,
+                      }))}
+                      isLoading={loading}
+                      listKey={id}
+                      onPressItem={({ action, relatedNode }) =>
+                        handleOnPressActionItem({
+                          action,
+                          relatedNode,
+                          navigation,
+                          track,
+                        })
                       }
-                      track({
-                        eventName: `Clicked Home Feed Feature`,
-                        properties: [
-                          {
-                            field: 'Node ID',
-                            value: relatedNode.id,
-                          },
-                        ],
-                      });
-                    }}
-                    onPressCardActionButton={() =>
-                      navigation.navigate('ContentFeed', {
-                        itemId: id,
-                        itemTitle: title,
-                      })
-                    }
-                  />
-                )}
-              </AnalyticsConsumer>
-            ) : null
-        )
+                      subtitle={subtitle}
+                    />
+                  );
+                case 'VerticalCardListFeature': // eslint-disable-line no-case-declarations
+                  const Component = isFeatured
+                    ? CampaignItemListFeature
+                    : VerticalCardListFeature;
+                  return (
+                    <Component
+                      cards={cards.map(({ actionIcon, ...card }) => ({
+                        ...card,
+                        ...(actionIcon != null
+                          ? { actionIcon: card.actionIcon }
+                          : {}),
+                        coverImage: get(card, 'coverImage.sources', undefined),
+                        __typename: card.relatedNode.__typename,
+                      }))}
+                      isLoading={loading}
+                      listKey={id}
+                      onPressItem={({ action, relatedNode }) =>
+                        handleOnPressActionItem({
+                          action,
+                          relatedNode,
+                          navigation,
+                          track,
+                        })
+                      }
+                      subtitle={subtitle}
+                      title={title}
+                    />
+                  );
+                default:
+                  return null;
+              }
+            }}
+          </AnalyticsConsumer>;
+        }
       )
     }
   </Query>

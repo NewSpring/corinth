@@ -20,20 +20,11 @@
             android:value="@string/GOOGLE_MAPS_API_KEY" />
 
         <activity
-            android:name=".LaunchActivity"
-            android:theme="@style/LaunchTheme"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="adjustPan"
+            android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -111,6 +102,17 @@
                     android:pathPrefix="/staff/news" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.zoontek.rnbootsplash.RNBootSplashActivity"
+            android:theme="@style/BootTheme"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 

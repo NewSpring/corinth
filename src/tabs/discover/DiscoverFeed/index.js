@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import { get } from 'lodash';
+import PropTypes from 'prop-types';
 
 import { FeedView } from '@apollosproject/ui-kit';
 
