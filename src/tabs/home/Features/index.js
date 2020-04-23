@@ -127,11 +127,11 @@ const Features = memo(({ navigation }) => (
           __typename,
           ...props
         }) => {
-          <AnalyticsConsumer>
-            {({ track }) => {
-              switch (__typename) {
-                case 'ActionListFeature':
-                  return (
+          switch (__typename) {
+            case 'ActionListFeature':
+              return (
+                <AnalyticsConsumer>
+                  {({ track }) => (
                     <ActionListFeature
                       // TODO: How can we better handle generating a loading state.
                       actions={loading ? actionListLoadingStateData : actions}
@@ -155,9 +155,13 @@ const Features = memo(({ navigation }) => (
                       title={title}
                       {...props}
                     />
-                  );
-                case 'HorizontalCardListFeature':
-                  return (
+                  )}
+                </AnalyticsConsumer>
+              );
+            case 'HorizontalCardListFeature':
+              return (
+                <AnalyticsConsumer>
+                  {({ track }) => (
                     <HorizontalCardListFeature
                       cards={cards.map(({ actionIcon, ...card }) => ({
                         ...card,
@@ -180,12 +184,16 @@ const Features = memo(({ navigation }) => (
                       }
                       subtitle={subtitle}
                     />
-                  );
-                case 'VerticalCardListFeature': // eslint-disable-line no-case-declarations
-                  const Component = isFeatured
-                    ? CampaignItemListFeature
-                    : VerticalCardListFeature;
-                  return (
+                  )}
+                </AnalyticsConsumer>
+              );
+            case 'VerticalCardListFeature': // eslint-disable-line no-case-declarations
+              const Component = isFeatured
+                ? CampaignItemListFeature
+                : VerticalCardListFeature;
+              return (
+                <AnalyticsConsumer>
+                  {({ track }) => (
                     <Component
                       cards={cards.map(({ actionIcon, ...card }) => ({
                         ...card,
@@ -208,12 +216,12 @@ const Features = memo(({ navigation }) => (
                       subtitle={subtitle}
                       title={title}
                     />
-                  );
-                default:
-                  return null;
-              }
-            }}
-          </AnalyticsConsumer>;
+                  )}
+                </AnalyticsConsumer>
+              );
+            default:
+              return null;
+          }
         }
       )
     }

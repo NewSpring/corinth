@@ -12,7 +12,6 @@ import {
   ThemeMixin,
   ThemeConsumer,
   CardLabel,
-  withTheme,
 } from '@apollosproject/ui-kit';
 import { LiveConsumer } from '@apollosproject/ui-connected';
 
