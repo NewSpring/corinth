@@ -107,9 +107,11 @@ class HorizontalContentSeriesFeedConnected extends Component {
 
     return (
       <PaddedView horizontal={false}>
-        <PaddedView vertical={false}>
-          <H5>In this series</H5>
-        </PaddedView>
+        {!loading && content && content.length ? (
+          <PaddedView vertical={false}>
+            <H5>In this series</H5>
+          </PaddedView>
+        ) : null}
         <FeedComponent
           isLoading={loading}
           content={content}
