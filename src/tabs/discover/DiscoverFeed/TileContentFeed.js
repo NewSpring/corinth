@@ -14,6 +14,7 @@ import {
   TouchableScale,
   Touchable,
   withIsLoading,
+  HorizontalHighlightCard,
 } from '@apollosproject/ui-kit';
 
 import { HorizontalContentCardConnected } from '@apollosproject/ui-connected';
@@ -88,22 +89,25 @@ const TileContentFeed = ({ isLoading, id, name, navigation, content = [] }) => (
     </RowHeader>
     <StyledHorizontalTileFeed
       content={content}
-      renderItem={({ item }) => (
-        <TouchableScale
-          onPress={() => {
-            navigation.push('ContentSingle', {
-              itemId: item.id,
-            });
-          }}
-        >
-          <HorizontalContentCardConnected
-            contentId={item.id}
-            isLoading={isLoading}
-            labelText={''}
-            hyphenatedTitle={getTitle(item)}
-          />
-        </TouchableScale>
-      )}
+      renderItem={({ item }) =>
+        console.log('item = ', item) || (
+          <TouchableScale
+            onPress={() => {
+              navigation.push('ContentSingle', {
+                itemId: item.id,
+              });
+            }}
+          >
+            <HorizontalContentCardConnected
+              Component={HorizontalHighlightCard}
+              contentId={item.id}
+              isLoading={isLoading}
+              labelText={''}
+              hyphenatedTitle={getTitle(item)}
+            />
+          </TouchableScale>
+        )
+      }
       loadingStateObject={loadingStateObject}
       isLoading={isLoading}
     />
