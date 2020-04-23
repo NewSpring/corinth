@@ -131,11 +131,11 @@ exports[`content feed query component renders a feedview after successful query 
                 "marginVertical": 12,
                 "shadowColor": "rgba(8, 0, 20, 0.25)",
                 "shadowOffset": Object {
-                  "height": 1,
+                  "height": 2,
                   "width": 0,
                 },
                 "shadowOpacity": 1,
-                "shadowRadius": 6,
+                "shadowRadius": 8,
               }
             }
           >
@@ -369,11 +369,11 @@ exports[`content feed query component renders a feedview after successful query 
                 "marginVertical": 12,
                 "shadowColor": "rgba(8, 0, 20, 0.25)",
                 "shadowOffset": Object {
-                  "height": 1,
+                  "height": 2,
                   "width": 0,
                 },
                 "shadowOpacity": 1,
-                "shadowRadius": 6,
+                "shadowRadius": 8,
               }
             }
           >

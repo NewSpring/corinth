@@ -284,11 +284,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -537,11 +537,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -738,11 +738,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -960,11 +960,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -1182,11 +1182,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -1383,11 +1383,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -1970,11 +1970,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -2134,11 +2134,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -2298,11 +2298,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -2462,11 +2462,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -2626,11 +2626,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -2790,11 +2790,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -2954,11 +2954,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -3118,11 +3118,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -3282,11 +3282,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
@@ -3446,11 +3446,11 @@ exports[`The SearchFeed component should render a loading state 1`] = `
                           "marginVertical": 12,
                           "shadowColor": "rgba(8, 0, 20, 0.25)",
                           "shadowOffset": Object {
-                            "height": 1,
+                            "height": 2,
                             "width": 0,
                           },
                           "shadowOpacity": 1,
-                          "shadowRadius": 6,
+                          "shadowRadius": 8,
                         }
                       }
                     >
