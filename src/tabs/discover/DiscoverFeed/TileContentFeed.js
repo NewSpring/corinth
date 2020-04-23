@@ -89,25 +89,23 @@ const TileContentFeed = ({ isLoading, id, name, navigation, content = [] }) => (
     </RowHeader>
     <StyledHorizontalTileFeed
       content={content}
-      renderItem={({ item }) =>
-        console.log('item = ', item) || (
-          <TouchableScale
-            onPress={() => {
-              navigation.push('ContentSingle', {
-                itemId: item.id,
-              });
-            }}
-          >
-            <HorizontalContentCardConnected
-              Component={HorizontalHighlightCard}
-              contentId={item.id}
-              isLoading={isLoading}
-              labelText={''}
-              hyphenatedTitle={getTitle(item)}
-            />
-          </TouchableScale>
-        )
-      }
+      renderItem={({ item }) => (
+        <TouchableScale
+          onPress={() => {
+            navigation.push('ContentSingle', {
+              itemId: item.id,
+            });
+          }}
+        >
+          <HorizontalContentCardConnected
+            Component={HorizontalHighlightCard}
+            contentId={item.id}
+            isLoading={isLoading}
+            labelText={''}
+            hyphenatedTitle={getTitle(item)}
+          />
+        </TouchableScale>
+      )}
       loadingStateObject={loadingStateObject}
       isLoading={isLoading}
     />
