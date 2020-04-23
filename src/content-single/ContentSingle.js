@@ -93,13 +93,24 @@ class ContentSingle extends PureComponent {
     const content = data.node || {};
 
     const { theme = {}, id } = content;
+    const colors = get(theme, 'colors') || {};
+    const { primary, secondary, screen, paper } = colors;
 
     return (
       <ThemeMixin
-        mixin={{
-          type: get(theme, 'type'),
-          colors: get(theme, 'colors'),
-        }}
+        mixin={
+          content.theme
+            ? {
+                type: 'light',
+                colors: {
+                  ...(primary ? { primary, tertiary: primary } : {}),
+                  ...(secondary ? { secondary } : {}),
+                  ...(screen ? { screen } : {}),
+                  ...(paper ? { paper } : {}),
+                },
+              }
+            : {}
+        }
       >
         <InteractWhenLoadedConnected
           isLoading={loading}
@@ -109,10 +120,7 @@ class ContentSingle extends PureComponent {
         <TrackEventWhenLoaded
           isLoading={loading}
           eventName={'View Content'}
-          properties={{
-            title: content.title,
-            itemId: this.itemId,
-          }}
+          properties={{ title: content.title, itemId: this.itemId }}
         />
         {this.renderContent({ content, loading, error })}
         <ActionContainer itemId={id} />
