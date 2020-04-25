@@ -19,6 +19,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/GOOGLE_MAPS_API_KEY" />
 
+        <activity	
+            android:name=".LaunchActivity"	
+            android:label="@string/app_name">	
+            <intent-filter>	
+                <action android:name="android.intent.action.MAIN" />	
+                <category android:name="android.intent.category.LAUNCHER" />	
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />	
+            </intent-filter>	
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
