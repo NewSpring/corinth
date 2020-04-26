@@ -1,8 +1,11 @@
 import React from 'react';
+import { Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { ActionCard, H3, H5, PaddedView } from '@apollosproject/ui-kit';
+import { ActionCard, H3, H5 } from '@apollosproject/ui-kit';
+import { LegalText } from '@apollosproject/ui-scripture';
 import TextNote from './TextNote';
 import ScriptureNote from './ScriptureNote';
+import CustomNote from './CustomNote';
 
 const SermonNotes = ({ isLoading, ...contentItem }) => {
   const {
@@ -19,6 +22,11 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
       `${nickName || firstName} ${lastName}`
   );
   const speakers = communicatorNames.concat(guestCommunicators);
+  const copyrights = new Set(
+    sermonNotes
+      .filter(({ scripture }) => !!scripture)
+      .map((note) => note.scripture.copyright)
+  );
   return (
     <ActionCard isLoading={isLoading}>
       <H3>Sermon Notes</H3>
@@ -40,13 +48,26 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
           {sermonNotes.map((note) => {
             switch (note.__typename) {
               case 'TextNote':
-                return <TextNote key={note.id} {...note} />;
+                return (
+                  <>
+                    <TextNote key={note.id} {...note} />
+                    {note.allowsCustomNote ? <CustomNote /> : null}
+                  </>
+                );
               case 'ScriptureNote':
-                return <ScriptureNote key={note.id} {...note} />;
+                return (
+                  <>
+                    <ScriptureNote key={note.id} {...note} />
+                    {note.allowsCustomNote ? <CustomNote /> : null}
+                  </>
+                );
               default:
                 return null;
             }
           })}
+          {[...copyrights].map((text) => (
+            <LegalText key={text}>{text}</LegalText>
+          ))}
         </>
       ) : null}
     </ActionCard>

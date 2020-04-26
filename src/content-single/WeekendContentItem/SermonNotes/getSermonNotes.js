@@ -22,6 +22,7 @@ export default gql`
         sermonNotes {
           id
           __typename
+          allowsCustomNote
           ... on TextNote {
             id
             isHeader
@@ -31,6 +32,9 @@ export default gql`
             id
             scripture {
               reference
+              html
+              version
+              copyright
             }
           }
         }
