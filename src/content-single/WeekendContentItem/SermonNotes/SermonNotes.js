@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ActionCard, H3, H5, PaddedView } from '@apollosproject/ui-kit';
+import TextNote from './TextNote';
+import ScriptureNote from './ScriptureNote';
 
 const SermonNotes = ({ isLoading, ...contentItem }) => {
   const {
@@ -35,13 +37,12 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
 
       {sermonNotes.length ? (
         <>
-          <PaddedView />
           {sermonNotes.map((note) => {
             switch (note.__typename) {
               case 'TextNote':
-                return <H5 key={note.id}>Text Note</H5>;
+                return <TextNote key={note.id} {...note} />;
               case 'ScriptureNote':
-                return <H5 key={note.id}>Scripture Note</H5>;
+                return <ScriptureNote key={note.id} {...note} />;
               default:
                 return null;
             }
