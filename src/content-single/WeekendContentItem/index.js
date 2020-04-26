@@ -20,6 +20,7 @@ import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeri
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 import MediaControls from '../../ui/MediaControls';
 import LiveIcon from '../../ui/LiveIcon';
+import SermonNotesConnected from './SermonNotesConnected';
 
 const FlexedScrollView = styled({ flex: 1 })(Animated.ScrollView);
 
@@ -75,6 +76,7 @@ const WeekendContentItem = ({ content, loading }) => {
                 </Header>
                 <MediaControls contentId={content.id} />
                 <PaddedView />
+                <SermonNotesConnected contentID={content.id} />
                 <Features contentId={content.id} asNotes />
                 <HorizontalContentSeriesFeedConnected contentId={content.id} />
               </FlexedScrollView>
