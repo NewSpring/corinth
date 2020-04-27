@@ -40,12 +40,6 @@ const handleOnPressActionItem = ({
   });
 };
 
-// const handleOnPressCardActionButton = ({ id, navigation, title }) =>
-//   navigation.navigate('ContentFeed', {
-//     itemId: id,
-//     itemTitle: title,
-//   });
-
 const actionListLoadingStateData = [
   {
     id: 'fakeId1',
@@ -144,13 +138,6 @@ const Features = memo(({ navigation }) => (
                           track,
                         })
                       }
-                      // onPressActionListButton={() =>
-                      //   handleOnPressCardActionButton({
-                      //     id,
-                      //     navigation,
-                      //     title,
-                      //   })
-                      // }
                       subtitle={subtitle}
                       title={title}
                       {...props}
