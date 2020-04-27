@@ -7,11 +7,17 @@ import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 const TextNote = ({ text, isHeader }) => {
   const [isPressed, press] = useState(false);
   const blanksRegex = /__(.*)__/gm;
+  // TODO pull from API, called hiddenText
   const textWithBlanks = text.replace(blanksRegex, (match, p1) =>
     '_'.repeat(p1.length)
   );
+  // TODO pull from API, called simpleText, use for ScriptureNotes too
   const textNoBlanks = text.replace(blanksRegex, (match, p1) => p1);
+
+  // choose to show bold or not
   const TextComponent = isHeader ? H4 : BodyText;
+
+  // choose to show blanks or not
   const Note = () => (
     <TextComponent>{isPressed ? textNoBlanks : textWithBlanks}</TextComponent>
   );

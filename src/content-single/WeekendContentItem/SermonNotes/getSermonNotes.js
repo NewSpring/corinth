@@ -16,8 +16,6 @@ export default gql`
           series {
             title
           }
-          itemIndex
-          itemCount
         }
         sermonNotes {
           id

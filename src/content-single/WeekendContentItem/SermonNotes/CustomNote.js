@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import {
@@ -8,6 +8,7 @@ import {
   BodyText,
   styled,
   Touchable,
+  PaddedView,
 } from '@apollosproject/ui-kit';
 
 const StyledTextInput = styled(({ theme }) => ({
@@ -19,16 +20,12 @@ const StyledTextInput = styled(({ theme }) => ({
   textAlignVertical: 'top',
 }))(TextInput);
 
-const StyledAddNoteView = styled({
+const AddNoteView = styled({
   flex: 1,
   flexDirection: 'row',
-})(View);
+})(PaddedView);
 
-const PaddedText = styled(({ theme }) => ({
-  paddingHorizontal: theme.sizing.baseUnit,
-}))(BodyText);
-
-const CustomNote = () => {
+const CustomNote = ({ onChange }) => {
   const [hasBox, showBox] = useState(false);
   const [note, setNote] = useState('');
   return hasBox ? (
@@ -39,6 +36,7 @@ const CustomNote = () => {
       scrollEnabled={false}
       onChangeText={(text) => {
         setNote(text);
+        onChange(text);
       }}
     />
   ) : (
@@ -50,14 +48,20 @@ const CustomNote = () => {
             track({ eventName: 'Added Custom Note' });
           }}
         >
-          <StyledAddNoteView>
+          <AddNoteView horizontal={false}>
             <Icon name={'add'} size={24} />
-            <PaddedText>Add a Note</PaddedText>
-          </StyledAddNoteView>
+            <PaddedView vertical={false}>
+              <BodyText>Add a Note</BodyText>
+            </PaddedView>
+          </AddNoteView>
         </Touchable>
       )}
     </AnalyticsConsumer>
   );
+};
+
+CustomNote.propTypes = {
+  onChange: PropTypes.func,
 };
 
 export default CustomNote;
