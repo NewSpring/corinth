@@ -81,7 +81,10 @@ class Home extends PureComponent {
         <SafeAreaView>
           <Query
             query={GET_USER_FEED}
-            variables={{ first: 10, after: null }}
+            variables={{
+              first: 10,
+              after: null,
+            }}
             fetchPolicy="cache-and-network"
           >
             {({ loading, error, data, refetch, fetchMore, variables }) => (

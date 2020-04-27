@@ -103,12 +103,16 @@ class HorizontalContentSeriesFeedConnected extends Component {
     );
     const initialScrollIndex = currentIndex === -1 ? 0 : currentIndex;
 
+    const { Component: FeedComponent } = this.props;
+
     return (
       <PaddedView horizontal={false}>
-        <PaddedView vertical={false}>
-          <H5>In this series</H5>
-        </PaddedView>
-        <this.props.Component
+        {!loading && content && content.length ? (
+          <PaddedView vertical={false}>
+            <H5>In this series</H5>
+          </PaddedView>
+        ) : null}
+        <FeedComponent
           isLoading={loading}
           content={content}
           loadingStateObject={loadingStateObject}

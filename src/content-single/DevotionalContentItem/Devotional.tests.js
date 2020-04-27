@@ -64,8 +64,9 @@ describe('the Devotional component', () => {
   it('renders a devotional', async () => {
     /* eslint-disable */
     const DevotionalStack = createStackNavigator({
+      // eslint-disable-next-line
       Devotional: (props) => (
-        <Devotional id="1" content={{ title: 'Title' }} {...props} />
+        <Devotional id={'1'} content={{ title: 'Title' }} {...props} />
       ),
     });
     /* eslint-enable */

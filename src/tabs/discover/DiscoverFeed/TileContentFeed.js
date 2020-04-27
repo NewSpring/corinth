@@ -14,6 +14,7 @@ import {
   TouchableScale,
   Touchable,
   withIsLoading,
+  HorizontalHighlightCard,
 } from '@apollosproject/ui-kit';
 
 import { HorizontalContentCardConnected } from '@apollosproject/ui-connected';
@@ -97,6 +98,7 @@ const TileContentFeed = ({ isLoading, id, name, navigation, content = [] }) => (
           }}
         >
           <HorizontalContentCardConnected
+            Component={HorizontalHighlightCard}
             contentId={item.id}
             isLoading={isLoading}
             labelText={''}
