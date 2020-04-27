@@ -19,6 +19,10 @@ public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
+      // ATTENTION: This was auto-generated to handle app links.	
+      Intent appLinkIntent = getIntent();	
+      String appLinkAction = appLinkIntent.getAction();	
+      Uri appLinkData = appLinkIntent.getData();
       RNBootSplash.init(R.drawable.bootsplash, com.newspringchurchapp.MainActivity.this);
   }
 
