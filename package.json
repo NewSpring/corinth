@@ -22,6 +22,7 @@
     "test": "TZ=UTC jest --forceExit",
     "postinstall": "jetify && yarn pods",
     "pods": "./scripts/install_pods.sh",
+    "bump": "yarn standard-version && git push --follow-tags && yarn gh-release --yes",
     "get-schema": "eval $(grep ^APP_DATA_URL .env) && get-graphql-schema $APP_DATA_URL > schema.graphql"
   },
   "jest": {
