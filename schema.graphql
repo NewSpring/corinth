@@ -526,6 +526,7 @@ type ScriptureFeature implements Feature & Node {
 type ScriptureNote implements SermonNote {
   id: ID!
   allowsCustomNote: Boolean
+  simpleText: String
   scripture: Scripture
 }
 
@@ -551,6 +552,7 @@ type SeriesConnection {
 interface SermonNote {
   id: ID!
   allowsCustomNote: Boolean
+  simpleText: String
 }
 
 interface Sharable {
@@ -586,8 +588,10 @@ type TextFeature implements Feature & Node {
 type TextNote implements SermonNote {
   id: ID!
   allowsCustomNote: Boolean
-  text: String
+  simpleText: String
   isHeader: Boolean
+  hasBlanks: Boolean
+  hiddenText: String
 }
 
 type Theme {
