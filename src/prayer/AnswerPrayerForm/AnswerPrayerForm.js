@@ -1,15 +1,15 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import { View, KeyboardAvoidingView } from 'react-native';
+import { View, KeyboardAvoidingView, Text } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import { Formik } from 'formik';
 import {
   ModalView,
-  Switch,
   TextInput,
   Button,
   styled,
   FlexedView,
+  PaddedView,
 } from '@apollosproject/ui-kit';
 import PrayerHeader from '../PrayerHeader';
 
@@ -47,16 +47,19 @@ const InputPaddedView = styled(({ theme }) => ({
   paddingHorizontal: theme.sizing.baseUnit,
 }))(View);
 
-const SwitchContainer = styled(({ theme }) => ({
-  flex: 1,
-  paddingHorizontal: theme.sizing.baseUnit,
-  width: '70%',
-}))(View);
-
 const AnswerPrayerForm = memo(
-  ({ onSubmit, avatarSource, title, btnLabel, loading, ...props }) => (
+  ({
+    prayerId,
+    prayerText,
+    onSubmit,
+    avatarSource,
+    title,
+    btnLabel,
+    loading,
+    ...props
+  }) => (
     <Formik
-      initialValues={{ prayer: '', anonymous: false }}
+      initialValues={{ answer: '' }}
       onSubmit={(values, { resetForm }) => {
         onSubmit(values);
         // this is necessary so the modal can transition completely
@@ -70,34 +73,27 @@ const AnswerPrayerForm = memo(
               <HeaderView>
                 <PrayerHeader
                   loading={loading}
-                  avatarSource={values.anonymous ? null : avatarSource}
+                  avatarSource={avatarSource}
                   avatarSize={'medium'}
                   title={title}
                 />
               </HeaderView>
+              <PaddedView>
+                <Text>{prayerText}</Text>
+              </PaddedView>
               <InputPaddedView>
                 <StyledTextInput
                   editable
                   multiline
                   returnKeyType="default"
-                  placeholder="Start typing your prayer..."
-                  onChangeText={handleChange('prayer')}
-                  onBlur={handleBlur('prayer')}
-                  value={values.prayer || ''}
+                  placeholder="Start typing your answer..."
+                  onChangeText={handleChange('answer')}
+                  onBlur={handleBlur('answer')}
+                  value={values.answer || ''}
                   underline={false}
                 />
               </InputPaddedView>
-              <SwitchContainer>
-                <Switch
-                  value={values.anonymous}
-                  onValueChange={handleChange('anonymous')}
-                  label={'Share Anonymously'}
-                />
-              </SwitchContainer>
               <BottomView>
-                {/* TODO need to use Formik.resetForm() here somehow
-                    when you come back to this screen, the form still has
-                    old info in it */}
                 <Button title={btnLabel} onPress={handleSubmit} />
               </BottomView>
             </ShrinkingView>
@@ -109,6 +105,8 @@ const AnswerPrayerForm = memo(
 );
 
 AnswerPrayerForm.propTypes = {
+  prayerId: PropTypes.string,
+  prayerText: PropTypes.string,
   onSubmit: PropTypes.func,
   avatarSource: PropTypes.shape({
     uri: PropTypes.string,

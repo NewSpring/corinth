@@ -122,7 +122,11 @@ class UserPrayerList extends React.Component {
                                       title: 'Mark as Answered',
                                       method: () =>
                                         this.props.navigation.navigate(
-                                          'AnswerPrayerFormConnected'
+                                          'AnswerPrayerFormConnected',
+                                          {
+                                            prayerId: item.id,
+                                            prayerText: item.text,
+                                          }
                                         ),
                                       destructive: false,
                                     },

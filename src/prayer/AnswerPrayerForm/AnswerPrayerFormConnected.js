@@ -1,9 +1,9 @@
 import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import getUserProfile from '../../tabs/connect/UserAvatarHeader/getUserProfile';
-import GET_PRAYER_COUNT from '../data/queries/getPrayerCount';
-import ADD_PRAYER from '../data/mutations/addPrayer';
-import AddPrayerForm from './AnswerPrayerForm';
+import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
+import ANSWER_PRAYER from '../data/mutations/answerPrayer';
+import AnswerPrayerForm from './AnswerPrayerForm';
 
 class AnswerPrayerFormConnected extends React.Component {
   static navigationOptions = {
@@ -19,26 +19,28 @@ class AnswerPrayerFormConnected extends React.Component {
             currentUser: { profile: { photo = { uri: '' } } = {} } = {},
           } = {},
         }) => (
-          <Mutation mutation={ADD_PRAYER}>
-            {(addPrayer) => (
-              <AddPrayerForm
+          <Mutation mutation={ANSWER_PRAYER}>
+            {(answerPrayer) => (
+              <AnswerPrayerForm
                 loading={profileLoading}
                 onSubmit={(values) => {
-                  addPrayer({
+                  answerPrayer({
                     variables: {
-                      text: values.prayer,
-                      isAnonymous: values.anonymous,
+                      id: values.id,
+                      answer: values.answer,
                     },
                     refetchQueries: () => [
-                      { query: GET_PRAYER_COUNT, variables: { type: 'USER' } },
+                      { query: GET_PRAYER_FEED, variables: { type: 'USER' } },
                     ],
                   });
-                  this.props.navigation.navigate('WithYou');
+                  this.props.navigation.pop();
                 }}
                 avatarSource={photo}
                 {...this.props}
                 onClose={() => this.props.navigation.pop()}
-                title={'Join me in praying for ...'}
+                title={'Enter your answer below ...'}
+                prayerId={this.props.navigation.getParam('prayerId', '')}
+                prayerText={this.props.navigation.getParam('prayerText', '')}
               />
             )}
           </Mutation>
