@@ -70,7 +70,10 @@ class UserPrayerList extends React.Component {
                     query: GET_PRAYER_FEED,
                     variables: { type: 'USER', first: 10, after: null },
                     data: {
-                      prayerFeed: { pageInfo: endCursor, edges: newPrayers },
+                      prayerFeed: {
+                        pageInfo: endCursor,
+                        edges: newPrayers,
+                      },
                     },
                   });
                 }}
@@ -117,7 +120,10 @@ class UserPrayerList extends React.Component {
                                   options={[
                                     {
                                       title: 'Mark as Answered',
-                                      method: null,
+                                      method: () =>
+                                        this.props.navigation.navigate(
+                                          'AnswerPrayerFormConnected'
+                                        ),
                                       destructive: false,
                                     },
                                     {
