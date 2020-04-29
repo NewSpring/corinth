@@ -30,8 +30,8 @@ const GreenH4 = styled(({ theme }) => ({
   color: theme.colors.primary,
 }))(H4);
 
-const DeleteIcon = withTheme(({ theme }) => ({
-  name: 'delete',
+const ThreeDotsIcon = withTheme(({ theme }) => ({
+  name: 'ellipsis',
   size: theme.sizing.baseUnit,
   fill: theme.colors.darkTertiary,
 }))(Icon);
@@ -113,7 +113,7 @@ class UserPrayerList extends React.Component {
                               isLoading={loading}
                               action={
                                 <ActionComponent
-                                  component={<DeleteIcon />}
+                                  component={<ThreeDotsIcon />}
                                   options={[
                                     {
                                       title: 'Delete Prayer',

@@ -12,3 +12,4 @@ export Delete from './Delete';
 export Serve from './Serve';
 export Give from './Give';
 export Group from './Group';
+export Ellipsis from './Ellipsis';
