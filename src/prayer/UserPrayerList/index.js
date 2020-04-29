@@ -116,6 +116,11 @@ class UserPrayerList extends React.Component {
                                   component={<ThreeDotsIcon />}
                                   options={[
                                     {
+                                      title: 'Mark as Answered',
+                                      method: null,
+                                      destructive: false,
+                                    },
+                                    {
                                       title: 'Delete Prayer',
                                       method: async () => {
                                         await deletePrayer({
