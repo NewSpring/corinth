@@ -38,7 +38,7 @@ class AnswerPrayerFormConnected extends React.Component {
                 avatarSource={photo}
                 {...this.props}
                 onClose={() => this.props.navigation.pop()}
-                title={'Enter your answer below ...'}
+                title={"Celebrate God's faithfulness"}
                 prayerId={this.props.navigation.getParam('prayerId', '')}
                 prayerText={this.props.navigation.getParam('prayerText', '')}
               />
