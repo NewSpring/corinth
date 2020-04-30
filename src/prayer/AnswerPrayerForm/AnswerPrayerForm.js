@@ -52,6 +52,7 @@ const AnswerPrayerForm = memo(
   ({
     prayerId,
     prayerText,
+    prayerAnswer,
     onSubmit,
     avatarSource,
     title,
@@ -60,7 +61,7 @@ const AnswerPrayerForm = memo(
     ...props
   }) => (
     <Formik
-      initialValues={{ id: prayerId, answer: '' }}
+      initialValues={{ id: prayerId, answer: prayerAnswer || '' }}
       onSubmit={(values, { resetForm }) => {
         onSubmit(values);
         // this is necessary so the modal can transition completely
@@ -113,6 +114,7 @@ const AnswerPrayerForm = memo(
 AnswerPrayerForm.propTypes = {
   prayerId: PropTypes.string,
   prayerText: PropTypes.string,
+  prayerAnswer: PropTypes.string,
   onSubmit: PropTypes.func,
   avatarSource: PropTypes.shape({
     uri: PropTypes.string,

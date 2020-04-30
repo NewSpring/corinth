@@ -41,6 +41,10 @@ class AnswerPrayerFormConnected extends React.Component {
                 title={"Celebrate God's faithfulness"}
                 prayerId={this.props.navigation.getParam('prayerId', '')}
                 prayerText={this.props.navigation.getParam('prayerText', '')}
+                prayerAnswer={this.props.navigation.getParam(
+                  'prayerAnswer',
+                  ''
+                )}
               />
             )}
           </Mutation>

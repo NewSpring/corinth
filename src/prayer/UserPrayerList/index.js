@@ -119,13 +119,16 @@ class UserPrayerList extends React.Component {
                                   component={<ThreeDotsIcon />}
                                   options={[
                                     {
-                                      title: 'Mark as Answered',
+                                      title: item.answer
+                                        ? 'Edit Answer'
+                                        : 'Mark as Answered',
                                       method: () =>
                                         this.props.navigation.navigate(
                                           'AnswerPrayerFormConnected',
                                           {
                                             prayerId: item.id,
                                             prayerText: item.text,
+                                            prayerAnswer: item.answer,
                                           }
                                         ),
                                       destructive: false,
