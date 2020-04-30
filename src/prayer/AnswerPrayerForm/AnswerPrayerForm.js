@@ -10,6 +10,7 @@ import {
   styled,
   FlexedView,
   PaddedView,
+  H4,
 } from '@apollosproject/ui-kit';
 import PrayerHeader from '../PrayerHeader';
 
@@ -59,7 +60,7 @@ const AnswerPrayerForm = memo(
     ...props
   }) => (
     <Formik
-      initialValues={{ answer: '' }}
+      initialValues={{ id: prayerId, answer: '' }}
       onSubmit={(values, { resetForm }) => {
         onSubmit(values);
         // this is necessary so the modal can transition completely
@@ -79,6 +80,7 @@ const AnswerPrayerForm = memo(
                 />
               </HeaderView>
               <PaddedView>
+                <H4>Your Prayer:</H4>
                 <Text>{prayerText}</Text>
               </PaddedView>
               <InputPaddedView>
@@ -86,7 +88,7 @@ const AnswerPrayerForm = memo(
                   editable
                   multiline
                   returnKeyType="default"
-                  placeholder="Start typing your answer..."
+                  placeholder="How did God answer your prayer?"
                   onChangeText={handleChange('answer')}
                   onBlur={handleBlur('answer')}
                   value={values.answer || ''}
@@ -94,7 +96,11 @@ const AnswerPrayerForm = memo(
                 />
               </InputPaddedView>
               <BottomView>
-                <Button title={btnLabel} onPress={handleSubmit} />
+                <Button
+                  title={btnLabel}
+                  onPress={handleSubmit}
+                  disabled={values.answer.length === 0}
+                />
               </BottomView>
             </ShrinkingView>
           </FlexedSafeAreaView>
