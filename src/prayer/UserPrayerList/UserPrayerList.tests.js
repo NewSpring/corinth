@@ -96,6 +96,7 @@ const mocks = [
                 id: 'PrayerRequest:b99bbd5002a0bf8d4c73e86afe9d4786',
                 text:
                   'This, yet again, is a test to see if I have a prayer request.',
+                answer: 'This is an answer to this prayer',
                 enteredDateTime: '2017-04-08T11:21:53.053',
                 isAnonymous: false,
                 isSaved: false,
