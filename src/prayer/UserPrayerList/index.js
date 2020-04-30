@@ -59,20 +59,28 @@ class UserPrayerList extends React.Component {
                     variables: { type: 'USER', first: 10, after: null },
                   });
                   const { id } = deletePrayer;
-                  const oldPrayers = prayerFeed.edges((edge) => edge.node);
+                  const oldPrayers = prayerFeed.edges.flatMap((edge) => [
+                    {
+                      cursor: edge.cursor,
+                      node: edge.node,
+                      __typename: edge.__typename,
+                    },
+                  ]);
                   const newPrayers = oldPrayers.filter(
-                    (prayer) => prayer.id !== id
+                    (prayer) => prayer.node.id !== id
                   );
-                  const { endCursor } = newPrayers[
-                    newPrayers.length - 1
-                  ].pageInfo;
+                  const { cursor } = newPrayers[newPrayers.length - 1];
                   cache.writeQuery({
                     query: GET_PRAYER_FEED,
                     variables: { type: 'USER', first: 10, after: null },
                     data: {
                       prayerFeed: {
-                        pageInfo: endCursor,
+                        pageInfo: {
+                          endCursor: cursor,
+                          __typename: 'PaginationInfo',
+                        },
                         edges: newPrayers,
+                        __typename: 'PrayersConnection',
                       },
                     },
                   });
