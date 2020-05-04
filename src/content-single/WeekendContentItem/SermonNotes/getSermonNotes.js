@@ -21,10 +21,12 @@ export default gql`
           id
           __typename
           allowsCustomNote
+          simpleText
           ... on TextNote {
             id
             isHeader
-            text
+            hasBlanks
+            hiddenText
           }
           ... on ScriptureNote {
             id

@@ -4,22 +4,11 @@ import { TouchableOpacity } from 'react-native';
 import { H4, BodyText, PaddedView } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
-const TextNote = ({ text, isHeader }) => {
+const TextNote = ({ hasBlanks, simpleText, hiddenText, isHeader }) => {
   const [isPressed, press] = useState(false);
-  const blanksRegex = /__(.*)__/gm;
-  // TODO pull from API, called hiddenText
-  const textWithBlanks = text.replace(blanksRegex, (match, p1) =>
-    '_'.repeat(p1.length)
-  );
-  // TODO pull from API, called simpleText, use for ScriptureNotes too
-  const textNoBlanks = text.replace(blanksRegex, (match, p1) => p1);
-
-  // choose to show bold or not
   const TextComponent = isHeader ? H4 : BodyText;
-
-  // choose to show blanks or not
   const Note = () => (
-    <TextComponent>{isPressed ? textNoBlanks : textWithBlanks}</TextComponent>
+    <TextComponent>{isPressed ? simpleText : hiddenText}</TextComponent>
   );
   return (
     <AnalyticsConsumer>
@@ -29,7 +18,7 @@ const TextNote = ({ text, isHeader }) => {
             press(true);
             track({ eventName: 'Clicked Fill-in-the-blank' });
           }}
-          disabled={isPressed || !text.match(blanksRegex)}
+          disabled={isPressed || !hasBlanks}
         >
           <PaddedView horizontal={false}>
             <Note />
@@ -41,7 +30,9 @@ const TextNote = ({ text, isHeader }) => {
 };
 
 TextNote.propTypes = {
-  text: PropTypes.string,
+  hasBlanks: PropTypes.bool,
+  simpleText: PropTypes.string,
+  hiddenText: PropTypes.string,
   isHeader: PropTypes.bool,
 };
 
