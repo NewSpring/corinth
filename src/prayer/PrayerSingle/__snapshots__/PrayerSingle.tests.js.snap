@@ -37,3 +37,76 @@ exports[`the PrayerSingle component renders a prayer card 1`] = `
   </View>
 </View>
 `;
+
+exports[`the PrayerSingle component renders a prayer card with an answer 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "zIndex": 2,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "marginVertical": 16,
+        "paddingRight": 16,
+      }
+    }
+  >
+    <Text
+      bold={false}
+      italic={false}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "Colfax-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
+        }
+      }
+    >
+      This is a prayer with an answer
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "marginVertical": 16,
+        "paddingRight": 16,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "Colfax-Bold",
+          "fontSize": 16,
+          "lineHeight": 23.04,
+        }
+      }
+    >
+      Answer:
+    </Text>
+    <Text
+      bold={false}
+      italic={false}
+      style={
+        Object {
+          "color": "#303030",
+          "fontFamily": "Colfax-Regular",
+          "fontSize": 16,
+          "lineHeight": 26,
+        }
+      }
+    >
+      This is the answer to the prayer
+    </Text>
+  </View>
+</View>
+`;
