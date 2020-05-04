@@ -1,9 +1,21 @@
 import React from 'react';
+import { View } from 'react-native';
 import { Query, Mutation } from 'react-apollo';
+import { BodyText, styled } from '@apollosproject/ui-kit';
 import getUserProfile from '../../tabs/connect/UserAvatarHeader/getUserProfile';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
 import ANSWER_PRAYER from '../data/mutations/answerPrayer';
+import ActionComponent from '../ActionComponent';
 import AnswerPrayerForm from './AnswerPrayerForm';
+
+const FooterAltOption = styled(({ theme }) => ({
+  alignSelf: 'center',
+  padding: theme.sizing.baseUnit,
+}))(View);
+
+const FooterText = styled(({ theme }) => ({
+  color: theme.colors.text.tertiary,
+}))(BodyText);
 
 class AnswerPrayerFormConnected extends React.Component {
   static navigationOptions = {
@@ -30,7 +42,10 @@ class AnswerPrayerFormConnected extends React.Component {
                       answer: values.answer,
                     },
                     refetchQueries: () => [
-                      { query: GET_PRAYER_FEED, variables: { type: 'USER' } },
+                      {
+                        query: GET_PRAYER_FEED,
+                        variables: { type: 'USER' },
+                      },
                     ],
                   });
                   this.props.navigation.pop();
@@ -45,6 +60,27 @@ class AnswerPrayerFormConnected extends React.Component {
                   'prayerAnswer',
                   ''
                 )}
+                action={
+                  <FooterAltOption>
+                    <ActionComponent
+                      component={<FooterText>Remove Answer</FooterText>}
+                      options={[
+                        {
+                          title: 'Remove Answer', // method: async () => {
+                          //   await removeAnswer({
+                          //     variables: {
+                          //       parsedId: item.id,
+                          //     },
+                          //   });
+                          // },
+                          method: async () => {},
+                          destructive: true,
+                        },
+                        { title: 'Cancel', method: null, destructive: false },
+                      ]}
+                    />
+                  </FooterAltOption>
+                }
               />
             )}
           </Mutation>

@@ -58,6 +58,7 @@ const AnswerPrayerForm = memo(
     title,
     btnLabel,
     loading,
+    action,
     ...props
   }) => (
     <Formik
@@ -102,6 +103,7 @@ const AnswerPrayerForm = memo(
                   onPress={handleSubmit}
                   disabled={values.answer.length === 0}
                 />
+                {!loading && <View>{action}</View>}
               </BottomView>
             </ShrinkingView>
           </FlexedSafeAreaView>
@@ -122,11 +124,13 @@ AnswerPrayerForm.propTypes = {
   title: PropTypes.string,
   btnLabel: PropTypes.string,
   loading: PropTypes.bool,
+  action: PropTypes.element,
 };
 
 AnswerPrayerForm.defaultProps = {
   title: 'Answer Prayer',
   btnLabel: 'Save answer',
+  action: null,
 };
 
 AnswerPrayerForm.displayName = 'AnswerPrayerForm';
