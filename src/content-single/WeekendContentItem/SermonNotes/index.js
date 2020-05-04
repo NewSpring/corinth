@@ -9,9 +9,7 @@ const SermonNotesConnected = ({ contentID }) => (
   <Query query={GET_SERMON_NOTES} variables={{ contentID }}>
     {({ data: { node = {} } = { node: {} }, loading, error }) => {
       if (error) return <ErrorCard error={error} />;
-      return node.sermonNotes.length ? (
-        <SermonNotes isLoading={loading} {...node} />
-      ) : null;
+      return <SermonNotes isLoading={loading} {...node} />;
     }}
   </Query>
 );

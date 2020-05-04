@@ -38,7 +38,6 @@ const ExportWrapper = styled({
 })(FlexedView);
 
 const SermonNotes = ({ isLoading, ...contentItem }) => {
-  const hasNotes = !isLoading && !contentItem.sermonNotes.length;
   const [exports, setExports] = useState([]);
   const handleChangeExportText = (index) => (text) => {
     const changed = exports;
@@ -72,6 +71,8 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
       exportTemplate.push(note.simpleText);
       exportTemplate.push('');
     });
+    // add a spot for a single custom note if none have been entered
+    if (!sermonNotes.length) exportTemplate.push('');
     setExports(exportTemplate);
   }, []);
 
@@ -79,38 +80,36 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
     <ActionCard
       isLoading={isLoading}
       action={
-        hasNotes ? (
-          <AnalyticsConsumer>
-            {({ track }) => (
-              <Touchable
-                onPress={() => {
-                  const textExports = exports.filter((text) => text !== '');
-                  Share.share({
-                    message: `Sermon Notes\n${title}\n${seriesTitle}${
-                      speakers.length ? '\n' : ''
-                    }${speakers.join('\n')}${
-                      textExports.length ? '\n\n' : ''
-                    }${textExports.join('\n\n')}`,
-                  });
-                  track({
-                    eventName: 'Exported Sermon Notes',
-                    properties: { title },
-                  });
-                }}
-              >
-                <ExportWrapper>
-                  <PaddedView vertical={false}>
-                    <BodyText>Export</BodyText>
-                  </PaddedView>
-                  <Icon name={'export'} size={24} />
-                </ExportWrapper>
-              </Touchable>
-            )}
-          </AnalyticsConsumer>
-        ) : null
+        <AnalyticsConsumer>
+          {({ track }) => (
+            <Touchable
+              onPress={() => {
+                const textExports = exports.filter((text) => text !== '');
+                Share.share({
+                  message: `Sermon Notes\n${title}\n${seriesTitle}${
+                    speakers.length ? '\n' : ''
+                  }${speakers.join('\n')}${
+                    textExports.length ? '\n\n' : ''
+                  }${textExports.join('\n\n')}`,
+                });
+                track({
+                  eventName: 'Exported Sermon Notes',
+                  properties: { title },
+                });
+              }}
+            >
+              <ExportWrapper>
+                <PaddedView vertical={false}>
+                  <BodyText>Export</BodyText>
+                </PaddedView>
+                <Icon name={'export'} size={24} />
+              </ExportWrapper>
+            </Touchable>
+          )}
+        </AnalyticsConsumer>
       }
     >
-      <H3 isLoading={false}>{hasNotes ? 'Sermon Notes' : null}</H3>
+      <H3 isLoading={false}>Sermon Notes</H3>
       <H5>{title}</H5>
       <H5>{seriesTitle}</H5>
       {speakers.length
@@ -118,7 +117,6 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
             .filter((speaker) => speaker !== '')
             .map((speaker) => <H5 key={speaker}>{speaker}</H5>)
         : null}
-
       {sermonNotes.length ? (
         <>
           {sermonNotes.map((note, i) => (
@@ -133,7 +131,9 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
             <LegalText key={text}>{text}</LegalText>
           ))}
         </>
-      ) : null}
+      ) : (
+        <CustomNote onChange={handleChangeExportText(0)} />
+      )}
     </ActionCard>
   );
 };
