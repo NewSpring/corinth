@@ -10,7 +10,7 @@ const SermonNotesConnected = ({ contentID }) => (
     {({ data: { node = {} } = { node: {} }, loading, error }) => {
       if (error) return <ErrorCard error={error} />;
       // TODO take this out once old sermon notes are gone to get pretty loading states
-      if (loading || !node.sermonNotes.length) return null;
+      if (loading || !node || !node.sermonNotes.length) return null;
       return <SermonNotes isLoading={loading} {...node} />;
     }}
   </Query>
