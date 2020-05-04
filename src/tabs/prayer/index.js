@@ -1,6 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 import tabBarIcon from '../tabBarIcon';
 import { AddPrayerFormConnected } from '../../prayer/AddPrayer/AddPrayerForm';
+import { AnswerPrayerFormConnected } from '../../prayer/AnswerPrayerForm';
 import PrayerList from '../../prayer/PrayerList';
 import UserPrayerList from '../../prayer/UserPrayerList';
 import WithYou from '../../prayer/AddPrayer/WithYou';
@@ -10,6 +11,7 @@ const PrayerNavigator = createStackNavigator(
   {
     Prayer,
     AddPrayerFormConnected,
+    AnswerPrayerFormConnected,
     PrayerList,
     UserPrayerList,
     WithYou,

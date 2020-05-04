@@ -261,7 +261,6 @@ exports[`The Discover tab component Should retrieve the Content Channel Feeds 1`
                       <TextInput
                         allowFontScaling={true}
                         cancelButtonOffset={1000}
-                        color="#303030"
                         editable={true}
                         isFocused={false}
                         onChangeText={[Function]}
@@ -273,6 +272,7 @@ exports[`The Discover tab component Should retrieve the Content Channel Feeds 1`
                         selectionColor="#6bac43"
                         style={
                           Object {
+                            "color": "#303030",
                             "flexGrow": 1,
                             "fontFamily": "Colfax-Medium",
                             "fontSize": 14,
@@ -2001,7 +2001,7 @@ Our son Cameron began attending Willow Creek Special Friends in 2015.",
             pointerEvents="box-none"
             style={
               Object {
-                "backgroundColor": "#fff",
+                "backgroundColor": undefined,
                 "borderBottomColor": "#a7a7aa",
                 "borderBottomWidth": 0,
                 "elevation": 0,

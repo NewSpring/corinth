@@ -7,6 +7,7 @@ export default gql`
     isAnonymous
     isSaved
     text
+    answer
     flagCount
     campus {
       id

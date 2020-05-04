@@ -17,11 +17,31 @@ const prayer = {
   campus: { name: 'Anderson' },
 };
 
+const prayerWithAnswer = {
+  person: {
+    photo: {
+      uri: 'https://fillmurray.com/400/600',
+    },
+  },
+  firstName: 'Bill',
+  text: 'This is a prayer with an answer',
+  answer: 'This is the answer to the prayer',
+  campus: { name: 'Anderson' },
+};
+
 describe('the PrayerSingle component', () => {
   it('renders a prayer card', () => {
     const tree = renderer.create(
       <Providers>
         <PrayerSingle prayer={prayer} />
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders a prayer card with an answer', () => {
+    const tree = renderer.create(
+      <Providers>
+        <PrayerSingle prayer={prayerWithAnswer} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

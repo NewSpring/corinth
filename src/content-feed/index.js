@@ -8,7 +8,7 @@ import {
   fetchMoreResolver,
 } from '@apollosproject/ui-connected';
 
-import { BackgroundView, FeedView, FeaturedCard } from '@apollosproject/ui-kit';
+import { BackgroundView, FeedView } from '@apollosproject/ui-kit';
 
 import GET_CONTENT_FEED from './getContentFeed';
 /**
@@ -17,10 +17,11 @@ import GET_CONTENT_FEED from './getContentFeed';
  */
 class ContentFeed extends PureComponent {
   /** Function for React Navigation to set information in the header. */
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = ({ navigation, screenProps }) => {
     const itemTitle = navigation.getParam('itemTitle', 'Content Channel');
     return {
       title: itemTitle,
+      headerStyle: { backgroundColor: screenProps.headerBackgroundColor },
     };
   };
 
@@ -57,7 +58,13 @@ class ContentFeed extends PureComponent {
           {({ loading, error, data, refetch, fetchMore, variables }) => (
             <FeedView
               ListItemComponent={({ ...props }) => (
-                <ContentCardConnected Component={FeaturedCard} {...props} />
+                <ContentCardConnected
+                  labelText={
+                    props.parentChannel &&
+                    props.parentChannel.name.split(' - ').pop()
+                  }
+                  {...props}
+                />
               )}
               content={get(
                 data,

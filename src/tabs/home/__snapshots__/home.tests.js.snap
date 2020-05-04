@@ -636,7 +636,7 @@ exports[`User Home Feed Query should return correct query results 1`] = `
           >
             [Function]
           </Query>
-          <UNDEFINED
+          <Memo(Features)
             navigation={
               Object {
                 "getParam": [MockFunction],
@@ -845,11 +845,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -999,469 +999,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
               </View>
             </View>
           </View>
-          <View
-            isLoading={true}
-            style={
-              Object {
-                "backgroundColor": "#ffffff",
-                "borderRadius": 16,
-                "marginHorizontal": 16,
-                "marginVertical": 12,
-                "shadowColor": "rgba(8, 0, 20, 0.25)",
-                "shadowOffset": Object {
-                  "height": 1,
-                  "width": 0,
-                },
-                "shadowOpacity": 1,
-                "shadowRadius": 6,
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "borderRadius": 16,
-                  "overflow": "hidden",
-                }
-              }
-            >
-              <View
-                style={
-                  Object {
-                    "paddingHorizontal": 16,
-                    "paddingVertical": 16,
-                  }
-                }
-              >
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 16,
-                      "height": 12,
-                      "marginVertical": 2.6400000000000006,
-                      "width": "50%",
-                    }
-                  }
-                />
-                <View
-                  style={
-                    Object {
-                      "alignSelf": "stretch",
-                      "backgroundColor": "#dddddd",
-                      "borderRadius": 16,
-                      "height": 24,
-                      "marginVertical": 1.8000000000000007,
-                      "width": "100%",
-                    }
-                  }
-                />
-              </View>
-              <View
-                style={
-                  Object {
-                    "backgroundColor": "#ffffff",
-                    "borderBottomWidth": 0,
-                    "borderColor": "rgba(8, 0, 20, 0.25)",
-                    "borderLeftWidth": 0,
-                    "borderRightWidth": 0,
-                    "borderTopWidth": 0,
-                    "marginBottom": 16,
-                  }
-                }
-              >
-                <View
-                  accessible={true}
-                  clickable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "transform": Array [
-                        Object {
-                          "scale": 1,
-                        },
-                      ],
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffffff",
-                        "flexDirection": "row",
-                        "justifyContent": "flex-start",
-                        "paddingHorizontal": 16,
-                        "paddingVertical": 4,
-                      }
-                    }
-                  >
-                    <View
-                      animate={null}
-                      customAnimate={null}
-                      onReady={false}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "borderRadius": 16,
-                          "height": 64,
-                          "marginRight": 16,
-                          "width": 64,
-                        }
-                      }
-                    >
-                      <Image
-                        onLoad={[Function]}
-                        source={
-                          Array [
-                            Object {
-                              "cache": "force-cache",
-                              "uri": "",
-                              "url": "",
-                            },
-                          ]
-                        }
-                        style={
-                          Object {
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 64,
-                            "marginRight": 16,
-                            "opacity": 0,
-                            "width": 64,
-                          }
-                        }
-                      />
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomWidth": 0.5,
-                          "borderColor": "rgba(8, 0, 20, 0.25)",
-                          "flex": 1,
-                          "height": 68,
-                          "justifyContent": "center",
-                          "marginTop": 6.4,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 12,
-                            "marginVertical": 2.6400000000000006,
-                            "width": "100%",
-                          }
-                        }
-                      />
-                    </View>
-                  </View>
-                </View>
-                <View
-                  accessible={true}
-                  clickable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "transform": Array [
-                        Object {
-                          "scale": 1,
-                        },
-                      ],
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffffff",
-                        "flexDirection": "row",
-                        "justifyContent": "flex-start",
-                        "paddingHorizontal": 16,
-                        "paddingVertical": 4,
-                      }
-                    }
-                  >
-                    <View
-                      animate={null}
-                      customAnimate={null}
-                      onReady={false}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "borderRadius": 16,
-                          "height": 64,
-                          "marginRight": 16,
-                          "width": 64,
-                        }
-                      }
-                    >
-                      <Image
-                        onLoad={[Function]}
-                        source={
-                          Array [
-                            Object {
-                              "cache": "force-cache",
-                              "uri": "",
-                              "url": "",
-                            },
-                          ]
-                        }
-                        style={
-                          Object {
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 64,
-                            "marginRight": 16,
-                            "opacity": 0,
-                            "width": 64,
-                          }
-                        }
-                      />
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomWidth": 0.5,
-                          "borderColor": "rgba(8, 0, 20, 0.25)",
-                          "flex": 1,
-                          "height": 68,
-                          "justifyContent": "center",
-                          "marginTop": 6.4,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 12,
-                            "marginVertical": 2.6400000000000006,
-                            "width": "100%",
-                          }
-                        }
-                      />
-                    </View>
-                  </View>
-                </View>
-                <View
-                  accessible={true}
-                  clickable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "transform": Array [
-                        Object {
-                          "scale": 1,
-                        },
-                      ],
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffffff",
-                        "flexDirection": "row",
-                        "justifyContent": "flex-start",
-                        "paddingHorizontal": 16,
-                        "paddingVertical": 4,
-                      }
-                    }
-                  >
-                    <View
-                      animate={null}
-                      customAnimate={null}
-                      onReady={false}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "borderRadius": 16,
-                          "height": 64,
-                          "marginRight": 16,
-                          "width": 64,
-                        }
-                      }
-                    >
-                      <Image
-                        onLoad={[Function]}
-                        source={
-                          Array [
-                            Object {
-                              "cache": "force-cache",
-                              "uri": "",
-                              "url": "",
-                            },
-                          ]
-                        }
-                        style={
-                          Object {
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 64,
-                            "marginRight": 16,
-                            "opacity": 0,
-                            "width": 64,
-                          }
-                        }
-                      />
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomWidth": 0.5,
-                          "borderColor": "rgba(8, 0, 20, 0.25)",
-                          "flex": 1,
-                          "height": 68,
-                          "justifyContent": "center",
-                          "marginTop": 6.4,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 12,
-                            "marginVertical": 2.6400000000000006,
-                            "width": "100%",
-                          }
-                        }
-                      />
-                    </View>
-                  </View>
-                </View>
-                <View
-                  accessible={true}
-                  clickable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  style={
-                    Object {
-                      "transform": Array [
-                        Object {
-                          "scale": 1,
-                        },
-                      ],
-                    }
-                  }
-                >
-                  <View
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffffff",
-                        "flexDirection": "row",
-                        "justifyContent": "flex-start",
-                        "paddingHorizontal": 16,
-                        "paddingVertical": 4,
-                      }
-                    }
-                  >
-                    <View
-                      animate={null}
-                      customAnimate={null}
-                      onReady={false}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "borderRadius": 16,
-                          "height": 64,
-                          "marginRight": 16,
-                          "width": 64,
-                        }
-                      }
-                    >
-                      <Image
-                        onLoad={[Function]}
-                        source={
-                          Array [
-                            Object {
-                              "cache": "force-cache",
-                              "uri": "",
-                              "url": "",
-                            },
-                          ]
-                        }
-                        style={
-                          Object {
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 64,
-                            "marginRight": 16,
-                            "opacity": 0,
-                            "width": 64,
-                          }
-                        }
-                      />
-                    </View>
-                    <View
-                      style={
-                        Object {
-                          "borderBottomWidth": 0.5,
-                          "borderColor": "rgba(8, 0, 20, 0.25)",
-                          "flex": 1,
-                          "height": 68,
-                          "justifyContent": "center",
-                          "marginTop": 6.4,
-                        }
-                      }
-                    >
-                      <View
-                        style={
-                          Object {
-                            "alignSelf": "stretch",
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 12,
-                            "marginVertical": 2.6400000000000006,
-                            "width": "100%",
-                          }
-                        }
-                      />
-                    </View>
-                  </View>
-                </View>
-              </View>
-            </View>
-          </View>
         </View>
         <View
           onLayout={[Function]}
@@ -1497,11 +1034,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -1661,11 +1198,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -1825,11 +1362,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -1989,11 +1526,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -2153,11 +1690,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -2317,11 +1854,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -2481,11 +2018,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -2645,11 +2182,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -2809,11 +2346,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >
@@ -2973,11 +2510,11 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                   "marginVertical": 12,
                   "shadowColor": "rgba(8, 0, 20, 0.25)",
                   "shadowOffset": Object {
-                    "height": 1,
+                    "height": 2,
                     "width": 0,
                   },
                   "shadowOpacity": 1,
-                  "shadowRadius": 6,
+                  "shadowRadius": 8,
                 }
               }
             >

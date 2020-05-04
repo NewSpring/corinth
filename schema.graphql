@@ -106,6 +106,18 @@ input CampusLocationInput {
   longitude: Float
 }
 
+type CardListItem {
+  id: ID!
+  hasAction: Boolean
+  actionIcon: String
+  labelText: String
+  summary: String
+  coverImage: ImageMedia
+  title(hyphenated: Boolean): String
+  relatedNode: Node
+  action: ACTION_FEATURE_ACTION
+}
+
 """A rgb color string"""
 scalar Color
 
@@ -165,6 +177,8 @@ type ContentSeriesContentItem implements ContentItem & Node {
   siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
   parentChannel: ContentChannel
   theme: Theme
+  percentComplete: Float
+  upNext: ContentItem
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
@@ -236,6 +250,14 @@ type HeaderFeature implements Feature & Node {
   order: Int
   body: String
   sharing: SharableFeature
+}
+
+type HorizontalCardListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  subtitle: String
+  cards: [CardListItem]
 }
 
 type ImageMedia implements Media {
@@ -318,6 +340,7 @@ type Mutation {
   updateProfileFields(input: [UpdateProfileInput]!): Person
   uploadProfileImage(file: Upload!, size: Int!): Person
   addPrayer(text: String!, isAnonymous: Boolean): Prayer
+  answerPrayer(id: ID!, answer: String!): Prayer
   interactWithPrayer(id: ID!, action: PrayerAction!): Prayer
   deletePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:DELETE)")
   incrementPrayerCount(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:INCREMENT)")
@@ -397,6 +420,7 @@ type Prayer implements Node {
   firstName: String @deprecated(reason: "Use requestor.firstName")
   lastName: String @deprecated(reason: "Use requestor.lastName.")
   text: String!
+  answer: String
   enteredDateTime: String! @deprecated(reason: "Use startTime")
   startTime: String!
   flagCount: Int
@@ -504,6 +528,7 @@ type ScriptureFeature implements Feature & Node {
 type ScriptureNote implements SermonNote {
   id: ID!
   allowsCustomNote: Boolean
+  simpleText: String
   scripture: Scripture
 }
 
@@ -529,6 +554,7 @@ type SeriesConnection {
 interface SermonNote {
   id: ID!
   allowsCustomNote: Boolean
+  simpleText: String
 }
 
 interface Sharable {
@@ -564,8 +590,10 @@ type TextFeature implements Feature & Node {
 type TextNote implements SermonNote {
   id: ID!
   allowsCustomNote: Boolean
-  text: String
+  simpleText: String
   isHeader: Boolean
+  hasBlanks: Boolean
+  hiddenText: String
 }
 
 type Theme {
@@ -630,6 +658,15 @@ enum USER_AUTH_STATUS {
 enum VERSION {
   WEB
   KJV
+}
+
+type VerticalCardListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  subtitle: String
+  isFeatured: Boolean
+  cards: [CardListItem]
 }
 
 type VideoMedia implements Media {

@@ -23,8 +23,8 @@ class ActionComponent extends React.Component {
             .map((option) => option.destructive)
             .indexOf(true)}
           onPress={async (index) => {
-            if (index === 0) {
-              options[0].method();
+            if (index !== options.length - 1) {
+              options[index].method();
             }
           }}
         />

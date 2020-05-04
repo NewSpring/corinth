@@ -11,18 +11,18 @@ PODS:
     - AppCenter/Crashes
     - AppCenterReactNativeShared
     - React
-  - AppCenter/Analytics (3.0.0):
+  - AppCenter/Analytics (3.1.1):
     - AppCenter/Core
-  - AppCenter/Core (3.0.0)
-  - AppCenter/Crashes (3.0.0):
+  - AppCenter/Core (3.1.1)
+  - AppCenter/Crashes (3.1.1):
     - AppCenter/Core
-  - AppCenterReactNativeShared (3.0.0):
-    - AppCenter/Core (= 3.0.0)
+  - AppCenterReactNativeShared (3.0.2):
+    - AppCenter/Core (= 3.1.1)
   - boost-for-react-native (1.63.0)
-  - BugsnagReactNative (2.23.5):
-    - BugsnagReactNative/Core (= 2.23.5)
+  - BugsnagReactNative (2.23.7):
+    - BugsnagReactNative/Core (= 2.23.7)
     - React
-  - BugsnagReactNative/Core (2.23.5):
+  - BugsnagReactNative/Core (2.23.7):
     - React
   - BVLinearGradient (2.5.6):
     - React
@@ -38,9 +38,9 @@ PODS:
     - glog
   - glog (0.3.5)
   - OneSignal (2.10.1)
-  - Permission-Notifications (2.0.9):
+  - Permission-Notifications (2.1.2):
     - RNPermissions
-  - Permission-PhotoLibrary (2.0.9):
+  - Permission-PhotoLibrary (2.1.2):
     - RNPermissions
   - React (0.60.5):
     - React-Core (= 0.60.5)
@@ -145,17 +145,19 @@ PODS:
     - React-Core
   - RNAirplay (1.0.0):
     - React
-  - RNCAsyncStorage (1.8.1):
+  - RNBootSplash (2.2.3):
+    - React
+  - RNCAsyncStorage (1.9.0):
     - React
   - RNDeviceInfo (4.0.1):
     - React
-  - RNGestureHandler (1.6.0):
+  - RNGestureHandler (1.6.1):
     - React
-  - RNInAppBrowser (3.3.4):
+  - RNInAppBrowser (3.4.0):
     - React
-  - RNPermissions (2.0.9):
+  - RNPermissions (2.1.2):
     - React
-  - RNReanimated (1.7.0):
+  - RNReanimated (1.8.0):
     - React
   - RNScreens (1.0.0-alpha.23):
     - React
@@ -207,6 +209,7 @@ DEPENDENCIES:
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNAirplay (from `../node_modules/@apollosproject/react-native-airplay-btn`)"
+  - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
@@ -311,6 +314,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/rn-fetch-blob"
   RNAirplay:
     :path: "../node_modules/@apollosproject/react-native-airplay-btn"
+  RNBootSplash:
+    :path: "../node_modules/react-native-bootsplash"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
   RNDeviceInfo:
@@ -334,20 +339,20 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Amplitude-iOS: df355e2be58972041acde9576a2ae97c217bf941
-  AppCenter: 7a0bbe928d07467ac8b2d7f6f2a675872a6471d8
+  AppCenter: 513d32888854d67d8cfbd3a8db16aeb5fb2e2a75
   appcenter: f2e241f931e0865a74b3af3928066a1190814be0
   appcenter-analytics: 42e368870a904af67fd93f043f3efa75ffa772a2
   appcenter-crashes: bfc5c03a6ddcfa158fcf4217d1724fd52f45d12c
-  AppCenterReactNativeShared: 48a905fe90071696748e3def60199546167cdb86
+  AppCenterReactNativeShared: c4eb2ad593c32fbc2fc5f2ea9f5cf1faae61c182
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  BugsnagReactNative: 249cb5d0620321c93f5f4cf1ca9fdd0a2f10415b
+  BugsnagReactNative: 14c1b59cfbf34fd5591b734bfec65a277b677ef8
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   OneSignal: 8fb749fa07f88006403c9b659a570fb7fb74519a
-  Permission-Notifications: 1e03f5c43612ac4f9cdcaf6504695fc4e15f33d9
-  Permission-PhotoLibrary: 42d41b53adefcfa94f42fb628f143d97136120bd
+  Permission-Notifications: 2f2ff1d01fe7677c3858c8f0a0bd3f3accdbb6bb
+  Permission-PhotoLibrary: e29736d903e867d278747eb30951528303425f64
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
   React-cxxreact: 8384287780c4999351ad9b6e7a149d9ed10a2395
@@ -380,12 +385,13 @@ SPEC CHECKSUMS:
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   rn-fetch-blob: 651b8d076b43d0d7aa294a3d9ec16c00aab8bef9
   RNAirplay: 75777dd55dafbd3687703c3eb9c290ea6cc43248
-  RNCAsyncStorage: e0dd7c8a36543b4ef84969acd9f8aceba3a92dc2
+  RNBootSplash: bbf3c78bd12e3e990eeb8c52db2025ab717b6385
+  RNCAsyncStorage: 453cd7c335ec9ba3b877e27d02238956b76f3268
   RNDeviceInfo: 687c1b2ab6d86ff1ca1208783320cd144138c7f2
-  RNGestureHandler: dde546180bf24af0b5f737c8ad04b6f3fa51609a
-  RNInAppBrowser: 9936b2e23ab7ed9b6ac938eb1c4a656b95292e11
-  RNPermissions: 2f74237e97b08beda01e914301e12524ddddf5b8
-  RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
+  RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
+  RNInAppBrowser: c1a0dad2734458d79bcb6c8f4297ba8658a1da9f
+  RNPermissions: a96580116f7894146552e92b000ac30bf1661947
+  RNReanimated: 955cf4068714003d2f1a6e2bae3fb1118f359aff
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   SocketRocket: dbb1554b8fc288ef8ef370d6285aeca7361be31e
@@ -393,4 +399,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b970a6a0cb91fcc615bfa02155c3755b5bb2d25e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

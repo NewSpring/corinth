@@ -10,11 +10,11 @@ exports[`The SermonNotes component should render 1`] = `
       "marginVertical": 12,
       "shadowColor": "rgba(8, 0, 20, 0.25)",
       "shadowOffset": Object {
-        "height": 1,
+        "height": 2,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "shadowRadius": 8,
     }
   }
 >
@@ -268,11 +268,11 @@ exports[`The SermonNotes component should render with a title, series, and one s
       "marginVertical": 12,
       "shadowColor": "rgba(8, 0, 20, 0.25)",
       "shadowOffset": Object {
-        "height": 1,
+        "height": 2,
         "width": 0,
       },
       "shadowOpacity": 1,
-      "shadowRadius": 6,
+      "shadowRadius": 8,
     }
   }
 >

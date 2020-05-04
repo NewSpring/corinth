@@ -8,6 +8,7 @@ import {
   styled,
   Touchable,
   ChannelLabel,
+  H4,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import PrayerHeader from '../PrayerHeader';
@@ -62,6 +63,12 @@ const PrayerSingle = memo(
       <PrayerView>
         <BodyText>{prayer.text}</BodyText>
       </PrayerView>
+      {prayer.answer && prayer.answer.length > 0 ? (
+        <PrayerView>
+          <H4>Answer:</H4>
+          <BodyText>{prayer.answer}</BodyText>
+        </PrayerView>
+      ) : null}
       {showHelp ? (
         <AnalyticsConsumer>
           {({ track }) => (
@@ -107,6 +114,7 @@ PrayerSingle.propTypes = {
     }),
     campus: PropTypes.shape({ name: PropTypes.string }),
     text: PropTypes.string,
+    answer: PropTypes.string,
   }),
   action: PropTypes.element,
   isLoading: PropTypes.bool,
