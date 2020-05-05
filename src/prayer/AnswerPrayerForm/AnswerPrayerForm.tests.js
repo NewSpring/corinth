@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 import Providers from '../../Providers';
 
@@ -53,6 +54,19 @@ describe('The AnswerPrayerForm component', () => {
           navigation={jest.fn()}
           prayerText={'This is a prayer'}
           prayerAnswer={'This is a prayer answer'}
+        />
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render something passed in the action prop', () => {
+    const tree = renderer.create(
+      <Providers>
+        <AnswerPrayerForm
+          navigation={jest.fn()}
+          prayerText={'This is a prayer'}
+          prayerAnswer={'This is a prayer answer'}
+          action={<Text>Remove answer</Text>}
         />
       </Providers>
     );
