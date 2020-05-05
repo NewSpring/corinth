@@ -424,6 +424,7 @@ exports[`renders AnswerPrayerFormConnected 1`] = `
             </Text>
           </View>
         </View>
+        <View />
       </View>
     </View>
   </RCTSafeAreaView>
