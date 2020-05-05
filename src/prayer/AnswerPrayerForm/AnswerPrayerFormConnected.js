@@ -4,8 +4,7 @@ import { Query, Mutation } from 'react-apollo';
 import { BodyText, styled } from '@apollosproject/ui-kit';
 import getUserProfile from '../../tabs/connect/UserAvatarHeader/getUserProfile';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
-import ANSWER_PRAYER from '../data/mutations/answerPrayer';
-import REMOVE_ANSWER from '../data/mutations/removeAnswer';
+import EDIT_ANSWER from '../data/mutations/editAnswer';
 import ActionComponent from '../ActionComponent';
 import AnswerPrayerForm from './AnswerPrayerForm';
 
@@ -38,70 +37,63 @@ class AnswerPrayerFormConnected extends React.Component {
             currentUser: { profile: { photo = { uri: '' } } = {} } = {},
           } = {},
         }) => (
-          <Mutation mutation={REMOVE_ANSWER}>
-            {(removeAnswer) => (
-              <Mutation mutation={ANSWER_PRAYER}>
-                {(answerPrayer) => (
-                  <AnswerPrayerForm
-                    loading={profileLoading}
-                    onSubmit={(values) => {
-                      answerPrayer({
-                        variables: {
-                          id: values.id,
-                          answer: values.answer,
-                        },
-                        refetchQueries: () => [
+          <Mutation mutation={EDIT_ANSWER}>
+            {(editAnswer) => (
+              <AnswerPrayerForm
+                loading={profileLoading}
+                onSubmit={(values) => {
+                  editAnswer({
+                    variables: {
+                      id: values.id,
+                      answer: values.answer,
+                    },
+                    refetchQueries: () => [
+                      {
+                        query: GET_PRAYER_FEED,
+                        variables: { type: 'USER' },
+                      },
+                    ],
+                  });
+                  this.props.navigation.pop();
+                }}
+                avatarSource={photo}
+                {...this.props}
+                onClose={() => this.closePrayer()}
+                title={"Celebrate God's faithfulness"}
+                prayerId={this.prayerId}
+                prayerText={this.props.navigation.getParam('prayerText', '')}
+                prayerAnswer={this.prayerAnswer}
+                action={
+                  this.prayerAnswer ? (
+                    <OptionMenu>
+                      <ActionComponent
+                        component={
+                          <OptionMenuText>Remove answer</OptionMenuText>
+                        }
+                        options={[
                           {
-                            query: GET_PRAYER_FEED,
-                            variables: { type: 'USER' },
-                          },
-                        ],
-                      });
-                      this.props.navigation.pop();
-                    }}
-                    avatarSource={photo}
-                    {...this.props}
-                    onClose={() => this.closePrayer()}
-                    title={"Celebrate God's faithfulness"}
-                    prayerId={this.prayerId}
-                    prayerText={this.props.navigation.getParam(
-                      'prayerText',
-                      ''
-                    )}
-                    prayerAnswer={this.prayerAnswer}
-                    action={
-                      this.prayerAnswer ? (
-                        <OptionMenu>
-                          <ActionComponent
-                            component={
-                              <OptionMenuText>Remove answer</OptionMenuText>
-                            }
-                            options={[
-                              {
-                                title: 'Remove Answer',
-                                method: async () => {
-                                  await removeAnswer({
-                                    variables: {
-                                      id: this.prayerId,
-                                    },
-                                  });
-                                  await this.closePrayer();
+                            title: 'Remove Answer',
+                            method: async () => {
+                              await editAnswer({
+                                variables: {
+                                  id: this.prayerId,
                                 },
-                                destructive: true,
-                              },
-                              {
-                                title: 'Cancel',
-                                method: null,
-                                destructive: false,
-                              },
-                            ]}
-                          />
-                        </OptionMenu>
-                      ) : null
-                    }
-                  />
-                )}
-              </Mutation>
+                              });
+                              await this.closePrayer();
+                            },
+                            destructive: true,
+                          },
+                          {
+                            title: 'Cancel',
+                            method: null,
+                            destructive: false,
+                          },
+                        ]}
+                      />
+                    </OptionMenu>
+                  ) : null
+                }
+              />
             )}
           </Mutation>
         )}
