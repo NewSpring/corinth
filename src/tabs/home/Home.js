@@ -23,7 +23,6 @@ import {
 import LiveButton from '../../ui/LiveButton';
 import LiveIcon from '../../ui/LiveIcon';
 
-import Features from './Features';
 import GET_USER_FEED from './getUserFeed';
 import GET_CAMPAIGN_CONTENT_ITEM from './getCampaignContentItem';
 
@@ -180,7 +179,6 @@ class Home extends PureComponent {
                         );
                       }}
                     </Query>
-                    <Features navigation={this.props.navigation} />
                   </>
                 }
                 onPressItem={this.handleOnPress}
