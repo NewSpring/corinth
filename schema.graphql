@@ -252,6 +252,15 @@ type HeaderFeature implements Feature & Node {
   sharing: SharableFeature
 }
 
+type HeroListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  subtitle: String
+  actions: [ActionListAction]
+  heroCard: CardListItem
+}
+
 type HorizontalCardListFeature implements Feature & Node {
   id: ID!
   order: Int
@@ -269,6 +278,23 @@ type ImageMedia implements Media {
 type ImageMediaSource implements MediaSource {
   uri: String
 }
+
+enum InteractionAction {
+  VIEW
+  COMPLETE
+}
+
+input InteractionDataField {
+  field: String!
+  value: InteractionValue
+}
+
+type InteractionResult {
+  success: Boolean
+  node: Node
+}
+
+scalar InteractionValue
 
 enum LIKE_OPERATION {
   Like
@@ -332,6 +358,7 @@ type Mutation {
   requestSmsLoginPin(phoneNumber: String!): SmsPinResult
   authenticateWithSms(phoneNumber: String!, pin: String!): Authentication
   registerWithSms(phoneNumber: String!, pin: String!, userProfile: [UpdateProfileInput]): Authentication
+  interactWithNode(action: InteractionAction!, nodeId: ID!, data: [InteractionDataField]): InteractionResult
   identifySelf(input: AnalyticsIdentifyInput!): AnalyticsResult
   trackEvent(input: AnalyticsTrackInput!): AnalyticsResult
   updateUserPushSettings(input: PushSettingsInput!): Person
