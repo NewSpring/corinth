@@ -63,7 +63,7 @@ class AnswerPrayerFormConnected extends React.Component {
                 action={
                   <FooterAltOption>
                     <ActionComponent
-                      component={<FooterText>Remove Answer</FooterText>}
+                      component={<FooterText>Remove answer</FooterText>}
                       options={[
                         {
                           title: 'Remove Answer', // method: async () => {
