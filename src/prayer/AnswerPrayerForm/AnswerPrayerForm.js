@@ -39,7 +39,6 @@ const StyledTextInput = styled(({ theme }) => ({
 }))(TextInput);
 
 const BottomView = styled(({ theme }) => ({
-  // justifyContent: 'flex-end',
   padding: theme.sizing.baseUnit,
 }))(FlexedView);
 
