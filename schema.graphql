@@ -341,6 +341,7 @@ type Mutation {
   uploadProfileImage(file: Upload!, size: Int!): Person
   addPrayer(text: String!, isAnonymous: Boolean): Prayer
   answerPrayer(id: ID!, answer: String!): Prayer
+  removeAnswer(id: ID!): Prayer
   interactWithPrayer(id: ID!, action: PrayerAction!): Prayer
   deletePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:DELETE)")
   incrementPrayerCount(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:INCREMENT)")
