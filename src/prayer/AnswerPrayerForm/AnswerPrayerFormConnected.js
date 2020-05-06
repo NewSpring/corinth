@@ -77,6 +77,7 @@ class AnswerPrayerFormConnected extends React.Component {
                               await editPrayer({
                                 variables: {
                                   id: this.prayerId,
+                                  answer: null,
                                 },
                               });
                               await this.closePrayer();
