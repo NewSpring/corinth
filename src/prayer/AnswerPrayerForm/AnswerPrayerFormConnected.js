@@ -4,7 +4,7 @@ import { Query, Mutation } from 'react-apollo';
 import { BodyText, styled } from '@apollosproject/ui-kit';
 import getUserProfile from '../../tabs/connect/UserAvatarHeader/getUserProfile';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
-import EDIT_ANSWER from '../data/mutations/editAnswer';
+import EDIT_PRAYER from '../data/mutations/editPrayer';
 import ActionComponent from '../ActionComponent';
 import AnswerPrayerForm from './AnswerPrayerForm';
 
@@ -37,12 +37,12 @@ class AnswerPrayerFormConnected extends React.Component {
             currentUser: { profile: { photo = { uri: '' } } = {} } = {},
           } = {},
         }) => (
-          <Mutation mutation={EDIT_ANSWER}>
-            {(editAnswer) => (
+          <Mutation mutation={EDIT_PRAYER}>
+            {(editPrayer) => (
               <AnswerPrayerForm
                 loading={profileLoading}
                 onSubmit={(values) => {
-                  editAnswer({
+                  editPrayer({
                     variables: {
                       id: values.id,
                       answer: values.answer,
@@ -74,7 +74,7 @@ class AnswerPrayerFormConnected extends React.Component {
                           {
                             title: 'Remove Answer',
                             method: async () => {
-                              await editAnswer({
+                              await editPrayer({
                                 variables: {
                                   id: this.prayerId,
                                 },
