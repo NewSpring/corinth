@@ -1,5 +1,6 @@
 import React from 'react';
-import Config from 'react-native-config';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
@@ -31,13 +32,37 @@ const Toolbar = ({ navigation }) => (
           icon="group"
           label="Join Group"
         />
-        {Config.EXPERIMENTAL === 'true' ? (
-          <ActionBarItem
-            onPress={() => navigation.navigate('Passes')}
-            icon="check"
-            label="Check-in"
-          />
-        ) : null}
+        <Query
+          query={gql`
+            {
+              currentUser {
+                id
+                profile {
+                  id
+                  testGroups {
+                    id
+                    name
+                  }
+                }
+              }
+            }
+          `}
+          fetch-policy={'cache-and-network'}
+        >
+          {({ data, loading, error }) => {
+            if (loading) return null;
+            if (error) return null;
+            return data.currentUser.profile.testGroups.filter(
+              ({ name }) => name === 'Experimental Features'
+            ).length ? (
+              <ActionBarItem
+                onPress={() => navigation.navigate('Passes')}
+                icon="check"
+                label="Check-in"
+              />
+            ) : null;
+          }}
+        </Query>
       </ActionBar>
     )}
   </RockAuthedWebBrowser>
