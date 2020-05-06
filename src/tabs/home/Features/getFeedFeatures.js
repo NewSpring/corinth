@@ -21,50 +21,6 @@ export default gql`
           }
         }
       }
-      ... on VerticalCardListFeature {
-        id
-        isFeatured
-        title
-        subtitle
-        cards {
-          action
-          title
-          hasAction
-          actionIcon
-          labelText
-          summary
-          coverImage {
-            sources {
-              uri
-            }
-          }
-          relatedNode {
-            id
-          }
-        }
-      }
-      ... on HorizontalCardListFeature {
-        id
-        title
-        subtitle
-        cards {
-          action
-          title
-          hyphenatedTitle: title(hyphenated: true)
-          hasAction
-          actionIcon
-          labelText
-          summary
-          coverImage {
-            sources {
-              uri
-            }
-          }
-          relatedNode {
-            id
-          }
-        }
-      }
     }
   }
 `;

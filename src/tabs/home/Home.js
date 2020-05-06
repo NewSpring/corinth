@@ -75,6 +75,21 @@ class Home extends PureComponent {
       transitionKey: item.transitionKey,
     });
 
+  handleOnPressActionItem = ({ action, relatedNode }) => {
+    if (action === 'READ_CONTENT') {
+      this.props.navigation.navigate('ContentSingle', {
+        itemId: relatedNode.id,
+        transitionKey: 2,
+      });
+    }
+    if (action === 'READ_EVENT') {
+      this.props.navigation.navigate('Event', {
+        eventId: relatedNode.id,
+        transitionKey: 2,
+      });
+    }
+  };
+
   render() {
     return (
       <BackgroundView>
