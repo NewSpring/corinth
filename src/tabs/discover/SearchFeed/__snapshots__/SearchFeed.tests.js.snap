@@ -323,7 +323,6 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                             }
                           >
                             <Image
-                              customTheme={null}
                               maxAspectRatio={1.2}
                               minAspectRatio={0.75}
                               onLoad={[Function]}
@@ -1422,7 +1421,6 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                             }
                           >
                             <Image
-                              customTheme={null}
                               maxAspectRatio={1.2}
                               minAspectRatio={0.75}
                               onLoad={[Function]}

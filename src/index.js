@@ -35,8 +35,8 @@ import Crashes from 'appcenter-crashes';
 import bugsnag from './bugsnag';
 
 const AppStatusBar = withTheme(({ theme }) => ({
-  barStyle: 'dark-content',
-  backgroundColor: theme.colors.paper,
+  barStyle: theme.barStyle,
+  backgroundColor: theme.colors.background.paper,
 }))(StatusBar);
 
 const ProtectedRouteWithSplashScreen = (props) => {
