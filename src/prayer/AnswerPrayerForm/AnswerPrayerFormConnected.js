@@ -4,7 +4,8 @@ import { Query, Mutation } from 'react-apollo';
 import { BodyText, styled } from '@apollosproject/ui-kit';
 import getUserProfile from '../../tabs/connect/UserAvatarHeader/getUserProfile';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
-import EDIT_PRAYER from '../data/mutations/editPrayer';
+import ANSWER_PRAYER from '../data/mutations/answerPrayer';
+import INTERACT_WITH_PRAYER from '../data/mutations/interactWithPrayer';
 import ActionComponent from '../ActionComponent';
 import AnswerPrayerForm from './AnswerPrayerForm';
 
@@ -37,64 +38,71 @@ class AnswerPrayerFormConnected extends React.Component {
             currentUser: { profile: { photo = { uri: '' } } = {} } = {},
           } = {},
         }) => (
-          <Mutation mutation={EDIT_PRAYER}>
-            {(editPrayer) => (
-              <AnswerPrayerForm
-                loading={profileLoading}
-                onSubmit={(values) => {
-                  editPrayer({
-                    variables: {
-                      id: values.id,
-                      answer: values.answer,
-                    },
-                    refetchQueries: () => [
-                      {
-                        query: GET_PRAYER_FEED,
-                        variables: { type: 'USER' },
-                      },
-                    ],
-                  });
-                  this.props.navigation.pop();
-                }}
-                avatarSource={photo}
-                {...this.props}
-                onClose={() => this.closePrayer()}
-                title={"Celebrate God's faithfulness"}
-                prayerId={this.prayerId}
-                prayerText={this.props.navigation.getParam('prayerText', '')}
-                prayerAnswer={this.prayerAnswer}
-                action={
-                  this.prayerAnswer ? (
-                    <OptionMenu>
-                      <ActionComponent
-                        component={
-                          <OptionMenuText>Remove answer</OptionMenuText>
-                        }
-                        options={[
+          <Mutation mutation={INTERACT_WITH_PRAYER}>
+            {(interactWithPrayer) => (
+              <Mutation mutation={ANSWER_PRAYER}>
+                {(answerPrayer) => (
+                  <AnswerPrayerForm
+                    loading={profileLoading}
+                    onSubmit={(values) => {
+                      answerPrayer({
+                        variables: {
+                          id: values.id,
+                          answer: values.answer,
+                        },
+                        refetchQueries: () => [
                           {
-                            title: 'Remove Answer',
-                            method: async () => {
-                              await editPrayer({
-                                variables: {
-                                  id: this.prayerId,
-                                  answer: null,
+                            query: GET_PRAYER_FEED,
+                            variables: { type: 'USER' },
+                          },
+                        ],
+                      });
+                      this.props.navigation.pop();
+                    }}
+                    avatarSource={photo}
+                    {...this.props}
+                    onClose={() => this.closePrayer()}
+                    title={"Celebrate God's faithfulness"}
+                    prayerId={this.prayerId}
+                    prayerText={this.props.navigation.getParam(
+                      'prayerText',
+                      ''
+                    )}
+                    prayerAnswer={this.prayerAnswer}
+                    action={
+                      this.prayerAnswer ? (
+                        <OptionMenu>
+                          <ActionComponent
+                            component={
+                              <OptionMenuText>Remove answer</OptionMenuText>
+                            }
+                            options={[
+                              {
+                                title: 'Remove Answer',
+                                method: async () => {
+                                  await interactWithPrayer({
+                                    variables: {
+                                      id: this.prayerId,
+                                      action: 'REMOVE_ANSWER',
+                                    },
+                                  });
+                                  await this.closePrayer();
                                 },
-                              });
-                              await this.closePrayer();
-                            },
-                            destructive: true,
-                          },
-                          {
-                            title: 'Cancel',
-                            method: null,
-                            destructive: false,
-                          },
-                        ]}
-                      />
-                    </OptionMenu>
-                  ) : null
-                }
-              />
+                                destructive: true,
+                              },
+                              {
+                                title: 'Cancel',
+                                method: null,
+                                destructive: false,
+                              },
+                            ]}
+                          />
+                        </OptionMenu>
+                      ) : null
+                    }
+                  />
+                )}
+              </Mutation>
             )}
           </Mutation>
         )}
