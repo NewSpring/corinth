@@ -150,7 +150,9 @@ exports[`the sermon notes renders sermon notes 1`] = `
                 "lineHeight": 26,
               }
             }
-          />
+          >
+            Sub point
+          </Text>
         </View>
       </View>
       <View
