@@ -8,7 +8,9 @@ const TextNote = ({ hasBlanks, simpleText, hiddenText, isHeader }) => {
   const [isPressed, press] = useState(false);
   const TextComponent = isHeader ? H4 : BodyText;
   const Note = () => (
-    <TextComponent>{isPressed ? simpleText : hiddenText}</TextComponent>
+    <TextComponent>
+      {isPressed || !hasBlanks ? simpleText : hiddenText}
+    </TextComponent>
   );
   return (
     <AnalyticsConsumer>
