@@ -8,7 +8,7 @@ import TextFeature from './TextFeature';
 import ScriptureFeature from './ScriptureFeature';
 import HeaderFeature from './HeaderFeature';
 import NoteFeature from './NoteFeature';
-import SermonNotes from './SermonNotes';
+import SermonNotes from './SermonNotes_OLD';
 
 import GET_CONTENT_ITEM_FEATURES from './getContentItemFeatures';
 
@@ -44,6 +44,7 @@ const Features = ({ contentId, asNotes }) => {
             </View>
           );
         });
+        // TODO deprecate SermonNotes here
         return asNotes ? (
           <SermonNotes features={featureComponents} contentItem={node} />
         ) : (
