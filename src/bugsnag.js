@@ -35,6 +35,7 @@ const setUser = async (client) => {
 };
 
 const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
+  const { headers: { authorization: token } = {} } = operation.getContext();
   if (graphQLErrors) {
     graphQLErrors.forEach(({ message, locations, path }) => {
       bugsnag.notify(new Error(message), (report) => {
@@ -51,6 +52,9 @@ const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
           path,
           locations,
           operation,
+          // NOTE: this should be removed once we have resolved the
+          // frequent authentication errors
+          token,
         };
       });
     });
