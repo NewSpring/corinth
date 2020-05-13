@@ -49,9 +49,7 @@ const InputPaddedView = styled(({ theme }) => ({
 
 const AnswerPrayerForm = memo(
   ({
-    prayerId,
-    prayerText,
-    prayerAnswer,
+    prayer,
     onSubmit,
     avatarSource,
     title,
@@ -61,7 +59,7 @@ const AnswerPrayerForm = memo(
     ...props
   }) => (
     <Formik
-      initialValues={{ id: prayerId, answer: prayerAnswer || '' }}
+      initialValues={{ id: prayer.id, answer: prayer.answer || '' }}
       onSubmit={(values, { resetForm }) => {
         onSubmit(values);
         // this is necessary so the modal can transition completely
@@ -82,7 +80,7 @@ const AnswerPrayerForm = memo(
               </HeaderView>
               <PaddedView>
                 <H4>Your Prayer:</H4>
-                <Text>{prayerText}</Text>
+                <Text>{prayer.text}</Text>
               </PaddedView>
               <InputPaddedView>
                 <StyledTextInput
@@ -113,9 +111,11 @@ const AnswerPrayerForm = memo(
 );
 
 AnswerPrayerForm.propTypes = {
-  prayerId: PropTypes.string,
-  prayerText: PropTypes.string,
-  prayerAnswer: PropTypes.string,
+  prayer: PropTypes.shape({
+    id: PropTypes.string,
+    text: PropTypes.string,
+    answer: PropTypes.string,
+  }),
   onSubmit: PropTypes.func,
   avatarSource: PropTypes.shape({
     uri: PropTypes.string,

@@ -61,12 +61,11 @@ class AnswerPrayerFormConnected extends React.Component {
                     {...this.props}
                     onClose={() => this.props.navigation.pop()}
                     title={"Celebrate God's faithfulness"}
-                    prayerId={this.prayerId}
-                    prayerText={this.props.navigation.getParam(
-                      'prayerText',
-                      ''
-                    )}
-                    prayerAnswer={this.prayerAnswer}
+                    prayer={{
+                      id: this.prayerId,
+                      text: this.props.navigation.getParam('prayerText', ''),
+                      answer: this.prayerAnswer,
+                    }}
                     action={
                       this.prayerAnswer ? (
                         <OptionMenu>
