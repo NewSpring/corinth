@@ -23,8 +23,6 @@ class AnswerPrayerFormConnected extends React.Component {
 
   prayerAnswer = this.props.navigation.getParam('prayerAnswer', '');
 
-  closePrayer = () => this.props.navigation.pop();
-
   static navigationOptions = {
     header: null,
   };
@@ -61,7 +59,7 @@ class AnswerPrayerFormConnected extends React.Component {
                     }}
                     avatarSource={photo}
                     {...this.props}
-                    onClose={() => this.closePrayer()}
+                    onClose={() => this.props.navigation.pop()}
                     title={"Celebrate God's faithfulness"}
                     prayerId={this.prayerId}
                     prayerText={this.props.navigation.getParam(
@@ -86,7 +84,7 @@ class AnswerPrayerFormConnected extends React.Component {
                                       action: 'REMOVE_ANSWER',
                                     },
                                   });
-                                  await this.closePrayer();
+                                  this.props.navigation.pop();
                                 },
                                 destructive: true,
                               },
