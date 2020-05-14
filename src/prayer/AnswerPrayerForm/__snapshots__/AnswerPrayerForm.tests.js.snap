@@ -424,6 +424,7 @@ exports[`The AnswerPrayerForm component should render 1`] = `
             </Text>
           </View>
         </View>
+        <View />
       </View>
     </View>
   </RCTSafeAreaView>
@@ -952,6 +953,7 @@ exports[`The AnswerPrayerForm component should render a custom avatar 1`] = `
             </Text>
           </View>
         </View>
+        <View />
       </View>
     </View>
   </RCTSafeAreaView>
@@ -1550,6 +1552,613 @@ exports[`The AnswerPrayerForm component should render a custom title 1`] = `
               custom button label
             </Text>
           </View>
+        </View>
+        <View />
+      </View>
+    </View>
+  </RCTSafeAreaView>
+  <View
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingHorizontal": 16,
+        "paddingVertical": 16,
+        "position": "absolute",
+        "top": 0,
+        "width": "100%",
+      }
+    }
+  >
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight={32}
+      bbWidth={32}
+      fill="#303030"
+      focusable={false}
+      height={32}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          undefined,
+          Object {
+            "opacity": 1,
+          },
+          Object {
+            "flex": 0,
+            "height": 32,
+            "width": 32,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+      width={32}
+    >
+      <RNSVGGroup
+        fill={
+          Array [
+            0,
+            4281348144,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        font={Object {}}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth={1}
+        vectorEffect={0}
+        x={0}
+        y={0}
+      />
+    </RNSVGSvgView>
+    <RNSVGSvgView
+      align="xMidYMid"
+      bbHeight={32}
+      bbWidth={32}
+      fill="#303030"
+      focusable={false}
+      height={32}
+      meetOrSlice={0}
+      minX={0}
+      minY={0}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          undefined,
+          Object {
+            "opacity": 1,
+          },
+          Object {
+            "flex": 0,
+            "height": 32,
+            "width": 32,
+          },
+        ]
+      }
+      vbHeight={24}
+      vbWidth={24}
+      width={32}
+    >
+      <RNSVGGroup
+        fill={
+          Array [
+            0,
+            4281348144,
+          ]
+        }
+        fillOpacity={1}
+        fillRule={1}
+        font={Object {}}
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+        opacity={1}
+        originX={0}
+        originY={0}
+        propList={
+          Array [
+            "fill",
+          ]
+        }
+        rotation={0}
+        scaleX={1}
+        scaleY={1}
+        skewX={0}
+        skewY={0}
+        stroke={null}
+        strokeDasharray={null}
+        strokeDashoffset={null}
+        strokeLinecap={0}
+        strokeLinejoin={0}
+        strokeMiterlimit={4}
+        strokeOpacity={1}
+        strokeWidth={1}
+        vectorEffect={0}
+        x={0}
+        y={0}
+      />
+    </RNSVGSvgView>
+  </View>
+</BVLinearGradient>
+`;
+
+exports[`The AnswerPrayerForm component should render something passed in the action prop 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      4294967295,
+      4294506484,
+    ]
+  }
+  endPoint={
+    Object {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    Object {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    Object {
+      "borderRadius": 0,
+      "flex": null,
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+>
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+    forceInset={
+      Object {
+        "top": "always",
+      }
+    }
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingTop": 16,
+          },
+          Object {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "marginBottom": 16,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "height": 80,
+                  "justifyContent": "flex-end",
+                  "width": 80,
+                }
+              }
+              themeSize={80}
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight={80}
+                bbWidth={80}
+                focusable={false}
+                height={80}
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    undefined,
+                    Object {
+                      "opacity": 1,
+                    },
+                    Object {
+                      "flex": 0,
+                      "height": 80,
+                      "width": 80,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+                width={80}
+              >
+                <RNSVGGroup
+                  fill={
+                    Array [
+                      0,
+                      4278190080,
+                    ]
+                  }
+                  fillOpacity={1}
+                  fillRule={1}
+                  font={Object {}}
+                  matrix={
+                    Array [
+                      1,
+                      0,
+                      0,
+                      1,
+                      0,
+                      0,
+                    ]
+                  }
+                  opacity={1}
+                  originX={0}
+                  originY={0}
+                  propList={Array []}
+                  rotation={0}
+                  scaleX={1}
+                  scaleY={1}
+                  skewX={0}
+                  skewY={0}
+                  stroke={null}
+                  strokeDasharray={null}
+                  strokeDashoffset={null}
+                  strokeLinecap={0}
+                  strokeLinejoin={0}
+                  strokeMiterlimit={4}
+                  strokeOpacity={1}
+                  strokeWidth={1}
+                  vectorEffect={0}
+                  x={0}
+                  y={0}
+                >
+                  <RNSVGPath
+                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-3.33 8.33C8.67 8.5 10.2 7 12 7s3.33 1.5 3.33 3.33v.84c0 1.84-1.53 3.33-3.33 3.33S8.67 13 8.67 11.17v-.84zm3.33 10c-2.03 0-3.9-.73-5.33-1.93.7-1.32 2.07-2.23 3.66-2.23h3.34c1.6 0 2.97.9 3.66 2.22-1.44 1.2-3.3 1.92-5.33 1.92z"
+                    fill={
+                      Array [
+                        0,
+                        4292730333,
+                      ]
+                    }
+                    fillOpacity={1}
+                    fillRule={1}
+                    matrix={
+                      Array [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                      ]
+                    }
+                    opacity={1}
+                    originX={0}
+                    originY={0}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                    rotation={0}
+                    scaleX={1}
+                    scaleY={1}
+                    skewX={0}
+                    skewY={0}
+                    stroke={null}
+                    strokeDasharray={null}
+                    strokeDashoffset={null}
+                    strokeLinecap={0}
+                    strokeLinejoin={0}
+                    strokeMiterlimit={4}
+                    strokeOpacity={1}
+                    strokeWidth={1}
+                    vectorEffect={0}
+                    x={0}
+                    y={0}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+            </View>
+          </View>
+          <Text
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "Colfax-Black",
+                "fontSize": 24,
+                "lineHeight": 27.6,
+              }
+            }
+          >
+            Answer Prayer
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "paddingHorizontal": 16,
+            "paddingVertical": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 16,
+              "lineHeight": 23.04,
+            }
+          }
+        >
+          Your Prayer:
+        </Text>
+        <Text>
+          This is a prayer
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 4,
+            "paddingHorizontal": 16,
+          }
+        }
+      >
+        <View
+          disabled={false}
+          style={
+            Object {
+              "marginVertical": 16,
+            }
+          }
+        >
+          <View>
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "alignSelf": "flex-end",
+                    "flex": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <TextInput
+                    allowFontScaling={true}
+                    editable={true}
+                    multiline={true}
+                    onBlur={[Function]}
+                    onChangeText={[Function]}
+                    onFocus={[Function]}
+                    placeholder="How did God answer your prayer?"
+                    placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                    rejectResponderTermination={true}
+                    returnKeyType="default"
+                    style={
+                      Object {
+                        "borderColor": "rgba(8, 0, 20, 0.25)",
+                        "borderRadius": 8,
+                        "borderWidth": 0.5,
+                        "height": "100%",
+                        "paddingBottom": 16,
+                        "paddingHorizontal": 16,
+                        "paddingTop": 16,
+                        "textAlignVertical": "top",
+                      }
+                    }
+                    underlineColorAndroid="transparent"
+                    value="This is a prayer answer"
+                  />
+                </View>
+                <View
+                  onLayout={[Function]}
+                  pointerEvents="none"
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "justifyContent": "center",
+                      "opacity": 0.8,
+                      "position": "absolute",
+                      "top": 0,
+                      "transform": Array [
+                        Object {
+                          "scale": 0.8,
+                        },
+                        Object {
+                          "translateX": 0,
+                        },
+                        Object {
+                          "translateY": 0,
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "#505050",
+                        "fontFamily": "Colfax-Bold",
+                        "fontSize": 12,
+                        "lineHeight": 17.28,
+                        "paddingVertical": 4,
+                      }
+                    }
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "padding": 16,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          clickable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            bordered={false}
+            disabled={false}
+            pill={true}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#6bac43",
+                "borderColor": "#6bac43",
+                "borderRadius": 48,
+                "borderWidth": 2,
+                "elevation": 2,
+                "flexDirection": "row",
+                "height": 48,
+                "justifyContent": "center",
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingHorizontal": 16,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Colfax-Bold",
+                  "fontSize": 16,
+                  "lineHeight": 23.04,
+                }
+              }
+            >
+              Save answer
+            </Text>
+          </View>
+        </View>
+        <View>
+          <Text>
+            Remove answer
+          </Text>
         </View>
       </View>
     </View>
@@ -2152,6 +2761,7 @@ exports[`The AnswerPrayerForm component should render the prayer answer 1`] = `
             </Text>
           </View>
         </View>
+        <View />
       </View>
     </View>
   </RCTSafeAreaView>
@@ -2753,6 +3363,7 @@ exports[`The AnswerPrayerForm component should render the prayer text 1`] = `
             </Text>
           </View>
         </View>
+        <View />
       </View>
     </View>
   </RCTSafeAreaView>

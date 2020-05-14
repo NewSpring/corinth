@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import renderer from 'react-test-renderer';
 import Providers from '../../Providers';
 
@@ -8,7 +9,7 @@ describe('The AnswerPrayerForm component', () => {
   it('should render', () => {
     const tree = renderer.create(
       <Providers>
-        <AnswerPrayerForm navigation={jest.fn()} />
+        <AnswerPrayerForm navigation={jest.fn()} prayer={{ id: 1 }} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();
@@ -18,6 +19,7 @@ describe('The AnswerPrayerForm component', () => {
       <Providers>
         <AnswerPrayerForm
           navigation={jest.fn()}
+          prayer={{ id: 1 }}
           avatarSource={{ uri: 'https://picsum.photos/55/55?random' }}
         />
       </Providers>
@@ -29,6 +31,7 @@ describe('The AnswerPrayerForm component', () => {
       <Providers>
         <AnswerPrayerForm
           navigation={jest.fn()}
+          prayer={{ id: 1 }}
           btnLabel={'custom button label'}
         />
       </Providers>
@@ -40,7 +43,10 @@ describe('The AnswerPrayerForm component', () => {
       <Providers>
         <AnswerPrayerForm
           navigation={jest.fn()}
-          prayerText={'This is a prayer'}
+          prayer={{
+            id: 1,
+            text: 'This is a prayer',
+          }}
         />
       </Providers>
     );
@@ -51,8 +57,27 @@ describe('The AnswerPrayerForm component', () => {
       <Providers>
         <AnswerPrayerForm
           navigation={jest.fn()}
-          prayerText={'This is a prayer'}
-          prayerAnswer={'This is a prayer answer'}
+          prayer={{
+            id: 1,
+            text: 'This is a prayer',
+            answer: 'This is a prayer answer',
+          }}
+        />
+      </Providers>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render something passed in the action prop', () => {
+    const tree = renderer.create(
+      <Providers>
+        <AnswerPrayerForm
+          navigation={jest.fn()}
+          prayer={{
+            id: 1,
+            text: 'This is a prayer',
+            answer: 'This is a prayer answer',
+          }}
+          action={<Text>Remove answer</Text>}
         />
       </Providers>
     );
