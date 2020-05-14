@@ -20,15 +20,14 @@ export default gql`
         sermonNotes {
           id
           __typename
-          allowsCustomNote
           simpleText
-          ... on TextNote {
+          ... on NotesTextBlock {
             id
             isHeader
             hasBlanks
             hiddenText
           }
-          ... on ScriptureNote {
+          ... on NotesScriptureBlock {
             id
             scripture {
               reference
@@ -36,6 +35,11 @@ export default gql`
               version
               copyright
             }
+          }
+          allowsComment
+          comment {
+            id
+            text
           }
         }
       }

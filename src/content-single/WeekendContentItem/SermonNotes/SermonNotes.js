@@ -20,9 +20,9 @@ import CustomNote from './CustomNote';
 
 const NoteTypeMapper = (props) => {
   switch (props.type) {
-    case 'TextNote':
+    case 'NotesTextBlock':
       return <TextNote {...props} />;
-    case 'ScriptureNote':
+    case 'NotesScriptureBlock':
       return <ScriptureNote {...props} />;
     default:
       return null;
