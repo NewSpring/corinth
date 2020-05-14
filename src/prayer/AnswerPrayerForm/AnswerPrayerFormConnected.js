@@ -64,7 +64,7 @@ class AnswerPrayerFormConnected extends React.Component {
                     prayer={{
                       id: this.props.navigation.getParam('prayerId', ''),
                       text: this.props.navigation.getParam('prayerText', ''),
-                      answer: this.prayerAnswer,
+                      answer: this.props.navigation.getParam('prayerAnswer', ''),,
                     }}
                     action={
                       this.prayerAnswer ? (
