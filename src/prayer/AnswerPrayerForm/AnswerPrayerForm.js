@@ -39,7 +39,6 @@ const StyledTextInput = styled(({ theme }) => ({
 }))(TextInput);
 
 const BottomView = styled(({ theme }) => ({
-  // justifyContent: 'flex-end',
   padding: theme.sizing.baseUnit,
 }))(FlexedView);
 
@@ -50,18 +49,17 @@ const InputPaddedView = styled(({ theme }) => ({
 
 const AnswerPrayerForm = memo(
   ({
-    prayerId,
-    prayerText,
-    prayerAnswer,
+    prayer,
     onSubmit,
     avatarSource,
     title,
     btnLabel,
     loading,
+    action,
     ...props
   }) => (
     <Formik
-      initialValues={{ id: prayerId, answer: prayerAnswer || '' }}
+      initialValues={{ id: prayer.id, answer: prayer.answer || '' }}
       onSubmit={(values, { resetForm }) => {
         onSubmit(values);
         // this is necessary so the modal can transition completely
@@ -82,7 +80,7 @@ const AnswerPrayerForm = memo(
               </HeaderView>
               <PaddedView>
                 <H4>Your Prayer:</H4>
-                <Text>{prayerText}</Text>
+                <Text>{prayer.text}</Text>
               </PaddedView>
               <InputPaddedView>
                 <StyledTextInput
@@ -102,6 +100,7 @@ const AnswerPrayerForm = memo(
                   onPress={handleSubmit}
                   disabled={values.answer.length === 0}
                 />
+                {!loading && <View>{action}</View>}
               </BottomView>
             </ShrinkingView>
           </FlexedSafeAreaView>
@@ -112,9 +111,11 @@ const AnswerPrayerForm = memo(
 );
 
 AnswerPrayerForm.propTypes = {
-  prayerId: PropTypes.string,
-  prayerText: PropTypes.string,
-  prayerAnswer: PropTypes.string,
+  prayer: PropTypes.shape({
+    id: PropTypes.string,
+    text: PropTypes.string,
+    answer: PropTypes.string,
+  }),
   onSubmit: PropTypes.func,
   avatarSource: PropTypes.shape({
     uri: PropTypes.string,
@@ -122,11 +123,13 @@ AnswerPrayerForm.propTypes = {
   title: PropTypes.string,
   btnLabel: PropTypes.string,
   loading: PropTypes.bool,
+  action: PropTypes.element,
 };
 
 AnswerPrayerForm.defaultProps = {
   title: 'Answer Prayer',
   btnLabel: 'Save answer',
+  action: null,
 };
 
 AnswerPrayerForm.displayName = 'AnswerPrayerForm';
