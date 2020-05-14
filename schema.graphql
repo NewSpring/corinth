@@ -352,6 +352,7 @@ interface MediaSource {
 type Mutation {
   _placeholder: Boolean
   updateLikeEntity(input: LikeEntityInput!): ContentItem
+  saveNotesComment(contentID: ID!, blockID: ID!, text: String): NotesBlockComment
   authenticate(identity: String!, password: String!): Authentication
   changePassword(password: String!): Authentication
   registerPerson(email: String!, password: String!, userProfile: [UpdateProfileInput]): Authentication
@@ -384,6 +385,36 @@ type NoteFeature implements Feature & Node {
   id: ID!
   order: Int
   placeholder: String
+}
+
+interface NotesBlock {
+  id: ID!
+  allowsComment: Boolean
+  comment: NotesBlockComment
+  simpleText: String
+}
+
+type NotesBlockComment {
+  id: ID!
+  text: String
+}
+
+type NotesScriptureBlock implements NotesBlock {
+  id: ID!
+  allowsComment: Boolean
+  comment: NotesBlockComment
+  simpleText: String
+  scripture: Scripture
+}
+
+type NotesTextBlock implements NotesBlock {
+  id: ID!
+  allowsComment: Boolean
+  comment: NotesBlockComment
+  simpleText: String
+  isHeader: Boolean
+  hasBlanks: Boolean
+  hiddenText: String
 }
 
 type PaginationInfo {
@@ -469,6 +500,7 @@ enum PrayerAction {
   FLAG
   SAVE
   UNSAVE
+  REMOVE_ANSWER
 }
 
 type PrayerMenuCategory implements Node {
@@ -552,13 +584,6 @@ type ScriptureFeature implements Feature & Node {
   sharing: SharableFeature
 }
 
-type ScriptureNote implements SermonNote {
-  id: ID!
-  allowsCustomNote: Boolean
-  simpleText: String
-  scripture: Scripture
-}
-
 type SearchResult {
   cursor: String
   title: String
@@ -576,12 +601,6 @@ type SeriesConnection {
   series: ContentItem
   itemCount: Int
   itemIndex(id: String): Int
-}
-
-interface SermonNote {
-  id: ID!
-  allowsCustomNote: Boolean
-  simpleText: String
 }
 
 interface Sharable {
@@ -612,15 +631,6 @@ type TextFeature implements Feature & Node {
   order: Int
   body: String
   sharing: SharableFeature
-}
-
-type TextNote implements SermonNote {
-  id: ID!
-  allowsCustomNote: Boolean
-  simpleText: String
-  isHeader: Boolean
-  hasBlanks: Boolean
-  hiddenText: String
 }
 
 type Theme {
@@ -729,7 +739,7 @@ type WeekendContentItem implements ContentItem & Node {
   sermonDate: String
   series: ContentItem @deprecated(reason: "Use seriesConnection")
   seriesConnection: SeriesConnection
-  sermonNotes: [SermonNote]
+  sermonNotes: [NotesBlock]
   liveStream: LiveStream
   sharing: SharableContentItem
   features: [Feature]

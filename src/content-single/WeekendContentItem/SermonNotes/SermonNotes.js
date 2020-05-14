@@ -20,9 +20,9 @@ import CustomNote from './CustomNote';
 
 const NoteTypeMapper = (props) => {
   switch (props.type) {
-    case 'TextNote':
+    case 'NotesTextBlock':
       return <TextNote {...props} />;
-    case 'ScriptureNote':
+    case 'NotesScriptureBlock':
       return <ScriptureNote {...props} />;
     default:
       return null;
@@ -122,7 +122,7 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
           {sermonNotes.map((note, i) => (
             <>
               <NoteTypeMapper type={note.__typename} key={note.id} {...note} />
-              {note.allowsCustomNote ? (
+              {note.allowsComment ? (
                 <CustomNote onChange={handleChangeExportText(i * 2 + 1)} />
               ) : null}
             </>

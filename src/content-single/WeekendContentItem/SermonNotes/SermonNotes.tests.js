@@ -20,29 +20,35 @@ const contentItemStuff = {
 
 const notes = [
   {
-    id: 'TextNote:123',
-    __typename: 'TextNote',
+    id: 'NotesTextBlock:123',
+    __typename: 'NotesTextBlock',
     simpleText: '1. Point One',
-    allowsCustomNote: false,
+    allowsComment: false,
     isHeader: true,
     hasBlanks: true,
     hiddenText: '1. Point ___',
+    comment: null,
   },
   {
-    id: 'TextNote:234',
-    __typename: 'TextNote',
+    id: 'NotesTextBlock:234',
+    __typename: 'NotesTextBlock',
     simpleText: 'Sub point',
-    allowsCustomNote: true,
+    allowsComment: true,
     isHeader: false,
     hasBlanks: false,
     hiddenText: null,
+    comment: {
+      id: 'NotesBlockComment:123',
+      __typename: 'NotesBlockComment',
+      text: 'So good!',
+    },
   },
   {
-    id: 'ScriptureNote:123',
-    __typename: 'ScriptureNote',
+    id: 'NotesScriptureBlock:123',
+    __typename: 'NotesScriptureBlock',
     simpleText:
       '11) The greatest among you will be your servant.  Matthew 23:11',
-    allowsCustomNote: false,
+    allowsComment: true,
     scripture: {
       __typename: 'Scripture',
       reference: 'Matthew 23:11',
@@ -52,6 +58,7 @@ const notes = [
         '\n          The Holy Bible, New International Version® NIV®\n          Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.®\n          Used by Permission of Biblica, Inc.® All rights reserved worldwide.\n        ',
       version: 'NIV',
     },
+    comment: null,
   },
 ];
 
