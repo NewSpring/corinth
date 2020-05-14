@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.6.0](https://github.com/newspring/corinth/compare/v7.5.22...v7.6.0) (2020-05-14)
+
+
+### Bug Fixes
+
+* Fixes Sermon Notes ([#153](https://github.com/newspring/corinth/issues/153)) ([8545f8d](https://github.com/newspring/corinth/commit/8545f8d))
+
+
+### Features
+
+* Answered Prayer ([#141](https://github.com/newspring/corinth/issues/141)) ([9951330](https://github.com/newspring/corinth/commit/9951330))
+* Remove an answer ([#144](https://github.com/newspring/corinth/issues/144)) ([6d8c401](https://github.com/newspring/corinth/commit/6d8c401))
+
+
+
 ## [7.5.22](https://github.com/newspring/corinth/compare/v7.5.21...v7.5.22) (2020-04-28)
 
 
