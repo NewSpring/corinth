@@ -434,6 +434,174 @@ exports[`the sermon notes renders sermon notes 1`] = `
           }
         />
       </View>
+      <View
+        accessible={true}
+        clickable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          horizontal={false}
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingHorizontal": 0,
+              "paddingVertical": 16,
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={24}
+            bbWidth={24}
+            focusable={false}
+            height={24}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                Object {
+                  "opacity": 1,
+                },
+                Object {
+                  "flex": 0,
+                  "height": 24,
+                  "width": 24,
+                },
+              ]
+            }
+            vbHeight={24}
+            vbWidth={24}
+            width={24}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"
+                fill={
+                  Array [
+                    0,
+                    4278190080,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={Array []}
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 16,
+                "paddingVertical": 0,
+              }
+            }
+            vertical={false}
+          >
+            <Text
+              bold={false}
+              italic={false}
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Regular",
+                  "fontSize": 16,
+                  "lineHeight": 26,
+                }
+              }
+            >
+              Add a Note
+            </Text>
+          </View>
+        </View>
+      </View>
       <Text
         bold={false}
         italic={false}

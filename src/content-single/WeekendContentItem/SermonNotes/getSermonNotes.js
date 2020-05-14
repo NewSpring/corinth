@@ -21,6 +21,11 @@ export default gql`
           id
           __typename
           simpleText
+          allowsComment
+          comment {
+            id
+            text
+          }
           ... on NotesTextBlock {
             id
             isHeader
@@ -35,11 +40,6 @@ export default gql`
               version
               copyright
             }
-          }
-          allowsComment
-          comment {
-            id
-            text
           }
         }
       }

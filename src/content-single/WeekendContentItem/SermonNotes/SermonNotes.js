@@ -122,7 +122,7 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
           {sermonNotes.map((note, i) => (
             <>
               <NoteTypeMapper type={note.__typename} key={note.id} {...note} />
-              {note.allowsCustomNote ? (
+              {note.allowsComment ? (
                 <CustomNote onChange={handleChangeExportText(i * 2 + 1)} />
               ) : null}
             </>
