@@ -19,10 +19,6 @@ const OptionMenuText = styled(({ theme }) => ({
 }))(BodyText);
 
 class AnswerPrayerFormConnected extends React.Component {
-  prayerId = this.props.navigation.getParam('prayerId', '');
-
-  prayerAnswer = this.props.navigation.getParam('prayerAnswer', '');
-
   static navigationOptions = {
     header: null,
   };
@@ -64,10 +60,13 @@ class AnswerPrayerFormConnected extends React.Component {
                     prayer={{
                       id: this.props.navigation.getParam('prayerId', ''),
                       text: this.props.navigation.getParam('prayerText', ''),
-                      answer: this.props.navigation.getParam('prayerAnswer', ''),,
+                      answer: this.props.navigation.getParam(
+                        'prayerAnswer',
+                        ''
+                      ),
                     }}
                     action={
-                      this.prayerAnswer ? (
+                      this.props.navigation.getParam('prayerAnswer', '') ? (
                         <OptionMenu>
                           <ActionComponent
                             component={
@@ -79,7 +78,10 @@ class AnswerPrayerFormConnected extends React.Component {
                                 method: async () => {
                                   await interactWithPrayer({
                                     variables: {
-                                      id: this.prayerId,
+                                      id: this.props.navigation.getParam(
+                                        'prayerId',
+                                        ''
+                                      ),
                                       action: 'REMOVE_ANSWER',
                                     },
                                   });
