@@ -1,7 +1,7 @@
 {
   "name": "newspringchurchapp",
   "repository": "github:newspring/corinth",
-  "version": "7.6.0",
+  "version": "7.6.1",
   "private": true,
   "engines": {
     "node": "10.19.0"

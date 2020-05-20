@@ -34,32 +34,35 @@ const setUser = async (client) => {
   bugsnag.setUser(user.id);
 };
 
-const bugsnagLink = onError(({ graphQLErrors, networkError, operation }) => {
-  const { headers: { authorization: token } = {} } = operation.getContext();
-  if (graphQLErrors) {
-    graphQLErrors.forEach(({ message, locations, path }) => {
-      bugsnag.notify(new Error(message), (report) => {
-        if (operation.variables && operation.variables.password) {
-          // eslint-disable-next-line
+const bugsnagLink = onError(
+  ({ graphQLErrors, networkError, operation, response }) => {
+    const { headers: { authorization: token } = {} } = operation.getContext();
+    if (graphQLErrors) {
+      graphQLErrors.forEach(({ message, locations, path }) => {
+        bugsnag.notify(new Error(message), (report) => {
+          if (operation.variables && operation.variables.password) {
+            // eslint-disable-next-line
           delete operation.variables.password;
-        }
-        if (path) {
-          // eslint-disable-next-line
+          }
+          if (path) {
+            // eslint-disable-next-line
           report.context = path.join('/');
-        }
-        // eslint-disable-next-line
+          }
+          // eslint-disable-next-line
         report.metadata = {
-          path,
-          locations,
-          operation,
-          // NOTE: this should be removed once we have resolved the
-          // frequent authentication errors
-          token,
-        };
+            path,
+            locations,
+            operation,
+            // NOTE: this should be removed once we have resolved the
+            // frequent authentication errors
+            token,
+            response,
+          };
+        });
       });
-    });
+    }
+    if (networkError) bugsnag.notify(networkError);
   }
-  if (networkError) bugsnag.notify(networkError);
-});
+);
 
 export { bugsnag as default, bugsnagLink, setUser };
