@@ -7,7 +7,6 @@ import {
   requestNotifications,
   RESULTS,
 } from 'react-native-permissions';
-import gql from 'graphql-tag';
 
 import { styled, BackgroundView } from '@apollosproject/ui-kit';
 import {
