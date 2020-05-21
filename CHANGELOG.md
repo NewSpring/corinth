@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.6.2](https://github.com/newspring/corinth/compare/v7.6.1...v7.6.2) (2020-05-21)
+
+
+### Bug Fixes
+
+* Use local storage and a user id to only onboard once ([#155](https://github.com/newspring/corinth/issues/155)) ([7abf5f7](https://github.com/newspring/corinth/commit/7abf5f7))
+
+
+
 ## [7.6.1](https://github.com/newspring/corinth/compare/v7.6.0...v7.6.1) (2020-05-20)
 
 
