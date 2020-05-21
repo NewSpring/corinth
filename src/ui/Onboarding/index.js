@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { Mutation } from 'react-apollo';
+import { Mutation, Query } from 'react-apollo';
 import {
   checkNotifications,
   openSettings,
@@ -19,6 +19,7 @@ import {
 } from '@apollosproject/ui-onboarding';
 
 import CHANGE_CAMPUS from '../Locations/campusChange';
+import { onboardingComplete, WITH_USER_ID } from './onboardingStatus';
 import CustomLocationFinder from './CustomLocationFinder';
 
 const ImageContainer = styled({
@@ -102,31 +103,40 @@ function Onboarding({ navigation }) {
                 </Mutation>
               )}
             />
-            <AskNotificationsConnected
-              description={
-                'Get updates when people pray for you, and receive reminders and announcements from your NewSpring family.'
-              }
-              onPressPrimary={() => navigation.replace('Tabs')}
-              onRequestPushPermissions={(update) => {
-                checkNotifications().then((checkRes) => {
-                  if (checkRes.status === RESULTS.DENIED) {
-                    requestNotifications(['alert', 'badge', 'sound']).then(
-                      () => {
-                        update();
-                      }
-                    );
-                  } else {
-                    openSettings();
+            <Query query={WITH_USER_ID} fetchPolicy="network-only">
+              {({
+                data: { currentUser: { id } = { currentUser: { id: null } } },
+              }) => (
+                <AskNotificationsConnected
+                  description={
+                    'Get updates when people pray for you, and receive reminders and announcements from your NewSpring family.'
                   }
-                });
-              }}
-              primaryNavText={'Finish'}
-              BackgroundComponent={
-                <ImageContainer>
-                  <StyledImage source={require('./img/screen4.png')} />
-                </ImageContainer>
-              }
-            />
+                  onPressPrimary={() => {
+                    onboardingComplete({ userId: id });
+                    navigation.replace('Tabs');
+                  }}
+                  onRequestPushPermissions={(update) => {
+                    checkNotifications().then((checkRes) => {
+                      if (checkRes.status === RESULTS.DENIED) {
+                        requestNotifications(['alert', 'badge', 'sound']).then(
+                          () => {
+                            update();
+                          }
+                        );
+                      } else {
+                        openSettings();
+                      }
+                    });
+                  }}
+                  primaryNavText={'Finish'}
+                  BackgroundComponent={
+                    <ImageContainer>
+                      <StyledImage source={require('./img/screen4.png')} />
+                    </ImageContainer>
+                  }
+                />
+              )}
+            </Query>
           </>
         )}
       </OnboardingSwiper>
