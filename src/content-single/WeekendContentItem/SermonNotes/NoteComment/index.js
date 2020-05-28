@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Mutation } from 'react-apollo';
+import GET_SERMON_NOTES from '../getSermonNotes';
 import NoteComment from './NoteComment';
 import SAVE_NOTES_COMMENT from './saveNotesComment';
 
@@ -11,7 +12,7 @@ const NoteCommentConnected = ({ contentID, noteID, onChange, initialText }) => {
     setText(newText);
     onChange(newText);
 
-    // autosave after 10 sec
+    // autosave after 3 sec
     // check for existing timeout, clear it, and set a new one
     clearTimeout(timer);
     const newTimer = setTimeout(saveComment, 3000);
@@ -21,6 +22,25 @@ const NoteCommentConnected = ({ contentID, noteID, onChange, initialText }) => {
     <Mutation
       mutation={SAVE_NOTES_COMMENT}
       variables={{ contentID, noteID, text: textToSave }}
+      update={(cache, { data: { saveNotesComment: comment } }) => {
+        // get all sermon notes for this content item
+        const data = cache.readQuery({
+          query: GET_SERMON_NOTES,
+          variables: { contentID },
+        });
+
+        // replace comment text
+        data.node.sermonNotes = data.node.sermonNotes.map(
+          (note) => (note.id === noteID ? { ...note, comment } : note)
+        );
+
+        // write notes back out
+        cache.writeQuery({
+          query: GET_SERMON_NOTES,
+          variables: { contentID },
+          data,
+        });
+      }}
     >
       {(saveComment) => (
         <NoteComment
