@@ -14,7 +14,7 @@ const NoteCommentConnected = ({ contentID, noteID, onChange, initialText }) => {
     // autosave after 10 sec
     // check for existing timeout, clear it, and set a new one
     clearTimeout(timer);
-    const newTimer = setTimeout(saveComment, 10000);
+    const newTimer = setTimeout(saveComment, 3000);
     setTimer(newTimer);
   };
   return (
