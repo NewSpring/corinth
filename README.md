@@ -43,12 +43,24 @@ The first part tells our magic changelog fairies what to do with the commit. The
 
 Once you feel good about the work and you've added screenshots, GIFs, and test coverage, add a "ready for review" label to the PR and assign someone for code review and approval.
 
-## Release
+## Beta Release
 
-Run these commands to bump the version numbers and post a Github release.
+First thing you'll need to do is freeze any PRs from being merged while we QA the new version. We use a tool called [Merge Freeze](mergefreeze.com) to add a Github branch rule. You can use the website or our slack integration like this:
 
 ```
-yarn standard-version
-git push --follow-tags
-yarn gh-release --yes
+/mergefreeze freeze
+```
+
+Next, bump the version numbers and post a Github release
+
+```
+yarn bump
+```
+
+QA the app on Android and iOS and once everyone feels good, promote the alpha build to beta in the Apple and Google store control panels. **Don't forget to write good release notes!**
+
+Once you confirm the beta has been pushed successfully by confirming a build number (or new release notes) in the app, you can unfreeze the branch in slack:
+
+```
+/mergefreeze unfreeze
 ```
