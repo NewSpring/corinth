@@ -25,7 +25,7 @@ const AddNoteView = styled({
   flexDirection: 'row',
 })(PaddedView);
 
-const CustomNote = ({ onChange }) => {
+const NoteComment = ({ onChange }) => {
   const [hasBox, showBox] = useState(false);
   const [note, setNote] = useState('');
   return hasBox ? (
@@ -60,8 +60,8 @@ const CustomNote = ({ onChange }) => {
   );
 };
 
-CustomNote.propTypes = {
+NoteComment.propTypes = {
   onChange: PropTypes.func,
 };
 
-export default CustomNote;
+export default NoteComment;
