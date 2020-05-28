@@ -16,7 +16,7 @@ import { LegalText } from '@apollosproject/ui-scripture';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import TextNote from './TextNote';
 import ScriptureNote from './ScriptureNote';
-import NoteCommentConnected from './NoteCommentConnected';
+import NoteComment from './NoteComment';
 
 const NoteTypeMapper = (props) => {
   switch (props.type) {
@@ -45,6 +45,7 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
     setExports(changed);
   };
   const {
+    id: contentID,
     title = '',
     seriesConnection: { series: { title: seriesTitle } } = {
       series: { title },
@@ -122,9 +123,11 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
           <>
             <NoteTypeMapper type={note.__typename} key={note.id} {...note} />
             {note.allowsComment ? (
-              <NoteCommentConnected
+              <NoteComment
                 onChange={handleChangeComment(i * 2 + 1)}
-                parentID={note.id}
+                contentID={contentID}
+                noteID={note.id}
+                initialText={note.comment ? note.comment.text : ''}
               />
             ) : null}
           </>
