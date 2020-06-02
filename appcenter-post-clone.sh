@@ -28,7 +28,7 @@ CODE=$(date -u +"%Y%j")${MIN//.}
 sed -i.bak -E "s/versionCode [0-9]+/versionCode $CODE/g" android/app/build.gradle
 sed -i.bak -E "s/<string>[0-9]+<\/string>/<string>$CODE<\/string>/g" ios/newspringchurchapp/Info.plist
 
-# get new app version
+# get app version
 VERSION=$(sed -n -E "/\"version\"/s/.* \"(.*)\"\,/\1/p" package.json | sed -n 1p)
 
 # generate and upload source maps for ios
