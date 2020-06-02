@@ -34,12 +34,14 @@ const LogoTitle = styled(({ theme }) => ({
   resizeMode: 'contain',
 }))(Image);
 
-const CampaignLabel = withTheme(({ isLive, title, theme }) => ({
+const CampaignLabel = withTheme(({ isLoading, isLive, title, theme }) => ({
   title: isLive ? 'Live' : title,
   IconComponent: isLive ? LiveIcon : null,
-  style: {
-    marginBottom: theme.sizing.baseUnit,
-  },
+  style: isLoading
+    ? {}
+    : {
+        marginBottom: theme.sizing.baseUnit,
+      },
 }))(CardLabel);
 
 const CampaignCard = ({ isLive, hasAction, summary, ...props }) => (
@@ -170,6 +172,7 @@ class Home extends PureComponent {
                                             .pop()
                                         }
                                         isLive={!!liveStream}
+                                        isLoading={isFeaturedLoading}
                                       />
                                     )}
                                   </LiveConsumer>

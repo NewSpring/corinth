@@ -957,7 +957,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                         "borderRadius": 16,
                         "borderWidth": 0,
                         "height": 32,
-                        "marginBottom": 16,
                         "paddingHorizontal": 12,
                         "width": 64,
                       }
