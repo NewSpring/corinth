@@ -561,16 +561,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                             }
                           }
                         >
-                          <Image
-                            maxAspectRatio={1.78}
-                            minAspectRatio={1.2}
-                            onLoad={[Function]}
-                            source={Array []}
+                          <View
                             style={
                               Object {
+                                "aspectRatio": 1,
                                 "backgroundColor": "#dddddd",
-                                "opacity": 1,
-                                "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
@@ -1206,16 +1201,11 @@ Celebrate your freedom in Christ — in the car, shower, cubicle or wherever you
                             }
                           }
                         >
-                          <Image
-                            maxAspectRatio={1.78}
-                            minAspectRatio={1.2}
-                            onLoad={[Function]}
-                            source={Array []}
+                          <View
                             style={
                               Object {
+                                "aspectRatio": 1,
                                 "backgroundColor": "#dddddd",
-                                "opacity": 1,
-                                "resizeMode": "cover",
                                 "width": "100%",
                               }
                             }
