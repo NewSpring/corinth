@@ -33,7 +33,6 @@
 		82AAE53124187BB500D1EEC7 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */; };
 		82AAE537241888D100D1EEC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		82AAE538241888D200D1EEC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		887352A26F0FFB56B3466654 /* libPods-newspringchurchappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560CBCD50AE7D282715D134E /* libPods-newspringchurchappTests.a */; };
 		894732A70B4740678E85B593 /* Inter-UI-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5410F239E9477B9C2E86BD /* Inter-UI-BoldItalic.otf */; };
 		8EA9BDE542E09F685A47D9BE /* libPods-newspringchurchapp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B9762ACA099D28C28DBB31 /* libPods-newspringchurchapp-tvOS.a */; };
 		90743C40BF544F10A810C43C /* DroidSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */; };
@@ -43,6 +42,7 @@
 		AAA589424AE949AA86C5FD75 /* Colfax-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0728B69771C14A2FAEBF311A /* Colfax-RegularItalic.otf */; };
 		AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */; };
 		B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */; };
+		DB0CE37D80FEF0309C36F15E /* libPods-newspringchurchappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560CBCD50AE7D282715D134E /* libPods-newspringchurchappTests.a */; };
 		DC35B39123CE48FD0014765B /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC35B39023CE48FC0014765B /* AppCenter-Config.plist */; };
 		DCFA9E476AC7452CBB55B65F /* Colfax-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC548C57446F8A1D5CFCD /* Colfax-Medium.otf */; };
 		E875558F3FB8FA2024EF7DC2 /* libPods-newspringchurchapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6B5B7B6A0D1ECB68CF0DD /* libPods-newspringchurchapp.a */; };
@@ -78,7 +78,6 @@
 		13B07F961A680F5B00A75B9A /* newspringchurchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newspringchurchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = newspringchurchapp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = newspringchurchapp/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = newspringchurchapp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = newspringchurchapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = newspringchurchapp/main.m; sourceTree = "<group>"; };
@@ -99,10 +98,10 @@
 		6AA5119094D5404EAACE72BE /* Colfax-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Black.otf"; path = "../assets/fonts/Colfax-Black.otf"; sourceTree = "<group>"; };
 		732CE8A34B66479CACCE3AE3 /* Colfax-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Regular.otf"; path = "../assets/fonts/Colfax-Regular.otf"; sourceTree = "<group>"; };
 		745C835CA2F1E1EC2425152A /* Pods-newspringchurchapp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-tvOS/Pods-newspringchurchapp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = newspringchurchapp/BootSplash.storyboard; sourceTree = "<group>"; };
 		8FFBC548C57446F8A1D5CFCD /* Colfax-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Medium.otf"; path = "../assets/fonts/Colfax-Medium.otf"; sourceTree = "<group>"; };
 		956BFEFDA52B4890B8A8F50F /* Colfax-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-MediumItalic.otf"; path = "../assets/fonts/Colfax-MediumItalic.otf"; sourceTree = "<group>"; };
 		9C9C2FBCFF5D4428967F5A58 /* Colfax-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-BlackItalic.otf"; path = "../assets/fonts/Colfax-BlackItalic.otf"; sourceTree = "<group>"; };
-		82AAE52D24187BB500D1EEC7 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = newspringchurchapp/BootSplash.storyboard; sourceTree = "<group>"; };
 		A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-MediumItalic.otf"; path = "../assets/fonts/Inter-UI-MediumItalic.otf"; sourceTree = "<group>"; };
 		A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Regular.otf"; path = "../assets/fonts/Inter-UI-Regular.otf"; sourceTree = "<group>"; };
 		A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -127,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				887352A26F0FFB56B3466654 /* libPods-newspringchurchappTests.a in Frameworks */,
+				DB0CE37D80FEF0309C36F15E /* libPods-newspringchurchappTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +323,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				89991875E2251B79EB78AE53 /* [CP] Copy Pods Resources */,
+				47D337E6B07BF616E1B6DF15 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -546,6 +546,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		47D337E6B07BF616E1B6DF15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp/Pods-newspringchurchapp-frameworks.sh",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.3.0/GoogleCast.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleCast.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp/Pods-newspringchurchapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		89991875E2251B79EB78AE53 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
