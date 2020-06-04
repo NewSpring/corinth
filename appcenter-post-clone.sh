@@ -6,8 +6,6 @@ grep -o '\$.*' .env.production | sed 's/\$\(.*\)/\1/' | xargs -I {} sh -c "sed -
 # Make sure ReactNativeConfig picks up values from prod env file.
 cp .env.production .env
 
-# bump code
-./scripts/bump-version-code.sh
 
 # set AppCenter secret
 sed -i "" -E "s/fake-secret-123/$APPCENTER_SECRET/g" ios/AppCenter-Config.plist
