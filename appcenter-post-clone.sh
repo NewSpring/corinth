@@ -32,7 +32,7 @@ sed -i.bak -E "s/<string>[0-9]+<\/string>/<string>$CODE<\/string>/g" ios/newspri
 VERSION=$(sed -n -E "/\"version\"/s/.* \"(.*)\"\,/\1/p" package.json | sed -n 1p)
 
 # generate and upload source maps for ios
-yarn react-native bundle \
+npx react-native bundle \
     --platform ios \
     --dev false \
     --entry-file index.js \
@@ -50,7 +50,7 @@ curl --http1.1 https://upload.bugsnag.com/react-native-source-map \
    -F projectRoot="$(pwd)"
 
 # generate and upload source maps for android
-yarn react-native bundle \
+npx react-native bundle \
     --platform android \
     --dev false \
     --entry-file index.js \
