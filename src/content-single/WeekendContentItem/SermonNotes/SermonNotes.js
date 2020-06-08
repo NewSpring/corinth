@@ -16,7 +16,7 @@ import { LegalText } from '@apollosproject/ui-scripture';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import TextNote from './TextNote';
 import ScriptureNote from './ScriptureNote';
-import CustomNote from './CustomNote';
+import NoteComment from './NoteComment';
 
 const NoteTypeMapper = (props) => {
   switch (props.type) {
@@ -39,12 +39,13 @@ const ExportWrapper = styled({
 
 const SermonNotes = ({ isLoading, ...contentItem }) => {
   const [exports, setExports] = useState([]);
-  const handleChangeExportText = (index) => (text) => {
+  const handleChangeComment = (index) => (text) => {
     const changed = exports;
     changed[index] = text;
     setExports(changed);
   };
   const {
+    id: contentID,
     title = '',
     seriesConnection: { series: { title: seriesTitle } } = {
       series: { title },
@@ -76,7 +77,7 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
     setExports(exportTemplate);
   }, []);
 
-  return (
+  return sermonNotes.length ? (
     <ActionCard
       isLoading={isLoading}
       action={
@@ -117,25 +118,26 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
             .filter((speaker) => speaker !== '')
             .map((speaker) => <H5 key={speaker}>{speaker}</H5>)
         : null}
-      {sermonNotes.length ? (
-        <>
-          {sermonNotes.map((note, i) => (
-            <>
-              <NoteTypeMapper type={note.__typename} key={note.id} {...note} />
-              {note.allowsComment ? (
-                <CustomNote onChange={handleChangeExportText(i * 2 + 1)} />
-              ) : null}
-            </>
-          ))}
-          {[...copyrights].map((text) => (
-            <LegalText key={text}>{text}</LegalText>
-          ))}
-        </>
-      ) : (
-        <CustomNote onChange={handleChangeExportText(0)} />
-      )}
+      <>
+        {sermonNotes.map((note, i) => (
+          <>
+            <NoteTypeMapper type={note.__typename} key={note.id} {...note} />
+            {note.allowsComment ? (
+              <NoteComment
+                onChange={handleChangeComment(i * 2 + 1)}
+                contentID={contentID}
+                noteID={note.id}
+                initialText={note.comment ? note.comment.text : ''}
+              />
+            ) : null}
+          </>
+        ))}
+        {[...copyrights].map((text) => (
+          <LegalText key={text}>{text}</LegalText>
+        ))}
+      </>
     </ActionCard>
-  );
+  ) : null;
 };
 
 SermonNotes.propTypes = {

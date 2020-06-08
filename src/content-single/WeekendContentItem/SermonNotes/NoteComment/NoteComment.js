@@ -25,9 +25,9 @@ const AddNoteView = styled({
   flexDirection: 'row',
 })(PaddedView);
 
-const CustomNote = ({ onChange }) => {
-  const [hasBox, showBox] = useState(false);
-  const [note, setNote] = useState('');
+const NoteComment = ({ onChange, initialText }) => {
+  const [hasBox, showBox] = useState(initialText !== '');
+  const [note, setNote] = useState(initialText);
   return hasBox ? (
     <StyledTextInput
       multiline
@@ -60,8 +60,9 @@ const CustomNote = ({ onChange }) => {
   );
 };
 
-CustomNote.propTypes = {
+NoteComment.propTypes = {
   onChange: PropTypes.func,
+  initialText: PropTypes.string,
 };
 
-export default CustomNote;
+export default NoteComment;
