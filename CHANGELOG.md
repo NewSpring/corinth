@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.6.3](https://github.com/newspring/corinth/compare/v7.6.2...v7.6.3) (2020-06-02)
+
+
+### Bug Fixes
+
+* Fixed Double Android Icons ([#172](https://github.com/newspring/corinth/issues/172)) ([7fb97dd](https://github.com/newspring/corinth/commit/7fb97dd))
+* Fixes Android Campaign Loading State ([#173](https://github.com/newspring/corinth/issues/173)) ([6b91b07](https://github.com/newspring/corinth/commit/6b91b07))
+
+
+
 ## [7.6.2](https://github.com/newspring/corinth/compare/v7.6.1...v7.6.2) (2020-05-21)
 
 
