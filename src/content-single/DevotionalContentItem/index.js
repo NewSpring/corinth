@@ -11,6 +11,7 @@ import {
   BackgroundView,
   styled,
 } from '@apollosproject/ui-kit';
+import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import ContentTab from './ContentTab';
 import ScriptureTab from './ScriptureTab';
 
@@ -107,7 +108,17 @@ class DevotionalContentItem extends PureComponent {
     return tabRoutes.length < 2 ? (
       map[tabRoutes[0].key]()
     ) : (
-      <TabView routes={tabRoutes} renderScene={SceneMap(map)} />
+      <AnalyticsConsumer>
+        {({ track }) => (
+          <TabView
+            routes={tabRoutes}
+            renderScene={SceneMap(map)}
+            onChange={(index) =>
+              track({ eventName: `Devotional: Viewed Tab ${index}` })
+            }
+          />
+        )}
+      </AnalyticsConsumer>
     );
   };
 
