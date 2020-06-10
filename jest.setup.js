@@ -12,6 +12,8 @@ jest.mock('react-native-safe-area-context', () => ({
   SafeAreaProvider: ({ children }) => children,
 }));
 
+jest.mock('@react-native-community/datetimepicker', () => 'DateTimePicker');
+
 jest.mock('react-navigation', () => {
   const ActualNavigation = require.requireActual('react-navigation');
   return {
