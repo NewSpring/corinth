@@ -43,6 +43,10 @@ The first part tells our magic changelog fairies what to do with the commit. The
 
 Once you feel good about the work and you've added screenshots, GIFs, and test coverage, add a "ready for review" label to the PR and assign someone for code review and approval.
 
+## Production Release
+
+Nothing fancy here. We assume that any build in Beta has been tested and hasn't changed for a given period of time. Our current rule is one week. There should be nothing to do here except push the existing Beta build to production. Check the push time in the respective Apple and Google stores and if it's been a week since the last Beta build, go ahead and push to production.
+
 ## Beta Release
 
 First thing you'll need to do is freeze any PRs from being merged while we QA the new version. We use a tool called [Merge Freeze](mergefreeze.com) to add a Github branch rule. You can use the website or our slack integration like this:
