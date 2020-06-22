@@ -10,9 +10,11 @@ import {
   H2,
   StretchyView,
 } from '@apollosproject/ui-kit';
-import { UpNextButtonConnected } from '@apollosproject/ui-connected';
+import {
+  UpNextButtonConnected,
+  ContentSingleFeaturesConnected,
+} from '@apollosproject/ui-connected';
 
-import Features from '../Features';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 import MediaControls from '../../ui/MediaControls';
@@ -46,7 +48,7 @@ const UniversalContentItem = ({ content, loading }) => {
               </H2>
               <ContentHTMLViewConnected contentId={content.id} />
             </PaddedView>
-            <Features contentId={content.id} />
+            <ContentSingleFeaturesConnected contentId={content.id} />
             <UpNextButtonConnected contentId={content.id} />
             <HorizontalContentSeriesFeedConnected contentId={content.id} />
           </FlexedScrollView>
