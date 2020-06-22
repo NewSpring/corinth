@@ -246,7 +246,7 @@ enum GROUP_TYPE {
 }
 
 type HeaderFeature implements Feature & Node {
-  id: ID!
+  id: ID! @deprecated(reason: "NoteFeature no longer supported")
   order: Int
   body: String
   sharing: SharableFeature
@@ -382,7 +382,7 @@ interface Node {
 }
 
 type NoteFeature implements Feature & Node {
-  id: ID!
+  id: ID! @deprecated(reason: "NoteFeature no longer supported")
   order: Int
   placeholder: String
 }
