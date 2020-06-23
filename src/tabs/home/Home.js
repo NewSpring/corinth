@@ -147,7 +147,7 @@ class Home extends PureComponent {
                           {}
                         );
 
-                        return (
+                        return featuredItem.id ? (
                           <>
                             <LiveButton contentId={featuredItem.id} />
                             <TouchableScale
@@ -180,7 +180,7 @@ class Home extends PureComponent {
                               />
                             </TouchableScale>
                           </>
-                        );
+                        ) : null;
                       }}
                     </Query>
                     <Features navigation={this.props.navigation} />
