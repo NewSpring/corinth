@@ -160,6 +160,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
       <Query
         query={GET_CONTENT_SERIES}
         variables={{ itemId: this.props.contentId }}
+        fetchPolicy={'cache-and-network'}
       >
         {this.renderFeed}
       </Query>
