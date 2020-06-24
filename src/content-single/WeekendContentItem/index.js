@@ -13,9 +13,11 @@ import {
   ThemeConsumer,
   CardLabel,
 } from '@apollosproject/ui-kit';
-import { LiveConsumer } from '@apollosproject/ui-connected';
+import {
+  LiveConsumer,
+  ContentSingleFeaturesConnected,
+} from '@apollosproject/ui-connected';
 
-import Features from '../Features';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 import MediaControls from '../../ui/MediaControls';
@@ -77,7 +79,7 @@ const WeekendContentItem = ({ content, loading }) => {
                 <MediaControls contentId={content.id} />
                 <PaddedView />
                 <SermonNotes contentID={content.id} />
-                <Features contentId={content.id} asNotes />
+                <ContentSingleFeaturesConnected contentId={content.id} />
                 <HorizontalContentSeriesFeedConnected contentId={content.id} />
               </FlexedScrollView>
             )}
