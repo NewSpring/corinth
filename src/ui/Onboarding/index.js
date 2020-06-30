@@ -7,8 +7,11 @@ import {
   requestNotifications,
   RESULTS,
 } from 'react-native-permissions';
-
-import { styled, BackgroundView } from '@apollosproject/ui-kit';
+import {
+  styled,
+  BackgroundView,
+  NavigationService,
+} from '@apollosproject/ui-kit';
 import {
   AskNotificationsConnected,
   AskNameConnected,
@@ -113,7 +116,12 @@ function Onboarding({ navigation }) {
                   }
                   onPressPrimary={() => {
                     onboardingComplete({ userId: id });
-                    navigation.replace('Tabs');
+                    navigation.dispatch(
+                      NavigationService.resetAction({
+                        navigatorName: 'Tabs',
+                        routeName: 'Home',
+                      })
+                    );
                   }}
                   onRequestPushPermissions={(update) => {
                     checkNotifications().then((checkRes) => {

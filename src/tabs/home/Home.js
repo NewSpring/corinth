@@ -71,26 +71,11 @@ class Home extends PureComponent {
     }),
   };
 
-  handleOnPress = (item) =>
+  handleOnPressItem = (item) =>
     this.props.navigation.navigate('ContentSingle', {
       itemId: item.id,
       transitionKey: item.transitionKey,
     });
-
-  handleOnPressActionItem = ({ action, relatedNode }) => {
-    if (action === 'READ_CONTENT') {
-      this.props.navigation.navigate('ContentSingle', {
-        itemId: relatedNode.id,
-        transitionKey: 2,
-      });
-    }
-    if (action === 'READ_EVENT') {
-      this.props.navigation.navigate('Event', {
-        eventId: relatedNode.id,
-        transitionKey: 2,
-      });
-    }
-  };
 
   render() {
     return (
@@ -152,7 +137,7 @@ class Home extends PureComponent {
                             <LiveButton contentId={featuredItem.id} />
                             <TouchableScale
                               onPress={() =>
-                                this.handleOnPress({
+                                this.handleOnPressItem({
                                   id: featuredItem.id,
                                 })
                               }
@@ -186,7 +171,7 @@ class Home extends PureComponent {
                     <Features navigation={this.props.navigation} />
                   </>
                 }
-                onPressItem={this.handleOnPress}
+                onPressItem={this.handleOnPressItem}
               />
             )}
           </Query>

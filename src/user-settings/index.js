@@ -14,6 +14,7 @@ import {
   Divider,
   Touchable,
   ActivityIndicator,
+  NavigationService,
 } from '@apollosproject/ui-kit';
 
 import { GET_LOGIN_STATE, LOGOUT } from '@apollosproject/ui-auth';
@@ -21,7 +22,6 @@ import {
   RockAuthedWebBrowser,
   UserAvatarUpdate,
 } from '@apollosproject/ui-connected';
-import NavigationService from '../NavigationService';
 
 class UserSettings extends PureComponent {
   static navigationOptions = (props) => ({
