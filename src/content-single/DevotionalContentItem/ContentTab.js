@@ -5,6 +5,12 @@ import { PaddedView, H2, styled, withIsLoading } from '@apollosproject/ui-kit';
 import { ScriptureList } from '@apollosproject/ui-scripture';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
+import MediaControls from '../../ui/MediaControls';
+
+const MediaView = styled(({ theme }) => ({
+  paddingTop: theme.sizing.baseUnit * 2,
+  alignItems: 'center',
+}))(PaddedView);
 
 const ContentContainer = withIsLoading(
   styled({ paddingVertical: 0 })(PaddedView)
@@ -26,6 +32,9 @@ const ContentTab = ({
   <ScrollView>
     <ContentContainer isLoading={isLoading}>
       <H2 padded>{title}</H2>
+      <MediaView>
+        <MediaControls contentId={id} />
+      </MediaView>
       {references && references.length ? (
         <ScriptureList
           references={references}
