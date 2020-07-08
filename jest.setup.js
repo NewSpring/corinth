@@ -101,7 +101,9 @@ jest.mock('@apollosproject/ui-notifications', () => ({
   NotificationsProvider: ({ children }) => children,
 }));
 
-jest.mock('@apollosproject/ui-mapview', () => 'MapView');
+jest.mock('@apollosproject/ui-mapview', () => ({
+  MapViewConnected: 'MapViewConnected',
+}));
 
 jest.mock('@apollosproject/ui-media-player', () => ({
   MediaPlayerSpacer: ({ children }) => children,

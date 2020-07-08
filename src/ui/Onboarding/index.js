@@ -21,7 +21,7 @@ import {
   OnboardingSwiper,
 } from '@apollosproject/ui-onboarding';
 
-import CHANGE_CAMPUS from '../Locations/campusChange';
+import CAMPUS_CHANGE from '@apollosproject/ui-mapview';
 import { onboardingComplete, WITH_USER_ID } from './onboardingStatus';
 import CustomLocationFinder from './CustomLocationFinder';
 
@@ -88,12 +88,12 @@ function Onboarding({ navigation }) {
                 </ImageContainer>
               }
               Component={({ ...props }) => (
-                <Mutation mutation={CHANGE_CAMPUS}>
-                  {(changeCampus) => (
+                <Mutation mutation={CAMPUS_CHANGE}>
+                  {(campusChange) => (
                     <CustomLocationFinder
                       onSelectWeb={() => {
                         swipeForward();
-                        changeCampus({
+                        campusChange({
                           variables: {
                             // web campus
                             campusId: 'Campus:05c9c6351be882103edb1e350c77422b',
