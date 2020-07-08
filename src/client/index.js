@@ -7,8 +7,8 @@ import { ApolloLink } from 'apollo-link';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 
 import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
-import { bugsnagLink, setUser } from '../bugsnag';
 import { NavigationService } from '@apollosproject/ui-kit';
+import { bugsnagLink, setUser } from '../bugsnag';
 import { resolvers, schema, defaults } from '../store';
 
 import httpLink from './httpLink';
