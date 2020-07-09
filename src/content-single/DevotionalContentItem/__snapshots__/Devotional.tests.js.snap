@@ -382,6 +382,16 @@ exports[`the Devotional component renders a devotional 1`] = `
                                 >
                                   Title
                                 </Text>
+                                <View
+                                  style={
+                                    Object {
+                                      "alignItems": "center",
+                                      "paddingHorizontal": 16,
+                                      "paddingTop": 32,
+                                      "paddingVertical": 16,
+                                    }
+                                  }
+                                />
                                 <Text
                                   style={
                                     Object {
