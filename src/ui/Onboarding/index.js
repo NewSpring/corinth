@@ -21,7 +21,7 @@ import {
   OnboardingSwiper,
 } from '@apollosproject/ui-onboarding';
 
-import CAMPUS_CHANGE from '@apollosproject/ui-mapview';
+import { CAMPUS_CHANGE } from '@apollosproject/ui-mapview';
 import { onboardingComplete, WITH_USER_ID } from './onboardingStatus';
 import CustomLocationFinder from './CustomLocationFinder';
 
