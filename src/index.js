@@ -2,12 +2,17 @@ import hoistNonReactStatic from 'hoist-non-react-statics';
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import RNBootSplash from 'react-native-bootsplash';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import RNBootSplash from 'react-native-bootsplash';
 
-import { BackgroundView, withTheme } from '@apollosproject/ui-kit';
+import {
+  BackgroundView,
+  withTheme,
+  NavigationService,
+} from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
+import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import { MediaPlayer } from '@apollosproject/ui-media-player';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 
@@ -15,18 +20,16 @@ import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
 import Providers from './Providers';
-import NavigationService from './NavigationService';
 import ContentSingle from './content-single';
 import Event from './event';
 import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
 import ChangePassword from './user-settings/ChangePassword';
 
-import Prayer from './prayer';
 import LandingScreen from './LandingScreen';
 import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
-import Location from './ui/Locations';
+import Prayer from './prayer';
 
 // need to initialize error tracking at the entrypoint
 // eslint-disable-next-line
