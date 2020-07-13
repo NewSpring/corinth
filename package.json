@@ -195,7 +195,7 @@
     "react-native-storybook-loader": "1.8.0",
     "react-native-version": "2.6.2",
     "react-test-renderer": "16.8.6",
-    "standard-version": "^6.0.1",
+    "standard-version": "^8.0.1",
     "waait": "1.0.2",
     "@apollosproject/eslint-config": "1.4.3",
     "eslint-plugin-graphql": "^3.0.3",
