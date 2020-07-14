@@ -41,7 +41,7 @@ target 'newspringchurchapp' do
 end
 
 target 'newspringchurchapp-tvOS' do
-  # Pods for apolloschurchapp-tvOS
+  # Pods for newspringchurchapp-tvOS
 
   target 'newspringchurchapp-tvOSTests' do
     inherit! :search_paths
