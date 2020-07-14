@@ -6,7 +6,13 @@ import { ApolloClient } from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 
-import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
+// TODO put this all back to normal once we find the auth error
+// import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
+import { authLink } from '@apollosproject/ui-auth';
+import { onError } from 'apollo-link-error';
+import AsyncStorage from '@react-native-community/async-storage';
+import Appcenter from 'appcenter-analytics';
+
 import { NavigationService } from '@apollosproject/ui-kit';
 import { bugsnagLink, setUser } from '../bugsnag';
 import { resolvers, schema, defaults } from '../store';
@@ -28,6 +34,24 @@ const onAuthError = async () => {
   storeIsResetting = false;
   goToAuth();
 };
+
+const buildErrorLink = (onAuthError1) =>
+  onError(({ graphQLErrors, networkError }) => {
+    if (graphQLErrors)
+      graphQLErrors.map(async (error) => {
+        // wipe out all data and go somewhere
+        const token = await AsyncStorage.getItem('authToken');
+        if (error.extensions.code === 'UNAUTHENTICATED') {
+          AsyncStorage.removeItem('authToken');
+          Appcenter.trackEvent('Token removed', { token, error });
+          onAuthError1();
+        }
+        return null;
+      });
+
+    if (networkError) return null;
+    return null;
+  });
 
 const errorLink = buildErrorLink(onAuthError);
 
