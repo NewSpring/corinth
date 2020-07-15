@@ -107,7 +107,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
 
     return (
       <PaddedView horizontal={false}>
-        {!loading && content && content.length ? (
+        {content && content.length ? (
           <PaddedView vertical={false}>
             <H5>In this series</H5>
           </PaddedView>
@@ -160,6 +160,7 @@ class HorizontalContentSeriesFeedConnected extends Component {
       <Query
         query={GET_CONTENT_SERIES}
         variables={{ itemId: this.props.contentId }}
+        fetchPolicy={'cache-and-network'}
       >
         {this.renderFeed}
       </Query>

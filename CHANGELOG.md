@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.8.0](https://github.com/newspring/corinth/compare/v7.7.0...v7.8.0) (2020-07-08)
+
+
+### Bug Fixes
+
+* Fix Campaign Item Loading Incorrect Content ([#224](https://github.com/newspring/corinth/issues/224)) ([544323e](https://github.com/newspring/corinth/commit/544323e))
+* Fixes Bouncy Series Label ([#219](https://github.com/newspring/corinth/issues/219)) ([347ac15](https://github.com/newspring/corinth/commit/347ac15))
+* Removed the bluetooth requirement for google-cast ([#203](https://github.com/newspring/corinth/issues/203)) ([58d6d6b](https://github.com/newspring/corinth/commit/58d6d6b))
+
+
+### Features
+
+* Adds Videos to Devotionals ([#225](https://github.com/newspring/corinth/issues/225)) ([f1994b1](https://github.com/newspring/corinth/commit/f1994b1))
+
+
+
 ## [7.7.0](https://github.com/newspring/corinth/compare/v7.6.3...v7.7.0) (2020-06-15)
 
 

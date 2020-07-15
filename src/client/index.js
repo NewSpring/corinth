@@ -1,14 +1,21 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider as ApolloHookProvider } from '@apollo/react-hooks';
 import { ApolloClient } from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
 import { getVersion, getApplicationName } from 'react-native-device-info';
 
-import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
-import { bugsnagLink, setUser } from '../bugsnag';
+// TODO put this all back to normal once we find the auth error
+// import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
+import { authLink } from '@apollosproject/ui-auth';
+import { onError } from 'apollo-link-error';
+import AsyncStorage from '@react-native-community/async-storage';
+import Appcenter from 'appcenter-analytics';
+import { NavigationService } from '@apollosproject/ui-kit';
+import bugsnag, { bugsnagLink, setUser } from '../bugsnag';
+
 import { resolvers, schema, defaults } from '../store';
-import NavigationService from '../NavigationService';
 
 import httpLink from './httpLink';
 import cache, { ensureCacheHydration } from './cache';
@@ -27,6 +34,29 @@ const onAuthError = async () => {
   storeIsResetting = false;
   goToAuth();
 };
+
+const buildErrorLink = (onAuthError1) =>
+  onError(({ graphQLErrors, networkError }) => {
+    if (graphQLErrors)
+      graphQLErrors.map(async (error) => {
+        // wipe out all data and go somewhere
+        const token = await AsyncStorage.getItem('authToken');
+        if (error.extensions.code === 'UNAUTHENTICATED') {
+          AsyncStorage.removeItem('authToken');
+          Appcenter.trackEvent('Token removed', { token, error });
+          bugsnag.notify(error, (report) => {
+            report.metadata = { // eslint-disable-line
+              token,
+            };
+          });
+          onAuthError1();
+        }
+        return null;
+      });
+
+    if (networkError) return null;
+    return null;
+  });
 
 const errorLink = buildErrorLink(onAuthError);
 
@@ -56,6 +86,11 @@ class ClientProvider extends PureComponent {
     client: PropTypes.shape({
       cache: PropTypes.shape({}),
     }),
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node,
+      PropTypes.object, // covers Fragments
+    ]).isRequired,
   };
 
   static defaultProps = {
@@ -74,7 +109,14 @@ class ClientProvider extends PureComponent {
   }
 
   render() {
-    return <ApolloProvider {...this.props} client={client} />;
+    const { children, ...otherProps } = this.props;
+    return (
+      <ApolloProvider {...otherProps} client={client}>
+        <ApolloHookProvider {...otherProps} client={client}>
+          {children}
+        </ApolloHookProvider>
+      </ApolloProvider>
+    );
   }
 }
 
