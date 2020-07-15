@@ -65,6 +65,12 @@ ApollosConfig.loadJs({
             name
           }
         }
+        ... on ContentSeriesContentItem {
+          parentChannel {
+            id
+            name
+          }
+        }
       }
     `,
   },

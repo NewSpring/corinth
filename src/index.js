@@ -142,7 +142,36 @@ const App = () => (
           />
         )}
       </AnalyticsConsumer>
-      <MediaPlayer />
+      {/* Google Cast is experimental until we can fix it */}
+      <Query
+        query={gql`
+          {
+            currentUser {
+              id
+              profile {
+                id
+                testGroups {
+                  id
+                  name
+                }
+              }
+            }
+          }
+        `}
+        fetch-policy={'cache-and-network'}
+      >
+        {({ data, loading, error }) => {
+          if (loading) return null;
+          if (error) return null;
+          return data.currentUser.profile.testGroups.filter(
+            ({ name }) => name === 'Experimental Features'
+          ).length ? (
+            <MediaPlayer />
+          ) : (
+            <MediaPlayer googleCastEnabled={false} />
+          );
+        }}
+      </Query>
     </BackgroundView>
   </Providers>
 );

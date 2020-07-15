@@ -51,7 +51,7 @@ class Connect extends PureComponent {
                 />
               )}
             />
-            <Query query={GET_USER_PROFILE}>
+            <Query query={GET_USER_PROFILE} fetchPolicy="cache-and-network">
               {({
                 data: {
                   currentUser: { profile: { isGroupLeader } = {} } = {},
