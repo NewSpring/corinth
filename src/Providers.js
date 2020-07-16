@@ -31,7 +31,10 @@ const AppProviders = (props) => (
       >
         <ExternalLinkProvider navigate={NavigationService.navigate}>
           <MediaPlayerProvider>
-            <AnalyticsProvider trackFunctions={[track]}>
+            <AnalyticsProvider
+              trackFunctions={[track]}
+              useServerAnalytics={false}
+            >
               <LiveProvider>
                 <Providers
                   themeInput={customTheme}
