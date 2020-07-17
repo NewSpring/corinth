@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.8.1](https://github.com/newspring/corinth/compare/v7.8.0...v7.8.1) (2020-07-17)
+
+
+### Bug Fixes
+
+* Fix universal links for iOS ([#238](https://github.com/newspring/corinth/issues/238)) ([5b5c063](https://github.com/newspring/corinth/commit/5b5c063289c8436ac38e30dcfd7a25a58b929d2e))
+
 ## [7.8.0](https://github.com/newspring/corinth/compare/v7.7.0...v7.8.0) (2020-07-08)
 
 
