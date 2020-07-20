@@ -19,10 +19,7 @@ export const onboardingComplete = async ({ userId }) => {
   }
 };
 
-export const checkOnboardingStatusAndNavigate = async ({
-  client,
-  navigation,
-}) => {
+export const checkOnboardingStatusAndNavigate = async ({ client }) => {
   const { data } = await client.query({ query: WITH_USER_ID });
   let hasOnboarded = false;
   if (data.currentUser.id) {
@@ -36,13 +33,13 @@ export const checkOnboardingStatusAndNavigate = async ({
     }
   }
   if (hasOnboarded) {
-    navigation.dispatch(
+    NavigationService.getNavigator().dispatch(
       NavigationService.resetAction({
         navigatorName: 'Tabs',
         routeName: 'Home',
       })
     );
   } else {
-    navigation.navigate('Onboarding');
+    NavigationService.navigate('Onboarding');
   }
 };
