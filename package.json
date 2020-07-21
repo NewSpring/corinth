@@ -92,7 +92,7 @@
     "graphql-import": "^0.7.1",
     "graphql-tag": "2.9.2",
     "graphql-tools": "3.1.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "memoize-one": "4.0.0",
     "moment": "2.22.2",
     "node-fetch": "2.2.0",
