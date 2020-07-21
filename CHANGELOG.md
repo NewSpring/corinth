@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.8.2](https://github.com/newspring/corinth/compare/v7.8.1...v7.8.2) (2020-07-21)
+
+
+### Bug Fixes
+
+* Fixes Onboarding Getting Stuck ([#246](https://github.com/newspring/corinth/issues/246)) ([0039cc7](https://github.com/newspring/corinth/commit/0039cc77bb9eb241ab89d3e8da5b8fce9e671f2a))
+
 ## [7.8.1](https://github.com/newspring/corinth/compare/v7.8.0...v7.8.1) (2020-07-17)
 
 
