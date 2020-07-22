@@ -3,7 +3,6 @@ import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import Emoji from 'react-native-emoji';
 import { Query, Mutation } from 'react-apollo';
-import PropTypes from 'prop-types';
 
 import {
   BodyText,
