@@ -39,10 +39,15 @@ const PrayerSingle = memo(
     prayer,
     action,
     isLoading,
+    readOnly,
     ...props
   }) => (
     <View>
-      {!isLoading && <AbsolutePositionedView>{action}</AbsolutePositionedView>}
+      {!readOnly
+        ? !isLoading && (
+            <AbsolutePositionedView>{action}</AbsolutePositionedView>
+          )
+        : null}
       {showDate ? (
         <GreyH5>
           {prayer.startTime ? moment(prayer.startTime).fromNow() : ''}
@@ -69,7 +74,7 @@ const PrayerSingle = memo(
           <BodyText>{prayer.answer}</BodyText>
         </PrayerView>
       ) : null}
-      {showHelp ? (
+      {showHelp && !readOnly ? (
         <AnalyticsConsumer>
           {({ track }) => (
             <Touchable
@@ -118,6 +123,7 @@ PrayerSingle.propTypes = {
   }),
   action: PropTypes.element,
   isLoading: PropTypes.bool,
+  readOnly: PropTypes.bool,
 };
 
 PrayerSingle.defaultProps = {
@@ -132,6 +138,7 @@ PrayerSingle.defaultProps = {
     person: { photo: { uri: '' } },
   },
   action: null,
+  readOnly: false,
 };
 
 PrayerSingle.displayName = 'PrayerSingle';

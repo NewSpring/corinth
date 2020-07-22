@@ -3,6 +3,7 @@ import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import Emoji from 'react-native-emoji';
 import { Query, Mutation } from 'react-apollo';
+import PropTypes from 'prop-types';
 
 import {
   BodyText,
@@ -72,6 +73,7 @@ class PrayerList extends PureComponent {
   render() {
     const title = this.props.navigation.getParam('title', 'My Church');
     const type = this.props.navigation.getParam('type', null);
+    const readOnly = this.props.navigation.getParam('readOnly', false);
 
     return (
       <ModalView onClose={() => this.props.navigation.popToTop()}>
@@ -105,10 +107,12 @@ class PrayerList extends PureComponent {
                         <FlexedView>
                           <ScrollArea>
                             <ScrollView>
-                              <Header>
-                                <H6>Praying for</H6>
-                                <GreenH4>{title}</GreenH4>
-                              </Header>
+                              {!readOnly ? (
+                                <Header>
+                                  <H6>Praying for</H6>
+                                  <GreenH4>{title}</GreenH4>
+                                </Header>
+                              ) : null}
                               <StyledPrayerView>
                                 <PrayerSingle
                                   avatarSize={'medium'}
@@ -117,70 +121,73 @@ class PrayerList extends PureComponent {
                                   action={<SaveButton prayerID={prayer.id} />}
                                   showHelp
                                   showHeader
+                                  readOnly={readOnly}
                                 />
                               </StyledPrayerView>
                             </ScrollView>
                           </ScrollArea>
-                          <Footer>
-                            {!this.state.prayed ? (
-                              <View>
-                                <AnalyticsConsumer>
-                                  {({ track }) => (
-                                    <Button
-                                      title={`I've prayed`}
-                                      onPress={() => {
-                                        increment({
-                                          variables: { parsedId: prayer.id },
-                                        });
-                                        this.setState({ prayed: true });
-                                        track({ eventName: 'Prayed' });
-                                      }}
-                                    />
-                                  )}
-                                </AnalyticsConsumer>
-                                <FooterAltOption>
-                                  <ActionComponent
-                                    component={
-                                      <FooterText isGray>
-                                        Report prayer as inappropriate
-                                      </FooterText>
-                                    }
-                                    options={[
-                                      {
-                                        title: 'Report prayer',
-                                        method: async () => {
-                                          await flagPrayer({
-                                            variables: {
-                                              parsedId: prayer.id,
-                                            },
+                          {!readOnly ? (
+                            <Footer>
+                              {!this.state.prayed ? (
+                                <View>
+                                  <AnalyticsConsumer>
+                                    {({ track }) => (
+                                      <Button
+                                        title={`I've prayed`}
+                                        onPress={() => {
+                                          increment({
+                                            variables: { parsedId: prayer.id },
                                           });
-                                          await advancePrayer();
+                                          this.setState({ prayed: true });
+                                          track({ eventName: 'Prayed' });
+                                        }}
+                                      />
+                                    )}
+                                  </AnalyticsConsumer>
+                                  <FooterAltOption>
+                                    <ActionComponent
+                                      component={
+                                        <FooterText isGray>
+                                          Report prayer as inappropriate
+                                        </FooterText>
+                                      }
+                                      options={[
+                                        {
+                                          title: 'Report prayer',
+                                          method: async () => {
+                                            await flagPrayer({
+                                              variables: {
+                                                parsedId: prayer.id,
+                                              },
+                                            });
+                                            await advancePrayer();
+                                          },
+                                          destructive: true,
                                         },
-                                        destructive: true,
-                                      },
-                                      {
-                                        title: 'Cancel',
-                                        method: null,
-                                        destructive: false,
-                                      },
-                                    ]}
+                                        {
+                                          title: 'Cancel',
+                                          method: null,
+                                          destructive: false,
+                                        },
+                                      ]}
+                                    />
+                                  </FooterAltOption>
+                                </View>
+                              ) : (
+                                <View>
+                                  <FooterAltOption>
+                                    <FooterText>
+                                      Thanks for praying <Emoji name="heart" />
+                                    </FooterText>
+                                  </FooterAltOption>
+                                  <Button
+                                    title={!isLastPrayer ? 'Next' : 'Done'}
+                                    onPress={() => advancePrayer(true)}
                                   />
-                                </FooterAltOption>
-                              </View>
-                            ) : (
-                              <View>
-                                <FooterAltOption>
-                                  <FooterText>
-                                    Thanks for praying <Emoji name="heart" />
-                                  </FooterText>
-                                </FooterAltOption>
-                                <Button
-                                  title={!isLastPrayer ? 'Next' : 'Done'}
-                                  onPress={() => advancePrayer(true)}
-                                />
-                              </View>
-                            )}
-                          </Footer>
+                                </View>
+                              )}
+                            </Footer>
+                          ) : null}
                         </FlexedView>
                       )}
                     </Mutation>
