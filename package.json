@@ -20,6 +20,7 @@
     "restart": "yarn && yarn start",
     "storybook": "rnstl --searchDir ../ --pattern \"newspringchurchapp/src/**/*.stories.js\" && storybook start -p 7007  | react-native start --projectRoot $PWD/storybook",
     "test": "TZ=UTC jest --forceExit",
+    "e2e": "yarn detox build && yarn detox test",
     "postinstall": "jetify && yarn pods",
     "pods": "./scripts/install_pods.sh",
     "bump": "yarn standard-version && git push --follow-tags && yarn gh-release --yes",
