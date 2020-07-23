@@ -1,14 +1,17 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import {
   BodyText,
+  ChannelLabel,
+  FlexedView,
+  H4,
   H5,
+  ModalView,
   styled,
   Touchable,
-  ChannelLabel,
-  H4,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import PrayerHeader from '../PrayerHeader';
@@ -30,6 +33,18 @@ const AbsolutePositionedView = styled(() => ({
   zIndex: 2,
 }))(View);
 
+const FlexedSafeAreaView = styled({
+  flex: 1,
+})(SafeAreaView);
+
+const ScrollArea = styled(({ theme }) => ({
+  flex: 5,
+  padding: theme.sizing.baseUnit,
+}))(FlexedView);
+
+const getNotification = (navigation) =>
+  navigation.getParam('notification', true);
+
 const PrayerSingle = memo(
   ({
     showHelp,
@@ -39,65 +54,101 @@ const PrayerSingle = memo(
     prayer,
     action,
     isLoading,
-    readOnly,
+    navigation,
     ...props
   }) => (
     <View>
-      {!readOnly
-        ? !isLoading && (
+      {getNotification(navigation) ? (
+        <ModalView onClose={() => navigation.popToTop()}>
+          <FlexedSafeAreaView>
+            <FlexedView>
+              <ScrollArea>
+                <ScrollView>
+                  <PrayerHeader
+                    avatarSize={avatarSize}
+                    avatarSource={
+                      prayer.isAnonymous ? null : prayer.requestor.photo
+                    }
+                    title={`Pray for ${
+                      prayer.isAnonymous
+                        ? 'Request'
+                        : prayer.requestor.nickName || prayer.requestor.firstName
+                    }`}
+                    source={
+                      prayer.campus.name !== 'Web' ? prayer.campus.name : null
+                    }
+                  />
+                  <PrayerView>
+                    <BodyText>{prayer.text}</BodyText>
+                  </PrayerView>
+                  {prayer.answer && prayer.answer.length > 0 ? (
+                    <PrayerView>
+                      <H4>Answer:</H4>
+                      <BodyText>{prayer.answer}</BodyText>
+                    </PrayerView>
+                  ) : null}
+                </ScrollView>
+              </ScrollArea>
+            </FlexedView>
+          </FlexedSafeAreaView>
+        </ModalView>
+      ) : (
+        <View>
+          {!isLoading && (
             <AbsolutePositionedView>{action}</AbsolutePositionedView>
-          )
-        : null}
-      {showDate ? (
-        <GreyH5>
-          {prayer.startTime ? moment(prayer.startTime).fromNow() : ''}
-        </GreyH5>
-      ) : null}
-      {showHeader ? (
-        <PrayerHeader
-          avatarSize={avatarSize}
-          avatarSource={prayer.isAnonymous ? null : prayer.requestor.photo}
-          title={`Pray for ${
-            prayer.isAnonymous
-              ? 'Request'
-              : prayer.requestor.nickName || prayer.requestor.firstName
-          }`}
-          source={prayer.campus.name !== 'Web' ? prayer.campus.name : null}
-        />
-      ) : null}
-      <PrayerView>
-        <BodyText>{prayer.text}</BodyText>
-      </PrayerView>
-      {prayer.answer && prayer.answer.length > 0 ? (
-        <PrayerView>
-          <H4>Answer:</H4>
-          <BodyText>{prayer.answer}</BodyText>
-        </PrayerView>
-      ) : null}
-      {showHelp && !readOnly ? (
-        <AnalyticsConsumer>
-          {({ track }) => (
-            <Touchable
-              onPress={() => {
-                props.navigation.navigate('ContentSingle', {
-                  // TODO: this should come from a content channel
-                  itemId: 'MediaContentItem:20f5b6548d64b1ac62a1c4b0deb0bfcb',
-                  itemTitle: 'Learning how to pray like Jesus',
-                  isolated: true,
-                });
-                track({ eventName: "Clicked 'How to Pray'" });
-              }}
-            >
-              <View>
-                <ChannelLabel
-                  icon="information"
-                  label="Not sure how to pray? Read this."
-                />
-              </View>
-            </Touchable>
           )}
-        </AnalyticsConsumer>
-      ) : null}
+          {showDate ? (
+            <GreyH5>
+              {prayer.startTime ? moment(prayer.startTime).fromNow() : ''}
+            </GreyH5>
+          ) : null}
+          {showHeader ? (
+            <PrayerHeader
+              avatarSize={avatarSize}
+              avatarSource={prayer.isAnonymous ? null : prayer.requestor.photo}
+              title={`Pray for ${
+                prayer.isAnonymous
+                  ? 'Request'
+                  : prayer.requestor.nickName || prayer.requestor.firstName
+              }`}
+              source={prayer.campus.name !== 'Web' ? prayer.campus.name : null}
+            />
+          ) : null}
+          <PrayerView>
+            <BodyText>{prayer.text}</BodyText>
+          </PrayerView>
+          {prayer.answer && prayer.answer.length > 0 ? (
+            <PrayerView>
+              <H4>Answer:</H4>
+              <BodyText>{prayer.answer}</BodyText>
+            </PrayerView>
+          ) : null}
+          {showHelp ? (
+            <AnalyticsConsumer>
+              {({ track }) => (
+                <Touchable
+                  onPress={() => {
+                    props.navigation.navigate('ContentSingle', {
+                      // TODO: this should come from a content channel
+                      itemId: 'MediaContentItem:20f5b6548d64b1ac62a1c4b0deb0bfcb',
+                      itemTitle: 'Learning how to pray like Jesus',
+                      isolated: true,
+                    });
+                    track({ eventName: "Clicked 'How to Pray'" });
+                  }}
+                >
+                  <View>
+                    <ChannelLabel
+                      icon="information"
+                      label="Not sure how to pray? Read this."
+                    />
+                  </View>
+                </Touchable>
+              )}
+            </AnalyticsConsumer>
+          ) : null}
+        </View>
+      )}
     </View>
   )
 );
@@ -123,7 +174,6 @@ PrayerSingle.propTypes = {
   }),
   action: PropTypes.element,
   isLoading: PropTypes.bool,
-  readOnly: PropTypes.bool,
 };
 
 PrayerSingle.defaultProps = {
@@ -138,7 +188,6 @@ PrayerSingle.defaultProps = {
     person: { photo: { uri: '' } },
   },
   action: null,
-  readOnly: false,
 };
 
 PrayerSingle.displayName = 'PrayerSingle';
