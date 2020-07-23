@@ -26,9 +26,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g yarn
 
-    - name: Install Cocoapods
-      run: brew install cocoapods
-
     - name: Install Dependencies
       run: yarn
 
