@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import { View, ScrollView } from 'react-native';
+import React, { memo, Children } from 'react';
+import { View, ScrollView, Modal } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -43,7 +43,27 @@ const ScrollArea = styled(({ theme }) => ({
 }))(FlexedView);
 
 const getNotification = (navigation) =>
-  navigation.getParam('notification', true);
+  navigation.getParam('notification', false);
+
+const Wrapper = ({ navigation, ...props }) => (
+  <View>
+    {getNotification(navigation) ? (
+      <ModalView onClose={() => navigation.popToTop()}>
+        <FlexedSafeAreaView>
+          <ScrollArea>
+            <ScrollView>{props.children}</ScrollView>
+          </ScrollArea>
+        </FlexedSafeAreaView>
+      </ModalView>
+    ) : (
+      <View>{props.children}</View>
+    )}
+  </View>
+);
+
+Wrapper.propTypes = {
+  children: PropTypes.any, //eslint-disable-line
+}
 
 const PrayerSingle = memo(
   ({
@@ -57,99 +77,61 @@ const PrayerSingle = memo(
     navigation,
     ...props
   }) => (
-    <View>
-      {getNotification(navigation) ? (
-        <ModalView onClose={() => navigation.popToTop()}>
-          <FlexedSafeAreaView>
-            <FlexedView>
-              <ScrollArea>
-                <ScrollView>
-                  <PrayerHeader
-                    avatarSize={avatarSize}
-                    avatarSource={
-                      prayer.isAnonymous ? null : prayer.requestor.photo
-                    }
-                    title={`Pray for ${
-                      prayer.isAnonymous
-                        ? 'Request'
-                        : prayer.requestor.nickName || prayer.requestor.firstName
-                    }`}
-                    source={
-                      prayer.campus.name !== 'Web' ? prayer.campus.name : null
-                    }
-                  />
-                  <PrayerView>
-                    <BodyText>{prayer.text}</BodyText>
-                  </PrayerView>
-                  {prayer.answer && prayer.answer.length > 0 ? (
-                    <PrayerView>
-                      <H4>Answer:</H4>
-                      <BodyText>{prayer.answer}</BodyText>
-                    </PrayerView>
-                  ) : null}
-                </ScrollView>
-              </ScrollArea>
-            </FlexedView>
-          </FlexedSafeAreaView>
-        </ModalView>
-      ) : (
-        <View>
-          {!isLoading && (
-            <AbsolutePositionedView>{action}</AbsolutePositionedView>
+    <Wrapper navigation={navigation}>
+      {!isLoading && !getNotification(navigation) ? (
+        <AbsolutePositionedView>{action}</AbsolutePositionedView>
+      ) : null}
+      {showDate ? (
+        <GreyH5>
+          {prayer.startTime ? moment(prayer.startTime).fromNow() : ''}
+        </GreyH5>
+      ) : null}
+      {showHeader ? (
+        <PrayerHeader
+          avatarSize={avatarSize}
+          avatarSource={prayer.isAnonymous ? null : prayer.requestor.photo}
+          title={`Pray for ${
+            prayer.isAnonymous
+              ? 'Request'
+              : prayer.requestor.nickName || prayer.requestor.firstName
+          }`}
+          source={prayer.campus.name !== 'Web' ? prayer.campus.name : null}
+        />
+      ) : null}
+      <PrayerView>
+        <BodyText>{prayer.text}</BodyText>
+      </PrayerView>
+      {prayer.answer && prayer.answer.length > 0 ? (
+        <PrayerView>
+          <H4>Answer:</H4>
+          <BodyText>{prayer.answer}</BodyText>
+        </PrayerView>
+      ) : null}
+      {showHelp && !getNotification(navigation) ? (
+        <AnalyticsConsumer>
+          {({ track }) => (
+            <Touchable
+              onPress={() => {
+                props.navigation.navigate('ContentSingle', {
+                  // TODO: this should come from a content channel
+                  itemId: 'MediaContentItem:20f5b6548d64b1ac62a1c4b0deb0bfcb',
+                  itemTitle: 'Learning how to pray like Jesus',
+                  isolated: true,
+                });
+                track({ eventName: "Clicked 'How to Pray'" });
+              }}
+            >
+              <View>
+                <ChannelLabel
+                  icon="information"
+                  label="Not sure how to pray? Read this."
+                />
+              </View>
+            </Touchable>
           )}
-          {showDate ? (
-            <GreyH5>
-              {prayer.startTime ? moment(prayer.startTime).fromNow() : ''}
-            </GreyH5>
-          ) : null}
-          {showHeader ? (
-            <PrayerHeader
-              avatarSize={avatarSize}
-              avatarSource={prayer.isAnonymous ? null : prayer.requestor.photo}
-              title={`Pray for ${
-                prayer.isAnonymous
-                  ? 'Request'
-                  : prayer.requestor.nickName || prayer.requestor.firstName
-              }`}
-              source={prayer.campus.name !== 'Web' ? prayer.campus.name : null}
-            />
-          ) : null}
-          <PrayerView>
-            <BodyText>{prayer.text}</BodyText>
-          </PrayerView>
-          {prayer.answer && prayer.answer.length > 0 ? (
-            <PrayerView>
-              <H4>Answer:</H4>
-              <BodyText>{prayer.answer}</BodyText>
-            </PrayerView>
-          ) : null}
-          {showHelp ? (
-            <AnalyticsConsumer>
-              {({ track }) => (
-                <Touchable
-                  onPress={() => {
-                    props.navigation.navigate('ContentSingle', {
-                      // TODO: this should come from a content channel
-                      itemId: 'MediaContentItem:20f5b6548d64b1ac62a1c4b0deb0bfcb',
-                      itemTitle: 'Learning how to pray like Jesus',
-                      isolated: true,
-                    });
-                    track({ eventName: "Clicked 'How to Pray'" });
-                  }}
-                >
-                  <View>
-                    <ChannelLabel
-                      icon="information"
-                      label="Not sure how to pray? Read this."
-                    />
-                  </View>
-                </Touchable>
-              )}
-            </AnalyticsConsumer>
-          ) : null}
-        </View>
-      )}
-    </View>
+        </AnalyticsConsumer>
+      ) : null}
+    </Wrapper>
   )
 );
 
