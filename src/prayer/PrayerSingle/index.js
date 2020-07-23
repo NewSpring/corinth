@@ -1,5 +1,5 @@
-import React, { memo, Children } from 'react';
-import { View, ScrollView, Modal } from 'react-native';
+import React, { memo } from 'react';
+import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -63,7 +63,7 @@ const Wrapper = ({ navigation, ...props }) => (
 
 Wrapper.propTypes = {
   children: PropTypes.any, //eslint-disable-line
-}
+};
 
 const PrayerSingle = memo(
   ({
