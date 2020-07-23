@@ -33,9 +33,7 @@ jobs:
       run: yarn
 
     - name: Install Wix Tools
-      run:
-        - brew tap wix/brew
-        - brew install applesimutils
+      run: brew tap wix/brew && brew install applesimutils
 
     - name: Detox
       run: yarn e2e
