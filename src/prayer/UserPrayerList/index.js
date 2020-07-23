@@ -122,7 +122,6 @@ class UserPrayerList extends React.Component {
                               prayer={item}
                               showDate
                               isLoading={loading}
-                              navigation={this.props.navigation}
                               action={
                                 <ActionComponent
                                   component={<ThreeDotsIcon />}

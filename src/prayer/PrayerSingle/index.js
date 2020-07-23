@@ -43,7 +43,7 @@ const ScrollArea = styled(({ theme }) => ({
 }))(FlexedView);
 
 const getNotification = (navigation) =>
-  navigation.getParam('notification', false);
+  navigation ? navigation.getParam('notification', false) : false;
 
 const Wrapper = ({ navigation, ...props }) => (
   <>
