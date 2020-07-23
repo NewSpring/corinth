@@ -43,6 +43,7 @@
 		AB3BD177B8A14193A5EEDDF8 /* Inter-UI-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */; };
 		B02F194A3F6A4FE29AC799B4 /* DroidSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */; };
 		DB0CE37D80FEF0309C36F15E /* libPods-newspringchurchappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 560CBCD50AE7D282715D134E /* libPods-newspringchurchappTests.a */; };
+		DC20866C24C9E1C10076C791 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		DC35B39123CE48FD0014765B /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC35B39023CE48FC0014765B /* AppCenter-Config.plist */; };
 		DCFA9E476AC7452CBB55B65F /* Colfax-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFBC548C57446F8A1D5CFCD /* Colfax-Medium.otf */; };
 		E875558F3FB8FA2024EF7DC2 /* libPods-newspringchurchapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6B5B7B6A0D1ECB68CF0DD /* libPods-newspringchurchapp.a */; };
@@ -126,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC20866C24C9E1C10076C791 /* JavaScriptCore.framework in Frameworks */,
 				DB0CE37D80FEF0309C36F15E /* libPods-newspringchurchappTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
