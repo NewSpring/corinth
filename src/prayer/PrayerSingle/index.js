@@ -46,7 +46,7 @@ const getNotification = (navigation) =>
   navigation.getParam('notification', false);
 
 const Wrapper = ({ navigation, ...props }) => (
-  <View>
+  <>
     {getNotification(navigation) ? (
       <ModalView onClose={() => navigation.popToTop()}>
         <FlexedSafeAreaView>
@@ -58,7 +58,7 @@ const Wrapper = ({ navigation, ...props }) => (
     ) : (
       <View>{props.children}</View>
     )}
-  </View>
+  </>
 );
 
 Wrapper.propTypes = {

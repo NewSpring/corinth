@@ -123,9 +123,10 @@ const mocks = [
   },
 ];
 
+const navigation = { pop: jest.fn(), getParam: jest.fn() };
+
 describe('the UserPrayerList component', () => {
   it('renders a list of prayers', async () => {
-    const navigation = { pop: jest.fn() };
     const tree = await renderWithApolloData(
       <Providers mocks={mocks} addTypename={false}>
         <UserPrayerList navigation={navigation} />
@@ -134,7 +135,6 @@ describe('the UserPrayerList component', () => {
     expect(tree).toMatchSnapshot();
   });
   it('renders no prayer text', async () => {
-    const navigation = { pop: jest.fn() };
     const tree = await renderWithApolloData(
       <Providers
         mocks={[
