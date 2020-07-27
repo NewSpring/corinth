@@ -27,7 +27,7 @@ jobs:
     - run: npm install -g yarn
 
     - name: Install Cocoapods
-      run: brew install cocoapods
+      run: sudo gem install cocoapods -v 1.9.1
 
     - name: Install Dependencies
       run: yarn
