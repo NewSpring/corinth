@@ -45,21 +45,20 @@ const ScrollArea = styled(({ theme }) => ({
 const getNotification = (navigation) =>
   navigation ? navigation.getParam('notification', false) : false;
 
-const Wrapper = ({ navigation, ...props }) => (
-  <>
-    {getNotification(navigation) ? (
-      <ModalView onClose={() => navigation.popToTop()}>
-        <FlexedSafeAreaView>
-          <ScrollArea>
-            <ScrollView>{props.children}</ScrollView>
-          </ScrollArea>
-        </FlexedSafeAreaView>
-      </ModalView>
-    ) : (
-      <View>{props.children}</View>
-    )}
-  </>
-);
+const Wrapper = ({ navigation, ...props }) => {
+  const fromNotification = navigation.getParam('notification', false);
+  return fromNotification ? (
+    <ModalView onClose={() => navigation.popToTop()}>
+      <FlexedSafeAreaView>
+        <ScrollArea>
+          <ScrollView>{props.children}</ScrollView>
+        </ScrollArea>
+      </FlexedSafeAreaView>
+    </ModalView>
+  ) : (
+    <View>{props.children}</View>
+  )
+};
 
 Wrapper.propTypes = {
   children: PropTypes.any, //eslint-disable-line
@@ -78,7 +77,7 @@ const PrayerSingle = memo(
     ...props
   }) => (
     <Wrapper navigation={navigation}>
-      {!isLoading && !getNotification(navigation) ? (
+      {!isLoading && !navigation ? (
         <AbsolutePositionedView>{action}</AbsolutePositionedView>
       ) : null}
       {showDate ? (
@@ -107,7 +106,7 @@ const PrayerSingle = memo(
           <BodyText>{prayer.answer}</BodyText>
         </PrayerView>
       ) : null}
-      {showHelp && !getNotification(navigation) ? (
+      {showHelp && !navigation ? (
         <AnalyticsConsumer>
           {({ track }) => (
             <Touchable
