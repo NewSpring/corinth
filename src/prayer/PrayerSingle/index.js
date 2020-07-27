@@ -57,7 +57,7 @@ const Wrapper = ({ navigation, ...props }) => {
     </ModalView>
   ) : (
     <View>{props.children}</View>
-  )
+  );
 };
 
 Wrapper.propTypes = {
