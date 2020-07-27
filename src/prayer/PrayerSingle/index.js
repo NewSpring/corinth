@@ -46,7 +46,7 @@ const getNotification = (navigation) =>
   navigation ? navigation.getParam('notification', false) : false;
 
 const Wrapper = ({ navigation, ...props }) => {
-  const fromNotification = navigation.getParam('notification', false);
+  const fromNotification = getNotification(navigation);
   return fromNotification ? (
     <ModalView onClose={() => navigation.popToTop()}>
       <FlexedSafeAreaView>
@@ -77,7 +77,7 @@ const PrayerSingle = memo(
     ...props
   }) => (
     <Wrapper navigation={navigation}>
-      {!isLoading && !navigation ? (
+      {!isLoading && !getNotification(navigation) ? (
         <AbsolutePositionedView>{action}</AbsolutePositionedView>
       ) : null}
       {showDate ? (
@@ -106,7 +106,7 @@ const PrayerSingle = memo(
           <BodyText>{prayer.answer}</BodyText>
         </PrayerView>
       ) : null}
-      {showHelp && !navigation ? (
+      {showHelp && !getNotification(navigation) ? (
         <AnalyticsConsumer>
           {({ track }) => (
             <Touchable
