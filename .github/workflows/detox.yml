@@ -29,7 +29,7 @@ jobs:
     - name: Install Dependencies
       run: yarn
 
-    - name: Install Wix Tools
+    - name: Install Wix iOS Tools
       run: brew tap wix/brew && brew install applesimutils
 
     - name: Detox
