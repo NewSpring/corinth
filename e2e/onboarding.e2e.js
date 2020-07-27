@@ -7,8 +7,8 @@ describe('Landing Screen', () => {
     await expect(element(by.id('landing_screen'))).toBeVisible();
   });
 
-  // it('should show hello screen after tap', async () => {
-  // await element(by.id('hello_button')).tap();
-  // await expect(element(by.text('Hello!!!'))).toBeVisible();
-  // });
+  it('should show hello screen after tap', async () => {
+    await element(by.id('onboarding-next-buttton')).tap();
+    await expect(element(by.id('sms-entry-background'))).toBeVisible();
+  });
 });
