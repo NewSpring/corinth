@@ -30,7 +30,7 @@ jobs:
       run: sudo gem install cocoapods -v 1.9.1
 
     - name: Install Dependencies
-      run: yarn --ignore-scripts && yarn jetify && pods install --repo-update
+      run: yarn --ignore-scripts && yarn jetify && pod install --repo-update
 
     - name: Install Wix iOS Tools
       run: brew tap wix/brew && brew install applesimutils
