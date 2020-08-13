@@ -29,11 +29,15 @@ const prayerWithAnswer = {
   campus: { name: 'Anderson' },
 };
 
+const navigation = {
+  getParam: jest.fn(),
+};
+
 describe('the PrayerSingle component', () => {
   it('renders a prayer card', () => {
     const tree = renderer.create(
       <Providers>
-        <PrayerSingle prayer={prayer} />
+        <PrayerSingle prayer={prayer} navigation={navigation} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();
@@ -41,7 +45,7 @@ describe('the PrayerSingle component', () => {
   it('renders a prayer card with an answer', () => {
     const tree = renderer.create(
       <Providers>
-        <PrayerSingle prayer={prayerWithAnswer} />
+        <PrayerSingle prayer={prayerWithAnswer} navigation={navigation} />
       </Providers>
     );
     expect(tree).toMatchSnapshot();

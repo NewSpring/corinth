@@ -1,14 +1,17 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import {
   BodyText,
+  ChannelLabel,
+  FlexedView,
+  H4,
   H5,
+  ModalView,
   styled,
   Touchable,
-  ChannelLabel,
-  H4,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import PrayerHeader from '../PrayerHeader';
@@ -30,6 +33,37 @@ const AbsolutePositionedView = styled(() => ({
   zIndex: 2,
 }))(View);
 
+const FlexedSafeAreaView = styled({
+  flex: 1,
+})(SafeAreaView);
+
+const ScrollArea = styled(({ theme }) => ({
+  flex: 5,
+  padding: theme.sizing.baseUnit,
+}))(FlexedView);
+
+const getNotification = (navigation) =>
+  navigation ? navigation.getParam('notification', false) : false;
+
+const Wrapper = ({ navigation, ...props }) => {
+  const fromNotification = getNotification(navigation);
+  return fromNotification ? (
+    <ModalView onClose={() => navigation.popToTop()}>
+      <FlexedSafeAreaView>
+        <ScrollArea>
+          <ScrollView>{props.children}</ScrollView>
+        </ScrollArea>
+      </FlexedSafeAreaView>
+    </ModalView>
+  ) : (
+    <View>{props.children}</View>
+  );
+};
+
+Wrapper.propTypes = {
+  children: PropTypes.any, //eslint-disable-line
+};
+
 const PrayerSingle = memo(
   ({
     showHelp,
@@ -39,10 +73,13 @@ const PrayerSingle = memo(
     prayer,
     action,
     isLoading,
+    navigation,
     ...props
   }) => (
-    <View>
-      {!isLoading && <AbsolutePositionedView>{action}</AbsolutePositionedView>}
+    <Wrapper navigation={navigation}>
+      {!isLoading && !getNotification(navigation) ? (
+        <AbsolutePositionedView>{action}</AbsolutePositionedView>
+      ) : null}
       {showDate ? (
         <GreyH5>
           {prayer.startTime ? moment(prayer.startTime).fromNow() : ''}
@@ -69,7 +106,7 @@ const PrayerSingle = memo(
           <BodyText>{prayer.answer}</BodyText>
         </PrayerView>
       ) : null}
-      {showHelp ? (
+      {showHelp && !getNotification(navigation) ? (
         <AnalyticsConsumer>
           {({ track }) => (
             <Touchable
@@ -93,7 +130,7 @@ const PrayerSingle = memo(
           )}
         </AnalyticsConsumer>
       ) : null}
-    </View>
+    </Wrapper>
   )
 );
 
