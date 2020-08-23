@@ -51,21 +51,25 @@ class ExternalLinkProvider extends Component {
   };
 
   _handleOpenURL = async (rawUrl) => {
-    const urlArray = rawUrl.url.split(/[\s/]+/);
-    const path = urlArray[urlArray.length - 1];
-    const slug = path.split('?')[0];
+    if (rawUrl.url.indexOf('newspringchurchapp') >= 0) {
+      this.navigate(rawUrl.url);
+    } else {
+      const urlArray = rawUrl.url.split(/[\s/]+/);
+      const path = urlArray[urlArray.length - 1];
+      const slug = path.split('?')[0];
 
-    const {
-      data: { contentItemFromSlug } = {},
-    } = await this.props.client.query({
-      query: GET_CONTENT_ITEM_BY_SLUG,
-      variables: { slug },
-    });
-    if (contentItemFromSlug) {
-      const newUrl = `newspringchurchapp://AppStackNavigator/ContentSingle?itemId=${
-        contentItemFromSlug.id
-      }`;
-      this.navigate(newUrl);
+      const {
+        data: { contentItemFromSlug } = {},
+      } = await this.props.client.query({
+        query: GET_CONTENT_ITEM_BY_SLUG,
+        variables: { slug },
+      });
+      if (contentItemFromSlug) {
+        const newUrl = `newspringchurchapp://AppStackNavigator/ContentSingle?itemId=${
+          contentItemFromSlug.id
+        }`;
+        this.navigate(newUrl);
+      }
     }
   };
 
