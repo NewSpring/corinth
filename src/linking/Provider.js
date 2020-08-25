@@ -51,21 +51,30 @@ class ExternalLinkProvider extends Component {
   };
 
   _handleOpenURL = async (rawUrl) => {
-    const urlArray = rawUrl.url.split(/[\s/]+/);
-    const path = urlArray[urlArray.length - 1];
-    const slug = path.split('?')[0];
+    if (rawUrl.url.indexOf('newspringchurchapp') >= 0) {
+      // if the URL starts with 'newspringchurchapp' then this is
+      // a deep link in the format it already needs to be in.
+      // So just navigate to it.
+      this.navigate(rawUrl.url);
+    } else {
+      // The link coming in is more like `https://newspring.cc/<something>
+      // We need to convert this to a deep link first, and then navigate.
+      const urlArray = rawUrl.url.split(/[\s/]+/);
+      const path = urlArray[urlArray.length - 1];
+      const slug = path.split('?')[0];
 
-    const {
-      data: { contentItemFromSlug } = {},
-    } = await this.props.client.query({
-      query: GET_CONTENT_ITEM_BY_SLUG,
-      variables: { slug },
-    });
-    if (contentItemFromSlug) {
-      const newUrl = `newspringchurchapp://AppStackNavigator/ContentSingle?itemId=${
-        contentItemFromSlug.id
-      }`;
-      this.navigate(newUrl);
+      const {
+        data: { contentItemFromSlug } = {},
+      } = await this.props.client.query({
+        query: GET_CONTENT_ITEM_BY_SLUG,
+        variables: { slug },
+      });
+      if (contentItemFromSlug) {
+        const newUrl = `newspringchurchapp://AppStackNavigator/ContentSingle?itemId=${
+          contentItemFromSlug.id
+        }`;
+        this.navigate(newUrl);
+      }
     }
   };
 
