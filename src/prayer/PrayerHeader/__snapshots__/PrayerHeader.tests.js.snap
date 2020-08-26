@@ -20,13 +20,20 @@ exports[`the PrayerHeader component renders an anonymous prayer header 1`] = `
       }
       themeSize={80}
     >
-      <View
-        animate={null}
-        customAnimate={null}
-        onReady={false}
+      <Image
+        fadeDuration={250}
+        onLoad={[Function]}
+        size="medium"
+        source={
+          Array [
+            Object {
+              "cache": "force-cache",
+              "uri": "https://fillmurray.com/400/600",
+            },
+          ]
+        }
         style={
           Object {
-            "aspectRatio": 1,
             "backgroundColor": "#dddddd",
             "borderRadius": 40,
             "bottom": 0,
@@ -38,35 +45,8 @@ exports[`the PrayerHeader component renders an anonymous prayer header 1`] = `
             "width": "100%",
           }
         }
-      >
-        <Image
-          onLoad={[Function]}
-          size="medium"
-          source={
-            Array [
-              Object {
-                "cache": "force-cache",
-                "uri": "https://fillmurray.com/400/600",
-              },
-            ]
-          }
-          style={
-            Object {
-              "backgroundColor": "#dddddd",
-              "borderRadius": 40,
-              "bottom": 0,
-              "height": "100%",
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": "100%",
-            }
-          }
-          themeSize={80}
-        />
-      </View>
+        themeSize={80}
+      />
     </View>
   </View>
   <Text
@@ -117,13 +97,20 @@ exports[`the PrayerHeader component renders the prayer header 1`] = `
       }
       themeSize={80}
     >
-      <View
-        animate={null}
-        customAnimate={null}
-        onReady={false}
+      <Image
+        fadeDuration={250}
+        onLoad={[Function]}
+        size="medium"
+        source={
+          Array [
+            Object {
+              "cache": "force-cache",
+              "uri": "https://fillmurray.com/400/600",
+            },
+          ]
+        }
         style={
           Object {
-            "aspectRatio": 1,
             "backgroundColor": "#dddddd",
             "borderRadius": 40,
             "bottom": 0,
@@ -135,35 +122,8 @@ exports[`the PrayerHeader component renders the prayer header 1`] = `
             "width": "100%",
           }
         }
-      >
-        <Image
-          onLoad={[Function]}
-          size="medium"
-          source={
-            Array [
-              Object {
-                "cache": "force-cache",
-                "uri": "https://fillmurray.com/400/600",
-              },
-            ]
-          }
-          style={
-            Object {
-              "backgroundColor": "#dddddd",
-              "borderRadius": 40,
-              "bottom": 0,
-              "height": "100%",
-              "left": 0,
-              "opacity": 0,
-              "position": "absolute",
-              "right": 0,
-              "top": 0,
-              "width": "100%",
-            }
-          }
-          themeSize={80}
-        />
-      </View>
+        themeSize={80}
+      />
     </View>
   </View>
   <Text

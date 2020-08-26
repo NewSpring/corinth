@@ -918,13 +918,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                       }
                     }
                   >
-                    <View
-                      animate={null}
-                      customAnimate={null}
-                      onReady={false}
+                    <Image
+                      fadeDuration={250}
+                      onLoad={[Function]}
+                      source={
+                        Array [
+                          Object {
+                            "cache": "force-cache",
+                            "uri": "",
+                            "url": "",
+                          },
+                        ]
+                      }
                       style={
                         Object {
-                          "aspectRatio": 1,
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
                           "height": 64,
@@ -932,30 +939,7 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "width": 64,
                         }
                       }
-                    >
-                      <Image
-                        onLoad={[Function]}
-                        source={
-                          Array [
-                            Object {
-                              "cache": "force-cache",
-                              "uri": "",
-                              "url": "",
-                            },
-                          ]
-                        }
-                        style={
-                          Object {
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 64,
-                            "marginRight": 16,
-                            "opacity": 0,
-                            "width": 64,
-                          }
-                        }
-                      />
-                    </View>
+                    />
                     <View
                       style={
                         Object {
@@ -1015,13 +999,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                       }
                     }
                   >
-                    <View
-                      animate={null}
-                      customAnimate={null}
-                      onReady={false}
+                    <Image
+                      fadeDuration={250}
+                      onLoad={[Function]}
+                      source={
+                        Array [
+                          Object {
+                            "cache": "force-cache",
+                            "uri": "",
+                            "url": "",
+                          },
+                        ]
+                      }
                       style={
                         Object {
-                          "aspectRatio": 1,
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
                           "height": 64,
@@ -1029,30 +1020,7 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "width": 64,
                         }
                       }
-                    >
-                      <Image
-                        onLoad={[Function]}
-                        source={
-                          Array [
-                            Object {
-                              "cache": "force-cache",
-                              "uri": "",
-                              "url": "",
-                            },
-                          ]
-                        }
-                        style={
-                          Object {
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 64,
-                            "marginRight": 16,
-                            "opacity": 0,
-                            "width": 64,
-                          }
-                        }
-                      />
-                    </View>
+                    />
                     <View
                       style={
                         Object {
@@ -1112,13 +1080,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                       }
                     }
                   >
-                    <View
-                      animate={null}
-                      customAnimate={null}
-                      onReady={false}
+                    <Image
+                      fadeDuration={250}
+                      onLoad={[Function]}
+                      source={
+                        Array [
+                          Object {
+                            "cache": "force-cache",
+                            "uri": "",
+                            "url": "",
+                          },
+                        ]
+                      }
                       style={
                         Object {
-                          "aspectRatio": 1,
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
                           "height": 64,
@@ -1126,30 +1101,7 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "width": 64,
                         }
                       }
-                    >
-                      <Image
-                        onLoad={[Function]}
-                        source={
-                          Array [
-                            Object {
-                              "cache": "force-cache",
-                              "uri": "",
-                              "url": "",
-                            },
-                          ]
-                        }
-                        style={
-                          Object {
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 64,
-                            "marginRight": 16,
-                            "opacity": 0,
-                            "width": 64,
-                          }
-                        }
-                      />
-                    </View>
+                    />
                     <View
                       style={
                         Object {
@@ -1209,13 +1161,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                       }
                     }
                   >
-                    <View
-                      animate={null}
-                      customAnimate={null}
-                      onReady={false}
+                    <Image
+                      fadeDuration={250}
+                      onLoad={[Function]}
+                      source={
+                        Array [
+                          Object {
+                            "cache": "force-cache",
+                            "uri": "",
+                            "url": "",
+                          },
+                        ]
+                      }
                       style={
                         Object {
-                          "aspectRatio": 1,
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
                           "height": 64,
@@ -1223,30 +1182,7 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "width": 64,
                         }
                       }
-                    >
-                      <Image
-                        onLoad={[Function]}
-                        source={
-                          Array [
-                            Object {
-                              "cache": "force-cache",
-                              "uri": "",
-                              "url": "",
-                            },
-                          ]
-                        }
-                        style={
-                          Object {
-                            "backgroundColor": "#dddddd",
-                            "borderRadius": 16,
-                            "height": 64,
-                            "marginRight": 16,
-                            "opacity": 0,
-                            "width": 64,
-                          }
-                        }
-                      />
-                    </View>
+                    />
                     <View
                       style={
                         Object {
@@ -1337,35 +1273,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -1429,7 +1350,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -1501,35 +1421,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -1593,7 +1498,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -1665,35 +1569,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -1757,7 +1646,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -1829,35 +1717,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -1921,7 +1794,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -1993,35 +1865,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -2085,7 +1942,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -2157,35 +2013,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -2249,7 +2090,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -2321,35 +2161,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -2413,7 +2238,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -2485,35 +2309,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -2577,7 +2386,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -2649,35 +2457,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -2741,7 +2534,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
@@ -2813,35 +2605,20 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                     }
                   }
                 >
-                  <View
-                    animate={null}
-                    customAnimate={null}
-                    onReady={false}
+                  <Image
+                    fadeDuration={250}
+                    isLoading={true}
+                    onLoad={[Function]}
+                    source={Array []}
                     style={
                       Object {
-                        "aspectRatio": 1,
+                        "aspectRatio": 1.2,
                         "backgroundColor": "#dddddd",
                         "resizeMode": "cover",
                         "width": "100%",
                       }
                     }
-                  >
-                    <Image
-                      maxAspectRatio={1.78}
-                      minAspectRatio={1.2}
-                      onLoad={[Function]}
-                      source={Array []}
-                      style={
-                        Object {
-                          "aspectRatio": 1,
-                          "backgroundColor": "#dddddd",
-                          "opacity": 0,
-                          "resizeMode": "cover",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </View>
+                  />
                   <BVLinearGradient
                     colors={
                       Array [
@@ -2905,7 +2682,6 @@ exports[`User Home Feed Query should return correct query results 1`] = `
                           "alignSelf": "stretch",
                           "backgroundColor": "#dddddd",
                           "borderRadius": 16,
-                          "borderWidth": 0,
                           "height": 32,
                           "paddingHorizontal": 12,
                           "width": 64,
