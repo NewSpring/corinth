@@ -25,6 +25,7 @@ const AppProviders = (props) => (
         closeAuth={() =>
           checkOnboardingStatusAndNavigate({
             client,
+            navigation: NavigationService,
           })
         }
       >
