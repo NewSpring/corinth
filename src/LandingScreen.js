@@ -1,15 +1,13 @@
 import React from 'react';
-import { Image } from 'react-native';
-import { styled } from '@apollosproject/ui-kit';
+import { StyleSheet } from 'react-native';
+import { styled, ConnectedImage } from '@apollosproject/ui-kit';
 
 import ApollosLandingScreen from './ui/LandingScreen';
 
 const FullScreenImage = styled({
   resizeMode: 'cover',
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-})(Image);
+  ...StyleSheet.absoluteFill,
+})(ConnectedImage);
 
 const LandingScreen = ({ navigation }) => (
   <ApollosLandingScreen
