@@ -12,8 +12,9 @@ import TestingControlPanel from '../../testing-control-panel';
 import tabBarIcon from '../tabBarIcon';
 import Connect from './Connect';
 
-const CustomLikedFeed = () => (
+const CustomLikedFeed = (props) => (
   <LikedContentFeedConnected
+    {...props}
     Component={({ ...feedProps }) => (
       <FeedView
         {...feedProps}
