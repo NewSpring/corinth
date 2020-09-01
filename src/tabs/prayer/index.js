@@ -3,6 +3,7 @@ import tabBarIcon from '../tabBarIcon';
 import { AddPrayerFormConnected } from '../../prayer/AddPrayer/AddPrayerForm';
 import { AnswerPrayerFormConnected } from '../../prayer/AnswerPrayerForm';
 import PrayerList from '../../prayer/PrayerList';
+import PrayerSingle from '../../prayer/PrayerSingle';
 import UserPrayerList from '../../prayer/UserPrayerList';
 import WithYou from '../../prayer/AddPrayer/WithYou';
 import Prayer from './Prayer';
@@ -15,6 +16,7 @@ const PrayerNavigator = createStackNavigator(
     PrayerList,
     UserPrayerList,
     WithYou,
+    PrayerSingle,
   },
   {
     initialRouteName: 'Prayer',
