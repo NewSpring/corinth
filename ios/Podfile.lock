@@ -18,6 +18,7 @@ PODS:
     - AppCenter/Core
   - AppCenterReactNativeShared (3.1.1):
     - AppCenter/Core (= 3.3.2)
+  - AstronomerAnalytics (3.6.9)
   - boost-for-react-native (1.63.0)
   - BugsnagReactNative (2.23.7):
     - BugsnagReactNative/Core (= 2.23.7)
@@ -37,17 +38,20 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - google-cast-sdk-no-bluetooth (4.4.7):
-    - google-cast-sdk-no-bluetooth/Core (= 4.4.7)
-    - Protobuf (~> 3.0)
-  - google-cast-sdk-no-bluetooth/Core (4.4.7):
-    - Protobuf (~> 3.0)
+  - google-cast-sdk-no-bluetooth (4.4.8):
+    - google-cast-sdk-no-bluetooth/Core (= 4.4.8)
+    - GTMSessionFetcher/Core (~> 1.0)
+    - Protobuf (~> 3.12)
+  - google-cast-sdk-no-bluetooth/Core (4.4.8):
+    - GTMSessionFetcher/Core (~> 1.0)
+    - Protobuf (~> 3.12)
+  - GTMSessionFetcher/Core (1.4.0)
   - OneSignal (2.10.1)
   - Permission-Notifications (2.1.2):
     - RNPermissions
   - Permission-PhotoLibrary (2.1.2):
     - RNPermissions
-  - Protobuf (3.12.0)
+  - Protobuf (3.13.0)
   - React (0.60.5):
     - React-Core (= 0.60.5)
     - React-DevSupport (= 0.60.5)
@@ -157,6 +161,9 @@ PODS:
     - React-Core
   - RNAirplay (1.0.0):
     - React
+  - RNAnalytics (1.1.5):
+    - AstronomerAnalytics
+    - React
   - RNBootSplash (2.2.3):
     - React
   - RNCAsyncStorage (1.9.0):
@@ -223,6 +230,7 @@ DEPENDENCIES:
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNAirplay (from `../node_modules/@apollosproject/react-native-airplay-btn`)"
+  - "RNAnalytics (from `../node_modules/@metarouter/analytics-react-native`)"
   - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - "RNDateTimePicker (from `../node_modules/@react-native-community/datetimepicker`)"
@@ -240,8 +248,10 @@ SPEC REPOS:
     - Amplitude-iOS
     - AppCenter
     - AppCenterReactNativeShared
+    - AstronomerAnalytics
     - boost-for-react-native
     - google-cast-sdk-no-bluetooth
+    - GTMSessionFetcher
     - OneSignal
     - Protobuf
 
@@ -332,6 +342,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/rn-fetch-blob"
   RNAirplay:
     :path: "../node_modules/@apollosproject/react-native-airplay-btn"
+  RNAnalytics:
+    :path: "../node_modules/@metarouter/analytics-react-native"
   RNBootSplash:
     :path: "../node_modules/react-native-bootsplash"
   RNCAsyncStorage:
@@ -362,17 +374,19 @@ SPEC CHECKSUMS:
   appcenter-analytics: 42e368870a904af67fd93f043f3efa75ffa772a2
   appcenter-crashes: bfc5c03a6ddcfa158fcf4217d1724fd52f45d12c
   AppCenterReactNativeShared: b9fa50d999e830e03f086f487b1aa0f9772088c1
+  AstronomerAnalytics: 36f48678a387e41481650edd6247c6c95d994131
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BugsnagReactNative: 14c1b59cfbf34fd5591b734bfec65a277b677ef8
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  google-cast-sdk-no-bluetooth: 197acace9d5a78380bdaef8d45439b2250fa050b
+  google-cast-sdk-no-bluetooth: d5a60530c72b0907fb302d835952b6cb0ba5f128
+  GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   OneSignal: 8fb749fa07f88006403c9b659a570fb7fb74519a
   Permission-Notifications: 2f2ff1d01fe7677c3858c8f0a0bd3f3accdbb6bb
   Permission-PhotoLibrary: e29736d903e867d278747eb30951528303425f64
-  Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
+  Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
   React-cxxreact: 8384287780c4999351ad9b6e7a149d9ed10a2395
@@ -406,6 +420,7 @@ SPEC CHECKSUMS:
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   rn-fetch-blob: 651b8d076b43d0d7aa294a3d9ec16c00aab8bef9
   RNAirplay: 75777dd55dafbd3687703c3eb9c290ea6cc43248
+  RNAnalytics: 360b0680753d0e1d37152a25d47aa34a015cab72
   RNBootSplash: bbf3c78bd12e3e990eeb8c52db2025ab717b6385
   RNCAsyncStorage: 453cd7c335ec9ba3b877e27d02238956b76f3268
   RNDateTimePicker: c4285bfdd87430f1e575b81a4742b7586a09d53e

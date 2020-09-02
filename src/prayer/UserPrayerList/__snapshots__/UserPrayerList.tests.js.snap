@@ -47,12 +47,12 @@ exports[`the UserPrayerList component renders a list of prayers 1`] = `
       ListEmptyComponent={[Function]}
       ListHeaderComponent={
         <mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))>
-          <H6>
+          <ui-kit.Typography.H6>
             Viewing
-          </H6>
-          <mapProps(getContext(mapProps(withPropsOnChange(mapProps(H4)))))>
+          </ui-kit.Typography.H6>
+          <mapProps(getContext(mapProps(withPropsOnChange(mapProps(ui-kit.Typography.H4)))))>
             My Prayers
-          </mapProps(getContext(mapProps(withPropsOnChange(mapProps(H4)))))>
+          </mapProps(getContext(mapProps(withPropsOnChange(mapProps(ui-kit.Typography.H4)))))>
         </mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))>
       }
       data={Array []}
@@ -450,12 +450,12 @@ exports[`the UserPrayerList component renders no prayer text 1`] = `
       ListEmptyComponent={[Function]}
       ListHeaderComponent={
         <mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))>
-          <H6>
+          <ui-kit.Typography.H6>
             Viewing
-          </H6>
-          <mapProps(getContext(mapProps(withPropsOnChange(mapProps(H4)))))>
+          </ui-kit.Typography.H6>
+          <mapProps(getContext(mapProps(withPropsOnChange(mapProps(ui-kit.Typography.H4)))))>
             My Prayers
-          </mapProps(getContext(mapProps(withPropsOnChange(mapProps(H4)))))>
+          </mapProps(getContext(mapProps(withPropsOnChange(mapProps(ui-kit.Typography.H4)))))>
         </mapProps(getContext(mapProps(withPropsOnChange(mapProps(View)))))>
       }
       data={Array []}
