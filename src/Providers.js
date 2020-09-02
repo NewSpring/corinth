@@ -7,11 +7,11 @@ import { MediaPlayerProvider } from '@apollosproject/ui-media-player';
 import { NotificationsProvider } from '@apollosproject/ui-notifications';
 import { LiveProvider } from '@apollosproject/ui-connected';
 
+import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
 import ClientProvider, { client } from './client';
 import ExternalLinkProvider from './linking/Provider';
 import track from './analytics';
 import customTheme, { customIcons } from './theme';
-import { checkOnboardingStatusAndNavigate } from './ui/Onboarding/onboardingStatus';
 
 const AppProviders = (props) => (
   <ClientProvider {...props}>
@@ -25,6 +25,7 @@ const AppProviders = (props) => (
         closeAuth={() =>
           checkOnboardingStatusAndNavigate({
             client,
+            navigation: NavigationService,
           })
         }
       >
