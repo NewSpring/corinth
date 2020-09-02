@@ -74,7 +74,6 @@ const PrayerSingle = memo(
     action,
     isLoading,
     navigation,
-    ...props
   }) => (
     <Wrapper navigation={navigation}>
       {!isLoading && !getNotification(navigation) ? (
@@ -111,7 +110,7 @@ const PrayerSingle = memo(
           {({ track }) => (
             <Touchable
               onPress={() => {
-                props.navigation.navigate('ContentSingle', {
+                navigation.navigate('ContentSingle', {
                   // TODO: this should come from a content channel
                   itemId: 'MediaContentItem:20f5b6548d64b1ac62a1c4b0deb0bfcb',
                   itemTitle: 'Learning how to pray like Jesus',
