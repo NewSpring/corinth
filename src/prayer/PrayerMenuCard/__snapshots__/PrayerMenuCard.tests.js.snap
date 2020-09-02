@@ -52,11 +52,17 @@ exports[`the PrayerMenuCard component renders a prayer menu card 1`] = `
           }
         }
       >
-        <View
-          animate={null}
-          customAnimate={null}
-          forceRatio={1}
-          onReady={false}
+        <Image
+          fadeDuration={250}
+          onLoad={[Function]}
+          source={
+            Array [
+              Object {
+                "cache": "force-cache",
+                "uri": "https://picsum.photos/600/400/?random",
+              },
+            ]
+          }
           style={
             Object {
               "aspectRatio": 1,
@@ -65,29 +71,7 @@ exports[`the PrayerMenuCard component renders a prayer menu card 1`] = `
               "width": "100%",
             }
           }
-        >
-          <Image
-            maxAspectRatio={1}
-            minAspectRatio={1}
-            onLoad={[Function]}
-            source={
-              Array [
-                Object {
-                  "cache": "force-cache",
-                  "uri": "https://picsum.photos/600/400/?random",
-                },
-              ]
-            }
-            style={
-              Object {
-                "backgroundColor": "#dddddd",
-                "opacity": 0,
-                "resizeMode": "cover",
-                "width": "100%",
-              }
-            }
-          />
-        </View>
+        />
         <BVLinearGradient
           colors={
             Array [
