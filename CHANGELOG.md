@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.8.4](https://github.com/newspring/corinth/compare/v7.8.3...v7.8.4) (2020-09-14)
+
+
+### Bug Fixes
+
+* Make the linking provider correctly handle deep links ([#272](https://github.com/newspring/corinth/issues/272)) ([537f092](https://github.com/newspring/corinth/commit/537f092e47570179983d59e01ecd2175d5d4782c))
+
 ## [7.8.3](https://github.com/newspring/corinth/compare/v7.8.2...v7.8.3) (2020-07-27)
 
 ## [7.8.2](https://github.com/newspring/corinth/compare/v7.8.1...v7.8.2) (2020-07-21)
