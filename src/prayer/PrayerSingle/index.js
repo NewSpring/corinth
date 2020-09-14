@@ -115,9 +115,9 @@ const PrayerSingle = memo(
         <PrayerFromNotification navigation={navigation} />
       ) : (
         <View>
-          {!isLoading && !getNotification(navigation) ? (
+          {!isLoading && (
             <AbsolutePositionedView>{action}</AbsolutePositionedView>
-          ) : null}
+          )}
           {showDate ? (
             <GreyH5>
               {prayer.startTime ? moment(prayer.startTime).fromNow() : ''}
@@ -144,7 +144,7 @@ const PrayerSingle = memo(
               <BodyText>{prayer.answer}</BodyText>
             </PrayerView>
           ) : null}
-          {showHelp && !getNotification(navigation) ? (
+          {showHelp ? (
             <AnalyticsConsumer>
               {({ track }) => (
                 <Touchable
