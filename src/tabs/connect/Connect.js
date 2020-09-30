@@ -36,7 +36,13 @@ class Connect extends PureComponent {
         <SafeAreaView>
           <ScrollView>
             <UserAvatarHeader />
-            <ActionBar />
+            <Query query={GET_USER_PROFILE} fetchPolicy="cache-and-network">
+              {({
+                data: {
+                  currentUser: { profile: { isGroupLeader } = {} } = {},
+                } = {},
+              }) => <ActionBar isGroupLeader={isGroupLeader} />}
+            </Query>
             <HorizontalLikedContentFeedConnected
               Component={({ ...feedProps }) => (
                 <HorizontalLikedContentFeed
@@ -51,13 +57,7 @@ class Connect extends PureComponent {
                 />
               )}
             />
-            <Query query={GET_USER_PROFILE} fetchPolicy="cache-and-network">
-              {({
-                data: {
-                  currentUser: { profile: { isGroupLeader } = {} } = {},
-                } = {},
-              }) => <ActionTable isGroupLeader={isGroupLeader} />}
-            </Query>
+            <ActionTable />
           </ScrollView>
         </SafeAreaView>
       </BackgroundView>
