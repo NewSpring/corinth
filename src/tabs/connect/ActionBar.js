@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 
-const Toolbar = ({ navigation }) => (
+const Toolbar = ({ navigation, isGroupLeader }) => (
   <AnalyticsConsumer>
     {({ track }) => (
       <RockAuthedWebBrowser>
@@ -25,18 +25,33 @@ const Toolbar = ({ navigation }) => (
               icon="give"
               label="Give"
             />
-            <ActionBarItem
-              onPress={() => {
-                track({ eventName: "Clicked 'Join Group'" });
-                openUrl(
-                  'https://newspring.cc/groups/?hidenav=true',
-                  {},
-                  { useRockToken: true }
-                );
-              }}
-              icon="group"
-              label="Join Group"
-            />
+            {isGroupLeader ? (
+              <ActionBarItem
+                onPress={() => {
+                  track({ eventName: "Clicked 'My Group'" });
+                  openUrl(
+                    'https://newspring.cc/account/groups/?hidenav=true',
+                    {},
+                    { useRockToken: true }
+                  );
+                }}
+                icon="group"
+                label="My Group"
+              />
+            ) : (
+              <ActionBarItem
+                onPress={() => {
+                  track({ eventName: "Clicked 'Join Group'" });
+                  openUrl(
+                    'https://newspring.cc/groups/?hidenav=true',
+                    {},
+                    { useRockToken: true }
+                  );
+                }}
+                icon="group"
+                label="Join Group"
+              />
+            )}
             <Query
               query={gql`
                 {
@@ -79,6 +94,7 @@ Toolbar.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
   }).isRequired,
+  isGroupLeader: PropTypes.bool,
 };
 
 export default withNavigation(Toolbar);

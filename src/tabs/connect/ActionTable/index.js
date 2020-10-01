@@ -1,6 +1,5 @@
 import React from 'react';
 import { View } from 'react-native';
-import PropTypes from 'prop-types';
 
 import {
   TableView,
@@ -27,7 +26,7 @@ const Name = styled({
   flexGrow: 1,
 })(View);
 
-const ActionTable = ({ isGroupLeader }) => (
+const ActionTable = () => (
   <RockAuthedWebBrowser>
     {(openUrl) => (
       <View>
@@ -81,25 +80,6 @@ const ActionTable = ({ isGroupLeader }) => (
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
-          {isGroupLeader ? (
-            <>
-              <Divider />
-              <Touchable
-                onPress={() =>
-                  openUrl(
-                    'https://newspring.cc/groups/leader/?hidenav=true',
-                    {},
-                    { useRockToken: true }
-                  )
-                }
-              >
-                <Cell>
-                  <CellText>Manage your group</CellText>
-                  <CellIcon name="arrow-next" />
-                </Cell>
-              </Touchable>
-            </>
-          ) : null}
           <Divider />
           <Touchable
             onPress={() =>
@@ -145,10 +125,6 @@ const ActionTable = ({ isGroupLeader }) => (
     )}
   </RockAuthedWebBrowser>
 );
-
-ActionTable.propTypes = {
-  isGroupLeader: PropTypes.bool,
-};
 
 const StyledActionTable = styled(({ theme }) => ({
   paddingBottom: theme.sizing.baseUnit * 100,
