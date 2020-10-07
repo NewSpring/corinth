@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { Query } from 'react-apollo';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 import {
   BodyText,
@@ -15,6 +16,7 @@ import { ScriptureList } from '@apollosproject/ui-scripture';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
 import MediaControls from '../../ui/MediaControls';
+import { GET_USER_PROFILE } from '../../tabs/connect/UserAvatarHeader';
 
 const MediaView = styled(({ theme }) => ({
   paddingTop: theme.sizing.baseUnit * 2,
@@ -52,47 +54,58 @@ const ContentTab = ({
   navigationState,
   navigation,
 }) => (
-  <ScrollView>
-    <ContentContainer isLoading={isLoading}>
-      <H2 padded>{title}</H2>
-      <MediaView>
-        <MediaControls contentId={id} />
-      </MediaView>
-      {references && references.length ? (
-        <ScriptureList
-          references={references}
-          onPress={navigationState.route.jumpTo} // eslint-disable-line react/jsx-handler-names
-          tabDestination={'scripture'}
-        />
-      ) : null}
-      <ContentHTMLViewConnected contentId={id} />
-      <RockAuthedWebBrowser>
-        {(openUrl) => (
-          <AdUnit>
-            <AdUnitH3>Daily Devotionals, Delivered Every Morning</AdUnitH3>
-            <BodyText>
-              Sign up to receive daily devotionals via text message every
-              morning.
-            </BodyText>
-            <AdUnitButton
-              title={'Subscribe Now'}
-              onPress={() =>
-                openUrl(
-                  'https://newspring.cc/workflows/510?CommunicationList=5e888a13-b0b5-411f-87bd-fd3352deca31&hidenav=true',
-                  {},
-                  { useRockToken: true }
-                )
-              }
-            />
-          </AdUnit>
-        )}
-      </RockAuthedWebBrowser>
-    </ContentContainer>
-    <HorizontalContentSeriesFeedConnected
-      contentId={id}
-      navigation={navigation}
-    />
-  </ScrollView>
+  <Query query={GET_USER_PROFILE} fetchPolicy="cache-and-network">
+    {({ data: { currentUser = { profile: {} } } = {} }) => {
+      const { isInReadMyBible } = currentUser.profile;
+      return (
+        <ScrollView>
+          <ContentContainer isLoading={isLoading}>
+            <H2 padded>{title}</H2>
+            <MediaView>
+              <MediaControls contentId={id} />
+            </MediaView>
+            {references && references.length ? (
+              <ScriptureList
+                references={references}
+                onPress={navigationState.route.jumpTo} // eslint-disable-line react/jsx-handler-names
+                tabDestination={'scripture'}
+              />
+            ) : null}
+            <ContentHTMLViewConnected contentId={id} />
+            {!isInReadMyBible ? (
+              <RockAuthedWebBrowser>
+                {(openUrl) => (
+                  <AdUnit>
+                    <AdUnitH3>
+                      Daily Devotionals, Delivered Every Morning
+                    </AdUnitH3>
+                    <BodyText>
+                      Sign up to receive daily devotionals via text message
+                      every morning.
+                    </BodyText>
+                    <AdUnitButton
+                      title={'Subscribe Now'}
+                      onPress={() =>
+                        openUrl(
+                          'https://newspring.cc/workflows/510?CommunicationList=5e888a13-b0b5-411f-87bd-fd3352deca31&hidenav=true',
+                          {},
+                          { useRockToken: true }
+                        )
+                      }
+                    />
+                  </AdUnit>
+                )}
+              </RockAuthedWebBrowser>
+            ) : null}
+          </ContentContainer>
+          <HorizontalContentSeriesFeedConnected
+            contentId={id}
+            navigation={navigation}
+          />
+        </ScrollView>
+      );
+    }}
+  </Query>
 );
 
 ContentTab.propTypes = {
