@@ -39,6 +39,8 @@ const AdUnitH3 = styled(({ theme }) => ({
 
 const AdUnitButton = styled(({ theme }) => ({
   marginTop: theme.sizing.baseUnit,
+  backgroundColor: theme.colors.secondary,
+  borderColor: theme.colors.secondary,
 }))(Button);
 
 /**
