@@ -522,6 +522,96 @@ exports[`the Devotional component renders a devotional 1`] = `
                                     }
                                   />
                                 </View>
+                                <View
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#dddddd",
+                                      "borderRadius": 10,
+                                      "padding": 32,
+                                    }
+                                  }
+                                >
+                                  <Text
+                                    style={
+                                      Object {
+                                        "color": "#303030",
+                                        "fontFamily": "Colfax-Black",
+                                        "fontSize": 24,
+                                        "lineHeight": 27.6,
+                                        "paddingBottom": 16,
+                                      }
+                                    }
+                                  >
+                                    Daily Devotionals, Delivered Every Morning
+                                  </Text>
+                                  <Text
+                                    bold={false}
+                                    italic={false}
+                                    style={
+                                      Object {
+                                        "color": "#303030",
+                                        "fontFamily": "Colfax-Regular",
+                                        "fontSize": 16,
+                                        "lineHeight": 26,
+                                      }
+                                    }
+                                  >
+                                    Sign up to receive daily devotionals via text message every morning.
+                                  </Text>
+                                  <View
+                                    accessible={true}
+                                    clickable={true}
+                                    isTVSelectable={true}
+                                    onClick={[Function]}
+                                    onResponderGrant={[Function]}
+                                    onResponderMove={[Function]}
+                                    onResponderRelease={[Function]}
+                                    onResponderTerminate={[Function]}
+                                    onResponderTerminationRequest={[Function]}
+                                    onStartShouldSetResponder={[Function]}
+                                    style={
+                                      Object {
+                                        "opacity": 1,
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      bordered={false}
+                                      disabled={false}
+                                      pill={true}
+                                      style={
+                                        Object {
+                                          "alignItems": "center",
+                                          "backgroundColor": "#6bac43",
+                                          "borderColor": "#6bac43",
+                                          "borderRadius": 48,
+                                          "borderWidth": 2,
+                                          "elevation": 2,
+                                          "flexDirection": "row",
+                                          "height": 48,
+                                          "justifyContent": "center",
+                                          "marginTop": 16,
+                                          "opacity": 1,
+                                          "overflow": "hidden",
+                                          "paddingHorizontal": 16,
+                                        }
+                                      }
+                                    >
+                                      <Text
+                                        style={
+                                          Object {
+                                            "color": "#ffffff",
+                                            "fontFamily": "Colfax-Bold",
+                                            "fontSize": 16,
+                                            "lineHeight": 23.04,
+                                          }
+                                        }
+                                      >
+                                        Subscribe Now
+                                      </Text>
+                                    </View>
+                                  </View>
+                                </View>
                               </View>
                             </View>
                           </RCTScrollView>
