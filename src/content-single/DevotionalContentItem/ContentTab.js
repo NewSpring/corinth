@@ -1,7 +1,16 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { PaddedView, H2, styled, withIsLoading } from '@apollosproject/ui-kit';
+import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
+import {
+  BodyText,
+  Button,
+  PaddedView,
+  H2,
+  H3,
+  styled,
+  withIsLoading,
+} from '@apollosproject/ui-kit';
 import { ScriptureList } from '@apollosproject/ui-scripture';
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
@@ -15,6 +24,20 @@ const MediaView = styled(({ theme }) => ({
 const ContentContainer = withIsLoading(
   styled({ paddingVertical: 0 })(PaddedView)
 );
+
+const AdUnit = styled(({ theme }) => ({
+  padding: theme.sizing.baseUnit * 2,
+  backgroundColor: theme.colors.lightTertiary,
+  borderRadius: 10,
+}))(View);
+
+const AdUnitH3 = styled(({ theme }) => ({
+  paddingBottom: theme.sizing.baseUnit,
+}))(H3);
+
+const AdUnitButton = styled(({ theme }) => ({
+  marginTop: theme.sizing.baseUnit,
+}))(Button);
 
 /**
  * This is the Content side of the Devotional tabbed component.
@@ -43,6 +66,27 @@ const ContentTab = ({
         />
       ) : null}
       <ContentHTMLViewConnected contentId={id} />
+      <RockAuthedWebBrowser>
+        {(openUrl) => (
+          <AdUnit>
+            <AdUnitH3>Daily Devotionals, Delivered Every Morning</AdUnitH3>
+            <BodyText>
+              Sign up to receive daily devotionals via text message every
+              morning.
+            </BodyText>
+            <AdUnitButton
+              title={'Subscribe Now'}
+              onPress={() =>
+                openUrl(
+                  'https://newspring.cc/workflows/510?CommunicationList=5e888a13-b0b5-411f-87bd-fd3352deca31&hidenav=true',
+                  {},
+                  { useRockToken: true }
+                )
+              }
+            />
+          </AdUnit>
+        )}
+      </RockAuthedWebBrowser>
     </ContentContainer>
     <HorizontalContentSeriesFeedConnected
       contentId={id}
