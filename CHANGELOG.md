@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.9.0](https://github.com/newspring/corinth/compare/v7.8.4...v7.9.0) (2020-10-14)
+
+
+### Features
+
+* Added Prayer Notifications ([#282](https://github.com/newspring/corinth/issues/282)) ([a73d8db](https://github.com/newspring/corinth/commit/a73d8db9f471c630299db53dee6a674f68118810))
+
 ## [7.8.4](https://github.com/newspring/corinth/compare/v7.8.3...v7.8.4) (2020-09-14)
 
 
