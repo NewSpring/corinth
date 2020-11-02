@@ -12,23 +12,24 @@ import {
   NavigationService,
 } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
+import {
+  AnalyticsConsumer,
+  CoreNavigationAnalytics,
+} from '@apollosproject/ui-analytics';
 import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import { MediaPlayer } from '@apollosproject/ui-media-player';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 
-import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
 import Providers from './Providers';
 import ContentSingle from './content-single';
+import NodeSingle from './node-single';
+
 import Event from './event';
 import Tabs from './tabs';
 import PersonalDetails from './user-settings/PersonalDetails';
 import ChangePassword from './user-settings/ChangePassword';
-
-import LandingScreen from './LandingScreen';
-import UserWebBrowser from './user-web-browser';
-import Onboarding from './ui/Onboarding';
 import Prayer from './prayer';
 
 // need to initialize error tracking at the entrypoint
@@ -36,6 +37,10 @@ import Prayer from './prayer';
 import Crashes from 'appcenter-crashes';
 // eslint-disable-next-line
 import bugsnag from './bugsnag';
+
+import LandingScreen from './LandingScreen';
+import UserWebBrowser from './user-web-browser';
+import Onboarding from './ui/Onboarding';
 
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: theme.barStyle,
@@ -79,7 +84,7 @@ const EnhancedAuth = (props) => (
     )}
   </RockAuthedWebBrowser>
 );
-// 😑
+
 hoistNonReactStatic(EnhancedAuth, Auth);
 
 const AppNavigator = createStackNavigator(
@@ -87,6 +92,7 @@ const AppNavigator = createStackNavigator(
     ProtectedRoute: ProtectedRouteWithSplashScreen,
     Tabs,
     ContentSingle,
+    NodeSingle,
     Event,
     Auth: EnhancedAuth,
     PersonalDetails,
@@ -105,73 +111,52 @@ const AppNavigator = createStackNavigator(
   }
 );
 
-function getActiveRouteName(navigationState) {
-  if (!navigationState) {
-    return null;
-  }
-  const route = navigationState.routes[navigationState.index];
-  // dive into nested navigators
-  if (route.routes) {
-    return getActiveRouteName(route);
-  }
-  return route.routeName;
-}
-
 const AppContainer = createAppContainer(AppNavigator);
 
 const App = () => (
   <Providers>
     <BackgroundView>
       <AppStatusBar barStyle="dark-content" />
-      <AnalyticsConsumer>
-        {({ track }) => (
+      <CoreNavigationAnalytics>
+        {(props) => (
           <AppContainer
             ref={(navigatorRef) => {
               NavigationService.setTopLevelNavigator(navigatorRef);
             }}
-            onNavigationStateChange={(prevState, currentState) => {
-              const currentScreen = getActiveRouteName(currentState);
-              const prevScreen = getActiveRouteName(prevState);
-
-              if (prevScreen !== currentScreen) {
-                track({
-                  eventName: `Viewed ${currentScreen}`,
-                });
-              }
-            }}
+            {...props}
           />
         )}
-      </AnalyticsConsumer>
-      {/* Google Cast is experimental until we can fix it */}
-      <Query
-        query={gql`
-          {
-            currentUser {
-              id
-              profile {
+        {/* Google Cast is experimental until we can fix it */}
+        <Query
+          query={gql`
+            {
+              currentUser {
                 id
-                testGroups {
+                profile {
                   id
-                  name
+                  testGroups {
+                    id
+                    name
+                  }
                 }
               }
             }
-          }
-        `}
-        fetch-policy={'cache-and-network'}
-      >
-        {({ data, loading, error }) => {
-          if (loading) return null;
-          if (error) return null;
-          return data.currentUser.profile.testGroups.filter(
-            ({ name }) => name === 'Experimental Features'
-          ).length ? (
-            <MediaPlayer />
-          ) : (
-            <MediaPlayer googleCastEnabled={false} />
-          );
-        }}
-      </Query>
+          `}
+          fetch-policy={'cache-and-network'}
+        >
+          {({ data, loading, error }) => {
+            if (loading) return null;
+            if (error) return null;
+            return data.currentUser.profile.testGroups.filter(
+              ({ name }) => name === 'Experimental Features'
+            ).length ? (
+              <MediaPlayer />
+            ) : (
+              <MediaPlayer googleCastEnabled={false} />
+            );
+          }}
+        </Query>
+      </CoreNavigationAnalytics>
     </BackgroundView>
   </Providers>
 );

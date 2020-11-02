@@ -1,31 +1,16 @@
 import React, { PureComponent } from 'react';
-import { Query } from 'react-apollo';
 import { Image } from 'react-native';
 import SafeAreaView from 'react-native-safe-area-view';
-import { get } from 'lodash';
 import PropTypes from 'prop-types';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
 
+import { styled, BackgroundView } from '@apollosproject/ui-kit';
 import {
-  ContentCardConnected,
-  fetchMoreResolver,
-  LiveConsumer,
+  FeaturesFeedConnected,
+  FEATURE_FEED_ACTION_MAP,
+  RockAuthedWebBrowser,
 } from '@apollosproject/ui-connected';
-import {
-  styled,
-  FeedView,
-  BackgroundView,
-  TouchableScale,
-  FeaturedCard,
-  withTheme,
-  CardLabel,
-} from '@apollosproject/ui-kit';
-
-import LiveButton from '../../ui/LiveButton';
-import LiveIcon from '../../ui/LiveIcon';
-
-import Features from './Features';
-import GET_USER_FEED from './getUserFeed';
-import GET_CAMPAIGN_CONTENT_ITEM from './getCampaignContentItem';
 
 const LogoTitle = styled(({ theme }) => ({
   height: theme.sizing.baseUnit,
@@ -34,29 +19,25 @@ const LogoTitle = styled(({ theme }) => ({
   resizeMode: 'contain',
 }))(Image);
 
-const CampaignLabel = withTheme(({ isLoading, isLive, title, theme }) => ({
-  title: isLive ? 'Live' : title,
-  IconComponent: isLive ? LiveIcon : null,
-  style: isLoading
-    ? {}
-    : {
-        marginBottom: theme.sizing.baseUnit,
-      },
-}))(CardLabel);
+function handleOnPress({ action, ...props }) {
+  if (FEATURE_FEED_ACTION_MAP[action]) {
+    FEATURE_FEED_ACTION_MAP[action]({ action, ...props });
+  }
+  // If you add additional actions, you can handle them here.
+  // Or add them to the FEATURE_FEED_ACTION_MAP, with the syntax
+  // { [ActionName]: function({ relatedNode, action, ...FeatureFeedConnectedProps}) }
+}
 
-const CampaignCard = ({ isLive, hasAction, summary, ...props }) => (
-  <FeaturedCard
-    {...props}
-    hasAction={isLive ? false : hasAction}
-    summary={isLive ? 'Tap for sermon notes and more' : summary}
-  />
-);
-
-CampaignCard.propTypes = {
-  isLive: PropTypes.bool,
-  hasAction: PropTypes.bool,
-  summary: PropTypes.string,
-};
+// getHomeFeed uses the HOME_FEATURES in the config.yml
+// You can also hardcode an ID if you are confident it will never change
+// Or use some other strategy to get a FeatureFeed.id
+const GET_HOME_FEED = gql`
+  query getHomeFeatureFeed {
+    homeFeedFeatures {
+      id
+    }
+  }
+`;
 
 class Home extends PureComponent {
   static navigationOptions = () => ({
@@ -71,112 +52,29 @@ class Home extends PureComponent {
     }),
   };
 
-  handleOnPressItem = (item) =>
-    this.props.navigation.navigate('ContentSingle', {
-      itemId: item.id,
-      transitionKey: item.transitionKey,
-    });
-
   render() {
     return (
-      <BackgroundView>
-        <SafeAreaView>
-          <Query
-            query={GET_USER_FEED}
-            variables={{
-              first: 10,
-              after: null,
-            }}
-            fetchPolicy="cache-and-network"
-          >
-            {({ loading, error, data, refetch, fetchMore, variables }) => (
-              <FeedView
-                ListItemComponent={({ ...item }) => (
-                  <ContentCardConnected
-                    labelText={
-                      item.parentChannel &&
-                      item.parentChannel.name.split(' - ').pop()
+      <RockAuthedWebBrowser>
+        {(openUrl) => (
+          <BackgroundView>
+            <SafeAreaView>
+              <Query query={GET_HOME_FEED}>
+                {({ data }) => (
+                  <FeaturesFeedConnected
+                    openUrl={openUrl}
+                    navigation={this.props.navigation}
+                    featureFeedId={data?.homeFeedFeatures?.id}
+                    onPressActionItem={handleOnPress}
+                    ListHeaderComponent={
+                      <LogoTitle source={require('./wordmark.png')} />
                     }
-                    {...item}
                   />
                 )}
-                content={get(data, 'userFeed.edges', []).map(
-                  (edge) => edge.node
-                )}
-                fetchMore={fetchMoreResolver({
-                  collectionName: 'userFeed',
-                  fetchMore,
-                  variables,
-                  data,
-                })}
-                isLoading={loading}
-                error={error}
-                refetch={refetch}
-                ListHeaderComponent={
-                  <>
-                    <LogoTitle source={require('./wordmark.png')} />
-                    <Query
-                      query={GET_CAMPAIGN_CONTENT_ITEM}
-                      fetchPolicy="cache-and-network"
-                    >
-                      {({ data: featuredData, loading: isFeaturedLoading }) => {
-                        const featuredContent = get(
-                          featuredData,
-                          'campaigns.edges',
-                          []
-                        ).map((edge) => edge.node);
-
-                        const featuredItem = get(
-                          featuredContent[0],
-                          'childContentItemsConnection.edges[0].node',
-                          {}
-                        );
-
-                        return featuredItem.id ? (
-                          <>
-                            <LiveButton contentId={featuredItem.id} />
-                            <TouchableScale
-                              onPress={() =>
-                                this.handleOnPressItem({
-                                  id: featuredItem.id,
-                                })
-                              }
-                            >
-                              <ContentCardConnected
-                                Component={CampaignCard}
-                                contentId={featuredItem.id}
-                                isLoading={isFeaturedLoading}
-                                LabelComponent={
-                                  <LiveConsumer contentId={featuredItem.id}>
-                                    {(liveStream) => (
-                                      <CampaignLabel
-                                        title={
-                                          featuredItem.parentChannel &&
-                                          featuredItem.parentChannel.name
-                                            .split(' - ')
-                                            .pop()
-                                        }
-                                        isLive={!!liveStream}
-                                        isLoading={isFeaturedLoading}
-                                      />
-                                    )}
-                                  </LiveConsumer>
-                                }
-                              />
-                            </TouchableScale>
-                          </>
-                        ) : null;
-                      }}
-                    </Query>
-                    <Features navigation={this.props.navigation} />
-                  </>
-                }
-                onPressItem={this.handleOnPressItem}
-              />
-            )}
-          </Query>
-        </SafeAreaView>
-      </BackgroundView>
+              </Query>
+            </SafeAreaView>
+          </BackgroundView>
+        )}
+      </RockAuthedWebBrowser>
     );
   }
 }

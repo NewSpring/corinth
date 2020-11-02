@@ -8,6 +8,7 @@ import { ErrorCard, ThemeMixin } from '@apollosproject/ui-kit';
 import { TrackEventWhenLoaded } from '@apollosproject/ui-analytics';
 import { InteractWhenLoadedConnected } from '@apollosproject/ui-connected';
 
+import NavigationHeader from '../ui/NavigationHeader';
 import ActionContainer from './ActionContainer';
 import GET_CONTENT_ITEM from './getContentItem';
 
@@ -15,8 +16,6 @@ import DevotionalContentItem from './DevotionalContentItem';
 import UniversalContentItem from './UniversalContentItem';
 import WeekendContentItem from './WeekendContentItem';
 import ContentSeriesContentItem from './ContentSeriesContentItem';
-
-import NavigationHeader from './NavigationHeader';
 
 class ContentSingle extends PureComponent {
   static propTypes = {
@@ -93,24 +92,13 @@ class ContentSingle extends PureComponent {
     const content = data.node || {};
 
     const { theme = {}, id } = content;
-    const colors = get(theme, 'colors') || {};
-    const { primary, secondary, screen, paper } = colors;
 
     return (
       <ThemeMixin
-        mixin={
-          content.theme
-            ? {
-                type: 'light',
-                colors: {
-                  ...(primary ? { primary, tertiary: primary } : {}),
-                  ...(secondary ? { secondary } : {}),
-                  ...(screen ? { screen } : {}),
-                  ...(paper ? { paper } : {}),
-                },
-              }
-            : {}
-        }
+        mixin={{
+          type: get(theme, 'type'),
+          colors: get(theme, 'colors'),
+        }}
       >
         <InteractWhenLoadedConnected
           isLoading={loading}
@@ -120,7 +108,10 @@ class ContentSingle extends PureComponent {
         <TrackEventWhenLoaded
           isLoading={loading}
           eventName={'View Content'}
-          properties={{ title: content.title, itemId: this.itemId }}
+          properties={{
+            title: content.title,
+            itemId: this.itemId,
+          }}
         />
         {this.renderContent({ content, loading, error })}
         <ActionContainer itemId={id} />
