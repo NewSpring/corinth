@@ -96,8 +96,8 @@ class ContentSingle extends PureComponent {
     return (
       <ThemeMixin
         mixin={{
-          type: get(theme, 'type'),
-          colors: get(theme, 'colors'),
+          type: get(theme, 'type', 'light').toLowerCase(),
+          colors: get(theme, 'colors') || {},
         }}
       >
         <InteractWhenLoadedConnected

@@ -7,7 +7,7 @@ import {
   // HorizontalContentSeriesFeedConnected,
   LiveConsumer,
   // MediaControlsConnected,
-  FeaturesFeedConnected,
+  // FeaturesFeedConnected,
   // LiveConsumer,
   ContentSingleFeaturesConnected,
 } from '@apollosproject/ui-connected';
@@ -21,7 +21,7 @@ import {
   ThemeMixin,
   ThemeConsumer,
   CardLabel,
-  withTheme,
+  // withTheme,
 } from '@apollosproject/ui-kit';
 
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
@@ -39,22 +39,22 @@ const Header = styled(({ hasMedia, theme }) => ({
   // backgroundColor: theme.colors.primary,
 }))(PaddedView);
 
-const StyledMediaControlsConnected = styled(({ theme }) => ({
-  marginTop: -(theme.sizing.baseUnit * 2.5),
-}))(MediaControlsConnected);
+// const StyledMediaControlsConnected = styled(({ theme }) => ({
+//   marginTop: -(theme.sizing.baseUnit * 2.5),
+// }))(MediaControlsConnected);
 
-const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
-  ...(isLive
-    ? {
-        title: 'Live',
-        type: 'secondary',
-        icon: 'live-dot',
-        iconSize: theme.helpers.rem(0.4375), // using our typographic size unit based on fontSize so that the icon scales correctly with font size changes.
-      }
-    : {
-        title,
-      }),
-}))(CardLabel);
+// const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
+//   ...(isLive
+//     ? {
+//         title: 'Live',
+//         type: 'secondary',
+//         icon: 'live-dot',
+//         iconSize: theme.helpers.rem(0.4375), // using our typographic size unit based on fontSize so that the icon scales correctly with font size changes.
+//       }
+//     : {
+//         title,
+//       }),
+// }))(CardLabel);
 
 const WeekendContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
