@@ -48,6 +48,28 @@ ApollosConfig.loadJs({
   FRAGMENTS: {
     ...FRAGMENTS,
     // Same as core, but not PrayerListFeature.
+    RELATED_NODE_FRAGMENT: gql`
+      fragment RelatedFeatureNodeFragment on Node {
+        id
+        ... on Url {
+          url
+        }
+        ... on ContentChannel {
+          name
+        }
+        ... on ContentItem {
+          theme {
+            type
+            colors {
+              primary
+              secondary
+              screen
+              paper
+            }
+          }
+        }
+      }
+    `,
     FEED_FEATURES_FRAGMENT: liteFeatures,
     LITE_FEATURES_FRAGMENT: liteFeatures,
     CONTENT_CARD_FRAGMENT: gql`
