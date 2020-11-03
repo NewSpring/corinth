@@ -7,7 +7,7 @@ import { Query } from 'react-apollo';
 
 import { throttle } from 'lodash';
 
-import { BackgroundView } from '@apollosproject/ui-kit';
+import { BackgroundView, styled } from '@apollosproject/ui-kit';
 import {
   FeaturesFeedConnected,
   FEATURE_FEED_ACTION_MAP,
@@ -36,6 +36,10 @@ export const GET_DISCOVER_FEED = gql`
   }
 `;
 
+const PaddedBackgroundView = styled(({ theme }) => ({
+  paddingBottom: theme.sizing.baseUnit * 2.5, // stop cards overflowing under the tabbar
+}))(BackgroundView);
+
 function Discover({ navigation }) {
   const [searchText, setSearchText] = useState('');
   const [isFocused, setIsFocused] = useState(false);
@@ -43,7 +47,7 @@ function Discover({ navigation }) {
   return (
     <RockAuthedWebBrowser>
       {(openUrl) => (
-        <BackgroundView>
+        <PaddedBackgroundView>
           <SafeAreaView>
             <SearchInputHeader
               onChangeText={throttle(setSearchText, 300)}
@@ -64,7 +68,7 @@ function Discover({ navigation }) {
               </Query>
             )}
           </SafeAreaView>
-        </BackgroundView>
+        </PaddedBackgroundView>
       )}
     </RockAuthedWebBrowser>
   );
