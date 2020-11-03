@@ -1,5 +1,7 @@
 import React from 'react';
 import { get } from 'lodash';
+import PropTypes from 'prop-types';
+
 /* Export your custom prop overrides here. */
 import {
   DefaultCard,
@@ -10,25 +12,39 @@ import {
 
 import { LiveConsumer } from '@apollosproject/ui-connected';
 
-const FeaturedCardWithLive = ({ contentId, labelText, ...item }) => (
-  <LiveConsumer contentId={contentId}>
+const FeaturedCardWithLive = ({
+  labelText,
+  hasAction,
+  actionIcon,
+  ...item
+}) => (
+  <LiveConsumer contentId={item.id}>
     {(liveStream) => {
       const isLive = !!(liveStream && liveStream.isLive);
       return (
         <FeaturedCard
           Component={FeaturedCard}
+          {...item}
           {...(isLive
             ? {
                 isLive,
+                hasAction: true,
+                actionIcon: 'play',
+                summary: 'Tap for sermon notes and more',
               }
-            : { isLive, labelText })} // we only want to pass `labelText` if we are NOT live. If we do we will override the default logic in the FeaturedCard
-          {...item}
+            : { isLive, labelText, hasAction, actionIcon })} // we only want to pass `labelText` if we are NOT live. If we do we will override the default logic in the FeaturedCard\
           isFeatured
         />
       );
     }}
   </LiveConsumer>
 );
+
+FeaturedCardWithLive.propTypes = {
+  labelText: PropTypes.string,
+  hasAction: PropTypes.bool,
+  actionIcon: PropTypes.string,
+};
 
 const VerticalCardMapper = (props) => {
   // map typename to the the card we want to render.
@@ -37,6 +53,7 @@ const VerticalCardMapper = (props) => {
     colors: get(props, 'relatedNode.theme.colors') || {},
   };
 
+  // eslint-disable-next-line
   if (props.isFeatured) {
     return <FeaturedCardWithLive theme={theme} {...props} />;
   }
