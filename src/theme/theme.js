@@ -111,6 +111,10 @@ export const buttons = ({ colors: themeColors, alpha: themeAlpha }) => ({
     fill: Color(themeColors.darkTertiary).alpha(themeAlpha.low),
     accent: themeColors.darkSecondary,
   },
+  secondary: {
+    fill: colors.primary,
+    accent: colors.white,
+  },
 });
 
 export default {
