@@ -1,7 +1,6 @@
 import React from 'react';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
-
 /* Export your custom prop overrides here. */
 import {
   DefaultCard,
@@ -11,6 +10,7 @@ import {
 } from '@apollosproject/ui-kit';
 
 import { LiveConsumer } from '@apollosproject/ui-connected';
+import LiveButton from '../ui/LiveButton';
 
 const FeaturedCardWithLive = ({
   labelText,
@@ -18,26 +18,29 @@ const FeaturedCardWithLive = ({
   actionIcon,
   ...item
 }) => (
-  <LiveConsumer contentId={item.id}>
-    {(liveStream) => {
-      const isLive = !!(liveStream && liveStream.isLive);
-      return (
-        <FeaturedCard
-          Component={FeaturedCard}
-          {...item}
-          {...(isLive
-            ? {
-                isLive,
-                hasAction: true,
-                actionIcon: 'play',
-                summary: 'Tap for sermon notes and more',
-              }
-            : { isLive, labelText, hasAction, actionIcon })} // we only want to pass `labelText` if we are NOT live. If we do we will override the default logic in the FeaturedCard\
-          isFeatured
-        />
-      );
-    }}
-  </LiveConsumer>
+  <>
+    <LiveButton contentId={item.id} />
+    <LiveConsumer contentId={item.id}>
+      {(liveStream) => {
+        const isLive = !!(liveStream && liveStream.isLive);
+        return (
+          <FeaturedCard
+            Component={FeaturedCard}
+            {...item}
+            {...(isLive
+              ? {
+                  isLive,
+                  hasAction: true,
+                  actionIcon: 'play',
+                  summary: 'Tap for sermon notes and more',
+                }
+              : { isLive, labelText, hasAction, actionIcon })} // we only want to pass `labelText` if we are NOT live. If we do we will override the default logic in the FeaturedCard\
+            isFeatured
+          />
+        );
+      }}
+    </LiveConsumer>
+  </>
 );
 
 FeaturedCardWithLive.propTypes = {
