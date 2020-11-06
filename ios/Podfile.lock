@@ -11,13 +11,13 @@ PODS:
     - AppCenter/Crashes
     - AppCenterReactNativeShared
     - React
-  - AppCenter/Analytics (3.3.4):
+  - AppCenter/Analytics (3.3.2):
     - AppCenter/Core
-  - AppCenter/Core (3.3.4)
-  - AppCenter/Crashes (3.3.4):
+  - AppCenter/Core (3.3.2)
+  - AppCenter/Crashes (3.3.2):
     - AppCenter/Core
-  - AppCenterReactNativeShared (3.1.2):
-    - AppCenter/Core (= 3.3.4)
+  - AppCenterReactNativeShared (3.1.1):
+    - AppCenter/Core (= 3.3.2)
   - AstronomerAnalytics (3.6.9)
   - boost-for-react-native (1.63.0)
   - BugsnagReactNative (2.23.7):
@@ -369,11 +369,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Amplitude-iOS: df355e2be58972041acde9576a2ae97c217bf941
-  AppCenter: 0487be185c038ed2ecc5ed38219af1dcd280af23
+  AppCenter: aba7de06e4c2184f90dc84f7866bd07f82427d69
   appcenter: f2e241f931e0865a74b3af3928066a1190814be0
   appcenter-analytics: 42e368870a904af67fd93f043f3efa75ffa772a2
   appcenter-crashes: bfc5c03a6ddcfa158fcf4217d1724fd52f45d12c
-  AppCenterReactNativeShared: 66667cd2dfad295b84bbf0f462e0e139e2128284
+  AppCenterReactNativeShared: b9fa50d999e830e03f086f487b1aa0f9772088c1
   AstronomerAnalytics: 36f48678a387e41481650edd6247c6c95d994131
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BugsnagReactNative: 14c1b59cfbf34fd5591b734bfec65a277b677ef8
