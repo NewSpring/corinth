@@ -51,9 +51,12 @@ FeaturedCardWithLive.propTypes = {
 
 const VerticalCardMapper = (props) => {
   // map typename to the the card we want to render.
+
+  const possibleTheme = props.cardTheme || props?.relatedNode?.theme;
+
   const theme = {
-    type: get(props, 'relatedNode.theme.type', 'light').toLowerCase(),
-    colors: get(props, 'relatedNode.theme.colors') || {},
+    type: get(possibleTheme, 'type', 'light').toLowerCase(),
+    colors: possibleTheme?.colors ?? {},
   };
 
   // eslint-disable-next-line
