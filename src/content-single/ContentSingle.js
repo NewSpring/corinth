@@ -22,7 +22,7 @@ import ContentSeriesContentItem from './ContentSeriesContentItem';
 function stripNullLeaves(obj) {
   const out = {};
 
-  Object.keys(obj).forEach((k) => {
+  Object.keys(obj || {}).forEach((k) => {
     const val = obj[k];
 
     if (val !== null && typeof val === 'object' && isPlainObject(val)) {
