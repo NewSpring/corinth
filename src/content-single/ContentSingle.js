@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Query } from 'react-apollo';
-import { get } from 'lodash';
+import { get, isPlainObject } from 'lodash';
 import PropTypes from 'prop-types';
 
 import { ErrorCard, ThemeMixin } from '@apollosproject/ui-kit';
@@ -16,6 +16,24 @@ import DevotionalContentItem from './DevotionalContentItem';
 import UniversalContentItem from './UniversalContentItem';
 import WeekendContentItem from './WeekendContentItem';
 import ContentSeriesContentItem from './ContentSeriesContentItem';
+
+// Used to strip out colors that aren't present.
+// We'll likely pull this functionality into core.
+function stripNullLeaves(obj) {
+  const out = {};
+
+  Object.keys(obj).forEach((k) => {
+    const val = obj[k];
+
+    if (val !== null && typeof val === 'object' && isPlainObject(val)) {
+      out[k] = stripNullLeaves(val);
+    } else if (obj[k] != null) {
+      out[k] = val;
+    }
+  });
+
+  return out;
+}
 
 class ContentSingle extends PureComponent {
   static propTypes = {
@@ -97,7 +115,7 @@ class ContentSingle extends PureComponent {
       <ThemeMixin
         mixin={{
           type: get(theme, 'type', 'light').toLowerCase(),
-          colors: get(theme, 'colors') || {},
+          colors: stripNullLeaves(get(theme, 'colors')) || {},
         }}
       >
         <InteractWhenLoadedConnected

@@ -55,7 +55,7 @@ const VerticalCardMapper = (props) => {
   const possibleTheme = props.cardTheme || props?.relatedNode?.theme;
 
   const theme = {
-    type: get(possibleTheme, 'type', 'light').toLowerCase(),
+    type: get(possibleTheme, 'type', 'dark').toLowerCase(),
     colors: possibleTheme?.colors ?? {},
   };
 
