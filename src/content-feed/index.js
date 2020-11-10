@@ -67,6 +67,7 @@ class ContentFeed extends PureComponent {
                     props.parentChannel &&
                     props.parentChannel.name.split(' - ').pop()
                   }
+                  cardTheme={props?.theme}
                   {...props}
                 />
               )}

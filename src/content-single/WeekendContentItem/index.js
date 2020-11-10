@@ -3,6 +3,15 @@ import { Animated, Dimensions } from 'react-native';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import {
+  // ContentHTMLViewConnected,
+  // HorizontalContentSeriesFeedConnected,
+  LiveConsumer,
+  // MediaControlsConnected,
+  // FeaturesFeedConnected,
+  // LiveConsumer,
+  ContentSingleFeaturesConnected,
+} from '@apollosproject/ui-connected';
+import {
   styled,
   GradientOverlayImage,
   BackgroundView,
@@ -12,11 +21,8 @@ import {
   ThemeMixin,
   ThemeConsumer,
   CardLabel,
+  // withTheme,
 } from '@apollosproject/ui-kit';
-import {
-  LiveConsumer,
-  ContentSingleFeaturesConnected,
-} from '@apollosproject/ui-connected';
 
 import HorizontalContentSeriesFeedConnected from '../../ui/HorizontalContentSeriesFeedConnected';
 import ContentHTMLViewConnected from '../../ui/ContentHTMLViewConnected';
@@ -30,7 +36,25 @@ const Header = styled(({ hasMedia, theme }) => ({
   paddingTop: Dimensions.get('window').width * 0.5, // for some reason % based padding still is buggy
   alignItems: 'flex-start',
   paddingBottom: hasMedia ? theme.sizing.baseUnit : theme.sizing.baseUnit * 2,
+  // backgroundColor: theme.colors.primary,
 }))(PaddedView);
+
+// const StyledMediaControlsConnected = styled(({ theme }) => ({
+//   marginTop: -(theme.sizing.baseUnit * 2.5),
+// }))(MediaControlsConnected);
+
+// const LiveAwareLabel = withTheme(({ isLive, title, theme }) => ({
+//   ...(isLive
+//     ? {
+//         title: 'Live',
+//         type: 'secondary',
+//         icon: 'live-dot',
+//         iconSize: theme.helpers.rem(0.4375), // using our typographic size unit based on fontSize so that the icon scales correctly with font size changes.
+//       }
+//     : {
+//         title,
+//       }),
+// }))(CardLabel);
 
 const WeekendContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
@@ -103,6 +127,9 @@ WeekendContentItem.propTypes = {
         sources: PropTypes.arrayOf(PropTypes.shape({ uri: PropTypes.string })),
       })
     ),
+    featureFeed: PropTypes.shape({
+      id: PropTypes.string,
+    }),
   }),
   loading: PropTypes.bool,
 };

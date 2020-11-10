@@ -4,6 +4,23 @@ enum ACTION_FEATURE_ACTION {
   READ_CONTENT
   READ_EVENT
   OPEN_URL
+  OPEN_NODE
+  OPEN_CHANNEL
+}
+
+type ActionBarAction {
+  id: ID!
+  icon: String
+  title: String
+  action: ACTION_FEATURE_ACTION
+  relatedNode: Node
+}
+
+type ActionBarFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  actions: [ActionBarAction]
 }
 
 type ActionListAction {
@@ -71,6 +88,10 @@ type AudioMediaSource implements MediaSource {
   uri: String
 }
 
+interface AudioNode {
+  audios: [AudioMedia]
+}
+
 type AuthenticatedUser {
   id: ID!
   profile: Person
@@ -108,6 +129,12 @@ input CampusLocationInput {
   longitude: Float
 }
 
+interface Card {
+  title(hyphenated: Boolean): String
+  coverImage: ImageMedia
+  summary: String
+}
+
 type CardListItem {
   id: ID!
   hasAction: Boolean
@@ -130,6 +157,11 @@ type ContentChannel implements Node {
   childContentChannels: [ContentChannel]
   childContentItemsConnection(first: Int, after: String): ContentItemsConnection
   iconName: String
+}
+
+interface ContentChildNode {
+  parentChannel: ContentChannel
+  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
 }
 
 interface ContentItem {
@@ -166,7 +198,17 @@ input ContentItemsConnectionInput {
   after: String
 }
 
-type ContentSeriesContentItem implements ContentItem & Node & LikableNode & ShareableNode & FeaturesNode {
+interface ContentNode {
+  title(hyphenated: Boolean): String
+  coverImage: ImageMedia
+  htmlContent: String
+}
+
+interface ContentParentNode {
+  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+}
+
+type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ProgressNode & LikableNode & ShareableNode & FeaturesNode {
   id: ID!
   title(hyphenated: Boolean): String
   coverImage: ImageMedia
@@ -185,7 +227,8 @@ type ContentSeriesContentItem implements ContentItem & Node & LikableNode & Shar
   isLiked: Boolean
   likedCount: Int
   sharing: SharableContentItem
-  features: [Feature]
+  features: [Feature] @deprecated(reason: "Use featureFeed")
+  featureFeed: FeatureFeed
 }
 
 type Device implements Node {
@@ -194,7 +237,7 @@ type Device implements Node {
   notificationsEnabled: Boolean!
 }
 
-type DevotionalContentItem implements ContentItem & Node & LikableNode & ShareableNode {
+type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   coverImage: ImageMedia
@@ -236,8 +279,14 @@ type FeatureAction {
   title: String
 }
 
-interface FeaturesNode {
+type FeatureFeed implements Node {
+  id: ID!
   features: [Feature]
+}
+
+interface FeaturesNode {
+  features: [Feature] @deprecated(reason: "Use featureFeed")
+  featureFeed: FeatureFeed
 }
 
 enum GENDER {
@@ -286,6 +335,7 @@ type HorizontalCardListFeature implements Feature & Node {
   title: String
   subtitle: String
   cards: [CardListItem]
+  primaryAction: FeatureAction
 }
 
 type ImageMedia implements Media {
@@ -330,6 +380,10 @@ input LikeEntityInput {
   operation: LIKE_OPERATION!
 }
 
+interface LiveNode {
+  liveStream: LiveStream
+}
+
 type LiveStream {
   isLive: Boolean
   eventStartTime: String
@@ -344,7 +398,7 @@ interface Media {
   sources: [MediaSource]
 }
 
-type MediaContentItem implements ContentItem & Node & LikableNode & ShareableNode {
+type MediaContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   coverImage: ImageMedia
@@ -375,8 +429,12 @@ interface MediaSource {
 
 type Mutation {
   _placeholder: Boolean
-  updateLikeEntity(input: LikeEntityInput!): ContentItem
+  updateLikeEntity(input: LikeEntityInput!): ContentItem @deprecated(reason: "Use the more general updateLikeNode instead")
+  updateLikeNode(input: LikeEntityInput!): Node
   saveNotesComment(contentID: ID!, blockID: ID!, text: String): NotesBlockComment
+  updateProfileField(input: UpdateProfileInput!): Person
+  updateProfileFields(input: [UpdateProfileInput]!): Person
+  uploadProfileImage(file: Upload!, size: Int!): Person
   authenticate(identity: String!, password: String!): Authentication
   changePassword(password: String!): Authentication
   registerPerson(email: String!, password: String!, userProfile: [UpdateProfileInput]): Authentication
@@ -388,9 +446,6 @@ type Mutation {
   trackEvent(input: AnalyticsTrackInput!): AnalyticsResult
   updateUserPushSettings(input: PushSettingsInput!): Person
   updateUserCampus(campusId: String!): Person
-  updateProfileField(input: UpdateProfileInput!): Person
-  updateProfileFields(input: [UpdateProfileInput]!): Person
-  uploadProfileImage(file: Upload!, size: Int!): Person
   addPrayer(text: String!, isAnonymous: Boolean): Prayer
   answerPrayer(id: ID!, answer: String!): Prayer
   interactWithPrayer(id: ID!, action: PrayerAction!): Prayer
@@ -489,14 +544,14 @@ type Person implements Node {
   gender: GENDER
   birthDate: String
   photo: ImageMediaSource
+  impersonationParameter: String! @deprecated(reason: "No longer used.")
+  isStaff: Boolean
   devices: [Device]
   campus: Campus
   groups(type: GROUP_TYPE, asLeader: Boolean): [Group]
   testGroups: [Group]
   isGroupLeader: Boolean
   isInReadMyBible: Boolean
-  impersonationParameter: String! @deprecated(reason: "No longer used.")
-  isStaff: Boolean
 }
 
 type Prayer implements Node {
@@ -556,6 +611,11 @@ enum PrayerType {
   SAVED
 }
 
+interface ProgressNode {
+  percentComplete: Float
+  upNext: ContentItem
+}
+
 input PushSettingsInput {
   enabled: Boolean
   pushProviderUserId: String
@@ -570,6 +630,7 @@ type Query {
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
   contentItemFromSlug(slug: String!): ContentItem
+  forgotPasswordURL: String
   currentUser: AuthenticatedUser
   userExists(identity: String): USER_AUTH_STATUS
   liveStream: LiveStream @deprecated(reason: "Use liveStreams, there may be multiple.")
@@ -579,7 +640,6 @@ type Query {
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
-  forgotPasswordURL: String
   prayer(id: ID!): Prayer
   prayers(type: PrayerType): [Prayer] @deprecated(reason: "Use paginated version: prayerFeed")
   prayerFeed(first: Int, after: String, type: PrayerType): PrayersConnection
@@ -588,7 +648,9 @@ type Query {
   userPrayers: [Prayer] @deprecated(reason: "Use prayers(type:USER)")
   groupPrayers: [Prayer] @deprecated(reason: "Use prayers(type:GROUP)")
   savedPrayers: [Prayer] @deprecated(reason: "Use prayers(type:CAMPUS)")
-  userFeedFeatures: [Feature]
+  userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
+  homeFeedFeatures(campusId: ID): FeatureFeed
+  discoverFeedFeatures: FeatureFeed
 }
 
 type RockPersonDetails {
@@ -609,6 +671,10 @@ type ScriptureFeature implements Feature & Node {
   order: Int
   scriptures: [Scripture]
   sharing: SharableFeature
+}
+
+interface ScriptureNode {
+  scriptures: [Scripture]
 }
 
 type SearchResult {
@@ -677,12 +743,16 @@ type ThemeColors {
   alert: Color
 }
 
+interface ThemedNode {
+  theme: Theme
+}
+
 enum ThemeType {
   LIGHT
   DARK
 }
 
-type UniversalContentItem implements ContentItem & Node & LikableNode & ShareableNode {
+type UniversalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   coverImage: ImageMedia
@@ -754,6 +824,10 @@ type VideoMediaSource implements MediaSource {
   uri: String
 }
 
+interface VideoNode {
+  videos: [VideoMedia]
+}
+
 type WebviewFeature implements Feature & Node {
   id: ID!
   order: Int
@@ -762,7 +836,7 @@ type WebviewFeature implements Feature & Node {
   url: String
 }
 
-type WeekendContentItem implements ContentItem & Node & LikableNode & ShareableNode & FeaturesNode {
+type WeekendContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & LiveNode & ShareableNode & FeaturesNode {
   id: ID!
   title(hyphenated: Boolean): String
   coverImage: ImageMedia
@@ -786,6 +860,7 @@ type WeekendContentItem implements ContentItem & Node & LikableNode & ShareableN
   sermonNotes: [NotesBlock]
   liveStream: LiveStream
   sharing: SharableContentItem
-  features: [Feature]
+  features: [Feature] @deprecated(reason: "Use featureFeed")
+  featureFeed: FeatureFeed
 }
 
