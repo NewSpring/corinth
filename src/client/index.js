@@ -13,7 +13,7 @@ import { onError } from 'apollo-link-error';
 import AsyncStorage from '@react-native-community/async-storage';
 import Appcenter from 'appcenter-analytics';
 import { NavigationService } from '@apollosproject/ui-kit';
-import bugsnag, { bugsnagLink, setUser } from '../bugsnag';
+import { bugsnagLink, setUser } from '../bugsnag';
 
 import { resolvers, schema, defaults } from '../store';
 
@@ -43,11 +43,9 @@ const buildErrorLink = (onAuthError1) =>
         const token = await AsyncStorage.getItem('authToken');
         if (error.extensions.code === 'UNAUTHENTICATED') {
           AsyncStorage.removeItem('authToken');
-          Appcenter.trackEvent('Token removed', { token, error });
-          bugsnag.notify(error, (report) => {
-            report.metadata = { // eslint-disable-line
-              token,
-            };
+          Appcenter.trackEvent('Token removed', {
+            token,
+            error: error.message,
           });
           onAuthError1();
         }
