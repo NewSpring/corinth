@@ -43,8 +43,11 @@ const buildErrorLink = (onAuthError1) =>
         const token = await AsyncStorage.getItem('authToken');
         if (error.extensions.code === 'UNAUTHENTICATED') {
           AsyncStorage.removeItem('authToken');
-          Appcenter.trackEvent('Token removed', { token, error });
-          bugsnag.notify(error, (report) => {
+          Appcenter.trackEvent('Token removed', {
+            token,
+            error: error.message,
+          });
+          bugsnag.notify(new Error(error), (report) => {
             report.metadata = { // eslint-disable-line
               token,
             };
