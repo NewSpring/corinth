@@ -13,7 +13,7 @@ import { onError } from 'apollo-link-error';
 import AsyncStorage from '@react-native-community/async-storage';
 import Appcenter from 'appcenter-analytics';
 import { NavigationService } from '@apollosproject/ui-kit';
-import bugsnag, { bugsnagLink, setUser } from '../bugsnag';
+import { bugsnagLink, setUser } from '../bugsnag';
 
 import { resolvers, schema, defaults } from '../store';
 
@@ -46,11 +46,6 @@ const buildErrorLink = (onAuthError1) =>
           Appcenter.trackEvent('Token removed', {
             token,
             error: error.message,
-          });
-          bugsnag.notify(new Error(error), (report) => {
-            report.metadata = { // eslint-disable-line
-              token,
-            };
           });
           onAuthError1();
         }
