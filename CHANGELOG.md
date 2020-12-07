@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.9.1](https://github.com/newspring/corinth/compare/v7.9.0...v7.9.1) (2020-12-07)
+
+
+### Features
+
+* Add Devo Ad Unit ([#299](https://github.com/newspring/corinth/issues/299)) ([24d2699](https://github.com/newspring/corinth/commit/24d26994e44f7c9632842bc6a39725ea22bcb6cf))
+
+
+### Bug Fixes
+
+* AppCenter error alert throwing error ([#315](https://github.com/newspring/corinth/issues/315)) ([f4b9f22](https://github.com/newspring/corinth/commit/f4b9f22192ecc3591a4d3147dacc612e498f1b68))
+
 ## [7.9.0](https://github.com/newspring/corinth/compare/v7.8.4...v7.9.0) (2020-10-14)
 
 
