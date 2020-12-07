@@ -754,7 +754,7 @@
 				CODE_SIGN_ENTITLEMENTS = newspringchurchapp/newspringchurchapp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 7TM8C6252Z;
 				HEADER_SEARCH_PATHS = (
@@ -785,7 +785,7 @@
 				CODE_SIGN_ENTITLEMENTS = newspringchurchapp/newspringchurchapp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = 7TM8C6252Z;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				HEADER_SEARCH_PATHS = (
