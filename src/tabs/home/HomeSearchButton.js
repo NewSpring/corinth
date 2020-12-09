@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Animated } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { styled, withTheme, Touchable, Icon } from '@apollosproject/ui-kit';
@@ -14,10 +14,10 @@ const SearchButtonContainer = styled(({ theme: { sizing: { baseUnit } } }) => ({
   position: 'absolute',
   right: baseUnit,
   top: baseUnit / 2,
-}))(View);
+}))(Animated.View);
 
-const HomeSearchButton = ({ onPress }) => (
-  <SearchButtonContainer>
+const HomeSearchButton = ({ onPress, style }) => (
+  <SearchButtonContainer style={{ ...style }}>
     <Touchable onPress={onPress}>
       <SearchIcon size={24} name="search" />
     </Touchable>

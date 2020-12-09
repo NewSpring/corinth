@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import { Image } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { Image, Animated, View } from 'react-native';
 import SafeAreaView from 'react-native-safe-area-view';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { throttle } from 'lodash';
+import { useSafeArea } from 'react-native-safe-area-context';
 
 import { styled, BackgroundView } from '@apollosproject/ui-kit';
 import {
   FeaturesFeedConnected,
   FEATURE_FEED_ACTION_MAP,
   RockAuthedWebBrowser,
-  SearchInputHeader,
   SearchFeedConnected,
+  SearchInputHeader,
 } from '@apollosproject/ui-connected';
+
+import HomeSearchButton from './HomeSearchButton';
 
 const LogoTitle = styled(({ theme }) => ({
   height: theme.sizing.baseUnit,
@@ -45,20 +48,43 @@ const GET_HOME_FEED = gql`
 function Home(props) {
   const [searchText, setSearchText] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+  const [searchBarHeight, setSearchBarHeight] = useState(100);
+  const translateY = useRef(new Animated.Value(-searchBarHeight)).current;
+
+  useEffect(
+    () => {
+      const active = searchText !== '' || isFocused;
+      Animated.timing(translateY, {
+        toValue: active ? searchBarHeight : -searchBarHeight,
+        duration: 500,
+        useNativeDriver: true,
+      }).start();
+    },
+    [isFocused, searchText, searchBarHeight]
+  );
 
   return (
     <RockAuthedWebBrowser>
       {(openUrl) => (
         <BackgroundView>
+          <Animated.View
+            style={{ transform: [{ translateY }] }}
+            onLayout={({
+              nativeEvent: {
+                layout: { height },
+              },
+            }) => setSearchBarHeight(height)}
+          >
+            <SearchInputHeader
+              onChangeText={throttle(setSearchText, 300)}
+              onFocus={setIsFocused}
+            />
+          </Animated.View>
           <SafeAreaView>
             {isFocused || searchText ? (
-              <>
-                <SearchInputHeader
-                  onChangeText={throttle(setSearchText, 300)}
-                  onFocus={setIsFocused}
-                />
+              <View style={{ marginTop: searchBarHeight }}>
                 <SearchFeedConnected searchText={searchText} />
-              </>
+              </View>
             ) : (
               <Query query={GET_HOME_FEED}>
                 {({ data }) => (
@@ -70,7 +96,7 @@ function Home(props) {
                     ListHeaderComponent={
                       <>
                         <LogoTitle source={require('./wordmark.png')} />
-                        <SearchButton onPress={() => setIsFocused(true)} />
+                        <HomeSearchButton onPress={() => setIsFocused(true)} />
                       </>
                     }
                   />
