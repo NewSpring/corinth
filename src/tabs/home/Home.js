@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { throttle } from 'lodash';
-import { useSafeArea } from 'react-native-safe-area-context';
 
 import { styled, BackgroundView } from '@apollosproject/ui-kit';
 import {

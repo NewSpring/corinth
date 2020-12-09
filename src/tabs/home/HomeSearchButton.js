@@ -16,8 +16,8 @@ const SearchButtonContainer = styled(({ theme: { sizing: { baseUnit } } }) => ({
   top: baseUnit / 2,
 }))(Animated.View);
 
-const HomeSearchButton = ({ onPress, style }) => (
-  <SearchButtonContainer style={{ ...style }}>
+const HomeSearchButton = ({ onPress }) => (
+  <SearchButtonContainer>
     <Touchable onPress={onPress}>
       <SearchIcon size={24} name="search" />
     </Touchable>
