@@ -19,7 +19,7 @@ const SearchButtonContainer = styled(({ theme: { sizing: { baseUnit } } }) => ({
 const HomeSearchButton = ({ onPress }) => (
   <SearchButtonContainer>
     <Touchable onPress={onPress}>
-      <SearchIcon size={24} name="search" />
+      <SearchIcon />
     </Touchable>
   </SearchButtonContainer>
 );
