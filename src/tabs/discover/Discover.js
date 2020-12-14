@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import SafeAreaView from 'react-native-safe-area-view';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
-import { throttle } from 'lodash';
-
 import { BackgroundView, styled } from '@apollosproject/ui-kit';
 import {
   FeaturesFeedConnected,
   FEATURE_FEED_ACTION_MAP,
   RockAuthedWebBrowser,
-  SearchInputHeader,
-  SearchFeedConnected,
 } from '@apollosproject/ui-connected';
 
 function handleOnPress({ action, ...props }) {
@@ -25,12 +21,9 @@ function handleOnPress({ action, ...props }) {
   // { [ActionName]: function({ relatedNode, action, ...FeatureFeedConnectedProps}) }
 }
 
-// getHomeFeed uses the HOME_FEATURES in the config.yml
-// You can also hardcode an ID if you are confident it will never change
-// Or use some other strategy to get a FeatureFeed.id
 export const GET_DISCOVER_FEED = gql`
   query getDiscoverFeatureFeed {
-    discoverFeedFeatures {
+    readFeedFeatures {
       id
     }
   }
@@ -41,32 +34,21 @@ const PaddedBackgroundView = styled(({ theme }) => ({
 }))(BackgroundView);
 
 function Discover({ navigation }) {
-  const [searchText, setSearchText] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
-
   return (
     <RockAuthedWebBrowser>
       {(openUrl) => (
         <PaddedBackgroundView>
           <SafeAreaView>
-            <SearchInputHeader
-              onChangeText={throttle(setSearchText, 300)}
-              onFocus={setIsFocused}
-            />
-            {isFocused || searchText ? (
-              <SearchFeedConnected searchText={searchText} />
-            ) : (
-              <Query query={GET_DISCOVER_FEED}>
-                {({ data }) => (
-                  <FeaturesFeedConnected
-                    openUrl={openUrl}
-                    navigation={navigation}
-                    featureFeedId={data?.discoverFeedFeatures?.id}
-                    onPressActionItem={handleOnPress}
-                  />
-                )}
-              </Query>
-            )}
+            <Query query={GET_DISCOVER_FEED}>
+              {({ data }) => (
+                <FeaturesFeedConnected
+                  openUrl={openUrl}
+                  navigation={navigation}
+                  featureFeedId={data?.readFeedFeatures?.id}
+                  onPressActionItem={handleOnPress}
+                />
+              )}
+            </Query>
           </SafeAreaView>
         </PaddedBackgroundView>
       )}
