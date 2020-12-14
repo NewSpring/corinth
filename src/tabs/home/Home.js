@@ -50,14 +50,24 @@ function Home(props) {
   const [searchBarHeight, setSearchBarHeight] = useState(100);
   const translateY = useRef(new Animated.Value(-searchBarHeight)).current;
 
+  const searchRef = useRef(null);
+
   useEffect(
     () => {
       const active = searchText !== '' || isFocused;
       Animated.timing(translateY, {
         toValue: active ? searchBarHeight : -searchBarHeight,
+        // these values match the ios spring effect
         duration: 500,
+        damping: 500,
+        stiffness: 1000,
+        mass: 3,
         useNativeDriver: true,
-      }).start();
+      }).start(() => {
+        if (active) {
+          searchRef.current.focus();
+        }
+      });
     },
     [isFocused, searchText, searchBarHeight]
   );
@@ -77,6 +87,7 @@ function Home(props) {
             <SearchInputHeader
               onChangeText={throttle(setSearchText, 300)}
               onFocus={setIsFocused}
+              inputRef={searchRef}
             />
           </Animated.View>
           <SafeAreaView>
