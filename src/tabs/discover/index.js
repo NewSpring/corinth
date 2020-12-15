@@ -18,7 +18,7 @@ const DiscoverNavigator = createStackNavigator(
       headerTintColor: screenProps.headerTintColor,
       headerTitleStyle: screenProps.headerTitleStyle,
     }),
-    navigationOptions: { tabBarIcon: tabBarIcon('search') },
+    navigationOptions: { tabBarIcon: tabBarIcon('discover') },
   }
 );
 
