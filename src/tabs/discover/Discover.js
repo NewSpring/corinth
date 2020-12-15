@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
-import { BackgroundView, styled } from '@apollosproject/ui-kit';
+import { BackgroundView } from '@apollosproject/ui-kit';
 import {
   FeaturesFeedConnected,
   FEATURE_FEED_ACTION_MAP,
@@ -29,15 +29,11 @@ export const GET_DISCOVER_FEED = gql`
   }
 `;
 
-const PaddedBackgroundView = styled(({ theme }) => ({
-  paddingBottom: theme.sizing.baseUnit * 2.5, // stop cards overflowing under the tabbar
-}))(BackgroundView);
-
 function Discover({ navigation }) {
   return (
     <RockAuthedWebBrowser>
       {(openUrl) => (
-        <PaddedBackgroundView>
+        <BackgroundView>
           <SafeAreaView>
             <Query query={GET_DISCOVER_FEED}>
               {({ data }) => (
@@ -50,7 +46,7 @@ function Discover({ navigation }) {
               )}
             </Query>
           </SafeAreaView>
-        </PaddedBackgroundView>
+        </BackgroundView>
       )}
     </RockAuthedWebBrowser>
   );
