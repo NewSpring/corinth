@@ -167,6 +167,7 @@ interface ContentChildNode {
 interface ContentItem {
   id: ID!
   title(hyphenated: Boolean): String
+  publishDate: String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -211,6 +212,7 @@ interface ContentParentNode {
 type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ProgressNode & LikableNode & ShareableNode & FeaturesNode {
   id: ID!
   title(hyphenated: Boolean): String
+  publishDate: String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -240,6 +242,7 @@ type Device implements Node {
 type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
+  publishDate: String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -401,6 +404,7 @@ interface Media {
 type MediaContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
+  publishDate: String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -651,6 +655,7 @@ type Query {
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
   homeFeedFeatures(campusId: ID): FeatureFeed
   discoverFeedFeatures: FeatureFeed
+  readFeedFeatures: FeatureFeed
 }
 
 type RockPersonDetails {
@@ -755,6 +760,7 @@ enum ThemeType {
 type UniversalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
+  publishDate: String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
@@ -839,6 +845,7 @@ type WebviewFeature implements Feature & Node {
 type WeekendContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & LiveNode & ShareableNode & FeaturesNode {
   id: ID!
   title(hyphenated: Boolean): String
+  publishDate: String
   coverImage: ImageMedia
   images: [ImageMedia]
   videos: [VideoMedia]
