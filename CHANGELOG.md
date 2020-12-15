@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.10.0](https://github.com/newspring/corinth/compare/v7.9.0...v7.10.0) (2020-12-15)
+
+
+### Features
+
+* Add Devo Ad Unit ([#299](https://github.com/newspring/corinth/issues/299)) ([24d2699](https://github.com/newspring/corinth/commit/24d26994e44f7c9632842bc6a39725ea22bcb6cf))
+* Add SearchButton to the home feed ([#320](https://github.com/newspring/corinth/issues/320)) ([4f7c8f4](https://github.com/newspring/corinth/commit/4f7c8f4575a8fc01376b24e38e8c13d7d7a7677f))
+* Adds Read Tab ([#324](https://github.com/newspring/corinth/issues/324)) ([5789f58](https://github.com/newspring/corinth/commit/5789f581c534ca59ae1aaef759a225034ff1c267))
+
+
+### Bug Fixes
+
+* AppCenter error alert throwing error ([#315](https://github.com/newspring/corinth/issues/315)) ([f4b9f22](https://github.com/newspring/corinth/commit/f4b9f22192ecc3591a4d3147dacc612e498f1b68))
+
 ## [7.9.1](https://github.com/newspring/corinth/compare/v7.9.0...v7.9.1) (2020-12-07)
 
 
