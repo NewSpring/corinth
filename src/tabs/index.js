@@ -4,13 +4,13 @@ import TabBar from './tabBar';
 
 import Connect from './connect';
 import Home from './home';
-import Discover from './discover';
+import Read from './discover';
 import Prayer from './prayer';
 
 const TabNavigator = createBottomTabNavigator(
   {
     Home,
-    Discover,
+    Read,
     Prayer,
     Connect,
   },
