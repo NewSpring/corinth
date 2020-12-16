@@ -5,10 +5,12 @@ import PropTypes from 'prop-types';
 import {
   styled,
   GradientOverlayImage,
-  BackgroundView,
   PaddedView,
   H2,
   StretchyView,
+  FlexedView,
+  Button,
+  withTheme,
 } from '@apollosproject/ui-kit';
 import {
   UpNextButtonConnected,
@@ -25,10 +27,41 @@ const StyledMediaControls = styled(({ theme }) => ({
   marginTop: -(theme.sizing.baseUnit * 2.5),
 }))(MediaControls);
 
+const StyledBackgroundView = styled(
+  ({
+    theme: {
+      colors: { primary, paper },
+    },
+    hasCustomTheme,
+  }) => ({
+    backgroundColor: hasCustomTheme ? primary : paper,
+  })
+)(FlexedView);
+
+const UpNextButton = withTheme(
+  ({
+    theme: {
+      sizing: { baseUnit },
+      colors: {
+        text: { primary },
+      },
+    },
+  }) => ({
+    style: {
+      marginHorizontal: baseUnit,
+      borderColor: primary,
+      borderWidth: 1,
+      borderStyle: 'solid',
+    },
+    type: 'primaryWithDarkMode',
+  }),
+  'ui-connected.UpNextButtonConnected.UpNextButton'
+)(Button);
+
 const UniversalContentItem = ({ content, loading }) => {
   const coverImageSources = get(content, 'coverImage.sources', []);
   return (
-    <BackgroundView>
+    <StyledBackgroundView hasCustomTheme={!!content?.theme?.colors?.primary}>
       <StretchyView>
         {({ Stretchy, ...scrollViewProps }) => (
           <FlexedScrollView {...scrollViewProps}>
@@ -49,12 +82,15 @@ const UniversalContentItem = ({ content, loading }) => {
               <ContentHTMLViewConnected contentId={content.id} />
             </PaddedView>
             <ContentSingleFeaturesConnected contentId={content.id} />
-            <UpNextButtonConnected contentId={content.id} />
+            <UpNextButtonConnected
+              Component={UpNextButton}
+              contentId={content.id}
+            />
             <HorizontalContentSeriesFeedConnected contentId={content.id} />
           </FlexedScrollView>
         )}
       </StretchyView>
-    </BackgroundView>
+    </StyledBackgroundView>
   );
 };
 

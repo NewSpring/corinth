@@ -115,6 +115,10 @@ export const buttons = ({ colors: themeColors, alpha: themeAlpha }) => ({
     fill: colors.primary,
     accent: colors.white,
   },
+  primaryWithDarkMode: {
+    fill: themeColors.action.primary,
+    accent: themeColors.text.primary,
+  },
 });
 
 export default {
