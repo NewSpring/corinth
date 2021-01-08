@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Image, Animated, View } from 'react-native';
+import { Image, Animated, View, Text } from 'react-native';
 import SafeAreaView from 'react-native-safe-area-view';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
@@ -39,6 +39,14 @@ function handleOnPress({ action, ...props }) {
 const GET_HOME_FEED = gql`
   query getHomeFeatureFeed {
     homeFeedFeatures {
+      id
+    }
+  }
+`;
+
+const GET_DISCOVER_FEED = gql`
+  query GetDiscoverFeed {
+    discoverFeedFeatures {
       id
     }
   }
@@ -93,7 +101,23 @@ function Home(props) {
           <SafeAreaView>
             {isFocused || searchText ? (
               <View style={{ marginTop: searchBarHeight }}>
-                <SearchFeedConnected searchText={searchText} />
+                {searchText ? (
+                  <SearchFeedConnected searchText={searchText} />
+                ) : (
+                  <Query
+                    query={GET_DISCOVER_FEED}
+                    fetchPolicy="cache-and-network"
+                  >
+                    {({ data }) => (
+                      <FeaturesFeedConnected
+                        openUrl={openUrl}
+                        navigation={props.navigation}
+                        featureFeedId={data?.discoverFeedFeatures?.id}
+                        onPressActionItem={handleOnPress}
+                      />
+                    )}
+                  </Query>
+                )}
               </View>
             ) : (
               <Query query={GET_HOME_FEED}>
