@@ -43,7 +43,7 @@ const LandingScreen = ({
   BackgroundComponent,
   ...props
 }) => (
-  <BackgroundView>
+  <BackgroundView testID={'landing_screen'}>
     <Slide {...props} scrollEnabled={false}>
       {BackgroundComponent}
       <Content>

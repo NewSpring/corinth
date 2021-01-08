@@ -35,7 +35,7 @@ import Crashes from 'appcenter-crashes';
 // eslint-disable-next-line
 import bugsnag from './bugsnag';
 
-import LandingScreen from './LandingScreen';
+import LandingScreen from './ui/LandingScreen';
 import Onboarding from './ui/Onboarding';
 
 const AppStatusBar = withTheme(({ theme }) => ({
