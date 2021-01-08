@@ -3,7 +3,7 @@ import FRAGMENTS from '@apollosproject/ui-fragments';
 import gql from 'graphql-tag';
 
 const liteFeatures = `
-      fragment FeedFeaturesFragment on Feature {
+      fragment LiteFeaturesFragment on Feature {
         id
         __typename
         ... on VerticalCardListFeature {
@@ -33,13 +33,23 @@ const liteFeatures = `
           ...TextFeatureFragment
         }
         ... on ScriptureFeature {
-          scriptures {
-            reference
+          # The whole fragment is currently included b/c these nodes don't fetch their own content.
+          sharing {
+            message
           }
-          ...ScriptureFeatureFragment
+          scriptures {
+            id
+            html
+            reference
+            copyright
+            version
+          }
         }
         ... on WebviewFeature {
-          ...WebviewFeatureFragment
+          # The whole fragment is currently included b/c these nodes don't fetch their own content.
+          linkText
+          title
+          url
         }
       }
     `;

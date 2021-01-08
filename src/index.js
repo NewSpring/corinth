@@ -36,7 +36,6 @@ import Crashes from 'appcenter-crashes';
 import bugsnag from './bugsnag';
 
 import LandingScreen from './LandingScreen';
-import UserWebBrowser from './user-web-browser';
 import Onboarding from './ui/Onboarding';
 
 const AppStatusBar = withTheme(({ theme }) => ({
@@ -96,7 +95,6 @@ const AppNavigator = createStackNavigator(
     ChangePassword,
     Location,
     Passes,
-    UserWebBrowser,
     Onboarding,
     LandingScreen,
     Prayer,
