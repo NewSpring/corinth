@@ -27,6 +27,7 @@ exports[`The Onboarding LandingScreen component should pass additional props to 
       "height": "100%",
     }
   }
+  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -432,6 +433,7 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
       "height": "100%",
     }
   }
+  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -636,6 +638,7 @@ exports[`The Onboarding LandingScreen component should render a custom descripti
       "height": "100%",
     }
   }
+  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -840,6 +843,7 @@ exports[`The Onboarding LandingScreen component should render a custom title 1`]
       "height": "100%",
     }
   }
+  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -1044,6 +1048,7 @@ exports[`The Onboarding LandingScreen component should render with a custom text
       "height": "100%",
     }
   }
+  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -1252,6 +1257,7 @@ exports[`The Onboarding LandingScreen component should render with an ImageCompo
       "height": "100%",
     }
   }
+  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
