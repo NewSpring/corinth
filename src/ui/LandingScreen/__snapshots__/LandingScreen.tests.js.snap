@@ -27,7 +27,6 @@ exports[`The Onboarding LandingScreen component should pass additional props to 
       "height": "100%",
     }
   }
-  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -56,10 +55,10 @@ exports[`The Onboarding LandingScreen component should pass additional props to 
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight={96}
-          bbWidth={96}
+          bbHeight={48}
+          bbWidth={48}
           focusable={false}
-          height={96}
+          height={48}
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -77,14 +76,14 @@ exports[`The Onboarding LandingScreen component should pass additional props to 
               },
               Object {
                 "flex": 0,
-                "height": 96,
-                "width": 96,
+                "height": 48,
+                "width": 48,
               },
             ]
           }
           vbHeight={24}
           vbWidth={24}
-          width={96}
+          width={48}
         >
           <RNSVGGroup
             fill={
@@ -433,7 +432,6 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
       "height": "100%",
     }
   }
-  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -462,10 +460,10 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight={96}
-          bbWidth={96}
+          bbHeight={48}
+          bbWidth={48}
           focusable={false}
-          height={96}
+          height={48}
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -483,14 +481,14 @@ exports[`The Onboarding LandingScreen component should render 1`] = `
               },
               Object {
                 "flex": 0,
-                "height": 96,
-                "width": 96,
+                "height": 48,
+                "width": 48,
               },
             ]
           }
           vbHeight={24}
           vbWidth={24}
-          width={96}
+          width={48}
         >
           <RNSVGGroup
             fill={
@@ -638,7 +636,6 @@ exports[`The Onboarding LandingScreen component should render a custom descripti
       "height": "100%",
     }
   }
-  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -667,10 +664,10 @@ exports[`The Onboarding LandingScreen component should render a custom descripti
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight={96}
-          bbWidth={96}
+          bbHeight={48}
+          bbWidth={48}
           focusable={false}
-          height={96}
+          height={48}
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -688,14 +685,14 @@ exports[`The Onboarding LandingScreen component should render a custom descripti
               },
               Object {
                 "flex": 0,
-                "height": 96,
-                "width": 96,
+                "height": 48,
+                "width": 48,
               },
             ]
           }
           vbHeight={24}
           vbWidth={24}
-          width={96}
+          width={48}
         >
           <RNSVGGroup
             fill={
@@ -843,7 +840,6 @@ exports[`The Onboarding LandingScreen component should render a custom title 1`]
       "height": "100%",
     }
   }
-  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -872,10 +868,10 @@ exports[`The Onboarding LandingScreen component should render a custom title 1`]
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight={96}
-          bbWidth={96}
+          bbHeight={48}
+          bbWidth={48}
           focusable={false}
-          height={96}
+          height={48}
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -893,14 +889,14 @@ exports[`The Onboarding LandingScreen component should render a custom title 1`]
               },
               Object {
                 "flex": 0,
-                "height": 96,
-                "width": 96,
+                "height": 48,
+                "width": 48,
               },
             ]
           }
           vbHeight={24}
           vbWidth={24}
-          width={96}
+          width={48}
         >
           <RNSVGGroup
             fill={
@@ -1048,7 +1044,6 @@ exports[`The Onboarding LandingScreen component should render with a custom text
       "height": "100%",
     }
   }
-  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -1077,11 +1072,11 @@ exports[`The Onboarding LandingScreen component should render with a custom text
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight={96}
-          bbWidth={96}
+          bbHeight={48}
+          bbWidth={48}
           color={4294606962}
           focusable={false}
-          height={96}
+          height={48}
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -1099,15 +1094,15 @@ exports[`The Onboarding LandingScreen component should render with a custom text
               },
               Object {
                 "flex": 0,
-                "height": 96,
-                "width": 96,
+                "height": 48,
+                "width": 48,
               },
             ]
           }
           tintColor={4294606962}
           vbHeight={24}
           vbWidth={24}
-          width={96}
+          width={48}
         >
           <RNSVGGroup
             fill={
@@ -1257,7 +1252,6 @@ exports[`The Onboarding LandingScreen component should render with an ImageCompo
       "height": "100%",
     }
   }
-  testID="landing_screen"
 >
   <RCTScrollView
     contentContainerStyle={
@@ -1317,10 +1311,10 @@ exports[`The Onboarding LandingScreen component should render with an ImageCompo
       >
         <RNSVGSvgView
           align="xMidYMid"
-          bbHeight={96}
-          bbWidth={96}
+          bbHeight={48}
+          bbWidth={48}
           focusable={false}
-          height={96}
+          height={48}
           meetOrSlice={0}
           minX={0}
           minY={0}
@@ -1338,14 +1332,14 @@ exports[`The Onboarding LandingScreen component should render with an ImageCompo
               },
               Object {
                 "flex": 0,
-                "height": 96,
-                "width": 96,
+                "height": 48,
+                "width": 48,
               },
             ]
           }
           vbHeight={24}
           vbWidth={24}
-          width={96}
+          width={48}
         >
           <RNSVGGroup
             fill={

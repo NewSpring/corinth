@@ -16,7 +16,7 @@ export default (props) => {
     // eslint-disable-next-line
     finalProps = { ...props, resolvers };
   }
-  return <MockedProvider cache={cache} {...finalProps} />;
+  return <MockedProvider {...finalProps} />;
 };
 
 const serverSchema = makeExecutableSchema({
