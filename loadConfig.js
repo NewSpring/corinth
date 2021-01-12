@@ -23,14 +23,16 @@ const liteFeatures = `
           title
           subtitle
         }
-        # ... on PrayerListFeature {
-        #   title
-        #   subtitle
-        #   isCard
-        # }
+        #... on PrayerListFeature {
+        #  title
+        #  subtitle
+        #  isCard
+        #}
         ... on TextFeature {
           body
-          ...TextFeatureFragment
+          sharing {
+            message
+          }
         }
         ... on ScriptureFeature {
           # The whole fragment is currently included b/c these nodes don't fetch their own content.
