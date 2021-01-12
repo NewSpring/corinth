@@ -35,8 +35,7 @@ import Crashes from 'appcenter-crashes';
 // eslint-disable-next-line
 import bugsnag from './bugsnag';
 
-import LandingScreen from './LandingScreen';
-import UserWebBrowser from './user-web-browser';
+import LandingScreen from './ui/LandingScreen';
 import Onboarding from './ui/Onboarding';
 
 const AppStatusBar = withTheme(({ theme }) => ({
@@ -96,7 +95,6 @@ const AppNavigator = createStackNavigator(
     ChangePassword,
     Location,
     Passes,
-    UserWebBrowser,
     Onboarding,
     LandingScreen,
     Prayer,
