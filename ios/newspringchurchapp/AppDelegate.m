@@ -21,6 +21,10 @@
 #import <AppCenterReactNativeAnalytics.h>
 #import <AppCenterReactNativeCrashes.h>
 
+
+#import <Bugsnag/Bugsnag.h>
+#import "ReactNativeConfig.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application
@@ -47,6 +51,10 @@
   [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
   [AppCenterReactNativeCrashes registerWithAutomaticProcessing];
 
+  BugsnagConfiguration *config = [BugsnagConfiguration loadConfig];
+  config.apiKey = [ReactNativeConfig envFor:@"BUGSNAG_API_KEY"];
+  [Bugsnag startWithConfiguration:config];
+
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"newspringchurchapp"
@@ -70,6 +78,7 @@
   [self.window makeKeyAndVisible];
 
   [RNBootSplash initialShow];
+
   return YES;
 }
 

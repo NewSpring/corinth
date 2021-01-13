@@ -15,6 +15,7 @@ project.ext.envConfigFiles = [
 ]
 
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+apply from: "../../node_modules/@bugsnag/react-native/bugsnag-react-native.gradle"
 
 import com.android.build.OutputFile
 

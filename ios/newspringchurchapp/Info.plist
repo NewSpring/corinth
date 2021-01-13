@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -32,24 +34,24 @@
 	<key>CFBundleVersion</key>
 	<string>34</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
-	<false />
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
-	<true />
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<true />
+		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>embed.wistia.com</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true />
+				<true/>
 			</dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true />
+				<true/>
 			</dict>
 		</dict>
 	</dict>
@@ -60,7 +62,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to use your location for determining your closest campus</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>$(PRODUCT_NAME) would like to use your location for determining your closest campus</string>	
+	<string>$(PRODUCT_NAME) would like to use your location for determining your closest campus</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to use your location for determining your closest campus</string>
 	<key>NSMicrophoneUsageDescription</key>
@@ -112,6 +114,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false />
+	<false/>
 </dict>
 </plist>

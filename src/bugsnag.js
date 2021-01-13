@@ -1,4 +1,4 @@
-import { Client, Configuration } from 'bugsnag-react-native';
+import Bugsnag from '@bugsnag/react-native';
 import gql from 'graphql-tag';
 import Config from 'react-native-config';
 import { onError } from 'apollo-link-error';
@@ -24,14 +24,15 @@ const getUser = async (client) => {
   return user;
 };
 
-const configuration = new Configuration();
-configuration.apiKey = Config.BUGSNAG_API_KEY;
-const bugsnag = new Client(configuration);
+// const configuration = new Configuration();
+// configuration.apiKey = Config.BUGSNAG_API_KEY;
+// const bugsnag = new Client(configuration);
+Bugsnag.start();
 
 // set the user
 const setUser = async (client) => {
   const user = await getUser(client);
-  bugsnag.setUser(user.id);
+  Bugsnag.setUser(user.id);
 };
 
 const bugsnagLink = onError(
@@ -39,30 +40,32 @@ const bugsnagLink = onError(
     const { headers: { authorization: token } = {} } = operation.getContext();
     if (graphQLErrors) {
       graphQLErrors.forEach(({ message, locations, path }) => {
-        bugsnag.notify(new Error(message), (report) => {
+        console.warn(message);
+        Bugsnag.notify(new Error(message), (report) => {
           if (operation.variables && operation.variables.password) {
             // eslint-disable-next-line
           delete operation.variables.password;
           }
           if (path) {
             // eslint-disable-next-line
-          report.context = path.join('/');
+            report.context = path.join('/');
           }
           // eslint-disable-next-line
-        report.metadata = {
+          report.addMetaData('errorDetails', {
             path,
             locations,
             operation,
-            // NOTE: this should be removed once we have resolved the
-            // frequent authentication errors
-            token,
             response,
-          };
+          });
+          report.addMetaData('userDetails', {
+            token,
+          });
         });
+        Bugsnag.notify(new Error(message));
       });
     }
-    if (networkError) bugsnag.notify(networkError);
+    if (networkError) Bugsnag.notify(networkError);
   }
 );
 
-export { bugsnag as default, bugsnagLink, setUser };
+export { Bugsnag as default, bugsnagLink, setUser };

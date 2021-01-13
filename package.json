@@ -72,6 +72,8 @@
     "@apollosproject/ui-prayer": "^1.8.0-beta.0",
     "@apollosproject/ui-scripture": "^1.8.0-beta.0",
     "@apollosproject/ui-storybook": "^1.8.0-beta.0",
+    "@bugsnag/react-native": "^7.5.6",
+    "@metarouter/analytics-react-native": "^1.1.5",
     "@react-native-community/async-storage": "^1.5.1",
     "@react-native-community/datetimepicker": "^3.0.0",
     "@react-native-community/geolocation": "^2.0.2",
@@ -82,12 +84,12 @@
     "apollo-link-error": "^1.1.10",
     "apollo-link-http": "1.5.11",
     "apollo-link-schema": "1.1.6",
+    "apollo-storybook-react-native": "0.2.12",
     "apollo-upload-client": "9.0.0",
     "appcenter": "^2.6.1",
     "appcenter-analytics": "^2.6.1",
     "appcenter-crashes": "^2.6.1",
     "buffer": "^5.4.3",
-    "bugsnag-react-native": "^2.17.1",
     "color": "3.0.0",
     "dotenv": "^6.2.0",
     "events": "^3.0.0",
@@ -139,9 +141,7 @@
     "rn-fetch-blob": "^0.10.16",
     "stream": "^0.0.2",
     "wml": "^0.0.83",
-    "yup": "0.26.6",
-    "@metarouter/analytics-react-native": "^1.1.5",
-    "apollo-storybook-react-native": "0.2.12"
+    "yup": "0.26.6"
   },
   "devDependencies": {
     "@apollosproject/apollo-server-env-mock": "^1.2.4",
@@ -149,6 +149,7 @@
     "@apollosproject/eslint-config": "^1.8.0-beta.0",
     "@babel/cli": "7.1.5",
     "@babel/core": "7.1.6",
+    "@carimus/metro-symlinked-deps": "^1.1.0",
     "@jimp/custom": "^0.9.3",
     "@jimp/plugin-circle": "^0.9.3",
     "babel-eslint": "10.0.1",
@@ -190,7 +191,6 @@
     "react-test-renderer": "16.8.6",
     "standard-version": "^8.0.1",
     "waait": "1.0.2",
-    "@carimus/metro-symlinked-deps": "^1.1.0",
     "yalc": "^1.0.0-pre.47"
   },
   "rnpm": {
