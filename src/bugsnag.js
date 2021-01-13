@@ -40,7 +40,6 @@ const bugsnagLink = onError(
     const { headers: { authorization: token } = {} } = operation.getContext();
     if (graphQLErrors) {
       graphQLErrors.forEach(({ message, locations, path }) => {
-        console.warn(message);
         Bugsnag.notify(new Error(message), (report) => {
           if (operation.variables && operation.variables.password) {
             // eslint-disable-next-line
@@ -51,17 +50,16 @@ const bugsnagLink = onError(
             report.context = path.join('/');
           }
           // eslint-disable-next-line
-          report.addMetaData('errorDetails', {
+          report.addMetadata('errorDetails', {
             path,
             locations,
             operation,
             response,
           });
-          report.addMetaData('userDetails', {
+          report.addMetadata('userDetails', {
             token,
           });
         });
-        Bugsnag.notify(new Error(message));
       });
     }
     if (networkError) Bugsnag.notify(networkError);
