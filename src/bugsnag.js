@@ -1,6 +1,5 @@
 import Bugsnag from '@bugsnag/react-native';
 import gql from 'graphql-tag';
-import Config from 'react-native-config';
 import { onError } from 'apollo-link-error';
 
 const getUser = async (client) => {
