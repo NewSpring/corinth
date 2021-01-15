@@ -75,10 +75,10 @@
     graphql-tag "2.9.2"
     react-native-device-info "^4.0.1"
 
-"@apollosproject/ui-auth@^1.8.0-beta.0":
-  version "1.8.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-auth/-/ui-auth-1.8.0-beta.0.tgz#10e9186911c60ef86cf945261af4ed11ae422e93"
-  integrity sha512-Pmya8uw4fCVkv6K+jiCWBLpvECHhgTvW/bclYNI4NHbBSnbVt7T6q8PLDp1fC3r1qvL7UAYAjg0IVyG6XKpZtA==
+"@apollosproject/ui-auth@1.8.0-alpha.5":
+  version "1.8.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-auth/-/ui-auth-1.8.0-alpha.5.tgz#8141fb9526c49b3fe09a05e22418131a3cad5960"
+  integrity sha512-K7bn7/Rag7sIPsveGsAvfYlLuuBJgtDiSYIoP93iVLRgbWpn/SaitdoI4kXu9kwDF2H/K7dAHx3oKeQ5cCCHEQ==
   dependencies:
     apollo-cache-inmemory "^1.5.1"
     apollo-link-context "1.0.14"
@@ -88,10 +88,10 @@
     graphql-tag "2.9.2"
     yup "^0.27.0"
 
-"@apollosproject/ui-connected@^1.8.0-beta.0":
-  version "1.8.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-connected/-/ui-connected-1.8.0-beta.0.tgz#87313df0fa732ad9612938ec9320b8c94f2e82a6"
-  integrity sha512-GQALhrUjxMgfKqnOflVwoNTIAN8To4Z4RYCnljKvzj9UNML8LD7OFylGixP7egmr1g7S0JejCZwP7jmGJnI33g==
+"@apollosproject/ui-connected@1.8.0-alpha.7":
+  version "1.8.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-connected/-/ui-connected-1.8.0-alpha.7.tgz#f53244764f085b913b489bb0ffb331f850e16c76"
+  integrity sha512-hSjeIb1j1vF/gtzffutGoJylchAOW1M7PwD6owCMpGqp+YQ8ZW0RZvCLc4wSTWYvxmJ74lsitC8xCgNJZPBbsw==
   dependencies:
     apollo-storybook-react-native "0.2.12"
     apollo-upload-client "9.0.0"
@@ -106,10 +106,10 @@
   dependencies:
     graphql-tag "2.9.2"
 
-"@apollosproject/ui-htmlview@^1.8.0-beta.0":
-  version "1.8.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-htmlview/-/ui-htmlview-1.8.0-beta.0.tgz#15688bcb45ccdeeeff51b78239b5a8f158ea8cbd"
-  integrity sha512-QpAhgeZ1wHQhCaNFHR6CjGsXhNkA0H94ms4FaEbaJDkfu07dVD4nOgLzmMVqg969s+s6lnoINopx6jSZzv/lng==
+"@apollosproject/ui-htmlview@1.8.0-alpha.7":
+  version "1.8.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-htmlview/-/ui-htmlview-1.8.0-alpha.7.tgz#9a9b2c2d90d4e90bea4983820063b00b87b67460"
+  integrity sha512-z8e+Nyb0BTKhCjWwtUwTQt3selENHyT55/lO+9s9FQXoRYP9FxdywSL+IrQIljt/NO6FzMGGolyMTSKe7JIxww==
   dependencies:
     "@apollosproject/ui-kit" "^1.8.0-beta.0"
     "@apollosproject/ui-storybook" "^1.8.0-beta.0"
@@ -4245,15 +4245,6 @@ buffer@^5.2.0, buffer@^5.4.3:
   dependencies:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
-
-bugsnag-react-native@^2.17.1:
-  version "2.23.7"
-  resolved "https://registry.yarnpkg.com/bugsnag-react-native/-/bugsnag-react-native-2.23.7.tgz#39b890831e1f61616d43caeb4e595a36cf6b9e72"
-  integrity sha512-C6pBHccDK1p8fTvEYinnbc7QYdpe+aF4j58/WuAymWhCVUHGv2DsQQ6gAbY/VgM+xaLI8jOGw4DLpiDK9mZgng==
-  dependencies:
-    iserror "^0.0.2"
-    promise "^7"
-    prop-types "^15.6.0"
 
 bunyan-debug-stream@^1.1.0:
   version "1.1.1"
@@ -11211,7 +11202,7 @@ promise-polyfill@^6.0.1:
   resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-6.1.0.tgz#dfa96943ea9c121fca4de9b5868cb39d3472e057"
   integrity sha1-36lpQ+qcEh/KTem1hoyznTRy4Fc=
 
-promise@^7, promise@^7.1.1:
+promise@^7.1.1:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
   integrity sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg==
