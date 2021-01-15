@@ -194,7 +194,11 @@ jest.mock('react-native-video', () => 'Video');
 
 jest.mock('NativeEventEmitter');
 
-jest.mock('@bugsnag/react-native');
+jest.mock('@bugsnag/react-native', () => ({
+  start: jest.fn(),
+  setUser: jest.fn(),
+  notify: jest.fn(),
+}));
 jest.mock('DatePickerIOS', () => 'DatePicker');
 jest.mock('./src/client/index');
 

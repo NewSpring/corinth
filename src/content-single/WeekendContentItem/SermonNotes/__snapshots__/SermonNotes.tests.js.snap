@@ -407,6 +407,22 @@ exports[`the sermon notes renders sermon notes 1`] = `
                     The greatest among you will be your servant.
                   </Text>
                 </Text>
+                <Text
+                  bold={false}
+                  italic={false}
+                  style={
+                    Object {
+                      "color": "#303030",
+                      "fontFamily": "DroidSerif",
+                      "fontSize": 16,
+                      "lineHeight": 26,
+                    }
+                  }
+                >
+                  <Text>
+                     
+                  </Text>
+                </Text>
               </Text>
             </View>
           </View>
