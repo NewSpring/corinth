@@ -24,6 +24,13 @@ const LogoTitle = styled(({ theme }) => ({
   resizeMode: 'contain',
 }))(Image);
 
+const HeaderContainer = styled({
+  top: 0,
+  left: 0,
+  right: 0,
+  position: 'absolute',
+})(Animated.View);
+
 function handleOnPress({ action, ...props }) {
   if (FEATURE_FEED_ACTION_MAP[action]) {
     FEATURE_FEED_ACTION_MAP[action]({ action, ...props });
@@ -84,8 +91,10 @@ function Home(props) {
     <RockAuthedWebBrowser>
       {(openUrl) => (
         <BackgroundView>
-          <Animated.View
-            style={{ transform: [{ translateY }] }}
+          <HeaderContainer
+            style={{
+              transform: [{ translateY }],
+            }}
             onLayout={({
               nativeEvent: {
                 layout: { height },
@@ -97,7 +106,7 @@ function Home(props) {
               onFocus={setIsFocused}
               inputRef={searchRef}
             />
-          </Animated.View>
+          </HeaderContainer>
           <SafeAreaView>
             {isFocused || searchText ? (
               <View style={{ marginTop: searchBarHeight }}>
