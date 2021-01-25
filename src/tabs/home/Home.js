@@ -29,6 +29,7 @@ const HeaderContainer = styled({
   left: 0,
   right: 0,
   position: 'absolute',
+  elevation: 3,
 })(Animated.View);
 
 function handleOnPress({ action, ...props }) {
@@ -91,22 +92,6 @@ function Home(props) {
     <RockAuthedWebBrowser>
       {(openUrl) => (
         <BackgroundView>
-          <HeaderContainer
-            style={{
-              transform: [{ translateY }],
-            }}
-            onLayout={({
-              nativeEvent: {
-                layout: { height },
-              },
-            }) => setSearchBarHeight(height)}
-          >
-            <SearchInputHeader
-              onChangeText={throttle(setSearchText, 300)}
-              onFocus={setIsFocused}
-              inputRef={searchRef}
-            />
-          </HeaderContainer>
           <SafeAreaView>
             {isFocused || searchText ? (
               <View style={{ marginTop: searchBarHeight }}>
@@ -147,6 +132,22 @@ function Home(props) {
               </Query>
             )}
           </SafeAreaView>
+          <HeaderContainer
+            style={{
+              transform: [{ translateY }],
+            }}
+            onLayout={({
+              nativeEvent: {
+                layout: { height },
+              },
+            }) => setSearchBarHeight(height)}
+          >
+            <SearchInputHeader
+              onChangeText={throttle(setSearchText, 300)}
+              onFocus={setIsFocused}
+              inputRef={searchRef}
+            />
+          </HeaderContainer>
         </BackgroundView>
       )}
     </RockAuthedWebBrowser>
