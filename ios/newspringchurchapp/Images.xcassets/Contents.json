@@ -1,6 +1,11 @@
 {
   "info" : {
+<<<<<<< ours
     "version" : 1,
     "author" : "xcode"
+=======
+    "author" : "xcode",
+    "version" : 1
+>>>>>>> theirs
   }
 }

@@ -13,7 +13,6 @@ export const schema = `
     cacheLoaded: Boolean
     notificationsEnabled: Boolean
   }
-
   type Mutation {
     cacheMarkLoaded
     updateDevicePushId(pushId: String!)
@@ -30,6 +29,14 @@ export const defaults = {
 const GET_LOGGED_IN = gql`
   query {
     isLoggedIn @client
+  }
+`;
+
+export const GET_ALL_DATA = gql`
+  query {
+    isLoggedIn @client
+    cacheLoaded @client
+    notificationsEnabled @client
   }
 `;
 

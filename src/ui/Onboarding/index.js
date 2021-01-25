@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { Mutation, Query } from 'react-apollo';
+import { Mutation, Query } from '@apollo/client/react/components';
 import {
   checkNotifications,
   openSettings,
@@ -36,6 +36,7 @@ const StyledImage = styled({
   height: '100%',
   width: '100%',
 })(Image);
+
 
 const FullscreenBackgroundView = styled({
   position: 'absolute',
@@ -152,11 +153,5 @@ function Onboarding({ navigation }) {
     </>
   );
 }
-
-Onboarding.navigationOptions = {
-  title: 'Onboarding',
-  header: null,
-  gesturesEnabled: false,
-};
 
 export default Onboarding;

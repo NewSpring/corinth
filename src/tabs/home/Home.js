@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Image, Animated, View } from 'react-native';
-import SafeAreaView from 'react-native-safe-area-view';
 import PropTypes from 'prop-types';
-import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
 import { throttle } from 'lodash';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import gql from 'graphql-tag';
+import { Query } from '@apollo/client/react/components';
 
 import { styled, BackgroundView } from '@apollosproject/ui-kit';
 import {

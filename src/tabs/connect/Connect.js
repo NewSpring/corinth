@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Query } from 'react-apollo';
+import { Query } from '@apollo/client/react/components';
 import { ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
 import PropTypes from 'prop-types';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import {
   HorizontalLikedContentFeedConnected,
@@ -18,11 +18,6 @@ import ActionBar from './ActionBar';
 import UserAvatarHeader, { GET_USER_PROFILE } from './UserAvatarHeader';
 
 class Connect extends PureComponent {
-  static navigationOptions = () => ({
-    title: 'Connect',
-    header: null,
-  });
-
   static propTypes = {
     navigation: PropTypes.shape({
       getParam: PropTypes.func,
@@ -44,18 +39,18 @@ class Connect extends PureComponent {
               }) => <ActionBar isGroupLeader={isGroupLeader} />}
             </Query>
             <HorizontalLikedContentFeedConnected
-              Component={({ ...feedProps }) => (
-                <HorizontalLikedContentFeed
-                  Component={({ ...cardProps }) => (
-                    <HorizontalContentCardConnected
-                      Component={HorizontalHighlightCard}
-                      labelText={''}
-                      {...cardProps}
-                    />
-                  )}
-                  {...feedProps}
-                />
-              )}
+            // Component={({ ...feedProps }) => (
+            //   <HorizontalLikedContentFeed
+            //     Component={({ ...cardProps }) => (
+            //       <HorizontalContentCardConnected
+            //         Component={HorizontalHighlightCard}
+            //         labelText={''}
+            //         {...cardProps}
+            //       />
+            //     )}
+            //     {...feedProps}
+            //   />
+            // )}
             />
             <ActionTable />
           </ScrollView>
