@@ -1,16 +1,16 @@
 PODS:
   - Amplitude-iOS (4.3.1)
-  - appcenter (2.6.1):
-    - AppCenterReactNativeShared
-    - React
-  - appcenter-analytics (2.6.1):
-    - AppCenter/Analytics
-    - AppCenterReactNativeShared
-    - React
-  - appcenter-crashes (2.6.1):
-    - AppCenter/Crashes
-    - AppCenterReactNativeShared
-    - React
+  - appcenter-analytics (4.0.2):
+    - AppCenter/Analytics (~> 4.0)
+    - AppCenterReactNativeShared (~> 4.0)
+    - React-Core
+  - appcenter-core (4.0.2):
+    - AppCenterReactNativeShared (~> 4.0)
+    - React-Core
+  - appcenter-crashes (4.0.2):
+    - AppCenter/Crashes (~> 4.0)
+    - AppCenterReactNativeShared (~> 4.0)
+    - React-Core
   - AppCenter/Analytics (4.1.0):
     - AppCenter/Core
   - AppCenter/Core (4.1.0)
@@ -406,8 +406,8 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
-  - appcenter (from `../node_modules/appcenter/ios`)
   - appcenter-analytics (from `../node_modules/appcenter-analytics/ios`)
+  - appcenter-core (from `../node_modules/appcenter/ios`)
   - appcenter-crashes (from `../node_modules/appcenter-crashes/ios`)
   - "BugsnagReactNative (from `../node_modules/@bugsnag/react-native`)"
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
@@ -513,10 +513,10 @@ SPEC REPOS:
     - YogaKit
 
 EXTERNAL SOURCES:
-  appcenter:
-    :path: "../node_modules/appcenter/ios"
   appcenter-analytics:
     :path: "../node_modules/appcenter-analytics/ios"
+  appcenter-core:
+    :path: "../node_modules/appcenter/ios"
   appcenter-crashes:
     :path: "../node_modules/appcenter-crashes/ios"
   BugsnagReactNative:
@@ -643,9 +643,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Amplitude-iOS: df355e2be58972041acde9576a2ae97c217bf941
   AppCenter: 8832b158d17e54845c3b88a91076218f0b07174d
-  appcenter: f2e241f931e0865a74b3af3928066a1190814be0
-  appcenter-analytics: 42e368870a904af67fd93f043f3efa75ffa772a2
-  appcenter-crashes: bfc5c03a6ddcfa158fcf4217d1724fd52f45d12c
+  appcenter-analytics: f1bcf80219acb97acdabeda751a1591869f83dfd
+  appcenter-core: 92618da8986eef80bae39d1bb2b4c9fa0fc873bd
+  appcenter-crashes: 6fe933bbc9a1d2b64e451b348169640a9fea8729
   AppCenterReactNativeShared: e1db64e8c65dfdca495efd1a1f77892cbc21342b
   AstronomerAnalytics: 36f48678a387e41481650edd6247c6c95d994131
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c

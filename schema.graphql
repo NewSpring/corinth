@@ -151,21 +151,6 @@ type CardListItem {
 """A rgb color string"""
 scalar Color
 
-<<<<<<< ours
-=======
-type Comment implements Node {
-  id: ID!
-  person: Person
-  text: String
-}
-
-type CommentListFeature implements Feature & Node {
-  id: ID!
-  order: Int
-  comments: [Comment]
-}
-
->>>>>>> theirs
 type ContentChannel implements Node {
   id: ID!
   name: String
@@ -272,11 +257,8 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
-<<<<<<< ours
   series: ContentItem @deprecated(reason: "Use seriesConnection")
   seriesConnection: SeriesConnection
-=======
->>>>>>> theirs
   sharing: SharableContentItem
 }
 
@@ -329,7 +311,6 @@ enum GROUP_TYPE {
   Serving
   Community
   Family
-<<<<<<< ours
   Fuse
   Rally
   Mentoring
@@ -340,8 +321,6 @@ type HeaderFeature implements Feature & Node {
   order: Int
   body: String
   sharing: SharableFeature
-=======
->>>>>>> theirs
 }
 
 type HeroListFeature implements Feature & Node {
@@ -376,10 +355,6 @@ type ImageMediaSource implements MediaSource {
 enum InteractionAction {
   VIEW
   COMPLETE
-<<<<<<< ours
-=======
-  PRAY
->>>>>>> theirs
 }
 
 input InteractionDataField {
@@ -461,10 +436,7 @@ type Mutation {
   _placeholder: Boolean
   updateLikeEntity(input: LikeEntityInput!): ContentItem @deprecated(reason: "Use the more general updateLikeNode instead")
   updateLikeNode(input: LikeEntityInput!): Node
-<<<<<<< ours
   saveNotesComment(contentID: ID!, blockID: ID!, text: String): NotesBlockComment
-=======
->>>>>>> theirs
   updateProfileField(input: UpdateProfileInput!): Person
   updateProfileFields(input: [UpdateProfileInput]!): Person
   uploadProfileImage(file: Upload!, size: Int!): Person
@@ -479,7 +451,6 @@ type Mutation {
   trackEvent(input: AnalyticsTrackInput!): AnalyticsResult
   updateUserPushSettings(input: PushSettingsInput!): Person
   updateUserCampus(campusId: String!): Person
-<<<<<<< ours
   addPrayer(text: String!, isAnonymous: Boolean): Prayer
   answerPrayer(id: ID!, answer: String!): Prayer
   interactWithPrayer(id: ID!, action: PrayerAction!): Prayer
@@ -488,17 +459,12 @@ type Mutation {
   flagPrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:FLAG)")
   savePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:SAVE)")
   unSavePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:UNSAVE)")
-=======
-  addPrayer(text: String!, isAnonymous: Boolean): PrayerRequest
-  addComment(parentId: ID!, text: String!): Comment
->>>>>>> theirs
 }
 
 interface Node {
   id: ID!
 }
 
-<<<<<<< ours
 type NoteFeature implements Feature & Node {
   id: ID! @deprecated(reason: "NoteFeature no longer supported")
   order: Int
@@ -535,8 +501,6 @@ type NotesTextBlock implements NotesBlock {
   hiddenText: String
 }
 
-=======
->>>>>>> theirs
 type PaginationInfo {
   startCursor: String
   endCursor: String
@@ -585,7 +549,6 @@ type Person implements Node {
   gender: GENDER
   birthDate: String
   photo: ImageMediaSource
-<<<<<<< ours
   impersonationParameter: String! @deprecated(reason: "No longer used.")
   isStaff: Boolean
   devices: [Device]
@@ -651,28 +614,6 @@ enum PrayerType {
   USER
   GROUP
   SAVED
-=======
-  devices: [Device]
-  campus: Campus
-  groups(type: GROUP_TYPE, asLeader: Boolean): [Group]
-}
-
-type PrayerListFeature implements Feature & Node {
-  id: ID!
-  order: Int
-  isCard: Boolean
-  title: String
-  subtitle: String
-  prayers: [PrayerRequest]
-}
-
-type PrayerRequest implements Node {
-  id: ID!
-  text: String!
-  requestor: Person
-  isAnonymous: Boolean
-  isPrayed: Boolean
->>>>>>> theirs
 }
 
 interface ProgressNode {
@@ -689,19 +630,12 @@ type Query {
   _placeholder: Boolean
   node(id: ID!): Node
   likedContent(first: Int, after: String): ContentItemsConnection
-<<<<<<< ours
   contentChannels: [ContentChannel]
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
   contentItemFromSlug(slug: String!): ContentItem
   forgotPasswordURL: String
-=======
-  contentChannels: [ContentChannel] @deprecated(reason: "No longer supported.")
-  campaigns: ContentItemsConnection
-  userFeed(first: Int, after: String): ContentItemsConnection
-  personaFeed(first: Int, after: String): ContentItemsConnection
->>>>>>> theirs
   currentUser: AuthenticatedUser
   userExists(identity: String): USER_AUTH_STATUS
   liveStream: LiveStream @deprecated(reason: "Use liveStreams, there may be multiple.")
@@ -711,7 +645,6 @@ type Query {
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
-<<<<<<< ours
   prayer(id: ID!): Prayer
   prayers(type: PrayerType): [Prayer] @deprecated(reason: "Use paginated version: prayerFeed")
   prayerFeed(first: Int, after: String, type: PrayerType): PrayersConnection
@@ -724,11 +657,6 @@ type Query {
   homeFeedFeatures(campusId: ID): FeatureFeed
   discoverFeedFeatures: FeatureFeed
   readFeedFeatures: FeatureFeed
-=======
-  userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
-  homeFeedFeatures(campusId: ID): FeatureFeed
-  discoverFeedFeatures: FeatureFeed
->>>>>>> theirs
 }
 
 type RockPersonDetails {
@@ -768,15 +696,12 @@ type SearchResultsConnection {
   pageInfo: PaginationInfo
 }
 
-<<<<<<< ours
 type SeriesConnection {
   series: ContentItem
   itemCount: Int
   itemIndex(id: String): Int
 }
 
-=======
->>>>>>> theirs
 interface Sharable {
   message: String
   title: String
@@ -899,10 +824,7 @@ type VideoMedia implements Media {
   key: String
   sources: [VideoMediaSource]
   embedHtml: String
-<<<<<<< ours
   thumbnail: ImageMedia
-=======
->>>>>>> theirs
 }
 
 type VideoMediaSource implements MediaSource {
@@ -937,7 +859,6 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   theme: Theme
   isLiked: Boolean
   likedCount: Int
-<<<<<<< ours
   communicator: Person @deprecated(reason: "Use communicators")
   communicators: [Person]
   guestCommunicators: [String]
@@ -945,8 +866,6 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   series: ContentItem @deprecated(reason: "Use seriesConnection")
   seriesConnection: SeriesConnection
   sermonNotes: [NotesBlock]
-=======
->>>>>>> theirs
   liveStream: LiveStream
   sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
