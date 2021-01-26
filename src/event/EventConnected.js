@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from 'react';
 import { Query } from '@apollo/client/react/components';
 import { get } from 'lodash';

@@ -65,13 +65,9 @@ class PrayerList extends PureComponent {
     prayed: false,
   };
 
-  static navigationOptions = {
-    header: null,
-  };
-
   render() {
-    const title = this.props.navigation.getParam('title', 'My Church');
-    const type = this.props.navigation.getParam('type', null);
+    const title = this.props.route.params?.title || 'My Church';
+    const type = this.props.route.params?.type;
 
     return (
       <ModalView onClose={() => this.props.navigation.popToTop()}>
@@ -112,6 +108,7 @@ class PrayerList extends PureComponent {
                               <StyledPrayerView>
                                 <PrayerSingle
                                   avatarSize={'medium'}
+                                  route={this.props.route}
                                   navigation={this.props.navigation}
                                   prayer={prayer}
                                   action={<SaveButton prayerID={prayer.id} />}

@@ -20,10 +20,10 @@ const Container = styled(({ theme }) => ({
 
 const ActionContainer = ({ itemId }) => (
   <Container>
-      <PositioningView>
-        <LikeButtonConnected itemId={itemId} />
-        <ShareButtonConnected itemId={itemId} />
-      </PositioningView>
+    <PositioningView>
+      <LikeButtonConnected itemId={itemId} />
+      <ShareButtonConnected itemId={itemId} />
+    </PositioningView>
   </Container>
 );
 

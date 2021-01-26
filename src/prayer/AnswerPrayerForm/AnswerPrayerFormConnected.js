@@ -20,9 +20,9 @@ const OptionMenuText = styled(({ theme }) => ({
 
 class AnswerPrayerFormConnected extends React.Component {
   prayer = {
-    id: this.props.navigation.getParam('prayerId', ''),
-    text: this.props.navigation.getParam('prayerText', ''),
-    answer: this.props.navigation.getParam('prayerAnswer', ''),
+    id: this.props.route.params?.prayerId || '',
+    text: this.props.route.params?.prayerText || '',
+    answer: this.props.route.params?.prayerAnswer || '',
   };
 
   render() {

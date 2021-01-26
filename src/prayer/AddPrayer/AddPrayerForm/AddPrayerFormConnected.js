@@ -6,10 +6,6 @@ import ADD_PRAYER from '../../data/mutations/addPrayer';
 import AddPrayerForm from './AddPrayerForm';
 
 class AddPrayerFormConnected extends React.Component {
-  static navigationOptions = {
-    header: null,
-  };
-
   render() {
     return (
       <Query query={getUserProfile}>

@@ -9,13 +9,9 @@ const StyledSafeAreaView = styled(({ theme }) => ({
 }))(SafeAreaView);
 
 class Prayer extends PureComponent {
-  static navigationOptions = () => ({
-    header: null,
-  });
-
   render() {
     return (
-      <StyledSafeAreaView>
+      <StyledSafeAreaView edges={['right', 'top', 'left']}>
         <PrayerMenu {...this.props} />
       </StyledSafeAreaView>
     );

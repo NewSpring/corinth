@@ -66,6 +66,19 @@ export const client = new ApolloClient({
   typeDefs: schema,
   name: getApplicationName(),
   version: getVersion(),
+  defaultOptions: {
+    watchQuery: {
+      nextFetchPolicy(lastFetchPolicy) {
+        if (
+          lastFetchPolicy === 'cache-and-network' ||
+          lastFetchPolicy === 'network-only'
+        ) {
+          return 'cache-first';
+        }
+        return lastFetchPolicy;
+      },
+    },
+  },
 });
 
 // Hack to give auth link access to method on client;

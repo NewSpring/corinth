@@ -65,7 +65,7 @@ const AddPrayerForm = memo(
     >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <ModalView {...props}>
-          <FlexedSafeAreaView forceInset={{ top: 'always' }}>
+          <FlexedSafeAreaView sides={['top']}>
             <ShrinkingView behavior={'padding'}>
               <HeaderView>
                 <PrayerHeader

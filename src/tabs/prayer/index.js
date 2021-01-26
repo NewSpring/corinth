@@ -1,7 +1,11 @@
 import React from 'react';
 
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
-import { withTheme } from '@apollosproject/ui-kit';
+import {
+  withTheme,
+  ModalCloseButton,
+  ModalBackButton,
+} from '@apollosproject/ui-kit';
 
 import { AddPrayerFormConnected } from '../../prayer/AddPrayer/AddPrayerForm';
 import { AnswerPrayerFormConnected } from '../../prayer/AnswerPrayerForm';
@@ -14,17 +18,9 @@ import Prayer from './Prayer';
 const { Screen, Navigator } = createNativeStackNavigator();
 
 const PrayerNavigator = (props) => (
-  <Navigator {...props}>
-    <Screen
-      component={Prayer}
-      name="Prayer"
-      options={{ headerShown: false }}
-    />
-    <Screen
-      component={AddPrayerFormConnected}
-      name="AddPrayerFormConnected"
-      options={{ headerShow: false }}
-    />
+  <Navigator {...props} mode="modal">
+    <Screen component={Prayer} name="Prayer" options={{ headerShown: false }} />
+    <Screen component={AddPrayerFormConnected} name="AddPrayerFormConnected" />
     <Screen
       component={AnswerPrayerFormConnected}
       name="AnswerPrayerFormConnected"
@@ -45,31 +41,21 @@ const PrayerNavigator = (props) => (
       name="WithYou"
       component={WithYou}
       options={{ headerShow: false }}
-    />    
+    />
     <Screen
       name="PrayerSingle"
       component={PrayerSingle}
       options={{ headerShow: false }}
-    />        
-    <Screen
-      component={LikedContentFeedConnected}
-      name="LikedContentFeedConnected"
-      options={{ headerTitle: 'Your Likes' }}
     />
   </Navigator>
 );
 
 const EnhancedPrayer = withTheme(({ theme, ...props }) => ({
   ...props,
+  mode: 'modal',
+  headerMode: 'none',
   screenOptions: {
-    headerTintColor: theme.colors.action.secondary,
-    headerTitleStyle: {
-      color: theme.colors.text.primary,
-    },
-    headerStyle: {
-      backgroundColor: theme.colors.background.paper,
-    },
-    headerLargeTitle: true,
+    stackPresentation: 'modal',
   },
 }))(PrayerNavigator);
 
@@ -90,14 +76,14 @@ const EnhancedPrayer = withTheme(({ theme, ...props }) => ({
 //     mode: 'modal',
 //   }
 // );
-// 
+//
 // // TODO: Go back and use the TAP core icon when we get an updated ui-kit
 // PrayerNavigator.navigationOptions = ({ navigation }) => {
 //   let tabBarVisible = true;
 //   if (navigation.state.index > 0) {
 //     tabBarVisible = false;
 //   }
-// 
+//
 //   return {
 //     tabBarVisible,
 //     tabBarIcon: tabBarIcon('prayer'),

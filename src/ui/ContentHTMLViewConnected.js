@@ -27,6 +27,12 @@ const CustomHTMLView = (props) => (
 
 CustomHTMLView.propTypes = { contentId: PropTypes.string };
 
-const CustomHTMLViewConnected = (props) => <ContentHTMLViewConnected {...props} onPressAnchor={handleOnPressAnchor} Component={CustomHTMLView}/>;
+const CustomHTMLViewConnected = (props) => (
+  <ContentHTMLViewConnected
+    {...props}
+    onPressAnchor={handleOnPressAnchor}
+    Component={CustomHTMLView}
+  />
+);
 
 export default CustomHTMLViewConnected;

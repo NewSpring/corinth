@@ -92,7 +92,7 @@ function Home(props) {
     <RockAuthedWebBrowser>
       {(openUrl) => (
         <BackgroundView>
-          <SafeAreaView>
+          <SafeAreaView edges={['right', 'top', 'left']}>
             {isFocused || searchText ? (
               <View style={{ marginTop: searchBarHeight }}>
                 {searchText ? (

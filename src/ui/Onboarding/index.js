@@ -37,7 +37,6 @@ const StyledImage = styled({
   width: '100%',
 })(Image);
 
-
 const FullscreenBackgroundView = styled({
   position: 'absolute',
   width: '100%',
@@ -109,9 +108,7 @@ function Onboarding({ navigation }) {
               )}
             />
             <Query query={WITH_USER_ID} fetchPolicy="network-only">
-              {({
-                data
-              }) => (
+              {({ data }) => (
                 <AskNotificationsConnected
                   description={
                     'Get updates when people pray for you, and receive reminders and announcements from your NewSpring family.'

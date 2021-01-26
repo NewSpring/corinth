@@ -32,11 +32,6 @@
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
         android:windowSoftInputMode="adjustPan"
         android:exported="true"
-        android:launchMode="singleTask">
-      </activity>
-
-      <activity
-        android:name="com.zoontek.rnbootsplash.RNBootSplashActivity"
         android:theme="@style/BootTheme"
         android:launchMode="singleTask">
         <intent-filter>
