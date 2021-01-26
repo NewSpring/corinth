@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-<<<<<<< ours
    LastUpgradeVersion = "0940"
-=======
-   LastUpgradeVersion = "1170"
->>>>>>> theirs
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "NO"
@@ -14,11 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-<<<<<<< ours
-               scriptText = "echo &quot;.env.production&quot; &gt; /tmp/envfile &#10;">
-=======
                scriptText = "echo &quot;.env.production&quot; &gt; /tmp/envfile&#10;">
->>>>>>> theirs
             </ActionContent>
          </ExecutionAction>
       </PreActions>
@@ -53,17 +45,10 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-<<<<<<< ours
             buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "NO">
-=======
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
->>>>>>> theirs
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
@@ -75,12 +60,6 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-<<<<<<< ours
-      buildConfiguration = "Release"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-=======
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
@@ -94,7 +73,6 @@
             ReferencedContainer = "container:newspringchurchapp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
->>>>>>> theirs
       <Testables>
          <TestableReference
             skipped = "NO">

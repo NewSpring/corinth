@@ -7,15 +7,10 @@
 
 #import "AppDelegate.h"
 
-
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <React/RCTLinkingManager.h>
-<<<<<<< ours
-#import "RNBootSplash.h"
-
-#import <GoogleCast/GoogleCast.h>
 
 // for AppCenter libraries
 #import <AppCenterReactNative.h>
@@ -26,9 +21,7 @@
 #import <Bugsnag/Bugsnag.h>
 #import "ReactNativeConfig.h"
 
-@implementation AppDelegate
 
-=======
 #import <GoogleCast/GoogleCast.h>
 #import "RNSplashScreen.h"
 
@@ -52,9 +45,6 @@ static void InitializeFlipper(UIApplication *application) {
 
 @implementation AppDelegate
 
-#import <React/RCTLinkingManager.h>
-
->>>>>>> theirs
 - (BOOL)application:(UIApplication *)application
    openURL:(NSURL *)url
    options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
@@ -73,8 +63,6 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-<<<<<<< ours
-
   // AppCenter library registration
   [AppCenterReactNative register];
   [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
@@ -83,11 +71,9 @@ static void InitializeFlipper(UIApplication *application) {
   BugsnagConfiguration *config = [BugsnagConfiguration loadConfig];
   config.apiKey = [ReactNativeConfig envFor:@"BUGSNAG_API_KEY"];
   [Bugsnag startWithConfiguration:config];
-=======
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
->>>>>>> theirs
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
@@ -105,20 +91,10 @@ static void InitializeFlipper(UIApplication *application) {
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
-<<<<<<< ours
-
-  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
-
-  self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
-
-  [RNBootSplash initialShow];
-=======
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
 
   [RNSplashScreen show];
->>>>>>> theirs
 
   return YES;
 }
