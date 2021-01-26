@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Query, Mutation } from 'react-apollo';
+import { Query, Mutation } from '@apollo/client/react/components';
 import { BodyText, styled } from '@apollosproject/ui-kit';
 import getUserProfile from '../../tabs/connect/UserAvatarHeader/getUserProfile';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
@@ -23,10 +23,6 @@ class AnswerPrayerFormConnected extends React.Component {
     id: this.props.navigation.getParam('prayerId', ''),
     text: this.props.navigation.getParam('prayerText', ''),
     answer: this.props.navigation.getParam('prayerAnswer', ''),
-  };
-
-  static navigationOptions = {
-    header: null,
   };
 
   render() {

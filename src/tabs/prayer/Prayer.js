@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { SafeAreaView } from 'react-navigation';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { styled } from '@apollosproject/ui-kit';
 import PrayerMenu from '../../prayer';
 

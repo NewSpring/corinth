@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
-import { Query } from 'react-apollo';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import {

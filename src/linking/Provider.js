@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { Linking } from 'react-native';
 import gql from 'graphql-tag';
-import { withApollo } from 'react-apollo';
+import { withApollo } from '@apollo/client/react/hoc';
 
 const GET_CONTENT_ITEM_BY_SLUG = gql`
   query ContentItemIdFromSlug($slug: String!) {

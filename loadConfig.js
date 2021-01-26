@@ -60,6 +60,38 @@ ApollosConfig.loadJs({
   FRAGMENTS: {
     ...FRAGMENTS,
     // Same as core, but not PrayerListFeature.
+    CONTENT_UP_NEXT_FRAGMENT: gql`
+  fragment ContentUpNextFragment on ContentItem {
+    id
+    ... on ProgressNode {
+      upNext {
+        id
+      }
+    }
+    ... on ContentParentNode {
+      childContentItemsConnection {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+    ... on ContentSeriesContentItem {
+      id
+      upNext {
+        id
+      }
+      childContentItemsConnection {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  }
+`,
     RELATED_NODE_FRAGMENT: gql`
       fragment RelatedFeatureNodeFragment on Node {
         id

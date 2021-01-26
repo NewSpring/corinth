@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { View, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Emoji from 'react-native-emoji';
-import { Query, Mutation } from 'react-apollo';
+import { Query, Mutation } from '@apollo/client/react/components';
 
 import {
   BodyText,

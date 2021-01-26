@@ -1,5 +1,5 @@
 import React from 'react';
-import { Query, Mutation } from 'react-apollo';
+import { Query, Mutation } from '@apollo/client/react/components';
 import getUserProfile from '../../../tabs/connect/UserAvatarHeader/getUserProfile';
 import GET_PRAYER_COUNT from '../../data/queries/getPrayerCount';
 import ADD_PRAYER from '../../data/mutations/addPrayer';
