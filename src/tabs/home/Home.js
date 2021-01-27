@@ -154,9 +154,6 @@ function Home(props) {
   );
 }
 
-Home.navigationOptions = () => ({
-  header: null,
-});
 
 Home.propTypes = {
   navigation: PropTypes.shape({

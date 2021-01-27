@@ -21,7 +21,7 @@ public class MainActivity extends GoogleCastActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-      SplashScreen.show(this, R.style.SplashScreenTheme);
+      SplashScreen.show(this, R.style.BootTheme);
       super.onCreate(savedInstanceState);
       // ATTENTION: This was auto-generated to handle app links.
       Intent appLinkIntent = getIntent();

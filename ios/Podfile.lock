@@ -91,9 +91,14 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - google-cast-sdk (4.3.0):
-    - google-cast-sdk/Core (= 4.3.0)
-  - google-cast-sdk/Core (4.3.0)
+  - google-cast-sdk (4.5.3):
+    - google-cast-sdk/Core (= 4.5.3)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.13)
+  - google-cast-sdk/Core (4.5.3):
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.13)
+  - GTMSessionFetcher/Core (1.5.0)
   - OneSignal (2.15.2)
   - OpenSSL-Universal (1.0.2.20):
     - OpenSSL-Universal/Static (= 1.0.2.20)
@@ -102,6 +107,7 @@ PODS:
     - RNPermissions
   - Permission-PhotoLibrary (2.1.2):
     - RNPermissions
+  - Protobuf (3.14.0)
   - RCTRequired (0.63.2)
   - RCTTypeSafety (0.63.2):
     - FBLazyVector (= 0.63.2)
@@ -277,14 +283,14 @@ PODS:
     - React
   - react-native-geolocation (2.0.2):
     - React
-  - react-native-google-cast (3.3.0):
+  - react-native-google-cast (3.4.1):
     - React
-    - react-native-google-cast/Default (= 3.3.0)
-  - react-native-google-cast/Default (3.3.0):
-    - google-cast-sdk (<= 4.3.0)
+    - react-native-google-cast/Default (= 3.4.1)
+  - react-native-google-cast/Default (3.4.1):
+    - google-cast-sdk
     - React
     - react-native-google-cast/RNGoogleCast
-  - react-native-google-cast/RNGoogleCast (3.3.0):
+  - react-native-google-cast/RNGoogleCast (3.4.1):
     - React
   - react-native-image-picker (0.28.0):
     - React
@@ -376,8 +382,6 @@ PODS:
     - React
   - RNAnalytics (1.1.5):
     - AstronomerAnalytics
-    - React
-  - RNBootSplash (2.2.3):
     - React
   - RNCAsyncStorage (1.9.0):
     - React
@@ -477,7 +481,6 @@ DEPENDENCIES:
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - "RNAirplay (from `../node_modules/@apollosproject/react-native-airplay-btn`)"
   - "RNAnalytics (from `../node_modules/@metarouter/analytics-react-native`)"
-  - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
@@ -508,8 +511,10 @@ SPEC REPOS:
     - Flipper-RSocket
     - FlipperKit
     - google-cast-sdk
+    - GTMSessionFetcher
     - OneSignal
     - OpenSSL-Universal
+    - Protobuf
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -613,8 +618,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@apollosproject/react-native-airplay-btn"
   RNAnalytics:
     :path: "../node_modules/@metarouter/analytics-react-native"
-  RNBootSplash:
-    :path: "../node_modules/react-native-bootsplash"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
   RNCMaskedView:
@@ -665,11 +668,13 @@ SPEC CHECKSUMS:
   FlipperKit: bc68102cd4952a258a23c9c1b316c7bec1fecf83
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
-  google-cast-sdk: 57cd67b4a0966802b2738fcbbc103125c98cc8a1
+  google-cast-sdk: f94c5df87564f71d4342400b8487665e9bed27c6
+  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   OneSignal: 9531e385388565f4d31797ddadbe0fcc786430ec
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
   Permission-Notifications: 2f2ff1d01fe7677c3858c8f0a0bd3f3accdbb6bb
   Permission-PhotoLibrary: e29736d903e867d278747eb30951528303425f64
+  Protobuf: 0cde852566359049847168e51bd1c690e0f70056
   RCTRequired: f13f25e7b12f925f1f6a6a8c69d929a03c0129fe
   RCTTypeSafety: 44982c5c8e43ff4141eb519a8ddc88059acd1f3a
   React: e1c65dd41cb9db13b99f24608e47dd595f28ca9a
@@ -684,7 +689,7 @@ SPEC CHECKSUMS:
   react-native-apollos-player: 4a14f027f63edd101d3ff42423059756ff67ea4e
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
-  react-native-google-cast: 410619ef162b8b91815ecf7271502224998dee8e
+  react-native-google-cast: 9ead682d0026c857318efa8ea9c6f58b6142651a
   react-native-image-picker: e6e06d4315e3c85bad17e4b2002cd29f11d202c8
   react-native-maps: 6e499eee4eabf422ba8b6f94e993cc768bf35153
   react-native-music-control: dcfe5b61e56a15898c4618579cb8ce612c9d21a8
@@ -708,7 +713,6 @@ SPEC CHECKSUMS:
   rn-fetch-blob: 651b8d076b43d0d7aa294a3d9ec16c00aab8bef9
   RNAirplay: 75777dd55dafbd3687703c3eb9c290ea6cc43248
   RNAnalytics: 360b0680753d0e1d37152a25d47aa34a015cab72
-  RNBootSplash: bbf3c78bd12e3e990eeb8c52db2025ab717b6385
   RNCAsyncStorage: 453cd7c335ec9ba3b877e27d02238956b76f3268
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNCPicker: 77183d9b1cd80ae55505322f8ad09ba0036e29ba
