@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Query } from 'react-apollo';
+import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';
 import { Dimensions } from 'react-native';
 import { TabView } from 'react-native-tab-view';

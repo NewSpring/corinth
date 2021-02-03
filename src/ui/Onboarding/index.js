@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { Mutation, Query } from 'react-apollo';
+import { Mutation, Query } from '@apollo/client/react/components';
 import {
   checkNotifications,
   openSettings,
@@ -108,15 +108,13 @@ function Onboarding({ navigation }) {
               )}
             />
             <Query query={WITH_USER_ID} fetchPolicy="network-only">
-              {({
-                data: { currentUser: { id } = { currentUser: { id: null } } },
-              }) => (
+              {({ data }) => (
                 <AskNotificationsConnected
                   description={
                     'Get updates when people pray for you, and receive reminders and announcements from your NewSpring family.'
                   }
                   onPressPrimary={() => {
-                    onboardingComplete({ userId: id });
+                    onboardingComplete({ userId: data?.currentUser?.id });
                     navigation.dispatch(
                       NavigationService.resetAction({
                         navigatorName: 'Tabs',
@@ -152,11 +150,5 @@ function Onboarding({ navigation }) {
     </>
   );
 }
-
-Onboarding.navigationOptions = {
-  title: 'Onboarding',
-  header: null,
-  gesturesEnabled: false,
-};
 
 export default Onboarding;

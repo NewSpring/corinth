@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { View, KeyboardAvoidingView } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Formik } from 'formik';
 import {
   ModalView,
@@ -65,7 +65,7 @@ const AddPrayerForm = memo(
     >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <ModalView {...props}>
-          <FlexedSafeAreaView forceInset={{ top: 'always' }}>
+          <FlexedSafeAreaView sides={['top']}>
             <ShrinkingView behavior={'padding'}>
               <HeaderView>
                 <PrayerHeader

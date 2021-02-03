@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import { View, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import PropTypes from 'prop-types';
 import Emoji from 'react-native-emoji';
-import { Query, Mutation } from 'react-apollo';
+import { Query, Mutation } from '@apollo/client/react/components';
 
 import {
   BodyText,
@@ -65,13 +66,9 @@ class PrayerList extends PureComponent {
     prayed: false,
   };
 
-  static navigationOptions = {
-    header: null,
-  };
-
   render() {
-    const title = this.props.navigation.getParam('title', 'My Church');
-    const type = this.props.navigation.getParam('type', null);
+    const title = this.props.route.params?.title || 'My Church';
+    const type = this.props.route.params?.type;
 
     return (
       <ModalView onClose={() => this.props.navigation.popToTop()}>
@@ -112,6 +109,7 @@ class PrayerList extends PureComponent {
                               <StyledPrayerView>
                                 <PrayerSingle
                                   avatarSize={'medium'}
+                                  route={this.props.route}
                                   navigation={this.props.navigation}
                                   prayer={prayer}
                                   action={<SaveButton prayerID={prayer.id} />}
@@ -194,5 +192,12 @@ class PrayerList extends PureComponent {
     );
   }
 }
+
+PrayerList.propTypes = {
+  route: PropTypes.shape({
+    params: PropTypes.shape({}),
+  }),
+  navigation: PropTypes.shape({}),
+};
 
 export default PrayerList;

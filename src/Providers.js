@@ -3,7 +3,6 @@ import ApollosConfig from '@apollosproject/config';
 import { Providers, NavigationService } from '@apollosproject/ui-kit';
 import { AuthProvider } from '@apollosproject/ui-auth';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
-import { MediaPlayerProvider } from '@apollosproject/ui-media-player';
 import { NotificationsProvider } from '@apollosproject/ui-notifications';
 import { LiveProvider } from '@apollosproject/ui-connected';
 
@@ -17,7 +16,7 @@ const AppProviders = (props) => (
   <ClientProvider {...props}>
     <NotificationsProvider
       oneSignalKey={ApollosConfig.ONE_SIGNAL_KEY}
-      navigate={NavigationService.navigate}
+      navigate={() => ({})}
     >
       <AuthProvider
         navigateToAuth={() => NavigationService.navigate('Auth')}
@@ -30,20 +29,18 @@ const AppProviders = (props) => (
         }
       >
         <ExternalLinkProvider navigate={NavigationService.navigate}>
-          <MediaPlayerProvider>
-            <AnalyticsProvider
-              trackFunctions={[track]}
-              useServerAnalytics={false}
-            >
-              <LiveProvider>
-                <Providers
-                  themeInput={customTheme}
-                  iconInput={customIcons}
-                  {...props}
-                />
-              </LiveProvider>
-            </AnalyticsProvider>
-          </MediaPlayerProvider>
+          <AnalyticsProvider
+            trackFunctions={[track]}
+            useServerAnalytics={false}
+          >
+            <LiveProvider>
+              <Providers
+                themeInput={customTheme}
+                iconInput={customIcons}
+                {...props}
+              />
+            </LiveProvider>
+          </AnalyticsProvider>
         </ExternalLinkProvider>
       </AuthProvider>
     </NotificationsProvider>

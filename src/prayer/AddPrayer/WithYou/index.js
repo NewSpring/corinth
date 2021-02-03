@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { SafeAreaView } from 'react-navigation';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   ModalView,
   FlexedView,

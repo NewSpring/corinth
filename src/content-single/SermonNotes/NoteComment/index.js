@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Mutation } from 'react-apollo';
+import { Mutation } from '@apollo/client/react/components';
 import GET_SERMON_NOTES from '../getSermonNotes';
 import NoteComment from './NoteComment';
 import SAVE_NOTES_COMMENT from './saveNotesComment';

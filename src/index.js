@@ -1,10 +1,14 @@
+/* eslint-disable react/jsx-handler-names */
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import React from 'react';
-import { StatusBar } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import RNBootSplash from 'react-native-bootsplash';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import { StatusBar, Platform } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
+import SplashScreen from 'react-native-splash-screen';
+import 'react-native-gesture-handler'; // required for react-navigation
+import { enableScreens } from 'react-native-screens';
+import { gql } from '@apollo/client';
+import { Query } from '@apollo/client/react/components';
 
 import {
   BackgroundView,
@@ -12,22 +16,10 @@ import {
   NavigationService,
 } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
-import { CoreNavigationAnalytics } from '@apollosproject/ui-analytics';
-import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
-import { MediaPlayer } from '@apollosproject/ui-media-player';
-import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
-
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
-
-import Providers from './Providers';
-import ContentSingle from './content-single';
-import NodeSingle from './node-single';
-
-import Event from './event';
-import Tabs from './tabs';
-import PersonalDetails from './user-settings/PersonalDetails';
-import ChangePassword from './user-settings/ChangePassword';
-import Prayer from './prayer';
+// import { CoreNavigationAnalytics } from '@apollosproject/ui-analytics';
+// import PersonalDetails from './user-settings/PersonalDetails';
+// import ChangePassword from './user-settings/ChangePassword';
 
 // need to initialize error tracking at the entrypoint
 // eslint-disable-next-line
@@ -35,8 +27,19 @@ import Crashes from 'appcenter-crashes';
 // eslint-disable-next-line
 import bugsnag from './bugsnag';
 
+import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
+import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
+import Prayer from './prayer';
+
+import Providers from './Providers';
+import ContentSingle from './content-single';
+import NodeSingle from './node-single';
+import Event from './event';
+import Tabs from './tabs';
 import LandingScreen from './ui/LandingScreen';
 import Onboarding from './ui/Onboarding';
+
+enableScreens(); // improves performance for react-navigation
 
 const AppStatusBar = withTheme(({ theme }) => ({
   barStyle: theme.barStyle,
@@ -44,7 +47,7 @@ const AppStatusBar = withTheme(({ theme }) => ({
 }))(StatusBar);
 
 const ProtectedRouteWithSplashScreen = (props) => {
-  const handleOnRouteChange = () => RNBootSplash.hide({ duration: 250 });
+  const handleOnRouteChange = () => SplashScreen.hide();
 
   return <ProtectedRoute {...props} onRouteChange={handleOnRouteChange} />;
 };
@@ -81,77 +84,92 @@ const EnhancedAuth = (props) => (
   </RockAuthedWebBrowser>
 );
 
+// Hack to avoid needing to pass emailRequired through the navigator.navigate
+// 😑
 hoistNonReactStatic(EnhancedAuth, Auth);
 
-const AppNavigator = createStackNavigator(
-  {
-    ProtectedRoute: ProtectedRouteWithSplashScreen,
-    Tabs,
-    ContentSingle,
-    NodeSingle,
-    Event,
-    Auth: EnhancedAuth,
-    PersonalDetails,
-    ChangePassword,
-    Location,
-    Passes,
-    Onboarding,
-    LandingScreen,
-    Prayer,
+const { Navigator, Screen } = createNativeStackNavigator();
+const ThemedNavigator = withTheme(({ theme, ...props }) => ({
+  ...props,
+  screenOptions: {
+    headerTintColor: theme.colors.action.secondary,
+    headerTitleStyle: {
+      color: theme.colors.text.primary,
+    },
+    headerStyle: {
+      backgroundColor: theme.colors.background.paper,
+      ...Platform.select(theme.shadows.default),
+    },
+    headerShown: false,
+    stackPresentation: 'modal',
   },
-  {
-    initialRouteName: 'ProtectedRoute',
-    mode: 'modal',
-    headerMode: 'screen',
-  }
-);
+}))(Navigator);
 
-const AppContainer = createAppContainer(AppNavigator);
-
-const App = () => (
+const App = (props) => (
   <Providers>
     <BackgroundView>
-      <AppStatusBar barStyle="dark-content" />
-      <CoreNavigationAnalytics>
-        {(props) => (
-          <AppContainer
-            ref={(navigatorRef) => {
-              NavigationService.setTopLevelNavigator(navigatorRef);
-            }}
-            {...props}
-          />
-        )}
-      </CoreNavigationAnalytics>
-      {/* Google Cast is experimental until we can fix it */}
-      <Query
-        query={gql`
-          {
-            currentUser {
-              id
-              profile {
-                id
-                testGroups {
-                  id
-                  name
-                }
-              }
-            }
-          }
-        `}
-        fetch-policy={'cache-and-network'}
+      <AppStatusBar />
+      <NavigationContainer
+        ref={NavigationService.setTopLevelNavigator}
+        onReady={NavigationService.setIsReady}
       >
-        {({ data, loading, error }) => {
-          if (loading) return null;
-          if (error) return null;
-          return data.currentUser.profile.testGroups.filter(
-            ({ name }) => name === 'Experimental Features'
-          ).length ? (
-            <MediaPlayer />
-          ) : (
-            <MediaPlayer googleCastEnabled={false} />
-          );
-        }}
-      </Query>
+        <ThemedNavigator initialRouteName="ProtectedRoute" {...props}>
+          <Screen
+            name="ProtectedRoute"
+            component={ProtectedRouteWithSplashScreen}
+          />
+          <Screen name="Tabs" component={Tabs} options={{ title: 'Home' }} />
+          <Screen
+            name="ContentSingle"
+            component={ContentSingle}
+            options={{ title: 'Content' }}
+          />
+          <Screen
+            name="NodeSingle"
+            component={NodeSingle}
+            options={{ title: 'Node' }}
+          />
+          <Screen name="Event" component={Event} options={{ title: 'Event' }} />
+          <Screen
+            name="Auth"
+            component={EnhancedAuth}
+            options={{
+              title: 'Login',
+              gestureEnabled: false,
+              stackPresentation: 'push',
+            }}
+          />
+          <Screen
+            name="Location"
+            component={Location}
+            options={{ headerShown: true }}
+          />
+          <Screen
+            name="Passes"
+            component={Passes}
+            options={{ title: 'Check-In Pass' }}
+          />
+          <Screen
+            name="Onboarding"
+            component={Onboarding}
+            options={{
+              title: 'Onboarding',
+              gestureEnabled: false,
+              stackPresentation: 'push',
+            }}
+          />
+          <Screen
+            name="LandingScreen"
+            component={LandingScreen}
+            options={{ headerShown: false }}
+          />
+          <Screen
+            name="Prayer"
+            component={Prayer}
+            options={{ headerShown: false }}
+          />
+        </ThemedNavigator>
+      </NavigationContainer>
     </BackgroundView>
   </Providers>
 );

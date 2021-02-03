@@ -1,9 +1,9 @@
 import React from 'react';
 
-import SafeAreaView from 'react-native-safe-area-view';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
+import { Query } from '@apollo/client/react/components';
 
 import { BackgroundView } from '@apollosproject/ui-kit';
 import {
@@ -34,7 +34,7 @@ function Discover({ navigation }) {
     <RockAuthedWebBrowser>
       {(openUrl) => (
         <BackgroundView>
-          <SafeAreaView>
+          <SafeAreaView edges={['right', 'top', 'left']}>
             <Query query={GET_DISCOVER_FEED}>
               {({ data }) => (
                 <FeaturesFeedConnected

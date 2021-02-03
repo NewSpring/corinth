@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Providers from '../../../Providers';
-import { renderWithApolloData } from '../../../utils/testUtils';
+import { Providers, renderWithApolloData } from '@apollosproject/ui-test-utils';
 import getSermonNotes from './getSermonNotes';
 import SermonNotes from './SermonNotes';
 import SermonNotesConnected from '.';

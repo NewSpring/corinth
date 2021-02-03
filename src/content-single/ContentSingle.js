@@ -1,139 +1,100 @@
-import React, { PureComponent } from 'react';
-import { Query } from 'react-apollo';
-import { get, isPlainObject } from 'lodash';
+import React from 'react';
+import { gql, useQuery } from '@apollo/client';
 import PropTypes from 'prop-types';
 
-import { ErrorCard, ThemeMixin } from '@apollosproject/ui-kit';
-
+import { View } from 'react-native';
 import { TrackEventWhenLoaded } from '@apollosproject/ui-analytics';
-import { InteractWhenLoadedConnected } from '@apollosproject/ui-connected';
+import {
+  InteractWhenLoadedConnected,
+  NodeSingleConnected,
+  ThemeMixinConnected,
+  ContentNodeConnected,
+  ContentParentFeedConnected,
+  ContentChildFeedConnected,
+  NodeFeaturesConnected,
+  UpNextButtonConnected,
+} from '@apollosproject/ui-connected';
 
-import NavigationHeader from '../ui/NavigationHeader';
+import ScriptureNodeConnected from '@apollosproject/ui-connected/src/ScriptureNodeConnected';
+
+import { styled } from '@apollosproject/ui-kit';
+
 import ActionContainer from './ActionContainer';
-import GET_CONTENT_ITEM from './getContentItem';
+import SermonNotes from './SermonNotes';
 
-import DevotionalContentItem from './DevotionalContentItem';
-import UniversalContentItem from './UniversalContentItem';
-import WeekendContentItem from './WeekendContentItem';
+const NodeSingleConnectedWithActionContainer = styled(
+  ({ theme: { sizing } }) => ({ paddingBottom: sizing.baseUnit * 5 })
+)(NodeSingleConnected);
 
-// Used to strip out colors that aren't present.
-// We'll likely pull this functionality into core.
-function stripNullLeaves(obj) {
-  const out = {};
+const NodeSingleInner = ({ nodeId, ImageWrapperComponent, ...props }) => (
+  <View {...props}>
+    <ContentNodeConnected
+      ImageWrapperComponent={ImageWrapperComponent}
+      nodeId={nodeId}
+    />
+    <SermonNotes contentID={nodeId} />
+    <ScriptureNodeConnected nodeId={nodeId} />
+    <NodeFeaturesConnected nodeId={nodeId} />
+    <UpNextButtonConnected nodeId={nodeId} />
+    <ContentParentFeedConnected nodeId={nodeId} />
+    <ContentChildFeedConnected nodeId={nodeId} />
+  </View>
+);
 
-  Object.keys(obj || {}).forEach((k) => {
-    const val = obj[k];
+NodeSingleInner.propTypes = {
+  nodeId: PropTypes.string,
+  ImageWrapperComponent: PropTypes.any, // eslint-disable-line
+};
 
-    if (val !== null && typeof val === 'object' && isPlainObject(val)) {
-      out[k] = stripNullLeaves(val);
-    } else if (obj[k] != null) {
-      out[k] = val;
-    }
-  });
-
-  return out;
-}
-
-class ContentSingle extends PureComponent {
-  static propTypes = {
-    navigation: PropTypes.shape({
-      getParam: PropTypes.func,
-      push: PropTypes.func,
-    }),
-  };
-
-  get itemId() {
-    return this.props.navigation.getParam('itemId', []);
-  }
-
-  get queryVariables() {
-    return { itemId: this.itemId };
-  }
-
-  static navigationOptions = {
-    header: NavigationHeader,
-    headerTransparent: true,
-    headerMode: 'float',
-  };
-
-  renderContent = ({ content, loading, error }) => {
-    let { __typename } = content;
-    if (!__typename && this.itemId) {
-      [__typename] = this.itemId.split(':');
-    }
-
-    switch (__typename) {
-      case 'DevotionalContentItem':
-        return (
-          <DevotionalContentItem
-            id={this.itemId}
-            content={content}
-            loading={loading}
-            error={error}
-          />
-        );
-      case 'WeekendContentItem':
-        return (
-          <WeekendContentItem
-            id={this.itemId}
-            content={content}
-            loading={loading}
-            error={error}
-          />
-        );
-      case 'UniversalContentItem':
-      default:
-        return (
-          <UniversalContentItem
-            id={this.itemId}
-            content={content}
-            loading={loading}
-            error={error}
-          />
-        );
-    }
-  };
-
-  renderWithData = ({ loading, error, data }) => {
-    if (error) return <ErrorCard error={error} />;
-
-    const content = data.node || {};
-
-    const { theme = {}, id } = content;
-
-    return (
-      <ThemeMixin
-        mixin={{
-          type: get(theme, 'type', 'light').toLowerCase(),
-          colors: stripNullLeaves(get(theme, 'colors')) || {},
+const ContentSingle = (props) => {
+  const nodeId = props.route?.params?.itemId;
+  const { data, loading } = useQuery(
+    gql`
+      query getContentNodeTitle($nodeId: ID) {
+        node(id: $nodeId) {
+          id
+          ... on ContentNode {
+            title
+          }
+        }
+      }
+    `,
+    { variables: { nodeId } }
+  );
+  return (
+    <ThemeMixinConnected nodeId={nodeId}>
+      <InteractWhenLoadedConnected
+        isLoading={loading}
+        nodeId={nodeId}
+        action={'COMPLETE'}
+      />
+      <TrackEventWhenLoaded
+        isLoading={loading}
+        eventName={'View Content'}
+        properties={{
+          title: data?.node?.title,
+          itemId: nodeId,
         }}
+      />
+      <NodeSingleConnectedWithActionContainer
+        nodeId={nodeId}
+        Component={NodeSingleInner}
       >
-        <InteractWhenLoadedConnected
-          isLoading={loading}
-          nodeId={this.itemId}
-          action={'COMPLETE'}
-        />
-        <TrackEventWhenLoaded
-          isLoading={loading}
-          eventName={'View Content'}
-          properties={{
-            title: content.title,
-            itemId: this.itemId,
-          }}
-        />
-        {this.renderContent({ content, loading, error })}
-        <ActionContainer itemId={id} />
-      </ThemeMixin>
-    );
-  };
+        <ActionContainer itemId={nodeId} />
+      </NodeSingleConnectedWithActionContainer>
+    </ThemeMixinConnected>
+  );
+};
 
-  render() {
-    return (
-      <Query query={GET_CONTENT_ITEM} variables={this.queryVariables}>
-        {this.renderWithData}
-      </Query>
-    );
-  }
-}
+ContentSingle.propTypes = {
+  navigation: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      itemId: PropTypes.string,
+    }),
+  }),
+};
 
 export default ContentSingle;

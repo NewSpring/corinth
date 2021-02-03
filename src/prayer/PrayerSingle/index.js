@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View, ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
-import { Query } from 'react-apollo';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import {
@@ -46,18 +46,17 @@ const ScrollArea = styled(({ theme }) => ({
   padding: theme.sizing.baseUnit,
 }))(FlexedView);
 
-const getNotification = (navigation) =>
-  navigation ? navigation.getParam('notification', false) : false;
+const getNotification = (route) =>
+  route ? route.params?.notification || false : false;
 
-const getPrayerId = (navigation) =>
-  navigation ? navigation.getParam('id', null) : null;
+const getPrayerId = (route) => (route ? route.params?.id : null);
 
-const PrayerFromNotification = ({ navigation }) => (
+const PrayerFromNotification = ({ route, navigation }) => (
   <ModalView onClose={() => navigation.popToTop()}>
     <FlexedSafeAreaView>
       <Query
         query={GET_PRAYER}
-        variables={{ id: getPrayerId(navigation) }}
+        variables={{ id: getPrayerId(route) }}
         fetchPolicy={'cache-and-network'}
       >
         {({ data, loading, error }) => {
@@ -99,6 +98,11 @@ const PrayerFromNotification = ({ navigation }) => (
   </ModalView>
 );
 
+PrayerFromNotification.propTypes = {
+  route: PropTypes.shape({}),
+  navigation: PropTypes.shape({}),
+};
+
 const PrayerSingle = memo(
   ({
     showHelp,
@@ -109,10 +113,11 @@ const PrayerSingle = memo(
     action,
     isLoading,
     navigation,
+    route,
   }) => (
     <>
-      {getNotification(navigation) ? (
-        <PrayerFromNotification navigation={navigation} />
+      {getNotification(route) ? (
+        <PrayerFromNotification navigation={navigation} route={route} />
       ) : (
         <View>
           {!isLoading && (
@@ -180,6 +185,7 @@ PrayerSingle.propTypes = {
   showHeader: PropTypes.bool,
   showDate: PropTypes.bool,
   avatarSize: PropTypes.string,
+  route: PropTypes.shape({}),
   prayer: PropTypes.shape({
     startTime: PropTypes.string,
     isAnonymous: PropTypes.bool,
@@ -213,9 +219,5 @@ PrayerSingle.defaultProps = {
 };
 
 PrayerSingle.displayName = 'PrayerSingle';
-
-PrayerSingle.navigationOptions = {
-  header: null,
-};
 
 export default PrayerSingle;

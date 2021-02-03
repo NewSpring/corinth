@@ -1,28 +1,25 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { ApolloProvider } from 'react-apollo';
-import { ApolloProvider as ApolloHookProvider } from '@apollo/react-hooks';
-import { ApolloClient } from 'apollo-client';
-import { ApolloLink } from 'apollo-link';
-import { getVersion, getApplicationName } from 'react-native-device-info';
 
-// TODO put this all back to normal once we find the auth error
-// import { authLink, buildErrorLink } from '@apollosproject/ui-auth';
-import { authLink } from '@apollosproject/ui-auth';
-import { onError } from 'apollo-link-error';
+import { ApolloProvider, ApolloClient, ApolloLink } from '@apollo/client';
+import { getVersion, getApplicationName } from 'react-native-device-info';
 import AsyncStorage from '@react-native-community/async-storage';
 import Appcenter from 'appcenter-analytics';
+
+import { authLink } from '@apollosproject/ui-auth';
+import { onError } from 'apollo-link-error';
+
 import { NavigationService } from '@apollosproject/ui-kit';
 import { bugsnagLink, setUser } from '../bugsnag';
-
-import { resolvers, schema, defaults } from '../store';
+import { resolvers, schema, defaults, GET_ALL_DATA } from '../store';
 
 import httpLink from './httpLink';
 import cache, { ensureCacheHydration } from './cache';
 import MARK_CACHE_LOADED from './markCacheLoaded';
 
 const goToAuth = () => NavigationService.resetToAuth();
-const wipeData = () => cache.writeData({ data: defaults });
+const wipeData = () =>
+  cache.writeQuery({ query: GET_ALL_DATA, data: defaults });
 
 let clearStore;
 let storeIsResetting = false;
@@ -69,6 +66,19 @@ export const client = new ApolloClient({
   typeDefs: schema,
   name: getApplicationName(),
   version: getVersion(),
+  defaultOptions: {
+    watchQuery: {
+      nextFetchPolicy(lastFetchPolicy) {
+        if (
+          lastFetchPolicy === 'cache-and-network' ||
+          lastFetchPolicy === 'network-only'
+        ) {
+          return 'cache-first';
+        }
+        return lastFetchPolicy;
+      },
+    },
+  },
 });
 
 // Hack to give auth link access to method on client;
@@ -110,9 +120,7 @@ class ClientProvider extends PureComponent {
     const { children, ...otherProps } = this.props;
     return (
       <ApolloProvider {...otherProps} client={client}>
-        <ApolloHookProvider {...otherProps} client={client}>
-          {children}
-        </ApolloHookProvider>
+        {children}
       </ApolloProvider>
     );
   }

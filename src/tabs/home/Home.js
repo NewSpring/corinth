@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Image, Animated, View } from 'react-native';
-import SafeAreaView from 'react-native-safe-area-view';
+import { Image, Animated, View, Platform } from 'react-native';
 import PropTypes from 'prop-types';
-import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
 import { throttle } from 'lodash';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import gql from 'graphql-tag';
+import { Query } from '@apollo/client/react/components';
 
 import { styled, BackgroundView } from '@apollosproject/ui-kit';
 import {
@@ -29,7 +29,8 @@ const HeaderContainer = styled({
   left: 0,
   right: 0,
   position: 'absolute',
-  elevation: 3,
+  elevation: 10,
+  zIndex: 10,
 })(Animated.View);
 
 function handleOnPress({ action, ...props }) {
@@ -72,7 +73,9 @@ function Home(props) {
     () => {
       const active = searchText !== '' || isFocused;
       Animated.timing(translateY, {
-        toValue: active ? searchBarHeight : -searchBarHeight,
+        toValue: active
+          ? Platform.select({ ios: searchBarHeight, android: 0 })
+          : -searchBarHeight,
         // these values match the ios spring effect
         duration: 500,
         damping: 500,
@@ -80,7 +83,7 @@ function Home(props) {
         mass: 3,
         useNativeDriver: true,
       }).start(() => {
-        if (active) {
+        if (active && isFocused) {
           searchRef.current.focus();
         }
       });
@@ -92,7 +95,7 @@ function Home(props) {
     <RockAuthedWebBrowser>
       {(openUrl) => (
         <BackgroundView>
-          <SafeAreaView>
+          <SafeAreaView edges={['right', 'top', 'left']}>
             {isFocused || searchText ? (
               <View style={{ marginTop: searchBarHeight }}>
                 {searchText ? (
@@ -153,10 +156,6 @@ function Home(props) {
     </RockAuthedWebBrowser>
   );
 }
-
-Home.navigationOptions = () => ({
-  header: null,
-});
 
 Home.propTypes = {
   navigation: PropTypes.shape({

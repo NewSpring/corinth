@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import { Query, Mutation } from 'react-apollo';
+import { Query, Mutation } from '@apollo/client/react/components';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
 import SAVE_PRAYER from '../data/mutations/savePrayer';
 import UNSAVE_PRAYER from '../data/mutations/unSavePrayer';
@@ -10,9 +10,11 @@ import SaveButton from './SaveButton';
 
 const GetPrayerSaveState = ({ children, prayerID }) => (
   <Query query={GET_PRAYER_SAVE_STATE} variables={{ nodeId: prayerID }}>
-    {({ data: { node: { isSaved } = { isSaved: false } }, loading, error }) =>
-      children({ isSaved: loading || error ? false : isSaved })
-    }
+    {({
+      data: { node: { isSaved } = { isSaved: false } } = { node: {} },
+      loading,
+      error,
+    }) => children({ isSaved: loading || error ? false : isSaved })}
   </Query>
 );
 
