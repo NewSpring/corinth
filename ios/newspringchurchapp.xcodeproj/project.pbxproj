@@ -24,7 +24,6 @@
 		2E0FEB73A9EF43CDB9450DE5 /* Colfax-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58A6E44DC7F54FE3B9DDF48B /* Colfax-BoldItalic.otf */; };
 		503559F8DA20406E8BBAD76D /* Colfax-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C2FBCFF5D4428967F5A58 /* Colfax-BlackItalic.otf */; };
 		578FFEC1D7D54C9B871A9E5B /* Inter-UI-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */; };
-		650714751C2D5B6193848E3E /* libPods-newspringchurchapp-newspringchurchappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA850B6F7E2CE6A588D2888 /* libPods-newspringchurchapp-newspringchurchappTests.a */; };
 		68D1351E80AA4A2C96288FD9 /* Inter-UI-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC21254B449443F99016EBFD /* Inter-UI-Black.otf */; };
 		7FBC6BC3CE8D48298F9850A9 /* Inter-UI-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5157D807E164356ADE87867 /* Inter-UI-Bold.otf */; };
 		81C2E504B4D3070364F139A9 /* libPods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA2D6414B5E2F65F7CF16A9 /* libPods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.a */; };
@@ -50,6 +49,7 @@
 		E875558F3FB8FA2024EF7DC2 /* libPods-newspringchurchapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6B5B7B6A0D1ECB68CF0DD /* libPods-newspringchurchapp.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
+		EFA063D27C9BFE3483F97301 /* libPods-newspringchurchapp-newspringchurchappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8F8B9FAE6D1B57F5858580 /* libPods-newspringchurchapp-newspringchurchappTests.a */; };
 		FCB3069DB5DD4170B2CAEFC4 /* Inter-UI-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +77,7 @@
 		00E356F21AD99517003FC87E /* newspringchurchappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newspringchurchappTests.m; sourceTree = "<group>"; };
 		0728B69771C14A2FAEBF311A /* Colfax-RegularItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-RegularItalic.otf"; path = "../assets/fonts/Colfax-RegularItalic.otf"; sourceTree = "<group>"; };
 		0D480D95FC7F4569B8B934E3 /* libRCTOneSignal.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOneSignal.a; sourceTree = "<group>"; };
+		10C7B48B8E172ED99762C702 /* Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* newspringchurchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newspringchurchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = newspringchurchapp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = newspringchurchapp/AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = newspringchurchapp/main.m; sourceTree = "<group>"; };
 		1A5A320EC7DC45128A9C3DB4 /* Colfax-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Bold.otf"; path = "../assets/fonts/Colfax-Bold.otf"; sourceTree = "<group>"; };
 		1F8F5BC4745C8F22C695573D /* Pods-newspringchurchapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp.release.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp/Pods-newspringchurchapp.release.xcconfig"; sourceTree = "<group>"; };
+		2B8F8B9FAE6D1B57F5858580 /* libPods-newspringchurchapp-newspringchurchappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newspringchurchapp-newspringchurchappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* newspringchurchapp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "newspringchurchapp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* newspringchurchapp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "newspringchurchapp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +97,6 @@
 		58A6E44DC7F54FE3B9DDF48B /* Colfax-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-BoldItalic.otf"; path = "../assets/fonts/Colfax-BoldItalic.otf"; sourceTree = "<group>"; };
 		5A5A2BC2998547F4816B82E4 /* Inter-UI-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-BlackItalic.otf"; path = "../assets/fonts/Inter-UI-BlackItalic.otf"; sourceTree = "<group>"; };
 		5DA2D6414B5E2F65F7CF16A9 /* libPods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F2D8684C556C0A0A6108E90 /* Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig"; sourceTree = "<group>"; };
 		63F6EE53A9B44B4388B5F1C2 /* Inter-UI-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Italic.otf"; path = "../assets/fonts/Inter-UI-Italic.otf"; sourceTree = "<group>"; };
 		6AA5119094D5404EAACE72BE /* Colfax-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Black.otf"; path = "../assets/fonts/Colfax-Black.otf"; sourceTree = "<group>"; };
 		732CE8A34B66479CACCE3AE3 /* Colfax-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Regular.otf"; path = "../assets/fonts/Colfax-Regular.otf"; sourceTree = "<group>"; };
@@ -104,13 +105,12 @@
 		8FFBC548C57446F8A1D5CFCD /* Colfax-Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-Medium.otf"; path = "../assets/fonts/Colfax-Medium.otf"; sourceTree = "<group>"; };
 		956BFEFDA52B4890B8A8F50F /* Colfax-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-MediumItalic.otf"; path = "../assets/fonts/Colfax-MediumItalic.otf"; sourceTree = "<group>"; };
 		9C9C2FBCFF5D4428967F5A58 /* Colfax-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Colfax-BlackItalic.otf"; path = "../assets/fonts/Colfax-BlackItalic.otf"; sourceTree = "<group>"; };
-		9FEA9DC7ADE3F8B4EC7BA7FA /* Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A2030124193476DC5E7727BC /* Pods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests/Pods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A460FD7884FD4574A818005A /* Inter-UI-MediumItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-MediumItalic.otf"; path = "../assets/fonts/Inter-UI-MediumItalic.otf"; sourceTree = "<group>"; };
 		A613256118404CB691DE2C8E /* Inter-UI-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-UI-Regular.otf"; path = "../assets/fonts/Inter-UI-Regular.otf"; sourceTree = "<group>"; };
+		A8264FA4F5A13874D424E2F0 /* Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A93F9D112A034626A9421759 /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-BoldItalic.ttf"; path = "../assets/fonts/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AB44FC16DED929081698EDFD /* Pods-newspringchurchappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchappTests.debug.xcconfig"; path = "Target Support Files/Pods-newspringchurchappTests/Pods-newspringchurchappTests.debug.xcconfig"; sourceTree = "<group>"; };
-		ACA850B6F7E2CE6A588D2888 /* libPods-newspringchurchapp-newspringchurchappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newspringchurchapp-newspringchurchappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC3D2DB245545ADB1CAB3FE /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DroidSerif-Italic.ttf"; path = "../assets/fonts/DroidSerif-Italic.ttf"; sourceTree = "<group>"; };
 		AE85030F59F256E90D5A4C2B /* Pods-newspringchurchapp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newspringchurchapp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-newspringchurchapp-tvOS/Pods-newspringchurchapp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		BF32DFBE25C064E60078E82A /* Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC20866C24C9E1C10076C791 /* JavaScriptCore.framework in Frameworks */,
-				650714751C2D5B6193848E3E /* libPods-newspringchurchapp-newspringchurchappTests.a in Frameworks */,
+				EFA063D27C9BFE3483F97301 /* libPods-newspringchurchapp-newspringchurchappTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,8 +213,8 @@
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				DDB6B5B7B6A0D1ECB68CF0DD /* libPods-newspringchurchapp.a */,
 				38B9762ACA099D28C28DBB31 /* libPods-newspringchurchapp-tvOS.a */,
-				ACA850B6F7E2CE6A588D2888 /* libPods-newspringchurchapp-newspringchurchappTests.a */,
 				5DA2D6414B5E2F65F7CF16A9 /* libPods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.a */,
+				2B8F8B9FAE6D1B57F5858580 /* libPods-newspringchurchapp-newspringchurchappTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,10 +257,10 @@
 				DA9745795726553C6FA9E7A8 /* Pods-newspringchurchapp-tvOSTests.release.xcconfig */,
 				AB44FC16DED929081698EDFD /* Pods-newspringchurchappTests.debug.xcconfig */,
 				E98AC9782C338F13632EF710 /* Pods-newspringchurchappTests.release.xcconfig */,
-				9FEA9DC7ADE3F8B4EC7BA7FA /* Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig */,
-				5F2D8684C556C0A0A6108E90 /* Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig */,
 				C5B57FCBD5962A6AAFD72857 /* Pods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.debug.xcconfig */,
 				A2030124193476DC5E7727BC /* Pods-newspringchurchapp-tvOS-newspringchurchapp-tvOSTests.release.xcconfig */,
+				A8264FA4F5A13874D424E2F0 /* Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig */,
+				10C7B48B8E172ED99762C702 /* Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -315,12 +315,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "newspringchurchappTests" */;
 			buildPhases = (
-				2C62ED438C51D0F43EC7017B /* [CP] Check Pods Manifest.lock */,
+				7B5BA100D5BDF7D247096A7E /* [CP] Check Pods Manifest.lock */,
+				F5182D723C8FB4974C3D5F47 /* [CP] Prepare Artifacts */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				65661B36D5BB02687BBFF63B /* [CP] Embed Pods Frameworks */,
-				91EB889BFEC6DA803521EE2C /* [CP] Copy Pods Resources */,
+				890D9151C84D819544F2EC49 /* [CP] Embed Pods Frameworks */,
+				D20B52720B86C509BC026889 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -533,7 +534,21 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		2C62ED438C51D0F43EC7017B /* [CP] Check Pods Manifest.lock */ = {
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		7B5BA100D5BDF7D247096A7E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -555,21 +570,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		65661B36D5BB02687BBFF63B /* [CP] Embed Pods Frameworks */ = {
+		890D9151C84D819544F2EC49 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -614,36 +615,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp/Pods-newspringchurchapp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		91EB889BFEC6DA803521EE2C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests-resources.sh",
-				"${PODS_ROOT}/Amplitude-iOS/Amplitude/api.amplitude.com.der",
-				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoCaLimitedRsaCertificationAuthority.der",
-				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoRsaCA.der",
-				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoRsaDomainValidationCA.der",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.5.3_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
-				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.5.3_static/GoogleCast.framework/GoogleCastUIResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/api.amplitude.com.der",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoCaLimitedRsaCertificationAuthority.der",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoRsaCA.der",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoRsaDomainValidationCA.der",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		92138363C893C3996E5325B6 /* [CP] Embed Pods Frameworks */ = {
@@ -727,6 +698,36 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp/Pods-newspringchurchapp-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D20B52720B86C509BC026889 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests-resources.sh",
+				"${PODS_ROOT}/Amplitude-iOS/Amplitude/api.amplitude.com.der",
+				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoCaLimitedRsaCertificationAuthority.der",
+				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoRsaCA.der",
+				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoRsaDomainValidationCA.der",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.5.3_static/GoogleCast.framework/GoogleCastCoreResources.bundle",
+				"${PODS_ROOT}/google-cast-sdk/GoogleCastSDK-ios-4.5.3_static/GoogleCast.framework/GoogleCastUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/api.amplitude.com.der",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoCaLimitedRsaCertificationAuthority.der",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoRsaCA.der",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoRsaDomainValidationCA.der",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastCoreResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleCastUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DEEF24CE4F76789E5E8C369D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -747,6 +748,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5182D723C8FB4974C3D5F47 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests-artifacts.sh",
+				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenterAnalytics.xcframework",
+				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenter.xcframework",
+				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenterCrashes.xcframework",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newspringchurchapp-newspringchurchappTests/Pods-newspringchurchapp-newspringchurchappTests-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -805,7 +826,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FEA9DC7ADE3F8B4EC7BA7FA /* Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig */;
+			baseConfigurationReference = A8264FA4F5A13874D424E2F0 /* Pods-newspringchurchapp-newspringchurchappTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -833,7 +854,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F2D8684C556C0A0A6108E90 /* Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig */;
+			baseConfigurationReference = 10C7B48B8E172ED99762C702 /* Pods-newspringchurchapp-newspringchurchappTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

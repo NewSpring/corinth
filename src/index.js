@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-handler-names */
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import React from 'react';
 import { StatusBar, Platform } from 'react-native';
@@ -108,7 +109,10 @@ const App = (props) => (
   <Providers>
     <BackgroundView>
       <AppStatusBar />
-      <NavigationContainer ref={NavigationService.setTopLevelNavigator}>
+      <NavigationContainer
+        ref={NavigationService.setTopLevelNavigator}
+        onReady={NavigationService.setIsReady}
+      >
         <ThemedNavigator initialRouteName="ProtectedRoute" {...props}>
           <Screen
             name="ProtectedRoute"

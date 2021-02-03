@@ -16,7 +16,7 @@ const AppProviders = (props) => (
   <ClientProvider {...props}>
     <NotificationsProvider
       oneSignalKey={ApollosConfig.ONE_SIGNAL_KEY}
-      navigate={NavigationService.navigate}
+      navigate={() => ({})}
     >
       <AuthProvider
         navigateToAuth={() => NavigationService.navigate('Auth')}

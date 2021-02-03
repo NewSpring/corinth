@@ -4,15 +4,8 @@ import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import {
-  HorizontalLikedContentFeedConnected,
-  HorizontalLikedContentFeed,
-  HorizontalContentCardConnected,
-} from '@apollosproject/ui-connected';
-import {
-  BackgroundView,
-  HorizontalHighlightCard,
-} from '@apollosproject/ui-kit';
+import { HorizontalLikedContentFeedConnected } from '@apollosproject/ui-connected';
+import { BackgroundView } from '@apollosproject/ui-kit';
 import ActionTable from './ActionTable';
 import ActionBar from './ActionBar';
 import UserAvatarHeader, { GET_USER_PROFILE } from './UserAvatarHeader';
@@ -28,7 +21,7 @@ class Connect extends PureComponent {
   render() {
     return (
       <BackgroundView>
-        <SafeAreaView>
+        <SafeAreaView edges={['top', 'left', 'right']}>
           <ScrollView>
             <UserAvatarHeader />
             <Query query={GET_USER_PROFILE} fetchPolicy="cache-and-network">
@@ -38,20 +31,7 @@ class Connect extends PureComponent {
                 } = {},
               }) => <ActionBar isGroupLeader={isGroupLeader} />}
             </Query>
-            <HorizontalLikedContentFeedConnected
-            // Component={({ ...feedProps }) => (
-            //   <HorizontalLikedContentFeed
-            //     Component={({ ...cardProps }) => (
-            //       <HorizontalContentCardConnected
-            //         Component={HorizontalHighlightCard}
-            //         labelText={''}
-            //         {...cardProps}
-            //       />
-            //     )}
-            //     {...feedProps}
-            //   />
-            // )}
-            />
+            <HorizontalLikedContentFeedConnected />
             <ActionTable />
           </ScrollView>
         </SafeAreaView>
