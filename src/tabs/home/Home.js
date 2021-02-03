@@ -73,7 +73,9 @@ function Home(props) {
     () => {
       const active = searchText !== '' || isFocused;
       Animated.timing(translateY, {
-        toValue: active ? searchBarHeight : -searchBarHeight,
+        toValue: active
+          ? Platform.select({ ios: searchBarHeight, android: 0 })
+          : -searchBarHeight,
         // these values match the ios spring effect
         duration: 500,
         damping: 500,
