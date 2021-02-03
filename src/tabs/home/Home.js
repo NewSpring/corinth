@@ -29,7 +29,8 @@ const HeaderContainer = styled({
   left: 0,
   right: 0,
   position: 'absolute',
-  elevation: 3,
+  elevation: 10,
+  zIndex: 10,
 })(Animated.View);
 
 function handleOnPress({ action, ...props }) {
@@ -80,7 +81,7 @@ function Home(props) {
         mass: 3,
         useNativeDriver: true,
       }).start(() => {
-        if (active) {
+        if (active && isFocused) {
           searchRef.current.focus();
         }
       });
@@ -153,7 +154,6 @@ function Home(props) {
     </RockAuthedWebBrowser>
   );
 }
-
 
 Home.propTypes = {
   navigation: PropTypes.shape({
