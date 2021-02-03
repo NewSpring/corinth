@@ -1,11 +1,7 @@
 import React from 'react';
 
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
-import {
-  withTheme,
-  ModalCloseButton,
-  ModalBackButton,
-} from '@apollosproject/ui-kit';
+import { withTheme } from '@apollosproject/ui-kit';
 
 import { AddPrayerFormConnected } from '../../prayer/AddPrayer/AddPrayerForm';
 import { AnswerPrayerFormConnected } from '../../prayer/AnswerPrayerForm';
@@ -24,29 +20,12 @@ const PrayerNavigator = (props) => (
     <Screen
       component={AnswerPrayerFormConnected}
       name="AnswerPrayerFormConnected"
-      options={{ headerShow: false }}
     />
 
-    <Screen
-      name="PrayerList"
-      component={PrayerList}
-      options={{ headerShow: false }}
-    />
-    <Screen
-      name="UserPrayerList"
-      component={UserPrayerList}
-      options={{ headerShow: false }}
-    />
-    <Screen
-      name="WithYou"
-      component={WithYou}
-      options={{ headerShow: false }}
-    />
-    <Screen
-      name="PrayerSingle"
-      component={PrayerSingle}
-      options={{ headerShow: false }}
-    />
+    <Screen name="PrayerList" component={PrayerList} />
+    <Screen name="UserPrayerList" component={UserPrayerList} />
+    <Screen name="WithYou" component={WithYou} />
+    <Screen name="PrayerSingle" component={PrayerSingle} />
   </Navigator>
 );
 
@@ -55,6 +34,7 @@ const EnhancedPrayer = withTheme(({ theme, ...props }) => ({
   mode: 'modal',
   headerMode: 'none',
   screenOptions: {
+    headerShown: false,
     stackPresentation: 'modal',
   },
 }))(PrayerNavigator);

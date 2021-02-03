@@ -98,6 +98,11 @@ const PrayerFromNotification = ({ route, navigation }) => (
   </ModalView>
 );
 
+PrayerFromNotification.propTypes = {
+  route: PropTypes.shape({}),
+  navigation: PropTypes.shape({}),
+};
+
 const PrayerSingle = memo(
   ({
     showHelp,
@@ -180,6 +185,7 @@ PrayerSingle.propTypes = {
   showHeader: PropTypes.bool,
   showDate: PropTypes.bool,
   avatarSize: PropTypes.string,
+  route: PropTypes.shape({}),
   prayer: PropTypes.shape({
     startTime: PropTypes.string,
     isAnonymous: PropTypes.bool,

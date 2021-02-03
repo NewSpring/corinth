@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Image, Animated, View } from 'react-native';
+import { Image, Animated, View, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { throttle } from 'lodash';
 import { SafeAreaView } from 'react-native-safe-area-context';

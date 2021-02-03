@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Query, Mutation } from '@apollo/client/react/components';
+import PropTypes from 'prop-types';
 import { BodyText, styled } from '@apollosproject/ui-kit';
 import getUserProfile from '../../tabs/connect/UserAvatarHeader/getUserProfile';
 import GET_PRAYER_FEED from '../data/queries/getPrayerFeed';
@@ -101,5 +102,12 @@ class AnswerPrayerFormConnected extends React.Component {
     );
   }
 }
+
+AnswerPrayerFormConnected.propTypes = {
+  route: PropTypes.shape({
+    params: PropTypes.shape({}),
+  }),
+  navigation: PropTypes.shape({}),
+};
 
 export default AnswerPrayerFormConnected;

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import PropTypes from 'prop-types';
 import Emoji from 'react-native-emoji';
 import { Query, Mutation } from '@apollo/client/react/components';
 
@@ -191,5 +192,12 @@ class PrayerList extends PureComponent {
     );
   }
 }
+
+PrayerList.propTypes = {
+  route: PropTypes.shape({
+    params: PropTypes.shape({}),
+  }),
+  navigation: PropTypes.shape({}),
+};
 
 export default PrayerList;
