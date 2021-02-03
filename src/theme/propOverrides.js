@@ -82,4 +82,9 @@ export default {
   'ui-connected.ContentCardConnected.ContentCardComponentMapper': {
     Component: () => (props) => <VerticalCardMapper {...props} />,
   },
+  'ui-connected.FeaturesFeed.FeatureFeedComponentMapper': {
+    additionalFeatures: {
+      
+    }
+  }
 };

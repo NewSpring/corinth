@@ -2,20 +2,49 @@ import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 import PropTypes from 'prop-types';
 
+import { View } from 'react-native';
 import { TrackEventWhenLoaded } from '@apollosproject/ui-analytics';
 import {
   InteractWhenLoadedConnected,
   NodeSingleConnected,
   ThemeMixinConnected,
+  ContentNodeConnected,
+  ContentParentFeedConnected,
+  ContentChildFeedConnected,
+  NodeFeaturesConnected,
+  UpNextButtonConnected,
 } from '@apollosproject/ui-connected';
+
+import ScriptureNodeConnected from '@apollosproject/ui-connected/src/ScriptureNodeConnected';
 
 import { styled } from '@apollosproject/ui-kit';
 
 import ActionContainer from './ActionContainer';
+import SermonNotes from './SermonNotes';
 
 const NodeSingleConnectedWithActionContainer = styled(
   ({ theme: { sizing } }) => ({ paddingBottom: sizing.baseUnit * 5 })
 )(NodeSingleConnected);
+
+const NodeSingleInner = ({ nodeId, ImageWrapperComponent, ...props }) => (
+  <View {...props}>
+    <ContentNodeConnected
+      ImageWrapperComponent={ImageWrapperComponent}
+      nodeId={nodeId}
+    />
+    <SermonNotes contentID={nodeId} />
+    <ScriptureNodeConnected nodeId={nodeId} />
+    <NodeFeaturesConnected nodeId={nodeId} />
+    <UpNextButtonConnected nodeId={nodeId} />
+    <ContentParentFeedConnected nodeId={nodeId} />
+    <ContentChildFeedConnected nodeId={nodeId} />
+  </View>
+);
+
+NodeSingleInner.propTypes = {
+  nodeId: PropTypes.string,
+  ImageWrapperComponent: PropTypes.any, // eslint-disable-line
+};
 
 const ContentSingle = (props) => {
   const nodeId = props.route?.params?.itemId;
@@ -47,7 +76,10 @@ const ContentSingle = (props) => {
           itemId: nodeId,
         }}
       />
-      <NodeSingleConnectedWithActionContainer nodeId={nodeId}>
+      <NodeSingleConnectedWithActionContainer
+        nodeId={nodeId}
+        Component={NodeSingleInner}
+      >
         <ActionContainer itemId={nodeId} />
       </NodeSingleConnectedWithActionContainer>
     </ThemeMixinConnected>

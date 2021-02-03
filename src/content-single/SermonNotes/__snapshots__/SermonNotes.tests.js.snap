@@ -1,0 +1,815 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the sermon notes renders a custom note block when notes are blank 1`] = `null`;
+
+exports[`the sermon notes renders sermon notes 1`] = `
+<View
+  isLoading={false}
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 16,
+      "marginHorizontal": 16,
+      "marginVertical": 12,
+      "shadowColor": "rgba(8, 0, 20, 0.25)",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 8,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 16,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 16,
+          "paddingVertical": 16,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Black",
+            "fontSize": 24,
+            "lineHeight": 27.6,
+          }
+        }
+      >
+        Sermon Notes
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Medium",
+            "fontSize": 14,
+            "lineHeight": 20.16,
+          }
+        }
+      >
+        a sermon
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#303030",
+            "fontFamily": "Colfax-Medium",
+            "fontSize": 14,
+            "lineHeight": 20.16,
+          }
+        }
+      >
+        a series
+      </Text>
+      <View
+        accessible={true}
+        clickable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          horizontal={false}
+          style={
+            Object {
+              "paddingHorizontal": 0,
+              "paddingVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 16,
+                "lineHeight": 23.04,
+              }
+            }
+          >
+            1. Point ___
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        clickable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          horizontal={false}
+          style={
+            Object {
+              "paddingHorizontal": 0,
+              "paddingVertical": 16,
+            }
+          }
+        >
+          <Text
+            bold={false}
+            italic={false}
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "Colfax-Regular",
+                "fontSize": 16,
+                "lineHeight": 26,
+              }
+            }
+          >
+            Sub point
+          </Text>
+        </View>
+      </View>
+      <View
+        disabled={false}
+        style={
+          Object {
+            "marginVertical": 16,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
+            />
+            <View
+              style={
+                Object {
+                  "alignSelf": "flex-end",
+                  "flex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <TextInput
+                  allowFontScaling={true}
+                  editable={true}
+                  multiline={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  onFocus={[Function]}
+                  placeholderTextColor="rgba(48, 48, 48, 0.6)"
+                  rejectResponderTermination={true}
+                  returnKeyType="default"
+                  scrollEnabled={false}
+                  style={
+                    Object {
+                      "borderColor": "rgba(8, 0, 20, 0.25)",
+                      "borderWidth": 0.5,
+                      "paddingBottom": 16,
+                      "paddingHorizontal": 8,
+                      "paddingTop": 16,
+                      "textAlignVertical": "top",
+                    }
+                  }
+                  underlineColorAndroid="transparent"
+                  value="So good!"
+                />
+              </View>
+              <View
+                onLayout={[Function]}
+                pointerEvents="none"
+                style={
+                  Object {
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "opacity": 0.8,
+                    "position": "absolute",
+                    "top": 0,
+                    "transform": Array [
+                      Object {
+                        "scale": 0.8,
+                      },
+                      Object {
+                        "translateX": 0,
+                      },
+                      Object {
+                        "translateY": 0,
+                      },
+                    ],
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "#505050",
+                      "fontFamily": "Colfax-Bold",
+                      "fontSize": 12,
+                      "lineHeight": 17.28,
+                      "paddingVertical": 4,
+                    }
+                  }
+                />
+              </View>
+            </View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "right": 0,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "backgroundColor": "#dddddd",
+                  "bottom": -0.5,
+                  "height": 0.5,
+                }
+              }
+            />
+            <View
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "transform": Array [
+                    Object {
+                      "scaleX": 1,
+                    },
+                  ],
+                }
+              }
+            >
+              <View
+                hasError={false}
+                style={
+                  Object {
+                    "backgroundColor": "#6bac43",
+                    "bottom": 0,
+                    "height": 0.5,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View>
+        <Text
+          style={
+            Object {
+              "color": "#303030",
+              "fontFamily": "Colfax-Bold",
+              "fontSize": 16,
+              "lineHeight": 23.04,
+              "paddingBottom": 11.52,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#303030",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 16,
+                "lineHeight": 23.04,
+              }
+            }
+          >
+            Matthew 23:11
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#505050",
+                "fontFamily": "Colfax-Bold",
+                "fontSize": 12,
+                "lineHeight": 17.28,
+              }
+            }
+          >
+             
+            NIV
+          </Text>
+        </Text>
+        <View
+          style={
+            Object {
+              "paddingBottom": 17.28,
+            }
+          }
+        >
+          <View>
+            <View
+              style={
+                Object {
+                  "paddingBottom": 0,
+                }
+              }
+            >
+              <Text
+                bold={false}
+                italic={false}
+                style={
+                  Object {
+                    "color": "#303030",
+                    "fontFamily": "DroidSerif",
+                    "fontSize": 16,
+                    "lineHeight": 26,
+                  }
+                }
+              >
+                <Text
+                  bold={false}
+                  italic={false}
+                  style={
+                    Object {
+                      "color": "#505050",
+                      "fontFamily": "DroidSerif",
+                      "fontSize": 9.6,
+                      "lineHeight": 26,
+                    }
+                  }
+                >
+                   
+                  <Text>
+                    11
+                  </Text>
+                   
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "color": "#8b0000",
+                    }
+                  }
+                >
+                  <Text>
+                    The greatest among you will be your servant.
+                  </Text>
+                </Text>
+                <Text
+                  bold={false}
+                  italic={false}
+                  style={
+                    Object {
+                      "color": "#303030",
+                      "fontFamily": "DroidSerif",
+                      "fontSize": 16,
+                      "lineHeight": 26,
+                    }
+                  }
+                >
+                  <Text>
+                     
+                  </Text>
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
+        <Text
+          bold={false}
+          italic={false}
+          style={
+            Object {
+              "color": "#505050",
+              "fontFamily": "Colfax-Regular",
+              "fontSize": 9.6,
+              "lineHeight": 10.37,
+            }
+          }
+        />
+      </View>
+      <View
+        accessible={true}
+        clickable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          horizontal={false}
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingHorizontal": 0,
+              "paddingVertical": 16,
+            }
+          }
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={24}
+            bbWidth={24}
+            focusable={false}
+            height={24}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                Object {
+                  "opacity": 1,
+                },
+                Object {
+                  "flex": 0,
+                  "height": 24,
+                  "width": 24,
+                },
+              ]
+            }
+            vbHeight={24}
+            vbWidth={24}
+            width={24}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"
+                fill={
+                  Array [
+                    0,
+                    4278190080,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={Array []}
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 16,
+                "paddingVertical": 0,
+              }
+            }
+            vertical={false}
+          >
+            <Text
+              bold={false}
+              italic={false}
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Regular",
+                  "fontSize": 16,
+                  "lineHeight": 26,
+                }
+              }
+            >
+              Add a Note
+            </Text>
+          </View>
+        </View>
+      </View>
+      <Text
+        bold={false}
+        italic={false}
+        style={
+          Object {
+            "color": "#505050",
+            "fontFamily": "Colfax-Regular",
+            "fontSize": 9.6,
+            "lineHeight": 10.37,
+          }
+        }
+      >
+        
+          The Holy Bible, New International Version® NIV®
+          Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.®
+          Used by Permission of Biblica, Inc.® All rights reserved worldwide.
+        
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "justifyContent": "flex-end",
+          "paddingHorizontal": 16,
+          "paddingTop": 0,
+          "paddingVertical": 16,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        clickable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "paddingHorizontal": 16,
+                "paddingVertical": 0,
+              }
+            }
+            vertical={false}
+          >
+            <Text
+              bold={false}
+              italic={false}
+              style={
+                Object {
+                  "color": "#303030",
+                  "fontFamily": "Colfax-Regular",
+                  "fontSize": 16,
+                  "lineHeight": 26,
+                }
+              }
+            >
+              Export
+            </Text>
+          </View>
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight={24}
+            bbWidth={24}
+            focusable={false}
+            height={24}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                undefined,
+                Object {
+                  "opacity": 1,
+                },
+                Object {
+                  "flex": 0,
+                  "height": 24,
+                  "width": 24,
+                },
+              ]
+            }
+            vbHeight={512}
+            vbWidth={576}
+            width={24}
+          >
+            <RNSVGGroup
+              fill={
+                Array [
+                  0,
+                  4278190080,
+                ]
+              }
+              fillOpacity={1}
+              fillRule={1}
+              font={Object {}}
+              matrix={
+                Array [
+                  1,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                ]
+              }
+              opacity={1}
+              originX={0}
+              originY={0}
+              propList={Array []}
+              rotation={0}
+              scaleX={1}
+              scaleY={1}
+              skewX={0}
+              skewY={0}
+              stroke={null}
+              strokeDasharray={null}
+              strokeDashoffset={null}
+              strokeLinecap={0}
+              strokeLinejoin={0}
+              strokeMiterlimit={4}
+              strokeOpacity={1}
+              strokeWidth={1}
+              vectorEffect={0}
+              x={0}
+              y={0}
+            >
+              <RNSVGPath
+                d="M572.29 279.06l-71.77-72.31c-7.55-7.6-20.52-2.26-20.52 8.45v48.88h-96v-132.1c0-12.7-5.17-25-14.17-33.99L285.94 14.1c-9-9-21.2-14.1-33.89-14.1H47.99C21.5.1 0 21.6 0 48.09v415.92C0 490.5 21.5 512 47.99 512h287.94c26.5 0 48.07-21.5 48.07-47.99V360.07h-48v103.94H47.99V48.09h159.97v103.98c0 13.3 10.7 23.99 24 23.99H336v88.01H172c-6.63 0-12 5.37-12 12v24c0 6.63 5.37 12 12 12h308v48.88c0 10.71 12.97 16.05 20.52 8.45l71.77-72.31c4.95-4.99 4.95-13.04 0-18.03zM255.95 128.07V51.99l76.09 76.08h-76.09z"
+                fill={
+                  Array [
+                    0,
+                    4281348144,
+                  ]
+                }
+                fillOpacity={1}
+                fillRule={1}
+                matrix={
+                  Array [
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                  ]
+                }
+                opacity={1}
+                originX={0}
+                originY={0}
+                propList={
+                  Array [
+                    "fill",
+                  ]
+                }
+                rotation={0}
+                scaleX={1}
+                scaleY={1}
+                skewX={0}
+                skewY={0}
+                stroke={null}
+                strokeDasharray={null}
+                strokeDashoffset={null}
+                strokeLinecap={0}
+                strokeLinejoin={0}
+                strokeMiterlimit={4}
+                strokeOpacity={1}
+                strokeWidth={1}
+                vectorEffect={0}
+                x={0}
+                y={0}
+              />
+            </RNSVGGroup>
+          </RNSVGSvgView>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
