@@ -277,7 +277,7 @@ PODS:
   - react-native-amplitude-analytics (0.2.7):
     - Amplitude-iOS (~> 4.3.1)
     - React
-  - react-native-apollos-player (2.0.0-beta.3):
+  - react-native-apollos-player (2.0.0-beta.4):
     - React
   - react-native-config (0.11.7):
     - React
@@ -686,7 +686,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
   react-native-amplitude-analytics: a4387e29d68ec0ff3c0e877a3ca8e328c0aca732
-  react-native-apollos-player: f7a6d3715bc975e2b6e494219517840173670866
+  react-native-apollos-player: 8f9827448d221db8cbe622e846dc746830e96c42
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-google-cast: 9ead682d0026c857318efa8ea9c6f58b6142651a
@@ -727,6 +727,6 @@ SPEC CHECKSUMS:
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 47b27803ac99e4d353a61ef64ab3fc8d742b2056
+PODFILE CHECKSUM: a26488a4e3e25ab698150e63a93358bb5aff1ab4
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
