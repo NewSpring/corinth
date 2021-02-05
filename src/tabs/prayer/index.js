@@ -39,36 +39,4 @@ const EnhancedPrayer = withTheme(({ theme, ...props }) => ({
   },
 }))(PrayerNavigator);
 
-// const PrayerNavigator = createStackNavigator(
-//   {
-//     Prayer,
-//     AddPrayerFormConnected,
-//     AnswerPrayerFormConnected,
-//     PrayerList,
-//     UserPrayerList,
-//     WithYou,
-//     PrayerSingle,
-//   },
-//   {
-//     initialRouteName: 'Prayer',
-//     headerMode: 'float',
-//     headerTransitionPreset: 'fade-in-place',
-//     mode: 'modal',
-//   }
-// );
-//
-// // TODO: Go back and use the TAP core icon when we get an updated ui-kit
-// PrayerNavigator.navigationOptions = ({ navigation }) => {
-//   let tabBarVisible = true;
-//   if (navigation.state.index > 0) {
-//     tabBarVisible = false;
-//   }
-//
-//   return {
-//     tabBarVisible,
-//     tabBarIcon: tabBarIcon('prayer'),
-//     header: null,
-//   };
-// };
-
 export default EnhancedPrayer;

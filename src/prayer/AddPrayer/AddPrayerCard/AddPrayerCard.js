@@ -14,7 +14,6 @@ import {
 
 const StyledView = styled(({ theme }) => ({
   paddingBottom: theme.sizing.baseUnit,
-  backgroundColor: theme.colors.paper,
   justifyContent: 'center',
 }))(View);
 
