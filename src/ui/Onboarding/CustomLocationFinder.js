@@ -46,7 +46,7 @@ const LocationFinder = memo(
     onSelectWeb,
     ...props
   }) => {
-    const showSkip = !campus || campus.name === 'Web';
+    const showSkip = !campus;
     const swipeFunction = onPressPrimary || onPressSecondary;
     return (
       <Slide
