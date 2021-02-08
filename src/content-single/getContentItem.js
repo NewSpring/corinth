@@ -18,6 +18,11 @@ export default gql`
           id
         }
       }
+      ... on FeaturesNode {
+        featureFeed {
+          id
+        }
+      }
     }
   }
   ${ApollosConfig.FRAGMENTS.CONTENT_CARD_FRAGMENT}

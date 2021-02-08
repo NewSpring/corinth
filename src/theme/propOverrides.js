@@ -9,7 +9,10 @@ import {
   FeaturedCard,
 } from '@apollosproject/ui-kit';
 
-import { LiveConsumer } from '@apollosproject/ui-connected';
+import {
+  LiveConsumer,
+  AddComentFeatureConnected,
+} from '@apollosproject/ui-connected';
 import LiveButton from '../ui/LiveButton';
 
 const FeaturedCardWithLive = ({
@@ -83,6 +86,6 @@ export default {
     Component: () => (props) => <VerticalCardMapper {...props} />,
   },
   'ui-connected.FeaturesFeed.FeatureFeedComponentMapper': {
-    additionalFeatures: {},
+    additionalFeatures: { AddCommentFeature: AddComentFeatureConnected },
   },
 };

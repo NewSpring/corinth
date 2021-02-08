@@ -53,6 +53,9 @@ const liteFeatures = `
           title
           url
         }
+        ... on CommentListFeature {
+          id
+        }
       }
     `;
 
@@ -61,37 +64,37 @@ ApollosConfig.loadJs({
     ...FRAGMENTS,
     // Same as core, but not PrayerListFeature.
     CONTENT_UP_NEXT_FRAGMENT: gql`
-  fragment ContentUpNextFragment on ContentItem {
-    id
-    ... on ProgressNode {
-      upNext {
+      fragment ContentUpNextFragment on ContentItem {
         id
-      }
-    }
-    ... on ContentParentNode {
-      childContentItemsConnection {
-        edges {
-          node {
+        ... on ProgressNode {
+          upNext {
             id
           }
         }
-      }
-    }
-    ... on ContentSeriesContentItem {
-      id
-      upNext {
-        id
-      }
-      childContentItemsConnection {
-        edges {
-          node {
+        ... on ContentParentNode {
+          childContentItemsConnection {
+            edges {
+              node {
+                id
+              }
+            }
+          }
+        }
+        ... on ContentSeriesContentItem {
+          id
+          upNext {
             id
+          }
+          childContentItemsConnection {
+            edges {
+              node {
+                id
+              }
+            }
           }
         }
       }
-    }
-  }
-`,
+    `,
     RELATED_NODE_FRAGMENT: gql`
       fragment RelatedFeatureNodeFragment on Node {
         id
