@@ -42,6 +42,14 @@ type ActionListFeature implements Feature & Node {
   primaryAction: FeatureAction
 }
 
+type AddCommentFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  relatedNode: Node!
+  addPrompt: String
+  initialPrompt: String
+}
+
 input AnalyticsDeviceInfo {
   platform: AnalyticsPlatform
   deviceId: String
@@ -151,6 +159,25 @@ type CardListItem {
 """A rgb color string"""
 scalar Color
 
+type Comment implements Node {
+  id: ID!
+  person: Person
+  text: String
+  visibility: CommentVisibility
+}
+
+type CommentListFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  comments: [Comment]
+}
+
+enum CommentVisibility {
+  PUBLIC
+  PRIVATE
+  FOLLOWERS
+}
+
 type ContentChannel implements Node {
   id: ID!
   name: String
@@ -240,7 +267,7 @@ type Device implements Node {
   notificationsEnabled: Boolean!
 }
 
-type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode {
+type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & FeaturesNode & ShareableNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -259,6 +286,8 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   likedCount: Int
   series: ContentItem @deprecated(reason: "Use seriesConnection")
   seriesConnection: SeriesConnection
+  features: [Feature] @deprecated(reason: "Use featureFeed")
+  featureFeed: FeatureFeed
   sharing: SharableContentItem
 }
 
@@ -459,6 +488,8 @@ type Mutation {
   flagPrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:FLAG)")
   savePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:SAVE)")
   unSavePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:UNSAVE)")
+  addComment(parentId: ID!, text: String!, visibility: CommentVisibility): Comment
+  flagComment(commentId: ID!): Comment
 }
 
 interface Node {
@@ -630,7 +661,7 @@ type Query {
   _placeholder: Boolean
   node(id: ID!): Node
   likedContent(first: Int, after: String): ContentItemsConnection
-  contentChannels: [ContentChannel]
+  contentChannels: [ContentChannel] @deprecated(reason: "No longer supported.")
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
