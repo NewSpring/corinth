@@ -1,6 +1,7 @@
 import React from 'react';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
+import InAppBrowser from 'react-native-inappbrowser-reborn';
 /* Export your custom prop overrides here. */
 import {
   DefaultCard,
@@ -87,5 +88,11 @@ export default {
   },
   'ui-connected.FeaturesFeed.FeatureFeedComponentMapper': {
     additionalFeatures: { AddCommentFeature: AddComentFeatureConnected },
+  },
+  'ui-connected.ContentHTMLViewConnected': {
+    onPressAnchor: () => (url) => console.log(url) || InAppBrowser.open(url),
+  },
+  'ui-connected.ContentNodeConnected': {
+    onPressAnchor: () => (url) => console.log(url) || InAppBrowser.open(url),
   },
 };
