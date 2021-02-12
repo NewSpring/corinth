@@ -1,3 +1,28 @@
-import Home from './Home';
+import React from 'react';
 
-export default Home;
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
+import { withTheme } from '@apollosproject/ui-kit';
+import Home from './Home';
+import Discover from './Discover';
+
+const { Screen, Navigator } = createNativeStackNavigator();
+
+const HomeNavigator = (props) => (
+  <Navigator {...props}>
+    <Screen component={Home} name="Home" />
+    <Screen
+      component={Discover}
+      name="Discover"
+      options={{ stackPresentation: 'modal' }}
+    />
+  </Navigator>
+);
+
+const EnhancedHome = withTheme(({ theme, ...props }) => ({
+  ...props,
+  screenOptions: {
+    headerShown: false,
+  },
+}))(HomeNavigator);
+
+export default EnhancedHome;
