@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Mutation } from '@apollo/client/react/components';
 import { get } from 'lodash';
 import {
   Card,
@@ -9,9 +8,9 @@ import {
   styled,
   ChannelLabel,
   UIText,
+  NavigationService,
 } from '@apollosproject/ui-kit';
 import { AnalyticsConsumer } from '@apollosproject/ui-analytics';
-import { PLAY_VIDEO } from '@apollosproject/ui-media-player';
 import {
   LiveConsumer,
   RockAuthedWebBrowser,
@@ -39,21 +38,11 @@ const renderLiveButton = (action) => (
   </TouchableScale>
 );
 
-const renderMedia = (liveStream, track) => (
-  <Mutation mutation={PLAY_VIDEO}>
-    {(play) =>
-      renderLiveButton(() => {
-        play({
-          variables: {
-            mediaSource: liveStream.media.sources[0],
-            isVideo: true,
-          },
-        });
-        track({ eventName: 'Clicked Live Bar' });
-      })
-    }
-  </Mutation>
-);
+const renderMedia = (liveStream, track, contentId) =>
+  renderLiveButton(() => {
+    NavigationService.navigate('ContentSingle', { itemId: contentId });
+    track({ eventName: 'Clicked Live Bar' });
+  });
 
 const renderWebView = (liveStream, track) => (
   <RockAuthedWebBrowser>
@@ -73,7 +62,7 @@ const LiveNowButton = ({ contentId }) => (
         <AnalyticsConsumer>
           {({ track }) =>
             get(liveStream, 'media.sources[0].uri')
-              ? renderMedia(liveStream, track)
+              ? renderMedia(liveStream, track, contentId)
               : renderWebView(liveStream, track)
           }
         </AnalyticsConsumer>
