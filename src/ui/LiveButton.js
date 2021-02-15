@@ -17,7 +17,7 @@ import {
 } from '@apollosproject/ui-connected';
 
 const LiveCard = styled(({ theme }) => ({
-  backgroundColor: theme.colors.lightSecondary,
+  backgroundColor: theme.colors.background.inactive,
 }))(Card);
 
 const renderLiveButton = (action) => (
