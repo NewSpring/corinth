@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Query } from '@apollo/client/react/components';
 import { ScrollView } from 'react-native';
-import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { HorizontalLikedContentFeedConnected } from '@apollosproject/ui-connected';
@@ -11,13 +10,6 @@ import ActionBar from './ActionBar';
 import UserAvatarHeader, { GET_USER_PROFILE } from './UserAvatarHeader';
 
 class Connect extends PureComponent {
-  static propTypes = {
-    navigation: PropTypes.shape({
-      getParam: PropTypes.func,
-      navigate: PropTypes.func,
-    }),
-  };
-
   render() {
     return (
       <BackgroundView>

@@ -14,9 +14,6 @@ import {
 } from '@apollosproject/ui-kit';
 import {
   AskNotificationsConnected,
-  AskNameConnected,
-  FeaturesConnected,
-  AboutYouConnected,
   LocationFinderConnected,
   OnboardingSwiper,
   onboardingComplete,
@@ -50,30 +47,6 @@ function Onboarding({ navigation }) {
       <OnboardingSwiper>
         {({ swipeForward }) => (
           <>
-            {/* <AskNameConnected */}
-            {/*   slideTitle={"What's your name?"} */}
-            {/*   onPressPrimary={swipeForward} */}
-            {/* /> */}
-            {/* <FeaturesConnected */}
-            {/*   description={ */}
-            {/*     'You’re almost done. By answering a few questions, we can personalize your experience so you see: \n\n\u2022 News specific to your campus \n\u2022 Articles related to your age and stage of life \n\u2022 Prayer requests for your campus and your small group' */}
-            {/*   } */}
-            {/*   onPressPrimary={swipeForward} */}
-            {/*   BackgroundComponent={ */}
-            {/*     <ImageContainer> */}
-            {/*       <StyledImage source={require('./img/screen1.png')} /> */}
-            {/*     </ImageContainer> */}
-            {/*   } */}
-            {/* /> */}
-            {/* <AboutYouConnected */}
-            {/*   slideTitle={'Tell us a little about yourself'} */}
-            {/*   onPressPrimary={swipeForward} */}
-            {/*   BackgroundComponent={ */}
-            {/*     <ImageContainer> */}
-            {/*       <StyledImage source={require('./img/screen2.png')} /> */}
-            {/*     </ImageContainer> */}
-            {/*   } */}
-            {/* /> */}
             <LocationFinderConnected
               description={
                 'Enabling location services allows you to choose your campus so you see news, events, and groups near you.'

@@ -277,7 +277,7 @@ PODS:
   - react-native-amplitude-analytics (0.2.7):
     - Amplitude-iOS (~> 4.3.1)
     - React
-  - react-native-apollos-player (2.0.0):
+  - react-native-apollos-player (2.1.1):
     - React
   - react-native-config (0.11.7):
     - React
@@ -294,9 +294,9 @@ PODS:
     - react-native-google-cast/RNGoogleCast
   - react-native-google-cast/RNGoogleCast (3.4.1):
     - React
-  - react-native-image-picker (3.1.4):
+  - react-native-image-picker (3.2.1):
     - React-Core
-  - react-native-maps (0.26.1):
+  - react-native-maps (0.27.1):
     - React
   - react-native-music-control (0.10.8):
     - React
@@ -691,13 +691,13 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
   react-native-amplitude-analytics: a4387e29d68ec0ff3c0e877a3ca8e328c0aca732
-  react-native-apollos-player: 407ae8570ca05a666aea3036a346fb9a0c59a6d1
+  react-native-apollos-player: 445b845c71b60f4843048bb79806f7de67c3953b
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-geolocation-service: 7c9436da6dfdecd9526c62eac62ea2bc3f0cc8ea
   react-native-google-cast: 9ead682d0026c857318efa8ea9c6f58b6142651a
-  react-native-image-picker: 28d8d1f5a643119876b8b2c7d4d1dcfb2b232dd4
-  react-native-maps: 6e499eee4eabf422ba8b6f94e993cc768bf35153
+  react-native-image-picker: 64d12e81f3d9dad0af107fe6536b295d51932ec0
+  react-native-maps: f4b89da81626ad7f151a8bfcb79733295d31ce5c
   react-native-music-control: dcfe5b61e56a15898c4618579cb8ce612c9d21a8
   react-native-onesignal: ad2eaab1517951e50d19fa3eccd16d3048167181
   react-native-passkit-wallet: 51e3babdaeec4c10b5736786ebd1bfb470fcaa36
@@ -733,6 +733,6 @@ SPEC CHECKSUMS:
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: a26488a4e3e25ab698150e63a93358bb5aff1ab4
+PODFILE CHECKSUM: 92ed752b5c0fd248e6606b9db3d284a6082133a9
 
 COCOAPODS: 1.10.1

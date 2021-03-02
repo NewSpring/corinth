@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-handler-names */
+
 import hoistNonReactStatic from 'hoist-non-react-statics';
 import React from 'react';
 import { StatusBar, Platform } from 'react-native';

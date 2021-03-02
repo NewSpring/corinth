@@ -267,7 +267,7 @@ type Device implements Node {
   notificationsEnabled: Boolean!
 }
 
-type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & FeaturesNode & ShareableNode {
+type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode & FeaturesNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -286,9 +286,9 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   likedCount: Int
   series: ContentItem @deprecated(reason: "Use seriesConnection")
   seriesConnection: SeriesConnection
+  sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
   featureFeed: FeatureFeed
-  sharing: SharableContentItem
 }
 
 type Event implements Node {
@@ -706,6 +706,7 @@ type Scripture implements Node {
 type ScriptureFeature implements Feature & Node {
   id: ID!
   order: Int
+  title: String
   scriptures: [Scripture]
   sharing: SharableFeature
 }
@@ -763,6 +764,7 @@ type SmsPinResult {
 type TextFeature implements Feature & Node {
   id: ID!
   order: Int
+  title: String
   body: String
   sharing: SharableFeature
 }
@@ -869,8 +871,8 @@ interface VideoNode {
 type WebviewFeature implements Feature & Node {
   id: ID!
   order: Int
-  linkText: String
   title: String
+  linkText: String
   url: String
 }
 

@@ -7,9 +7,10 @@ import { NotificationsProvider } from '@apollosproject/ui-notifications';
 import { LiveProvider } from '@apollosproject/ui-connected';
 
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
-import ClientProvider, { client } from './client';
 import ExternalLinkProvider from './linking/Provider';
 import track from './analytics';
+
+import ClientProvider, { client } from './client';
 import customTheme, { customIcons } from './theme';
 
 const AppProviders = (props) => (

@@ -51,16 +51,7 @@ class ContentFeed extends PureComponent {
         >
           {({ loading, error, data, refetch, fetchMore, variables }) => (
             <FeedView
-              ListItemComponent={({ ...props }) => (
-                <ContentCardConnected
-                  labelText={
-                    props.parentChannel &&
-                    props.parentChannel.name.split(' - ').pop()
-                  }
-                  cardTheme={props?.theme}
-                  {...props}
-                />
-              )}
+              ListItemComponent={ContentCardConnected}
               content={get(
                 data,
                 'node.childContentItemsConnection.edges',

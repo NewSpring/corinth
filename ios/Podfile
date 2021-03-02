@@ -36,12 +36,12 @@ target 'newspringchurchapp' do
          target.build_phases << phase
          target.build_phases.move(phase,0)
        end
-      end
+      end    
   end
 end
 
 target 'newspringchurchapp-tvOS' do
-  # Pods for apolloschurchapp-tvOS
+  # Pods for newspringchurchapp-tvOS
 
   target 'newspringchurchapp-tvOSTests' do
     inherit! :complete
