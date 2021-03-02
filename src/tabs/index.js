@@ -12,11 +12,11 @@ import tabBarIcon from './tabBarIcon';
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const TabNavigator = (props) => (
-  <Navigator {...props} lazy>
+  <Navigator {...props} screenOptions={{ headerMode: 'none' }} lazy>
     <Screen
       name="Home"
       component={Home}
-      options={{ tabBarIcon: tabBarIcon('home') }}
+      options={{ tabBarIcon: tabBarIcon('home'), headerShown: false }}
     />
     <Screen
       name="Read"

@@ -41,6 +41,21 @@ const ActionTable = () => {
             <Touchable
               onPress={() =>
                 openUrl(
+                  'https://newspring.cc/locations',
+                  {},
+                  { useRockToken: true }
+                )
+              }
+            >
+              <Cell>
+                <CellText>Locations and Times</CellText>
+                <CellIcon name="arrow-next" />
+              </Cell>
+            </Touchable>
+            <Divider />
+            <Touchable
+              onPress={() =>
+                openUrl(
                   'https://newspring.cc/connect/?hidenav=true',
                   {},
                   { useRockToken: true }

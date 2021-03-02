@@ -18,6 +18,7 @@ const StyledTextInput = styled(({ theme }) => ({
   paddingTop: theme.sizing.baseUnit,
   paddingBottom: theme.sizing.baseUnit,
   textAlignVertical: 'top',
+  color: theme.colors.text.primary,
 }))(TextInput);
 
 const AddNoteView = styled({
