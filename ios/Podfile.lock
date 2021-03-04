@@ -91,14 +91,9 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - google-cast-sdk (4.5.3):
-    - google-cast-sdk/Core (= 4.5.3)
-    - GTMSessionFetcher/Core (~> 1.1)
-    - Protobuf (~> 3.13)
-  - google-cast-sdk/Core (4.5.3):
-    - GTMSessionFetcher/Core (~> 1.1)
-    - Protobuf (~> 3.13)
-  - GTMSessionFetcher/Core (1.5.0)
+  - google-cast-sdk (4.3.0):
+    - google-cast-sdk/Core (= 4.3.0)
+  - google-cast-sdk/Core (4.3.0)
   - OneSignal (2.15.2)
   - OpenSSL-Universal (1.0.2.20):
     - OpenSSL-Universal/Static (= 1.0.2.20)
@@ -107,7 +102,6 @@ PODS:
     - RNPermissions
   - Permission-PhotoLibrary (2.1.2):
     - RNPermissions
-  - Protobuf (3.14.0)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
     - FBLazyVector (= 0.63.4)
@@ -277,7 +271,7 @@ PODS:
   - react-native-amplitude-analytics (0.2.7):
     - Amplitude-iOS (~> 4.3.1)
     - React
-  - react-native-apollos-player (2.1.1):
+  - react-native-apollos-player (2.2.0):
     - React
   - react-native-config (0.11.7):
     - React
@@ -514,10 +508,8 @@ SPEC REPOS:
     - Flipper-RSocket
     - FlipperKit
     - google-cast-sdk
-    - GTMSessionFetcher
     - OneSignal
     - OpenSSL-Universal
-    - Protobuf
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -673,13 +665,11 @@ SPEC CHECKSUMS:
   FlipperKit: ab353d41aea8aae2ea6daaf813e67496642f3d7d
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
-  google-cast-sdk: f94c5df87564f71d4342400b8487665e9bed27c6
-  GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  google-cast-sdk: 57cd67b4a0966802b2738fcbbc103125c98cc8a1
   OneSignal: 9531e385388565f4d31797ddadbe0fcc786430ec
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
   Permission-Notifications: 2f2ff1d01fe7677c3858c8f0a0bd3f3accdbb6bb
   Permission-PhotoLibrary: e29736d903e867d278747eb30951528303425f64
-  Protobuf: 0cde852566359049847168e51bd1c690e0f70056
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -691,7 +681,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
   react-native-amplitude-analytics: a4387e29d68ec0ff3c0e877a3ca8e328c0aca732
-  react-native-apollos-player: 445b845c71b60f4843048bb79806f7de67c3953b
+  react-native-apollos-player: f13e6e3107586d183fc63e9fe95b19efd8eac4ce
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-geolocation-service: 7c9436da6dfdecd9526c62eac62ea2bc3f0cc8ea
