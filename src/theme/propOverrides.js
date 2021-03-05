@@ -90,9 +90,9 @@ export default {
     additionalFeatures: { AddCommentFeature: AddComentFeatureConnected },
   },
   'ui-connected.ContentHTMLViewConnected': {
-    onPressAnchor: () => (url) => console.log(url) || InAppBrowser.open(url),
+    onPressAnchor: () => (url) => InAppBrowser.open(url),
   },
   'ui-connected.ContentNodeConnected': {
-    onPressAnchor: () => (url) => console.log(url) || InAppBrowser.open(url),
+    onPressAnchor: () => (url) => InAppBrowser.open(url),
   },
 };
