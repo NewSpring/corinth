@@ -2,6 +2,7 @@ import React from 'react';
 
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { withTheme } from '@apollosproject/ui-kit';
+import ContentSingle from '../../content-single';
 import Home from './Home';
 import Discover from './Discover';
 
@@ -14,6 +15,11 @@ const HomeNavigator = (props) => (
       component={Discover}
       name="Discover"
       options={{ stackPresentation: 'modal' }}
+    />
+    <Screen
+      name="ContentSingle"
+      component={ContentSingle}
+      options={{ title: 'Content', stackPresentation: 'modal' }}
     />
   </Navigator>
 );
