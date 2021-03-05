@@ -39,6 +39,7 @@ import Event from './event';
 import Tabs from './tabs';
 import LandingScreen from './ui/LandingScreen';
 import Onboarding from './ui/Onboarding';
+import Discover from './tabs/home/Discover';
 
 enableScreens(); // improves performance for react-navigation
 
@@ -168,6 +169,11 @@ const App = (props) => (
             name="Prayer"
             component={Prayer}
             options={{ headerShown: false }}
+          />
+          <Screen
+            component={Discover}
+            name="Discover"
+            options={{ stackPresentation: 'modal' }}
           />
         </ThemedNavigator>
       </NavigationContainer>
