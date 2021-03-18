@@ -1,33 +1,33 @@
 import React, { PureComponent } from 'react';
-import { Query } from '@apollo/client/react/components';
-import { ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import PropTypes from 'prop-types';
 
-import { HorizontalLikedContentFeedConnected } from '@apollosproject/ui-connected';
-import { BackgroundView } from '@apollosproject/ui-kit';
+import { ConnectScreenConnected } from '@apollosproject/ui-connected';
+import { Query } from '@apollo/client/react/components';
+
 import ActionTable from './ActionTable';
 import ActionBar from './ActionBar';
-import UserAvatarHeader, { GET_USER_PROFILE } from './UserAvatarHeader';
+import GET_USER_PROFILE from './UserAvatarHeader/getUserProfile';
 
+const ActionBarWithIsStaff = () => (
+  <Query query={GET_USER_PROFILE} fetchPolicy="cache-and-network">
+    {({
+      data: { currentUser: { profile: { isGroupLeader } = {} } = {} } = {},
+    }) => <ActionBar isGroupLeader={isGroupLeader} />}
+  </Query>
+);
 class Connect extends PureComponent {
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }),
+  };
+
   render() {
     return (
-      <BackgroundView>
-        <SafeAreaView edges={['top', 'left', 'right']}>
-          <ScrollView>
-            <UserAvatarHeader />
-            <Query query={GET_USER_PROFILE} fetchPolicy="cache-and-network">
-              {({
-                data: {
-                  currentUser: { profile: { isGroupLeader } = {} } = {},
-                } = {},
-              }) => <ActionBar isGroupLeader={isGroupLeader} />}
-            </Query>
-            <HorizontalLikedContentFeedConnected />
-            <ActionTable />
-          </ScrollView>
-        </SafeAreaView>
-      </BackgroundView>
+      <ConnectScreenConnected
+        ActionTable={ActionTable}
+        ActionBar={ActionBarWithIsStaff}
+      />
     );
   }
 }

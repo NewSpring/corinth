@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, View } from 'react-native';
-import { Mutation, Query } from '@apollo/client/react/components';
+import { View, Image } from 'react-native';
+import { Query } from '@apollo/client/react/components';
 import {
   checkNotifications,
   openSettings,
@@ -15,6 +15,7 @@ import {
 import {
   AskNotificationsConnected,
   LocationFinderConnected,
+  FollowConnected,
   OnboardingSwiper,
   onboardingComplete,
   WITH_USER_ID,
@@ -29,7 +30,6 @@ const ImageContainer = styled({
 })(View);
 
 const StyledImage = styled({
-  resizeMode: 'contain',
   height: '100%',
   width: '100%',
 })(Image);
@@ -39,7 +39,6 @@ const FullscreenBackgroundView = styled({
   width: '100%',
   height: '100%',
 })(BackgroundView);
-
 function Onboarding({ navigation }) {
   return (
     <>
@@ -79,6 +78,14 @@ function Onboarding({ navigation }) {
                   )}
                 </Mutation>
               )}
+            />
+            <FollowConnected
+              onPressPrimary={swipeForward}
+              BackgroundComponent={
+                <ImageContainer>
+                  <StyledImage source={require('./img/screen1.png')} />
+                </ImageContainer>
+              }
             />
             <Query query={WITH_USER_ID} fetchPolicy="network-only">
               {({ data }) => (

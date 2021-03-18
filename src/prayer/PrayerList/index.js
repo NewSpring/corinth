@@ -79,6 +79,7 @@ class PrayerList extends PureComponent {
             fetchPolicy={'cache-and-network'}
           >
             {({ data, loading, error }) => {
+              console.log(data, error);
               if (loading) return <ActivityIndicator />;
               if (error) return <ErrorCard />;
               const prayers = data.prayerFeed.edges.map((edge) => edge.node);

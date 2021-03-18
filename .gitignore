@@ -156,3 +156,7 @@ key.json
 
 # shared secrets
 .env.shared
+
+# GraphQL info
+schema.graphql
+fragmentTypes.json
