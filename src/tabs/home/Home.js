@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Image, Animated, View } from 'react-native';
+import { Image, Animated, View, Platform } from 'react-native';
 import SafeAreaView from 'react-native-safe-area-view';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
@@ -72,7 +72,9 @@ function Home(props) {
     () => {
       const active = searchText !== '' || isFocused;
       Animated.timing(translateY, {
-        toValue: active ? searchBarHeight : -searchBarHeight,
+        toValue: active
+          ? Platform.select({ ios: searchBarHeight, android: 0 })
+          : -searchBarHeight,
         // these values match the ios spring effect
         duration: 500,
         damping: 500,
