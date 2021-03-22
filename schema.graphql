@@ -113,6 +113,12 @@ type Authentication {
   token: String
 }
 
+type ButtonFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  action: FeatureAction
+}
+
 enum CacheControlScope {
   PUBLIC
   PRIVATE
@@ -322,6 +328,17 @@ interface FeaturesNode {
   featureFeed: FeatureFeed
 }
 
+type Follow {
+  id: ID
+  state: FollowState
+}
+
+enum FollowState {
+  REQUESTED
+  DECLINED
+  ACCEPTED
+}
+
 enum GENDER {
   Male
   Female
@@ -461,6 +478,11 @@ interface MediaSource {
   uri: String
 }
 
+type Message implements Node {
+  id: ID!
+  message: String
+}
+
 type Mutation {
   _placeholder: Boolean
   updateLikeEntity(input: LikeEntityInput!): ContentItem @deprecated(reason: "Use the more general updateLikeNode instead")
@@ -480,6 +502,11 @@ type Mutation {
   trackEvent(input: AnalyticsTrackInput!): AnalyticsResult
   updateUserPushSettings(input: PushSettingsInput!): Person
   updateUserCampus(campusId: String!): Person
+  addComment(parentId: ID!, text: String!, visibility: CommentVisibility): Comment
+  flagComment(commentId: ID!): Comment
+  requestFollow(followedPersonId: ID!): Follow
+  ignoreFollowRequest(requestPersonId: ID!): Follow
+  acceptFollowRequest(requestPersonId: ID!): Follow
   addPrayer(text: String!, isAnonymous: Boolean): Prayer
   answerPrayer(id: ID!, answer: String!): Prayer
   interactWithPrayer(id: ID!, action: PrayerAction!): Prayer
@@ -488,8 +515,6 @@ type Mutation {
   flagPrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:FLAG)")
   savePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:SAVE)")
   unSavePrayer(nodeId: String!): Prayer @deprecated(reason: "Use interactWithPrayer(action:UNSAVE)")
-  addComment(parentId: ID!, text: String!, visibility: CommentVisibility): Comment
-  flagComment(commentId: ID!): Comment
 }
 
 interface Node {
@@ -588,6 +613,8 @@ type Person implements Node {
   testGroups: [Group]
   isGroupLeader: Boolean
   isInReadMyBible: Boolean
+  currentUserFollowing: Follow
+  followingCurrentUser: Follow
 }
 
 type Prayer implements Node {
@@ -667,6 +694,7 @@ type Query {
   personaFeed(first: Int, after: String): ContentItemsConnection
   contentItemFromSlug(slug: String!): ContentItem
   forgotPasswordURL: String
+  suggestedFollows: [Person]
   currentUser: AuthenticatedUser
   userExists(identity: String): USER_AUTH_STATUS
   liveStream: LiveStream @deprecated(reason: "Use liveStreams, there may be multiple.")
@@ -676,6 +704,11 @@ type Query {
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
+  userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
+  homeFeedFeatures(campusId: ID): FeatureFeed
+  discoverFeedFeatures: FeatureFeed
+  readFeedFeatures: FeatureFeed
+  followRequests: [Person]
   prayer(id: ID!): Prayer
   prayers(type: PrayerType): [Prayer] @deprecated(reason: "Use paginated version: prayerFeed")
   prayerFeed(first: Int, after: String, type: PrayerType): PrayersConnection
@@ -684,10 +717,6 @@ type Query {
   userPrayers: [Prayer] @deprecated(reason: "Use prayers(type:USER)")
   groupPrayers: [Prayer] @deprecated(reason: "Use prayers(type:GROUP)")
   savedPrayers: [Prayer] @deprecated(reason: "Use prayers(type:CAMPUS)")
-  userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
-  homeFeedFeatures(campusId: ID): FeatureFeed
-  discoverFeedFeatures: FeatureFeed
-  readFeedFeatures: FeatureFeed
 }
 
 type RockPersonDetails {
@@ -791,7 +820,7 @@ enum ThemeType {
   DARK
 }
 
-type UniversalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & ShareableNode {
+type UniversalContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & LikableNode & ShareableNode & FeaturesNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -808,6 +837,8 @@ type UniversalContentItem implements ContentItem & Node & ContentNode & Card & V
   isLiked: Boolean
   likedCount: Int
   sharing: SharableContentItem
+  features: [Feature] @deprecated(reason: "Use featureFeed")
+  featureFeed: FeatureFeed
 }
 
 enum UPDATEABLE_PROFILE_FIELDS {

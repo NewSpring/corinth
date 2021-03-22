@@ -1,5 +1,4 @@
 PODS:
-<<<<<<< ours
   - Amplitude-iOS (4.3.1)
   - appcenter-analytics (4.0.2):
     - AppCenter/Analytics (~> 4.0)
@@ -23,10 +22,6 @@ PODS:
   - boost-for-react-native (1.63.0)
   - BugsnagReactNative (7.5.6):
     - React
-=======
-  - AstronomerAnalytics (3.6.9)
-  - boost-for-react-native (1.63.0)
->>>>>>> theirs
   - BVLinearGradient (2.5.6):
     - React
   - CocoaAsyncSocket (7.6.5)
@@ -103,15 +98,9 @@ PODS:
   - OpenSSL-Universal (1.0.2.20):
     - OpenSSL-Universal/Static (= 1.0.2.20)
   - OpenSSL-Universal/Static (1.0.2.20)
-<<<<<<< ours
   - Permission-Notifications (2.1.2):
     - RNPermissions
   - Permission-PhotoLibrary (2.1.2):
-=======
-  - Permission-Notifications (2.2.2):
-    - RNPermissions
-  - Permission-PhotoLibrary (2.2.2):
->>>>>>> theirs
     - RNPermissions
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
@@ -279,20 +268,15 @@ PODS:
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
   - React-jsinspector (0.63.4)
-<<<<<<< ours
   - react-native-amplitude-analytics (0.2.7):
     - Amplitude-iOS (~> 4.3.1)
     - React
-  - react-native-apollos-player (2.2.0):
-=======
   - react-native-apollos-player (2.4.0):
->>>>>>> theirs
     - React
   - react-native-config (0.11.7):
     - React
   - react-native-geolocation (2.0.2):
     - React
-<<<<<<< ours
   - react-native-geolocation-service (5.2.0):
     - React
   - react-native-google-cast (3.4.1):
@@ -305,20 +289,6 @@ PODS:
   - react-native-google-cast/RNGoogleCast (3.4.1):
     - React
   - react-native-image-picker (3.2.1):
-=======
-  - react-native-geolocation-service (5.1.1):
-    - React
-  - react-native-google-cast (3.3.0):
-    - React
-    - react-native-google-cast/Default (= 3.3.0)
-  - react-native-google-cast/Default (3.3.0):
-    - google-cast-sdk (<= 4.3.0)
-    - React
-    - react-native-google-cast/RNGoogleCast
-  - react-native-google-cast/RNGoogleCast (3.3.0):
-    - React
-  - react-native-image-picker (3.1.4):
->>>>>>> theirs
     - React-Core
   - react-native-maps (0.27.1):
     - React
@@ -331,13 +301,8 @@ PODS:
     - React
   - react-native-safari-view (1.0.0):
     - React
-<<<<<<< ours
   - react-native-safe-area-context (3.1.9):
     - React-Core
-=======
-  - react-native-safe-area-context (3.0.7):
-    - React
->>>>>>> theirs
   - react-native-splash-screen (3.2.0):
     - React
   - react-native-video (5.0.2):
@@ -414,42 +379,22 @@ PODS:
   - RNAnalytics (1.1.5):
     - AstronomerAnalytics
     - React
-<<<<<<< ours
   - RNCAsyncStorage (1.9.0):
     - React
   - RNCMaskedView (0.1.10):
     - React
   - RNCPicker (1.9.10):
-=======
-  - RNCAsyncStorage (1.12.1):
-    - React-Core
-  - RNCMaskedView (0.1.10):
-    - React
-  - RNCPicker (1.9.4):
->>>>>>> theirs
     - React-Core
   - RNDateTimePicker (3.0.4):
     - React-Core
   - RNDeviceInfo (4.0.1):
     - React
-<<<<<<< ours
-  - RNGestureHandler (1.9.0):
+  - RNGestureHandler (1.10.3):
     - React-Core
   - RNInAppBrowser (3.4.0):
     - React
   - RNPermissions (2.1.2):
     - React
-  - RNReanimated (1.13.2):
-    - React-Core
-  - RNScreens (2.17.0):
-    - React-Core
-=======
-  - RNGestureHandler (1.10.3):
-    - React-Core
-  - RNInAppBrowser (3.5.1):
-    - React-Core
-  - RNPermissions (2.2.2):
-    - React-Core
   - RNReanimated (2.0.0):
     - DoubleConversion
     - FBLazyVector
@@ -479,9 +424,8 @@ PODS:
     - React-RCTVibration
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (2.9.0):
-    - React
->>>>>>> theirs
+  - RNScreens (2.17.0):
+    - React-Core
   - RNSVG (9.13.6):
     - React
   - Yoga (1.14.0)
@@ -489,13 +433,10 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
-<<<<<<< ours
   - appcenter-analytics (from `../node_modules/appcenter-analytics/ios`)
   - appcenter-core (from `../node_modules/appcenter/ios`)
   - appcenter-crashes (from `../node_modules/appcenter-crashes/ios`)
   - "BugsnagReactNative (from `../node_modules/@bugsnag/react-native`)"
-=======
->>>>>>> theirs
   - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -535,10 +476,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-<<<<<<< ours
   - react-native-amplitude-analytics (from `../node_modules/react-native-amplitude-analytics`)
-=======
->>>>>>> theirs
   - "react-native-apollos-player (from `../node_modules/@apollosproject/ui-media-player`)"
   - react-native-config (from `../node_modules/react-native-config`)
   - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
@@ -582,12 +520,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-<<<<<<< ours
     - Amplitude-iOS
     - AppCenter
     - AppCenterReactNativeShared
-=======
->>>>>>> theirs
     - AstronomerAnalytics
     - boost-for-react-native
     - CocoaAsyncSocket
@@ -605,7 +540,6 @@ SPEC REPOS:
     - YogaKit
 
 EXTERNAL SOURCES:
-<<<<<<< ours
   appcenter-analytics:
     :path: "../node_modules/appcenter-analytics/ios"
   appcenter-core:
@@ -614,8 +548,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/appcenter-crashes/ios"
   BugsnagReactNative:
     :path: "../node_modules/@bugsnag/react-native"
-=======
->>>>>>> theirs
   BVLinearGradient:
     :path: "../node_modules/react-native-linear-gradient"
   DoubleConversion:
@@ -652,11 +584,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
-<<<<<<< ours
   react-native-amplitude-analytics:
     :path: "../node_modules/react-native-amplitude-analytics"
-=======
->>>>>>> theirs
   react-native-apollos-player:
     :path: "../node_modules/@apollosproject/ui-media-player"
   react-native-config:
@@ -739,7 +668,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-<<<<<<< ours
   Amplitude-iOS: df355e2be58972041acde9576a2ae97c217bf941
   AppCenter: 8832b158d17e54845c3b88a91076218f0b07174d
   appcenter-analytics: f1bcf80219acb97acdabeda751a1591869f83dfd
@@ -749,10 +677,6 @@ SPEC CHECKSUMS:
   AstronomerAnalytics: 36f48678a387e41481650edd6247c6c95d994131
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BugsnagReactNative: 1ac1129bdf95273df07cfe4d89750dc3d9d888a3
-=======
-  AstronomerAnalytics: 36f48678a387e41481650edd6247c6c95d994131
-  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
->>>>>>> theirs
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
@@ -771,13 +695,8 @@ SPEC CHECKSUMS:
   google-cast-sdk: 57cd67b4a0966802b2738fcbbc103125c98cc8a1
   OneSignal: 9531e385388565f4d31797ddadbe0fcc786430ec
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
-<<<<<<< ours
   Permission-Notifications: 2f2ff1d01fe7677c3858c8f0a0bd3f3accdbb6bb
   Permission-PhotoLibrary: e29736d903e867d278747eb30951528303425f64
-=======
-  Permission-Notifications: 9c6b5cc4f0e6599e9fc3395b77cebddc48f1be41
-  Permission-PhotoLibrary: 8227a6ed9f6a971537afe63742d54f5f23a38fe2
->>>>>>> theirs
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -788,32 +707,19 @@ SPEC CHECKSUMS:
   React-jsi: a0418934cf48f25b485631deb27c64dc40fb4c31
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
-<<<<<<< ours
   react-native-amplitude-analytics: a4387e29d68ec0ff3c0e877a3ca8e328c0aca732
-  react-native-apollos-player: f13e6e3107586d183fc63e9fe95b19efd8eac4ce
+  react-native-apollos-player: 3d7b850198aecce6da2af6cc5c45e1d8f470ed56
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-geolocation-service: 7c9436da6dfdecd9526c62eac62ea2bc3f0cc8ea
   react-native-google-cast: 9ead682d0026c857318efa8ea9c6f58b6142651a
   react-native-image-picker: 64d12e81f3d9dad0af107fe6536b295d51932ec0
-=======
-  react-native-apollos-player: 3d7b850198aecce6da2af6cc5c45e1d8f470ed56
-  react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
-  react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
-  react-native-geolocation-service: f33626f1ae12381ca2ae60f98b2f5edd676bf95a
-  react-native-google-cast: 410619ef162b8b91815ecf7271502224998dee8e
-  react-native-image-picker: 28d8d1f5a643119876b8b2c7d4d1dcfb2b232dd4
->>>>>>> theirs
   react-native-maps: f4b89da81626ad7f151a8bfcb79733295d31ce5c
   react-native-music-control: dcfe5b61e56a15898c4618579cb8ce612c9d21a8
   react-native-onesignal: ad2eaab1517951e50d19fa3eccd16d3048167181
   react-native-passkit-wallet: 51e3babdaeec4c10b5736786ebd1bfb470fcaa36
   react-native-safari-view: 955d7160d159241b8e9395d12d10ea0ef863dcdd
-<<<<<<< ours
   react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
-=======
-  react-native-safe-area-context: ef6f16c66b0797ecae1bf86c103dfb3dc16fc33d
->>>>>>> theirs
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   react-native-video: d01ed7ff1e38fa7dcc6c15c94cf505e661b7bfd0
   react-native-webview: db4682f1698ab4b17a5e88f951031d203ff8aea8
@@ -830,39 +736,20 @@ SPEC CHECKSUMS:
   rn-fetch-blob: 651b8d076b43d0d7aa294a3d9ec16c00aab8bef9
   RNAirplay: 75777dd55dafbd3687703c3eb9c290ea6cc43248
   RNAnalytics: 360b0680753d0e1d37152a25d47aa34a015cab72
-<<<<<<< ours
   RNCAsyncStorage: 453cd7c335ec9ba3b877e27d02238956b76f3268
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNCPicker: 77183d9b1cd80ae55505322f8ad09ba0036e29ba
   RNDateTimePicker: 3d1931e387248cb8f1d1d33740d4a1a82dfe622a
   RNDeviceInfo: 687c1b2ab6d86ff1ca1208783320cd144138c7f2
-  RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNInAppBrowser: c1a0dad2734458d79bcb6c8f4297ba8658a1da9f
   RNPermissions: a96580116f7894146552e92b000ac30bf1661947
-  RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
-  RNScreens: 23c1fbf7797261321f6db93fdcbd9913573535e4
-=======
-  RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
-  RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNCPicker: 2c31098349f499e7ab4da6c1ce26f7537d271062
-  RNDateTimePicker: 3d1931e387248cb8f1d1d33740d4a1a82dfe622a
-  RNDeviceInfo: 687c1b2ab6d86ff1ca1208783320cd144138c7f2
-  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNInAppBrowser: 48b95ba7a4eaff5cc223bca338d3e319561dbd1b
-  RNPermissions: 5df468064df661a4c8c017e2791ce90d7695eea5
   RNReanimated: 5231286440b796e09df3bfa5c1b12b02bfe07664
-  RNScreens: c526239bbe0e957b988dacc8d75ac94ec9cb19da
->>>>>>> theirs
+  RNScreens: 23c1fbf7797261321f6db93fdcbd9913573535e4
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-<<<<<<< ours
 PODFILE CHECKSUM: 92ed752b5c0fd248e6606b9db3d284a6082133a9
 
 COCOAPODS: 1.10.1
-=======
-PODFILE CHECKSUM: ff0b6ccfe0571b896a44f129ac11790a8b809329
-
-COCOAPODS: 1.8.4
->>>>>>> theirs

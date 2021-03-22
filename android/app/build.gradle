@@ -10,10 +10,6 @@ buildscript {
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: "com.android.application"
 
-project.ext.envConfigFiles = [
-    release: ".env.production",
-]
-
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 apply from: "../../node_modules/@bugsnag/react-native/bugsnag-react-native.gradle"
 
@@ -157,6 +153,7 @@ android {
         applicationId "cc.newspring.newspringapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+<<<<<<< ours
         versionCode 2020069596
         versionName "7.11.0"
         ndk {
@@ -172,6 +169,23 @@ android {
         //     keyAlias System.getenv("KEY_ALIAS")
         //     keyPassword System.getenv("KEY_PASSWORD")
         // }
+=======
+        versionCode 1
+        versionName "1.0.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+        }
+        resValue "string", "build_config_package", "cc.newspring.newspringapp"
+        multiDexEnabled true
+    }
+    signingConfigs {
+        release {
+            storeFile file(String.valueOf(System.getenv("KEYSTORE_FILE")))
+            storePassword System.getenv("KEYSTORE_PASSWORD")
+            keyAlias System.getenv("KEY_ALIAS")
+            keyPassword System.getenv("KEY_PASSWORD")
+        }
+>>>>>>> theirs
     }
     splits {
         abi {
@@ -185,7 +199,11 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+<<<<<<< ours
             // signingConfig signingConfigs.release
+=======
+            signingConfig signingConfigs.release
+>>>>>>> theirs
         }
     }
     // applicationVariants are e.g. debug, release
@@ -201,6 +219,7 @@ android {
             }
         }
     }
+<<<<<<< ours
     packagingOptions {
         pickFirst '**/armeabi-v7a/libc++_shared.so'
         pickFirst '**/x86/libc++_shared.so'
@@ -218,6 +237,8 @@ android {
         exclude 'META-INF/ASL2.0'
         exclude("META-INF/*.kotlin_module")
     }
+=======
+>>>>>>> theirs
 }
 
 dependencies {
