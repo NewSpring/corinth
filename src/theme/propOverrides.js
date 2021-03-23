@@ -1,7 +1,6 @@
 import React from 'react';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
-import InAppBrowser from 'react-native-inappbrowser-reborn';
 /* Export your custom prop overrides here. */
 import {
   DefaultCard,
@@ -13,6 +12,7 @@ import {
 import {
   LiveConsumer,
   AddComentFeatureConnected,
+  safeHandleUrl,
 } from '@apollosproject/ui-connected';
 import LiveButton from '../ui/LiveButton';
 
@@ -90,9 +90,13 @@ export default {
     additionalFeatures: { AddCommentFeature: AddComentFeatureConnected },
   },
   'ui-connected.ContentHTMLViewConnected': {
-    onPressAnchor: () => (url) => InAppBrowser.open(url),
+    onPressAnchor: () => (url) => {
+      safeHandleUrl(url);
+    },
   },
   'ui-connected.ContentNodeConnected': {
-    onPressAnchor: () => (url) => InAppBrowser.open(url),
+    onPressAnchor: () => (url) => {
+      safeHandleUrl(url);
+    },
   },
 };

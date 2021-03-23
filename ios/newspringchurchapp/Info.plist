@@ -29,6 +29,10 @@
 			</array>
 		</dict>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>mailto</string>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>34</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -58,7 +62,7 @@
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like access to bluetooth (for playing audio)</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>$(PRODUCT_NAME) would like access to bluetooth (for playing audio)</string>	
+	<string>$(PRODUCT_NAME) would like access to bluetooth (for playing audio)</string>
 	<key>NSCameraUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to use your camera (for uploading profile pictures)</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
