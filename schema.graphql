@@ -695,6 +695,7 @@ type Query {
   contentItemFromSlug(slug: String!): ContentItem
   forgotPasswordURL: String
   suggestedFollows: [Person]
+  searchPeople(name: String, first: Int, after: String): SearchPeopleResultsConnection
   currentUser: AuthenticatedUser
   userExists(identity: String): USER_AUTH_STATUS
   liveStream: LiveStream @deprecated(reason: "Use liveStreams, there may be multiple.")
@@ -742,6 +743,16 @@ type ScriptureFeature implements Feature & Node {
 
 interface ScriptureNode {
   scriptures: [Scripture]
+}
+
+type SearchPeopleResult {
+  node: Person
+  cursor: String
+}
+
+type SearchPeopleResultsConnection {
+  edges: [SearchPeopleResult]
+  pageInfo: PaginationInfo
 }
 
 type SearchResult {
