@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { Query } from '@apollo/client/react/components';
+import { Query, Mutation } from '@apollo/client/react/components';
 import {
   checkNotifications,
   openSettings,

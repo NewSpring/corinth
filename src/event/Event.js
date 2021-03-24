@@ -2,7 +2,6 @@ import React from 'react';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import InAppBrowser from 'react-native-inappbrowser-reborn';
 import {
   GradientOverlayImage,
   BackgroundView,
@@ -12,11 +11,12 @@ import {
   StretchyView,
 } from '@apollosproject/ui-kit';
 import HTMLView from '@apollosproject/ui-htmlview';
+import { safeHandleUrl } from '@apollosproject/ui-connected';
 
 import { FlexedScrollView, EventInfoItem } from './components';
 
 const handlePressAnchor = (url) => {
-  InAppBrowser.open(url);
+  safeHandleUrl(url);
 };
 
 const Event = ({ event, loading }) => {
