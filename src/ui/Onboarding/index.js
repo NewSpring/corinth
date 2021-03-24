@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Dimensions } from 'react-native';
+
 import { Query, Mutation } from '@apollo/client/react/components';
 import {
   checkNotifications,
@@ -26,7 +27,8 @@ import CustomLocationFinder from './CustomLocationFinder';
 
 const ImageContainer = styled({
   justifyContent: 'flex-end',
-  height: '40%',
+  paddingTop: 24,
+  height: Dimensions.get('window').height * 0.4,
 })(View);
 
 const StyledImage = styled({
