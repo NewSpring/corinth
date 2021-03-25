@@ -271,7 +271,7 @@ PODS:
   - react-native-amplitude-analytics (0.2.7):
     - Amplitude-iOS (~> 4.3.1)
     - React
-  - react-native-apollos-player (2.5.0):
+  - react-native-apollos-player (2.7.0):
     - React
   - react-native-config (0.11.7):
     - React
@@ -424,7 +424,7 @@ PODS:
     - React-RCTVibration
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (2.17.0):
+  - RNScreens (2.18.1):
     - React-Core
   - RNSVG (9.13.6):
     - React
@@ -708,7 +708,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
   react-native-amplitude-analytics: a4387e29d68ec0ff3c0e877a3ca8e328c0aca732
-  react-native-apollos-player: ac561ad07393500482a78e97454d7cb22c023da2
+  react-native-apollos-player: d4bcd7dd7e7b7206eded4e0007b8fdbb6b268021
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-geolocation-service: 7c9436da6dfdecd9526c62eac62ea2bc3f0cc8ea
@@ -745,7 +745,7 @@ SPEC CHECKSUMS:
   RNInAppBrowser: c1a0dad2734458d79bcb6c8f4297ba8658a1da9f
   RNPermissions: a96580116f7894146552e92b000ac30bf1661947
   RNReanimated: 5231286440b796e09df3bfa5c1b12b02bfe07664
-  RNScreens: 23c1fbf7797261321f6db93fdcbd9913573535e4
+  RNScreens: f7ad633b2e0190b77b6a7aab7f914fad6f198d8d
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

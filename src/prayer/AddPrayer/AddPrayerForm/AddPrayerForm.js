@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import { View, KeyboardAvoidingView } from 'react-native';
+import { Platform, View, KeyboardAvoidingView } from 'react-native';
 import {
   SafeAreaView,
   useSafeAreaInsets,

@@ -12,6 +12,7 @@ import {
 } from '@apollosproject/ui-connected';
 import ExternalLinkProvider from './linking/Provider';
 import track from './analytics';
+import { ONBOARDING_VERSION } from './ui/Onboarding';
 
 import ClientProvider, { client } from './client';
 import customTheme, { customIcons } from './theme';
@@ -37,6 +38,7 @@ const AppProviders = (props) => (
           checkOnboardingStatusAndNavigate({
             client,
             navigation: NavigationService,
+            latestOnboardingVersion: ONBOARDING_VERSION,
           })
         }
       >
