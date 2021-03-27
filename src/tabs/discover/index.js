@@ -16,14 +16,7 @@ const DiscoverNavigator = (props) => (
       name="Discover"
       options={{ headerShown: false }}
     />
-    <Screen
-      component={ContentFeed}
-      name="ContentFeed"
-      /** Function for React Navigation to set information in the header. */
-      options={({ route }) => ({
-        title: route.params.itemTitle || 'Content Feed',
-      })}
-    />
+
   </Navigator>
 );
 const EnhancedDiscover = withTheme(({ theme, ...props }) => ({

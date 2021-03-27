@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { throttle } from 'lodash';
+import { throttle, get } from 'lodash';
 import gql from 'graphql-tag';
 import { Query } from '@apollo/client/react/components';
 
@@ -18,14 +18,24 @@ const HeaderContainer = styled({
   paddingTop: 8,
 })(View);
 
-function handleOnPress({ action, ...props }) {
+function handleOnPress({ action, navigation, ...props }) {
   if (FEATURE_FEED_ACTION_MAP[action]) {
-    FEATURE_FEED_ACTION_MAP[action]({ action, ...props });
+    navigation.pop();
+    FEATURE_FEED_ACTION_MAP[action]({ action, navigation, ...props });
   }
   // If you add additional actions, you can handle them here.
   // Or add them to the FEATURE_FEED_ACTION_MAP, with the syntax
   // { [ActionName]: function({ relatedNode, action, ...FeatureFeedConnectedProps}) }
 }
+
+const handleOnPressItem = ({ navigation, item }) => {
+  const id = get(item, 'node.id', null);
+  navigation.pop();
+  return navigation.navigate('ContentSingle', {
+    itemId: id,
+    transitionKey: item.transitionKey,
+  });
+};
 
 // getHomeFeed uses the HOME_FEATURES in the config.yml
 // You can also hardcode an ID if you are confident it will never change
@@ -71,7 +81,7 @@ function Home(props) {
           </HeaderContainer>
           <View>
             {searchText ? (
-              <SearchFeedConnected searchText={searchText} />
+              <SearchFeedConnected searchText={searchText} onPressItem={(item) => handleOnPressItem({ navigation: props.navigation, item })}/>
             ) : (
               <Query query={GET_DISCOVER_FEED} fetchPolicy="cache-and-network">
                 {({ data }) => (
@@ -79,7 +89,7 @@ function Home(props) {
                     openUrl={openUrl}
                     navigation={props.navigation}
                     featureFeedId={data?.discoverFeedFeatures?.id}
-                    onPressActionItem={handleOnPress}
+                    onPressActionItem={(args) => handleOnPress({ ...args, navigation: props.navigation})}
                   />
                 )}
               </Query>

@@ -40,6 +40,7 @@ import Tabs from './tabs';
 import LandingScreen from './ui/LandingScreen';
 import Onboarding from './ui/Onboarding';
 import Discover from './tabs/home/Discover';
+import ContentFeed from './content-feed';
 
 enableScreens(); // improves performance for react-navigation
 
@@ -177,6 +178,16 @@ const App = (props) => (
             component={Discover}
             name="Discover"
             options={{ stackPresentation: 'modal' }}
+          />
+          <Screen
+            component={ContentFeed}
+            name="ContentFeed"
+            /** Function for React Navigation to set information in the header. */
+            options={({ route }) => ({
+              title: route.params.itemTitle || 'Content Feed',
+              headerShown: true,
+              stackPresentation: 'push',
+            })}
           />
         </ThemedNavigator>
       </NavigationContainer>
