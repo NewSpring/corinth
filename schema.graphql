@@ -165,11 +165,13 @@ type CardListItem {
 """A rgb color string"""
 scalar Color
 
-type Comment implements Node {
+type Comment implements Node & LikableNode {
   id: ID!
   person: Person
   text: String
   visibility: CommentVisibility
+  isLiked: Boolean
+  likedCount: Int
 }
 
 type CommentListFeature implements Feature & Node {
@@ -504,6 +506,8 @@ type Mutation {
   updateUserCampus(campusId: String!): Person
   addComment(parentId: ID!, text: String!, visibility: CommentVisibility): Comment
   flagComment(commentId: ID!): Comment
+  likeComment(commentId: ID!): Comment
+  unlikeComment(commentId: ID!): Comment
   requestFollow(followedPersonId: ID!): Follow
   ignoreFollowRequest(requestPersonId: ID!): Follow
   acceptFollowRequest(requestPersonId: ID!): Follow
