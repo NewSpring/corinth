@@ -89,6 +89,19 @@ ApollosConfig.loadJs({
   TYPEMAP,
   FRAGMENTS: {
     ...FRAGMENTS,
+    ADD_COMMENT_FEATURE_FRAGMENT: `
+    fragment AddCommentFeatureFragment on AddCommentFeature {
+      id
+
+      addPrompt
+      initialPrompt
+
+      relatedNode {
+        id
+        __typename
+      }
+    }
+  `,
     // Same as core, but not PrayerListFeature.
     CONTENT_UP_NEXT_FRAGMENT: gql`
       fragment ContentUpNextFragment on ContentItem {
