@@ -3,7 +3,6 @@ import ApollosConfig from '@apollosproject/config';
 import { Providers, NavigationService } from '@apollosproject/ui-kit';
 import { AuthProvider } from '@apollosproject/ui-auth';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
-import { NotificationsProvider } from '@apollosproject/ui-notifications';
 
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
 import {
@@ -19,9 +18,9 @@ import customTheme, { customIcons } from './theme';
 
 const AppProviders = (props) => (
   <ClientProvider {...props}>
-    <NotificationsProvider
+    <ExternalLinkProvider
       oneSignalKey={ApollosConfig.ONE_SIGNAL_KEY}
-      navigate={() => ({})}
+      navigate={NavigationService.navigate}
       actionMap={{
         // accept a follow request when someone taps "accept" in a follow request push notification
         acceptFollowRequest: ({ requestPersonId }) =>
@@ -42,22 +41,17 @@ const AppProviders = (props) => (
           })
         }
       >
-        <ExternalLinkProvider navigate={NavigationService.navigate}>
-          <AnalyticsProvider
-            trackFunctions={[track]}
-            useServerAnalytics={false}
-          >
-            <LiveProvider>
-              <Providers
-                themeInput={customTheme}
-                iconInput={customIcons}
-                {...props}
-              />
-            </LiveProvider>
-          </AnalyticsProvider>
-        </ExternalLinkProvider>
+        <AnalyticsProvider trackFunctions={[track]} useServerAnalytics={false}>
+          <LiveProvider>
+            <Providers
+              themeInput={customTheme}
+              iconInput={customIcons}
+              {...props}
+            />
+          </LiveProvider>
+        </AnalyticsProvider>
       </AuthProvider>
-    </NotificationsProvider>
+    </ExternalLinkProvider>
   </ClientProvider>
 );
 

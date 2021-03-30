@@ -50,7 +50,9 @@ const AppStatusBar = withTheme(({ theme }) => ({
 }))(StatusBar);
 
 const ProtectedRouteWithSplashScreen = (props) => {
-  const handleOnRouteChange = () => SplashScreen.hide();
+  const handleOnRouteChange = () => {
+    SplashScreen.hide();
+  };
 
   return <ProtectedRoute {...props} onRouteChange={handleOnRouteChange} />;
 };
