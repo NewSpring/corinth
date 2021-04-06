@@ -505,6 +505,8 @@ type Mutation {
   updateUserPushSettings(input: PushSettingsInput!): Person
   updateUserCampus(campusId: String!): Person
   addComment(parentId: ID!, text: String!, visibility: CommentVisibility): Comment
+  updateComment(commentId: ID!, text: String, visibility: CommentVisibility): Comment
+  deleteComment(commentId: ID!): Boolean
   flagComment(commentId: ID!): Comment
   likeComment(commentId: ID!): Comment
   unlikeComment(commentId: ID!): Comment
