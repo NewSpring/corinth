@@ -7,6 +7,7 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>applinks:newspring.cc</string>
+		<string>applinks:www.newspring.cc</string>
 		<string>applinks:ns.link</string>
 		<!-- If we ever decide to use core universal linking, this will already be here ready for us. -->
 		<!-- <string>applink:apollos-church-api.herokuapp.com</string> -->
