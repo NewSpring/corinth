@@ -6,10 +6,14 @@ import SermonNotes from './SermonNotes';
 import GET_SERMON_NOTES from './getSermonNotes';
 
 const SermonNotesConnected = ({ contentID }) => (
-  <Query query={GET_SERMON_NOTES} variables={{ contentID }}>
+  <Query
+    query={GET_SERMON_NOTES}
+    fetchPolicy="cache-and-network"
+    variables={{ contentID }}
+  >
     {({ data: { node = {} } = { node: {} }, loading, error }) => {
       if (error) return <ErrorCard error={error} />;
-      if (loading || !node || !node.sermonNotes?.length) return null;
+      if (loading && !node && !node.sermonNotes?.length) return null;
       return <SermonNotes isLoading={loading} {...node} />;
     }}
   </Query>
