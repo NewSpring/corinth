@@ -79,7 +79,7 @@ const SermonNotes = ({ isLoading, ...contentItem }) => {
 
   return sermonNotes.length ? (
     <ActionCard
-      isLoading={isLoading}
+      // isLoading={isLoading}
       action={
         <AnalyticsConsumer>
           {({ track }) => (
