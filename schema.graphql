@@ -191,7 +191,7 @@ type ContentChannel implements Node {
   name: String
   description: String
   childContentChannels: [ContentChannel]
-  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  childContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
   iconName: String
 }
 
@@ -210,8 +210,8 @@ interface ContentItem {
   audios: [AudioMedia]
   htmlContent: String
   summary: String
-  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
-  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  childContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
   parentChannel: ContentChannel
   theme: Theme
   isLiked: Boolean
@@ -233,6 +233,12 @@ type ContentItemsConnectionEdge {
 input ContentItemsConnectionInput {
   first: Int
   after: String
+  orderBy: ContentItemsConnectionOrderInput
+}
+
+input ContentItemsConnectionOrderInput {
+  field: OrderField
+  direction: OrderDirection
 }
 
 interface ContentNode {
@@ -255,8 +261,8 @@ type ContentSeriesContentItem implements ContentItem & Node & ContentNode & Card
   audios: [AudioMedia]
   htmlContent: String
   summary: String
-  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
-  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  childContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
   parentChannel: ContentChannel
   theme: Theme
   percentComplete: Float
@@ -285,8 +291,8 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   audios: [AudioMedia]
   htmlContent: String
   summary: String
-  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
-  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  childContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
   parentChannel: ContentChannel
   theme: Theme
   scriptures: [Scripture]
@@ -460,8 +466,8 @@ type MediaContentItem implements ContentItem & Node & ContentNode & Card & Video
   audios: [AudioMedia]
   htmlContent: String
   summary: String
-  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
-  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  childContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
   parentChannel: ContentChannel
   theme: Theme
   scriptures: [Scripture]
@@ -561,6 +567,15 @@ type NotesTextBlock implements NotesBlock {
   isHeader: Boolean
   hasBlanks: Boolean
   hiddenText: String
+}
+
+enum OrderDirection {
+  DESC
+  ASC
+}
+
+enum OrderField {
+  DATE
 }
 
 type PaginationInfo {
@@ -735,6 +750,7 @@ type Scripture implements Node {
   id: ID!
   html: String
   reference: String
+  book: String
   copyright: String
   version: String
 }
@@ -847,8 +863,8 @@ type UniversalContentItem implements ContentItem & Node & ContentNode & Card & V
   audios: [AudioMedia]
   htmlContent: String
   summary: String
-  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
-  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  childContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
   parentChannel: ContentChannel
   theme: Theme
   isLiked: Boolean
@@ -934,8 +950,8 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   audios: [AudioMedia]
   htmlContent: String
   summary: String
-  childContentItemsConnection(first: Int, after: String): ContentItemsConnection
-  siblingContentItemsConnection(first: Int, after: String): ContentItemsConnection
+  childContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
+  siblingContentItemsConnection(first: Int, after: String, orderBy: ContentItemsConnectionOrderInput): ContentItemsConnection
   parentChannel: ContentChannel
   theme: Theme
   isLiked: Boolean

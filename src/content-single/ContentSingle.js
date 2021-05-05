@@ -35,7 +35,7 @@ const NodeSingleInner = ({ nodeId, ImageWrapperComponent, ...props }) => (
     <SermonNotes contentID={nodeId} />
     <ScriptureNodeConnected nodeId={nodeId} />
     <NodeFeaturesConnected nodeId={nodeId} />
-    <UpNextButtonConnected nodeId={nodeId} />
+    {/* <UpNextButtonConnected nodeId={nodeId} /> */}
     <ContentParentFeedConnected nodeId={nodeId} />
     <ContentChildFeedConnected nodeId={nodeId} />
   </View>
