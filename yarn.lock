@@ -113,10 +113,10 @@
     graphql-tag "2.9.2"
     react-native-device-info "^4.0.1"
 
-"@apollosproject/ui-auth@^2.11.0":
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-auth/-/ui-auth-2.11.0.tgz#1b5cdfc257897ddcdd2bb4d792b62d8f230abc19"
-  integrity sha512-1GvHdtSYr0TU7A3xdaRpk+UB3j7wlBpxyIyhrMCFgxS0TU2ZdGMKVqI4XitvwtNu5XDY6KIUvRrmlvvEDmFjDg==
+"@apollosproject/ui-auth@^2.16.0":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-auth/-/ui-auth-2.18.1.tgz#b7f723678525067de5f7b08955ca101e6cacad9d"
+  integrity sha512-JTyWsCN4xDrx+nZYFycNl1VXEBoK/dtEHoIA5mbTJSaDdXbfy9EEnVE3Xar1omCy31+nMcH+EYYGiZ0eTDIGcA==
   dependencies:
     formik "1.5.1"
     graphql-tag "2.9.2"
@@ -146,10 +146,10 @@
     entities "^1.1.2"
     htmlparser2 "3.9.2"
 
-"@apollosproject/ui-kit@^2.11.0":
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-2.11.0.tgz#33caa89d2e721981e3c3900815d2c8eb5131f826"
-  integrity sha512-yrTGmbOzPRcv58ndmJ9Hz+0SLH1xlmIZ5C1qGijaD6cDwVMEHiXq6wk9gNYf7R0aFAT19XPj72X6byWBJyn1qA==
+"@apollosproject/ui-kit@^2.16.0":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-2.18.1.tgz#db404c42e0515612a1e29667f80f4413cb2986e2"
+  integrity sha512-3YkPrJg73vmyfJ8SP0PDQnAdDJ3/ms6opYEwpsseR0CmoFEwclKVZ2G3x6/vkMVDXYCNPjktiFTzFfkO9x20Ng==
   dependencies:
     "@react-native-community/blur" "^3.6.0"
     color "^3.1.0"
@@ -157,7 +157,7 @@
     moment "^2.24.0"
     numeral "^2.0.6"
     react-native-keyboard-avoiding-scroll-view "1.0.1"
-    react-native-modal-datetime-picker "8.7.1"
+    react-native-modal-datetime-picker "^9.0.0"
     react-native-tab-view "1.0.2"
     recompose "^0.30.0"
     rn-placeholder "1.2.0"
@@ -12401,17 +12401,17 @@ react-native-maps@^0.27.1:
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.27.1.tgz#2f10cd417bb2fd938c9e015b1c9b6d9b1a44b97f"
   integrity sha512-HygBkZBecTnIVRYrSiLRAvu4OmXOYso/A7c6Cy73HkOh9CgGV8Ap5eBea24tvmFGptjj5Hg8AJ94/YbmWK1Okw==
 
-react-native-modal-datetime-picker@8.7.1:
-  version "8.7.1"
-  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-8.7.1.tgz#9769492f3e61d48bad06817f8986cb8be4a46acc"
-  integrity sha512-wcP8WRe9uDqWF9KdScItkDSfJ3w/xi4fGAe8Q9xvU15+7sWWCHDJzXMlRv2Jeeu7MIlHS6XBisTprvqBcqjwtA==
-  dependencies:
-    prop-types "^15.7.2"
-
 react-native-modal-datetime-picker@9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-9.0.0.tgz#43da27d777337d5ad5045b1538d3d5b5b197a968"
   integrity sha512-8856SLrlVokhBaNWQmkwKbrwjfZP0AfRFIaA4CGXtXq83Hd+mvdmGbwKSfrAGQspAsqFMi7CYxSf4s0n16xCeg==
+  dependencies:
+    prop-types "^15.7.2"
+
+react-native-modal-datetime-picker@^9.0.0:
+  version "9.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-9.2.3.tgz#9a06b32f2b5a5a0e3d1ffbc81de3f91d44d280bb"
+  integrity sha512-fMQFQ5kLeKP6Z4412CvqcXzTAl8YCke2Hb1VI5M4CAnGtYYHvQS6EXzKoxwRgFOm7bqwGZHtpQP5Krc181BXvQ==
   dependencies:
     prop-types "^15.7.2"
 
