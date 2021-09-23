@@ -1,3 +1,4 @@
+import querystring from 'querystring';
 import React from 'react';
 import ApollosConfig from '@apollosproject/config';
 import { Providers, NavigationService } from '@apollosproject/ui-kit';
@@ -28,6 +29,21 @@ const AppProviders = (props) => (
             mutation: ACCEPT_FOLLOW_REQUEST,
             variables: { personId: requestPersonId },
           }),
+      }}
+      handleExternalLink={(url) => {
+        const path = url.split('app-link/')[1];
+        const [route, location] = path.split('/');
+        if (route === 'content')
+          NavigationService.navigate('ContentSingle', { itemId: location });
+        if (route === 'nav') {
+          const [component, params] = location.split('?');
+          const args = querystring.parse(params);
+          NavigationService.navigate(
+            // turns "home" into "Home"
+            component[0].toUpperCase() + component.substring(1),
+            args
+          );
+        }
       }}
     >
       <AuthProvider
