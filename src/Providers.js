@@ -31,7 +31,12 @@ const AppProviders = (props) => (
           }),
       }}
       handleExternalLink={(url) => {
-        const path = url.split('app-link/')[1];
+        let path;
+        if (url.includes('app-link')) {
+          path = url.split('app-link/')[1];
+        } else {
+          path = url.split('://')[1];
+        }
         const [route, location] = path.split('/');
         if (route === 'content')
           NavigationService.navigate('ContentSingle', { itemId: location });
