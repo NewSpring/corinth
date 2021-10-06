@@ -7,6 +7,7 @@ buildscript {
         compileSdkVersion = 29
         targetSdkVersion = 29
         supportLibVersion = "29.0.2"
+        ndkVersion = "18.1.5063045"
     }
     repositories {
         google()
