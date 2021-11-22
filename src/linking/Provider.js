@@ -87,6 +87,12 @@ class NotificationsInit extends Component {
 
   navigate = (rawUrl) => {
     if (!rawUrl) return;
+
+    if (this.props.handleExternalLink) {
+      this.props.handleExternalLink(rawUrl);
+      return;
+    }
+
     const url = URL.parse(rawUrl);
     const route = url.pathname.substring(1);
     const args = querystring.parse(url.query);

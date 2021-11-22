@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Mutation } from '@apollo/client/react/components';
 import GET_SERMON_NOTES from '../getSermonNotes';
@@ -18,6 +18,14 @@ const NoteCommentConnected = ({ contentID, noteID, onChange, initialText }) => {
     const newTimer = setTimeout(saveComment, 3000);
     setTimer(newTimer);
   };
+
+  // pre-fill sermon note exports
+  useEffect(
+    () => {
+      onChange(initialText);
+    },
+    [onChange, initialText]
+  );
   return (
     <Mutation
       mutation={SAVE_NOTES_COMMENT}
