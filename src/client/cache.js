@@ -18,7 +18,7 @@ introspectionQueryResultData.__schema.types.forEach((supertype) => {
 // We reset our apollo cache based an env value and static number.
 // In the future, we should also look at resetting the app when an error occurs related to Apollo.
 // You can also increment this number to force a manual reset of the cache.
-const SCHEMA_VERSION = `${ApollosConfig.SCHEMA_VERSION}-2`; // Must be a string.
+const SCHEMA_VERSION = `${ApollosConfig.SCHEMA_VERSION}-1`; // Must be a string.
 const SCHEMA_VERSION_KEY = 'apollo-schema-version';
 
 const nodeCacheRedirect = (_, { id }, { getCacheKey }) =>
