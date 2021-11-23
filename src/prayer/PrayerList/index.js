@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PropTypes from 'prop-types';
-import Emoji from 'react-native-emoji';
 import { Query, Mutation } from '@apollo/client/react/components';
 
 import {
@@ -169,7 +168,7 @@ class PrayerList extends PureComponent {
                               <View>
                                 <FooterAltOption>
                                   <FooterText>
-                                    Thanks for praying <Emoji name="heart" />
+                                    Thanks for praying ❤️
                                   </FooterText>
                                 </FooterAltOption>
                                 <Button

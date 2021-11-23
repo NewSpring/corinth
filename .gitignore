@@ -115,6 +115,7 @@ keystore.properties
 apolloskeystoreupload.keystore
 local.properties
 *.iml
+*.hprof
 
 # Xcode
 build/
@@ -133,7 +134,6 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-project.xcworkspace
 
 # misc
 .env.local
@@ -148,7 +148,11 @@ project.xcworkspace
 fastlane/report.xml
 
 # symbols
-newspringchurchapp.app.dSYM.zip
+*.app.dSYM.zip
+
+# iOS keys
+push.pem
+*.p8
 
 # Google Play authentication key
 key.json
@@ -158,5 +162,4 @@ key.json
 .env.shared
 
 # GraphQL info
-schema.graphql
 fragmentTypes.json

@@ -14,16 +14,16 @@
 #import <React/RCTLinkingManager.h>
 
 // for AppCenter libraries
-#import <AppCenterReactNative.h>
-#import <AppCenterReactNativeAnalytics.h>
-#import <AppCenterReactNativeCrashes.h>
+//#import <AppCenterReactNative.h>
+//#import <AppCenterReactNativeAnalytics.h>
+//#import <AppCenterReactNativeCrashes.h>
 
 
-#import <Bugsnag/Bugsnag.h>
+//#import <Bugsnag/Bugsnag.h>
 #import "ReactNativeConfig.h"
 
 
-#import <GoogleCast/GoogleCast.h>
+//#import <GoogleCast/GoogleCast.h>
 #import "RNSplashScreen.h"
 
 #ifdef FB_SONARKIT_ENABLED
@@ -65,13 +65,13 @@ static void InitializeFlipper(UIApplication *application) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // AppCenter library registration
-  [AppCenterReactNative register];
-  [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
-  [AppCenterReactNativeCrashes registerWithAutomaticProcessing];
-
-  BugsnagConfiguration *config = [BugsnagConfiguration loadConfig];
-  config.apiKey = [ReactNativeConfig envFor:@"BUGSNAG_API_KEY"];
-  [Bugsnag startWithConfiguration:config];
+//  [AppCenterReactNative register];
+//  [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
+//  [AppCenterReactNativeCrashes registerWithAutomaticProcessing];
+//
+//  BugsnagConfiguration *config = [BugsnagConfiguration loadConfig];
+//  config.apiKey = [ReactNativeConfig envFor:@"BUGSNAG_API_KEY"];
+//  [Bugsnag startWithConfiguration:config];
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
@@ -82,10 +82,10 @@ static void InitializeFlipper(UIApplication *application) {
                                             initialProperties:nil];
 
   // Initialize Google Cast
-  GCKDiscoveryCriteria *criteria = [[GCKDiscoveryCriteria alloc] initWithApplicationID:kGCKDefaultMediaReceiverApplicationID];
-  GCKCastOptions* options = [[GCKCastOptions alloc] initWithDiscoveryCriteria:criteria];
-  options.physicalVolumeButtonsWillControlDeviceVolume = YES;
-  [GCKCastContext setSharedInstanceWithOptions:options];
+//  GCKDiscoveryCriteria *criteria = [[GCKDiscoveryCriteria alloc] initWithApplicationID:kGCKDefaultMediaReceiverApplicationID];
+//  GCKCastOptions* options = [[GCKCastOptions alloc] initWithDiscoveryCriteria:criteria];
+//  options.physicalVolumeButtonsWillControlDeviceVolume = YES;
+//  [GCKCastContext setSharedInstanceWithOptions:options];
 
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
