@@ -42,6 +42,20 @@ type ActionListFeature implements Feature & Node {
   primaryAction: FeatureAction
 }
 
+type ActionTableAction {
+  id: ID!
+  title: String
+  action: ACTION_FEATURE_ACTION
+  relatedNode: Node
+}
+
+type ActionTableFeature implements Feature & Node {
+  id: ID!
+  order: Int
+  title: String
+  actions: [ActionTableAction]
+}
+
 type AddCommentFeature implements Feature & Node {
   id: ID!
   order: Int
@@ -305,14 +319,17 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   featureFeed: FeatureFeed
 }
 
-type Event implements Node {
+type Event implements Node & ContentNode {
   id: ID!
-  name: String
-  description: String
+  title(hyphenated: Boolean): String
+  htmlContent: String
+  coverImage: ImageMedia
   location: String
   start: String
   end: String
-  image: ImageMedia
+  name: String @deprecated(reason: "Use title")
+  description: String @deprecated(reason: "Use htmlContent")
+  image: ImageMedia @deprecated(reason: "Use coverImage")
 }
 
 interface Feature {
@@ -406,9 +423,16 @@ type ImageMediaSource implements MediaSource {
   uri: String
 }
 
+type Interaction implements Node {
+  id: ID!
+  action: InteractionAction
+  node: Node
+}
+
 enum InteractionAction {
   VIEW
   COMPLETE
+  SERIES_START
 }
 
 input InteractionDataField {
@@ -723,14 +747,17 @@ type Query {
   liveStreams: [LiveStream]
   scripture(query: String!, version: VERSION): Scripture @deprecated(reason: "Use 'scriptures' instead.")
   scriptures(query: String!, version: VERSION): [Scripture]
+  interactions(personId: ID!, nodeId: ID, action: InteractionAction): [Interaction]
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
+  tabFeedFeatures(tab: Tab!, campusId: ID): FeatureFeed
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
-  homeFeedFeatures(campusId: ID): FeatureFeed
-  discoverFeedFeatures: FeatureFeed
+  homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
+  discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
   readFeedFeatures: FeatureFeed
   followRequests: [Person]
+  usersFollowing: [Person]
   prayer(id: ID!): Prayer
   prayers(type: PrayerType): [Prayer] @deprecated(reason: "Use paginated version: prayerFeed")
   prayerFeed(first: Int, after: String, type: PrayerType): PrayersConnection
@@ -821,6 +848,14 @@ interface ShareableNode {
 type SmsPinResult {
   success: Boolean
   userAuthStatus: USER_AUTH_STATUS
+}
+
+enum Tab {
+  HOME
+  READ
+  WATCH
+  PRAY
+  CONNECT
 }
 
 type TextFeature implements Feature & Node {

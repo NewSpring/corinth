@@ -221,10 +221,10 @@
     react-native-swiper "^1.6.0"
     yup "0.26.6"
 
-"@apollosproject/ui-scripture@^2.11.0":
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-scripture/-/ui-scripture-2.11.0.tgz#d5e997a138dd993baa7ba1ef74427d48b95f43e6"
-  integrity sha512-sYlOjZxww8s8yCmrHMOHHs5GrN1xdTOolGCjEPN0SrZXvkX/Nzac5NdVGO8+2L3XPfkuLJbrJPEr4XpgeeU7Xw==
+"@apollosproject/ui-scripture@^2.38.1-canary.6":
+  version "2.38.1-canary.6"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-scripture/-/ui-scripture-2.38.1-canary.6.tgz#30ecdbd49024b171177eedd3a368eed5daa5f02c"
+  integrity sha512-Ze8TJYLxQQypdJmdLZIrQm2/fqEXN3iKQJBi8iNDmxUHOjNQ7dyHmYlj+ye6htL/UBT7VWZKxdAESA8TQqYSzg==
 
 "@apollosproject/ui-storybook@^2.11.0":
   version "2.11.0"
