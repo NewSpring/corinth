@@ -90,14 +90,7 @@ class NotificationsInit extends Component {
 
     if (this.props.handleExternalLink) {
       this.props.handleExternalLink(rawUrl);
-      return;
     }
-
-    const url = URL.parse(rawUrl);
-    const route = url.pathname.substring(1);
-    const args = querystring.parse(url.query);
-    console.warn(args);
-    this.props.navigate(route, args);
   };
 
   onReceived = (notification) => {
@@ -146,7 +139,7 @@ class NotificationsInit extends Component {
         variables: { slug },
       });
       if (contentItemFromSlug) {
-        const newUrl = `newspringchurchapp://AppStackNavigator/ContentSingle?itemId=${
+        const newUrl = `newspringchurchapp://app-link/content/${
           contentItemFromSlug.id
         }`;
         this.navigate(newUrl);
