@@ -1,6 +1,0 @@
-git_url("https://github.com/ApollosProject/certificates")
-
-storage_mode("git")
-
-app_identifier(["cc.newspring.newspringapp"])
-username("apps@apollos.app")
