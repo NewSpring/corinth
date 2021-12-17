@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-env
-find ./ -name "*.keystore"
-
 # Swaps out all placeholder env variables w/ their real values
 # Placeholders look like "$ONE_SIGNAL_KEY"
 grep -o '\$.*' .env.production | sed 's/\$\(.*\)/\1/' | xargs -I {} sh -c "sed -i -e 's/\$"{}"/'$"{}"'/' .env.production"
