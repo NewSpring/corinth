@@ -1,0 +1,70 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  ios:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 12
+
+    - name: Install Bundler
+      run: gem install bundler
+
+    - name: Decrypt Environment Variables and Apple API Key
+      run: (npx @apollosproject/apollos-cli secrets -d ${{ secrets.ENCRYPTION_PASSWORD }})
+
+    - run: cp .env.shared .env
+
+    - name: Install Dependencies
+      run: yarn config set network-timeout 300000 && yarn
+
+    - name: Generate Fragment Types
+      run: node ./scripts/get-introspection-data.js
+      env:
+        APP_DATA_URL: ${{ secrets.APP_DATA_URL }}
+
+    - name: Fastlane Deploy
+      run: bundle exec fastlane ios deploy
+
+  android:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 12
+
+    - name: Install Bundler
+      run: gem install bundler
+
+    - name: Decrypt Environment Variables and Keystore
+      run: (npx @apollosproject/apollos-cli secrets -d ${{ secrets.ENCRYPTION_PASSWORD }})
+
+    - run: cp .env.shared .env
+
+    - name: Install Dependencies
+      run: yarn config set network-timeout 300000 && yarn
+
+    - name: Generate Fragment Types
+      run: node ./scripts/get-introspection-data.js
+      env:
+        APP_DATA_URL: ${{ secrets.APP_DATA_URL }}
+
+    - name: Fastlane Deploy
+      run: bundle exec fastlane android deploy
