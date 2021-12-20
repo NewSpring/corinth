@@ -97,8 +97,8 @@ platform :android do
   end
 end
 
-error do |lane, exception|
-  s = File.read("../app.json")
-  app_name = s[/"name": "(.*)",/, 1]
-  slack(message: app_name << " - " << exception.to_s, success: false)
-end
+#error do |lane, exception|
+  #s = File.read("../app.json")
+  #app_name = s[/"name": "(.*)",/, 1]
+  #slack(message: app_name << " - " << exception.to_s, success: false)
+#end
