@@ -1,8 +1,0 @@
-coverage:
-  status:
-    project: yes
-    patch: yes
-    changes: no
-comment:
-  layout: "reach, diff, files"
-  behavior: once
