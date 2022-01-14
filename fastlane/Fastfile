@@ -87,8 +87,7 @@ platform :ios do
     setup_ci
     match(
       type: 'appstore',
-      app_identifier: [ENV['DELIVER_APP_IDENTIFIER'],
-                       "#{ENV['DELIVER_APP_IDENTIFIER']}.OneSignalNotificationServiceExtension"],
+      app_identifier: ENV['DELIVER_APP_IDENTIFIER'],
       readonly: true
     )
     increment_build_number(build_number: number_of_commits, xcodeproj: 'ios/' << proj << '.xcodeproj')
