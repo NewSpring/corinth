@@ -108,7 +108,7 @@
     "lodash": "^4.17.11",
     "memoize-one": "4.0.0",
     "moment": "2.22.2",
-    "node-fetch": "2.6.1",
+    "node-fetch": "3.1.1",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-actionsheet": "^2.4.2",
