@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@amplitude/react-native@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@amplitude/react-native/-/react-native-2.8.0.tgz#f4d08f84c9662761f2f3af8dc35080240229a1b7"
+  integrity sha512-Stw61MwcX7BoFwJisfqEauaNCk0kxS/Co0V3MkD6QLXkKjqwESaLmJiKP+ZqcvBDbb/3uU4h1HxF1HuTn0+/WQ==
+
 "@apollo/client@3.3.20":
   version "3.3.20"
   resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.20.tgz#8f0935fa991857e9cf2e73c9bd378ad7ec97caf8"
@@ -6853,7 +6858,7 @@ fbjs-scripts@^1.1.0:
     semver "^5.1.0"
     through2 "^2.0.0"
 
-fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.16, fbjs@^0.8.5:
+fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.16:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
@@ -12125,13 +12130,6 @@ react-native-actionsheet@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/react-native-actionsheet/-/react-native-actionsheet-2.4.2.tgz#6a00dd51a75ef2c8974312130e405af73191500f"
   integrity sha512-DBoWIvVwuWXuptF4t46pBqkFxaUxS+rsIdHiA05t0n4BdTIDV2R4s9bLEUVOGzb94D7VxIamsXZPA/3mmw+SXg==
-
-react-native-amplitude-analytics@^0.2.7:
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/react-native-amplitude-analytics/-/react-native-amplitude-analytics-0.2.7.tgz#115e168d3dbf447f8e24391d64e40a1cdd91745a"
-  integrity sha512-JDIQakPZUcKJRGEtv7lnPooe5ThwKJ7lusKBNr/HTjeN8nnTU1bvrP6Ig6eeKO7BmXewPuwbIkP5zqtndRc8Qw==
-  dependencies:
-    fbjs "^0.8.5"
 
 react-native-config@^0.11.7:
   version "0.11.7"

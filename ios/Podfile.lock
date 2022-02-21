@@ -1,5 +1,10 @@
 PODS:
-  - Amplitude-iOS (4.3.1)
+  - Amplitude (8.8.0):
+    - AnalyticsConnector (~> 1.0.0)
+  - amplitude-react-native (2.8.0):
+    - Amplitude (= 8.8.0)
+    - React-Core
+  - AnalyticsConnector (1.0.0)
   - appcenter-analytics (4.0.2):
     - AppCenter/Analytics (~> 4.0)
     - AppCenterReactNativeShared (~> 4.0)
@@ -266,9 +271,6 @@ PODS:
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
   - React-jsinspector (0.63.4)
-  - react-native-amplitude-analytics (0.2.7):
-    - Amplitude-iOS (~> 4.3.1)
-    - React
   - react-native-apollos-player (2.11.0):
     - React
   - react-native-config (0.11.7):
@@ -431,6 +433,7 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
+  - "amplitude-react-native (from `../node_modules/@amplitude/react-native`)"
   - appcenter-analytics (from `../node_modules/appcenter-analytics/ios`)
   - appcenter-core (from `../node_modules/appcenter/ios`)
   - appcenter-crashes (from `../node_modules/appcenter-crashes/ios`)
@@ -474,7 +477,6 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - react-native-amplitude-analytics (from `../node_modules/react-native-amplitude-analytics`)
   - "react-native-apollos-player (from `../node_modules/@apollosproject/ui-media-player`)"
   - react-native-config (from `../node_modules/react-native-config`)
   - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
@@ -518,7 +520,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Amplitude-iOS
+    - Amplitude
+    - AnalyticsConnector
     - AppCenter
     - AppCenterReactNativeShared
     - AstronomerAnalytics
@@ -538,6 +541,8 @@ SPEC REPOS:
     - YogaKit
 
 EXTERNAL SOURCES:
+  amplitude-react-native:
+    :path: "../node_modules/@amplitude/react-native"
   appcenter-analytics:
     :path: "../node_modules/appcenter-analytics/ios"
   appcenter-core:
@@ -582,8 +587,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
-  react-native-amplitude-analytics:
-    :path: "../node_modules/react-native-amplitude-analytics"
   react-native-apollos-player:
     :path: "../node_modules/@apollosproject/ui-media-player"
   react-native-config:
@@ -666,7 +669,9 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Amplitude-iOS: df355e2be58972041acde9576a2ae97c217bf941
+  Amplitude: 710116f3539c225e86fb70a8abdcd20015683132
+  amplitude-react-native: acb8a0659b3f713185457f18642a8feb77652b4c
+  AnalyticsConnector: 4c386d5972ac9da86e22d668564dbbac97558754
   AppCenter: 8832b158d17e54845c3b88a91076218f0b07174d
   appcenter-analytics: f1bcf80219acb97acdabeda751a1591869f83dfd
   appcenter-core: 92618da8986eef80bae39d1bb2b4c9fa0fc873bd
@@ -705,7 +710,6 @@ SPEC CHECKSUMS:
   React-jsi: a0418934cf48f25b485631deb27c64dc40fb4c31
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
-  react-native-amplitude-analytics: a4387e29d68ec0ff3c0e877a3ca8e328c0aca732
   react-native-apollos-player: 48e38b8e198b2591eb5bf01c89f8d4fba847168d
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9

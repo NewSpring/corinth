@@ -1,8 +1,9 @@
-import RNAmplitude from 'react-native-amplitude-analytics';
 import Appcenter from 'appcenter-analytics';
-import Config from 'react-native-config';
+import { Amplitude } from '@amplitude/react-native';
+import ApollosConfig from '@apollosproject/config';
 
-const amplitude = new RNAmplitude(Config.AMPLITUDE_API_KEY);
+const amplitude = Amplitude.getInstance();
+amplitude.init(ApollosConfig.AMPLITUDE_API_KEY);
 
 export default ({ eventName, properties }) => {
   amplitude.logEvent(eventName, properties);
