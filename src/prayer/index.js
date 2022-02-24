@@ -5,7 +5,7 @@ import GET_PRAYER_MENU_CATEGORIES from './data/queries/getPrayerMenuCategories';
 import PrayerMenu from './PrayerMenu';
 
 const PrayerMenuConnected = memo(({ ...props }) => (
-  <Query query={GET_PRAYER_MENU_CATEGORIES}>
+  <Query query={GET_PRAYER_MENU_CATEGORIES} fetchPolicy="cache-and-network">
     {({ loading, data: { prayerMenuCategories = [] } = {} }) => {
       if (loading) return <ActivityIndicator />;
       const categories = prayerMenuCategories.map((category) => ({
