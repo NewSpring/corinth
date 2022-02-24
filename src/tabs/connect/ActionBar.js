@@ -53,7 +53,10 @@ const Toolbar = ({ isGroupLeader }) => {
                 />
               )}
               <ActionBarItem
-                onPress={() => navigation.navigate('Passes')}
+                onPress={() => {
+                  track({ eventName: 'Check-in Clicked' });
+                  navigation.navigate('Passes');
+                }}
                 icon="check"
                 label="Check-in"
               />

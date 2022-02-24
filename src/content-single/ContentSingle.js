@@ -12,7 +12,6 @@ import {
   ContentParentFeedConnected,
   ContentChildFeedConnected,
   NodeFeaturesConnected,
-  UpNextButtonConnected,
 } from '@apollosproject/ui-connected';
 
 import ScriptureNodeConnected from '@apollosproject/ui-connected/src/ScriptureNodeConnected';
@@ -43,7 +42,7 @@ const NodeSingleInner = ({ nodeId, ImageWrapperComponent, ...props }) => (
 
 NodeSingleInner.propTypes = {
   nodeId: PropTypes.string,
-  ImageWrapperComponent: PropTypes.any, // eslint-disable-line
+  ImageWrapperComponent: PropTypes.any // eslint-disable-line
 };
 
 const ContentSingle = (props) => {
