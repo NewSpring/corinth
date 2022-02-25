@@ -839,7 +839,7 @@
 				);
 				INFOPLIST_FILE = newspringchurchapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 7.12.0;
+				MARKETING_VERSION = 7.12.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -875,7 +875,7 @@
 				);
 				INFOPLIST_FILE = newspringchurchapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 7.12.0;
+				MARKETING_VERSION = 7.12.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
