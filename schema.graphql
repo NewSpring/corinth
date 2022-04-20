@@ -4,9 +4,12 @@ enum ACTION_FEATURE_ACTION {
   READ_CONTENT
   READ_EVENT
   OPEN_URL
+  OPEN_URL_EXTERNALLY
   OPEN_AUTHENTICATED_URL
+  OPEN_AUTHENTICATED_URL_EXTERNALLY
   OPEN_NODE
   OPEN_CHANNEL
+  COMPLETE_NODE
 }
 
 type ActionBarAction {
@@ -44,7 +47,9 @@ type ActionListFeature implements Feature & Node {
 
 type ActionTableAction {
   id: ID!
+  icon: String
   title: String
+  subtitle: String
   action: ACTION_FEATURE_ACTION
   relatedNode: Node
 }
@@ -100,6 +105,12 @@ input AnalyticsTrackInput {
 }
 
 scalar AnalyticsValue
+
+type AppTab {
+  title: String
+  icon: String
+  feed: FeatureFeed
+}
 
 type AudioMedia implements Media {
   name: String
@@ -480,7 +491,7 @@ interface Media {
   sources: [MediaSource]
 }
 
-type MediaContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode {
+type MediaContentItem implements ContentItem & Node & ContentNode & Card & VideoNode & AudioNode & ContentChildNode & ContentParentNode & ThemedNode & ScriptureNode & LikableNode & ShareableNode & FeaturesNode {
   id: ID!
   title(hyphenated: Boolean): String
   publishDate: String
@@ -498,6 +509,8 @@ type MediaContentItem implements ContentItem & Node & ContentNode & Card & Video
   isLiked: Boolean
   likedCount: Int
   sharing: SharableContentItem
+  features: [Feature] @deprecated(reason: "Use featureFeed")
+  featureFeed: FeatureFeed
 }
 
 enum MediaInputType {
@@ -734,6 +747,7 @@ type Query {
   node(id: ID!): Node
   likedContent(first: Int, after: String): ContentItemsConnection
   contentChannels: [ContentChannel] @deprecated(reason: "No longer supported.")
+  contentItemTags: [String]
   campaigns: ContentItemsConnection
   userFeed(first: Int, after: String): ContentItemsConnection
   personaFeed(first: Int, after: String): ContentItemsConnection
@@ -747,11 +761,12 @@ type Query {
   liveStreams: [LiveStream]
   scripture(query: String!, version: VERSION): Scripture @deprecated(reason: "Use 'scriptures' instead.")
   scriptures(query: String!, version: VERSION): [Scripture]
-  interactions(personId: ID!, nodeId: ID, action: InteractionAction): [Interaction]
+  interactions(nodeId: ID, action: InteractionAction): [Interaction]
   userPass: Pass
   search(query: String!, first: Int, after: String): SearchResultsConnection
   campuses(location: CampusLocationInput): [Campus]
-  tabFeedFeatures(tab: Tab!, campusId: ID): FeatureFeed
+  tabs(campusId: ID, tags: [String]): [AppTab]
+  tabFeedFeatures(tab: Tab!, campusId: ID, tags: [String]): FeatureFeed @deprecated(reason: "Use tabs")
   userFeedFeatures: [Feature] @deprecated(reason: "Use homeFeedFeatures or discoverFeedFeatures")
   homeFeedFeatures(campusId: ID): FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: HOME)")
   discoverFeedFeatures: FeatureFeed @deprecated(reason: "Use tabFeedFeatures(tab: DISCOVER)")
@@ -855,6 +870,7 @@ enum Tab {
   READ
   WATCH
   PRAY
+  GIVE
   CONNECT
 }
 
@@ -970,6 +986,7 @@ interface VideoNode {
 type WebviewFeature implements Feature & Node {
   id: ID!
   order: Int
+  height: Int
   title: String
   linkText: String
   url: String
