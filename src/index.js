@@ -24,9 +24,9 @@ import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
 // need to initialize error tracking at the entrypoint
 // eslint-disable-next-line
-import Crashes from 'appcenter-crashes';
+import Crashes from "appcenter-crashes";
 // eslint-disable-next-line
-import bugsnag from './bugsnag';
+import bugsnag from "./bugsnag";
 
 import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
@@ -58,35 +58,18 @@ const ProtectedRouteWithSplashScreen = (props) => {
 };
 
 const EnhancedAuth = (props) => (
-  <RockAuthedWebBrowser>
-    {(openUrl) => (
-      <Query
-        query={gql`
-          {
-            forgotPasswordURL
-          }
-        `}
-      >
-        {({ data: { forgotPasswordURL } = {} }) => (
-          <Auth
-            {...props}
-            emailRequired={false}
-            handleForgotPassword={() =>
-              forgotPasswordURL ? openUrl(forgotPasswordURL) : null
-            }
-            authTitleText={'Let’s connect'}
-            smsPolicyInfo={
-              'We will not share your information or contact you without your permission.'
-            }
-            confirmationTitleText={'Thanks!'}
-            confirmationPromptText={
-              'We just texted you a shortcode. Enter it below, then hit next.'
-            }
-          />
-        )}
-      </Query>
-    )}
-  </RockAuthedWebBrowser>
+  <Auth
+    {...props}
+    emailRequired={false}
+    authTitleText={'Let’s connect'}
+    smsPolicyInfo={
+      'We will not share your information or contact you without your permission.'
+    }
+    confirmationTitleText={'Thanks!'}
+    confirmationPromptText={
+      'We just texted you a shortcode. Enter it below, then hit next.'
+    }
+  />
 );
 
 // Hack to avoid needing to pass emailRequired through the navigator.navigate
