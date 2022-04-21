@@ -323,7 +323,6 @@ type DevotionalContentItem implements ContentItem & Node & ContentNode & Card & 
   scriptures: [Scripture]
   isLiked: Boolean
   likedCount: Int
-  series: ContentItem @deprecated(reason: "Use seriesConnection")
   seriesConnection: SeriesConnection
   sharing: SharableContentItem
   features: [Feature] @deprecated(reason: "Use featureFeed")
@@ -384,7 +383,6 @@ enum GENDER {
 type Group implements Node {
   id: ID!
   name: String
-  leader: Person @deprecated(reason: "No longer used, use 'leaders' instead")
   leaders: [Person]
   members: [Person]
 }
@@ -396,13 +394,6 @@ enum GROUP_TYPE {
   Fuse
   Rally
   Mentoring
-}
-
-type HeaderFeature implements Feature & Node {
-  id: ID! @deprecated(reason: "NoteFeature no longer supported")
-  order: Int
-  body: String
-  sharing: SharableFeature
 }
 
 type HeroListFeature implements Feature & Node {
@@ -570,12 +561,6 @@ interface Node {
   id: ID!
 }
 
-type NoteFeature implements Feature & Node {
-  id: ID! @deprecated(reason: "NoteFeature no longer supported")
-  order: Int
-  placeholder: String
-}
-
 interface NotesBlock {
   id: ID!
   allowsComment: Boolean
@@ -663,8 +648,6 @@ type Person implements Node {
   gender: GENDER
   birthDate: String
   photo: ImageMediaSource
-  impersonationParameter: String! @deprecated(reason: "No longer used.")
-  isStaff: Boolean
   devices: [Device]
   campus: Campus
   groups(type: GROUP_TYPE, asLeader: Boolean): [Group]
@@ -677,19 +660,12 @@ type Person implements Node {
 
 type Prayer implements Node {
   id: ID!
-  firstName: String @deprecated(reason: "Use requestor.firstName")
-  lastName: String @deprecated(reason: "Use requestor.lastName.")
   text: String!
   answer: String
-  enteredDateTime: String! @deprecated(reason: "Use startTime")
   startTime: String!
   flagCount: Int
   prayerCount: Int
-  categoryId: Int @deprecated(reason: "Not supported")
   campus: Campus @deprecated(reason: "Use requestor.campus")
-  createdByPersonAliasId: Int @deprecated(reason: "Use requestor")
-  requestedByPersonAliasId: Int @deprecated(reason: "Use requestor")
-  person: Person @deprecated(reason: "Use requestor")
   requestor: Person
   isAnonymous: Boolean
   isSaved: Boolean
@@ -711,7 +687,6 @@ type PrayerMenuCategory implements Node {
   title: String!
   subtitle: String
   imageURL: String
-  overlayColor: String @deprecated(reason: "Never changes")
 }
 
 type PrayersConnection {
@@ -777,10 +752,6 @@ type Query {
   prayers(type: PrayerType): [Prayer] @deprecated(reason: "Use paginated version: prayerFeed")
   prayerFeed(first: Int, after: String, type: PrayerType): PrayersConnection
   prayerMenuCategories: [PrayerMenuCategory]
-  campusPrayers: [Prayer] @deprecated(reason: "Use prayers(type:SAVED)")
-  userPrayers: [Prayer] @deprecated(reason: "Use prayers(type:USER)")
-  groupPrayers: [Prayer] @deprecated(reason: "Use prayers(type:GROUP)")
-  savedPrayers: [Prayer] @deprecated(reason: "Use prayers(type:CAMPUS)")
 }
 
 type RockPersonDetails {
@@ -1008,11 +979,9 @@ type WeekendContentItem implements ContentItem & Node & ContentNode & Card & Vid
   theme: Theme
   isLiked: Boolean
   likedCount: Int
-  communicator: Person @deprecated(reason: "Use communicators")
   communicators: [Person]
   guestCommunicators: [String]
   sermonDate: String
-  series: ContentItem @deprecated(reason: "Use seriesConnection")
   seriesConnection: SeriesConnection
   sermonNotes: [NotesBlock]
   liveStream: LiveStream
