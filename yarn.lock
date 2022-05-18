@@ -151,16 +151,19 @@
     entities "^1.1.2"
     htmlparser2 "3.9.2"
 
-"@apollosproject/ui-kit@^2.16.0":
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-2.18.1.tgz#db404c42e0515612a1e29667f80f4413cb2986e2"
-  integrity sha512-3YkPrJg73vmyfJ8SP0PDQnAdDJ3/ms6opYEwpsseR0CmoFEwclKVZ2G3x6/vkMVDXYCNPjktiFTzFfkO9x20Ng==
+"@apollosproject/ui-kit@^2.26.0":
+  version "2.47.3"
+  resolved "https://registry.yarnpkg.com/@apollosproject/ui-kit/-/ui-kit-2.47.3.tgz#204755dbb21811edcae274855598aadb43abd912"
+  integrity sha512-6iiU1k4/PY9EnnK4aJZez/X4VhN8jkJJGoP7gE9x2KbAAKDLbcOLUulC0Y+T7GJ8E/VCjsr4tIYDfCkn7OeZAg==
   dependencies:
+    "@expo/react-native-action-sheet" "^3.12.0"
     "@react-native-community/blur" "^3.6.0"
+    "@react-native-picker/picker" "^1.9.4"
     color "^3.1.0"
     lodash "^4.17.11"
     moment "^2.24.0"
     numeral "^2.0.6"
+    phosphor-react-native "^0.4.0"
     react-native-keyboard-avoiding-scroll-view "1.0.1"
     react-native-modal-datetime-picker "^9.0.0"
     react-native-tab-view "1.0.2"
@@ -1830,6 +1833,14 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@expo/react-native-action-sheet@^3.12.0":
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/@expo/react-native-action-sheet/-/react-native-action-sheet-3.13.0.tgz#b4cb08440c54b5ec0b3e429cac396422da1d9442"
+  integrity sha512-EFLK35TBsM28W43SY54lISAIvjEm9584LIRWXsYaf5sgmfF65oWAOQP4UyKxMPLYGoaKjnCAJVFNtZUK80ss9A==
+  dependencies:
+    "@types/hoist-non-react-statics" "^3.3.1"
+    hoist-non-react-statics "^3.3.0"
+
 "@gorhom/bottom-sheet@3.4.1":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@gorhom/bottom-sheet/-/bottom-sheet-3.4.1.tgz#649ee59a78796b906789120740c656d891225987"
@@ -3289,6 +3300,14 @@
   version "4.7.5"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.5.tgz#527d20ef68571a4af02ed74350164e7a67544860"
   integrity sha512-wLD/Aq2VggCJXSjxEwrMafIP51Z+13H78nXIX0ABEuIGhmB5sNGbR113MOKo+yfw+RDo1ZU3DM6yfnnRF/+ouw==
+
+"@types/hoist-non-react-statics@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
+  dependencies:
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
 
 "@types/is-function@^1.0.0":
   version "1.0.0"
@@ -11607,6 +11626,11 @@ phin@^2.9.1:
   version "2.9.3"
   resolved "https://registry.yarnpkg.com/phin/-/phin-2.9.3.tgz#f9b6ac10a035636fb65dfc576aaaa17b8743125c"
   integrity sha512-CzFr90qM24ju5f88quFC/6qohjC144rehe5n6DH900lgXmUe86+xCKc10ev56gRKC4/BkHUoG4uSiQgBiIXwDA==
+
+phosphor-react-native@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/phosphor-react-native/-/phosphor-react-native-0.4.0.tgz#b843bd39a8970a53fd5b7729baa39fa3a9c0bf1b"
+  integrity sha512-FsNbV9agH+AZCqEvlAAguK1giRSgEOWIYjjtwrhQj+mcUbZz5WuZgMw9KPjumY4W0f16qkrq1ohsnCX2tu24Qg==
 
 picomatch@^2.0.4, picomatch@^2.0.5:
   version "2.2.2"
